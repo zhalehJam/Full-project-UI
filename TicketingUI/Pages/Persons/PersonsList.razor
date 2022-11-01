@@ -1,0 +1,83 @@
+﻿@page "/PersonsList"
+@using Ticketing.Models.Persons.Dto
+@using Ticketing.Models.Persons.Repository
+
+@inject IPersonRepository personRepository
+@inject IHttpClientFactory ClientFactory
+<h3>Persons</h3>
+
+<button class="btn btn-primary" @onclick="GetAllPersons">Get All Persons</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Peroson ID</th>
+            <th>Person Name</th>
+            <th>Center Name</th>
+            <th>Part Name</th>
+        </tr>
+        <tr>
+            <td>
+                <input @bind="@PersonIDFilter" @oninput="@((e) => { PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+            </td>
+            <td>
+                <input @bind="@PersonNameFilter" @oninput="@((e) => { PersonNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+            </td>
+            <td>
+                <input @bind="@PersonCenterNameFilter" @oninput="@((e) => { PersonCenterNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+            </td>
+            <td>
+                <input @bind="@PersonPartNameFilter" @oninput="@((e) => { PersonPartNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @if(personListByFilter.Count() != 0)
+        {
+            foreach(var person in personListByFilter)
+            {
+                <tr>
+                    <td>@person.PersonID</td>
+                    <td>@person.PersonName</td>
+                    <td>@person.CenterName</td>
+                    <td>@person.PartName</td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<PersonDto> personDtos = new List<PersonDto>();
+    private List<PersonDto> personListByFilter = new List<PersonDto>();
+    private string PersonNameFilter = "";
+    private string PersonIDFilter = "";
+    private string PersonPartNameFilter = "";
+    private string PersonCenterNameFilter = "";
+
+    private async Task<List<PersonDto>> GetAllPersons()
+    {
+        PersonNameFilter = "";
+        PersonIDFilter = "";
+        PersonPartNameFilter = "";
+        PersonCenterNameFilter = "";
+        personDtos = await personRepository.GetAllPersons();
+        personListByFilter = personDtos;
+        return personDtos;
+    }
+    private async Task<List<PersonDto>> GetPersonByFilters()
+    {
+        personListByFilter = personDtos;
+        if(!string.IsNullOrWhiteSpace(PersonNameFilter))
+            personListByFilter = personListByFilter.Where(n => n.PersonName.Contains(PersonNameFilter)).ToList();
+        if(!string.IsNullOrWhiteSpace(PersonIDFilter))
+            personListByFilter = personListByFilter.Where(n => n.PersonID.ToString().Contains(PersonIDFilter)).ToList();
+        if(!string.IsNullOrWhiteSpace(PersonCenterNameFilter))
+            personListByFilter = personListByFilter.Where(n => n.CenterName.Contains(PersonCenterNameFilter)).ToList();
+        if(!string.IsNullOrWhiteSpace(PersonPartNameFilter))
+            personListByFilter = personListByFilter.Where(n => n.PartName.Contains(PersonPartNameFilter)).ToList();
+        return personListByFilter;
+
+    }
+
+}

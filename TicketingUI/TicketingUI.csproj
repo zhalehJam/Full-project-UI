@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="C1.Blazor.Grid" Version="6.0.20222.298" />
+    <PackageReference Include="Radzen.Blazor" Version="4.1.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.DependencyInjection\Framework.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
+    <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />
+    <ProjectReference Include="..\Ticketing.Repository\Ticketing.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
