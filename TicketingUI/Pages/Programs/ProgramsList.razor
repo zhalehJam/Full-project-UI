@@ -1,0 +1,119 @@
+﻿@page "/programsList"
+@using Blazored.Modal@*
+@using Blazored.Modal.Services*@
+@using Ticketing.Models.Programs.Dto
+@using Ticketing.Models.Programs.Repository
+@using TicketingUI.Shared.Component
+
+
+@inject IProgramRepository programRepository
+@inject IHttpClientFactory ClientFactory
+@*@inject ModalService Modal*@
+
+<button class="btn btn-primary" @onclick="GetAllPrograms">Get All Programs</button>
+<p>
+    <TableLayout Items="@programbyfilters" Context="programsitem">
+        <TableHeader>
+            <th hidden>Id</th>
+            <th>Program Name</th>
+            <th>ProgramLink</th>
+            <th>Supporters</th>
+        </TableHeader>
+        <TableFilter>
+            <td><input @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <table class="input-group-text">
+                <tbody>
+
+            <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+
+                </tbody>
+            </table>
+        </TableFilter>
+        <RowTemplate>
+            <td hidden>@programsitem.Id</td>
+            <td>@programsitem.ProgamName</td>
+            <td>@programsitem.ProgramLink</td>
+            <td>
+                <TableLayout Items="@programsitem.Supporters" Context="supporters">
+                    <TableHeader>
+                        <th>PeronID</th>
+                        <th>name</th>
+                    </TableHeader>
+                    <RowTemplate>
+                        <td>@supporters.SupporterpersonID</td>
+                        <td>@supporters.SupporterName</td>
+                    </RowTemplate>
+                </TableLayout>
+                @*<button type="button" class="btn btn-success w-auto" @onclick="GetSupporters">
+                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: white; margin-inline: 10px;" />
+                supporters
+                </button>*@
+            </td>
+
+        </RowTemplate>
+    </TableLayout>
+</p>
+
+
+@code {
+    private List<ProgramDto> programDtos = new List<ProgramDto>();
+    private List<ProgramDto> programbyfilters = new List<ProgramDto>();
+
+    private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
+    private string filter_programName = "";
+    private string filter_supporterID = "";
+    private string filter_SupporerName = "";
+    private string filter_programLink = "";
+    private async Task<List<ProgramDto>> GetAllPrograms()
+    {
+        filter_programName = "";
+        filter_supporterID = "";
+        filter_SupporerName = "";
+        filter_programLink = "";
+        programDtos = await programRepository.GetAllProgram();
+        programbyfilters = programDtos;
+        return programDtos;
+
+    }
+
+    private async Task<List<ProgramDto>> GetProgramByFilters()
+    {
+        programbyfilters = programDtos;
+        if(!string.IsNullOrWhiteSpace(filter_programName)) {
+            programbyfilters = programbyfilters.Where(n => n.ProgamName.Contains(filter_programName)).ToList();
+        }
+        if(!string.IsNullOrWhiteSpace(filter_programLink)) { 
+            programbyfilters = programbyfilters.Where(n => n.ProgramLink.Contains(filter_programLink)).ToList();
+        }
+        if(!string.IsNullOrWhiteSpace(filter_SupporerName)) {
+            programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterName.Contains(filter_SupporerName))).ToList();
+        }
+        if(!string.IsNullOrWhiteSpace(filter_supporterID)) { 
+            programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterpersonID.ToString().Contains(filter_supporterID))).ToList();
+
+        }
+        return programbyfilters;
+    }
+
+    private async void GetSupporters()
+    {
+        programSupporterDtos = programDtos.Select(n => n.Supporters.ToList()).FirstOrDefault();
+        ModalParameters parameters = new ModalParameters();
+        parameters.Add("supporters", programSupporterDtos);
+        FechSupporterInfo fechSupporterInfo = new FechSupporterInfo();
+
+        //Modal.Show<FechSupporterInfo>("", parameters, new ModalOptions()
+        //    {
+        //        //Animation = new ModalAnimation(ModalAnimationType.FadeInOut, 0.09),
+        //        //HideHeader = true,
+        //         Position = ModalPosition.TopCenter,
+        //        Class = "blazored-modal wide-modal rounded-modal"//,
+        //        //FocusFirstElement = false,
+        //        //ContentScrollable = true
+        //    });
+
+    }
+
+}

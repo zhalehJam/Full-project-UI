@@ -1,0 +1,9 @@
+﻿@page "/FechSupporterInfo"
+@using Ticketing.Models.Programs.Dto
+<h4>FechSupporterInfo</h4>
+<h5>@programSupporterDtos.Count()</h5>
+@code {
+    [Parameter] 
+    public List<ProgramSupporterDto> programSupporterDtos { get; set; }
+
+}

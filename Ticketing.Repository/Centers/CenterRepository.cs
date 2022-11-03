@@ -42,9 +42,7 @@ namespace Ticketing.Repository.Centers
         private static List<CenterDto> GetcenterDtoFromContent( string content)
         {
             List<CenterDto> centerDtos =new List<CenterDto>();
-            JArray jsonResponse = JArray.Parse(content);
-            DataTable dt2 = new DataTable();
-
+            JArray jsonResponse = JArray.Parse(content); 
             foreach(var item in jsonResponse)
             {
                 CenterDto? dto = JsonConvert.DeserializeObject<CenterDto>(item.ToString());

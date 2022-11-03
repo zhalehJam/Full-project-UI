@@ -2,19 +2,17 @@
 @using Ticketing.Models.Centers.Dto
 @using Ticketing.Models.Centers.Repository
 @using Ticketing.Repository.Centers
-@using Radzen.Blazor
+@using TicketingUI.Shared.Component
 @inject ICenterRepository CenterRepository
 @inject IHttpClientFactory ClientFactory
 
 <PageTitle>Centers</PageTitle>
 <h3>Centers</h3>
-
 <button class="btn btn-primary" @onclick="setlist">GetAllCenters</button>
-<p role="status">
+@*<p role="status">
     <table class="table">
         <thead>
             <tr>
-                @*<th>Center </th>*@
                 <th>CenterName</th>
                 <th>CenterID</th>
                 <th>
@@ -52,7 +50,6 @@
                 @foreach(var center in centerbyfilters)
                 {
                     <tr>
-                        @*<td>@center.Center</td>*@
                         <td>@center.CenterName</td>
                         <td>@center.CenterID</td>
                         <td>
@@ -82,6 +79,64 @@
         </tbody>
     </table>
 </p>
+*@
+<TableLayout Items="@centerbyfilters" Context="centeritem">
+    <TableHeader>
+        @*<tr>*@
+        <th hidden>Id </th>
+        <th>Center Name</th>
+        <th>CenterID</th>
+        <th>Parts</th>
+        @*</tr>*@
+    </TableHeader>
+
+    <TableFilter>
+
+        <td hidden></td>
+        <td>
+            <input @bind="@centerNamefilter" @oninput="@((e) => { centerNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
+        </td>
+        <td>
+            <input @bind="@centerIDfilter" @oninput="@((e) => { centerIDfilter=Convert.ToString(e.Value); GetcenterByFilters();})" />
+        </td>
+        <td> 
+            <table class="input-group">
+                <tr>
+                    <td>
+                        <input @bind="@partNamefilter" @oninput="@((e) => { partNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
+                    </td>
+                    <td>
+                        <input @bind="@partIDfilter" @oninput="@((e) => { partIDfilter=Convert.ToString(e.Value.ToString()); GetcenterByFilters();})" />
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+    </TableFilter>
+    <RowTemplate>
+        <td hidden>@centeritem.Center</td>
+        <td>@centeritem.CenterName</td>
+        <td>@centeritem.CenterID</td>
+        <td>
+
+            <TableLayout Items="@centeritem.parts.ToList()" Context="centeritempart">
+                <TableHeader>
+                    <th>PartName </th>
+                    <th>PartID</th>
+                </TableHeader>
+                <RowTemplate>
+                    @if(centeritem.parts.Count() != 0)
+                    {
+                        <td>@centeritempart.PartName</td>
+                        <td>@centeritempart.PartID</td>
+                    }
+                </RowTemplate>
+            </TableLayout>
+
+        </td>
+    </RowTemplate>
+</TableLayout>
 
 
 @code {
@@ -104,6 +159,7 @@
     private async Task<List<CenterDto>> GetcenterByFilters()//string centerNamefilter, int centerIDfilter, string partNamefilter, int partIDfilter)
     {
         centerbyfilters = centerDtos;
+
 
         if(!string.IsNullOrWhiteSpace(centerNamefilter))
             centerbyfilters = centerbyfilters.Where(n => n.CenterName.Contains(centerNamefilter)).ToList();

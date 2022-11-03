@@ -1,10 +1,16 @@
+using Blazored.Modal;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Ticketing.Models.Centers.Repository;
 using Ticketing.Models.Persons.Repository;
+using Ticketing.Models.Programs.Repository;
+using Ticketing.Models.Tickets.Repository;
 using Ticketing.Repository.Centers;
 using Ticketing.Repository.Persons;
+using Ticketing.Repository.Programs;
+using Ticketing.Repository.Tickets;
 using TicketingUI;
 using TicketingUI.Data;
 
@@ -25,6 +31,15 @@ builder.Services.AddHttpClient<IPersonRepository, PersonRepository>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:44359/");
 });
+builder.Services.AddHttpClient<IProgramRepository, ProgramRepository>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:44359/");
+});
+builder.Services.AddHttpClient<ITicketRepository, TicketRepository>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:44359/");
+});
+builder.Services.AddBlazoredModal(); 
 
 //Registrar registrar = new Registrar(builder.Services);
 //registrar.Register();
