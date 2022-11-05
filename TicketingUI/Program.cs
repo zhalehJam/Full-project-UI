@@ -22,27 +22,11 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddBlazoredModal();
 
-builder.Services.AddHttpClient<ICenterRepository, CenterRepository>(client =>
-{
-    client.BaseAddress = new Uri("https://localhost:44359/");
-});
-builder.Services.AddHttpClient<IPersonRepository, PersonRepository>(client =>
-{
-    client.BaseAddress = new Uri("https://localhost:44359/");
-});
-builder.Services.AddHttpClient<IProgramRepository, ProgramRepository>(client =>
-{
-    client.BaseAddress = new Uri("https://localhost:44359/");
-});
-builder.Services.AddHttpClient<ITicketRepository, TicketRepository>(client =>
-{
-    client.BaseAddress = new Uri("https://localhost:44359/");
-});
-builder.Services.AddBlazoredModal(); 
 
-//Registrar registrar = new Registrar(builder.Services);
-//registrar.Register();
+Registrar registrar = new Registrar(builder.Services);
+registrar.Register();
 
 var app = builder.Build();
 

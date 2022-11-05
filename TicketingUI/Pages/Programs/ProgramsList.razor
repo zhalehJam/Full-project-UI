@@ -1,6 +1,6 @@
 ﻿@page "/programsList"
-@using Blazored.Modal@*
-@using Blazored.Modal.Services*@
+@using Blazored.Modal
+@using Blazored.Modal.Services
 @using Ticketing.Models.Programs.Dto
 @using Ticketing.Models.Programs.Repository
 @using TicketingUI.Shared.Component
@@ -8,7 +8,7 @@
 
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
-@*@inject ModalService Modal*@
+@*@inject IModalService modal*@
 
 <button class="btn btn-primary" @onclick="GetAllPrograms">Get All Programs</button>
 <p>
@@ -22,20 +22,20 @@
         <TableFilter>
             <td><input @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
             <td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-            <table class="input-group-text">
+            @*<table class="input-group-text">
                 <tbody>
 
-            <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-            <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+                <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+                <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
 
                 </tbody>
-            </table>
+            </table>*@
         </TableFilter>
         <RowTemplate>
             <td hidden>@programsitem.Id</td>
             <td>@programsitem.ProgamName</td>
             <td>@programsitem.ProgramLink</td>
-            <td>
+           @* <td>
                 <TableLayout Items="@programsitem.Supporters" Context="supporters">
                     <TableHeader>
                         <th>PeronID</th>
@@ -44,23 +44,31 @@
                     <RowTemplate>
                         <td>@supporters.SupporterpersonID</td>
                         <td>@supporters.SupporterName</td>
+
                     </RowTemplate>
                 </TableLayout>
                 @*<button type="button" class="btn btn-success w-auto" @onclick="GetSupporters">
                 <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: white; margin-inline: 10px;" />
                 supporters
-                </button>*@
+                </button>
+            </td>*@
+            <td>
+                <button @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters",Keys.Add("pSupporterDtos",@programsitem.Supporters)))">View supporters</button>
+                @*<button type="button" class="btn btn-default"  @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters"))"  data-toggle="modal" data-target="@programsitem.Supporters" data-id="@programsitem.Id" >Details</button>*@
             </td>
 
         </RowTemplate>
     </TableLayout>
 </p>
 
-
 @code {
+    [CascadingParameter] public IModalService Modal { get; set; }
+    bool isOpened = false;
+    public ModalParameters Keys = new ModalParameters().Add("number", 1);
+
     private List<ProgramDto> programDtos = new List<ProgramDto>();
     private List<ProgramDto> programbyfilters = new List<ProgramDto>();
-
+    private int showdetail = 0;
     private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
     private string filter_programName = "";
     private string filter_supporterID = "";
@@ -81,28 +89,33 @@
     private async Task<List<ProgramDto>> GetProgramByFilters()
     {
         programbyfilters = programDtos;
-        if(!string.IsNullOrWhiteSpace(filter_programName)) {
+        if(!string.IsNullOrWhiteSpace(filter_programName))
+        {
             programbyfilters = programbyfilters.Where(n => n.ProgamName.Contains(filter_programName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(filter_programLink)) { 
+        if(!string.IsNullOrWhiteSpace(filter_programLink))
+        {
             programbyfilters = programbyfilters.Where(n => n.ProgramLink.Contains(filter_programLink)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(filter_SupporerName)) {
+        if(!string.IsNullOrWhiteSpace(filter_SupporerName))
+        {
             programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterName.Contains(filter_SupporerName))).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(filter_supporterID)) { 
+        if(!string.IsNullOrWhiteSpace(filter_supporterID))
+        {
             programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterpersonID.ToString().Contains(filter_supporterID))).ToList();
 
         }
         return programbyfilters;
     }
 
-    private async void GetSupporters()
+    private async Task<List<ProgramSupporterDto>> GetSupporters()
     {
         programSupporterDtos = programDtos.Select(n => n.Supporters.ToList()).FirstOrDefault();
         ModalParameters parameters = new ModalParameters();
         parameters.Add("supporters", programSupporterDtos);
         FechSupporterInfo fechSupporterInfo = new FechSupporterInfo();
+        return programSupporterDtos;
 
         //Modal.Show<FechSupporterInfo>("", parameters, new ModalOptions()
         //    {

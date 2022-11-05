@@ -1,9 +1,27 @@
 ﻿@page "/FechSupporterInfo"
+@using Blazored.Modal
+@using Blazored.Modal.Services
 @using Ticketing.Models.Programs.Dto
-<h4>FechSupporterInfo</h4>
-<h5>@programSupporterDtos.Count()</h5>
+@using TicketingUI.Shared.Component 
+<TableLayout Items="@pSupporterDtos" Context="lists">
+    <TableHeader>
+        <th>Name</th>
+        <th>PersonID</th>
+    </TableHeader>
+    <RowTemplate>
+        <td>@lists.SupporterName</td>
+        <td>@lists.SupporterpersonID</td>
+    </RowTemplate>
+</TableLayout>
 @code {
-    [Parameter] 
-    public List<ProgramSupporterDto> programSupporterDtos { get; set; }
+    [Parameter]
+    public List<ProgramSupporterDto> pSupporterDtos { get; set; }
+    [Parameter]
+    public int number { get; set; }
+    [Parameter]
+    public ModalParameters prm { get; set; }
+    [CascadingParameter] public IModalService Modal { get; set; }
+
+
 
 }

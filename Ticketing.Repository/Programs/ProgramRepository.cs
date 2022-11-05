@@ -23,8 +23,10 @@ namespace Ticketing.Repository.Programs
         }
         public async Task<List<ProgramDto>> GetAllProgram()
         {
+            var request = new HttpRequestMessage(HttpMethod.Get, "Program/GetAllPrograms");
             List<ProgramDto> programDtos = new List<ProgramDto>();
-            var response = await _httpClient.GetAsync("https://localhost:44359/api/Program/GetAllPrograms");
+            var e= await _httpClient.SendAsync(request);
+            var response = await _httpClient.GetAsync("Program/GetAllPrograms");
             var content = await response.Content.ReadAsStringAsync();
             programDtos = GetProgramDtoFromContent(content);
             return programDtos;
