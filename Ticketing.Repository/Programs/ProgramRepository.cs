@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Ticketing.Models.Centers.Dto;
 using Ticketing.Models.Programs.Dto;
 using Ticketing.Models.Programs.Repository;
+using Microsoft.AspNetCore.WebUtilities;
+using Ticketing.Models.Persons.Dto;
 
 namespace Ticketing.Repository.Programs
 {
@@ -45,9 +47,17 @@ namespace Ticketing.Repository.Programs
             return ticketDtos;
         }
 
-        public Task<ProgramDto> GetProgramById(Guid programId)
+        public async Task<ProgramDto> GetProgramById(Guid programId)
         {
-            throw new NotImplementedException();
+            ProgramDto? programDtos = new ProgramDto();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("Id", programId.ToString());
+            string request = QueryHelpers.AddQueryString("Person/GetAllPersonsByPage", parameters);
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+            programDtos = GetProgramDtoFromContent(content).FirstOrDefault();
+
+            return programDtos;
         }
     }
 }

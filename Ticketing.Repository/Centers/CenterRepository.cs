@@ -14,6 +14,7 @@ using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.Json.Nodes;
+using PagedList;
 
 namespace Ticketing.Repository.Centers
 {
@@ -27,22 +28,22 @@ namespace Ticketing.Repository.Centers
         }
 
         public async Task<List<CenterDto>> GetAllCenters()
-        { 
+        {
 
             List<CenterDto> centerDtos = new List<CenterDto>();
             List<PartDto> partDtos = new List<PartDto>();
-              
-            var response = await _httpClient.GetAsync("https://localhost:44359/api/Center/GetAllCenters");
+
+            var response = await _httpClient.GetAsync("Center/GetAllCenters");
 
             var content = await response.Content.ReadAsStringAsync();
-            centerDtos = GetcenterDtoFromContent( content);
+            centerDtos = GetcenterDtoFromContent(content);
             return centerDtos;
         }
 
-        private static List<CenterDto> GetcenterDtoFromContent( string content)
+        private static List<CenterDto> GetcenterDtoFromContent(string content)
         {
-            List<CenterDto> centerDtos =new List<CenterDto>();
-            JArray jsonResponse = JArray.Parse(content); 
+            List<CenterDto> centerDtos = new List<CenterDto>();
+            JArray jsonResponse = JArray.Parse(content);
             foreach(var item in jsonResponse)
             {
                 CenterDto? dto = JsonConvert.DeserializeObject<CenterDto>(item.ToString());
@@ -51,24 +52,35 @@ namespace Ticketing.Repository.Centers
             return centerDtos;
         }
 
-        public async Task<List<CenterDto>> GetCenterByFilters(string centerNamefilter = "",
+        public async Task<List<CenterDto>> GetCenterByFilters(Guid Id,
+                                                              string centerNamefilter = "",
                                                               int centerIDfilter = 0,
                                                               string partNamefilter = "",
                                                               int partIDfilter = 0)
         {
-            string filters = "";
-            //if(!string.IsNullOrWhiteSpace(centerNamefilter))
-                filters += "CenterName=" + centerNamefilter;
-            //if(centerIDfilter != 0)
-                filters += "&CenterID=" + centerIDfilter;
-            //if(!string.IsNullOrWhiteSpace(partNamefilter))
-                filters += "&PartName=" + partNamefilter;
-            //if(partIDfilter != 0)
-                filters += "&PartID=" + partIDfilter;
-            //if(filters.StartsWith('&'))
-                //filters = filters.Substring(1);
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("Id ", Id.ToString());
+            parameters.Add("CenterName ", centerNamefilter);
+            parameters.Add("CenterID ", centerIDfilter.ToString());
+            parameters.Add("PartName ", partNamefilter);
+            parameters.Add("PartID ", partIDfilter.ToString());
+
             List<CenterDto> centerDtos = new List<CenterDto>();
-            var response = await _httpClient.GetAsync("Https://localhost:44359/api/Center/" + "GetCenterByOtherFilters?"+filters);
+            var request = QueryHelpers.AddQueryString("Center/GetCenterByOtherFilters", parameters);
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+            centerDtos = GetcenterDtoFromContent(content);
+            return centerDtos;
+        }
+
+        public async Task<List<CenterDto>> GetAllCenersByPage()
+        {
+            List<CenterDto> centerDtos = new List<CenterDto>();
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("PageNumber", "1");
+            parameters.Add("PageSize", "3");
+            string request = QueryHelpers.AddQueryString("Center/GetCentersByPage", parameters);
+            var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
             centerDtos = GetcenterDtoFromContent(content);
             return centerDtos;

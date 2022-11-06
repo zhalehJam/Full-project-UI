@@ -22,38 +22,38 @@
         <TableFilter>
             <td><input @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
             <td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-            @*<table class="input-group-text">
+            <table class="input-group-text">
                 <tbody>
 
                 <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
                 <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
 
                 </tbody>
-            </table>*@
+            </table>
         </TableFilter>
         <RowTemplate>
             <td hidden>@programsitem.Id</td>
             <td>@programsitem.ProgamName</td>
             <td>@programsitem.ProgramLink</td>
-           @* <td>
-                <TableLayout Items="@programsitem.Supporters" Context="supporters">
-                    <TableHeader>
-                        <th>PeronID</th>
-                        <th>name</th>
-                    </TableHeader>
-                    <RowTemplate>
-                        <td>@supporters.SupporterpersonID</td>
-                        <td>@supporters.SupporterName</td>
+            @* <td>
+            <TableLayout Items="@programsitem.Supporters" Context="supporters">
+            <TableHeader>
+            <th>PeronID</th>
+            <th>name</th>
+            </TableHeader>
+            <RowTemplate>
+            <td>@supporters.SupporterpersonID</td>
+            <td>@supporters.SupporterName</td>
 
-                    </RowTemplate>
-                </TableLayout>
-                @*<button type="button" class="btn btn-success w-auto" @onclick="GetSupporters">
-                <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: white; margin-inline: 10px;" />
-                supporters
-                </button>
+            </RowTemplate>
+            </TableLayout>
+            @*<button type="button" class="btn btn-success w-auto" @onclick="GetSupporters">
+            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: white; margin-inline: 10px;" />
+            supporters
+            </button>
             </td>*@
             <td>
-                <button @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters",Keys.Add("pSupporterDtos",@programsitem.Supporters)))">View supporters</button>
+                <button class="align-self-lg-end" @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters",Keys.Add("pSupporterDtos",@programsitem.Supporters)))">View supporters</button>
                 @*<button type="button" class="btn btn-default"  @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters"))"  data-toggle="modal" data-target="@programsitem.Supporters" data-id="@programsitem.Id" >Details</button>*@
             </td>
 
@@ -116,17 +116,6 @@
         parameters.Add("supporters", programSupporterDtos);
         FechSupporterInfo fechSupporterInfo = new FechSupporterInfo();
         return programSupporterDtos;
-
-        //Modal.Show<FechSupporterInfo>("", parameters, new ModalOptions()
-        //    {
-        //        //Animation = new ModalAnimation(ModalAnimationType.FadeInOut, 0.09),
-        //        //HideHeader = true,
-        //         Position = ModalPosition.TopCenter,
-        //        Class = "blazored-modal wide-modal rounded-modal"//,
-        //        //FocusFirstElement = false,
-        //        //ContentScrollable = true
-        //    });
-
     }
 
 }

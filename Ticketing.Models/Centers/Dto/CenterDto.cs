@@ -8,7 +8,7 @@ namespace Ticketing.Models.Centers.Dto
 {
     public class CenterDto
     {
-        public Guid Center { get; set; }
+        public Guid Id { get; set; }
         public string CenterName { get; set; }
         public int CenterID { get; set; }
         public IList<PartDto> parts { get; set; }

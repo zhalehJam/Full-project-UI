@@ -11,6 +11,7 @@ namespace Ticketing.Models.Tickets.Repository
     public interface ITicketRepository
     {
         Task<List<TicketDto>> GetAllTickets();
+        Task<List<TicketDto>> GetAllTickets(int page, int pageSize);
         Task<TicketDto> GetTicketById(Guid TickeId);
     }
 }

@@ -61,68 +61,94 @@
 @code {
     private List<TicketDto> ticketDtos = new List<TicketDto>();
     private List<TicketDto> ticketsByFilters = new List<TicketDto>();
-    private string Filter_PersonName;
-    private string Filter_PersonID;
-    private string Filter_PersonCenterName;
-    private string Filter_PersonPartName;
-    private string Filter_ProgramName;
-    private string Filter_ErrorTypeName;
-    private string Filter_ErrorDescription;
-    private string Filter_SolutionDescription;
-    private string Filter_TicketTypeName;
-    private string Filter_TicketTime;
-    private string Filter_TicketConditionTypeName;
-    private string Filter_SupporterPersonName;
-    private string Filter_SupporterPersonID;
+    private string Filter_PersonName = "";
+    private string Filter_PersonID = "";
+    private string Filter_PersonCenterName = "";
+    private string Filter_PersonPartName = "";
+    private string Filter_ProgramName = "";
+    private string Filter_ErrorTypeName = "";
+    private string Filter_ErrorDescription = "";
+    private string Filter_SolutionDescription = "";
+    private string Filter_TicketTypeName = "";
+    private string Filter_TicketTime = "";
+    private string Filter_TicketConditionTypeName = "";
+    private string Filter_SupporterPersonName = "";
+    private string Filter_SupporterPersonID = "";
 
 
 
     private async Task<List<TicketDto>> GetAllTickets()
     {
-        ticketDtos = await ticketRepository.GetAllTickets();
+        Filter_PersonName = "";
+        Filter_PersonID = "";
+        Filter_PersonCenterName = "";
+        Filter_PersonPartName = "";
+        Filter_ProgramName = "";
+        Filter_ErrorTypeName = "";
+        Filter_ErrorDescription = "";
+        Filter_SolutionDescription = "";
+        Filter_TicketTypeName = "";
+        Filter_TicketTime = "";
+        Filter_TicketConditionTypeName = "";
+        Filter_SupporterPersonName = "";
+        Filter_SupporterPersonID = "";
+        ticketDtos = await ticketRepository.GetAllTickets(1, 10);//GetAllTickets();
         ticketsByFilters = ticketDtos;
         return ticketDtos;
     }
     private async Task<List<TicketDto>> GetTicketsByFilters()
     {
         ticketsByFilters = ticketDtos;
-        if(!string.IsNullOrWhiteSpace(Filter_PersonName)) {
+        if(!string.IsNullOrWhiteSpace(Filter_PersonName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.PersonName.Contains(Filter_PersonName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_PersonID)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_PersonID))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.PersonID.ToString().Contains(Filter_PersonID)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_PersonCenterName)) {
+        if(!string.IsNullOrWhiteSpace(Filter_PersonCenterName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.PersonCenterName.Contains(Filter_PersonCenterName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_PersonPartName)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_PersonPartName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.PersonPartName.Contains(Filter_PersonPartName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_ProgramName)) {
+        if(!string.IsNullOrWhiteSpace(Filter_ProgramName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.ProgramName.Contains(Filter_ProgramName)).ToList();
-        } 
-        if(!string.IsNullOrWhiteSpace(Filter_ErrorTypeName)) {
+        }
+        if(!string.IsNullOrWhiteSpace(Filter_ErrorTypeName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.ErrorTypeName.Contains(Filter_ErrorTypeName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_ErrorDescription)) {
+        if(!string.IsNullOrWhiteSpace(Filter_ErrorDescription))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.ErrorDescription.Contains(Filter_ErrorDescription)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_SolutionDescription)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_SolutionDescription))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.SolutionDescription.Contains(Filter_SolutionDescription)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_TicketTypeName)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_TicketTypeName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.TicketTypeName.Contains(Filter_TicketTypeName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_TicketTime)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_TicketTime))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.TicketTime.ToString().Contains(Filter_TicketTime)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_TicketConditionTypeName)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_TicketConditionTypeName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.TicketConditionTypeName.Contains(Filter_TicketConditionTypeName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonName)) { 
+        if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonName))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.SupporterPersonName.Contains(Filter_SupporterPersonName)).ToList();
         }
-        if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonID)) {
+        if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonID))
+        {
             ticketsByFilters = ticketsByFilters.Where(n => n.SupporterPersonID.ToString().Contains(Filter_SupporterPersonID)).ToList();
         }
 

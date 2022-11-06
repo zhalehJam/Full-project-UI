@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Ticketing.Models.Programs.Dto;
 using Ticketing.Models.Tickets.Dto;
 using Ticketing.Models.Tickets.Repository;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace Ticketing.Repository.Tickets
 {
@@ -22,15 +23,22 @@ namespace Ticketing.Repository.Tickets
         public async Task<List<TicketDto>> GetAllTickets()
         {
             List<TicketDto> ticketList = new List<TicketDto>();
-            var response = await _httpClient.GetAsync("https://localhost:44359/api/Ticket/GetAllTickets");
+            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
             var content = await response.Content.ReadAsStringAsync();
             ticketList = GetTicketDtoFromContent(content);
             return ticketList;
         }
 
-        public Task<TicketDto> GetTicketById(Guid TickeId)
+        public async Task<TicketDto> GetTicketById(Guid TickeId)
         {
-            throw new NotImplementedException();
+            TicketDto? ticketList = new TicketDto();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("Id", TickeId.ToString()); 
+            string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
+            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            var content = await response.Content.ReadAsStringAsync();
+            ticketList = GetTicketDtoFromContent(content).FirstOrDefault();
+            return ticketList;
         }
         private static List<TicketDto> GetTicketDtoFromContent(string content)
         {
@@ -45,5 +53,17 @@ namespace Ticketing.Repository.Tickets
             return ticketDtos;
         }
 
+        public async Task<List<TicketDto>> GetAllTickets(int page, int pageSize)
+        {
+            List<TicketDto> ticketList = new List<TicketDto>();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("PageNumber", "1");
+            parameters.Add("PageSize", "10");
+            string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
+            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            var content = await response.Content.ReadAsStringAsync();
+            ticketList = GetTicketDtoFromContent(content);
+            return ticketList;
+        }
     }
 }

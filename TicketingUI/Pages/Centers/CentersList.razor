@@ -1,4 +1,5 @@
 ﻿@page "/CentersList"
+@using PagedList
 @using Ticketing.Models.Centers.Dto
 @using Ticketing.Models.Centers.Repository
 @using Ticketing.Repository.Centers
@@ -9,77 +10,7 @@
 <PageTitle>Centers</PageTitle>
 <h3>Centers</h3>
 <button class="btn btn-primary" @onclick="setlist">GetAllCenters</button>
-@*<p role="status">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>CenterName</th>
-                <th>CenterID</th>
-                <th>
-                    Parts
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <input @bind="@centerNamefilter" @oninput="@((e) => { centerNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
-                </td>
-                <td>
-                    <input @bind="@centerIDfilter" @oninput="@((e) => { centerIDfilter=Convert.ToString(e.Value); GetcenterByFilters();})" />
-                </td>
-                <td>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>
-                                    <input @bind="@partNamefilter" @oninput="@((e) => { partNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
-                                </td>
-                                <td>
-                                    <input @bind="@partIDfilter" @oninput="@((e) => { partIDfilter=Convert.ToString(e.Value.ToString()); GetcenterByFilters();})" />
-                                </td>
-                            </tr>
-                        </thead>
-                    </table>
-                </td>
 
-            </tr>
-        </thead>
-        <tbody>
-
-            @if(centerbyfilters.Count() != 0)
-            {
-                @foreach(var center in centerbyfilters)
-                {
-                    <tr>
-                        <td>@center.CenterName</td>
-                        <td>@center.CenterID</td>
-                        <td>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>PartName</th>
-                                        <th>PartID</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach(var part in center.parts)
-                                    {
-                                        <tr>
-                                            <td>@part.PartName</td>
-                                            <td>@part.PartID</td>
-                                        </tr>
-                                    }
-                                </tbody>
-
-                            </table>
-                        </td>
-
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
-</p>
-*@
 <TableLayout Items="@centerbyfilters" Context="centeritem">
     <TableHeader>
         @*<tr>*@
@@ -99,7 +30,7 @@
         <td>
             <input @bind="@centerIDfilter" @oninput="@((e) => { centerIDfilter=Convert.ToString(e.Value); GetcenterByFilters();})" />
         </td>
-        <td> 
+        <td>
             <table class="input-group">
                 <tr>
                     <td>
@@ -115,7 +46,7 @@
 
     </TableFilter>
     <RowTemplate>
-        <td hidden>@centeritem.Center</td>
+        <td hidden>@centeritem.Id</td>
         <td>@centeritem.CenterName</td>
         <td>@centeritem.CenterID</td>
         <td>
@@ -141,8 +72,9 @@
 
 @code {
     private List<CenterDto> centerDtos = new List<CenterDto>();
+    private PagedList<CenterDto> pagedcenterDtos;
     List<CenterDto> centerbyfilters = new List<CenterDto>();
-    private bool showtable = false;
+ 
     private string centerNamefilter = "";
     private string centerIDfilter = "";
     private string partNamefilter = "";
@@ -152,11 +84,15 @@
 
     private async Task<List<CenterDto>> setlist()
     {
-        centerDtos = await CenterRepository.GetAllCenters();//GetCenterByFilters(centerNamefilter, centerIDfilter, partNamefilter, partIDfilter);
+        centerNamefilter = "";
+        centerIDfilter = "";
+        partNamefilter = "";
+        partIDfilter = "";
+        centerDtos = await CenterRepository.GetAllCenersByPage();
         centerbyfilters = centerDtos;
         return centerDtos;
     }
-    private async Task<List<CenterDto>> GetcenterByFilters()//string centerNamefilter, int centerIDfilter, string partNamefilter, int partIDfilter)
+    private async Task<List<CenterDto>> GetcenterByFilters()
     {
         centerbyfilters = centerDtos;
 
@@ -174,8 +110,7 @@
                 })
                     .ToList();
         if(!string.IsNullOrWhiteSpace(partIDfilter))
-            centerbyfilters = centerbyfilters.Where(c => c.parts.Where(p => p.PartID.ToString()
-                                                                                    .Contains(partIDfilter))
+            centerbyfilters = centerbyfilters.Where(c => c.parts.Where(p => p.PartID.ToString().Contains(partIDfilter))
                                                                 .ToList().Count() != 0)
                                              .ToList()
                                              .Select(n => new CenterDto()
