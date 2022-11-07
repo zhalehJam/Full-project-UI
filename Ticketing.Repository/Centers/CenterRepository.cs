@@ -73,12 +73,12 @@ namespace Ticketing.Repository.Centers
             return centerDtos;
         }
 
-        public async Task<List<CenterDto>> GetAllCenersByPage()
+        public async Task<List<CenterDto>> GetAllCenersByPage(string page,string pageSize)
         {
             List<CenterDto> centerDtos = new List<CenterDto>();
             Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("PageNumber", "1");
-            parameters.Add("PageSize", "3");
+            parameters.Add("PageNumber", page);
+            parameters.Add("PageSize", pageSize);
             string request = QueryHelpers.AddQueryString("Center/GetCentersByPage", parameters);
             var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();

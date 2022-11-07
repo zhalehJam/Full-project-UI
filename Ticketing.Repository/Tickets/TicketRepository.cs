@@ -53,12 +53,12 @@ namespace Ticketing.Repository.Tickets
             return ticketDtos;
         }
 
-        public async Task<List<TicketDto>> GetAllTickets(int page, int pageSize)
+        public async Task<List<TicketDto>> GetAllTickets(string page, string pageSize)
         {
             List<TicketDto> ticketList = new List<TicketDto>();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("PageNumber", "1");
-            parameters.Add("PageSize", "10");
+            parameters.Add("PageNumber", page);
+            parameters.Add("PageSize", pageSize);
             string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
             var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
             var content = await response.Content.ReadAsStringAsync();

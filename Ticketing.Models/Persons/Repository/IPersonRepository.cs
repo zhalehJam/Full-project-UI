@@ -10,7 +10,7 @@ namespace Ticketing.Models.Persons.Repository
     public interface IPersonRepository
     {
         Task<List<PersonDto>> GetAllPersons();
-        Task<List<PersonDto>> GetAllPersons(int page, int pageSize);
+        Task<List<PersonDto>> GetAllPersons(string page, string pageSize);
         Task<PersonDto> GetPersonById(Guid Id);
 
     }

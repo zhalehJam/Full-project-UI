@@ -4,9 +4,27 @@
 @using TicketingUI.Pages.Programs
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Welcome to Ticketing</h1>
 
-Welcome to your new app.
+@*<SurveyPrompt Title="How is Blazor working for you?" />*@
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<NavLink class="nav-link" href="CentersList">
+    <button class="alert-primary"> Open center list</button>
+</NavLink>
+
+<NavLink class="nav-link" href="PersonsList">
+    <button class="alert-primary"> Open Person list</button>
+
+</NavLink>
+
+<NavLink class="nav-link" href="ProgramsList">
+    <button class="alert-primary"> Open Programs list</button>
+
+</NavLink>
+
+<NavLink class="nav-link" href="TicketsList">
+    <button class="alert-primary"> Open Tickets list</button>
+
+</NavLink>
+
 

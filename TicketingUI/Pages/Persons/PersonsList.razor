@@ -47,6 +47,12 @@
         }
     </tbody>
 </table>
+<footer>
+    Page number:
+    <input @bind="@pageNumber" @oninput="((e)=>{pageNumber=e.Value.ToString(); GetPersonByFilters();})" size="3p" />
+    Page size
+    <input @bind="@pageSize" @oninput="((e)=>{pageSize=e.Value.ToString();GetPersonByFilters();})" size="3p" />
+</footer>
 
 @code {
     private List<PersonDto> personDtos = new List<PersonDto>();
@@ -54,21 +60,25 @@
     private string PersonNameFilter = "";
     private string PersonIDFilter = "";
     private string PersonPartNameFilter = "";
-    private string PersonCenterNameFilter = "";
+    private string PersonCenterNameFilter = ""; 
+    private string pageNumber = "1";
+    private string pageSize = "10";
 
     private async Task<List<PersonDto>> GetAllPersons()
     {
+        pageNumber = "1";
+        pageSize = "10";
         PersonNameFilter = "";
         PersonIDFilter = "";
         PersonPartNameFilter = "";
         PersonCenterNameFilter = "";
-        personDtos = await personRepository.GetAllPersons();
+        personDtos = await personRepository.GetAllPersons(pageNumber, pageSize);
         personListByFilter = personDtos;
         return personDtos;
     }
     private async Task<List<PersonDto>> GetPersonByFilters()
     {
-        personListByFilter = personDtos;
+        personListByFilter = await personRepository.GetAllPersons(pageNumber,pageSize);
         if(!string.IsNullOrWhiteSpace(PersonNameFilter))
             personListByFilter = personListByFilter.Where(n => n.PersonName.Contains(PersonNameFilter)).ToList();
         if(!string.IsNullOrWhiteSpace(PersonIDFilter))

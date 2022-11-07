@@ -1,0 +1,97 @@
+﻿@using Blazored.Modal
+@using Blazored.Modal.Services
+@using Ticketing.Models.Tickets.Dto
+
+<br>
+<table class="d-xxl-table-cell">
+    <thead style="align-items" >
+    <th align="center">
+        Program Name: @TicketDtos.ProgramName
+    </th> </thead>
+    <tbody>
+        <tr>
+            <td>
+                <b>PersonID: </b>
+                <br />
+                @TicketDtos.PersonID
+            </td>
+            <td>
+                <b>PersonName: </b>
+                <br />
+                @TicketDtos.PersonName
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>PartName: </b>
+                <br />
+                @TicketDtos.PersonPartName
+            </td>
+            <td>
+                <b>CenterName: </b>
+                <br />
+                @TicketDtos.PersonCenterName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ErrorType: </b>
+                <br />
+                @TicketDtos.ErrorTypeName
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <b>ErrorDesscription: </b>
+                <br />
+                @TicketDtos.ErrorDescription
+            </td>
+            <td>
+                <b>SolutionDescription: </b>
+                <br />
+                @TicketDtos.SolutionDescription
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>TicketType: </b>
+                <br />
+                @TicketDtos.TicketTypeName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>TicketDate: </b>
+                <br />
+                @TicketDtos.TicketTime
+            </td>
+            <td>
+                <b>TicketCondition:</b>
+                <br />
+                @TicketDtos.TicketConditionTypeName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>SupporterName</b>
+                <br />
+                @TicketDtos.SupporterPersonName
+            </td>
+            <td>
+                <b>SupporterPersonId</b>
+                <br />
+                @TicketDtos.SupporterPersonID
+            </td>
+        </tr>
+    </tbody>
+</table>
+@code {
+    [Parameter]
+    public TicketDto TicketDtos { get; set; }
+
+    [CascadingParameter] public IModalService Modal { get; set; }
+
+
+}

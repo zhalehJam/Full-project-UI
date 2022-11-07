@@ -1,5 +1,7 @@
 ﻿@page "/ticketsList"
 
+@using Blazored.Modal
+@using Blazored.Modal.Services
 @using Ticketing.Models.Tickets.Dto
 @using Ticketing.Models.Tickets.Repository
 @using TicketingUI.Shared.Component
@@ -7,58 +9,43 @@
 @inject ITicketRepository ticketRepository
 
 <button class="btn btn-primary" @onclick="GetAllTickets">Get All Tickets</button>
+<br />
+<br />
+ Searh:
+<input size="70" @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" />
 
 <TableLayout Items="@ticketsByFilters" Context="ticketitems">
     <TableHeader>
-        <th>PersonName</th>
-        <th>PersonID </th>
-        <th>CenterName </th>
-        <th>PartName </th>
-        <th>PrgramName </th>
-        <th>ErrorType </th>
-        <th>ErrorDesscription </th>
-        <th>SolutionDescription </th>
-        <th>TicketType </th>
-        <th>TicketDate </th>
-        <th>TicketCondition</th>
-        <th>SupporterName</th>
-        <th>SupporterPersonId</th>
-    </TableHeader>
-    <TableFilter>
-        <td><input @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_PersonID" @oninput="@((e) => { Filter_PersonID=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_PersonCenterName" @oninput="@((e) => { Filter_PersonCenterName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_PersonPartName" @oninput="@((e) => { Filter_PersonPartName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_ProgramName" @oninput="@((e) => { Filter_ProgramName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_ErrorTypeName" @oninput="@((e) => { Filter_ErrorTypeName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_ErrorDescription" @oninput="@((e) => { Filter_ErrorDescription=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_SolutionDescription" @oninput="@((e) => { Filter_SolutionDescription=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_TicketTypeName" @oninput="@((e) => { Filter_TicketTypeName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_TicketTime" @oninput="@((e) => { Filter_TicketTime=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_TicketConditionTypeName" @oninput="@((e) => { Filter_TicketConditionTypeName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_SupporterPersonName" @oninput="@((e) => { Filter_SupporterPersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
-        <td><input @bind="@Filter_SupporterPersonID" @oninput="@((e) => { Filter_SupporterPersonID=(string)e.Value.ToString(); GetTicketsByFilters();})" /></td>
 
-    </TableFilter>
+        <th>PersonName</th>
+        <th>CenterName </th>
+        <th>ProgramName </th>
+        <th>ErrorType </th>
+        <th>TicketType </th>
+        <th>TicketCondition</th>
+        <th>Details</th>
+    </TableHeader>
     <RowTemplate>
         <td>@ticketitems.PersonName</td>
-        <td>@ticketitems.PersonID</td>
         <td>@ticketitems.PersonCenterName</td>
-        <td>@ticketitems.PersonPartName</td>
         <td>@ticketitems.ProgramName</td>
         <td>@ticketitems.ErrorTypeName</td>
-        <td>@ticketitems.ErrorDescription</td>
-        <td>@ticketitems.SolutionDescription</td>
         <td>@ticketitems.TicketTypeName</td>
-        <td>@ticketitems.TicketTime</td>
         <td>@ticketitems.TicketConditionTypeName</td>
-        <td>@ticketitems.SupporterPersonName</td>
-        <td>@ticketitems.SupporterPersonID</td>
+        <button class="align-self-lg-end" @onclick="@(() => Modal.Show<TicketDetail>("Ticket Detail",Keys.Add("TicketDtos",@ticketitems)))">Detail</button>
 
     </RowTemplate>
 
 </TableLayout>
+Page Number
+<input @bind="@PageNumber" @oninput="@((e)=>{PageNumber=e.Value.ToString();})" size="5p" />
+Page Size
+<input @bind="@PageSize" @oninput="@((e)=>{PageSize=e.Value.ToString();})" size="5p" />
+
 @code {
+    [CascadingParameter] public IModalService Modal { get; set; }
+    public ModalParameters Keys = new ModalParameters();
+
     private List<TicketDto> ticketDtos = new List<TicketDto>();
     private List<TicketDto> ticketsByFilters = new List<TicketDto>();
     private string Filter_PersonName = "";
@@ -74,6 +61,8 @@
     private string Filter_TicketConditionTypeName = "";
     private string Filter_SupporterPersonName = "";
     private string Filter_SupporterPersonID = "";
+    private string PageSize = "10";
+    private string PageNumber = "1";
 
 
 
@@ -92,67 +81,74 @@
         Filter_TicketConditionTypeName = "";
         Filter_SupporterPersonName = "";
         Filter_SupporterPersonID = "";
-        ticketDtos = await ticketRepository.GetAllTickets(1, 10);//GetAllTickets();
+        PageSize = "10";
+        PageNumber = "1";
+        ticketDtos = await ticketRepository.GetAllTickets(PageNumber, PageSize);//GetAllTickets();
         ticketsByFilters = ticketDtos;
         return ticketDtos;
     }
     private async Task<List<TicketDto>> GetTicketsByFilters()
     {
-        ticketsByFilters = ticketDtos;
+        ticketsByFilters = await ticketRepository.GetAllTickets(PageNumber, PageSize);
         if(!string.IsNullOrWhiteSpace(Filter_PersonName))
         {
-            ticketsByFilters = ticketsByFilters.Where(n => n.PersonName.Contains(Filter_PersonName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_PersonID))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.PersonID.ToString().Contains(Filter_PersonID)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_PersonCenterName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.PersonCenterName.Contains(Filter_PersonCenterName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_PersonPartName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.PersonPartName.Contains(Filter_PersonPartName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_ProgramName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.ProgramName.Contains(Filter_ProgramName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_ErrorTypeName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.ErrorTypeName.Contains(Filter_ErrorTypeName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_ErrorDescription))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.ErrorDescription.Contains(Filter_ErrorDescription)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_SolutionDescription))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.SolutionDescription.Contains(Filter_SolutionDescription)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_TicketTypeName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.TicketTypeName.Contains(Filter_TicketTypeName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_TicketTime))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.TicketTime.ToString().Contains(Filter_TicketTime)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_TicketConditionTypeName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.TicketConditionTypeName.Contains(Filter_TicketConditionTypeName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.SupporterPersonName.Contains(Filter_SupporterPersonName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonID))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => n.SupporterPersonID.ToString().Contains(Filter_SupporterPersonID)).ToList();
-        }
+            ticketsByFilters = ticketsByFilters.Where(n => (n.PersonID.ToString() + " "
+            + n.PersonName + " " + n.PersonCenterName + " " + n.PersonPartName + " " + n.ProgramName + " "
+            + n.ErrorTypeName + " " + n.ErrorDescription + " " + n.SolutionDescription + " "
+            + n.TicketConditionTypeName + " " + n.TicketTime.ToString() + " " + n.TicketTypeName + " "
+            + n.SupporterPersonID.ToString() + " " + n.SupporterPersonName
+            ).Contains(Filter_PersonName)).ToList();
 
-
+            // ticketsByFilters = ticketsByFilters.Where(n => n.PersonName.Contains(Filter_PersonName)).ToList();
+        }
+        //if(!string.IsNullOrWhiteSpace(Filter_PersonID))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.PersonID.ToString().Contains(Filter_PersonID)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_PersonCenterName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.PersonCenterName.Contains(Filter_PersonCenterName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_PersonPartName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.PersonPartName.Contains(Filter_PersonPartName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_ProgramName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.ProgramName.Contains(Filter_ProgramName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_ErrorTypeName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.ErrorTypeName.Contains(Filter_ErrorTypeName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_ErrorDescription))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.ErrorDescription.Contains(Filter_ErrorDescription)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_SolutionDescription))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.SolutionDescription.Contains(Filter_SolutionDescription)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_TicketTypeName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.TicketTypeName.Contains(Filter_TicketTypeName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_TicketTime))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.TicketTime.ToString().Contains(Filter_TicketTime)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_TicketConditionTypeName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.TicketConditionTypeName.Contains(Filter_TicketConditionTypeName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonName))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.SupporterPersonName.Contains(Filter_SupporterPersonName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(Filter_SupporterPersonID))
+        //{
+        //    ticketsByFilters = ticketsByFilters.Where(n => n.SupporterPersonID.ToString().Contains(Filter_SupporterPersonID)).ToList();
+        //}
         return ticketsByFilters;
     }
 

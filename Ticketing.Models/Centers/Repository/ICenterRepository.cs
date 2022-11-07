@@ -12,6 +12,6 @@ namespace Ticketing.Models.Centers.Repository
     {
         Task<List<CenterDto>> GetAllCenters();
         Task<List<CenterDto>> GetCenterByFilters(Guid Id,string centerNamefilter = "", int centerIDfilter = 0, string partNamefilter = "", int partIDfilter = 0);
-        Task<List<CenterDto>> GetAllCenersByPage();
+        Task<List<CenterDto>> GetAllCenersByPage(string page,string pageSize);
     }
 }

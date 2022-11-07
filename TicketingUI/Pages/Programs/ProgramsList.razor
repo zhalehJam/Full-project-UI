@@ -11,6 +11,11 @@
 @*@inject IModalService modal*@
 
 <button class="btn btn-primary" @onclick="GetAllPrograms">Get All Programs</button>
+<br />
+<br />
+Serach :
+<input size="80p" @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" />
+
 <p>
     <TableLayout Items="@programbyfilters" Context="programsitem">
         <TableHeader>
@@ -18,18 +23,18 @@
             <th>Program Name</th>
             <th>ProgramLink</th>
             <th>Supporters</th>
+
         </TableHeader>
         <TableFilter>
-            <td><input @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-            <td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            @*<td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
             <table class="input-group-text">
-                <tbody>
+            <tbody>
 
-                <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-                <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
 
-                </tbody>
-            </table>
+            </tbody>
+            </table>*@
         </TableFilter>
         <RowTemplate>
             <td hidden>@programsitem.Id</td>
@@ -63,8 +68,8 @@
 
 @code {
     [CascadingParameter] public IModalService Modal { get; set; }
-    bool isOpened = false;
-    public ModalParameters Keys = new ModalParameters().Add("number", 1);
+
+    public ModalParameters Keys = new ModalParameters() ;
 
     private List<ProgramDto> programDtos = new List<ProgramDto>();
     private List<ProgramDto> programbyfilters = new List<ProgramDto>();
@@ -73,6 +78,8 @@
     private string filter_programName = "";
     private string filter_supporterID = "";
     private string filter_SupporerName = "";
+    private string filter_Supporerinfo = "";
+
     private string filter_programLink = "";
     private async Task<List<ProgramDto>> GetAllPrograms()
     {
@@ -80,6 +87,7 @@
         filter_supporterID = "";
         filter_SupporerName = "";
         filter_programLink = "";
+        filter_Supporerinfo = "";
         programDtos = await programRepository.GetAllProgram();
         programbyfilters = programDtos;
         return programDtos;
@@ -89,23 +97,28 @@
     private async Task<List<ProgramDto>> GetProgramByFilters()
     {
         programbyfilters = programDtos;
-        if(!string.IsNullOrWhiteSpace(filter_programName))
-        {
-            programbyfilters = programbyfilters.Where(n => n.ProgamName.Contains(filter_programName)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(filter_programLink))
-        {
-            programbyfilters = programbyfilters.Where(n => n.ProgramLink.Contains(filter_programLink)).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(filter_SupporerName))
-        {
-            programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterName.Contains(filter_SupporerName))).ToList();
-        }
-        if(!string.IsNullOrWhiteSpace(filter_supporterID))
-        {
-            programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterpersonID.ToString().Contains(filter_supporterID))).ToList();
 
-        }
+        if(!string.IsNullOrWhiteSpace(filter_programName))
+            programbyfilters = programbyfilters.Where(n => (((n.ProgramLink + " " + n.ProgamName).Contains(filter_programName)) || (n.Supporters.Any(m => (m.SupporterpersonID.ToString() + " " + m.SupporterName).Contains(filter_programName))))).ToList();
+
+
+        //{
+        //    programbyfilters = programbyfilters.Where(n => n.ProgamName.Contains(filter_programName)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(filter_programLink))
+        //{
+        //    programbyfilters = programbyfilters.Where(n => n.ProgramLink.Contains(filter_programLink)).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(filter_SupporerName))
+        //{
+        //    programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterName.Contains(filter_SupporerName))).ToList();
+        //}
+        //if(!string.IsNullOrWhiteSpace(filter_supporterID))
+        //{
+        //    programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterpersonID.ToString().Contains(filter_supporterID))).ToList();
+        //}
+        //if (string.IsNullOrWhiteSpace(filter_Supporerinfo))
+        //    programbyfilters = programbyfilters.Where(n => n.Supporters.Any(m => (m.SupporterName + m.SupporterpersonID.ToString()).Contains(filter_SupporerName))).ToList();
         return programbyfilters;
     }
 

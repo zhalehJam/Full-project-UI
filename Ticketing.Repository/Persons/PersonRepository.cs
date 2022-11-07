@@ -56,12 +56,12 @@ namespace Ticketing.Repository.Persons
             return personDtos;
         }
 
-        public async Task<List<PersonDto>> GetAllPersons(int page, int pageSize)
+        public async Task<List<PersonDto>> GetAllPersons(string page, string pageSize)
         {
             List<PersonDto> personDtos = new List<PersonDto>();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("PageNumber", "1");
-            parameters.Add("PageSize", "10");
+            parameters.Add("PageNumber", page);
+            parameters.Add("PageSize", pageSize);
             string request = QueryHelpers.AddQueryString("Person/GetAllPersonsByPage", parameters);
             var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();

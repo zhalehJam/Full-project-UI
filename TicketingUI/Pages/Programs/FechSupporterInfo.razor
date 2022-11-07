@@ -16,10 +16,7 @@
 @code {
     [Parameter]
     public List<ProgramSupporterDto> pSupporterDtos { get; set; }
-    [Parameter]
-    public int number { get; set; }
-    [Parameter]
-    public ModalParameters prm { get; set; }
+      
     [CascadingParameter] public IModalService Modal { get; set; }
 
 
