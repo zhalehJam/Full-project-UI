@@ -1,24 +1,212 @@
 ﻿@page "/FechSupporterInfo"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Ticketing.Models.Persons.Dto
+@using Ticketing.Models.Persons.Repository
+@using Ticketing.Models.Programs.Command
 @using Ticketing.Models.Programs.Dto
-@using TicketingUI.Shared.Component 
-<TableLayout Items="@pSupporterDtos" Context="lists">
-    <TableHeader>
-        <th>Name</th>
-        <th>PersonID</th>
-    </TableHeader>
-    <RowTemplate>
-        <td>@lists.SupporterName</td>
-        <td>@lists.SupporterpersonID</td>
-    </RowTemplate>
-</TableLayout>
+@using Ticketing.Models.Programs.Repository
+@using TicketingUI.Shared.Component
+
+@inject IProgramRepository programRepository
+@inject IPersonRepository personRepository
+
+<div dir="rtl">
+    <table>
+        <tbody>
+            <tr>
+                <td>نام برنامه</td>
+                <td>لینک برنامه</td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>
+                    @if(isNew)
+                    {
+                        <input   @bind="@programDto.ProgamName" @oninput=@((e)=> programDto.ProgamName=Convert.ToString(e.Value)) />
+                    }
+                    @if(!isNew)
+                    {
+                        <input disabled="false" @bind="@programDto.ProgamName" @oninput=@((e)=> programDto.ProgamName=Convert.ToString(e.Value)) />
+                    }
+                </td>
+                <td>
+                    <input @bind="@programDto.ProgramLink" @oninput=@((e)=> programDto.ProgramLink=Convert.ToString(e.Value)) />
+                </td>
+                <td>
+                    <button class="btn-dark alert-success" @onclick="(()=>Save())">ذخیره</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <input bind="@personDto.PersonName" @oninput=@((e)=> searchString=Convert.ToString(e.Value)) />
+    <button class="btn-dark alert-success" @onclick="(()=>SearchSupporterInfo())">جستجو</button>
+    <TableLayout Items="@programDto.Supporters.ToList()" Context="lists">
+        <TableHeader>
+            <th>نام پرسنل</th>
+            <th>کد پرسنلی</th>
+        </TableHeader>
+        <TableFilter>
+
+            <td>
+                <label>@programSupporterDto.SupporterName</label>
+            </td>
+            <td>
+                <label>@programSupporterDto.SupporterpersonID</label>
+            </td>
+            <td>
+                <button class="btn-dark alert-success" @onclick="(()=>AddSupporter())">ثبت</button>
+            </td>
+        </TableFilter>
+        <RowTemplate>
+            <td>@lists.SupporterName</td>
+            <td>@lists.SupporterpersonID</td>
+            <td>
+                <button class="btn-dark alert-danger" @onclick="(()=>{programSupporterDto=lists;RemoveSupporter();})">حذف</button>
+            </td>
+        </RowTemplate>
+    </TableLayout>
+</div>
 @code {
     [Parameter]
-    public List<ProgramSupporterDto> pSupporterDtos { get; set; }
-      
+    public ProgramDto programDto { get; set; }
+    public ProgramSupporterDto programSupporterDto = new ProgramSupporterDto();
+    public PersonDto personDto = new PersonDto();
+    [Parameter]
+    public bool isNew { get; set; }
     [CascadingParameter] public IModalService Modal { get; set; }
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+    public ModalParameters Keys = new ModalParameters();
+    private string searchString = "";
+
+    private async void Save()
+    {
+        if(isNew)
+            CreateNewProgram();
+        else
+            UpdateProgramLink();
+    }
+
+    private async void CreateNewProgram()
+    {
+        string resultMessage = "";
+        try
+        {
+            CreateProgramCommand createProgramCommand = new CreateProgramCommand()
+                {
+                    ProgramLink = programDto.ProgramLink,
+                    ProgramName = programDto.ProgamName
+                };
+            programRepository.CreateProgram(createProgramCommand);
+            await ModalInstance.CloseAsync(ModalResult.Ok(""));
+            resultMessage = "برنامه مورد نظر با موفقیت ثبت شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            Keys.Add("Message", resultMessage);
+            Keys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", Keys);
+        }
+    }
+
+    private async void UpdateProgramLink()
+    {
+        string resultMessage = "";
+        try
+        {
+            UpdateProgramLinkCommand updateProgramLinkCommand = new UpdateProgramLinkCommand()
+                {
+                    Id = programDto.Id,
+                    ProgramLink = programDto.ProgramLink
+                };
+            programRepository.UpdateProgramLink(updateProgramLinkCommand);
+            await ModalInstance.CloseAsync(ModalResult.Ok(""));
+            resultMessage = "برنامه مورد نظر با موفقیت ویرایش شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            Keys.Add("Message", resultMessage);
+            Keys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", Keys);
+        }
+    }
+
+    private async void AddSupporter()
+    {
+        string resultMessage = "";
+        try
+        {
+            AddProgramSupporterCommand addProgramSupporterCommand = new AddProgramSupporterCommand()
+                {
+                    ProgramId = programDto.Id,
+                    SupporterID = programSupporterDto.SupporterpersonID
+                };
+            await programRepository.AddProgramSupporter(addProgramSupporterCommand);
+            programDto.Supporters.Add(programSupporterDto);
+            programSupporterDto = new ProgramSupporterDto();
+            StateHasChanged();
+            resultMessage = "پشتیبان مورد نظر با موفقیت ثبت شد";
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            Keys.Add("Message", resultMessage);
+            Keys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", Keys);
+        }
+    }
+
+    private async void RemoveSupporter()
+    {
+        string resultMessage = "";
+        try
+        {
+            DeleteProgramSupporterCommand deleteProgramSupporterCommand = new DeleteProgramSupporterCommand()
+                {
+                    ProgramId = programDto.Id,
+                    SupporterID = programSupporterDto.SupporterpersonID
+                };
+            await programRepository.DeletePorogramSupporter(deleteProgramSupporterCommand);
+            programDto.Supporters.Remove(programSupporterDto);
+            programSupporterDto = new ProgramSupporterDto();
+            resultMessage = "پشتیبان مورد نظر با موفقیت حذف شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            Keys.Add("Message", resultMessage);
+            Keys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", Keys);
+        }
+    }
 
 
-
+    private async void SearchSupporterInfo()
+    {
+        // TODO : Select bettwen list of supporters
+        var persons = await personRepository.GetAllPersons();
+        persons = persons.Where(n => n.PersonID.ToString().Equals(searchString) || n.PersonName.Contains(searchString)).ToList();
+        personDto = persons.FirstOrDefault();
+        programSupporterDto.SupporterName = personDto.PersonName;
+        programSupporterDto.SupporterpersonID = personDto.PersonID;
+        StateHasChanged();
+    }
 }

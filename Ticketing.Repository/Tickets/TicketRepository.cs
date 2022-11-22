@@ -9,6 +9,16 @@ using Ticketing.Models.Programs.Dto;
 using Ticketing.Models.Tickets.Dto;
 using Ticketing.Models.Tickets.Repository;
 using Microsoft.AspNetCore.WebUtilities;
+using System.Runtime.Serialization;
+using System.Net.Http;
+using System.Net;
+using System.Net.Http.Json;
+using System.ComponentModel;
+using System.Reflection.Metadata;
+using System.Collections.Specialized;
+using Ticketing.Models.Tickets.Command;
+using Ticketing.Models.Shared;
+using Ticketing.Models.Programs.Command;
 
 namespace Ticketing.Repository.Tickets
 {
@@ -33,7 +43,7 @@ namespace Ticketing.Repository.Tickets
         {
             TicketDto? ticketList = new TicketDto();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Id", TickeId.ToString()); 
+            parameters.Add("Id", TickeId.ToString());
             string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
             var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
             var content = await response.Content.ReadAsStringAsync();
@@ -65,5 +75,39 @@ namespace Ticketing.Repository.Tickets
             ticketList = GetTicketDtoFromContent(content);
             return ticketList;
         }
+
+        public async Task CreateNewTicket(CreateTicketCommand createTicketCommand)
+        {
+            await SendRequest<CreateTicketCommand>(createTicketCommand, HttpMethod.Post, "Ticket");
+        }
+
+        public async Task UpdateTicket(UpdateTicketCommand updateTicketCommand)
+        {
+            await SendRequest<UpdateTicketCommand>(updateTicketCommand, HttpMethod.Put, "Ticket");
+
+        }
+
+        public async Task DeleteTicket(DeleteTicketCommand deleteTicketCommand)
+        {
+            await SendRequest<DeleteTicketCommand>(deleteTicketCommand, HttpMethod.Delete, "Ticket");
+        }
+        private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
+        {
+            var postRequest = new HttpRequestMessage(httpMethod, uri)
+            {
+                Content = JsonContent.Create(command)
+            };
+            var postResponse = await _httpClient.SendAsync(postRequest);
+            if(!postResponse.IsSuccessStatusCode)
+            {
+                var error = await postResponse.Content.ReadAsStringAsync();
+                string errormessage = error.Split("\r")[0].Split(":")[1];
+                if(postResponse.StatusCode == HttpStatusCode.InternalServerError)
+                {
+                    throw new Exception(errormessage);
+                }
+            }
+        }
     }
 }
+

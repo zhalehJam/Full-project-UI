@@ -18,7 +18,7 @@ namespace Ticketing.Models.Tickets.Dto
         public string PersonCenterName { get; set; }
         public Guid ProgramId { get; set; }
         public string ProgramName { get; set; }
-        public int ErrorType { get; set; }
+        public int ErrorTypeid { get; set; }
         public string ErrorTypeName { get; set; }
         public int Typeid { get; set; }
         public string TicketTypeName { get; set; }

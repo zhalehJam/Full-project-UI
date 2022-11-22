@@ -10,6 +10,10 @@ using Ticketing.Models.Centers.Dto;
 using Ticketing.Models.Persons.Dto;
 using Ticketing.Models.Persons.Repository;
 using Microsoft.AspNetCore.WebUtilities;
+using Ticketing.Models.Persons.Command;
+using System.Net.Http.Json;
+using Ticketing.Models.Centers.Command;
+using System.Net;
 
 namespace Ticketing.Repository.Persons
 {
@@ -34,7 +38,7 @@ namespace Ticketing.Repository.Persons
         {
             PersonDto? personDtos = new PersonDto();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Id", Id.ToString()); 
+            parameters.Add("Id", Id.ToString());
             string request = QueryHelpers.AddQueryString("Person/GetPersonById", parameters);
             var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
@@ -68,6 +72,38 @@ namespace Ticketing.Repository.Persons
             personDtos = GetPersonDtoFromContent(content);
 
             return personDtos;
+        }
+
+        public async Task CreatePerson(CreatePersonCommand createPersonCommand)
+        {
+            await SendRequest<CreatePersonCommand>(createPersonCommand, HttpMethod.Post, "Person/CreatePerson");
+        }
+
+        public async Task UpdatePerson(UpdatePersonCommand updatePersonCommand)
+        {
+            await SendRequest<UpdatePersonCommand>(updatePersonCommand, HttpMethod.Put, "Person/UpdatePerson");
+        }
+
+        public async Task DeletePerson(DeletePersonCommand deletePersonCommand)
+        {
+            await SendRequest<DeletePersonCommand>(deletePersonCommand, HttpMethod.Delete, "Person/DeletePerson");
+        }
+        private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
+        {
+            var postRequest = new HttpRequestMessage(httpMethod, uri)
+            {
+                Content = JsonContent.Create(command)
+            };
+            var postResponse = await _httpClient.SendAsync(postRequest);
+            if(!postResponse.IsSuccessStatusCode)
+            {
+                var error = await postResponse.Content.ReadAsStringAsync();
+                string errormessage = error.Split("\r")[0].Split(":")[1];
+                if(postResponse.StatusCode == HttpStatusCode.InternalServerError)
+                {
+                    throw new Exception(errormessage);
+                }
+            }
         }
     }
 }

@@ -1,97 +1,244 @@
 ﻿@using Blazored.Modal
 @using Blazored.Modal.Services
+@using Ticketing.Cilient.Contracts.Ticket
+@using Ticketing.Models.Tickets.Command
 @using Ticketing.Models.Tickets.Dto
+@using Ticketing.Models.Tickets.Repository
+@using TicketingUI.Shared.Component
 
-<br>
-<table class="d-xxl-table-cell">
-    <thead style="align-items" >
-    <th align="center">
-        Program Name: @TicketDtos.ProgramName
-    </th> </thead>
-    <tbody>
-        <tr>
-            <td>
-                <b>PersonID: </b>
-                <br />
-                @TicketDtos.PersonID
-            </td>
-            <td>
-                <b>PersonName: </b>
-                <br />
-                @TicketDtos.PersonName
-            </td>
-        </tr>
+@inject IJSRuntime JsRuntime
+@inject ITicketRepository ticketRepository
 
-        <tr>
-            <td>
-                <b>PartName: </b>
-                <br />
-                @TicketDtos.PersonPartName
-            </td>
-            <td>
-                <b>CenterName: </b>
-                <br />
-                @TicketDtos.PersonCenterName
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>ErrorType: </b>
-                <br />
-                @TicketDtos.ErrorTypeName
-            </td>
+@*<button class="btn btn-primary" @onclick="@ModalShow">Show Dialog!</button>*@
+@if(showModal)
+{
 
-        </tr>
-        <tr>
-            <td>
-                <b>ErrorDesscription: </b>
-                <br />
-                @TicketDtos.ErrorDescription
-            </td>
-            <td>
-                <b>SolutionDescription: </b>
-                <br />
-                @TicketDtos.SolutionDescription
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>TicketType: </b>
-                <br />
-                @TicketDtos.TicketTypeName
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>TicketDate: </b>
-                <br />
-                @TicketDtos.TicketTime
-            </td>
-            <td>
-                <b>TicketCondition:</b>
-                <br />
-                @TicketDtos.TicketConditionTypeName
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>SupporterName</b>
-                <br />
-                @TicketDtos.SupporterPersonName
-            </td>
-            <td>
-                <b>SupporterPersonId</b>
-                <br />
-                @TicketDtos.SupporterPersonID
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+    @*
+    <div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+*@
+
+
+    @* <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Confirm action</h4>
+            <button type="button" class="close" @onclick="@ModalCancel">&times;</button>
+            </div>
+            *@
+    <!-- Modal body -->
+    @*        <div class="modal-body">*@
+
+    <table class="d-xxl-table-cell">
+        <th align="center">
+            Program Name: @TicketDtos.ProgramName
+        </th>
+        <tbody>
+            <tr>
+                <td>
+                    <b>PersonID: </b>
+                    <br />
+                    <input @bind="@TicketDtos.PersonID" @oninput="((e)=>TicketDtos.PersonID=Convert.ToInt32(e.Value))" />
+                </td>
+                <td>
+                    <b>PersonName: </b>
+                    <br />
+                    <input @bind="@TicketDtos.PersonName" @oninput="((e)=>TicketDtos.PersonName=Convert.ToString(e.Value))" />
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>PartName: </b>
+                    <br />
+                    <input @bind="@TicketDtos.PersonPartName" @oninput="((e)=>TicketDtos.PersonPartName=Convert.ToString(e.Value))" />
+
+                </td>
+                <td>
+                    <b>CenterName: </b>
+                    <br />
+                    <input @bind="@TicketDtos.PersonCenterName" @oninput="((e)=>TicketDtos.PersonCenterName=Convert.ToString(e.Value))" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ErrorType: </b>
+                    <br />
+                    <input @bind="@TicketDtos.ErrorTypeName" @oninput="((e)=>TicketDtos.ErrorTypeName=Convert.ToString(e.Value))" />
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>ErrorDesscription: </b>
+                    <br />
+                    <input @bind="@TicketDtos.ErrorDescription" @oninput="((e)=>TicketDtos.ErrorDescription=Convert.ToString(e.Value))" />
+
+                </td>
+                <td>
+                    <b>SolutionDescription: </b>
+                    <br />
+                    <input @bind="@TicketDtos.SolutionDescription" @oninput="((e)=>TicketDtos.SolutionDescription=Convert.ToString(e.Value))" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>TicketType: </b>
+                    <br />
+                    <input @bind="@TicketDtos.TicketTypeName" @oninput="((e)=>TicketDtos.TicketTypeName=Convert.ToString(e.Value))" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>TicketDate: </b>
+                    <br />
+                    <input @bind="@TicketDtos.TicketTime" @oninput="((e)=>TicketDtos.TicketTime=Convert.ToDateTime(e.Value))" />
+
+                </td>
+                <td>
+                    <b>TicketCondition:</b>
+                    <br />
+                    <input @bind="@TicketDtos.TicketConditionTypeName" @oninput="((e)=>TicketDtos.TicketConditionTypeName=Convert.ToString(e.Value))" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>SupporterName</b>
+                    <br />
+                    <input @bind="@TicketDtos.SupporterPersonName" @oninput="((e)=>TicketDtos.SupporterPersonName=Convert.ToString(e.Value))" />
+
+                </td>
+                <td>
+                    <b>SupporterPersonId</b>
+                    <br />
+                    <input @bind="@TicketDtos.SupporterPersonID" @oninput="((e)=>TicketDtos.SupporterPersonID=Convert.ToInt32(e.Value))" />
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @* </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">*@
+    <button class=" btn btn-success" @onclick="(()=>SaveInfo()
+
+    )">
+        ذخیره
+    </button>
+    @*<button type="button" class="btn" @onclick="@ModalCancel">Cancel</button>
+                    <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+}
+<hr />
 @code {
     [Parameter]
     public TicketDto TicketDtos { get; set; }
-
+    [Parameter]
+    public string mode { get; set; }
     [CascadingParameter] public IModalService Modal { get; set; }
+    [Parameter] public bool show { get; set; }
+    private bool CanEdit = true;
+    [Parameter]
+    public bool showModal { get; set; }
+    [CascadingParameter] public BlazoredModalInstance blazoredModalInstance { get; set; }
+    public ModalParameters Keys = new ModalParameters();
 
 
+    public TicketDetail()
+    {
+        showModal = true;
+        mode = "Create";
+    }
+    void ModalShow() => showModal = true;
+    void ModalCancel() => showModal = false;
+    void ModalOk()
+    {
+        Console.WriteLine("Modal ok");
+        showModal = false;
+    }
+    private async void SaveInfo()
+    {
+        if(mode == "Create")
+            CreateNewTicket();
+        else if(mode == "Edit")
+            Editicket();
+        await blazoredModalInstance.CloseAsync(ModalResult.Ok(""));
+    }
+    private async void CreateNewTicket()
+    {
+        string resultMessage = "";
+        try
+        {
+            CreateTicketCommand createTicketCommand = new CreateTicketCommand()
+                {
+                    TicketTime = TicketDtos.TicketTime,
+                    TicketCondition = (TicketCondition)TicketDtos.TicketConditionid,
+                    ErrorDiscription = TicketDtos.ErrorDescription,
+                    ErrorType = (ErrorType)TicketDtos.ErrorTypeid,
+                    SolutionDiscription = TicketDtos.SolutionDescription,
+                    SupporterPersonID = TicketDtos.SupporterPersonID,
+                    ProgramId = TicketDtos.ProgramId,
+                    PersonID = TicketDtos.PersonID,
+                    Type = (TicketType)TicketDtos.Typeid
+                };
+            ticketRepository.CreateNewTicket(createTicketCommand);
+            resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            Keys.Add("Message", resultMessage);
+            Keys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", Keys);
+        }
+    }
+    private async void Editicket()
+    {
+        string resultMessage = "";
+        try
+        {
+            UpdateTicketCommand updateTicketCommand = new UpdateTicketCommand()
+                {
+                    Id = TicketDtos.Id,
+                    TicketTime = TicketDtos.TicketTime,
+                    TicketCondition = (TicketCondition)TicketDtos.TicketConditionid,
+                    ErrorDiscription = TicketDtos.ErrorDescription,
+                    ErrorType = (ErrorType)TicketDtos.ErrorTypeid,
+                    SolutionDiscription = TicketDtos.SolutionDescription,
+                    ProgramId = TicketDtos.ProgramId,
+                    PersonID = TicketDtos.PersonID,
+                    Type = (TicketType)TicketDtos.Typeid,
+                    EditorPersonID = 970086
+                };
+            ticketRepository.UpdateTicket(updateTicketCommand);
+
+            resultMessage = "تیکت مورد نظر با موفقیت ویرایش شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            Keys.Add("Message", resultMessage);
+            Keys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", Keys);
+        }
+    }
 }

@@ -12,6 +12,10 @@ using Ticketing.Models.Programs.Dto;
 using Ticketing.Models.Programs.Repository;
 using Microsoft.AspNetCore.WebUtilities;
 using Ticketing.Models.Persons.Dto;
+using Ticketing.Models.Programs.Command;
+using Ticketing.Models.Centers.Command;
+using System.Net;
+using Ticketing.Models.Persons.Command;
 
 namespace Ticketing.Repository.Programs
 {
@@ -27,7 +31,7 @@ namespace Ticketing.Repository.Programs
         {
             var request = new HttpRequestMessage(HttpMethod.Get, "Program/GetAllPrograms");
             List<ProgramDto> programDtos = new List<ProgramDto>();
-            var e= await _httpClient.SendAsync(request);
+            var e = await _httpClient.SendAsync(request);
             var response = await _httpClient.GetAsync("Program/GetAllPrograms");
             var content = await response.Content.ReadAsStringAsync();
             programDtos = GetProgramDtoFromContent(content);
@@ -58,6 +62,49 @@ namespace Ticketing.Repository.Programs
             programDtos = GetProgramDtoFromContent(content).FirstOrDefault();
 
             return programDtos;
+        }
+
+        public async Task CreateProgram(CreateProgramCommand createProgramCommand)
+        {
+            await SendRequest<CreateProgramCommand>(createProgramCommand, HttpMethod.Post, "Program");
+        }
+
+        public async Task UpdateProgramLink(UpdateProgramLinkCommand updateProgramLinkComand)
+        {
+            await SendRequest<UpdateProgramLinkCommand>(updateProgramLinkComand, HttpMethod.Put, "Program/UpdateProgramLink");
+        }
+
+        public async Task AddProgramSupporter(AddProgramSupporterCommand addProgramSupporter)
+        {
+            await SendRequest<AddProgramSupporterCommand>(addProgramSupporter, HttpMethod.Put, "Program/AddPrgramSupporter");
+        }
+
+        public async Task DeletePorogramSupporter(DeleteProgramSupporterCommand deleteProgramSupporter)
+        {
+            await SendRequest<DeleteProgramSupporterCommand>(deleteProgramSupporter, HttpMethod.Put, "Program/DeleteProgramSupporter");
+        }
+
+        public async Task DeleteProgram(DeleteProgramCommand deleteProgramCommand)
+        {
+            await SendRequest<DeleteProgramCommand>(deleteProgramCommand, HttpMethod.Delete, "Program");
+        }
+
+        private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
+        {
+            var postRequest = new HttpRequestMessage(httpMethod, uri)
+            {
+                Content = JsonContent.Create(command)
+            };
+            var postResponse = await _httpClient.SendAsync(postRequest);
+            if(!postResponse.IsSuccessStatusCode)
+            {
+                var error = await postResponse.Content.ReadAsStringAsync();
+                string errormessage = error.Split("\r")[0].Split(":")[1];
+                if(postResponse.StatusCode == HttpStatusCode.InternalServerError)
+                {
+                    throw new Exception(errormessage);
+                }
+            }
         }
     }
 }

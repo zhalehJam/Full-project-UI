@@ -1,6 +1,7 @@
 ﻿@page "/programsList"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Ticketing.Models.Programs.Command
 @using Ticketing.Models.Programs.Dto
 @using Ticketing.Models.Programs.Repository
 @using TicketingUI.Shared.Component
@@ -10,7 +11,7 @@
 @inject IHttpClientFactory ClientFactory
 @*@inject IModalService modal*@
 
-<button class="btn btn-primary" @onclick="GetAllPrograms">Get All Programs</button>
+<button class="btn btn-primary" @onclick="(()=>ShowModal(new ProgramDto(){Supporters= new List<ProgramSupporterDto>()}))">+</button>
 <br />
 <br />
 Serach :
@@ -58,10 +59,13 @@ Serach :
             </button>
             </td>*@
             <td>
-                <button class="align-self-lg-end" @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters",Keys.Add("pSupporterDtos",@programsitem.Supporters)))">View supporters</button>
+                <button class="align-self-lg-end" @onclick="@(() => ShowModal(programsitem))">View supporters</button>
                 @*<button type="button" class="btn btn-default"  @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters"))"  data-toggle="modal" data-target="@programsitem.Supporters" data-id="@programsitem.Id" >Details</button>*@
             </td>
+            <td>
+                <button class="align-self-lg-end" @onclick="@(() => DeleteProgram(programsitem.Id))">حذف</button>
 
+            </td>
         </RowTemplate>
     </TableLayout>
 </p>
@@ -69,10 +73,13 @@ Serach :
 @code {
     [CascadingParameter] public IModalService Modal { get; set; }
 
-    public ModalParameters Keys = new ModalParameters() ;
+
+    public ModalParameters Keys = new ModalParameters();
+    public ModalParameters MessageBoxKeys = new ModalParameters();
 
     private List<ProgramDto> programDtos = new List<ProgramDto>();
     private List<ProgramDto> programbyfilters = new List<ProgramDto>();
+    private ProgramDto programDto = new ProgramDto();
     private int showdetail = 0;
     private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
     private string filter_programName = "";
@@ -92,6 +99,11 @@ Serach :
         programbyfilters = programDtos;
         return programDtos;
 
+
+    }
+    protected async override Task OnInitializedAsync()
+    {
+        await GetAllPrograms();
     }
 
     private async Task<List<ProgramDto>> GetProgramByFilters()
@@ -100,27 +112,22 @@ Serach :
 
         if(!string.IsNullOrWhiteSpace(filter_programName))
             programbyfilters = programbyfilters.Where(n => (((n.ProgramLink + " " + n.ProgamName).Contains(filter_programName)) || (n.Supporters.Any(m => (m.SupporterpersonID.ToString() + " " + m.SupporterName).Contains(filter_programName))))).ToList();
-
-
-        //{
-        //    programbyfilters = programbyfilters.Where(n => n.ProgamName.Contains(filter_programName)).ToList();
-        //}
-        //if(!string.IsNullOrWhiteSpace(filter_programLink))
-        //{
-        //    programbyfilters = programbyfilters.Where(n => n.ProgramLink.Contains(filter_programLink)).ToList();
-        //}
-        //if(!string.IsNullOrWhiteSpace(filter_SupporerName))
-        //{
-        //    programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterName.Contains(filter_SupporerName))).ToList();
-        //}
-        //if(!string.IsNullOrWhiteSpace(filter_supporterID))
-        //{
-        //    programbyfilters = programbyfilters.Where(n => n.Supporters.Any(n => n.SupporterpersonID.ToString().Contains(filter_supporterID))).ToList();
-        //}
-        //if (string.IsNullOrWhiteSpace(filter_Supporerinfo))
-        //    programbyfilters = programbyfilters.Where(n => n.Supporters.Any(m => (m.SupporterName + m.SupporterpersonID.ToString()).Contains(filter_SupporerName))).ToList();
         return programbyfilters;
     }
+    private async void ShowModal(ProgramDto program)
+    {
+        Keys.Add("programDto", program);
+        if(program.ProgamName == null)
+            Keys.Add("isnew", true);
+        else
+            Keys.Add("isnew", false);
+        var w = await Modal.Show<FechSupporterInfo>("جزئیات", Keys).Result;
+
+        await GetAllPrograms();
+        StateHasChanged();
+
+    }
+
 
     private async Task<List<ProgramSupporterDto>> GetSupporters()
     {
@@ -129,6 +136,32 @@ Serach :
         parameters.Add("supporters", programSupporterDtos);
         FechSupporterInfo fechSupporterInfo = new FechSupporterInfo();
         return programSupporterDtos;
+
+    }
+    private async void DeleteProgram(Guid Id)
+    {
+        string resultMessage = "";
+        try
+        {
+            DeleteProgramCommand deleteProgramCommand = new DeleteProgramCommand()
+                {
+                    Id = Id
+                };
+            await programRepository.DeleteProgram(deleteProgramCommand);
+            await GetAllPrograms();
+            resultMessage = "برنامه مورد نظر با موفقیت حذف شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            MessageBoxKeys.Add("Message", resultMessage);
+            MessageBoxKeys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", MessageBoxKeys);
+        }
     }
 
 }

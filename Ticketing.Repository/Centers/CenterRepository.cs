@@ -15,6 +15,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.Json.Nodes;
 using PagedList;
+using Ticketing.Models.Centers.Command;
+using Ticketing.Models.Tickets.Command;
+using Ticketing.Models.Shared;
+using System.Net;
 
 namespace Ticketing.Repository.Centers
 {
@@ -73,7 +77,7 @@ namespace Ticketing.Repository.Centers
             return centerDtos;
         }
 
-        public async Task<List<CenterDto>> GetAllCenersByPage(string page,string pageSize)
+        public async Task<List<CenterDto>> GetAllCenersByPage(string page, string pageSize)
         {
             List<CenterDto> centerDtos = new List<CenterDto>();
             Dictionary<string, string> parameters = new Dictionary<string, string>();
@@ -85,5 +89,49 @@ namespace Ticketing.Repository.Centers
             centerDtos = GetcenterDtoFromContent(content);
             return centerDtos;
         }
+
+        public async Task CreateCenter(CreateCenterCommand createCenterCommand)
+        {
+            await SendRequest<CreateCenterCommand>(createCenterCommand, HttpMethod.Post, "Center/CreateCenter");
+        }
+
+        public async Task AddPart(AddPartCommand addPartCommand)
+        {
+            await SendRequest<AddPartCommand>(addPartCommand, HttpMethod.Put, "Center/AddPart");
+        }
+
+        public async Task DeletePart(DeletePartCommand deletePartCommand)
+        {
+            await SendRequest<DeletePartCommand>(deletePartCommand, HttpMethod.Put, "Center/DeletePart");
+        }
+
+        public async Task DeleteCenter(DeleteCenterCommand deleteCenterCommand)
+        {
+            await SendRequest<DeleteCenterCommand>(deleteCenterCommand, HttpMethod.Delete, "Center");
+        }
+        public async Task EditCenter(EditCenterCommand editCenterCommand)
+        {
+            await SendRequest<EditCenterCommand>(editCenterCommand, HttpMethod.Put, "Center/EditCenterName");
+
+        }
+        private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
+        {
+            var postRequest = new HttpRequestMessage(httpMethod, uri)
+            {
+                Content = JsonContent.Create(command)
+            };
+            var postResponse = await _httpClient.SendAsync(postRequest);
+            if(!postResponse.IsSuccessStatusCode)
+            {
+                var error = await postResponse.Content.ReadAsStringAsync();
+                string errormessage = error.Split("\r")[0].Split(":")[1];
+                if(postResponse.StatusCode == HttpStatusCode.InternalServerError)
+                {
+                    throw new Exception(errormessage);
+                }
+            }
+
+        }
+
     }
 }
