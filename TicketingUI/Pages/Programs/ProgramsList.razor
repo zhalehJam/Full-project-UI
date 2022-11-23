@@ -10,8 +10,8 @@
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
 @*@inject IModalService modal*@
-
-<button class="btn btn-primary" @onclick="(()=>ShowModal(new ProgramDto(){Supporters= new List<ProgramSupporterDto>()}))">+</button>
+<h3>لیست برنامه ها</h3>
+<button class="btn btn-primary" @onclick="(()=>ShowModal(new ProgramDto(){Supporters= new List<ProgramSupporterDto>()}))">افزودن</button>
 <br />
 <br />
 Serach :
@@ -21,9 +21,9 @@ Serach :
     <TableLayout Items="@programbyfilters" Context="programsitem">
         <TableHeader>
             <th hidden>Id</th>
-            <th>Program Name</th>
-            <th>ProgramLink</th>
-            <th>Supporters</th>
+            <th>نام برنامه</th>
+            <th>لینک برنامه</th>
+            <th>پشتیبان های برنامه</th>
 
         </TableHeader>
         <TableFilter>
@@ -59,11 +59,10 @@ Serach :
             </button>
             </td>*@
             <td>
-                <button class="align-self-lg-end" @onclick="@(() => ShowModal(programsitem))">View supporters</button>
+                <button class="btn btn-info" @onclick="@(() => ShowModal(programsitem))">لیست پشتیبان ها</button>
                 @*<button type="button" class="btn btn-default"  @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters"))"  data-toggle="modal" data-target="@programsitem.Supporters" data-id="@programsitem.Id" >Details</button>*@
-            </td>
-            <td>
-                <button class="align-self-lg-end" @onclick="@(() => DeleteProgram(programsitem.Id))">حذف</button>
+
+                <button class=" btn btn-danger" @onclick="@(() => DeleteProgram(programsitem.Id))">حذف</button>
 
             </td>
         </RowTemplate>

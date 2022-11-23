@@ -8,7 +8,7 @@
 
 @inject IPersonRepository personRepository
 @inject IHttpClientFactory ClientFactory
-<h3>Persons</h3>
+<h3>لیست پرسنل</h3>
 
 <button class="btn btn-success" @onclick="()=>CreateNewPerson()">افزودن</button>
 جستجو:
@@ -44,10 +44,10 @@ PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
 <table class="table">
     <thead>
         <tr>
-            <th>Peroson ID</th>
-            <th>Person Name</th>
-            <th>Center Name</th>
-            <th>Part Name</th>
+            <th>کد پرسنلی</th>
+            <th> نام پرسنل</th>
+            <th>نام مرکز</th>
+            <th>نام واحد</th>
             <th>عملیات</th>
         </tr>
         @* <tr>
@@ -76,7 +76,7 @@ PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
                     <td>@person.CenterName</td>
                     <td>@person.PartName</td>
                     <td>
-                        <button class="btn btn-danger" @onclick="(()=>{personDto=person;EditPersonInfo(person);})">ویرایش</button>
+                        <button class="btn btn-info" @onclick="(()=>{personDto=person;EditPersonInfo(person);})">ویرایش</button>
                         <button class="btn btn-danger" @onclick="(()=>{personDto=person;DeletePerson();})">حذف</button>
 
                     </td>

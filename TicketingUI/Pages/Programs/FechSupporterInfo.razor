@@ -23,7 +23,7 @@
                 <td>
                     @if(isNew)
                     {
-                        <input   @bind="@programDto.ProgamName" @oninput=@((e)=> programDto.ProgamName=Convert.ToString(e.Value)) />
+                        <input @bind="@programDto.ProgamName" @oninput=@((e)=> programDto.ProgamName=Convert.ToString(e.Value)) />
                     }
                     @if(!isNew)
                     {
@@ -41,7 +41,7 @@
         </tbody>
     </table>
     <input bind="@personDto.PersonName" @oninput=@((e)=> searchString=Convert.ToString(e.Value)) />
-    <button class="btn-dark alert-success" @onclick="(()=>SearchSupporterInfo())">جستجو</button>
+    <button class="btn-dark alert-dark" @onclick="(()=>SearchSupporterInfo())">جستجو</button>
     <TableLayout Items="@programDto.Supporters.ToList()" Context="lists">
         <TableHeader>
             <th>نام پرسنل</th>
@@ -58,6 +58,8 @@
             <td>
                 <button class="btn-dark alert-success" @onclick="(()=>AddSupporter())">ثبت</button>
             </td>
+
+
         </TableFilter>
         <RowTemplate>
             <td>@lists.SupporterName</td>
@@ -73,6 +75,7 @@
     public ProgramDto programDto { get; set; }
     public ProgramSupporterDto programSupporterDto = new ProgramSupporterDto();
     public PersonDto personDto = new PersonDto();
+    public List<PersonDto> persondtoList = new List<PersonDto>();
     [Parameter]
     public bool isNew { get; set; }
     [CascadingParameter] public IModalService Modal { get; set; }
@@ -98,7 +101,7 @@
                     ProgramLink = programDto.ProgramLink,
                     ProgramName = programDto.ProgamName
                 };
-            programRepository.CreateProgram(createProgramCommand);
+           await programRepository.CreateProgram(createProgramCommand);
             await ModalInstance.CloseAsync(ModalResult.Ok(""));
             resultMessage = "برنامه مورد نظر با موفقیت ثبت شد";
             StateHasChanged();
@@ -125,7 +128,7 @@
                     Id = programDto.Id,
                     ProgramLink = programDto.ProgramLink
                 };
-            programRepository.UpdateProgramLink(updateProgramLinkCommand);
+            await programRepository.UpdateProgramLink(updateProgramLinkCommand);
             await ModalInstance.CloseAsync(ModalResult.Ok(""));
             resultMessage = "برنامه مورد نظر با موفقیت ویرایش شد";
             StateHasChanged();
@@ -203,10 +206,11 @@
     {
         // TODO : Select bettwen list of supporters
         var persons = await personRepository.GetAllPersons();
-        persons = persons.Where(n => n.PersonID.ToString().Equals(searchString) || n.PersonName.Contains(searchString)).ToList();
+        persons = persons.Where(n => n.PersonID.ToString().Contains(searchString) || n.PersonName.Contains(searchString)).ToList();
         personDto = persons.FirstOrDefault();
         programSupporterDto.SupporterName = personDto.PersonName;
         programSupporterDto.SupporterpersonID = personDto.PersonID;
+        persondtoList.Add(personDto);
         StateHasChanged();
     }
 }

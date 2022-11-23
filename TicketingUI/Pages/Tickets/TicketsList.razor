@@ -8,46 +8,47 @@
 @using TicketingUI.Shared.Component
 
 @inject ITicketRepository ticketRepository
-
-<button class="btn btn-success" @onclick="@(() =>
+<div dir="rtl">
+    <h3>تیکت ها</h3>
+    <button class="btn btn-success" @onclick="@(() =>
 {CreateTicket();GetTicketsByFilters();})">
-    +
-</button>
+        افزودن
+    </button>
 
-<br />
-<br />
- Searh:
-<input size="70" @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" />
+    <br />
+    <br />
+    جستجو:
+    <input size="70" @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" />
 
-<TableLayout Items="@ticketsByFilters" Context="ticketitems">
-    <TableHeader>
+    <TableLayout Items="@ticketsByFilters" Context="ticketitems">
+        <TableHeader>
 
-        <th>PersonName</th>
-        <th>CenterName </th>
-        <th>ProgramName </th>
-        <th>ErrorType </th>
-        <th>TicketType </th>
-        <th>TicketCondition</th>
-        <th>Details</th>
-    </TableHeader>
-    <RowTemplate>
-        <td>@ticketitems.PersonName</td>
-        <td>@ticketitems.PersonCenterName</td>
-        <td>@ticketitems.ProgramName</td>
-        <td>@ticketitems.ErrorTypeName</td>
-        <td>@ticketitems.TicketTypeName</td>
-        <td>@ticketitems.TicketConditionTypeName</td>
-        <button class="btn btn-info" @onclick="@(() => {EditTicket(ticketitems);GetTicketsByFilters();})">جزئیات</button>
-        <button class="btn btn-outline-warning" @onclick="@(() => {message="مطمئن هستید";DeleteTicket(ticketitems);GetTicketsByFilters();})">حذف</button>
+            <th>نام شخص</th>
+            <th>مرکز </th>
+            <th>واحد </th>
+            <th>نوع خطا </th>
+            <th>نوع تیکت </th>
+            <th>وضعیت تیکت</th>
+            <th>جزئیات</th>
+        </TableHeader>
+        <RowTemplate>
+            <td>@ticketitems.PersonName</td>
+            <td>@ticketitems.PersonCenterName</td>
+            <td>@ticketitems.ProgramName</td>
+            <td>@ticketitems.ErrorTypeName</td>
+            <td>@ticketitems.TicketTypeName</td>
+            <td>@ticketitems.TicketConditionTypeName</td>
+            <button class="btn btn-info" @onclick="@(() => {EditTicket(ticketitems);GetTicketsByFilters();})">جزئیات</button>
+            <button class="btn-danger" @onclick="@(() => {;DeleteTicket(ticketitems);GetTicketsByFilters();})">حذف</button>
 
-    </RowTemplate>
+        </RowTemplate>
 
-</TableLayout>
-Page Number
-<input @bind="@PageNumber" @oninput="@((e)=>{PageNumber=e.Value.ToString();GetTicketsByFilters();})" size="5p" />
-Page Size
-<input @bind="@PageSize" @oninput="@((e)=>{PageSize=e.Value.ToString();GetTicketsByFilters();})" size="5p" />
-
+    </TableLayout>
+    Page Number
+    <input @bind="@PageNumber" @oninput="@((e)=>{PageNumber=e.Value.ToString();GetTicketsByFilters();})" size="5p" />
+    Page Size
+    <input @bind="@PageSize" @oninput="@((e)=>{PageSize=e.Value.ToString();GetTicketsByFilters();})" size="5p" />
+</div>
 @code {
     [CascadingParameter] public IModalService Modal { get; set; }
     public ModalParameters Keys = new ModalParameters();
@@ -96,8 +97,8 @@ Page Size
     private async void CreateTicket()
     {
         Keys.Add("mode", "Create");
-        Keys.Add("TicketDtos", new TicketDto());
-        var modalresult = Modal.Show<TicketDetail>("Ticket Detail", Keys).Result;
+        Keys.Add("TicketDtos", new TicketDto(){TicketTime=DateTime.Now});
+        var modalresult = Modal.Show<TicketDetail>("تیکت جدید", Keys, new ModalOptions() { Size = ModalSize.Large }).Result;
         await GetAllTickets();
         StateHasChanged();
     }
@@ -105,7 +106,7 @@ Page Size
     {
         Keys.Add("mode", "Edit");
         Keys.Add("TicketDtos", seletedticket);
-        var modalresult = Modal.Show<TicketDetail>("Ticket Detail", Keys).Result;
+        var modalresult = Modal.Show<TicketDetail>("ویرایش تیکت", Keys, new ModalOptions() { Size = ModalSize.Large }).Result;
         await GetAllTickets();
         StateHasChanged();
     }
@@ -118,7 +119,7 @@ Page Size
             deleteTicketCommand.SupporterUser = 970086;
             deleteTicketCommand.Id = ticketDto.Id;
 
-           await ticketRepository.DeleteTicket(deleteTicketCommand);
+            await ticketRepository.DeleteTicket(deleteTicketCommand);
             resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
             await GetAllTickets();
             StateHasChanged();
