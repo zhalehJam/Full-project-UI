@@ -3,6 +3,30 @@
 @using Blazored.Modal.Services
 @using Ticketing_UI.Pages.Programs
 <PageTitle>Index</PageTitle>
+<AuthorizeView>
+    <Authorized>
+       
+        @*@switch (fetchDataStatus)
+        {
+            case FetchDataStatus.failed:
+                <ReloadComponent OnReloadClickFunction="FetchRequestsFromServer" />
+                break;
+            case FetchDataStatus.fetching:
+                <div id="app" style="direction: rtl; text-align: right;" class="mx-auto">
+                    <div class="spinner-border text-center center mt-auto mb-auto" style="color: red;"></div>
+                    <p style="text-align: center !important;">لطفا کمی صبر کنید...</p>
+                </div>
+                break;
+            case FetchDataStatus.succeed:
+
+                break;
+        }*@
+
+    </Authorized>
+</AuthorizeView>
+
+
+
 
 <h1>برنامه ثبت تیک های پشتیبانی</h1>
 
@@ -28,3 +52,40 @@
 </NavLink>
 
 
+
+
+
+@code {
+    //private FetchDataStatus fetchDataStatus = FetchDataStatus.fetching;
+
+
+    //protected override Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    if(firstRender)
+    //    {
+    //        FetchRequestsFromServer();
+    //    }
+    //    return base.OnAfterRenderAsync(firstRender);
+    //}
+
+    //private async Task FetchRequestsFromServer()
+    //{
+    //    fetchDataStatus = FetchDataStatus.fetching;
+    //    StateHasChanged();
+    //    try
+    //    {
+    //        fetchDataStatus = FetchDataStatus.succeed;
+    //    }
+    //    catch(Exception ex)
+    //    {
+    //        fetchDataStatus = FetchDataStatus.failed;
+    //    }
+    //    StateHasChanged();
+    //}
+
+    //public void ReRenderPendingRequests()
+    //{
+    //    FetchRequestsFromServer();
+    //}
+
+}
