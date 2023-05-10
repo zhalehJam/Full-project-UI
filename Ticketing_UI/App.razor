@@ -1,0 +1,35 @@
+﻿@using Framework.Core.UserDataManagement
+@using Microsoft.AspNetCore.Components.Authorization
+@using Ticketing_UI.Shared.Layouts;
+@inject IUserDataManagement userDataManager
+@inject NavigationManager Navigation
+
+<CascadingAuthenticationState>
+    <CascadingBlazoredModal>
+        <Router AppAssembly="@typeof(App).Assembly"> 
+            <Found Context="routeData"> 
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)"> 
+                    <NotAuthorized>
+                        @if (!context.User.Identity!.IsAuthenticated)
+                        { 
+                            <RedirectToLogin />
+                        }
+                        else
+                        {
+                            <p>شما برای دسترسی به این قسمت باید احراز هویت شوید</p>
+                        }
+                    </NotAuthorized>
+                </AuthorizeRouteView>
+                
+            </Found>
+            <NotFound>
+                <PageTitle>Error 404</PageTitle>
+                @*<LayoutView Layout="@(userDataManager.IsInRole("GTS_User") ? typeof(UserLayout) : typeof(MainLayout))">*@
+                   <LayoutView Layout="typeof(MainLayout)"> 
+                    <p>نتیجه ای در این آدرس وجود ندارد</p>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </CascadingBlazoredModal>
+</CascadingAuthenticationState>
+

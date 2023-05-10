@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketingUI", "TicketingUI\TicketingUI.csproj", "{DC0F8231-100D-475D-B735-84AF17B00E9D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Client.Contracts", "Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj", "{B0106B39-2C65-4817-9DEB-16F309ABB9F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Models", "Ticketing.Models\Ticketing.Models.csproj", "{46AA1D5A-E45E-4963-83A7-16EEEDADAA90}"
@@ -21,9 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Entity", "Framewo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Repository", "Framework\Framework.Repository\Framework.Repository.csproj", "{0DDC1BE3-AC00-4833-988C-E15C647569E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UserDataManagement", "Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj", "{A7A89000-83DE-469D-B1F4-2D3FB10896E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing_UI", "Ticketing_UI\Ticketing_UI.csproj", "{92380270-AB52-4068-8B60-FEC8BD387BBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingUI2", "TicketingUI2\TicketingUI2.csproj", "{4585D5A2-D9A9-4782-939C-A90735AA187F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UserDataManagement", "Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj", "{EBAF3C3F-C809-4C72-988D-31EF9C12EA8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC0F8231-100D-475D-B735-84AF17B00E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC0F8231-100D-475D-B735-84AF17B00E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC0F8231-100D-475D-B735-84AF17B00E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC0F8231-100D-475D-B735-84AF17B00E9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B0106B39-2C65-4817-9DEB-16F309ABB9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0106B39-2C65-4817-9DEB-16F309ABB9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0106B39-2C65-4817-9DEB-16F309ABB9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,14 +57,14 @@ Global
 		{0DDC1BE3-AC00-4833-988C-E15C647569E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DDC1BE3-AC00-4833-988C-E15C647569E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DDC1BE3-AC00-4833-988C-E15C647569E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7A89000-83DE-469D-B1F4-2D3FB10896E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7A89000-83DE-469D-B1F4-2D3FB10896E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7A89000-83DE-469D-B1F4-2D3FB10896E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7A89000-83DE-469D-B1F4-2D3FB10896E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4585D5A2-D9A9-4782-939C-A90735AA187F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4585D5A2-D9A9-4782-939C-A90735AA187F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4585D5A2-D9A9-4782-939C-A90735AA187F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4585D5A2-D9A9-4782-939C-A90735AA187F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAF3C3F-C809-4C72-988D-31EF9C12EA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAF3C3F-C809-4C72-988D-31EF9C12EA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAF3C3F-C809-4C72-988D-31EF9C12EA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAF3C3F-C809-4C72-988D-31EF9C12EA8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,7 +74,7 @@ Global
 		{D2D83D5B-3090-4FAE-BABA-49D095E870F4} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
 		{4CBC9689-B9E6-4D53-91C1-116C4102AB18} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
 		{0DDC1BE3-AC00-4833-988C-E15C647569E1} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
-		{A7A89000-83DE-469D-B1F4-2D3FB10896E0} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
+		{EBAF3C3F-C809-4C72-988D-31EF9C12EA8A} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEE9FE2B-66DC-462C-A4C9-0FC4A6AB65FC}

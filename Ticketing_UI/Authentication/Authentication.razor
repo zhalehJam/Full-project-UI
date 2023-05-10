@@ -1,0 +1,49 @@
+﻿@page "/authentication/{action}"
+@*@layout EmptyLayout*@
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+<RemoteAuthenticatorView Action="@Action">
+    <LogInFailed>
+        <div class="alert alert-danger" role="alert">@strLogInFailed</div>
+    </LogInFailed>
+    <LogOut>
+        <div class="alert alert-info" role="alert">@strLogOut</div>
+    </LogOut>
+    <LogOutSucceeded>
+        <div class="alert alert-success" role="alert">@strLogOutSucceeded</div>
+    </LogOutSucceeded>
+    <LoggingIn>
+        <div id="app" style="direction: rtl; text-align: right;" class="mx-auto">
+            @*<i class="fa fa-coffee center text-center mt-3" style="max-width: 15%;padding-top: 15% !important; color: brown" />*@
+            <h1 style="text-align: center !important;">
+                @strLoggingIn
+            </h1><br />
+            <h3 style="text-align: center !important; color: gray">لطفا کمی صبر کنید</h3><br />
+            <div class="spinner-border text-center center mt-auto mb-auto" style="color: red;"></div>
+        </div>
+    </LoggingIn>
+    <CompletingLoggingIn>
+
+        <div id="app" style="direction: rtl; text-align: right;" class="mx-auto mt-5">
+            @*<i class="fa fa-user center text-center mt-3" style="font-size: medium;max-width: 15%; padding-top: 15% !important; color: green" />*@
+            <h1 style="text-align: center !important;">
+                @strCompletingLoggingIn
+            </h1><br />
+            <h3 style="text-align: center !important; color: gray">لطفا کمی صبر کنید</h3><br />
+            <div class="text-center mt-auto mb-auto">
+                <div class="spinner-border" style="color: red;"></div>
+            </div> 
+        </div>
+    </CompletingLoggingIn>
+</RemoteAuthenticatorView>
+
+@code {
+    [Parameter] public string Action { get; set; } = "";
+
+    string strLogInFailed = "ورود شما به سیستم ناموفق بود!";
+    string strLogOut = "در حال خروج از سیستم";
+    string strLogOutSucceeded = "شما از سیستم خارج شدید :)";
+    string strLoggingIn = "در حال انتقال به صفحه ورود به سیستم";
+    string strCompletingLoggingIn = "وارد شدید :)";
+
+}

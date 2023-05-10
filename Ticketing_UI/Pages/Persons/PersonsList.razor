@@ -1,0 +1,187 @@
+﻿@page "/PersonsList"
+@using Blazored.Modal
+@using Blazored.Modal.Services
+@using Ticketing.Models.Persons.Command
+@using Ticketing.Models.Persons.Dto
+@using Ticketing.Models.Persons.Repository
+@using Ticketing_UI.Shared.Component
+
+@inject IPersonRepository personRepository
+@inject IHttpClientFactory ClientFactory
+<h3>لیست پرسنل</h3>
+
+<button class="btn btn-success" @onclick="()=>CreateNewPerson()">افزودن</button>
+جستجو:
+<input @bind="@PersonIDFilter" @oninput="@((e) => {
+PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+
+@*@if(isnew == true)
+{
+    <div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirm action</h4>
+                    <button type="button" class="close" @onclick="(()=>isnew=false)">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn" @onclick="@CreateNewPerson">ذخیره</button>
+                     <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>کد پرسنلی</th>
+            <th> نام پرسنل</th>
+            <th>نام مرکز</th>
+            <th>نام واحد</th>
+            <th>عملیات</th>
+        </tr>
+        @* <tr>
+        <td>
+        <input @bind="@PersonIDFilter" @oninput="@((e) => { PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+        </td>
+        <td>
+        <input @bind="@PersonNameFilter" @oninput="@((e) => { PersonNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+        </td>
+        <td>
+        <input @bind="@PersonCenterNameFilter" @oninput="@((e) => { PersonCenterNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+        </td>
+        <td>
+        <input @bind="@PersonPartNameFilter" @oninput="@((e) => { PersonPartNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+        </td>
+        </tr>*@
+    </thead>
+    <tbody>
+        @if(personListByFilter.Count() != 0)
+        {
+            foreach(var person in personListByFilter)
+            {
+                <tr>
+                    <td>@person.PersonID</td>
+                    <td>@person.PersonName</td>
+                    <td>@person.CenterName</td>
+                    <td>@person.PartName</td>
+                    <td>
+                        <button class="btn btn-info" @onclick="(()=>{personDto=person;EditPersonInfo(person);})">ویرایش</button>
+                        <button class="btn btn-danger" @onclick="(()=>{personDto=person;DeletePerson();})">حذف</button>
+
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+<footer>
+    Page number:
+    <input @bind="@pageNumber" @oninput="((e)=>{pageNumber=e.Value.ToString(); GetPersonByFilters();})" size="3p" />
+    Page size
+    <input @bind="@pageSize" @oninput="((e)=>{pageSize=e.Value.ToString();GetPersonByFilters();})" size="3p" />
+</footer>
+
+@code {
+    private List<PersonDto> personDtos = new List<PersonDto>();
+    private List<PersonDto> personListByFilter = new List<PersonDto>();
+    private string PersonNameFilter = "";
+    private string PersonIDFilter = "";
+    private string PersonPartNameFilter = "";
+    private string PersonCenterNameFilter = "";
+    private string pageNumber = "1";
+    private string pageSize = "10";
+    private bool isnew = false;
+    private PersonDto personDto = new PersonDto();
+    [CascadingParameter] IModalService Modal { get; set; }
+    public ModalParameters Keys = new ModalParameters();
+    public ModalParameters MessageBoxKeys = new ModalParameters();
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAllPersons();
+    }
+
+    private async Task<List<PersonDto>> GetAllPersons()
+    {
+        pageNumber = "1";
+        pageSize = "10";
+        PersonNameFilter = "";
+        PersonIDFilter = "";
+        PersonPartNameFilter = "";
+        PersonCenterNameFilter = "";
+        personDtos = await personRepository.GetAllPersons(pageNumber, pageSize);
+        personListByFilter = personDtos;
+        return personDtos;
+    }
+    private async Task<List<PersonDto>> GetPersonByFilters()
+    {
+        personListByFilter = await personRepository.GetAllPersons(pageNumber, pageSize);
+        if(!string.IsNullOrWhiteSpace(PersonIDFilter))
+            personListByFilter = personListByFilter.Where(n => n.PersonName.Contains(PersonIDFilter) ||
+                                                               n.PersonID.ToString().Contains(PersonIDFilter) ||
+                                                               n.CenterName.Contains(PersonIDFilter) ||
+                                                               n.PartName.Contains(PersonIDFilter)
+                                                          ).ToList();
+        return personListByFilter;
+    }
+
+    private async void CreateNewPerson()
+    {
+        Keys.Add("personDto", new PersonDto());
+        Keys.Add("isNewMode", true);
+        var modalpage = await Modal.Show<PersonInfo>("اطلاعات پرسنل", Keys).Result;
+        await GetAllPersons();
+        StateHasChanged();
+    }
+
+    private async void EditPersonInfo(PersonDto personDto)
+    {
+        Keys.Add("isNewMode", false);
+        Keys.Add("personDto", personDto);
+        var modalpage = await Modal.Show<PersonInfo>("اطلاعات پرسنل", Keys).Result;
+        await GetAllPersons();
+        StateHasChanged();
+    }
+    private async void DeletePerson()
+    {
+        string resultMessage = "";
+        try
+        {
+            DeletePersonCommand deletePersonCommand = new DeletePersonCommand()
+                {
+                    Id = personDto.Id
+                };
+            await personRepository.DeletePerson(deletePersonCommand);
+            isnew = false;
+            resultMessage = "پرسنل مورد نظر با موفقیت حذف شد";
+            await GetAllPersons(); 
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            MessageBoxKeys.Add("Message", resultMessage);
+            MessageBoxKeys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", MessageBoxKeys);
+        }
+    }
+
+
+}

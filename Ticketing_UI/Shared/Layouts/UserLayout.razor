@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization; 
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager Navigation
+
+
+<style>
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../assets/media/misc/page-bg.jpg");
+    }
+</style>
+
+<div class="page-bg">
+
+
+    <main class="page-bg">
+        <div class="header-fixed header-tablet-and-mobile-fixed">
+            <div class="d-flex flex-column flex-root" style="direction:rtl!important; text-align:right!important">
+                <div class="page launcher sidebar-enabled d-flex flex-row flex-column-fluid me-lg-5" id="kt_page">
+                    <AuthorizeView>
+                        <Authorized>
+                            <SideCartable />
+                            <BodyPage />
+                        </Authorized>
+                    </AuthorizeView>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+            if (user.Identity!.IsAuthenticated == false) return;
+            if(!user.Claims.Any(c => c.Type == "role" && c.Value.Contains("Ticketing")))
+            {
+                Navigation.NavigateTo("/AccessDenaid");
+            }
+
+        }
+    }
+}
