@@ -1,9 +1,6 @@
 ﻿using Framework.Core.UserDataManagement;
 using Microsoft.AspNetCore.Components.Authorization;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace Framework.UserDataManagement
 {
@@ -11,10 +8,10 @@ namespace Framework.UserDataManagement
     {
         private ClaimsPrincipal user;
         private IEnumerable<Claim> claims = Enumerable.Empty<Claim>();
-        private readonly AuthenticationStateProvider authenticationStateProvider;
-        public UserDataManagement(AuthenticationStateProvider authenticationStateProvider)
+        private readonly AuthenticationStateProvider authenticationStateProvider; 
+        public UserDataManagement(AuthenticationStateProvider authenticationStateProvider )
         {
-            this.authenticationStateProvider = authenticationStateProvider;
+            this.authenticationStateProvider = authenticationStateProvider; 
             SetUser();
         }
 

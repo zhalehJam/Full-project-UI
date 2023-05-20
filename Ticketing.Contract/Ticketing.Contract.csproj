@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
-  </ItemGroup>
-
 </Project>

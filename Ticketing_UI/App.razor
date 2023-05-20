@@ -1,6 +1,6 @@
 ﻿@using Framework.Core.UserDataManagement
 @using Microsoft.AspNetCore.Components.Authorization
-@using Ticketing_UI.Shared.Layouts;
+@*@using Ticketing_UI.Shared.Layouts;*@
 @inject IUserDataManagement userDataManager
 @inject NavigationManager Navigation
 
@@ -8,6 +8,7 @@
     <CascadingBlazoredModal>
         <Router AppAssembly="@typeof(App).Assembly"> 
             <Found Context="routeData"> 
+                @*<RedirectToLogin />*@
                 <AuthorizeRouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)"> 
                     <NotAuthorized>
                         @if (!context.User.Identity!.IsAuthenticated)
@@ -23,8 +24,7 @@
                 
             </Found>
             <NotFound>
-                <PageTitle>Error 404</PageTitle>
-                @*<LayoutView Layout="@(userDataManager.IsInRole("GTS_User") ? typeof(UserLayout) : typeof(MainLayout))">*@
+                <PageTitle>Error 404</PageTitle> 
                    <LayoutView Layout="typeof(MainLayout)"> 
                     <p>نتیجه ای در این آدرس وجود ندارد</p>
                 </LayoutView>

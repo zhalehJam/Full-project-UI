@@ -11,6 +11,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
   </ItemGroup>
 
@@ -89,19 +91,10 @@
     <None Include="Authentication\RedirectToLogin.razor" />
     <None Include="Authentication\Signin-oidc.razor" />
     <None Include="Authentication\UnAuthorizedUser.razor" />
-    <None Include="Shared\Layouts\403_Error.razor" />
-    <None Include="Shared\Layouts\EmptyLayout.razor" />
-    <None Include="Shared\Layouts\EmptyModal.razor" />
-    <None Include="Shared\Layouts\MainLayout.razor" />
-    <None Include="Shared\Layouts\MasterHeader.razor" />
-    <None Include="Shared\Layouts\MasterSideBar.razor" />
-    <None Include="Shared\Layouts\UserLayout.razor" />
-    <None Include="Shared\Layouts\_UserAccountMenu.razor" />
+    <None Include="Shared\MainLayout.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Framework\Framework.Core\Framework.Core.csproj" />
-    <ProjectReference Include="..\Framework\Framework.DependencyInjection\Framework.DependencyInjection.csproj" />
     <ProjectReference Include="..\Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj" />
     <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
     <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />

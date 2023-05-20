@@ -1,5 +1,5 @@
 ﻿@*@layout EmptyLayout*@
-@page "/AccessDenaid"
+@*@page "/AccessDenaid"*@
 @using Microsoft.AspNetCore.Components.Authorization;
 @*@using Ticketing_UI.Shared.Layouts*@
 @inject AuthenticationStateProvider authenticationStateProvider
@@ -26,10 +26,10 @@
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
             if (user.Identity.IsAuthenticated == false) return;
-            if(user.Claims.Any(c => c.Type == "role" && c.Value.Contains("Ticketing")))
-            {
-                Navigation.NavigateTo("/");
-            }
+            //if(user.Claims.Any(c => c.Type == "role" && c.Value.Contains("Ticketing")))
+            //{
+            //    Navigation.NavigateTo("/");
+            //}
         }
 
         await base.OnAfterRenderAsync(firstRender);

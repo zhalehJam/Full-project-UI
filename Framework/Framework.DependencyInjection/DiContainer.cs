@@ -1,11 +1,10 @@
 ﻿using System;
-
 using Framework.Core.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Framework.DependencyInjection
+namespace framework.DependencyInjection
 {
-    public class DiContainer : IDiContainer
+   public class DiContainer:IDIContainer
     {
         private readonly IServiceProvider _serviceProvider;
 
@@ -15,7 +14,8 @@ namespace Framework.DependencyInjection
         }
         public T Resolve<T>()
         {
-            return _serviceProvider.GetService<T>();
+          return  _serviceProvider.GetRequiredService<T>();
+       
         }
     }
 }

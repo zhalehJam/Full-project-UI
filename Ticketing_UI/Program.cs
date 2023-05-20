@@ -1,10 +1,8 @@
 using Blazored.Modal; 
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using System.Net.Http;
 using Ticketing_UI;
 using Ticketing_UI.Shared.Classes;
-using TicketingUI;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -37,14 +35,14 @@ builder.Services.AddOidcAuthentication(options =>
     options.ProviderOptions.DefaultScopes.Add("roles");
 
 });
-builder.Services.AddApiAuthorization();
+//builder.Services.AddApiAuthorization();
 
 builder.Services.AddBlazoredModal();
 
-//Registrar.RegisterRepositories(builder.Services);
+Registrar.RegisterRepositories(builder.Services);
 
-Registrar registrar = new Registrar(builder.Services);
-registrar.Register();
+//Registrar registrar = new Registrar(builder.Services);
+//registrar.Register();
 
 var app = builder.Build();
 
