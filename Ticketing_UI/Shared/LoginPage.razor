@@ -1,0 +1,11 @@
+﻿@inject NavigationManager Navigation
+
+<h3>LoginPage</h3>
+<button @onclick="((e)=>BeginSignOut(e))"></button>
+@code {
+    private async Task BeginSignOut(MouseEventArgs args)
+    {
+        Navigation.NavigateTo("authentication/login");
+    }
+
+}

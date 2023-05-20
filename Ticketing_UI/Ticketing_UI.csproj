@@ -1,0 +1,104 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.Modal" Version="7.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\Component\BlazorModal.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\Component\MessageBox.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\Component\TableLayout.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\LoginPage.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\NavMenu.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\RedirectToLogin.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Shared\SurveyPrompt.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Centers\CenterDetail.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Centers\CenterDetail.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Centers\CentersList.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Persons\PersonInfo.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Persons\PersonsList.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Programs\FechSupporterInfo.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Programs\ProgramsList.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Tickets\TicketDetail.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Tickets\TicketsList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Centers\CentersList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Persons\PersonInfo.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Persons\PersonsList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Programs\FechSupporterInfo.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Programs\ProgramsList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Tickets\TicketDetail.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Tickets\TicketsList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Authentication\Authentication.razor" />
+    <None Include="Authentication\RedirectToLogin.razor" />
+    <None Include="Authentication\Signin-oidc.razor" />
+    <None Include="Authentication\UnAuthorizedUser.razor" />
+    <None Include="Shared\MainLayout.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj" />
+    <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
+    <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />
+    <ProjectReference Include="..\Ticketing.Repository\Ticketing.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

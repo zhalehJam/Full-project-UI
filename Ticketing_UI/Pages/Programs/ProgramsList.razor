@@ -1,0 +1,166 @@
+﻿@page "/programsList"
+@using Blazored.Modal
+@using Blazored.Modal.Services
+@using Ticketing.Models.Programs.Command
+@using Ticketing.Models.Programs.Dto
+@using Ticketing.Models.Programs.Repository
+@using Ticketing_UI.Shared.Component
+
+
+@inject IProgramRepository programRepository
+@inject IHttpClientFactory ClientFactory
+@*@inject IModalService modal*@
+<h3>لیست برنامه ها</h3>
+<button class="btn btn-primary" @onclick="(()=>ShowModal(new ProgramDto(){Supporters= new List<ProgramSupporterDto>()}))">افزودن</button>
+<br />
+<br />
+Serach :
+<input size="80p" @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" />
+
+<p>
+    <TableLayout Items="@programbyfilters" Context="programsitem">
+        <TableHeader>
+            <th hidden>Id</th>
+            <th>نام برنامه</th>
+            <th>لینک برنامه</th>
+            <th>پشتیبان های برنامه</th>
+
+        </TableHeader>
+        <TableFilter>
+            @*<td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <table class="input-group-text">
+            <tbody>
+
+            <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+            <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+
+            </tbody>
+            </table>*@
+        </TableFilter>
+        <RowTemplate>
+            <td hidden>@programsitem.Id</td>
+            <td>@programsitem.ProgamName</td>
+            <td>@programsitem.ProgramLink</td>
+            @* <td>
+            <TableLayout Items="@programsitem.Supporters" Context="supporters">
+            <TableHeader>
+            <th>PeronID</th>
+            <th>name</th>
+            </TableHeader>
+            <RowTemplate>
+            <td>@supporters.SupporterpersonID</td>
+            <td>@supporters.SupporterName</td>
+
+            </RowTemplate>
+            </TableLayout>
+            @*<button type="button" class="btn btn-success w-auto" @onclick="GetSupporters">
+            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: white; margin-inline: 10px;" />
+            supporters
+            </button>
+            </td>*@
+            <td>
+                <button class="btn btn-info" @onclick="@(() => ShowModal(programsitem))">لیست پشتیبان ها</button>
+                @*<button type="button" class="btn btn-default"  @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters"))"  data-toggle="modal" data-target="@programsitem.Supporters" data-id="@programsitem.Id" >Details</button>*@
+
+                <button class=" btn btn-danger" @onclick="@(() => DeleteProgram(programsitem.Id))">حذف</button>
+
+            </td>
+        </RowTemplate>
+    </TableLayout>
+</p>
+
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; }
+
+
+    public ModalParameters Keys = new ModalParameters();
+    public ModalParameters MessageBoxKeys = new ModalParameters();
+
+    private List<ProgramDto> programDtos = new List<ProgramDto>();
+    private List<ProgramDto> programbyfilters = new List<ProgramDto>();
+    private ProgramDto programDto = new ProgramDto();
+    private int showdetail = 0;
+    private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
+    private string filter_programName = "";
+    private string filter_supporterID = "";
+    private string filter_SupporerName = "";
+    private string filter_Supporerinfo = "";
+
+    private string filter_programLink = "";
+    private async Task<List<ProgramDto>> GetAllPrograms()
+    {
+        filter_programName = "";
+        filter_supporterID = "";
+        filter_SupporerName = "";
+        filter_programLink = "";
+        filter_Supporerinfo = "";
+        programDtos = await programRepository.GetAllProgram();
+        programbyfilters = programDtos;
+        return programDtos;
+
+
+    }
+    protected async override Task OnInitializedAsync()
+    {
+        await GetAllPrograms();
+    }
+
+    private async Task<List<ProgramDto>> GetProgramByFilters()
+    {
+        programbyfilters = programDtos;
+
+        if(!string.IsNullOrWhiteSpace(filter_programName))
+            programbyfilters = programbyfilters.Where(n => (((n.ProgramLink + " " + n.ProgamName).Contains(filter_programName)) || (n.Supporters.Any(m => (m.SupporterpersonID.ToString() + " " + m.SupporterName).Contains(filter_programName))))).ToList();
+        return programbyfilters;
+    }
+    private async void ShowModal(ProgramDto program)
+    {
+        Keys.Add("programDto", program);
+        if(program.ProgamName == null)
+            Keys.Add("isnew", true);
+        else
+            Keys.Add("isnew", false);
+        var w = await Modal.Show<FechSupporterInfo>("جزئیات", Keys).Result;
+
+        await GetAllPrograms();
+        StateHasChanged();
+
+    }
+
+
+    private async Task<List<ProgramSupporterDto>> GetSupporters()
+    {
+        programSupporterDtos = programDtos.Select(n => n.Supporters.ToList()).FirstOrDefault();
+        ModalParameters parameters = new ModalParameters();
+        parameters.Add("supporters", programSupporterDtos);
+        FechSupporterInfo fechSupporterInfo = new FechSupporterInfo();
+        return programSupporterDtos;
+
+    }
+    private async void DeleteProgram(Guid Id)
+    {
+        string resultMessage = "";
+        try
+        {
+            DeleteProgramCommand deleteProgramCommand = new DeleteProgramCommand()
+                {
+                    Id = Id
+                };
+            await programRepository.DeleteProgram(deleteProgramCommand);
+            await GetAllPrograms();
+            resultMessage = "برنامه مورد نظر با موفقیت حذف شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            MessageBoxKeys.Add("Message", resultMessage);
+            MessageBoxKeys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", MessageBoxKeys);
+        }
+    }
+
+}
