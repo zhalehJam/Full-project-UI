@@ -37,7 +37,7 @@
                 <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams">
                     <Template>
                         @{
-                            var ticket = (context as TicketDto) ?? new TicketDto(); 
+                            var ticket = (context as TicketDto) ?? new TicketDto();
                         }
                         <div class="form-row col-md-12">
                             <SfTextBox ID="PersonCenterName" @bind-Value="@(ticket.PersonCenterName)"></SfTextBox>
