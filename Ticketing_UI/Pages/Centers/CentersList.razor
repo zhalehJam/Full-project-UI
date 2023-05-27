@@ -88,7 +88,7 @@ CreateNewCenter();
             <td>@centeritem.CenterName</td>
             <td>@centeritem.CenterID</td>
             <td>
-                <button class="btn btn-outline-success" @onclick="@((e) =>{ EditCenter(centeritem);setlist();})"> واحدها</button>
+                <button class="btn btn-outline-success" @onclick="@((e) =>{  EditCenter(centeritem); setlist();})"> واحدها</button>
                 <button class="btn btn-danger" @onclick="@((e) =>{ DeleteCenter(centeritem);setlist();})"> حذف</button>
 
                 @*<div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
@@ -142,7 +142,7 @@ CreateNewCenter();
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private PagedList<CenterDto> pagedcenterDtos;
     List<CenterDto> centerbyfilters = new List<CenterDto>();
-    [CascadingParameter] public IModalService Modal { get; set; }
+    [CascadingParameter] public IModalService Modal { get; set; } 
     public ModalParameters Keys = new ModalParameters();
     public ModalParameters MessageBoxKeys = new ModalParameters();
 

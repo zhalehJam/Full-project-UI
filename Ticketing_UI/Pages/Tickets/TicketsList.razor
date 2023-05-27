@@ -1,60 +1,153 @@
-﻿@page "/ticketsList"
+﻿@attribute [Authorize]
+
+@page "/ticketsList"
 
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+@using Newtonsoft.Json;
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.DropDowns
+@using Ticketing.Cilient.Contracts.Ticket;
+@using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Tickets.Command
 @using Ticketing.Models.Tickets.Dto
 @using Ticketing.Models.Tickets.Repository
 @using Ticketing_UI.Shared.Component
-
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Buttons
+@inject Microsoft.AspNetCore.Components.NavigationManager UriHelper
+@using Action = Syncfusion.Blazor.Grids.Action
 @inject ITicketRepository ticketRepository
-<div dir="rtl">
-    <h3>تیکت ها</h3>
-    <button class="btn btn-success" @onclick="@(() =>
-{CreateTicket();GetTicketsByFilters();})">
-        افزودن
-    </button>
+@inject IPersonRepository personRepository
+@inject AuthenticationStateProvider authenticationStateProvider
 
-    <br />
-    <br />
     جستجو:
-    <input size="70" @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" />
+<input size="70" @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" />
 
-    <TableLayout Items="@ticketsByFilters" Context="ticketitems">
-        <TableHeader>
 
-            <th>نام شخص</th>
-            <th>مرکز </th>
-            <th>واحد </th>
-            <th>نوع خطا </th>
-            <th>نوع تیکت </th>
-            <th>وضعیت تیکت</th>
-            <th>جزئیات</th>
-        </TableHeader>
-        <RowTemplate>
-            <td>@ticketitems.PersonName</td>
-            <td>@ticketitems.PersonCenterName</td>
-            <td>@ticketitems.ProgramName</td>
-            <td>@ticketitems.ErrorTypeName</td>
-            <td>@ticketitems.TicketTypeName</td>
-            <td>@ticketitems.TicketConditionTypeName</td>
-            <button class="btn btn-info" @onclick="@(() => {EditTicket(ticketitems);GetTicketsByFilters();})">جزئیات</button>
-            <button class="btn-danger" @onclick="@(() => {;DeleteTicket(ticketitems);GetTicketsByFilters();})">حذف</button>
+<div dir="rtl" class="col-lg-12 control-section">
+    <div class="content-wrapper">
+        <div class="row">
+            <SfGrid DataSource="@ticketDtos" AllowPaging="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete","Update","Cancel" })">
 
-        </RowTemplate>
+                <GridEvents TValue="TicketDto" OnActionBegin="ActionBeginHandler" OnActionFailure="ActionFailureHandler"></GridEvents>
+                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams">
+                    <Template>
+                        @{
+                            var ticket = (context as TicketDto) ?? new TicketDto(); 
+                        }
+                        <div class="form-row col-md-12">
+                            <SfTextBox ID="PersonCenterName" @bind-Value="@(ticket.PersonCenterName)"></SfTextBox>
+                            <SfTextBox ID="SupporterPersonName" @bind-Value="@(ticket.SupporterPersonName)"></SfTextBox>
+                            <SfTextBox ID="ErrorTypeName" @bind-Value="@(ticket.ErrorTypeName)"></SfTextBox>
+                            <SfTextBox ID="TicketTypeName" @bind-Value="@(ticket.TicketTypeName)"></SfTextBox>
+                            <SfTextBox ID="TicketConditionTypeName" @bind-Value="@(ticket.TicketConditionTypeName)"></SfTextBox>
 
-    </TableLayout>
-    Page Number
-    <input @bind="@PageNumber" @oninput="@((e)=>{PageNumber=e.Value.ToString();GetTicketsByFilters();})" size="5p" />
-    Page Size
-    <input @bind="@PageSize" @oninput="@((e)=>{PageSize=e.Value.ToString();GetTicketsByFilters();})" size="5p" />
+                        </div>
+                        <div>
+                            <div class="form-row col-md-12">
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfNumericTextBox ID="ticketPersonID" @bind-Value="@(ticket.PersonID)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Format="0" Placeholder="کد پرسنلی"></SfNumericTextBox>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <SfTextBox ID="ticketpersonName" @bind-Value="@(ticket.PersonName)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Placeholder="نام"></SfTextBox>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfDropDownList TItem="KeyValuePair<int,string>" @bind-Value="@(ticket.ErrorTypeid)" TValue="int" DataSource="@errorTypes" FloatLabelType="FloatLabelType.Auto" Placeholder="نوع خطا">
+                                        <DropDownListFieldSettings Value="Key" Text="Value">
+                                        </DropDownListFieldSettings>
+                                    </SfDropDownList>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfTextBox ID="ErrorDescription" @bind-Value="@(ticket.ErrorDescription)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Format="0" Placeholder="شرح خطا"></SfTextBox>
+                                </div>
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfTextBox ID="SolutionDescription" @bind-Value="@(ticket.SolutionDescription)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Placeholder="شرح راهکار"></SfTextBox>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfDropDownList TItem="KeyValuePair<int,string>" @bind-Value="@(ticket.Typeid)" TValue="int" DataSource="@TicketTypes" FloatLabelType="FloatLabelType.Auto" Placeholder="نوع تیکت">
+                                        <DropDownListFieldSettings Value="Key" Text="Value">
+                                        </DropDownListFieldSettings>
+                                    </SfDropDownList>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfDatePicker TValue="DateTime" Value="@(ticket.TicketTime)" FloatLabelType="FloatLabelType.Auto" Placeholder="روز"></SfDatePicker>
+                                </div>
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfTimePicker TValue="DateTime" Value="@(ticket.TicketTime)" Step=5 ShowClearButton="true" FloatLabelType="FloatLabelType.Auto" Placeholder="ساعت"></SfTimePicker>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5" style="display:inline-block!important">
+                                    <SfDropDownList TItem="KeyValuePair<int,string>" @bind-Value="@(ticket.TicketConditionid)" TValue="int" DataSource="@TicketConditions" FloatLabelType="FloatLabelType.Auto" Placeholder="وضعیت">
+                                        <DropDownListFieldSettings Value="Key" Text="Value">
+                                        </DropDownListFieldSettings>
+                                    </SfDropDownList>
+                                </div>
+                            </div>
+                        </div>
+                    </Template>
+
+                </GridEditSettings>
+                <GridColumns>
+                    <GridColumn Field=@nameof(TicketDto.Id) HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.ErrorTypeName) HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.TicketTypeName) HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="150"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.TicketConditionTypeName) HeaderText="وضعیت" EditType="EditType.DropDownEdit" Width="160">
+                        <Template>
+                            @{
+                                var catagory = (context as TicketDto);
+                                @if(catagory.TicketConditionTypeName == "OnGoing")
+                                {
+                                    <div class="title-temp2 inprogress">
+                                        <span class="inprogress-font">@catagory.TicketConditionTypeName</span>
+                                    </div>
+                                }
+                                @if(catagory.TicketConditionTypeName == "Finish")
+                                {
+                                    <div class="title-temp2 completed">
+                                        <span class="completed-font">@catagory.TicketConditionTypeName</span>
+                                    </div>
+                                }
+                            }
+                        </Template>
+                    </GridColumn>
+                    <GridColumn HeaderText="Manage Records" Width="150">
+                        <GridCommandColumns>
+                            <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+
+                        </GridCommandColumns>
+                    </GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    </div>
 </div>
+
+
+
+
 @code {
     [CascadingParameter] public IModalService Modal { get; set; }
     public ModalParameters Keys = new ModalParameters();
     public ModalParameters MessageBoxKeys = new ModalParameters();
 
-    private List<TicketDto> ticketDtos = new List<TicketDto>();
+    private List<TicketDto> ticketDtos { get; set; }//= new List<TicketDto>();
     private List<TicketDto> ticketsByFilters = new List<TicketDto>();
     private string Filter_PersonName = "";
 
@@ -62,12 +155,57 @@
     private string PageNumber = "1";
     private TicketDetail ticketDetail = new TicketDetail();
     private TicketDto ticketDto = new TicketDto() { SupporterPersonID = 970086 };
-    private string message = "";//=new string[1] ;
+    private string message = "";
+    private Boolean Check = false;
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
+    private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
+                                                                           .Select(s => new { Key = (int)s, Value = s.ToString() })
+                                                                           .ToDictionary(d => d.Key, d => d.Value).ToList();
+    private List<KeyValuePair<int, string>> TicketTypes { get; set; } = Enum.GetValues(typeof(TicketType)).Cast<TicketType>().ToList()
+                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
+                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
+    private List<KeyValuePair<int, string>> TicketConditions { get; set; } = Enum.GetValues(typeof(TicketCondition)).Cast<TicketCondition>().ToList()
+                                                                           .Select(s => new { Key = (int)s, Value = s.ToString() })
+                                                                           .ToDictionary(d => d.Key, d => d.Value).ToList();
+    private int userId;
 
     protected override async Task OnInitializedAsync()
     {
-        await GetAllTickets();
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        userId = Convert.ToInt32(user.Identity?.Name);
 
+        await GetAllTickets();
+    }
+    public void ActionFailureHandler(Syncfusion.Blazor.Grids.FailureEventArgs args)
+    {
+        var s = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(args.Error));
+    }
+
+    public async Task ActionBeginHandler(ActionEventArgs<TicketDto> Args)
+    {
+        string rType = Args.RequestType.ToString();
+        if(rType == "Save")
+        {
+            switch(Args.Action)
+            {
+                case "Add":
+                    await CreateTicket((TicketDto)Args.Data);
+                    break;
+
+                case "Edit":
+                    await EditTicket(Args.Data);
+                    break;
+            }
+
+        }
+        else
+        {
+            if(rType == "Delete")
+            {
+                await DeleteTicket(userId, Args.RowData.Id);
+            }
+        }
     }
 
     private async Task<List<TicketDto>> GetAllTickets()
@@ -76,10 +214,11 @@
 
         PageSize = "10";
         PageNumber = "1";
-        ticketDtos = await ticketRepository.GetAllTickets(PageNumber, PageSize);//GetAllTickets();
+        ticketDtos = await ticketRepository.GetAllTickets(PageNumber, PageSize);
         ticketsByFilters = ticketDtos;
         return ticketDtos;
     }
+
     private async Task<List<TicketDto>> GetTicketsByFilters()
     {
         ticketsByFilters = await ticketRepository.GetAllTickets(PageNumber, PageSize);
@@ -94,30 +233,87 @@
         }
         return ticketsByFilters;
     }
-    private async void CreateTicket()
+
+    private async Task CreateTicket(TicketDto ticketDto)
     {
-        Keys.Add("mode", "Create");
-        Keys.Add("TicketDtos", new TicketDto(){TicketTime=DateTime.Now});
-        var modalresult = Modal.Show<TicketDetail>("تیکت جدید", Keys, new ModalOptions() { Size = ModalSize.Large }).Result;
-        await GetAllTickets();
-        StateHasChanged();
+        string resultMessage = "";
+        try
+        {
+            CreateTicketCommand createTicketCommand = new CreateTicketCommand()
+                {
+                    TicketTime = ticketDto.TicketTime,
+                    TicketCondition = (TicketCondition)ticketDto.TicketConditionid,
+                    ErrorDiscription = ticketDto.ErrorDescription ?? "",
+                    ErrorType = (ErrorType)ticketDto.ErrorTypeid,
+                    SolutionDiscription = ticketDto.SolutionDescription ?? "",
+                    SupporterPersonID = ticketDto.SupporterPersonID,
+                    ProgramId = ticketDto.ProgramId,
+                    PersonID = ticketDto.PersonID,
+                    Type = (TicketType)ticketDto.Typeid
+                };
+            await ticketRepository.CreateNewTicket(createTicketCommand);
+            resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
+            StateHasChanged();
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            MessageBoxKeys.Add("Message", resultMessage);
+            MessageBoxKeys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", MessageBoxKeys);
+            await GetAllTickets();
+            StateHasChanged();
+        }
     }
-    private async void EditTicket(TicketDto seletedticket)
+
+    private async Task EditTicket(TicketDto seletedticket)
     {
-        Keys.Add("mode", "Edit");
-        Keys.Add("TicketDtos", seletedticket);
-        var modalresult = Modal.Show<TicketDetail>("ویرایش تیکت", Keys, new ModalOptions() { Size = ModalSize.Large }).Result;
-        await GetAllTickets();
-        StateHasChanged();
+        string resultMessage = "";
+        try
+        {
+            UpdateTicketCommand updateTicketCommand = new UpdateTicketCommand()
+                {
+                    Id = seletedticket.Id,
+                    TicketTime = seletedticket.TicketTime,
+                    TicketCondition = (TicketCondition)seletedticket.TicketConditionid,
+                    ErrorDiscription = seletedticket.ErrorDescription ?? "",
+                    ErrorType = (ErrorType)errorTypes.Where(b => b.Value == seletedticket.ErrorTypeName).Select(t => t.Key).First(),
+                    SolutionDiscription = seletedticket.SolutionDescription ?? "",
+                    ProgramId = seletedticket.ProgramId,
+                    PersonID = seletedticket.PersonID,
+                    Type = (TicketType)seletedticket.Typeid,
+                    EditorPersonID = userId
+                };
+            await ticketRepository.UpdateTicket(updateTicketCommand);
+
+            resultMessage = "تیکت مورد نظر با موفقیت ویرایش شد";
+
+        }
+        catch(Exception ex)
+        {
+            resultMessage = ex.Message.ToString();
+        }
+        finally
+        {
+            MessageBoxKeys.Add("Message", resultMessage);
+            MessageBoxKeys.Add("MessageType", "Alert");
+            Modal.Show<MessageBox>("", MessageBoxKeys);
+            await GetAllTickets();
+            StateHasChanged();
+        }
     }
-    private async void DeleteTicket(TicketDto ticketDto)
+
+    private async Task DeleteTicket(int userId, Guid Id)
     {
         string resultMessage = "";
         try
         {
             DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
-            deleteTicketCommand.SupporterUser = 970086;
-            deleteTicketCommand.Id = ticketDto.Id;
+            deleteTicketCommand.SupporterUser = userId;
+            deleteTicketCommand.Id = Id;
 
             await ticketRepository.DeleteTicket(deleteTicketCommand);
             resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
@@ -135,5 +331,89 @@
             Modal.Show<MessageBox>("", MessageBoxKeys);
         }
     }
-
 }
+
+
+@*Hidden:Lines*@
+<style type="text/css" class="cssStyles">
+    .title-temp1, .title-temp2 {
+        border-radius: 2px;
+        padding: 2px 0px 3px 0px;
+        margin: 10px 0px;
+    }
+
+    .col-md-6 {
+        width: 50% !important;
+    }
+
+    .title-temp1 {
+        width: 64px;
+        text-align: left;
+    }
+
+    .title-temp2 {
+        width: 95px;
+        text-align: center;
+    }
+
+    .font {
+        font-size: 11px;
+        font-weight: 400;
+        font-style: normal;
+        height: 9px;
+    }
+
+    .priority {
+        height: 16px;
+        width: 16px;
+    }
+
+    .inprogress {
+        background: #E3F5FF;
+    }
+
+    .inprogress-font {
+        color: #03659C;
+    }
+
+    .completed {
+        background: #E7FFF1;
+    }
+
+    .completed-font {
+        color: #067939;
+    }
+
+    .blocked {
+        background: #FFF1F1;
+    }
+
+    .blocked-font {
+        color: #B40000;
+    }
+
+    .wontfix {
+        background: #FFEFE9;
+    }
+
+    .wontfix-font {
+        color: #993105;
+    }
+
+    .notreproduced {
+        background: #FFF8E1;
+    }
+
+    .notreproduced-font {
+        color: #926A04;
+    }
+
+    .bydesign {
+        background: #ECFEFF;
+    }
+
+    .bydesign-font {
+        color: #027C85;
+    }
+</style>
+@*End:Hidden*@
