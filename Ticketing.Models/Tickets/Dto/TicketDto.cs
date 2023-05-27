@@ -24,7 +24,7 @@ namespace Ticketing.Models.Tickets.Dto
         public string TicketTypeName { get; set; }
         public string? ErrorDescription { get; set; }
         public string? SolutionDescription { get; set; }
-        public DateTime TicketTime { get; set; }
+        public DateTime TicketTime { get; set; }=DateTime.Now;
         public int TicketConditionid { get; set; }
         public string TicketConditionTypeName { get; set; }
         public int SupporterPersonID { get; set; }

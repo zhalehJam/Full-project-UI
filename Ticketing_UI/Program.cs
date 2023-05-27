@@ -1,6 +1,9 @@
 using Blazored.Modal; 
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Syncfusion.Blazor;
+using Syncfusion.Blazor.Popups;
+//using Syncfusion.Licensing;
 using Ticketing_UI;
 using Ticketing_UI.Shared.Classes;
 
@@ -8,7 +11,12 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+//SyncfusionLicenseProvider.RegisterLicense("OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
+builder.Services.AddSyncfusionBlazor(options => { options.EnableRtl = true; });
+builder.Services.AddScoped<SfDialogService>();
+ 
 
+//builder.Services.AddBlazoredModal();
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>()
                 .CreateClient("API"));
 builder.Services.AddScoped<CustomAuthorizationMessageHandler>();
@@ -43,7 +51,6 @@ Registrar.RegisterRepositories(builder.Services);
 
 //Registrar registrar = new Registrar(builder.Services);
 //registrar.Register();
-
 var app = builder.Build();
 
 

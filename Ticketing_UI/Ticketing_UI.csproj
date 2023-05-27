@@ -14,6 +14,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" />
   </ItemGroup>
 
   <ItemGroup>
@@ -92,6 +93,10 @@
     <None Include="Authentication\Signin-oidc.razor" />
     <None Include="Authentication\UnAuthorizedUser.razor" />
     <None Include="Shared\MainLayout.razor" />
+    <None Include="wwwroot\styles\common\fonts\open-sans-600.woff2" />
+    <None Include="wwwroot\styles\common\fonts\open-sans-700.woff2" />
+    <None Include="wwwroot\styles\common\fonts\open-sans-regular.woff2" />
+    <None Include="wwwroot\styles\common\fonts\sbicons.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -99,6 +104,10 @@
     <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
     <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />
     <ProjectReference Include="..\Ticketing.Repository\Ticketing.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\Common\" />
   </ItemGroup>
 
 </Project>
