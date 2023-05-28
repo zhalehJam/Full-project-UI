@@ -11,6 +11,7 @@
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.DropDowns
 @using Ticketing.Cilient.Contracts.Ticket;
+@using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Tickets.Command
 @using Ticketing.Models.Tickets.Dto
@@ -37,7 +38,9 @@
                 <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams">
                     <Template>
                         @{
-                            var ticket = (context as TicketDto) ?? new TicketDto();
+                            var ticket = (context as TicketDto) ?? new TicketDto() {SupporterPersonID= userInfo.PersonID,SupporterPersonName=userInfo.PersonName };
+                            if (true)
+                            { }
                         }
                         <div class="form-row col-md-12">
                             <SfTextBox ID="PersonCenterName" @bind-Value="@(ticket.PersonCenterName)"></SfTextBox>
@@ -167,13 +170,13 @@
     private List<KeyValuePair<int, string>> TicketConditions { get; set; } = Enum.GetValues(typeof(TicketCondition)).Cast<TicketCondition>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
-    private int userId;
+    private PersonDto userInfo;
 
     protected override async Task OnInitializedAsync()
     {
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
-        userId = Convert.ToInt32(user.Identity?.Name);
+        userInfo =await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(user.Identity?.Name));
 
         await GetAllTickets();
     }
@@ -203,7 +206,7 @@
         {
             if(rType == "Delete")
             {
-                await DeleteTicket(userId, Args.RowData.Id);
+                await DeleteTicket(userInfo.PersonID, Args.RowData.Id);
             }
         }
     }
@@ -285,7 +288,7 @@
                     ProgramId = seletedticket.ProgramId,
                     PersonID = seletedticket.PersonID,
                     Type = (TicketType)seletedticket.Typeid,
-                    EditorPersonID = userId
+                    EditorPersonID = userInfo.PersonID
                 };
             await ticketRepository.UpdateTicket(updateTicketCommand);
 

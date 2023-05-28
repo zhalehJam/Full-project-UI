@@ -42,7 +42,7 @@ namespace Ticketing.Repository.Persons
             string request = QueryHelpers.AddQueryString("Person/GetPersonById", parameters);
             var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
-            personDtos = GetPersonDtoFromContent(content).FirstOrDefault();
+            personDtos = GetPersonDtoFromContent(content).First();
 
             return personDtos;
         }
@@ -88,6 +88,20 @@ namespace Ticketing.Repository.Persons
         {
             await SendRequest<DeletePersonCommand>(deletePersonCommand, HttpMethod.Delete, "Person/DeletePerson");
         }
+
+        public async Task<PersonDto> GetPersonInfoByPersonelCode(int PersonnelCode)
+        {
+             PersonDto  personDtos = new PersonDto();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("personnelCode", PersonnelCode.ToString()); 
+            string request = QueryHelpers.AddQueryString("Person/GetAllPersonsByPage", parameters);
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+            personDtos = GetPersonDtoFromContent(content).First();
+
+            return personDtos;
+        }
+
         private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
         {
             var postRequest = new HttpRequestMessage(httpMethod, uri)
@@ -105,5 +119,6 @@ namespace Ticketing.Repository.Persons
                 }
             }
         }
+
     }
 }
