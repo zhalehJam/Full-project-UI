@@ -12,6 +12,7 @@ namespace Ticketing.Models.Programs.Repository
     {
         Task<List<ProgramDto>> GetAllProgram();
         Task<ProgramDto> GetProgramById(Guid programId);
+        Task<List<ProgramDto>> GetSupporterProgramsList(int supporterCode);
         Task CreateProgram(CreateProgramCommand createProgramCommand);
         Task UpdateProgramLink(UpdateProgramLinkCommand updateProgramLinkComand);
         Task AddProgramSupporter(AddProgramSupporterCommand addProgramSupporter);

@@ -16,6 +16,6 @@ namespace Ticketing.Models.Persons.Repository
         Task CreatePerson(CreatePersonCommand createPersonCommand);
         Task UpdatePerson(UpdatePersonCommand updatePersonCommand);
         Task DeletePerson(DeletePersonCommand deletePersonCommand);
-
+        Task<PersonDto> GetPersonInfoByPersonelCode(int PersonnelCode);
     }
 }

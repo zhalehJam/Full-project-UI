@@ -11,7 +11,10 @@
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.DropDowns
 @using Ticketing.Cilient.Contracts.Ticket;
+@using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
+@using Ticketing.Models.Programs.Dto;
+@using Ticketing.Models.Programs.Repository;
 @using Ticketing.Models.Tickets.Command
 @using Ticketing.Models.Tickets.Dto
 @using Ticketing.Models.Tickets.Repository
@@ -22,89 +25,156 @@
 @using Action = Syncfusion.Blazor.Grids.Action
 @inject ITicketRepository ticketRepository
 @inject IPersonRepository personRepository
+@inject IProgramRepository programRepository
 @inject AuthenticationStateProvider authenticationStateProvider
-
-    جستجو:
-<input size="70" @bind="@Filter_PersonName" @oninput="@((e) => { Filter_PersonName=(string)e.Value.ToString(); GetTicketsByFilters();})" />
-
 
 <div dir="rtl" class="col-lg-12 control-section">
     <div class="content-wrapper">
         <div class="row">
-            <SfGrid DataSource="@ticketDtos" AllowPaging="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete","Update","Cancel" })">
-
+            <SfGrid @ref="Grid" DataSource="@ticketDtos" AllowPaging="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete"  })">
+                <GridPageSettings @ref="GridPage" PageSize="10"></GridPageSettings>
                 <GridEvents TValue="TicketDto" OnActionBegin="ActionBeginHandler" OnActionFailure="ActionFailureHandler"></GridEvents>
-                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams">
+                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams"   ShowConfirmDialog="true">
+                    <HeaderTemplate>
+                        @{
+                            var text ="اطلاعات تیکت";
+                            <span>@text</span>
+                        }
+                    </HeaderTemplate>
+
                     <Template>
                         @{
-                            var ticket = (context as TicketDto) ?? new TicketDto();
+                            var ticket = (context as TicketDto);
+                            
+                            if(ticket?.SupporterPersonID == 0)
+                            {
+                                ticket.SupporterPersonID = supporterInfo.PersonID;
+                                ticket.SupporterPersonName = supporterInfo.PersonName ?? "";
+
+                            }
                         }
-                        <div class="form-row col-md-12">
-                            <SfTextBox ID="PersonCenterName" @bind-Value="@(ticket.PersonCenterName)"></SfTextBox>
-                            <SfTextBox ID="SupporterPersonName" @bind-Value="@(ticket.SupporterPersonName)"></SfTextBox>
-                            <SfTextBox ID="ErrorTypeName" @bind-Value="@(ticket.ErrorTypeName)"></SfTextBox>
-                            <SfTextBox ID="TicketTypeName" @bind-Value="@(ticket.TicketTypeName)"></SfTextBox>
-                            <SfTextBox ID="TicketConditionTypeName" @bind-Value="@(ticket.TicketConditionTypeName)"></SfTextBox>
+                        @*<SfTextBox ID="Id"  @bind-Value="@(ticket.Id.ToString())"></SfTextBox>*@
+
+
+                        <div class="col-md-12">
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfTextBox ID="SupporterPersonName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.SupporterPersonName)" Enabled="false" FloatLabelType="FloatLabelType.Auto" Placeholder="نام پشتیبان"></SfTextBox>
+                            </div>
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfDropDownList ID="ProgramName"
+                                                TItem="ProgramDto"
+                                                @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                @bind-Value="@(ticket.ProgramId)"
+                                                Enabled="@Check"
+                                                IndexChanged="((e)=>{ ticket.ProgramName=programDtos.Single(t=>t.Id==ticket.ProgramId).ProgamName; Grid.PreventRender(false);})"
+                                                TValue="Guid"
+                                                DataSource="@programDtos"
+                                                FloatLabelType="FloatLabelType.Auto"
+                                                Placeholder="نام برنامه">
+                                    <DropDownListFieldSettings Value="Id" Text="ProgamName">
+                                    </DropDownListFieldSettings>
+                                </SfDropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfNumericTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))" OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
+                                                                         ticket.PersonName = t.PersonName;
+                                                                         ticket.PersonCenterName= t.CenterName;
+                                                                         ticket.PersonPartId=t.PartId;
+                                                                         ticket.PersonPartName=t.PartName;
+                                                                         })" @bind-Value="@ticket.PersonID"
+                                                  Placeholder="کد پرسنلی"
+                                                  FloatLabelType="FloatLabelType.Auto"
+                                                  CssClass="e-corner"></SfNumericTextBox>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfTextBox ID="ticketpersonName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" Enabled="false" @bind-Value="@ticket.PersonName" FloatLabelType="FloatLabelType.Auto" Placeholder="نام"></SfTextBox>
+                            </div>
+
+                            <div class="col-md-2" style="display:inline-block!important">
+                                <SfTextBox ID="PersonCenterName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" Enabled="false" @bind-Value="@(ticket.PersonCenterName)" FloatLabelType="FloatLabelType.Auto" Placeholder="دفتر"></SfTextBox>
+                            </div>
+                            <div class="col-md-2" style="display:inline-block!important">
+                                <SfTextBox ID="PersonPartName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" Enabled="false" @bind-Value="@(ticket.PersonPartName)" FloatLabelType="FloatLabelType.Auto" Placeholder="واحد"></SfTextBox>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="col-md-5" style="display:inline-block!important">
+                                    <SfDropDownList ID="ErrorTypeName"
+                                                    @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                    TItem="KeyValuePair<int,string>"
+                                                    IndexChanged="((e)=>{ ticket.ErrorTypeName=errorTypes.Single(t=>t.Key==ticket.ErrorTypeid).Value; Grid.PreventRender(false);})"
+                                                    @bind-Value="@(ticket.ErrorTypeid)"
+                                                    TValue="int"
+                                                    DataSource="@errorTypes"
+                                                    FloatLabelType="FloatLabelType.Auto"
+                                                    Placeholder="نوع خطا">
+                                        <DropDownListFieldSettings Value="Key" Text="Value"></DropDownListFieldSettings>
+                                    </SfDropDownList>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfTextBox ID="ErrorDescription" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.ErrorDescription)" FloatLabelType="FloatLabelType.Auto" Format="0" Placeholder="شرح خطا"></SfTextBox>
+                            </div>
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfTextBox ID="SolutionDescription" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.SolutionDescription)" FloatLabelType="FloatLabelType.Auto" Placeholder="شرح راهکار"></SfTextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfDropDownList ID="TicketTypeName"
+                                                @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                TItem="KeyValuePair<int,string>"
+                                                IndexChanged="((e)=>{ ticket.TicketTypeName=TicketTypes.Single(t=>t.Key==ticket.Typeid).Value; Grid.PreventRender(false);})"
+                                                @bind-Value="@(ticket.Typeid)"
+                                                TValue="int"
+                                                DataSource="@TicketTypes"
+                                                FloatLabelType="FloatLabelType.Auto"
+                                                Placeholder="نوع تیکت">
+                                    <DropDownListFieldSettings Value="Key" Text="Value">
+                                    </DropDownListFieldSettings>
+                                </SfDropDownList>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfDatePicker TValue="DateTime" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.TicketTime)" FloatLabelType="FloatLabelType.Auto" Placeholder="روز"></SfDatePicker>
+                            </div>
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfTimePicker TValue="DateTime" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.TicketTime)" Step=5 ShowClearButton="true" FloatLabelType="FloatLabelType.Auto" Placeholder="ساعت"></SfTimePicker>
+                            </div>
 
                         </div>
                         <div>
-                            <div class="form-row col-md-12">
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfNumericTextBox ID="ticketPersonID" @bind-Value="@(ticket.PersonID)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Format="0" Placeholder="کد پرسنلی"></SfNumericTextBox>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <SfTextBox ID="ticketpersonName" @bind-Value="@(ticket.PersonName)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Placeholder="نام"></SfTextBox>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfDropDownList TItem="KeyValuePair<int,string>" @bind-Value="@(ticket.ErrorTypeid)" TValue="int" DataSource="@errorTypes" FloatLabelType="FloatLabelType.Auto" Placeholder="نوع خطا">
-                                        <DropDownListFieldSettings Value="Key" Text="Value">
-                                        </DropDownListFieldSettings>
-                                    </SfDropDownList>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfTextBox ID="ErrorDescription" @bind-Value="@(ticket.ErrorDescription)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Format="0" Placeholder="شرح خطا"></SfTextBox>
-                                </div>
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfTextBox ID="SolutionDescription" @bind-Value="@(ticket.SolutionDescription)" Enabled="@Check" FloatLabelType="FloatLabelType.Auto" Placeholder="شرح راهکار"></SfTextBox>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfDropDownList TItem="KeyValuePair<int,string>" @bind-Value="@(ticket.Typeid)" TValue="int" DataSource="@TicketTypes" FloatLabelType="FloatLabelType.Auto" Placeholder="نوع تیکت">
-                                        <DropDownListFieldSettings Value="Key" Text="Value">
-                                        </DropDownListFieldSettings>
-                                    </SfDropDownList>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfDatePicker TValue="DateTime" Value="@(ticket.TicketTime)" FloatLabelType="FloatLabelType.Auto" Placeholder="روز"></SfDatePicker>
-                                </div>
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfTimePicker TValue="DateTime" Value="@(ticket.TicketTime)" Step=5 ShowClearButton="true" FloatLabelType="FloatLabelType.Auto" Placeholder="ساعت"></SfTimePicker>
-                                </div>
-
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5" style="display:inline-block!important">
-                                    <SfDropDownList TItem="KeyValuePair<int,string>" @bind-Value="@(ticket.TicketConditionid)" TValue="int" DataSource="@TicketConditions" FloatLabelType="FloatLabelType.Auto" Placeholder="وضعیت">
-                                        <DropDownListFieldSettings Value="Key" Text="Value">
-                                        </DropDownListFieldSettings>
-                                    </SfDropDownList>
-                                </div>
+                            <div class="col-md-5" style="display:inline-block!important">
+                                <SfDropDownList ID="TicketConditionTypeName"
+                                                @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                TItem="KeyValuePair<int,string>"
+                                                IndexChanged="((e)=>{ ticket.TicketConditionTypeName=TicketConditions.Single(t=>t.Key==ticket.TicketConditionid).Value; Grid.PreventRender(false);})"
+                                                @bind-Value="@(ticket.TicketConditionid)"
+                                                TValue="int"
+                                                DataSource="@TicketConditions"
+                                                FloatLabelType="FloatLabelType.Auto" Placeholder="وضعیت">
+                                    <DropDownListFieldSettings Value="Key" Text="Value">
+                                    </DropDownListFieldSettings>
+                                </SfDropDownList>
                             </div>
                         </div>
+
                     </Template>
 
                 </GridEditSettings>
                 <GridColumns>
-                    <GridColumn Field=@nameof(TicketDto.Id) HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.Id)  HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.ErrorTypeName) HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.TicketTypeName) HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="150"></GridColumn>
@@ -139,25 +209,29 @@
     </div>
 </div>
 
-
-
-
 @code {
     [CascadingParameter] public IModalService Modal { get; set; }
     public ModalParameters Keys = new ModalParameters();
     public ModalParameters MessageBoxKeys = new ModalParameters();
 
-    private List<TicketDto> ticketDtos { get; set; }//= new List<TicketDto>();
+    private List<TicketDto>? ticketDtos { get; set; } = new List<TicketDto>();
     private List<TicketDto> ticketsByFilters = new List<TicketDto>();
     private string Filter_PersonName = "";
-
+    private List<ProgramSupporterDto> SupportersList { get; set; } = new List<ProgramSupporterDto>();
+    private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>();
     private string PageSize = "10";
     private string PageNumber = "1";
     private TicketDetail ticketDetail = new TicketDetail();
-    private TicketDto ticketDto = new TicketDto() { SupporterPersonID = 970086 };
     private string message = "";
     private Boolean Check = false;
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
+
+    private PersonDto supporterInfo = new PersonDto();
+    private string resultMessage = "";
+
+    SfGrid<TicketDto> Grid { get; set; }
+    GridPageSettings GridPage { get; set; }
+
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
@@ -167,56 +241,124 @@
     private List<KeyValuePair<int, string>> TicketConditions { get; set; } = Enum.GetValues(typeof(TicketCondition)).Cast<TicketCondition>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
-    private int userId;
+
+
 
     protected override async Task OnInitializedAsync()
     {
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
-        userId = Convert.ToInt32(user.Identity?.Name);
+        supporterInfo = await GetPersonInfo(Convert.ToInt32(user.Identity?.Name));
+        programDtos = await programRepository.GetSupporterProgramsList(supporterInfo.PersonID);
 
         await GetAllTickets();
     }
+
     public void ActionFailureHandler(Syncfusion.Blazor.Grids.FailureEventArgs args)
     {
         var s = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(args.Error));
     }
 
+    private async Task<PersonDto> GetPersonInfo(int personCode)
+    {
+        return await personRepository.GetPersonInfoByPersonelCode(personCode);
+    }
+
     public async Task ActionBeginHandler(ActionEventArgs<TicketDto> Args)
     {
         string rType = Args.RequestType.ToString();
-        if(rType == "Save")
+        if(flag)
         {
-            switch(Args.Action)
-            {
-                case "Add":
-                    await CreateTicket((TicketDto)Args.Data);
-                    break;
-
-                case "Edit":
-                    await EditTicket(Args.Data);
-                    break;
-            }
-
+            Args.Cancel = true;
+            flag = false;
         }
         else
         {
-            if(rType == "Delete")
+            if(rType == "Save")
             {
-                await DeleteTicket(userId, Args.RowData.Id);
+                try
+                {
+                    switch(Args.Action)
+                    {
+                        case "Add":
+                            await CreateTicket(Args.Data);
+                            break;
+
+                        case "Edit":
+                            await EditTicket(Args.Data);
+                            break;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    Args.Cancel = true;
+                }
+                finally
+                {
+                    Args.Cancel = true;
+                    //Grid.PreventRender(true); 
+                    ticketDtos = await GetAllTickets(); 
+                    MessageBoxKeys.Add("Message", resultMessage);
+                    MessageBoxKeys.Add("MessageType", "Alert");
+                    Modal.Show<MessageBox>("", MessageBoxKeys); 
+                }
             }
+            else if(rType == "Delete")
+            {
+                try
+                {
+                    await DeleteTicket(supporterInfo.PersonID, Args.RowData.Id);
+                    StateHasChanged();
+                    Grid.PreventRender(false); 
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    Args.Cancel = true;
+                }
+                finally
+                {
+                    MessageBoxKeys.Add("Message", resultMessage);
+                    MessageBoxKeys.Add("MessageType", "Alert");
+                    Modal.Show<MessageBox>("", MessageBoxKeys);
+                    await GetAllTickets();
+                    StateHasChanged();
+                    //Grid.PreventRender(false);
+                    //await Grid.Refresh();
+                }
+
+            }
+            else if(rType == "Refresh")
+            {
+                Grid.PreventRender(false);
+            }
+            else if(rType == "Add")
+            {
+                Check = true;
+            } 
+
         }
     }
 
     private async Task<List<TicketDto>> GetAllTickets()
-    {
-        Filter_PersonName = "";
-
-        PageSize = "10";
-        PageNumber = "1";
-        ticketDtos = await ticketRepository.GetAllTickets(PageNumber, PageSize);
-        ticketsByFilters = ticketDtos;
+    { 
+        ticketDtos = await ticketRepository.GetAllTickets(GridPage.CurrentPage.ToString(), GridPage.PageSize.ToString()); 
+        StateHasChanged();  
         return ticketDtos;
+    }
+    private bool flag = false;
+    private void Setkeyboardkeyevent(KeyboardEventArgs args)
+    {
+        if(args.Key == "Enter")
+            flag = true;
+    } 
+
+    private async Task<PersonDto> SetpersonInfo2(ChangeEventArgs args)
+    {
+        var personInfos = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(args.Value));
+        Grid.PreventRender(false);
+        return personInfos;
     }
 
     private async Task<List<TicketDto>> GetTicketsByFilters()
@@ -236,100 +378,57 @@
 
     private async Task CreateTicket(TicketDto ticketDto)
     {
-        string resultMessage = "";
-        try
-        {
-            CreateTicketCommand createTicketCommand = new CreateTicketCommand()
-                {
-                    TicketTime = ticketDto.TicketTime,
-                    TicketCondition = (TicketCondition)ticketDto.TicketConditionid,
-                    ErrorDiscription = ticketDto.ErrorDescription ?? "",
-                    ErrorType = (ErrorType)ticketDto.ErrorTypeid,
-                    SolutionDiscription = ticketDto.SolutionDescription ?? "",
-                    SupporterPersonID = ticketDto.SupporterPersonID,
-                    ProgramId = ticketDto.ProgramId,
-                    PersonID = ticketDto.PersonID,
-                    Type = (TicketType)ticketDto.Typeid
-                };
-            await ticketRepository.CreateNewTicket(createTicketCommand);
-            resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
-            StateHasChanged();
-        }
-        catch(Exception ex)
-        {
-            resultMessage = ex.Message.ToString();
-        }
-        finally
-        {
-            MessageBoxKeys.Add("Message", resultMessage);
-            MessageBoxKeys.Add("MessageType", "Alert");
-            Modal.Show<MessageBox>("", MessageBoxKeys);
-            await GetAllTickets();
-            StateHasChanged();
-        }
+        CreateTicketCommand createTicketCommand = new CreateTicketCommand()
+            {
+                TicketTime = ticketDto.TicketTime,
+                TicketCondition = (TicketCondition)ticketDto.TicketConditionid,
+                ErrorDiscription = ticketDto.ErrorDescription ?? "",
+                ErrorType = (ErrorType)ticketDto.ErrorTypeid,
+                SolutionDiscription = ticketDto.SolutionDescription ?? "",
+                SupporterPersonID = ticketDto.SupporterPersonID,
+                ProgramId = ticketDto.ProgramId,
+                PersonID = ticketDto.PersonID,
+                Type = (TicketType)ticketDto.Typeid
+            };
+        await ticketRepository.CreateNewTicket(createTicketCommand);
+
+        resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
+        await GetAllTickets();
+        await GetAllTickets();
     }
 
     private async Task EditTicket(TicketDto seletedticket)
     {
-        string resultMessage = "";
-        try
-        {
-            UpdateTicketCommand updateTicketCommand = new UpdateTicketCommand()
-                {
-                    Id = seletedticket.Id,
-                    TicketTime = seletedticket.TicketTime,
-                    TicketCondition = (TicketCondition)seletedticket.TicketConditionid,
-                    ErrorDiscription = seletedticket.ErrorDescription ?? "",
-                    ErrorType = (ErrorType)errorTypes.Where(b => b.Value == seletedticket.ErrorTypeName).Select(t => t.Key).First(),
-                    SolutionDiscription = seletedticket.SolutionDescription ?? "",
-                    ProgramId = seletedticket.ProgramId,
-                    PersonID = seletedticket.PersonID,
-                    Type = (TicketType)seletedticket.Typeid,
-                    EditorPersonID = userId
-                };
-            await ticketRepository.UpdateTicket(updateTicketCommand);
 
-            resultMessage = "تیکت مورد نظر با موفقیت ویرایش شد";
+        UpdateTicketCommand updateTicketCommand = new UpdateTicketCommand()
+            {
+                Id = seletedticket.Id,
+                TicketTime = seletedticket.TicketTime,
+                TicketCondition = (TicketCondition)seletedticket.TicketConditionid,
+                ErrorDiscription = seletedticket.ErrorDescription ?? "",
+                ErrorType = (ErrorType)errorTypes.Where(b => b.Value == seletedticket.ErrorTypeName).Select(t => t.Key).First(),
+                SolutionDiscription = seletedticket.SolutionDescription ?? "",
+                ProgramId = seletedticket.ProgramId,
+                PersonID = seletedticket.PersonID,
+                Type = (TicketType)seletedticket.Typeid,
+                EditorPersonID = supporterInfo.PersonID
+            };
+        await ticketRepository.UpdateTicket(updateTicketCommand);
 
-        }
-        catch(Exception ex)
-        {
-            resultMessage = ex.Message.ToString();
-        }
-        finally
-        {
-            MessageBoxKeys.Add("Message", resultMessage);
-            MessageBoxKeys.Add("MessageType", "Alert");
-            Modal.Show<MessageBox>("", MessageBoxKeys);
-            await GetAllTickets();
-            StateHasChanged();
-        }
+        resultMessage = "تیکت مورد نظر با موفقیت ویرایش شد";
+        await GetAllTickets();
     }
 
     private async Task DeleteTicket(int userId, Guid Id)
     {
-        string resultMessage = "";
-        try
-        {
-            DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
-            deleteTicketCommand.SupporterUser = userId;
-            deleteTicketCommand.Id = Id;
 
-            await ticketRepository.DeleteTicket(deleteTicketCommand);
-            resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
-            await GetAllTickets();
-            StateHasChanged();
-        }
-        catch(Exception ex)
-        {
-            resultMessage = ex.Message.ToString();
-        }
-        finally
-        {
-            MessageBoxKeys.Add("Message", resultMessage);
-            MessageBoxKeys.Add("MessageType", "Alert");
-            Modal.Show<MessageBox>("", MessageBoxKeys);
-        }
+        DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
+        deleteTicketCommand.SupporterUser = userId;
+        deleteTicketCommand.Id = Id;
+        await ticketRepository.DeleteTicket(deleteTicketCommand);
+
+        resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
+        await GetAllTickets();
     }
 }
 
