@@ -31,17 +31,17 @@
 <div dir="rtl" class="col-lg-12 control-section">
     <div class="content-wrapper">
         <div class="row">
-            <SfGrid @ref="Grid" DataSource="@ticketDtos" AllowPaging="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete"  })">
+            <SfGrid @ref="Grid" AllowGrouping="true" DataSource="@ticketDtos" AllowPaging="true" AllowSorting="true" AllowFiltering="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete" ,"Search" })"  style="width:auto;padding-right: 1px;padding-left: 1px;">
                 <GridPageSettings @ref="GridPage" PageSize="10"></GridPageSettings>
                 <GridEvents TValue="TicketDto" OnActionBegin="ActionBeginHandler" OnActionFailure="ActionFailureHandler"></GridEvents>
-                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams"   ShowConfirmDialog="true">
+                <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams"   ShowConfirmDialog="true"> 
                     <HeaderTemplate>
                         @{
                             var text ="اطلاعات تیکت";
                             <span>@text</span>
                         }
-                    </HeaderTemplate>
-
+                    </HeaderTemplate> 
                     <Template>
                         @{
                             var ticket = (context as TicketDto);
@@ -49,12 +49,9 @@
                             if(ticket?.SupporterPersonID == 0)
                             {
                                 ticket.SupporterPersonID = supporterInfo.PersonID;
-                                ticket.SupporterPersonName = supporterInfo.PersonName ?? "";
-
+                                ticket.SupporterPersonName = supporterInfo.PersonName ?? ""; 
                             }
-                        }
-                        @*<SfTextBox ID="Id"  @bind-Value="@(ticket.Id.ToString())"></SfTextBox>*@
-
+                        } 
 
                         <div class="col-md-12">
                             <div class="col-md-5" style="display:inline-block!important">
@@ -172,7 +169,7 @@
 
                 </GridEditSettings>
                 <GridColumns>
-                    <GridColumn Field=@nameof(TicketDto.Id)  HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                    <GridColumn Field=@nameof(TicketDto.Id) Visible=false  HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                     <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
@@ -218,19 +215,18 @@
     private List<TicketDto> ticketsByFilters = new List<TicketDto>();
     private string Filter_PersonName = "";
     private List<ProgramSupporterDto> SupportersList { get; set; } = new List<ProgramSupporterDto>();
-    private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>();
-    private string PageSize = "10";
-    private string PageNumber = "1";
+    private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>(); 
     private TicketDetail ticketDetail = new TicketDetail();
-    private string message = "";
+  
     private Boolean Check = false;
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
 
     private PersonDto supporterInfo = new PersonDto();
-    private string resultMessage = "";
+    private string resultMessage = ""; 
+    private bool flag = false;
 
-    SfGrid<TicketDto> Grid { get; set; }
-    GridPageSettings GridPage { get; set; }
+    private SfGrid<TicketDto> Grid { get; set; }
+    private GridPageSettings GridPage { get; set; }
 
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
@@ -347,7 +343,7 @@
         StateHasChanged();  
         return ticketDtos;
     }
-    private bool flag = false;
+
     private void Setkeyboardkeyevent(KeyboardEventArgs args)
     {
         if(args.Key == "Enter")
@@ -359,22 +355,7 @@
         var personInfos = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(args.Value));
         Grid.PreventRender(false);
         return personInfos;
-    }
-
-    private async Task<List<TicketDto>> GetTicketsByFilters()
-    {
-        ticketsByFilters = await ticketRepository.GetAllTickets(PageNumber, PageSize);
-        if(!string.IsNullOrWhiteSpace(Filter_PersonName))
-        {
-            ticketsByFilters = ticketsByFilters.Where(n => (n.PersonID.ToString() + " "
-            + n.PersonName + " " + n.PersonCenterName + " " + n.PersonPartName + " " + n.ProgramName + " "
-            + n.ErrorTypeName + " " + n.ErrorDescription + " " + n.SolutionDescription + " "
-            + n.TicketConditionTypeName + " " + n.TicketTime.ToString() + " " + n.TicketTypeName + " "
-            + n.SupporterPersonID.ToString() + " " + n.SupporterPersonName
-            ).Contains(Filter_PersonName)).ToList();
-        }
-        return ticketsByFilters;
-    }
+    } 
 
     private async Task CreateTicket(TicketDto ticketDto)
     {
