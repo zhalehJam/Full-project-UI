@@ -73,6 +73,7 @@
                                 </SfDropDownList>
                             </div>
                         </div>
+
                         <div class="col-md-12">
                             <div class="col-md-5" style="display:inline-block!important">
                                 <SfNumericTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))" OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
@@ -194,7 +195,7 @@
                             }
                         </Template>
                     </GridColumn>
-                    <GridColumn HeaderText="Manage Records" Width="150">
+                    <GridColumn HeaderText="عملیات" Width="150">
                         <GridCommandColumns>
                             <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
 
@@ -374,7 +375,6 @@
         await ticketRepository.CreateNewTicket(createTicketCommand);
 
         resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
-        await GetAllTickets();
         await GetAllTickets();
     }
 
