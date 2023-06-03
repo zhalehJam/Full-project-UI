@@ -1,73 +1,107 @@
 ﻿@page "/programsList"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Grids;
+@using Syncfusion.Blazor.Lists
+@using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Programs.Command
 @using Ticketing.Models.Programs.Dto
 @using Ticketing.Models.Programs.Repository
 @using Ticketing_UI.Shared.Component
 
+@inject IPersonRepository personRepository
 
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
 @*@inject IModalService modal*@
-<h3>لیست برنامه ها</h3>
-<button class="btn btn-primary" @onclick="(()=>ShowModal(new ProgramDto(){Supporters= new List<ProgramSupporterDto>()}))">افزودن</button>
-<br />
-<br />
-Serach :
-<input size="80p" @bind="@filter_programName" @oninput="@((e) => { filter_programName=(string)e.Value.ToString(); GetProgramByFilters();})" />
 
-<p>
-    <TableLayout Items="@programbyfilters" Context="programsitem">
-        <TableHeader>
-            <th hidden>Id</th>
-            <th>نام برنامه</th>
-            <th>لینک برنامه</th>
-            <th>پشتیبان های برنامه</th>
+<div dir="rtl" class="col-lg-12 control-section">
+    <div class="content-wrapper">
+        <div class="row">
+            <SfGrid @ref="Grid" AllowGrouping="true" DataSource="@programDtos" AllowPaging="true" AllowSorting="true" AllowFiltering="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete" ,"Search" })" style="width:auto;padding-right: 1px;padding-left: 1px;">
+                <GridPageSettings @ref="GridPage" PageSize="10"></GridPageSettings>
+                <GridEvents TValue="ProgramDto" OnActionBegin="ActionBeginHandler"></GridEvents>
+                <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
+                    <HeaderTemplate>
+                        @{
+                            var text = "اطلاعات پشتیبان ";
+                            <span>@text</span>
+                        }
+                    </HeaderTemplate>
+                </GridEditSettings>
+                <GridTemplates>
+                    <DetailTemplate>
+                        @{
+                            var programdto = (context as ProgramDto) ?? new ProgramDto();
+                            programSupporterDtos = programdto?.Supporters;
+                            string gid = programdto.Id.ToString();
+                        }
+                        <div class="content-wrapper">
+                            <div class="row">
+                                <SfGrid @ref="ChildGrid" DataSource="@programSupporterDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})">
+                                    <GridEvents TValue="ProgramSupporterDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,programdto.Id))"></GridEvents>
+                                    <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true"></GridEditSettings>
+                                    <template> 
+                                        <div class="col-md-2" style="display:inline-block!important">
+                                            <SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
+                                        </div>
+                                    </template>
+                                    <GridColumns>
+                                        <GridColumn Field=@nameof(ProgramSupporterDto.Id) Visible=false HeaderText="Id" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                        <GridColumn Field=@nameof(ProgramSupporterDto.ProgramId) HeaderText="ProgramId" Visible=false TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                        <GridColumn Field=@nameof(ProgramSupporterDto.SupporterpersonID) HeaderText="کدپرسنلی" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                        <GridColumn Field=@nameof(ProgramSupporterDto.SupporterName) HeaderText="نام پشتیبان" Width="110"></GridColumn>
+                                        <GridColumn HeaderText="عملیات" Width="150">
+                                            <GridCommandColumns>
+                                                <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                                            </GridCommandColumns>
+                                        </GridColumn>
+                                    </GridColumns>
+                                </SfGrid>
+                            </div>
+                        </div>
+                    </DetailTemplate>
+                </GridTemplates>
+                <GridColumns>
+                    <GridColumn Field=@nameof(ProgramDto.Id) Visible=false></GridColumn>
+                    <GridColumn Field=@nameof(ProgramDto.ProgamName) HeaderText="برنامه"></GridColumn>
+                    <GridColumn Field=@nameof(ProgramDto.ProgramLink) HeaderText="لینک"></GridColumn>
+                    <GridColumn HeaderText="عملیات" Width="150">
+                        <GridCommandColumns>
+                            <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                        </GridCommandColumns>
+                    </GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    </div>
+</div>
 
-        </TableHeader>
-        <TableFilter>
-            @*<td><input @bind="@filter_programLink" @oninput="@((e) => { filter_programLink=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-            <table class="input-group-text">
-            <tbody>
 
-            <td> <input @bind="@filter_supporterID" @oninput="@((e) => { filter_supporterID=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
-            <td><input @bind="@filter_SupporerName" @oninput="@((e) => { filter_SupporerName=(string)e.Value.ToString(); GetProgramByFilters();})" /></td>
+<style>
+    .e-card {
+        margin-bottom: 10px !important;
+    }
 
-            </tbody>
-            </table>*@
-        </TableFilter>
-        <RowTemplate>
-            <td hidden>@programsitem.Id</td>
-            <td>@programsitem.ProgamName</td>
-            <td>@programsitem.ProgramLink</td>
-            @* <td>
-            <TableLayout Items="@programsitem.Supporters" Context="supporters">
-            <TableHeader>
-            <th>PeronID</th>
-            <th>name</th>
-            </TableHeader>
-            <RowTemplate>
-            <td>@supporters.SupporterpersonID</td>
-            <td>@supporters.SupporterName</td>
+    #predefinedDialogDefault {
+        margin: 25px 0 0 15px;
+    }
 
-            </RowTemplate>
-            </TableLayout>
-            @*<button type="button" class="btn btn-success w-auto" @onclick="GetSupporters">
-            <i class="fa fa-check" aria-hidden="true" style="font-size: 15px; color: white; margin-inline: 10px;" />
-            supporters
-            </button>
-            </td>*@
-            <td>
-                <button class="btn btn-info" @onclick="@(() => ShowModal(programsitem))">لیست پشتیبان ها</button>
-                @*<button type="button" class="btn btn-default"  @onclick="@(() => Modal.Show<FechSupporterInfo>("Program Supporters"))"  data-toggle="modal" data-target="@programsitem.Supporters" data-id="@programsitem.Id" >Details</button>*@
+        #predefinedDialogDefault .e-btn {
+            margin-right: 5px;
+        }
 
-                <button class=" btn btn-danger" @onclick="@(() => DeleteProgram(programsitem.Id))">حذف</button>
+        #predefinedDialogDefault .status {
+            margin-top: 20px;
+            font-size: 16px;
+            display: block;
+        }
+</style>
 
-            </td>
-        </RowTemplate>
-    </TableLayout>
-</p>
 
 @code {
     [CascadingParameter] public IModalService Modal { get; set; }
@@ -77,90 +111,229 @@ Serach :
     public ModalParameters MessageBoxKeys = new ModalParameters();
 
     private List<ProgramDto> programDtos = new List<ProgramDto>();
-    private List<ProgramDto> programbyfilters = new List<ProgramDto>();
-    private ProgramDto programDto = new ProgramDto();
     private int showdetail = 0;
     private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
-    private string filter_programName = "";
-    private string filter_supporterID = "";
-    private string filter_SupporerName = "";
-    private string filter_Supporerinfo = "";
 
-    private string filter_programLink = "";
-    private async Task<List<ProgramDto>> GetAllPrograms()
-    {
-        filter_programName = "";
-        filter_supporterID = "";
-        filter_SupporerName = "";
-        filter_programLink = "";
-        filter_Supporerinfo = "";
-        programDtos = await programRepository.GetAllProgram();
-        programbyfilters = programDtos;
-        return programDtos;
+    private SfGrid<ProgramDto> Grid { get; set; }
+    private SfGrid<ProgramSupporterDto> ChildGrid { get; set; }
+    private GridPageSettings GridPage { get; set; }
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
+    private string resultMessage = "";
+    private bool flag = false;
+    private Boolean Check = false;
 
-
-    }
     protected async override Task OnInitializedAsync()
     {
         await GetAllPrograms();
     }
 
-    private async Task<List<ProgramDto>> GetProgramByFilters()
+    private async Task<List<ProgramDto>> GetAllPrograms()
     {
-        programbyfilters = programDtos;
-
-        if(!string.IsNullOrWhiteSpace(filter_programName))
-            programbyfilters = programbyfilters.Where(n => (((n.ProgramLink + " " + n.ProgamName).Contains(filter_programName)) || (n.Supporters.Any(m => (m.SupporterpersonID.ToString() + " " + m.SupporterName).Contains(filter_programName))))).ToList();
-        return programbyfilters;
+        programDtos = await programRepository.GetAllProgram();
+        return programDtos;
     }
-    private async void ShowModal(ProgramDto program)
-    {
-        Keys.Add("programDto", program);
-        if(program.ProgamName == null)
-            Keys.Add("isnew", true);
-        else
-            Keys.Add("isnew", false);
-        var w = await Modal.Show<FechSupporterInfo>("جزئیات", Keys).Result;
-
-        await GetAllPrograms();
-        StateHasChanged();
-
-    }
-
 
     private async Task<List<ProgramSupporterDto>> GetSupporters()
     {
-        programSupporterDtos = programDtos.Select(n => n.Supporters.ToList()).FirstOrDefault();
-        ModalParameters parameters = new ModalParameters();
-        parameters.Add("supporters", programSupporterDtos);
-        FechSupporterInfo fechSupporterInfo = new FechSupporterInfo();
         return programSupporterDtos;
-
     }
-    private async void DeleteProgram(Guid Id)
+
+    private async Task DeleteProgram(Guid Id)
     {
-        string resultMessage = "";
-        try
+        DeleteProgramCommand deleteProgramCommand = new DeleteProgramCommand()
+            {
+                Id = Id
+            };
+        await programRepository.DeleteProgram(deleteProgramCommand);
+        await GetAllPrograms();
+        resultMessage = "برنامه مورد نظر با موفقیت حذف شد";
+        StateHasChanged();
+    }
+
+    public async Task ActionBeginHandler(ActionEventArgs<ProgramDto> Args)
+    {
+        string rType = Args.RequestType.ToString();
+        if(flag)
         {
-            DeleteProgramCommand deleteProgramCommand = new DeleteProgramCommand()
+            Args.Cancel = true;
+            flag = false;
+        }
+        else
+        {
+            if(rType == "Save")
+            {
+                try
                 {
-                    Id = Id
-                };
-            await programRepository.DeleteProgram(deleteProgramCommand);
-            await GetAllPrograms();
-            resultMessage = "برنامه مورد نظر با موفقیت حذف شد";
-            StateHasChanged();
-        }
-        catch(Exception ex)
-        {
-            resultMessage = ex.Message.ToString();
-        }
-        finally
-        {
-            MessageBoxKeys.Add("Message", resultMessage);
-            MessageBoxKeys.Add("MessageType", "Alert");
-            Modal.Show<MessageBox>("", MessageBoxKeys);
+                    switch(Args.Action)
+                    {
+                        case "Add":
+                            await CreateNewProgram(Args.Data);
+                            break;
+
+                        case "Edit":
+                            await GetSupporters();
+                            break;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    Args.Cancel = true;
+                }
+                finally
+                {
+                    Args.Cancel = true;
+                    //Grid.PreventRender(true);
+                    programDtos = await GetAllPrograms();
+                    MessageBoxKeys.Add("Message", resultMessage);
+                    MessageBoxKeys.Add("MessageType", "Alert");
+                    Modal.Show<MessageBox>("", MessageBoxKeys);
+                }
+            }
+            else if(rType == "Delete")
+            {
+                try
+                {
+                    await DeleteProgram(Args.RowData.Id);
+                    StateHasChanged();
+                    Grid.PreventRender(false);
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    Args.Cancel = true;
+                }
+                finally
+                {
+                    MessageBoxKeys.Add("Message", resultMessage);
+                    MessageBoxKeys.Add("MessageType", "Alert");
+                    Modal.Show<MessageBox>("", MessageBoxKeys);
+                    await GetAllPrograms();
+                    StateHasChanged();
+                    //Grid.PreventRender(false);
+                    //await Grid.Refresh();
+                }
+
+            }
+            else if(rType == "Refresh")
+            {
+                Grid.PreventRender(false);
+            }
+            else if(rType == "Add")
+            {
+                Check = true;
+            }
+
         }
     }
 
+    private async Task ChildGridActionHandler(ActionEventArgs<ProgramSupporterDto> args, Guid programId)
+    {
+        var rType = args.RequestType.ToString();
+        args.Data.ProgramId = programId;
+        if(rType == "Save")
+        {
+            if(args.Action == "Add")
+            {
+                try
+                {
+                    await AddSupporter(args.Data);
+                    await GetAllPrograms();
+                    StateHasChanged();
+                    args.Cancel = true;
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    args.Cancel = true;
+                }
+                finally
+                {
+                    args.Cancel = true;
+                    //Grid.PreventRender(true);
+                    programSupporterDtos = await GetSupporters();
+                    MessageBoxKeys.Add("Message", resultMessage);
+                    MessageBoxKeys.Add("MessageType", "Alert");
+                    Modal.Show<MessageBox>("", MessageBoxKeys);
+                }
+            }
+        }
+        else if(rType == "Delete")
+        {
+            try
+            {
+                await RemoveSupporter(args.Data);
+                await GetAllPrograms();
+                StateHasChanged();
+                args.Cancel = true;
+            }
+            catch(Exception ex)
+            {
+                resultMessage = ex.Message.ToString();
+                args.Cancel = true;
+            }
+            finally
+            {
+                args.Cancel = true;
+                //Grid.PreventRender(true);
+                programSupporterDtos = await GetSupporters();
+                MessageBoxKeys.Add("Message", resultMessage);
+                MessageBoxKeys.Add("MessageType", "Alert");
+                Modal.Show<MessageBox>("", MessageBoxKeys);
+            }
+        }
+    }
+
+
+    private async Task<ProgramSupporterDto> SetpersonInfo2(ChangeEventArgs args)
+    {
+        var personInfos = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(args.Value));
+        Grid.PreventRender(false);
+        return new ProgramSupporterDto() { Id = personInfos.Id, SupporterpersonID = personInfos.PersonID, SupporterName = personInfos.PersonName ?? "" };
+    }
+
+    private async Task CreateNewProgram(ProgramDto programDto)
+    {
+        CreateProgramCommand createProgramCommand = new CreateProgramCommand()
+            {
+                ProgramLink = programDto.ProgramLink,
+                ProgramName = programDto.ProgamName
+            };
+        await programRepository.CreateProgram(createProgramCommand);
+        resultMessage = "برنامه مورد نظر با موفقیت ثبت شد";
+        StateHasChanged();
+    }
+
+    private async Task AddSupporter(ProgramSupporterDto programSupporterDto)
+    {
+        AddProgramSupporterCommand addProgramSupporterCommand = new AddProgramSupporterCommand()
+            {
+                ProgramId = programSupporterDto.ProgramId,
+                SupporterID = programSupporterDto.SupporterpersonID
+            };
+        await programRepository.AddProgramSupporter(addProgramSupporterCommand);
+        programDtos.Single(pd => pd.Id == programSupporterDto.ProgramId).Supporters.Add(programSupporterDto);
+        programSupporterDto = new ProgramSupporterDto();
+        StateHasChanged();
+        resultMessage = "پشتیبان مورد نظر با موفقیت ثبت شد";
+    }
+    private async Task RemoveSupporter(ProgramSupporterDto programSupporterDto)
+    {
+        DeleteProgramSupporterCommand deleteProgramSupporterCommand = new DeleteProgramSupporterCommand()
+            {
+                ProgramId = programSupporterDto.ProgramId,
+                SupporterID = programSupporterDto.SupporterpersonID
+            };
+        await programRepository.DeletePorogramSupporter(deleteProgramSupporterCommand);
+        programDtos.Single(pd => pd.Id == programSupporterDto.ProgramId).Supporters.Remove(programSupporterDto);
+        programSupporterDto = new ProgramSupporterDto();
+        resultMessage = "پشتیبان مورد نظر با موفقیت حذف شد";
+        StateHasChanged();
+    }
+
+    private void Setkeyboardkeyevent(KeyboardEventArgs args)
+    {
+        if(args.Key == "Enter")
+            flag = true;
+    }
 }
