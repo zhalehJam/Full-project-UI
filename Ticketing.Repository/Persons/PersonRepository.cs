@@ -42,21 +42,20 @@ namespace Ticketing.Repository.Persons
             string request = QueryHelpers.AddQueryString("Person/GetPersonById", parameters);
             var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
-            personDtos = GetPersonDtoFromContent(content).FirstOrDefault();
+            personDtos = GetPersonDtoFromContent(content).First();
 
             return personDtos;
         }
-
-        private static List<PersonDto> GetPersonDtoFromContent(string content)
+        public async Task<PersonDto> GetPersonInfoByPersonelCode(int PersonnelCode)
         {
-            List<PersonDto> personDtos = new List<PersonDto>();
-            JArray jsonResponse = JArray.Parse(content);
+            PersonDto personDtos = new PersonDto();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("personnelCode", PersonnelCode.ToString());
+            string request = QueryHelpers.AddQueryString("Person/GetPersonInfoByPersonelCode", parameters);
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+            personDtos = JsonConvert.DeserializeObject<PersonDto>(content);
 
-            foreach(var item in jsonResponse)
-            {
-                PersonDto? dto = JsonConvert.DeserializeObject<PersonDto>(item.ToString());
-                personDtos.Add(dto);
-            }
             return personDtos;
         }
 
@@ -88,6 +87,7 @@ namespace Ticketing.Repository.Persons
         {
             await SendRequest<DeletePersonCommand>(deletePersonCommand, HttpMethod.Delete, "Person/DeletePerson");
         }
+
         private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
         {
             var postRequest = new HttpRequestMessage(httpMethod, uri)
@@ -104,6 +104,19 @@ namespace Ticketing.Repository.Persons
                     throw new Exception(errormessage);
                 }
             }
+        }
+
+        private List<PersonDto> GetPersonDtoFromContent(string content)
+        {
+            List<PersonDto> personDtos = new List<PersonDto>();
+            JArray jsonResponse = JArray.Parse(content);
+
+            foreach(var item in jsonResponse)
+            {
+                PersonDto? dto = JsonConvert.DeserializeObject<PersonDto>(item.ToString());
+                personDtos.Add(dto);
+            }
+            return personDtos;
         }
     }
 }

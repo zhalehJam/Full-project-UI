@@ -16,6 +16,7 @@ using Ticketing.Models.Programs.Command;
 using Ticketing.Models.Centers.Command;
 using System.Net;
 using Ticketing.Models.Persons.Command;
+using System.Reflection.Metadata;
 
 namespace Ticketing.Repository.Programs
 {
@@ -38,18 +39,7 @@ namespace Ticketing.Repository.Programs
             return programDtos;
 
         }
-        private static List<ProgramDto> GetProgramDtoFromContent(string content)
-        {
-            List<ProgramDto> ticketDtos = new List<ProgramDto>();
-            JArray jsonResponse = JArray.Parse(content);
-
-            foreach(var item in jsonResponse)
-            {
-                ProgramDto? dto = JsonConvert.DeserializeObject<ProgramDto>(item.ToString());
-                ticketDtos.Add(dto);
-            }
-            return ticketDtos;
-        }
+       
 
         public async Task<ProgramDto> GetProgramById(Guid programId)
         {
@@ -61,6 +51,20 @@ namespace Ticketing.Repository.Programs
             var content = await response.Content.ReadAsStringAsync();
             programDtos = GetProgramDtoFromContent(content).FirstOrDefault();
 
+            return programDtos;
+        } 
+
+        public async Task<List<ProgramDto>> GetSupporterProgramsList(int supporterCode)
+        { 
+            List<ProgramDto> programDtos = new List<ProgramDto>();
+            IDictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                { "supporterCode", supporterCode.ToString() }
+            };
+            string request = QueryHelpers.AddQueryString("Program/GetSupporterProgramsList", parameters); 
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+            programDtos = GetProgramDtoFromContent(content);
             return programDtos;
         }
 
@@ -87,6 +91,19 @@ namespace Ticketing.Repository.Programs
         public async Task DeleteProgram(DeleteProgramCommand deleteProgramCommand)
         {
             await SendRequest<DeleteProgramCommand>(deleteProgramCommand, HttpMethod.Delete, "Program");
+        }
+
+        private static List<ProgramDto> GetProgramDtoFromContent(string content)
+        {
+            List<ProgramDto> ticketDtos = new List<ProgramDto>();
+            JArray jsonResponse = JArray.Parse(content);
+
+            foreach(var item in jsonResponse)
+            {
+                ProgramDto? dto = JsonConvert.DeserializeObject<ProgramDto>(item.ToString());
+                ticketDtos.Add(dto);
+            }
+            return ticketDtos;
         }
 
         private async Task SendRequest<T>(T command, HttpMethod httpMethod, string uri)
