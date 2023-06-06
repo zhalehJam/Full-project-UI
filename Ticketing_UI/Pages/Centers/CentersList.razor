@@ -1,7 +1,8 @@
 ﻿@page "/CentersList"
-@using Blazored.Modal
-@using Blazored.Modal.Services
+
 @using PagedList
+@using Syncfusion.Blazor.Grids;
+@using Syncfusion.Blazor.Inputs
 @using Ticketing.Models.Centers.Command
 @using Ticketing.Models.Centers.Dto
 @using Ticketing.Models.Centers.Repository
@@ -12,149 +13,76 @@
 
 <PageTitle>Centers</PageTitle>
 <h3>لیست مراکز</h3>
-<button class="btn btn-success" @onclick="@(() =>
-{
-CreateNewCenter();
-    GetcenterByFilters();
-    setlist();})">
-    افزودن
-</button>
 
-جستجو:
-<input @bind="@centerNamefilter" @oninput="@((e) => { centerNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
+<div dir="rtl" class="col-lg-12 control-section">
+    <div class="content-wrapper">
+        <div class="row">
+            <SfGrid @ref="Grid" AllowGrouping="true" DataSource="@centerDtos" AllowPaging="true" AllowSorting="true" AllowFiltering="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete" ,"Search" })" style="width:auto;padding-right: 1px;padding-left: 1px;">
+                <GridPageSettings @ref="GridPage" PageSize="10"></GridPageSettings>
+                <GridEvents TValue="CenterDto" OnActionBegin="ActionBeginHandler"></GridEvents>
+                <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
+                </GridEditSettings>
+                <GridTemplates>
+                    <DetailTemplate>
+                        @{
+                            var centerdtos = (context as CenterDto) ?? new CenterDto();
+                            partDtos = centerdtos.parts ?? new List<PartDto>();
+                            string gid = centerdtos.Id.ToString();
+                        }
 
-<p>
-    <TableLayout Items="@centerbyfilters" Context="centeritem">
-        <TableHeader>
+                        <div class="content-wrapper">
+                            <div class="row">
+                                <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})">
+                                    <GridEvents TValue="PartDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,centerdtos.Id))"></GridEvents>
+                                    <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true"></GridEditSettings>
+                                    <template>
+                                        <div class="col-md-2" style="display:inline-block!important">
+                                            <SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
+                                        </div>
+                                    </template>
+                                    <GridColumns>
+                                        <GridColumn Field=@nameof(PartDto.Id) Visible=false HeaderText="Id" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                        <GridColumn Field=@nameof(PartDto.PartName) HeaderText="نام واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                        <GridColumn Field=@nameof(PartDto.PartID) HeaderText="کد واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                        <GridColumn HeaderText="عملیات" Width="150">
+                                            <GridCommandColumns>
+                                                <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                                            </GridCommandColumns>
+                                        </GridColumn>
+                                    </GridColumns>
+                                </SfGrid>
+                            </div>
+                        </div>
 
-            <th hidden>Id </th>
-            <th>نام مرکز</th>
-            <th>کد مرکز</th>
-            <th>واحدها</th>
-
-        </TableHeader>
-        @*
-        <TableFilter>*@
-
-        @* <td hidden></td>
-        <td>
-        <input @bind="@centerNamefilter" @oninput="@((e) => { centerNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
-        </td>
-        <td>
-        <input @bind="@centerIDfilter" @oninput="@((e) => { centerIDfilter=Convert.ToString(e.Value); GetcenterByFilters();})" />
-        </td>
-        <td>
-        if(showModal)
-        {
-
-        <div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
-        <div class="modal-dialog">
-        <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-        <h4 class="modal-title">Confirm action</h4>
-        <button type="button" class="close" @onclick="@ModalCancel">&times;</button>
+                    </DetailTemplate>
+                </GridTemplates>
+                <GridColumns>
+                    <GridColumn Field=@nameof(CenterDto.Id) Visible=false></GridColumn>
+                    <GridColumn Field=@nameof(CenterDto.CenterName) HeaderText="نام مرکز"></GridColumn>
+                    <GridColumn Field=@nameof(CenterDto.CenterID) HeaderText="کد مرکز"></GridColumn>
+                    <GridColumn HeaderText="عملیات" Width="150">
+                        <GridCommandColumns>
+                            <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                        </GridCommandColumns>
+                    </GridColumn>
+                </GridColumns>
+            </SfGrid>
         </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-        <table class="input-group">
-        <tr>
-        <td>
-        <input @bind="@partNamefilter" @oninput="@((e) => { partNamefilter=(string)e.Value.ToString(); GetcenterByFilters();})" />
-        </td>
-        <td>
-        <input @bind="@partIDfilter" @oninput="@((e) => { partIDfilter=Convert.ToString(e.Value.ToString()); GetcenterByFilters();})" />
-
-        </td>
-        </tr>
-        </table>
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-        <button type="button" class="btn" @onclick="@ModalCancel">Cancel</button>
-        <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
-        </div>
-
-        </div>
-        </div>
-        </div>
-        }
-        </td>
-
-        </TableFilter>*@
-        <RowTemplate>
-            <td>@centeritem.CenterName</td>
-            <td>@centeritem.CenterID</td>
-            <td>
-                <button class="btn btn-outline-success" @onclick="@((e) =>{  EditCenter(centeritem); setlist();})"> واحدها</button>
-                <button class="btn btn-danger" @onclick="@((e) =>{ DeleteCenter(centeritem);setlist();})"> حذف</button>
-
-                @*<div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                <h4 class="modal-title">Confirm action</h4>
-                <button type="button" class="close" @onclick="@ModalCancel">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">*@
-                @*<TableLayout Items="@centeritem.parts.ToList()" Context="centeritempart">
-                <TableHeader>
-                <th>PartName </th>
-                <th>PartID</th>
-                </TableHeader>
-                <RowTemplate>
-                @if(centeritem.parts.Count() != 0)
-                {
-                <td>@centeritempart.PartName</td>
-                <td>@centeritempart.PartID</td>
-                }
-                </RowTemplate>
-                </TableLayout>*@
-                @*</div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                <button type="button" class="btn" @onclick="@ModalCancel">Cancel</button>
-                <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
-                </div>
-
-                </div>
-                </div>
-                </div>*@
-
-            </td>
-        </RowTemplate>
-    </TableLayout>
-</p>
-<footer>
-    Page number:
-    <input @bind="@pageNumber" @oninput="((e)=>{pageNumber=e.Value.ToString(); GetcenterByFilters();})" size="3p" />
-    Page size
-    <input @bind="@pageSize" @oninput="((e)=>{pageSize=e.Value.ToString();GetcenterByFilters();})" size="3p" />
-</footer>
+    </div>
+</div>
 
 @code {
     private List<CenterDto> centerDtos = new List<CenterDto>();
-    private PagedList<CenterDto> pagedcenterDtos;
-    List<CenterDto> centerbyfilters = new List<CenterDto>();
-    [CascadingParameter] public IModalService Modal { get; set; } 
-    public ModalParameters Keys = new ModalParameters();
-    public ModalParameters MessageBoxKeys = new ModalParameters();
+    private List<PartDto> partDtos = new List<PartDto>();
 
-
-
-    private string centerNamefilter = "";
-    private string centerIDfilter = "";
-    private string partNamefilter = "";
-    private string partIDfilter = "";
-    private string pageNumber = "1";
-    private string pageSize = "10";
-    private string mode = "Create";
+    private SfGrid<CenterDto> Grid { get; set; }
+    private SfGrid<PartDto> ChildGrid { get; set; }
+    private GridPageSettings GridPage { get; set; }
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
+    private string resultMessage = "";
+    private bool flag = false;
+    private Boolean Check = false;
 
     public bool showModal { get; set; }
 
@@ -168,19 +96,153 @@ CreateNewCenter();
 
     protected override async Task OnInitializedAsync()
     {
-        await setlist();
+        await GetCenterslist();
+    }
+    public async Task ActionBeginHandler(ActionEventArgs<CenterDto> Args)
+    {
+        string rType = Args.RequestType.ToString();
+        if(flag)
+        {
+            Args.Cancel = true;
+            flag = false;
+        }
+        else
+        {
+            if(rType == "Save")
+            {
+                try
+                {
+                    switch(Args.Action)
+                    {
+                        case "Add":
+                            await CreateNewCenter(Args.Data);
+                            break;
+
+                        case "Edit":
+                            await EditCenter(Args.Data);
+                            break;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    Args.Cancel = true;
+                }
+                finally
+                {
+                    Args.Cancel = true;
+                    //Grid.PreventRender(true);
+                    centerDtos = await GetCenterslist();
+
+                }
+            }
+            else if(rType == "Delete")
+            {
+                try
+                {
+                    await DeleteCenter(Args.Data);
+                    StateHasChanged();
+                    Grid.PreventRender(false);
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    Args.Cancel = true;
+                }
+                finally
+                {
+
+                    await GetCenterslist();
+                    StateHasChanged();
+                    //Grid.PreventRender(false);
+                    //await Grid.Refresh();
+                }
+
+            }
+            else if(rType == "Refresh")
+            {
+                Grid.PreventRender(false);
+            }
+            else if(rType == "Add")
+            {
+                Check = true;
+            }
+
+        }
     }
 
-    private async void CreateNewCenter()
+    private async Task ChildGridActionHandler(ActionEventArgs<PartDto> args, Guid centerId)
+    {
+        var rType = args.RequestType.ToString();
+        args.Data.Center = centerId;
+        if(rType == "Save")
+        {
+            if(args.Action == "Add")
+            {
+                try
+                {
+                    await AddPart(args.Data);
+                    await GetCenterslist();
+                    StateHasChanged();
+                    args.Cancel = true;
+                }
+                catch(Exception ex)
+                {
+                    resultMessage = ex.Message.ToString();
+                    args.Cancel = true;
+                }
+                finally
+                {
+                    args.Cancel = true;
+                    //Grid.PreventRender(true);
+                    await GetCenterslist();
+                    //MessageBoxKeys.Add("Message", resultMessage);
+                    //MessageBoxKeys.Add("MessageType", "Alert");
+                    //Modal.Show<MessageBox>("", MessageBoxKeys);
+                }
+            }
+        }
+        else if(rType == "Delete")
+        {
+            try
+            {
+                await DeletePart(args.Data); 
+                StateHasChanged();
+                args.Cancel = true;
+            }
+            catch(Exception ex)
+            {
+                resultMessage = ex.Message.ToString();
+                args.Cancel = true;
+            }
+            finally
+            {
+                args.Cancel = true;
+                await GetCenterslist();
+                //Grid.PreventRender(true);
+                //programSupporterDtos = await GetSupporters();
+                //MessageBoxKeys.Add("Message", resultMessage);
+                //MessageBoxKeys.Add("MessageType", "Alert");
+                //Modal.Show<MessageBox>("", MessageBoxKeys);
+            }
+        }
+    }
+
+
+
+    private async Task CreateNewCenter(CenterDto centerDto)
     {
         string ResultMessage = "";
         try
         {
-            Keys.Add("centerInfo", new CenterDto() { parts = new List<PartDto>() });
-            Keys.Add("Mode", "Create");
+            CreateCenterCommand createCenterCommand = new CreateCenterCommand()
+                {
+                    CenterName = centerDto.CenterName,
+                    CenterID = centerDto.CenterID
+                };
+            await CenterRepository.CreateCenter(createCenterCommand);
 
-            await Modal.Show<CenterDetail>("جزئیات مرکز", Keys, new ModalOptions() { Size = ModalSize.Large }).Result;
-            await setlist();
+            await GetCenterslist();
             StateHasChanged();
         }
         catch(Exception)
@@ -188,42 +250,25 @@ CreateNewCenter();
             throw;
         }
     }
-    private async void EditCenter(CenterDto centerDto)
+
+    private async Task EditCenter(CenterDto centerDto)
     {
-        CenterDto center = centerDto;
-        Keys.Add("centerInfo", center);
-        Keys.Add("Mode", "Edit");
-        await Modal.Show<CenterDetail>("جزئیات مرکز", Keys).Result;
-        await setlist();
+        EditCenterCommand editCenterCommand = new EditCenterCommand()
+            {
+                Name = centerDto.CenterName
+            };
+        await CenterRepository.EditCenter(editCenterCommand);
+        await GetCenterslist();
         StateHasChanged();
     }
 
-    private async Task<List<CenterDto>> setlist()
+    private async Task<List<CenterDto>> GetCenterslist()
     {
-        centerNamefilter = "";
-        centerIDfilter = "";
-        partNamefilter = "";
-        partIDfilter = "";
-        pageNumber = "1";
-        pageSize = "10";
-        centerbyfilters = await CenterRepository.GetAllCenersByPage(pageNumber, pageSize);
-        return centerbyfilters;
+        centerDtos = await CenterRepository.GetAllCenersByPage("1", "10");
+        return centerDtos;
     }
-    private async Task<List<CenterDto>> GetcenterByFilters()
-    {
-        centerbyfilters = await CenterRepository.GetAllCenersByPage(pageNumber, pageSize);
 
-
-        if(!string.IsNullOrWhiteSpace(centerNamefilter))
-            centerbyfilters = centerbyfilters.Where(n => n.CenterName.Contains(centerNamefilter) ||
-            n.CenterID.ToString().Contains(centerNamefilter.ToString()) ||
-             (n.parts.Where(p => p.PartName.Contains(centerNamefilter)).ToList().Count() != 0) ||
-             (n.parts.Where(p => p.PartID.ToString().Contains(centerNamefilter))
-                                                                .ToList().Count() != 0)
-            ).ToList();
-        return centerbyfilters;
-    }
-    private async void DeleteCenter(CenterDto centerDto)
+    private async Task DeleteCenter(CenterDto centerDto)
     {
         string resultMessage = "";
         try
@@ -234,7 +279,7 @@ CreateNewCenter();
                     Id = centerDto.Id
                 };
             await CenterRepository.DeleteCenter(deleteCenterCommand);
-            await setlist();
+            await GetCenterslist();
             resultMessage = "مرکز مورد نظر با موفقیت حذف شد";
             StateHasChanged();
         }
@@ -244,9 +289,29 @@ CreateNewCenter();
         }
         finally
         {
-            MessageBoxKeys.Add("Message", resultMessage);
-            MessageBoxKeys.Add("MessageType", "Alert");
-            Modal.Show<MessageBox>("", MessageBoxKeys);
+
         }
     }
+
+    private async Task AddPart(PartDto partDto)
+    {
+        AddPartCommand addPartCommand = new AddPartCommand()
+            {
+                CenterId = partDto.Center,
+                PartName = partDto.PartName,
+                PartID = partDto.PartID
+                
+            };
+        await CenterRepository.AddPart(addPartCommand);
+    }
+
+    private async Task DeletePart(PartDto partDto)
+    {
+        DeletePartCommand deletePartCommand = new DeletePartCommand()
+            {
+                CenterId = partDto.Center,
+                PartID = partDto.PartID
+            };
+        await CenterRepository.DeletePart(deletePartCommand);
+    } 
 }
