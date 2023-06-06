@@ -44,8 +44,8 @@
                     </HeaderTemplate>
                     <Template>
                         @{
-                            var ticket = (context as TicketDto);
 
+                            var ticket = (context as TicketDto);
                             if(ticket?.SupporterPersonID == 0)
                             {
                                 ticket.SupporterPersonID = supporterInfo.PersonID;
@@ -66,11 +66,12 @@
                                                 IndexChanged="((e)=>{ ticket.ProgramName=programDtos.Single(t=>t.Id==ticket.ProgramId).ProgamName; Grid.PreventRender(false);})"
                                                 TValue="Guid"
                                                 DataSource="@programDtos"
-                                                FloatLabelType="FloatLabelType.Auto"
+                                                FloatLabelType="FloatLabelType.Auto"                                                
                                                 Placeholder="نام برنامه">
                                     <DropDownListFieldSettings Value="Id" Text="ProgamName">
                                     </DropDownListFieldSettings>
                                 </SfDropDownList>
+                                <ValidationMessage For="@(() => ticket.ProgramId)" />
                             </div>
                         </div>
 
