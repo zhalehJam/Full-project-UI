@@ -11,6 +11,6 @@ namespace Ticketing.Models.Centers.Dto
         public Guid Id { get; set; }
         public string CenterName { get; set; }
         public int CenterID { get; set; }
-        public IList<PartDto> parts { get; set; }
+        public List<PartDto> parts { get; set; }
     }
 }
