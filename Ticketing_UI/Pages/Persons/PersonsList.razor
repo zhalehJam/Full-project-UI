@@ -1,160 +1,261 @@
 ﻿@page "/PersonsList"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.Data;
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Grids;
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Popups
+@using Ticketing.Models.Centers.Dto;
+@using Ticketing.Models.Centers.Repository;
 @using Ticketing.Models.Persons.Command
 @using Ticketing.Models.Persons.Dto
 @using Ticketing.Models.Persons.Repository
 @using Ticketing_UI.Shared.Component
 
 @inject IPersonRepository personRepository
+@inject ICenterRepository centerRepository
 @inject IHttpClientFactory ClientFactory
-<h3>لیست پرسنل</h3>
+<div class="col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important">لیست پرسنل</div>
+<SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-4 display:inline-block!important " @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
 
-<button class="btn btn-success" @onclick="()=>CreateNewPerson()">افزودن</button>
-جستجو:
-<input @bind="@PersonIDFilter" @oninput="@((e) => {
-PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
+<hr />
+<div class="content-wrapper">
+    <div class="row">
+        <div class="control-section col-lg-12 card-control-section tile_layout">
+            <div class="e-card-layout" style="display:inline-block!important ">
 
-@*@if(isnew == true)
-{
-    <div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Confirm action</h4>
-                    <button type="button" class="close" @onclick="(()=>isnew=false)">&times;</button>
-                </div>
+                @if(this.personDtos.Count == 0)
+                {
+                    <div class="e-error">
+                        <div class="e-error-content">No results found. Please try a different search.</div>
+                    </div>
+                }
+                else
+                {
+                    @foreach(PersonDto persondto in personDtos)
+                    {
+                        <div class="col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important ">
+                            <div id="card_sample_1" class="card_sample">
+                                <SfCard>
+                                    @{
+                                        string contentText = persondto.PartName + "\n" + persondto.CenterName;
+                                    }
+                                    @*<CardImage Image="@persondto.ImageUrl" />*@
+                                    <CardHeader Title="@persondto.PersonName" SubTitle="@persondto.PersonID.ToString()" />
+                                    <CardContent Content="@contentText" />
 
-                <!-- Modal body -->
-                <div class="modal-body">
+                                    <CardFooter>
+                                        <CardFooterContent>
+                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5" @onclick="@(async e => {
+                                                await EditButtonClick(persondto);  })">ویرایش</SfButton>
+                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5">حذف</SfButton>
 
-                </div>
+                                        </CardFooterContent>
+                                    </CardFooter>
+                                </SfCard>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn" @onclick="@CreateNewPerson">ذخیره</button>
-                     <button type="button" class="btn btn-danger" @onclick=@ModalOk>Delete</button>
-                </div>
+                            </div>
+                        </div>
+
+                    }
+                    <SfDialog @bind-Visible="dialogVisible" Width="250px" IsModal="true">
+                        <DialogTemplates>
+                            <Header>
+                                Syncfusion Components inside Dialog
+                            </Header>
+                            <Content>
+                                <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام"></SfTextBox>
+                                <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی"></SfNumericTextBox>
+
+                                <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" Placeholder="انتخاب دفتر" PopupHeight="auto" DataSource="@centerDtos">
+                                    <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
+                                    <DropDownListFieldSettings Text="CenterName" Value="Id"></DropDownListFieldSettings>
+                                </SfDropDownList>
+
+                                <SfDropDownList Enabled="true" TValue="Guid " TItem="PartDto" @bind-Value="@selectedPartdto.Id" Placeholder="انتخاب واحد" PopupHeight="auto" DataSource="@partDtos">
+                                    <DropDownListFieldSettings Text="PartName" Value="Id"></DropDownListFieldSettings>
+                                </SfDropDownList>
+
+                            </Content>
+                        </DialogTemplates>
+                        <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
+                        <DialogEvents Opened="OnOpen" Closed="OnClose"></DialogEvents>
+
+                        <DialogButtons>
+                            <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await SaveButtonClick(selectedPerson))"></DialogButton>
+                            <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+                        </DialogButtons>
+                    </SfDialog>
+                }
 
             </div>
         </div>
     </div>
-}*@
-<table class="table">
-    <thead>
-        <tr>
-            <th>کد پرسنلی</th>
-            <th> نام پرسنل</th>
-            <th>نام مرکز</th>
-            <th>نام واحد</th>
-            <th>عملیات</th>
-        </tr>
-        @* <tr>
-        <td>
-        <input @bind="@PersonIDFilter" @oninput="@((e) => { PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
-        </td>
-        <td>
-        <input @bind="@PersonNameFilter" @oninput="@((e) => { PersonNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
-        </td>
-        <td>
-        <input @bind="@PersonCenterNameFilter" @oninput="@((e) => { PersonCenterNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
-        </td>
-        <td>
-        <input @bind="@PersonPartNameFilter" @oninput="@((e) => { PersonPartNameFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
-        </td>
-        </tr>*@
-    </thead>
-    <tbody>
-        @if(personListByFilter.Count() != 0)
-        {
-            foreach(var person in personListByFilter)
-            {
-                <tr>
-                    <td>@person.PersonID</td>
-                    <td>@person.PersonName</td>
-                    <td>@person.CenterName</td>
-                    <td>@person.PartName</td>
-                    <td>
-                        <button class="btn btn-info" @onclick="(()=>{personDto=person;EditPersonInfo(person);})">ویرایش</button>
-                        <button class="btn btn-danger" @onclick="(()=>{personDto=person;DeletePerson();})">حذف</button>
+</div>
 
-                    </td>
-                </tr>
-            }
+<style>
+    .property-panel-section .property-panel-content td {
+        padding: 0 0 15px 0;
+    }
 
+    .tile_layout.card-control-section .e-error {
+        height: 100px;
+        width: 100%;
+    }
+
+        .tile_layout.card-control-section .e-error .e-error-content {
+            color: red;
+            line-height: 100px;
+            text-align: center;
         }
-    </tbody>
-</table>
-<footer>
-    Page number:
-    <input @bind="@pageNumber" @oninput="((e)=>{pageNumber=e.Value.ToString(); GetPersonByFilters();})" size="3p" />
-    Page size
-    <input @bind="@pageSize" @oninput="((e)=>{pageSize=e.Value.ToString();GetPersonByFilters();})" size="3p" />
-</footer>
+
+    .tile_layout.card-control-section .e-card .e-card-image {
+        height: 180px;
+        width: inherit;
+    }
+
+    .tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-header-title {
+        font-size: 20px;
+        font-family: Helvetica, 'Segoe UI';
+        font-weight: bold;
+    }
+
+    .tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-sub-title {
+        padding-top: 5px;
+    }
+
+    .tile_layout.card-control-section .e-card .e-card-content {
+        padding-top: 10px;
+        height: 50px;
+    }
+
+    #source_link {
+        float: right;
+        margin-right: 10px;
+    }
+</style>
+
 
 @code {
     private List<PersonDto> personDtos = new List<PersonDto>();
-    private List<PersonDto> personListByFilter = new List<PersonDto>();
-    private string PersonNameFilter = "";
-    private string PersonIDFilter = "";
-    private string PersonPartNameFilter = "";
-    private string PersonCenterNameFilter = "";
-    private string pageNumber = "1";
-    private string pageSize = "10";
-    private bool isnew = false;
     private PersonDto personDto = new PersonDto();
-    [CascadingParameter] IModalService Modal { get; set; }
-    public ModalParameters Keys = new ModalParameters();
     public ModalParameters MessageBoxKeys = new ModalParameters();
+    private List<CenterDto> centerDtos = new List<CenterDto>();
+    private List<PartDto> partDtos = new List<PartDto>();
+    private CenterDto selectedCenterDto = new CenterDto();
+    private PartDto selectedPartdto = new PartDto();
+    [Inject] public NavigationManager NavigationManager { get; set; }
+    [Inject] public IJSRuntime JsRuntime { get; set; }
+    public string SearchValue { get; set; }
+    public string SortingValue { get; set; }
+    public string[] FilteringValue { get; set; }
+    public List<string> SortingType = new List<string>() { "Ascending", "Descending" };
+    public List<string> FilteringType = new List<string>() { "Client-side", "Server-side", "Front-end" };
+    private PersonDto selectedPerson = new PersonDto();
+    bool dialogVisible { get; set; } = false;
+    private bool isNew = true;
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
 
 
+    DialogEffect animationEffect = DialogEffect.None;
+    public async Task OnReset()
+    {
+        this.SearchValue = null;
+        this.SortingValue = null;
+        this.FilteringValue = null;
+        this.personDtos = await GetAllPersons();
+    }
 
     protected override async Task OnInitializedAsync()
     {
+        centerDtos = await centerRepository.GetAllCenters();
         await GetAllPersons();
+    }
+
+    private void OnOpen()
+    {
+        dialogVisible = true;
+    }
+
+    private void OnClose()
+    {
+        dialogVisible = false;
+    }
+
+    public void ChangeCenter(Syncfusion.Blazor.DropDowns.ChangeEventArgs<Guid, CenterDto> args)
+    {
+        partDtos = args.ItemData.parts;
     }
 
     private async Task<List<PersonDto>> GetAllPersons()
     {
-        pageNumber = "1";
-        pageSize = "10";
-        PersonNameFilter = "";
-        PersonIDFilter = "";
-        PersonPartNameFilter = "";
-        PersonCenterNameFilter = "";
-        personDtos = await personRepository.GetAllPersons(pageNumber, pageSize);
-        personListByFilter = personDtos;
+        personDtos = await personRepository.GetAllPersons("1", "10");
         return personDtos;
     }
-    private async Task<List<PersonDto>> GetPersonByFilters()
+
+    private void NewPerson()
     {
-        personListByFilter = await personRepository.GetAllPersons(pageNumber, pageSize);
-        if(!string.IsNullOrWhiteSpace(PersonIDFilter))
-            personListByFilter = personListByFilter.Where(n => n.PersonName.Contains(PersonIDFilter) ||
-                                                               n.PersonID.ToString().Contains(PersonIDFilter) ||
-                                                               n.CenterName.Contains(PersonIDFilter) ||
-                                                               n.PartName.Contains(PersonIDFilter)
-                                                          ).ToList();
-        return personListByFilter;
+        selectedPerson = new PersonDto();
+        this.dialogVisible = true;
+        isNew = true;
+
     }
 
-    private async void CreateNewPerson()
+    private async Task EditButtonClick(PersonDto personDto)
     {
-        Keys.Add("personDto", new PersonDto());
-        Keys.Add("isNewMode", true);
-        var modalpage = await Modal.Show<PersonInfo>("اطلاعات پرسنل", Keys).Result;
-        await GetAllPersons();
-        StateHasChanged();
+        centerDtos = await centerRepository.GetAllCenters();
+        selectedPerson = personDto;
+        partDtos = centerDtos.Single(c => c.parts.Any(p => p.Id == selectedPerson.PartId)).parts;
+        selectedPartdto = partDtos.Single(p => p.Id == selectedPerson.PartId);
+        selectedCenterDto = centerDtos.Single(c => c.Id == selectedPartdto.Center);
+
+        this.dialogVisible = true;
+        isNew = false;
     }
 
-    private async void EditPersonInfo(PersonDto personDto)
+    private async Task SaveButtonClick(PersonDto personDto)
     {
-        Keys.Add("isNewMode", false);
-        Keys.Add("personDto", personDto);
-        var modalpage = await Modal.Show<PersonInfo>("اطلاعات پرسنل", Keys).Result;
-        await GetAllPersons();
-        StateHasChanged();
+        try
+        {
+            if(isNew)
+            {
+                CreatePersonCommand createPersonCommand = new CreatePersonCommand()
+                    {
+                        Name = personDto.PersonName,
+                        PartId = selectedPartdto.Id,
+                        PersonID = personDto.PersonID
+                    };
+                await personRepository.CreatePerson(createPersonCommand);
+            }
+            else
+            {
+                UpdatePersonCommand updatePersonCommand = new UpdatePersonCommand()
+                    {
+                        Id = personDto.Id,
+                        PartId = selectedPartdto.Id,
+                        Name = personDto.PersonName
+                    };
+                await personRepository.UpdatePerson(updatePersonCommand);
+            }
+            MessageBoxKeys.Add("Message", "اطلاعات پرسنل مورد نظر ثبت شد");
+            MessageBoxKeys.Add("MessageType", "Alert");
+        }
+        catch(Exception ex)
+        {
+            MessageBoxKeys.Add("Message", ex.Message.ToString());
+            MessageBoxKeys.Add("MessageType", "Alert");
+        }
+        finally
+        {
+
+            OnClose();
+            selectedPartdto = new PartDto();
+            await GetAllPersons();
+            StateHasChanged();
+        }
     }
     private async void DeletePerson()
     {
@@ -166,9 +267,8 @@ PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
                     Id = personDto.Id
                 };
             await personRepository.DeletePerson(deletePersonCommand);
-            isnew = false;
             resultMessage = "پرسنل مورد نظر با موفقیت حذف شد";
-            await GetAllPersons(); 
+            await GetAllPersons();
             StateHasChanged();
         }
         catch(Exception ex)
@@ -179,7 +279,6 @@ PersonIDFilter=(string)e.Value.ToString(); GetPersonByFilters();})" />
         {
             MessageBoxKeys.Add("Message", resultMessage);
             MessageBoxKeys.Add("MessageType", "Alert");
-            Modal.Show<MessageBox>("", MessageBoxKeys);
         }
     }
 
