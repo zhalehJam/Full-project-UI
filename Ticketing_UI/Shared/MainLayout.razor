@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization;
+@using Syncfusion.Blazor.Cards
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager Navigation
@@ -15,8 +16,7 @@
             <Authorized>
             </Authorized>
         </AuthorizeView>*@
-        <div class="top-row px-4">
-            
+        <div class="top-row px-4"> 
         </div>
 
         <article class="content px-4">
@@ -27,12 +27,14 @@
 
 
 @code {
+    private string userName = "";
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if(firstRender)
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
+            userName = user.Identity.Name??"";
             if(user.Identity!.IsAuthenticated == false) return;
             //if(!user.Claims.Any())
             //{

@@ -1,6 +1,9 @@
-﻿@page "/PersonsList"
+﻿@attribute [Authorize]
+
+@page "/PersonsList"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Data;
@@ -8,15 +11,20 @@
 @using Syncfusion.Blazor.Grids;
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Notifications
+
 @using Ticketing.Models.Centers.Dto;
 @using Ticketing.Models.Centers.Repository;
 @using Ticketing.Models.Persons.Command
 @using Ticketing.Models.Persons.Dto
 @using Ticketing.Models.Persons.Repository
+@using Ticketing.Models.Programs.Dto;
+@using Ticketing.Models.Programs.Repository;
 @using Ticketing_UI.Shared.Component
 
 @inject IPersonRepository personRepository
 @inject ICenterRepository centerRepository
+@inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
 <div class="col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important">لیست پرسنل</div>
 <SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-4 display:inline-block!important " @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
@@ -30,7 +38,7 @@
                 @if(this.personDtos.Count == 0)
                 {
                     <div class="e-error">
-                        <div class="e-error-content">No results found. Please try a different search.</div>
+                        <div class="e-error-content">اطلاعاتی یافت نشد.</div>
                     </div>
                 }
                 else
@@ -38,7 +46,7 @@
                     @foreach(PersonDto persondto in personDtos)
                     {
                         <div class="col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important ">
-                            <div id="card_sample_1" class="card_sample">
+                            <div id="card_sample_1" class="card_sample" style=" padding:10px ;width: 400px; background-color: beige;">
                                 <SfCard>
                                     @{
                                         string contentText = persondto.PartName + "\n" + persondto.CenterName;
@@ -49,9 +57,9 @@
 
                                     <CardFooter>
                                         <CardFooterContent>
-                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5" @onclick="@(async e => {
+                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5" style="background-color: rgb(211 239 225 / 65%);" @onclick="@(async e => {
                                                 await EditButtonClick(persondto);  })">ویرایش</SfButton>
-                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5">حذف</SfButton>
+                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5 " style="background-color: #e75c9547" @onclick="(async e=>{await DeletePerson(personDto);})">حذف</SfButton>
 
                                         </CardFooterContent>
                                     </CardFooter>
@@ -61,21 +69,21 @@
                         </div>
 
                     }
-                    <SfDialog @bind-Visible="dialogVisible" Width="250px" IsModal="true">
+                    <SfDialog @bind-Visible="dialogVisible" Width="350px" IsModal="true">
                         <DialogTemplates>
                             <Header>
-                                Syncfusion Components inside Dialog
+                                اطلاعات پرسنل
                             </Header>
                             <Content>
-                                <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام"></SfTextBox>
-                                <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی"></SfNumericTextBox>
+                                <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
+                                <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always"></SfNumericTextBox>
 
-                                <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" Placeholder="انتخاب دفتر" PopupHeight="auto" DataSource="@centerDtos">
+                                <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب دفتر" PopupHeight="auto" DataSource="@centerDtos">
                                     <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
                                     <DropDownListFieldSettings Text="CenterName" Value="Id"></DropDownListFieldSettings>
                                 </SfDropDownList>
 
-                                <SfDropDownList Enabled="true" TValue="Guid " TItem="PartDto" @bind-Value="@selectedPartdto.Id" Placeholder="انتخاب واحد" PopupHeight="auto" DataSource="@partDtos">
+                                <SfDropDownList Enabled="true" TValue="Guid " TItem="PartDto" @bind-Value="@selectedPartdto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب واحد" PopupHeight="auto" DataSource="@partDtos">
                                     <DropDownListFieldSettings Text="PartName" Value="Id"></DropDownListFieldSettings>
                                 </SfDropDownList>
 
@@ -92,6 +100,12 @@
                 }
 
             </div>
+        </div>
+    </div>
+    <div class="col-lg-6 control-section msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
+        <div class="content-section">
+            <SfMessage Severity="MessageSeverity.Error" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@errorVisiable">@errorMessage</SfMessage>
+            <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
         </div>
     </div>
 </div>
@@ -145,34 +159,31 @@
     public ModalParameters MessageBoxKeys = new ModalParameters();
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
+    private List<ProgramDto> programDtos = new List<ProgramDto>();
     private CenterDto selectedCenterDto = new CenterDto();
     private PartDto selectedPartdto = new PartDto();
+    private PersonDto selectedPerson = new PersonDto();
+
     [Inject] public NavigationManager NavigationManager { get; set; }
     [Inject] public IJSRuntime JsRuntime { get; set; }
-    public string SearchValue { get; set; }
-    public string SortingValue { get; set; }
-    public string[] FilteringValue { get; set; }
-    public List<string> SortingType = new List<string>() { "Ascending", "Descending" };
-    public List<string> FilteringType = new List<string>() { "Client-side", "Server-side", "Front-end" };
-    private PersonDto selectedPerson = new PersonDto();
     bool dialogVisible { get; set; } = false;
     private bool isNew = true;
-    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
-
-
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "750px", Width = "750px" };
+    private string resultMessage = "";
+    private string errorMessage = "";
+    private bool errorVisiable = false;
+    private bool messageVisiable = false;
     DialogEffect animationEffect = DialogEffect.None;
-    public async Task OnReset()
-    {
-        this.SearchValue = null;
-        this.SortingValue = null;
-        this.FilteringValue = null;
-        this.personDtos = await GetAllPersons();
-    }
 
     protected override async Task OnInitializedAsync()
     {
         centerDtos = await centerRepository.GetAllCenters();
         await GetAllPersons();
+    }
+
+    public async Task OnReset()
+    {
+        this.personDtos = await GetAllPersons();
     }
 
     private void OnOpen()
@@ -240,13 +251,13 @@
                     };
                 await personRepository.UpdatePerson(updatePersonCommand);
             }
-            MessageBoxKeys.Add("Message", "اطلاعات پرسنل مورد نظر ثبت شد");
-            MessageBoxKeys.Add("MessageType", "Alert");
+            resultMessage = "اطلاعات پرسنل مورد نظر ثبت شد";
+            messageVisiable = true;
         }
         catch(Exception ex)
         {
-            MessageBoxKeys.Add("Message", ex.Message.ToString());
-            MessageBoxKeys.Add("MessageType", "Alert");
+            errorMessage = ex.Message.ToString();
+            errorVisiable = true;
         }
         finally
         {
@@ -257,9 +268,9 @@
             StateHasChanged();
         }
     }
-    private async void DeletePerson()
+
+    private async Task DeletePerson(PersonDto personDto)
     {
-        string resultMessage = "";
         try
         {
             DeletePersonCommand deletePersonCommand = new DeletePersonCommand()
@@ -268,19 +279,21 @@
                 };
             await personRepository.DeletePerson(deletePersonCommand);
             resultMessage = "پرسنل مورد نظر با موفقیت حذف شد";
+            messageVisiable = true;
             await GetAllPersons();
             StateHasChanged();
         }
         catch(Exception ex)
         {
+            errorMessage = ex.Message.ToString();
+            errorVisiable = true;
             resultMessage = ex.Message.ToString();
         }
-        finally
-        {
-            MessageBoxKeys.Add("Message", resultMessage);
-            MessageBoxKeys.Add("MessageType", "Alert");
-        }
+
     }
 
-
+    private async Task GetSupporterProgramsList(int personId)
+    {
+        programDtos = await programRepository.GetSupporterProgramsList(personId);
+    }
 }

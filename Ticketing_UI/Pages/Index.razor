@@ -4,73 +4,36 @@
 @using Syncfusion.Blazor.Layouts
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Inputs 
-<div class="col-lg-8 control-section">
+<div class="col-lg-6 control-section">
     <div class="content-wrapper" style="max-width: 100%">
-        <SfDashboardLayout @ref="dashboardObject" AllowResizing="@AllowResizing" AllowFloating="@AllowFloating" CellSpacing="@CellSpacing" Columns="@Columns">
+        <SfDashboardLayout @ref="dashboardObject" Columns="6"AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing" >
             <DashboardLayoutPanels>
-                <DashboardLayoutPanel Id="1" Row="1" Column="0" SizeX="2" SizeY="2">
+                <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="2" SizeY="2">
                     <HeaderTemplate><div class="e-header-text">Panel 1</div></HeaderTemplate>
                     <ContentTemplate>
-                        <div class="root-container">
-                           @* <div class="item-container income">
-                                <p>$43,300</p>*@
-                               @* <div class="auto-right">
-                                    <span class="income-icon e-icon"></span>
-                                </div>*@
-                            @*</div>*@
+                        <div class="root-container"> 
                             <div class="bottom-container">
                                 <p>Income</p>
                             </div>
                         </div>
                     </ContentTemplate>
                 </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="2" Row="1" Column="2" SizeX="2" SizeY="2">
+                <DashboardLayoutPanel Id="2" Row="0" Column="2" SizeX="2" SizeY="2">
                     <HeaderTemplate><div class="e-header-text">Panel 2</div></HeaderTemplate>
                 </DashboardLayoutPanel>
                 <DashboardLayoutPanel Id="3" Row="0" Column="4" SizeX="2" SizeY="2">
                     <HeaderTemplate><div class="e-header-text">Panel 3</div></HeaderTemplate>
                 </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="4" Row="2" Column="0" SizeX="4" SizeY="2">
+                <DashboardLayoutPanel Id="4" Row="2" Column="6" SizeX="2" SizeY="2">
                     <HeaderTemplate><div class="e-header-text">Panel 4</div></HeaderTemplate>
                 </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="5" Row="2" Column="4" SizeX="2" SizeY="2">
+                <DashboardLayoutPanel Id="5" Row="2" Column="8" SizeX="2" SizeY="2">
                     <HeaderTemplate><div class="e-header-text">Panel 5</div></HeaderTemplate>
                 </DashboardLayoutPanel>
             </DashboardLayoutPanels>
         </SfDashboardLayout>
     </div>
-</div>
-<div class="col-lg-4 property-section dashboard">
-    <div class="property-panel-header">
-        Properties
-    </div>
-    <div class="row property-panel-content">
-        <div class="card-body">
-            <div class="form-group row">
-                <label for="settings-bubble-up-input" class="col-sm-4 col-form-label form-label">AllowFloating</label>
-                <div class="col-sm-8">
-                    <SfCheckBox @bind-Checked="@FloatCheck" Name="floating" ValueChange="OnFloatChange" Value="1" TChecked="bool"></SfCheckBox>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="settings-bubble-up-input" class="col-sm-4 col-form-label form-label">AllowResizing</label>
-                <div class="col-sm-8">
-                    <SfCheckBox @bind-Checked="@AllowResizingCheck" Name="resizing" ValueChange="AllowResizingChange" Value="1" TChecked="bool"></SfCheckBox>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12">
-                    <SfButton CssClass="e-primary" Content="Add Panel" @onclick="AddClick"></SfButton>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12">
-                    <SfButton CssClass="e-danger" Content="Remove Panel" @onclick="RemoveClick"></SfButton>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</div> 
 @code {
     SfDashboardLayout dashboardObject;
     public double[] CellSpacing = { 10, 10 };

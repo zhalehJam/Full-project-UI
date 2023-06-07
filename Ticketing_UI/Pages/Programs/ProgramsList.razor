@@ -1,6 +1,9 @@
-﻿@page "/programsList"
+﻿@attribute [Authorize]
+
+@page "/programsList"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+@using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Inputs
@@ -8,6 +11,8 @@
 @using Syncfusion.Blazor.Lists
 @using Syncfusion.Blazor.Calendars
 @using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Notifications
+
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Programs.Command
@@ -16,13 +21,11 @@
 @using Ticketing_UI.Shared.Component
 
 @inject IPersonRepository personRepository
-
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
 @*@inject IModalService modal*@
 
-<div  class="col-lg-12 control-section">
-    <HeadContent> پرسنل</HeadContent>
+<div class="col-lg-12 control-section">
     <div class="content-wrapper">
         <div class="row">
             <SfGrid @ref="Grid" AllowGrouping="true" DataSource="@programDtos" AllowPaging="true" AllowSorting="true" AllowFiltering="true" Toolbar="@(new string[]{"Add", "Edit" ,"Delete" ,"Search" })" style="width:auto;padding-right: 1px;padding-left: 1px;">
@@ -33,23 +36,27 @@
                     <HeaderTemplate>
                         <span> اطلاعات</span>
                     </HeaderTemplate>
+                    <Template>
+                        @{
+                            var programddd = (context as ProgramDto) ?? new ProgramDto();
+                            string supportercount = programddd.Supporters.Count.ToString();
+                        }
+                    </Template>
                 </GridEditSettings>
                 <GridTemplates>
                     <DetailTemplate>
                         @{
                             var programdto = (context as ProgramDto) ?? new ProgramDto();
-                            programSupporterDtos = programdto?.Supporters;
-                            string gid = programdto.Id.ToString();
+                            programSupporterDtos = programdto.Supporters;
+                            string programname = programdto.ProgamName.ToString() ?? "";
                         }
                         <div class="content-wrapper">
 
                             <SfGrid @ref="ChildGrid" DataSource="@programSupporterDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})">
                                 <GridEvents TValue="ProgramSupporterDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,programdto.Id))"></GridEvents>
                                 <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
-
-
                                     <Template Context="ChildName">
-                                        <SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
+                                        <SfTextBox Enabled="false" @bind-Value="@(programname)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
                                         <SfNumericTextBox ID="SupporterpersonID"
                                                           @bind-Value="@sellectedSupporterDto.SupporterpersonID"
                                                           Placeholder="کد پرسنلی پشتیبان"
@@ -87,6 +94,15 @@
                     <GridColumn Field=@nameof(ProgramDto.Id) Visible=false></GridColumn>
                     <GridColumn Field=@nameof(ProgramDto.ProgamName) HeaderText="برنامه"></GridColumn>
                     <GridColumn Field=@nameof(ProgramDto.ProgramLink) HeaderText="لینک"></GridColumn>
+                    <GridColumn HeaderText="تعداد پشتیبان">
+                        <Template>
+                            @{
+                                var programddd = (context as ProgramDto) ?? new ProgramDto();
+                                string supportercount = programddd.Supporters.Count.ToString();
+                            }
+                            <div  Enabled="false">@supportercount</div>
+                        </Template>
+                    </GridColumn>
                     <GridColumn HeaderText="عملیات" Width="150">
                         <GridCommandColumns>
                             <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
@@ -94,6 +110,12 @@
                     </GridColumn>
                 </GridColumns>
             </SfGrid>
+        </div>
+    </div>
+    <div class="col-lg-6 control-section msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
+        <div class="content-section">
+            <SfMessage Severity="MessageSeverity.Error" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@errorVisiable">@errorMessage</SfMessage>
+            <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
         </div>
     </div>
 </div>
@@ -125,20 +147,21 @@
 
 
     public ModalParameters Keys = new ModalParameters();
-    public ModalParameters MessageBoxKeys = new ModalParameters();
-
-    private List<ProgramDto> programDtos = new List<ProgramDto>();
-    private int showdetail = 0;
+    public ModalParameters MessageBoxKeys = new ModalParameters(); 
+    private List<ProgramDto> programDtos = new List<ProgramDto>(); 
     private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
     private ProgramSupporterDto sellectedSupporterDto = new ProgramSupporterDto();
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
 
     private SfGrid<ProgramDto> Grid { get; set; }
     private SfGrid<ProgramSupporterDto> ChildGrid { get; set; }
     private GridPageSettings GridPage { get; set; }
-    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
     private string resultMessage = "";
+    private string errorMessage = "";
+    private bool errorVisiable = false;
+    private bool messageVisiable = false;
     private bool flag = false;
-    private Boolean Check = false;
+    private bool Check = false;
 
     private async Task<PersonDto> SetpersonInfo(ChangeEventArgs args)
     {
@@ -273,22 +296,16 @@
                         await AddSupporter(args.Data);
                         await GetAllPrograms();
                         StateHasChanged();
+                        messageVisiable = true;
                         args.Cancel = true;
                     }
                     catch(Exception ex)
                     {
-                        resultMessage = ex.Message.ToString();
+                        errorVisiable = true;
+                        errorMessage = ex.Message.ToString();
                         args.Cancel = true;
                     }
-                    finally
-                    {
-                        args.Cancel = true;
-                        //Grid.PreventRender(true);
-                        programSupporterDtos = await GetSupporters();
-                        MessageBoxKeys.Add("Message", resultMessage);
-                        MessageBoxKeys.Add("MessageType", "Alert");
-                        Modal.Show<MessageBox>("", MessageBoxKeys);
-                    }
+
                 }
             }
             else if(rType == "Delete")
@@ -298,21 +315,14 @@
                     await RemoveSupporter(args.Data);
                     await GetAllPrograms();
                     StateHasChanged();
+                    messageVisiable = true;
                     args.Cancel = true;
                 }
                 catch(Exception ex)
                 {
-                    resultMessage = ex.Message.ToString();
+                    errorVisiable = true;
+                    errorMessage = ex.Message.ToString();
                     args.Cancel = true;
-                }
-                finally
-                {
-                    args.Cancel = true;
-                    //Grid.PreventRender(true);
-                    programSupporterDtos = await GetSupporters();
-                    MessageBoxKeys.Add("Message", resultMessage);
-                    MessageBoxKeys.Add("MessageType", "Alert");
-                    Modal.Show<MessageBox>("", MessageBoxKeys);
                 }
             }
             else

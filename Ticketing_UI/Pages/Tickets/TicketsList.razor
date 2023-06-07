@@ -10,6 +10,7 @@
 @using Syncfusion.Blazor.Calendars
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Notifications
 @using Ticketing.Cilient.Contracts.Ticket;
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
@@ -66,7 +67,7 @@
                                                 IndexChanged="((e)=>{ ticket.ProgramName=programDtos.Single(t=>t.Id==ticket.ProgramId).ProgamName; Grid.PreventRender(false);})"
                                                 TValue="Guid"
                                                 DataSource="@programDtos"
-                                                FloatLabelType="FloatLabelType.Auto"                                                
+                                                FloatLabelType="FloatLabelType.Auto"
                                                 Placeholder="نام برنامه">
                                     <DropDownListFieldSettings Value="Id" Text="ProgamName">
                                     </DropDownListFieldSettings>
@@ -206,29 +207,37 @@
             </SfGrid>
         </div>
     </div>
+    <div class="col-lg-6 control-section msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
+        <div class="content-section">
+            <SfMessage Severity="MessageSeverity.Error" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@errorVisiable">@errorMessage</SfMessage>
+            <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
+        </div>
+    </div>
 </div>
 
-@code {
-    [CascadingParameter] public IModalService Modal { get; set; }
-    public ModalParameters Keys = new ModalParameters();
-    public ModalParameters MessageBoxKeys = new ModalParameters();
+@code { 
 
     private List<TicketDto>? ticketDtos { get; set; } = new List<TicketDto>();
     private List<TicketDto> ticketsByFilters = new List<TicketDto>();
-    private string Filter_PersonName = "";
     private List<ProgramSupporterDto> SupportersList { get; set; } = new List<ProgramSupporterDto>();
     private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>();
     private TicketDetail ticketDetail = new TicketDetail();
 
-    private Boolean Check = false;
-    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
-
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" }; 
     private PersonDto supporterInfo = new PersonDto();
-    private string resultMessage = "";
-    private bool flag = false;
-
+    
     private SfGrid<TicketDto> Grid { get; set; }
     private GridPageSettings GridPage { get; set; }
+
+    private string Filter_PersonName = "";
+    private string resultMessage = "";
+    private string errorMessage = "";
+    private bool errorVisiable = false;
+    private bool messageVisiable = false;
+    private bool Check = false;
+    private bool flag = false;
+
+
 
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
@@ -239,8 +248,7 @@
     private List<KeyValuePair<int, string>> TicketConditions { get; set; } = Enum.GetValues(typeof(TicketCondition)).Cast<TicketCondition>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
-
-
+ 
 
     protected override async Task OnInitializedAsync()
     {
@@ -263,7 +271,7 @@
     }
 
     public async Task ActionBeginHandler(ActionEventArgs<TicketDto> Args)
-    {
+    { 
         string rType = Args.RequestType.ToString();
         if(flag)
         {
@@ -289,7 +297,8 @@
                 }
                 catch(Exception ex)
                 {
-                    resultMessage = ex.Message.ToString();
+                    errorVisiable = true;
+                    errorMessage = ex.Message.ToString();
                     Args.Cancel = true;
                 }
                 finally
@@ -297,9 +306,6 @@
                     Args.Cancel = true;
                     //Grid.PreventRender(true);
                     ticketDtos = await GetAllTickets();
-                    MessageBoxKeys.Add("Message", resultMessage);
-                    MessageBoxKeys.Add("MessageType", "Alert");
-                    Modal.Show<MessageBox>("", MessageBoxKeys);
                 }
             }
             else if(rType == "Delete")
@@ -312,14 +318,12 @@
                 }
                 catch(Exception ex)
                 {
-                    resultMessage = ex.Message.ToString();
+                    errorVisiable = true;
+                    errorMessage = ex.Message.ToString();
                     Args.Cancel = true;
                 }
                 finally
                 {
-                    MessageBoxKeys.Add("Message", resultMessage);
-                    MessageBoxKeys.Add("MessageType", "Alert");
-                    Modal.Show<MessageBox>("", MessageBoxKeys);
                     await GetAllTickets();
                     StateHasChanged();
                     //Grid.PreventRender(false);
@@ -374,7 +378,7 @@
                 Type = (TicketType)ticketDto.Typeid
             };
         await ticketRepository.CreateNewTicket(createTicketCommand);
-
+        messageVisiable = true;
         resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
         await GetAllTickets();
     }
@@ -396,6 +400,7 @@
                 EditorPersonID = supporterInfo.PersonID
             };
         await ticketRepository.UpdateTicket(updateTicketCommand);
+        messageVisiable = true;
 
         resultMessage = "تیکت مورد نظر با موفقیت ویرایش شد";
         await GetAllTickets();
@@ -408,6 +413,7 @@
         deleteTicketCommand.SupporterUser = userId;
         deleteTicketCommand.Id = Id;
         await ticketRepository.DeleteTicket(deleteTicketCommand);
+        messageVisiable = true;
 
         resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
         await GetAllTickets();

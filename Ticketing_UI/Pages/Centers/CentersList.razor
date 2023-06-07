@@ -1,9 +1,15 @@
-﻿@page "/CentersList"
+﻿@attribute [Authorize]
 
+@page "/CentersList"
+
+@using Microsoft.AspNetCore.Authorization;
 @using PagedList
+@using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Grids;
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Notifications
+
 @using Ticketing.Models.Centers.Command
 @using Ticketing.Models.Centers.Dto
 @using Ticketing.Models.Centers.Repository
@@ -32,22 +38,18 @@
                         @{
                             var centerdtos = (context as CenterDto) ?? new CenterDto();
                             partDtos = centerdtos.parts ?? new List<PartDto>();
-                            string gid = centerdtos.Id.ToString();
+                            string centerName = centerdtos.CenterName.ToString();
                         }
-
                         <div class="content-wrapper">
-                            <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})">
+                            <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})" style="background-color:aquamarine">
                                 <GridEvents TValue="PartDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,centerdtos.Id))"></GridEvents>
-                                <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true"></GridEditSettings>
-                                <template>
-                                    <div class="col-md-2" style="display:inline-block!important">
-                                        <SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
-                                    </div>
-                                </template>
+                                <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
+                                   
+                                </GridEditSettings>
                                 <GridColumns>
                                     <GridColumn Field=@nameof(PartDto.Id) Visible=false HeaderText="Id" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
                                     <GridColumn Field=@nameof(PartDto.PartName) HeaderText="نام واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
-                                    <GridColumn Field=@nameof(PartDto.PartID) HeaderText="کد واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn Field=@nameof(PartDto.PartID) HeaderText="کد واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn> 
                                     <GridColumn HeaderText="عملیات" Width="150">
                                         <GridCommandColumns>
                                             <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
@@ -63,6 +65,15 @@
                     <GridColumn Field=@nameof(CenterDto.Id) Visible=false></GridColumn>
                     <GridColumn Field=@nameof(CenterDto.CenterName) HeaderText="نام مرکز"></GridColumn>
                     <GridColumn Field=@nameof(CenterDto.CenterID) HeaderText="کد مرکز"></GridColumn>
+                    <GridColumn HeaderText="تعداد واحد">
+                        <Template >
+                            @{
+                                var centers = (context as CenterDto) ?? new CenterDto();
+                                string partscount = centers.parts.Count.ToString();
+                            }
+                            <div Enabled="false">@partscount</div>
+                        </Template>
+                    </GridColumn>
                     <GridColumn HeaderText="عملیات" Width="150">
                         <GridCommandColumns>
                             <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
@@ -72,27 +83,43 @@
             </SfGrid>
         </div>
     </div>
-
-    <SfDialog @bind-Visible="messageVisiable" Target="#target" Width="250px" ShowCloseIcon="true" IsModal="true" @bind-Visible="@messageVisiable" style="align-self: center;">
-        <DialogTemplates>
-            <Header>
-                پیغام
-            </Header>
-            <Content>
-                @resultMessage
-            </Content>
-        </DialogTemplates>
-        @if(confrimButtonsVisiable == true)
-        {
-            <DialogButtons>
-                <DialogButton Content="تایید" IsPrimary="true" OnClick="ClickSaveButton"></DialogButton>
-                <DialogButton Content="لغو" IsPrimary="true" OnClick="ClickCancelButton"></DialogButton>
-            </DialogButtons>
-        }
-
-    </SfDialog>
+    <div class="col-lg-6 control-section msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
+        <div class="content-section">
+            <SfMessage Severity="MessageSeverity.Error" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@errorVisiable">@errorMessage</SfMessage>
+            <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
+            <SfMessage Severity="MessageSeverity.Normal" ShowIcon="true" @bind-Visible="@warningMessageVisiable">
+                <p>@resultMessage</p>
+                <SfButton Content="تایید" OnClick="@ClickSaveButton"></SfButton>
+                <SfButton Content="لغو"></SfButton>
+            </SfMessage>
+        </div>
+    </div>
 </div>
+<style>
+    .msg-template-section .e-btn.msg-hidden {
+        display: none;
+    }
 
+    .msg-template-section .e-message h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    .msg-template-section .e-message .e-msg-icon {
+        padding: 0 4px;
+        margin-top: 3px;
+    }
+
+    .msg-template-section .e-message p {
+        margin: 8px 0 4px;
+    }
+
+    .msg-template-section .e-message .e-btn {
+        padding: 0;
+    }
+</style>
 @code {
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
@@ -101,13 +128,17 @@
     private SfGrid<PartDto> ChildGrid { get; set; }
     private GridPageSettings GridPage { get; set; }
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "350px", Width = "350px" };
-    private string resultMessage = "";
     private bool flag = false;
     private Boolean Check = false;
+    private string resultMessage = "";
+    private string errorMessage = "";
+    private bool errorVisiable = false;
     private bool messageVisiable = false;
+    private bool warningMessageVisiable = false;
+
     public bool showModal { get; set; }
     private string commandType = "";
-    private bool confrimButtonsVisiable = false;
+    //private bool confrimButtonsVisiable = false;
     private PartDto selectedpartDto = new PartDto();
     private CenterDto selectCentertDto = new CenterDto();
     void ModalShow() => showModal = true;
@@ -150,23 +181,23 @@
                 }
                 catch(Exception ex)
                 {
-                    resultMessage = ex.Message.ToString();
+                    errorMessage = ex.Message.ToString();
+                    errorVisiable = true;
                     args.Cancel = true;
                 }
                 finally
                 {
                     args.Cancel = true;
                     centerDtos = await GetCenterslist();
-
                 }
             }
             else if(rType == "Delete")
             {
                 resultMessage = "از حذف اطاعات فوق مطمئن هستید؟";
-                confrimButtonsVisiable = true;
+                //confrimButtonsVisiable = true;
                 commandType = "DeleteCenter";
                 selectCentertDto = args.Data;
-                messageVisiable = true;
+                warningMessageVisiable = true;
                 args.Cancel = true;
 
             }
@@ -200,23 +231,22 @@
                 }
                 catch(Exception ex)
                 {
-                    resultMessage = ex.Message.ToString();
+                    errorMessage = ex.Message.ToString();
+                    errorVisiable = true;
                 }
                 finally
                 {
                     await GetCenterslist();
-                    messageVisiable = true;
                 }
                 args.Cancel = true;
             }
         }
         else if(rType == "Delete")
-        {
-            confrimButtonsVisiable = true;
+        { 
             selectedpartDto = args.Data;
             resultMessage = "از حذف اطاعات فوق مطمئن هستید؟";
             commandType = "DeletePart";
-            messageVisiable = true;
+            warningMessageVisiable = true;
             args.Cancel = true;
         }
     }
@@ -227,41 +257,40 @@
         {
             try
             {
-                confrimButtonsVisiable = false;
-
+                warningMessageVisiable = false;
                 await DeletePart(selectedpartDto);
                 resultMessage = "واحد مورد نظر حذف شد";
+                messageVisiable = true;
                 StateHasChanged();
             }
             catch(Exception ex)
             {
-                resultMessage = ex.Message.ToString();
+                errorVisiable = true;
+                errorMessage = ex.Message.ToString();
             }
             finally
             {
                 await GetCenterslist();
-                messageVisiable = true;
             }
         }
         else if(commandType == "DeleteCenter")
         {
             try
-            {
-                confrimButtonsVisiable = false;
-
+            { 
+                warningMessageVisiable = false; 
                 resultMessage = "مرکز مورد نظر حذف شد";
-
+                messageVisiable = true;
                 await DeleteCenter(selectCentertDto);
                 StateHasChanged();
                 Grid.PreventRender(false);
             }
             catch(Exception ex)
             {
-                resultMessage = ex.Message.ToString();
+                errorMessage = ex.Message.ToString();
+                errorVisiable = true;
             }
             finally
             {
-
                 await GetCenterslist();
                 StateHasChanged();
             }
@@ -288,12 +317,14 @@
                 };
             await CenterRepository.CreateCenter(createCenterCommand);
             resultMessage = "مرکز مورد نظر با موفقیت ثبت شد";
+            messageVisiable = true;
             await GetCenterslist();
             StateHasChanged();
         }
-        catch(Exception)
+        catch(Exception ex)
         {
-            throw;
+            errorMessage = ex.Message.ToString();
+            errorVisiable = true;
         }
     }
 
@@ -306,7 +337,7 @@
         await CenterRepository.EditCenter(editCenterCommand);
         await GetCenterslist();
         resultMessage = "تغییرات مورد نظر با موفقیت ثبت شد";
-
+        messageVisiable = true;
         StateHasChanged();
     }
 
@@ -328,15 +359,13 @@
             await CenterRepository.DeleteCenter(deleteCenterCommand);
             await GetCenterslist();
             resultMessage = "مرکز مورد نظر حذف شد";
+            messageVisiable = true;
             StateHasChanged();
         }
         catch(Exception ex)
         {
-            resultMessage = ex.Message.ToString();
-        }
-        finally
-        {
-
+            errorMessage = ex.Message.ToString();
+            errorVisiable = true;
         }
     }
 
@@ -351,7 +380,7 @@
             };
         await CenterRepository.AddPart(addPartCommand);
         resultMessage = "واحد مورد نظر با موفقیت ثبت شد";
-
+        messageVisiable = true;
     }
 
     private async Task DeletePart(PartDto partDto)
@@ -363,6 +392,6 @@
             };
         await CenterRepository.DeletePart(deletePartCommand);
         resultMessage = "واحد مورد نظر حذف شد";
-
+        messageVisiable = true;
     }
 }
