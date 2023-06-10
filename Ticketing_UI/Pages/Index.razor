@@ -1,39 +1,47 @@
 ﻿@attribute [Authorize]
 @page "/"
 @using Microsoft.AspNetCore.Authorization;
+@using Syncfusion.Blazor.Charts
 @using Syncfusion.Blazor.Layouts
 @using Syncfusion.Blazor.Buttons
-@using Syncfusion.Blazor.Inputs 
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor;
+@using Ticketing.Models.Tickets.Dto;
+@using Ticketing.Models.Tickets.Repository;
+
+@inject ITicketRepository ticketRepository
+
 <div class="col-lg-6 control-section">
     <div class="content-wrapper" style="max-width: 100%">
-        <SfDashboardLayout @ref="dashboardObject" Columns="6"AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing" >
+        <SfDashboardLayout @ref="dashboardObject" Columns="6" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
             <DashboardLayoutPanels>
-                <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 1</div></HeaderTemplate>
-                    <ContentTemplate>
-                        <div class="root-container"> 
-                            <div class="bottom-container">
-                                <p>Income</p>
-                            </div>
-                        </div>
-                    </ContentTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="2" Row="0" Column="2" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 2</div></HeaderTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="3" Row="0" Column="4" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 3</div></HeaderTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="4" Row="2" Column="6" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 4</div></HeaderTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="5" Row="2" Column="8" SizeX="2" SizeY="2">
+
+                <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="5" SizeY="5">
                     <HeaderTemplate><div class="e-header-text">Panel 5</div></HeaderTemplate>
+                    <ContentTemplate>
+                        <SfChart Height="100%" Width="100%">
+                            <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTimeCategory" LabelFormat="MMM" IntervalType="IntervalType.Months" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+                                <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                            </ChartPrimaryXAxis>
+                            <ChartPrimaryYAxis LabelFormat="${value}" Minimum="1000" Maximum="9000" Interval="2000">
+                                <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
+                                <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+                            </ChartPrimaryYAxis>
+                            <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                            <ChartSeriesCollection>
+                                <ChartSeries DataSource="@values" Name="Income" XName="Period" Width="2"
+                                             Opacity="0.5" YName="Income" Type="ChartSeriesType.SplineArea" Fill="#00BCD7">
+                                </ChartSeries>
+
+                            </ChartSeriesCollection>
+                        </SfChart>
+                    </ContentTemplate>
                 </DashboardLayoutPanel>
             </DashboardLayoutPanels>
         </SfDashboardLayout>
     </div>
-</div> 
+</div>
 @code {
     SfDashboardLayout dashboardObject;
     public double[] CellSpacing = { 10, 10 };
@@ -44,42 +52,18 @@
     public bool AllowResizing { get; set; } = true;
     public int Count = 5;
     public int Length { get; set; }
-    public void OnFloatChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
+    List<TicketDto> ticketDtos = new List<TicketDto>();
+    List<Tuple<DateTime, int>> values = new System.Collections.Generic.List<Tuple<DateTime, int>>();
+    //private Theme Theme { get; set; }
+
+    protected override async Task OnInitializedAsync()
     {
-        this.AllowFloating = args.Checked;
+        ticketDtos = await ticketRepository.GetUserTicketsByDateRage(DateTime.Now.AddMonths(-1), DateTime.Now);
+        values = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+        //Theme = ThemeHelper.GetCurrentTheme(NavigationManager.Uri);
     }
-    public void AllowResizingChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
-    {
-        this.AllowResizing = args.Checked;
-    }
-    public async Task AddClick(EventArgs args)
-    {
-        this.Count = this.Count + 1;
-        string HeaderText = "Panel " + this.Count.ToString();
-        PanelModel panel = new PanelModel
-                {
-                    Id = this.Count.ToString() + "_layout",
-                    SizeX = 2,
-                    SizeY = 2,
-                    Row = 0,
-                    Column = 0,
-                    Enabled = true,
-                    Header = @<div>@HeaderText</div>
-        };
-        await dashboardObject.AddPanelAsync(panel);
-    }
-    public async void RemoveClick(EventArgs args)
-    {
-        List<PanelModel> panel = await this.dashboardObject.Serialize();
-        Length = panel.Count;
-        if(Length != 0)
-        {
-            for(var i = Length - 1; i < Length; i++)
-            {
-                await dashboardObject.RemovePanelAsync(panel[Length - 1 - i].Id);
-            }
-        }
-    }
+
+
 }
 <style>
     .form-label {
@@ -98,7 +82,7 @@
     .e-panel-header {
         padding: 5px;
         margin-bottom: 0;
-        background-color: rgba(0, 0, 0 , .03);
+        background-color: rgba(0, 0, 0, .03);
     }
 
     .panel-content {
@@ -135,7 +119,7 @@
     }
 
     .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        line-height: 10px!important; 
+        line-height: 10px !important;
         height: 40px;
     }
 
@@ -179,15 +163,15 @@
     .e-control.e-lib.e-dashboardlayout.e-responsive {
         z-index: 0;
     }
-     
+
     .e-dashboardlayout {
         padding: 10px;
     }
 
-    .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        line-height: 40px;
-        height: 40px;
-    }
+        .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
+            line-height: 40px;
+            height: 40px;
+        }
 
     .fluent .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
     .fluent-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
@@ -228,7 +212,7 @@
         margin-right: 10px;
     }
 
-       
+
 
     .item-container {
         display: flex;
@@ -382,4 +366,3 @@
         padding-right: 0px !important;
     }
 </style>
- 

@@ -26,80 +26,147 @@
 @inject ICenterRepository centerRepository
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
-<div class="col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important">لیست پرسنل</div>
-<SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-4 display:inline-block!important " @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
+
+<SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important " style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0);" @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
 
 <hr />
 <div class="content-wrapper">
     <div class="row">
-        <div class="control-section col-lg-12 card-control-section tile_layout">
-            <div class="e-card-layout" style="display:inline-block!important ">
+        <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ; ">
 
-                @if(this.personDtos.Count == 0)
-                {
-                    <div class="e-error">
-                        <div class="e-error-content">اطلاعاتی یافت نشد.</div>
-                    </div>
-                }
-                else
-                {
-                    @foreach(PersonDto persondto in personDtos)
-                    {
-                        <div class="col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important ">
-                            <div id="card_sample_1" class="card_sample" style=" padding:10px ;width: 400px; background-color: beige;">
-                                <SfCard>
-                                    @{
-                                        string contentText = persondto.PartName + "\n" + persondto.CenterName;
-                                    }
-                                    @*<CardImage Image="@persondto.ImageUrl" />*@
-                                    <CardHeader Title="@persondto.PersonName" SubTitle="@persondto.PersonID.ToString()" />
-                                    <CardContent Content="@contentText" />
 
-                                    <CardFooter>
-                                        <CardFooterContent>
-                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5" style="background-color: rgb(211 239 225 / 65%);" @onclick="@(async e => {
+            @if(this.personDtos.Count == 0)
+            {
+                <div class="e-error">
+                    <div class="e-error-content">اطلاعاتی یافت نشد.</div>
+                </div>
+            }
+            else
+            {
+                @foreach(PersonDto persondto in personDtos)
+                {
+                    <div class="card_sample_1 col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important ; ">
+                        @*<div id="card_sample_1" class="card_sample" style=" padding:10px ;width: 400px; background-color: beige;">*@
+                        <SfCard>
+                            @{
+                                string contentText = persondto.PartName + " " + persondto.CenterName;
+                            }
+                            
+                            <CardHeader Title="@persondto.PersonName" SubTitle="@persondto.PersonID.ToString()" />
+                            <CardContent>
+                                <div class="row col-lg-12">
+                                    <div class="col-lg-5">
+                                        "@contentText" 
+                                    </div>
+                                </div> 
+                            </CardContent>
+
+                            <CardFooter>
+                                <CardFooterContent>
+                                    <div class="row" style="align-items:center">
+                                        <SfButton CssClass="e-btn e-outline e-primary col-lg-3 me-4" style=" border-color: #eff0f3; background-color: rgb(211 239 225 / 19%);" @onclick="@(async e => {
                                                 await EditButtonClick(persondto);  })">ویرایش</SfButton>
-                                            <SfButton CssClass="e-btn e-outline e-primary col-lg-5 " style="background-color: #e75c9547" @onclick="(async e=>{await DeletePerson(personDto);})">حذف</SfButton>
+                                        <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3;background-color: #6b5ce721;" @onclick="(  e=>{  ClickDeleteButton(persondto);})">حذف</SfButton>
+                                        <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3; background-color: rgb(0 29 237 / 19%);" @onclick="(async e=>{await GetSupporterProgramsList(persondto);})">برنامه ها</SfButton>
+                                    </div>
+                                </CardFooterContent>
+                            </CardFooter>
+                        </SfCard>
 
-                                        </CardFooterContent>
-                                    </CardFooter>
-                                </SfCard>
+                        @*</div>*@
+                    </div>
 
-                            </div>
-                        </div>
-
-                    }
-                    <SfDialog @bind-Visible="dialogVisible" Width="350px" IsModal="true">
-                        <DialogTemplates>
-                            <Header>
-                                اطلاعات پرسنل
-                            </Header>
-                            <Content>
-                                <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
-                                <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always"></SfNumericTextBox>
-
-                                <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب دفتر" PopupHeight="auto" DataSource="@centerDtos">
-                                    <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
-                                    <DropDownListFieldSettings Text="CenterName" Value="Id"></DropDownListFieldSettings>
-                                </SfDropDownList>
-
-                                <SfDropDownList Enabled="true" TValue="Guid " TItem="PartDto" @bind-Value="@selectedPartdto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب واحد" PopupHeight="auto" DataSource="@partDtos">
-                                    <DropDownListFieldSettings Text="PartName" Value="Id"></DropDownListFieldSettings>
-                                </SfDropDownList>
-
-                            </Content>
-                        </DialogTemplates>
-                        <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
-                        <DialogEvents Opened="OnOpen" Closed="OnClose"></DialogEvents>
-
-                        <DialogButtons>
-                            <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await SaveButtonClick(selectedPerson))"></DialogButton>
-                            <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
-                        </DialogButtons>
-                    </SfDialog>
                 }
+                <SfDialog @bind-Visible="dialogVisible" Width="350px" IsModal="true">
+                    <DialogTemplates>
+                        <Header>
+                            اطلاعات پرسنل
+                        </Header>
+                        <Content>
+                            <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
+                            <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always"></SfNumericTextBox>
 
-            </div>
+                            <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب دفتر" PopupHeight="auto" DataSource="@centerDtos">
+                                <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
+                                <DropDownListFieldSettings Text="CenterName" Value="Id"></DropDownListFieldSettings>
+                            </SfDropDownList>
+
+                            <SfDropDownList Enabled="true" TValue="Guid " TItem="PartDto" @bind-Value="@selectedPartdto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب واحد" PopupHeight="auto" DataSource="@partDtos">
+                                <DropDownListFieldSettings Text="PartName" Value="Id"></DropDownListFieldSettings>
+                            </SfDropDownList>
+
+                        </Content>
+                    </DialogTemplates>
+                    <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
+                    <DialogEvents Opened="OnOpen" Closed="OnClose"></DialogEvents>
+
+                    <DialogButtons>
+                        <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await SaveButtonClick(selectedPerson))"></DialogButton>
+                        <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+                    </DialogButtons>
+                </SfDialog>
+
+                <SfDialog @bind-Visible="programListDialogVisiable" Width="50%" ShowCloseIcon="true" IsModal="true">
+                    <DialogTemplates>
+                        <Header>
+                            اطلاعات
+                        </Header>
+                        <Content>
+                            <div class="content-wrapper">
+                                <div class="row">
+                                    <SfGrid DataSource="@programDtos" AllowPaging="true" AllowSorting="true" style="width:auto;padding-right: 1px;padding-left: 1px;">
+                                        <GridPageSettings @ref="GridPage" PageSize="10"></GridPageSettings>
+                                        <GridEvents TValue="ProgramDto"></GridEvents>
+                                        <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
+                                            <HeaderTemplate>
+                                                <span>اطلاعات</span>
+                                            </HeaderTemplate>
+                                        </GridEditSettings>
+
+                                        <GridColumns>
+                                            <GridColumn Field=@nameof(ProgramDto.Id) Visible=false></GridColumn>
+                                            <GridColumn Field=@nameof(ProgramDto.ProgamName) HeaderText="برنامه"></GridColumn>
+                                            <GridColumn Field=@nameof(ProgramDto.ProgramLink) HeaderText="لینک"></GridColumn>
+                                            <GridColumn HeaderText="تعداد پشتیبان">
+                                                <Template>
+                                                    @{
+                                                        var programddd = (context as ProgramDto) ?? new ProgramDto();
+                                                        string supportercount = programddd.Supporters.Count.ToString();
+                                                    }
+                                                    <div Enabled="false">@supportercount</div>
+                                                </Template>
+                                            </GridColumn>
+                                        </GridColumns>
+                                    </SfGrid>
+                                </div>
+                            </div>
+
+
+                        </Content>
+                    </DialogTemplates>
+                    <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
+                </SfDialog>
+
+                <SfDialog @bind-Visible="warningMessageVisiable" Width="50%">
+                    <DialogTemplates>
+                        <Header>
+                            حذف
+                        </Header>
+                        <Content>
+                            <div class="content-wrapper">
+                                <div class="row">
+                                    از حذف این اطلاعات مطمئن هستید؟
+                                </div>
+                            </div>
+                        </Content>
+                    </DialogTemplates>
+                    <DialogButtons>
+                        <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await DeletePerson(selectedPerson))"></DialogButton>
+                        <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+                    </DialogButtons>
+                </SfDialog>
+            }
+
         </div>
     </div>
     <div class="col-lg-6 control-section msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
@@ -148,7 +215,6 @@
 
     #source_link {
         float: right;
-        margin-right: 10px;
     }
 </style>
 
@@ -163,10 +229,13 @@
     private CenterDto selectedCenterDto = new CenterDto();
     private PartDto selectedPartdto = new PartDto();
     private PersonDto selectedPerson = new PersonDto();
+    private bool warningMessageVisiable = false;
+    private GridPageSettings GridPage { get; set; }
 
     [Inject] public NavigationManager NavigationManager { get; set; }
     [Inject] public IJSRuntime JsRuntime { get; set; }
     bool dialogVisible { get; set; } = false;
+    bool programListDialogVisiable { get; set; } = false;
     private bool isNew = true;
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "750px", Width = "750px" };
     private string resultMessage = "";
@@ -194,6 +263,7 @@
     private void OnClose()
     {
         dialogVisible = false;
+        warningMessageVisiable = false;
     }
 
     public void ChangeCenter(Syncfusion.Blazor.DropDowns.ChangeEventArgs<Guid, CenterDto> args)
@@ -269,6 +339,12 @@
         }
     }
 
+    private void ClickDeleteButton(PersonDto personDto)
+    {
+        warningMessageVisiable = true;
+        selectedPerson = personDto;
+    }
+
     private async Task DeletePerson(PersonDto personDto)
     {
         try
@@ -282,18 +358,22 @@
             messageVisiable = true;
             await GetAllPersons();
             StateHasChanged();
+            warningMessageVisiable = false;
+
         }
         catch(Exception ex)
         {
             errorMessage = ex.Message.ToString();
             errorVisiable = true;
             resultMessage = ex.Message.ToString();
+            warningMessageVisiable = false;
         }
 
     }
 
-    private async Task GetSupporterProgramsList(int personId)
+    private async Task GetSupporterProgramsList(PersonDto personId)
     {
-        programDtos = await programRepository.GetSupporterProgramsList(personId);
+        programDtos = await programRepository.GetSupporterProgramsList(personId.PersonID);
+        programListDialogVisiable = true;
     }
 }

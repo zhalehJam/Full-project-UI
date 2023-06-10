@@ -45,7 +45,7 @@ namespace Ticketing.Repository.Tickets
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("Id", TickeId.ToString());
             string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
-            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
             ticketList = GetTicketDtoFromContent(content).FirstOrDefault();
             return ticketList;
@@ -70,12 +70,23 @@ namespace Ticketing.Repository.Tickets
             parameters.Add("PageNumber", page);
             parameters.Add("PageSize", pageSize);
             string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
-            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
             ticketList = GetTicketDtoFromContent(content);
             return ticketList;
         }
-
+        public async Task<List<TicketDto>> GetUserTicketsByDateRage(DateTime fromDate, DateTime toDate)
+        {
+            List<TicketDto> ticketList = new List<TicketDto>();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("fromDate", fromDate.ToString());
+            parameters.Add("toDate", toDate.ToString());
+            string request = QueryHelpers.AddQueryString("Ticket/GetUserTicketsByDateRage", parameters);
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+            ticketList = GetTicketDtoFromContent(content);
+            return ticketList;
+        }
         public async Task CreateNewTicket(CreateTicketCommand createTicketCommand)
         {
             await SendRequest<CreateTicketCommand>(createTicketCommand, HttpMethod.Post, "Ticket");
@@ -108,6 +119,8 @@ namespace Ticketing.Repository.Tickets
                 }
             }
         }
+
+       
     }
 }
 
