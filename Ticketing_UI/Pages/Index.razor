@@ -1,74 +1,92 @@
 ﻿@attribute [Authorize]
 @page "/"
+@using Framework.Pagination;
 @using Microsoft.AspNetCore.Authorization;
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.Charts
 @using Syncfusion.Blazor.Layouts
 @using Syncfusion.Blazor.Buttons
-@using Syncfusion.Blazor.Inputs 
-<div class="col-lg-8 control-section">
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor;
+@using Ticketing.Cilient.Contracts.Ticket;
+@using Ticketing.Models.Tickets.Dto;
+@using Ticketing.Models.Tickets.Query;
+@using Ticketing.Models.Tickets.Repository;
+
+@inject ITicketRepository ticketRepository
+
+<div class="col-lg-12 control-section">
     <div class="content-wrapper" style="max-width: 100%">
-        <SfDashboardLayout @ref="dashboardObject" AllowResizing="@AllowResizing" AllowFloating="@AllowFloating" CellSpacing="@CellSpacing" Columns="@Columns">
+        <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
             <DashboardLayoutPanels>
-                <DashboardLayoutPanel Id="1" Row="1" Column="0" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 1</div></HeaderTemplate>
+
+                <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="9" SizeY="4">
+                    <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                     <ContentTemplate>
-                        <div class="root-container">
-                           @* <div class="item-container income">
-                                <p>$43,300</p>*@
-                               @* <div class="auto-right">
-                                    <span class="income-icon e-icon"></span>
-                                </div>*@
-                            @*</div>*@
-                            <div class="bottom-container">
-                                <p>Income</p>
+                        <SfChart Height="100%" Width="100%">
+                            <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" IntervalType="IntervalType.Auto" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+                                <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                            </ChartPrimaryXAxis>
+                            <ChartPrimaryYAxis Title="Count" Maximum="@allTickets.Max(v=>v.Item2)" Interval="1">
+                                <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+                                <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
+                            </ChartPrimaryYAxis>
+                            <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                            <ChartSeriesCollection>
+                                <ChartSeries DataSource="@allTickets" Name="تیکتها" XName="Item1" Width="2"
+                                             Opacity="0.5" YName="Item2" Type="ChartSeriesType.Column" Fill="#00BCD7">
+                                </ChartSeries>
+                            </ChartSeriesCollection>
+                            <ChartSeriesCollection>
+                                <ChartSeries DataSource="@finishedTickets" Name="تمام شده" XName="Item1" Width="2"
+                                             Opacity="0.5" YName="Item2" Type="ChartSeriesType.Column" Fill="#FEC200">
+                                </ChartSeries>
+                            </ChartSeriesCollection>
+                        </SfChart>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
+
+                <DashboardLayoutPanel Id="2" Row="0" Column="12" SizeX="3" SizeY="3">
+                    <HeaderTemplate><div class="e-header-text">آمار تیکت برنامه ها</div></HeaderTemplate>
+                    <ContentTemplate>
+                        <SfAccumulationChart>
+
+                            <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
+                            <AccumulationChartSeriesCollection>
+                                <AccumulationChartSeries DataSource="@programsTickets" XName="Item1" YName="Item2" InnerRadius="40%">
+                                    <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
+                                </AccumulationChartSeries>
+                            </AccumulationChartSeriesCollection>
+                            <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+                            <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
+                            </AccumulationChartLegendSettings>
+                        </SfAccumulationChart>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
+
+                <DashboardLayoutPanel Id="3" Row="0" Column="7" SizeX="2" SizeY="2">
+                    <HeaderTemplate>
+                        <div class="e-header-text">وضعیت تیکت ها</div>
+                    </HeaderTemplate>
+                    <ContentTemplate>
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
+                            <div id="card_sample_1" class="card_sample">
+                                <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
+                                    <CardHeader SubTitle="@( "تیکتهای در حال انجام")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
+                                </SfCard>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
+                                    <CardHeader SubTitle="@( "تیکتهای پایان یافته")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.Finish).ToString())" ImageUrl="@("../images/icons/completed-icon.jpg")" />
+                                </SfCard>
+
                             </div>
                         </div>
                     </ContentTemplate>
                 </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="2" Row="1" Column="2" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 2</div></HeaderTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="3" Row="0" Column="4" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 3</div></HeaderTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="4" Row="2" Column="0" SizeX="4" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 4</div></HeaderTemplate>
-                </DashboardLayoutPanel>
-                <DashboardLayoutPanel Id="5" Row="2" Column="4" SizeX="2" SizeY="2">
-                    <HeaderTemplate><div class="e-header-text">Panel 5</div></HeaderTemplate>
-                </DashboardLayoutPanel>
             </DashboardLayoutPanels>
         </SfDashboardLayout>
-    </div>
-</div>
-<div class="col-lg-4 property-section dashboard">
-    <div class="property-panel-header">
-        Properties
-    </div>
-    <div class="row property-panel-content">
-        <div class="card-body">
-            <div class="form-group row">
-                <label for="settings-bubble-up-input" class="col-sm-4 col-form-label form-label">AllowFloating</label>
-                <div class="col-sm-8">
-                    <SfCheckBox @bind-Checked="@FloatCheck" Name="floating" ValueChange="OnFloatChange" Value="1" TChecked="bool"></SfCheckBox>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="settings-bubble-up-input" class="col-sm-4 col-form-label form-label">AllowResizing</label>
-                <div class="col-sm-8">
-                    <SfCheckBox @bind-Checked="@AllowResizingCheck" Name="resizing" ValueChange="AllowResizingChange" Value="1" TChecked="bool"></SfCheckBox>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12">
-                    <SfButton CssClass="e-primary" Content="Add Panel" @onclick="AddClick"></SfButton>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12">
-                    <SfButton CssClass="e-danger" Content="Remove Panel" @onclick="RemoveClick"></SfButton>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 @code {
@@ -81,44 +99,80 @@
     public bool AllowResizing { get; set; } = true;
     public int Count = 5;
     public int Length { get; set; }
-    public void OnFloatChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
+    List<TicketDto> ticketDtos = new List<TicketDto>();
+    List<Tuple<DateTime, int>> allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<Tuple<DateTime, int>> finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<Tuple<string, int>> programsTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+    //private Theme Theme { get; set; }
+    private string Content { get; set; } = "";
+    public string Height { get; set; } = "30%";
+    public string Width { get; set; } = "25%";
+    public LegendPosition position { get; set; } = LegendPosition.Top;
+    public double MaxLabel { get; set; } = 100;
+    public TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
+    public MetaData metaData { get; set; } = new MetaData();
+
+    protected override async Task OnInitializedAsync()
     {
-        this.AllowFloating = args.Checked;
+        parameters.fromDate = DateTime.Now.AddMonths(-1);
+        parameters.toDate = DateTime.Now;
+        var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
+        ticketDtos = response.Items;
+        metaData = response.MetaData; 
+        allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+        finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+        programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();
     }
-    public void AllowResizingChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
-    {
-        this.AllowResizing = args.Checked;
-    }
-    public async Task AddClick(EventArgs args)
-    {
-        this.Count = this.Count + 1;
-        string HeaderText = "Panel " + this.Count.ToString();
-        PanelModel panel = new PanelModel
-                {
-                    Id = this.Count.ToString() + "_layout",
-                    SizeX = 2,
-                    SizeY = 2,
-                    Row = 0,
-                    Column = 0,
-                    Enabled = true,
-                    Header = @<div>@HeaderText</div>
-        };
-        await dashboardObject.AddPanelAsync(panel);
-    }
-    public async void RemoveClick(EventArgs args)
-    {
-        List<PanelModel> panel = await this.dashboardObject.Serialize();
-        Length = panel.Count;
-        if(Length != 0)
-        {
-            for(var i = Length - 1; i < Length; i++)
-            {
-                await dashboardObject.RemovePanelAsync(panel[Length - 1 - i].Id);
-            }
-        }
-    }
+
+
 }
 <style>
+    .e-card .e-card-header .e-card-header-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 27px;
+        width: 27px;
+    }
+
+    .e-card .e-card-header {
+        box-sizing: border-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+        flex-direction: row-reverse;
+        -ms-flex-pack: center;
+        justify-content: center;
+        line-height: normal;
+        min-height: 22.5px;
+        padding: 6px;
+        width: inherit;
+        padding-bottom: 6px;
+    }
+
+    .e-dashboardlayout {
+        padding: 20px;
+        z-index: 0;
+    }
+
+    .e-panel {
+        cursor: auto !important;
+    }
+
+    .e-panel-header {
+        border: none !important;
+        background-color: #303030;
+        height: 50px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: #737373;
+    }
+
     .form-label {
         margin-bottom: 0;
         font-size: 12px;
@@ -135,7 +189,7 @@
     .e-panel-header {
         padding: 5px;
         margin-bottom: 0;
-        background-color: rgba(0, 0, 0 , .03);
+        background-color: rgba(0, 0, 0, .03);
     }
 
     .panel-content {
@@ -156,6 +210,7 @@
         height: calc(100% - 28px);
         width: 100%;
         display: block;
+        direction: ltr;
     }
 
     .e-panel .e-header-text {
@@ -172,7 +227,7 @@
     }
 
     .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        line-height: 10px!important; 
+        line-height: 10px !important;
         height: 40px;
     }
 
@@ -188,7 +243,7 @@
     }
 
     .e-panel-content {
-        padding: 15px;
+        padding: 6px;
     }
 
     .e-primary, .e-danger {
@@ -216,15 +271,15 @@
     .e-control.e-lib.e-dashboardlayout.e-responsive {
         z-index: 0;
     }
-     
+
     .e-dashboardlayout {
         padding: 10px;
     }
 
-    .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        line-height: 40px;
-        height: 40px;
-    }
+        .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
+            line-height: 40px;
+            height: 40px;
+        }
 
     .fluent .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
     .fluent-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
@@ -265,7 +320,7 @@
         margin-right: 10px;
     }
 
-       
+
 
     .item-container {
         display: flex;
@@ -419,4 +474,3 @@
         padding-right: 0px !important;
     }
 </style>
- 

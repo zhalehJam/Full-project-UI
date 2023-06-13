@@ -1,4 +1,4 @@
-﻿namespace GTS.Pagination
+﻿namespace Framework.Pagination
 {
     public class PagingResponse<T> where T : class
     {

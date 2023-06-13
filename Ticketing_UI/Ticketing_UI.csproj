@@ -45,17 +45,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Centers\CenterDetail.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Centers\CenterDetail.razor" />
     <_ContentIncludedByDefault Remove="Pages\Centers\CentersList.razor" />
-    <_ContentIncludedByDefault Remove="Pages\Persons\PersonInfo.razor" />
     <_ContentIncludedByDefault Remove="Pages\Persons\PersonsList.razor" />
-    <_ContentIncludedByDefault Remove="Pages\Programs\FechSupporterInfo.razor" />
     <_ContentIncludedByDefault Remove="Pages\Programs\ProgramsList.razor" />
-    <_ContentIncludedByDefault Remove="Pages\Tickets\TicketDetail.razor" />
     <_ContentIncludedByDefault Remove="Pages\Tickets\TicketsList.razor" />
   </ItemGroup>
 
@@ -64,23 +56,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Persons\PersonInfo.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Pages\Persons\PersonsList.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Programs\FechSupporterInfo.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Pages\Programs\ProgramsList.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Tickets\TicketDetail.razor" />
   </ItemGroup>
 
   <ItemGroup>

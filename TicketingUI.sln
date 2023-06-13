@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Core", "Framework
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UserDataManagement", "Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj", "{90AA6B98-1A61-4A8F-9D18-330F9F712896}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framwork.Pagination", "Framework\Framework.Pagination\Framwork.Pagination.csproj", "{540D3B50-5C4B-4D57-A3FD-CDF119162776}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{90AA6B98-1A61-4A8F-9D18-330F9F712896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90AA6B98-1A61-4A8F-9D18-330F9F712896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90AA6B98-1A61-4A8F-9D18-330F9F712896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{07A5750E-0EB1-46D3-A05F-6F7FE5E101CF} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
 		{90AA6B98-1A61-4A8F-9D18-330F9F712896} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
+		{540D3B50-5C4B-4D57-A3FD-CDF119162776} = {F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEE9FE2B-66DC-462C-A4C9-0FC4A6AB65FC}
