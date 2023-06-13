@@ -19,16 +19,24 @@ using System.Collections.Specialized;
 using Ticketing.Models.Tickets.Command;
 using Ticketing.Models.Shared;
 using Ticketing.Models.Programs.Command;
+using Ticketing.Models.Tickets.Query;
+using Framework.Pagination;
+using System.Text.Json;
 
 namespace Ticketing.Repository.Tickets
 {
+
     public class TicketRepository : ITicketRepository
     {
+    private readonly JsonSerializerOptions _options;
         private readonly HttpClient _httpClient;
 
-        public TicketRepository(HttpClient httpClient)
+        public TicketRepository(IHttpClientFactory clientFactory)
         {
-            _httpClient = httpClient;
+            _httpClient = clientFactory.CreateClient("API");
+            _httpClient.DefaultRequestHeaders.Add("X-Pagination", "CustomValue");
+            _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
         }
         public async Task<List<TicketDto>> GetAllTickets()
         {
@@ -45,7 +53,7 @@ namespace Ticketing.Repository.Tickets
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("Id", TickeId.ToString());
             string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
-            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
             ticketList = GetTicketDtoFromContent(content).FirstOrDefault();
             return ticketList;
@@ -70,12 +78,28 @@ namespace Ticketing.Repository.Tickets
             parameters.Add("PageNumber", page);
             parameters.Add("PageSize", pageSize);
             string request = QueryHelpers.AddQueryString("Ticket/GetAllTicketsByPage", parameters);
-            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
             ticketList = GetTicketDtoFromContent(content);
             return ticketList;
         }
+        public async Task<PagingResponse<TicketDto>> GetUserTicketsByDateRage(TicketQueryParameters parameters)
+        {
+            List<TicketDto> ticketList = new List<TicketDto>();  
+            var response = await _httpClient.GetAsync($"Ticket/GetUserTicketsByDateRage?{parameters.ToQuery()}");
+            var content = await response.Content.ReadAsStringAsync();
+            if(!response.IsSuccessStatusCode)
+            {
+                throw new ApplicationException(content);
+            }
 
+            var pagingResponse = new PagingResponse<TicketDto>
+            {
+                Items = System.Text.Json.JsonSerializer.Deserialize<List<TicketDto>>(content, _options),
+                MetaData = System.Text.Json.JsonSerializer.Deserialize<MetaData>(response.Headers.GetValues("X-Pagination").First(), _options)
+            };
+            return pagingResponse;
+        }
         public async Task CreateNewTicket(CreateTicketCommand createTicketCommand)
         {
             await SendRequest<CreateTicketCommand>(createTicketCommand, HttpMethod.Post, "Ticket");
@@ -108,6 +132,8 @@ namespace Ticketing.Repository.Tickets
                 }
             }
         }
+
+       
     }
 }
 
