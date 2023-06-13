@@ -1,5 +1,6 @@
 ﻿@attribute [Authorize]
 @page "/"
+@using Framework.Pagination;
 @using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Charts
@@ -9,6 +10,7 @@
 @using Syncfusion.Blazor;
 @using Ticketing.Cilient.Contracts.Ticket;
 @using Ticketing.Models.Tickets.Dto;
+@using Ticketing.Models.Tickets.Query;
 @using Ticketing.Models.Tickets.Repository;
 
 @inject ITicketRepository ticketRepository
@@ -18,7 +20,7 @@
         <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
             <DashboardLayoutPanels>
 
-                <DashboardLayoutPanel Id="1" Row="1" Column="0" SizeX="12" SizeY="5">
+                <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="9" SizeY="4">
                     <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                     <ContentTemplate>
                         <SfChart Height="100%" Width="100%">
@@ -45,7 +47,7 @@
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-                <DashboardLayoutPanel Id="2" Row="0" Column="12" SizeX="3" SizeY="4">
+                <DashboardLayoutPanel Id="2" Row="0" Column="12" SizeX="3" SizeY="3">
                     <HeaderTemplate><div class="e-header-text">آمار تیکت برنامه ها</div></HeaderTemplate>
                     <ContentTemplate>
                         <SfAccumulationChart>
@@ -60,7 +62,6 @@
                             <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
                             </AccumulationChartLegendSettings>
                         </SfAccumulationChart>
-
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
@@ -71,7 +72,7 @@
                     <ContentTemplate>
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
                             <div id="card_sample_1" class="card_sample">
-                                <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;"> 
+                                <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
                                     <CardHeader SubTitle="@( "تیکتهای در حال انجام")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
                                 </SfCard>
                             </div>
@@ -108,10 +109,16 @@
     public string Width { get; set; } = "25%";
     public LegendPosition position { get; set; } = LegendPosition.Top;
     public double MaxLabel { get; set; } = 100;
+    public TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
+    public MetaData metaData { get; set; } = new MetaData();
 
     protected override async Task OnInitializedAsync()
     {
-        ticketDtos = await ticketRepository.GetUserTicketsByDateRage(DateTime.Now.AddMonths(-1), DateTime.Now);
+        parameters.fromDate = DateTime.Now.AddMonths(-1);
+        parameters.toDate = DateTime.Now;
+        var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
+        ticketDtos = response.Items;
+        metaData = response.MetaData; 
         allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
         finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
         programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();
@@ -123,8 +130,8 @@
     .e-card .e-card-header .e-card-header-image {
         background-repeat: no-repeat;
         background-size: cover;
-        height: 57px;
-        width:57px;
+        height: 27px;
+        width: 27px;
     }
 
     .e-card .e-card-header {
@@ -141,6 +148,7 @@
         width: inherit;
         padding-bottom: 6px;
     }
+
     .e-dashboardlayout {
         padding: 20px;
         z-index: 0;

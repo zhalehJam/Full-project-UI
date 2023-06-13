@@ -1,12 +1,12 @@
 ﻿using Framework.Core.ServerCommunication;
 
-namespace GTS.ReadModel.Pagination
+namespace Framework.ReadModel.Pagination
 {
     public class PaginationQueryParameters<T> : QueryBase<T> where T : class
     {
         const int maxPageSize = 100;
         public int PageNumber { get; set; } = 1;
-        private int _pageSize = 20;
+        private int _pageSize = 10;
         public int PageSize
         {
             get
