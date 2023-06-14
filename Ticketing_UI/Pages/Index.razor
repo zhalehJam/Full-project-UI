@@ -125,11 +125,10 @@
     {
         parameters.fromDate = fromDate;
         parameters.toDate = toDate;
-        var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
-        if(response.Items.Count() != 0)
+        var response = await ticketRepository.GetUserAllTickets(fromDate,toDate);
+        if(response.Count() != 0)
         {
-            ticketDtos = response.Items;
-            metaData = response.MetaData;
+            ticketDtos = response; 
             allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
             finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
             programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();

@@ -12,6 +12,9 @@
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.DropDowns
 @using Syncfusion.Blazor.Notifications
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Buttons
+@using Action = Syncfusion.Blazor.Grids.Action
 @using Ticketing.Cilient.Contracts.Ticket;
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
@@ -22,10 +25,7 @@
 @using Ticketing.Models.Tickets.Query;
 @using Ticketing.Models.Tickets.Repository
 @using Ticketing_UI.Shared.Component
-@using Syncfusion.Blazor.Grids
-@using Syncfusion.Blazor.Buttons
 @inject Microsoft.AspNetCore.Components.NavigationManager UriHelper
-@using Action = Syncfusion.Blazor.Grids.Action
 @inject ITicketRepository ticketRepository
 @inject IPersonRepository personRepository
 @inject IProgramRepository programRepository
