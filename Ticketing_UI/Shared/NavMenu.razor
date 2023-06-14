@@ -49,7 +49,7 @@
     private bool collapseNavMenu = true;
     private PersonDto userInfo = new PersonDto();
     [Parameter]
-    public string userName { get; set; }
+    public string userName { get; set; } = "";
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
