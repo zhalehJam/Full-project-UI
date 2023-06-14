@@ -13,6 +13,7 @@
 @using Syncfusion.Blazor.Popups
 @using Syncfusion.Blazor.Notifications
 
+@using Ticketing.Client.Contracts.Persons;
 @using Ticketing.Models.Centers.Dto;
 @using Ticketing.Models.Centers.Repository;
 @using Ticketing.Models.Persons.Command
@@ -51,14 +52,14 @@
                             @{
                                 string contentText = persondto.PartName + " " + persondto.CenterName;
                             }
-                            
+
                             <CardHeader Title="@persondto.PersonName" SubTitle="@persondto.PersonID.ToString()" />
                             <CardContent>
                                 <div class="row col-lg-12">
                                     <div class="col-lg-5">
-                                        "@contentText" 
+                                        "@contentText"
                                     </div>
-                                </div> 
+                                </div>
                             </CardContent>
 
                             <CardFooter>
@@ -68,6 +69,7 @@
                                                 await EditButtonClick(persondto);  })">ویرایش</SfButton>
                                         <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3;background-color: #6b5ce721;" @onclick="(  e=>{  ClickDeleteButton(persondto);})">حذف</SfButton>
                                         <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3; background-color: rgb(0 29 237 / 19%);" @onclick="(async e=>{await GetSupporterProgramsList(persondto);})">برنامه ها</SfButton>
+
                                     </div>
                                 </CardFooterContent>
                             </CardFooter>
@@ -86,13 +88,17 @@
                             <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
                             <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always"></SfNumericTextBox>
 
-                            <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب دفتر" PopupHeight="auto" DataSource="@centerDtos">
+                            <SfDropDownList Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="نام دفتر" PopupHeight="auto" DataSource="@centerDtos">
                                 <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
                                 <DropDownListFieldSettings Text="CenterName" Value="Id"></DropDownListFieldSettings>
                             </SfDropDownList>
 
-                            <SfDropDownList Enabled="true" TValue="Guid " TItem="PartDto" @bind-Value="@selectedPartdto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="انتخاب واحد" PopupHeight="auto" DataSource="@partDtos">
+                            <SfDropDownList Enabled="true" TValue="Guid" TItem="PartDto" @bind-Value="@selectedPartdto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="نام واحد" PopupHeight="auto" DataSource="@partDtos">
                                 <DropDownListFieldSettings Text="PartName" Value="Id"></DropDownListFieldSettings>
+                            </SfDropDownList>
+
+                            <SfDropDownList Enabled="true" TValue="RoleType" TItem="KeyValuePair<RoleType,string>" @bind-Value="@selectedPerson.PersonRole" FloatLabelType="FloatLabelType.Auto" Placeholder="نقش کاربر" PopupHeight="auto" DataSource="@roleTypes">
+                                <DropDownListFieldSettings Text="Value" Value="Key"></DropDownListFieldSettings>
                             </SfDropDownList>
 
                         </Content>
@@ -244,9 +250,13 @@
     private bool messageVisiable = false;
     DialogEffect animationEffect = DialogEffect.None;
 
+    private List<KeyValuePair<RoleType, string>> roleTypes { get; set; } = Enum.GetValues(typeof(RoleType)).Cast<RoleType>().ToList()
+                                                                           .Select(s => new { Key =  s, Value = s.ToString() })
+                                                                           .ToDictionary(d => d.Key, d => d.Value).ToList();
     protected override async Task OnInitializedAsync()
     {
         centerDtos = await centerRepository.GetAllCenters();
+
         await GetAllPersons();
     }
 
@@ -307,7 +317,7 @@
                     {
                         Name = personDto.PersonName,
                         PartId = selectedPartdto.Id,
-                        PersonID = personDto.PersonID
+                        PersonID = personDto.PersonID 
                     };
                 await personRepository.CreatePerson(createPersonCommand);
             }
@@ -317,7 +327,8 @@
                     {
                         Id = personDto.Id,
                         PartId = selectedPartdto.Id,
-                        Name = personDto.PersonName
+                        Name = personDto.PersonName,
+                        personRole=personDto.PersonRole
                     };
                 await personRepository.UpdatePerson(updatePersonCommand);
             }
@@ -328,6 +339,7 @@
         {
             errorMessage = ex.Message.ToString();
             errorVisiable = true;
+            dialogVisible = false;
         }
         finally
         {

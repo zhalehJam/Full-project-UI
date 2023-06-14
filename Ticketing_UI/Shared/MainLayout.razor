@@ -7,16 +7,16 @@
 
 <div dir="rtl" class="page">
     <div class="sidebar">
-        <NavMenu />
+        <NavMenu userName="@userName" />
     </div>
 
 
     <main>
         @* <AuthorizeView>
-            <Authorized>
-            </Authorized>
+        <Authorized>
+        </Authorized>
         </AuthorizeView>*@
-        <div class="top-row px-4"> 
+        <div class="top-row px-4">
         </div>
 
         <article class="content px-4">
@@ -28,19 +28,21 @@
 
 @code {
     private string userName = "";
+    
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if(firstRender)
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
-            userName = user.Identity.Name??"";
+            userName = user.Identity.Name ?? "";
             if(user.Identity!.IsAuthenticated == false) return;
-            //if(!user.Claims.Any())
-            //{
-            //    Navigation.NavigateTo("/AccessDenaid");
-            //}
-
+        }
+        else
+        {
+            var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+            userName = user.Identity.Name ?? "";
         }
     }
 }

@@ -1,6 +1,15 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Framework.Core.UserDataManagement;
+@using Microsoft.AspNetCore.Components.Authorization;
+@using Ticketing.Client.Contracts.Persons;
+@using Ticketing.Models.Persons.Dto;
+@using Ticketing.Models.Persons.Repository;
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject IPersonRepository personRepository
+@inject IUserDataManagement userDataManagement
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand"style="font:menu; font-size:larger; margin:inherit" href="">مدیریت پشتیبانی</a>
+        <a class="navbar-brand" style="font:menu; font-size:larger; margin:inherit" href="">مدیریت پشتیبانی</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,17 +18,20 @@
 
 <div dir="rtl" class="@NavMenuCssClass" style="font:menu;" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="CentersList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> مراکز
-            </NavLink>
-        </div>
+        @if(userInfo.PersonRole == RoleType.Admin)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="CentersList">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> مراکز
+                </NavLink>
+            </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="PersonsList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> پرسنل
-            </NavLink>
-        </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="PersonsList">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> پرسنل
+                </NavLink>
+            </div>
+        }
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="ProgramsList">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> برنامه ها
@@ -35,11 +47,31 @@
 
 @code {
     private bool collapseNavMenu = true;
+    private PersonDto userInfo = new PersonDto();
+    [Parameter]
+    public string userName { get; set; }
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(userName != "" && userInfo.PersonID == 0)
+        {
+            if(userInfo != await GetPersonInfo(Convert.ToInt32(userName)))
+            {
+                userInfo = await GetPersonInfo(Convert.ToInt32(userName));
+                StateHasChanged();
+            }
+        }
+    }
+    private async Task<PersonDto> GetPersonInfo(int personCode)
+    {
+        return await personRepository.GetPersonInfoByPersonelCode(personCode);
     }
 }

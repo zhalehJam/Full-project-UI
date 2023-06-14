@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ticketing.Client.Contracts.Persons;
 
 namespace Ticketing.Models.Persons.Dto
 {
@@ -14,5 +15,6 @@ namespace Ticketing.Models.Persons.Dto
         public Guid PartId { get; set; }
         public string? PartName { get; set; } = "";
         public string? CenterName { get; set; } = "";
+        public RoleType PersonRole { get; set; }
     }
 }
