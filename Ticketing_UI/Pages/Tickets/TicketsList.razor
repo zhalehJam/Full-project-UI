@@ -31,8 +31,13 @@
 @inject IProgramRepository programRepository
 @inject AuthenticationStateProvider authenticationStateProvider
 
-<div dir="rtl" class="col-lg-12 control-section">
+<div class="col-lg-12 control-section">
     <div class="content-wrapper">
+        <div class="e-panel-header row col-lg-3 col-md-3 col-sm-3" style="margin-right:1px">
+            <SfDateRangePicker TValue="DateTime" Placeholder="Choose a range" @bind-StartDate="@fromDate" @bind-EndDate="@toDate" ShowClearButton="true">
+                <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+            </SfDateRangePicker>
+        </div>
         <div class="row">
             <EditForm Model="@ticketDtos">
                 <DataAnnotationsValidator />
@@ -40,7 +45,7 @@
                     <GridPageSettings PageSize="10">
                         <Template Context="PagerTemp">
                             <div class="PagerTemplate">
-                                
+
                                 <div class="@($"e-next e-icons e-icon-next  align-icons e-next")" hidden="@DisableForwardIcon" @onclick="ShowNextPage" title="Go to next page"></div>
                                 <div>
                                     <div id="totalpages" class="textbox" @oncuechange="@(()=>ValidateFirst())">صفحه @pageNo2 از @metaData.TotalPages</div>
@@ -88,7 +93,7 @@
                                     </SfDropDownList>
 
                                     <ValidationMessage For="@(() => ticket.ProgramName)" />
-                                </div> 
+                                </div>
                             </div>
 
                             <div class="col-md-12">
@@ -133,7 +138,7 @@
                                         </SfDropDownList>
 
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
@@ -156,7 +161,7 @@
                                                     Placeholder="نوع تیکت">
                                         <DropDownListFieldSettings Value="Key" Text="Value">
                                         </DropDownListFieldSettings>
-                                    </SfDropDownList> 
+                                    </SfDropDownList>
 
                                 </div>
                             </div>
@@ -180,7 +185,7 @@
                                                     DataSource="@TicketConditions"
                                                     FloatLabelType="FloatLabelType.Auto" Placeholder="وضعیت">
                                         <DropDownListFieldSettings Value="Key" Text="Value">
-                                        </DropDownListFieldSettings> 
+                                        </DropDownListFieldSettings>
                                     </SfDropDownList>
 
                                 </div>
@@ -314,7 +319,8 @@
 
     private TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
     private MetaData metaData { get; set; } = new MetaData();
-
+    public DateTime fromDate { get; set; } = DateTime.Now.AddMonths(-1);
+    public DateTime toDate { get; set; } = DateTime.Now;
 
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
@@ -336,7 +342,15 @@
         supporterInfo = await GetPersonInfo(Convert.ToInt32(user.Identity?.Name));
         programDtos = await programRepository.GetSupporterProgramsList(supporterInfo.PersonID);
         await GetAllTickets();
-    } 
+    }
+
+    public async Task ValueChangeHandler(RangePickerEventArgs<DateTime> args)
+    {
+        fromDate = args.StartDate;
+        toDate = args.EndDate;
+        await GetAllTickets();
+    }
+
     public string ValidateFirst()
     {
         if(DisableFirstIcon)
@@ -477,23 +491,22 @@
 
     private async Task<List<TicketDto>> GetAllTickets()
     {
-        parameters.fromDate = DateTime.Now.AddMonths(-1);
-        parameters.toDate = DateTime.Now;
+        parameters.fromDate = fromDate;
+        parameters.toDate = toDate;
         parameters.PageNumber = pageNo2;
         GridPage.CurrentPage = pageNo2;
         var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
         ticketDtos = response.Items;
         metaData = response.MetaData;
 
+        DisableBackIcon = false;
+        DisableForwardIcon = false;
+
         if(pageNo2 <= 1)
             DisableBackIcon = true;
-        else if(pageNo2 >= metaData.TotalPages)
+        if(pageNo2 >= metaData.TotalPages)
             DisableForwardIcon = true;
-        else
-        {
-            DisableBackIcon = false;
-            DisableForwardIcon = false;
-        }
+
 
         StateHasChanged();
         return ticketDtos;

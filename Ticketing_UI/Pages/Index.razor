@@ -5,9 +5,10 @@
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Charts
 @using Syncfusion.Blazor.Layouts
-@using Syncfusion.Blazor.Buttons
-@using Syncfusion.Blazor.Inputs
+@*@using Syncfusion.Blazor.Buttons*@
+@*@using Syncfusion.Blazor.Inputs*@
 @using Syncfusion.Blazor;
+@using Syncfusion.Blazor.Calendars
 @using Ticketing.Cilient.Contracts.Ticket;
 @using Ticketing.Models.Tickets.Dto;
 @using Ticketing.Models.Tickets.Query;
@@ -17,15 +18,20 @@
 
 <div class="col-lg-12 control-section">
     <div class="content-wrapper" style="max-width: 100%">
+        <div class="e-panel-header row col-lg-3 col-md-3 col-sm-3">
+            <SfDateRangePicker TValue="DateTime" Placeholder="Choose a range" @bind-StartDate="@fromDate" @bind-EndDate="@toDate" ShowClearButton="true">
+                <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+            </SfDateRangePicker>
+        </div>
         <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
             <DashboardLayoutPanels>
 
                 <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="9" SizeY="4">
                     <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                     <ContentTemplate>
-                        <SfChart Height="100%" Width="100%">
+                        <SfChart @ref="sfChart" Height="100%" Width="100%">
                             <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
-                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" IntervalType="IntervalType.Auto" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" IntervalType="IntervalType.Days" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
                                 <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
                             </ChartPrimaryXAxis>
                             <ChartPrimaryYAxis Title="Count" Maximum="@allTickets.Max(v=>v.Item2)" Interval="1">
@@ -91,6 +97,7 @@
 </div>
 @code {
     SfDashboardLayout dashboardObject;
+    SfChart sfChart;
     public double[] CellSpacing = { 10, 10 };
     public bool FloatCheck = true;
     public bool AllowResizingCheck = true;
@@ -100,7 +107,7 @@
     public int Count = 5;
     public int Length { get; set; }
     List<TicketDto> ticketDtos = new List<TicketDto>();
-    List<Tuple<DateTime, int>> allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<Tuple<DateTime, int>> allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
     List<Tuple<DateTime, int>> finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
     List<Tuple<string, int>> programsTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
     //private Theme Theme { get; set; }
@@ -111,17 +118,46 @@
     public double MaxLabel { get; set; } = 100;
     public TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
     public MetaData metaData { get; set; } = new MetaData();
+    public DateTime fromDate { get; set; } = DateTime.Now.AddMonths(-1);
+    public DateTime toDate { get; set; } = DateTime.Now;
 
     protected override async Task OnInitializedAsync()
     {
-        parameters.fromDate = DateTime.Now.AddMonths(-1);
-        parameters.toDate = DateTime.Now;
+        parameters.fromDate = fromDate;
+        parameters.toDate = toDate;
         var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
-        ticketDtos = response.Items;
-        metaData = response.MetaData; 
-        allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
-        finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
-        programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();
+        if(response.Items.Count() != 0)
+        {
+            ticketDtos = response.Items;
+            metaData = response.MetaData;
+            allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+            programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();
+        }
+    }
+    public async Task ValueChangeHandler(RangePickerEventArgs<DateTime> args)
+    {
+        fromDate = args.StartDate;
+        toDate = args.EndDate;
+
+        parameters.fromDate = fromDate;
+        parameters.toDate = toDate;
+        var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
+        allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
+        finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+        programsTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+        if(response.Items.Count() != 0)
+        {
+            ticketDtos = response.Items;
+            metaData = response.MetaData;
+
+            allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
+            programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();
+            await sfChart.RefreshAsync();
+        }
+        StateHasChanged();
+        ShouldRender();
     }
 
 
