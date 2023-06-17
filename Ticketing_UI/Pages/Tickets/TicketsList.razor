@@ -197,7 +197,7 @@
                         <GridColumn Field=@nameof(TicketDto.Id) Visible=false HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ProgramName) HeaderText="برنامه" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.ErrorTypeName) HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.TicketTypeName) HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="150"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.TicketConditionTypeName) HeaderText="وضعیت" EditType="EditType.DropDownEdit" Width="160">
