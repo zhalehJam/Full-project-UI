@@ -28,8 +28,19 @@
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
 
-<SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important " style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0);" @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
+<SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important " style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:100px; margin-right:23px" @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
+<style>
+    .hulu {
+        background-color: #edf8ff38;
+        border: solid 1px lightgray;
+        border-radius: 3px;
+    }
 
+        .hulu:hover {
+            background-color: white;
+            border: solid 1px gray;
+        }
+</style>
 <hr />
 <div class="content-wrapper">
     <div class="row">
@@ -46,45 +57,87 @@
             {
                 @foreach(PersonDto persondto in personDtos)
                 {
-                    <div class="card_sample_1 col-lg-3 col-md-3 col-sm-4" style=" padding: 10px; display:inline-block!important ; ">
-                        @*<div id="card_sample_1" class="card_sample" style=" padding:10px ;width: 400px; background-color: beige;">*@
-                        <SfCard>
-                            @{
-                                string contentText = persondto.PartName + " " + persondto.CenterName;
-                            }
 
-                            <CardHeader Title="@persondto.PersonName" SubTitle="@persondto.PersonID.ToString()" />
-                            <CardContent>
-                                <div class="row col-lg-12">
-                                    <div class="col-lg-5">
-                                        "@contentText"
-                                    </div>
+                    <div class="card_sample_3 col-lg-2 col-md-2 col-sm-5 p-1 "
+                         style=" padding: 10px; display:inline-block!important ;"
+                         title="@personDto.PersonRole.ToString()">
+                        <div class="p-2 hulu">
+
+                            @* <SfCard Orientation="CardOrientation.Horizontal" @ondblclick="(()=>EditButtonClick(persondto))">
+                    @{
+                    string contentText = persondto.PartName + " " + persondto.CenterName;
+                    }
+                    <CardStacked>
+                    <CardHeader Title="@persondto.PersonName" SubTitle="@persondto.PersonID.ToString()" />
+                    <CardContent>
+                    @contentText
+                    </CardContent>
+
+                    <CardContent>
+                    @contentText
+                    </CardContent>
+                    </CardStacked>*@
+
+
+                            @*<CardFooter>
+                    <CardFooterContent>
+                    <div class="row" style="margin-left:10px;margin-right:50%; display:inline-block!important ;">
+                    <div class="row col-lg-12" style="display:inline-block!important ;">
+                    <SfButton CssClass="e-btn e-outline e-primary me-4 e-icons e-redaction" style=" border-color: #ffffff;margin-bottom:4px;" @onclick="@(async e => {
+                    await EditButtonClick(persondto);  })" title="ویرایش"></SfButton>
+                    </div>
+                    <div class="row col-lg-12">
+                    <SfButton CssClass="e-btn e-outline e-primary  me-4 e-icons e-circle-remove" style="border-color: #ffffff;margin-bottom:4px;" @onclick="(  e=>{  ClickDeleteButton(persondto);})" title="حذف"></SfButton>
+                    </div>
+                    <div class="row col-lg-12 ">
+                    <SfButton CssClass="e-btn e-outline e-primary me-4 me-4 e-icons e-list-unordered" style="border-color: #ffffff; margin-bottom:4px;" @onclick="(async e=>{await GetSupporterProgramsList(persondto);})" title="برنامه ها"></SfButton>
+                    </div>
+                    </div>
+                    </CardFooterContent>
+                    </CardFooter>
+                    </SfCard>*@
+
+                            <div @ondblclick="(()=>EditButtonClick(persondto))">
+                                @{
+                                    string contentText = persondto.PartName + " " + persondto.CenterName;
+                                }
+                                <div class="col-sm-8 col-md-8 col-lg-8" style="display:inline-block!important ;">
+                                    <h4>
+                                        @persondto.PersonName
+                                    </h4>
+                                    <span>
+                                        @persondto.PersonID.ToString()
+                                    </span>
+                                    <p>
+                                        @contentText
+                                    </p>
                                 </div>
-                            </CardContent>
+                                <div class=" row col-md-4 col-lg-4" style="display:inline-block!important ;">
+                                    <SfButton CssClass="e-btn e-outline e-primary e-icons e-redaction" style=" border-color: #ffffff; " @onclick="@(async e => {await EditButtonClick(persondto);  })" title="ویرایش"></SfButton>
 
-                            <CardFooter>
-                                <CardFooterContent>
-                                    <div class="row" style="align-items:center">
-                                        <SfButton CssClass="e-btn e-outline e-primary col-lg-3 me-4" style=" border-color: #eff0f3; background-color: rgb(211 239 225 / 19%);" @onclick="@(async e => {
-                                                await EditButtonClick(persondto);  })">ویرایش</SfButton>
-                                        <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3;background-color: #6b5ce721;" @onclick="(  e=>{  ClickDeleteButton(persondto);})">حذف</SfButton>
-                                        <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3; background-color: rgb(0 29 237 / 19%);" @onclick="(async e=>{await GetSupporterProgramsList(persondto);})">برنامه ها</SfButton>
+                                    <SfButton CssClass="e-btn e-outline e-primary  e-icons e-circle-remove" style="border-color: #ffffff;" @onclick="(  e=>{  ClickDeleteButton(persondto);})" title="حذف"></SfButton>
 
-                                    </div>
-                                </CardFooterContent>
-                            </CardFooter>
-                        </SfCard>
 
-                        @*</div>*@
+                                    <SfButton CssClass="e-btn e-outline e-primary  e-icons e-list-unordered" style="border-color: #ffffff; " @onclick="(async e=>{await GetSupporterProgramsList(persondto);})" title="برنامه ها"></SfButton>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
                     </div>
 
                 }
+
                 <SfDialog @bind-Visible="dialogVisible" Width="350px" IsModal="true">
                     <DialogTemplates>
                         <Header>
                             اطلاعات پرسنل
                         </Header>
                         <Content>
+                            <img class="thumbnail" src="@image" style="width:70px; "
+                                 alt="Employee photo" />
                             <SfTextBox @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
                             <SfNumericTextBox Enabled="isNew" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always"></SfNumericTextBox>
 
@@ -153,14 +206,14 @@
                     <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
                 </SfDialog>
 
-                <SfDialog @bind-Visible="warningMessageVisiable" Width="50%">
+                <SfDialog @bind-Visible="warningMessageVisiable" Width="20%">
                     <DialogTemplates>
                         <Header>
                             حذف
                         </Header>
                         <Content>
                             <div class="content-wrapper">
-                                <div class="row">
+                                <div style="text-align:center">
                                     از حذف این اطلاعات مطمئن هستید؟
                                 </div>
                             </div>
@@ -184,6 +237,15 @@
 </div>
 
 <style>
+    body {
+        font-family: 'Vazir FD';
+    }
+
+    .e-card .e-card-horizontal .e-card-stacked {
+        justify-content: flex-start;
+        margin: initial;
+    }
+
     .property-panel-section .property-panel-content td {
         padding: 0 0 15px 0;
     }
@@ -204,6 +266,7 @@
         width: inherit;
     }
 
+
     .tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-header-title {
         font-size: 20px;
         font-family: Helvetica, 'Segoe UI';
@@ -222,6 +285,20 @@
     #source_link {
         float: right;
     }
+
+    .e-card {
+        -webkit-tap-highlight-color: #0d6efd;
+        background-color: #edf8ff38;
+        border: 2px solid #dee2e6;
+        box-shadow: none;
+        color: #212529;
+        outline: none;
+    }
+
+    .e-card-content2 {
+        padding: 3px;
+        width: 10px;
+    }
 </style>
 
 
@@ -237,7 +314,7 @@
     private PersonDto selectedPerson = new PersonDto();
     private bool warningMessageVisiable = false;
     private GridPageSettings GridPage { get; set; }
-
+    private string image = "";
     [Inject] public NavigationManager NavigationManager { get; set; }
     [Inject] public IJSRuntime JsRuntime { get; set; }
     bool dialogVisible { get; set; } = false;
@@ -251,8 +328,8 @@
     DialogEffect animationEffect = DialogEffect.None;
 
     private List<KeyValuePair<RoleType, string>> roleTypes { get; set; } = Enum.GetValues(typeof(RoleType)).Cast<RoleType>().ToList()
-                                                                           .Select(s => new { Key =  s, Value = s.ToString() })
-                                                                           .ToDictionary(d => d.Key, d => d.Value).ToList();
+    .Select(s => new { Key = s, Value = s.ToString() })
+    .ToDictionary(d => d.Key, d => d.Value).ToList();
     protected override async Task OnInitializedAsync()
     {
         centerDtos = await centerRepository.GetAllCenters();
@@ -289,8 +366,10 @@
 
     private void NewPerson()
     {
-        selectedPerson = new PersonDto();
+        selectedPerson = new PersonDto() { PersonRole = RoleType.User };
         this.dialogVisible = true;
+        selectedPartdto = new PartDto();
+        selectedCenterDto = new CenterDto();
         isNew = true;
 
     }
@@ -302,7 +381,7 @@
         partDtos = centerDtos.Single(c => c.parts.Any(p => p.Id == selectedPerson.PartId)).parts;
         selectedPartdto = partDtos.Single(p => p.Id == selectedPerson.PartId);
         selectedCenterDto = centerDtos.Single(c => c.Id == selectedPartdto.Center);
-
+        await GetUserPhoto(personDto.PersonID);
         this.dialogVisible = true;
         isNew = false;
     }
@@ -317,7 +396,7 @@
                     {
                         Name = personDto.PersonName,
                         PartId = selectedPartdto.Id,
-                        PersonID = personDto.PersonID 
+                        PersonID = personDto.PersonID
                     };
                 await personRepository.CreatePerson(createPersonCommand);
             }
@@ -328,7 +407,7 @@
                         Id = personDto.Id,
                         PartId = selectedPartdto.Id,
                         Name = personDto.PersonName,
-                        personRole=personDto.PersonRole
+                        personRole = personDto.PersonRole
                     };
                 await personRepository.UpdatePerson(updatePersonCommand);
             }
@@ -343,7 +422,6 @@
         }
         finally
         {
-
             OnClose();
             selectedPartdto = new PartDto();
             await GetAllPersons();
@@ -387,5 +465,12 @@
     {
         programDtos = await programRepository.GetSupporterProgramsList(personId.PersonID);
         programListDialogVisiable = true;
+    }
+    private async Task GetUserPhoto(int personnelCode)
+    {
+        string personPhoto = await personRepository.GetUserPhoto(personnelCode);
+        if(!String.IsNullOrWhiteSpace(personPhoto))
+            image = "data:image/jpeg;base64," + personPhoto;
+
     }
 }

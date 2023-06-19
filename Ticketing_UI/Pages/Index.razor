@@ -5,8 +5,6 @@
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Charts
 @using Syncfusion.Blazor.Layouts
-@*@using Syncfusion.Blazor.Buttons*@
-@*@using Syncfusion.Blazor.Inputs*@
 @using Syncfusion.Blazor;
 @using Syncfusion.Blazor.Calendars
 @using Ticketing.Cilient.Contracts.Ticket;
@@ -19,14 +17,15 @@
 <div class="col-lg-12 control-section">
     <div class="content-wrapper" style="max-width: 100%">
         <div class="e-panel-header row col-lg-3 col-md-3 col-sm-3">
-            <SfDateRangePicker TValue="DateTime" Placeholder="Choose a range" @bind-StartDate="@fromDate" @bind-EndDate="@toDate" ShowClearButton="true">
+           <SfDateRangePicker TValue="DateTime" Placeholder="Choose a range" @bind-StartDate="@fromDate" @bind-EndDate="@toDate" ShowClearButton="true">
                 <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+              
             </SfDateRangePicker>
         </div>
         <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
             <DashboardLayoutPanels>
 
-                <DashboardLayoutPanel Id="1" Row="0" Column="0" SizeX="9" SizeY="4">
+                <DashboardLayoutPanel Id="1" Row="3" Column="0" SizeX="9" SizeY="4">
                     <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                     <ContentTemplate>
                         <SfChart @ref="sfChart" Height="100%" Width="100%">

@@ -15,6 +15,6 @@ namespace Ticketing.Models.Persons.Dto
         public Guid PartId { get; set; }
         public string? PartName { get; set; } = "";
         public string? CenterName { get; set; } = "";
-        public RoleType PersonRole { get; set; }
+        public RoleType PersonRole { get; set; }= new RoleType();
     }
 }

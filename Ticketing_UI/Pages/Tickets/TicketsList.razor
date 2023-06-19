@@ -15,6 +15,7 @@
 @using Syncfusion.Blazor.Grids
 @using Syncfusion.Blazor.Buttons
 @using Action = Syncfusion.Blazor.Grids.Action
+@using Syncfusion.Blazor.Popups
 @using Ticketing.Cilient.Contracts.Ticket;
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
@@ -95,7 +96,7 @@
                                     <ValidationMessage For="@(() => ticket.ProgramName)" />
                                 </div>
                             </div>
-
+                            <hr />
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
                                     <SfNumericTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))" OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
@@ -123,23 +124,25 @@
                                     <SfTextBox ID="PersonPartName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" Enabled="false" @bind-Value="@(ticket.PersonPartName)" FloatLabelType="FloatLabelType.Auto" Placeholder="واحد"></SfTextBox>
                                 </div>
 
-                                <div class="col-md-12">
-                                    <div class="col-md-5" style="display:inline-block!important">
-                                        <SfDropDownList ID="ErrorTypeName"
-                                                        @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                                        TItem="KeyValuePair<int,string>"
-                                                        IndexChanged="((e)=>{ ticket.ErrorTypeName=errorTypes.Single(t=>t.Key==ticket.ErrorTypeid).Value; Grid.PreventRender(false);})"
-                                                        @bind-Value="@(ticket.ErrorTypeid)"
-                                                        TValue="int"
-                                                        DataSource="@errorTypes"
-                                                        FloatLabelType="FloatLabelType.Auto"
-                                                        Placeholder="نوع خطا">
-                                            <DropDownListFieldSettings Value="Key" Text="Value"></DropDownListFieldSettings>
-                                        </SfDropDownList>
+                            </div>
+                            <hr />
+                            <div class="col-md-12">
+                                <div class="col-md-5" style="display:inline-block!important">
+                                    <SfDropDownList ID="ErrorTypeName"
+                                                    @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                    TItem="KeyValuePair<int,string>"
+                                                    IndexChanged="((e)=>{ ticket.ErrorTypeName=errorTypes.Single(t=>t.Key==ticket.ErrorTypeid).Value; Grid.PreventRender(false);})"
+                                                    @bind-Value="@(ticket.ErrorTypeid)"
+                                                    TValue="int"
+                                                    DataSource="@errorTypes"
+                                                    FloatLabelType="FloatLabelType.Auto"
+                                                    Placeholder="نوع خطا">
+                                        <DropDownListFieldSettings Value="Key" Text="Value"></DropDownListFieldSettings>
+                                    </SfDropDownList>
 
-                                    </div>
                                 </div>
                             </div>
+
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
                                     <SfTextBox ID="ErrorDescription" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.ErrorDescription)" FloatLabelType="FloatLabelType.Auto" Format="0" Placeholder="شرح خطا"></SfTextBox>
@@ -148,6 +151,8 @@
                                     <SfTextBox ID="SolutionDescription" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@(ticket.SolutionDescription)" FloatLabelType="FloatLabelType.Auto" Placeholder="شرح راهکار"></SfTextBox>
                                 </div>
                             </div>
+                            <hr />
+
                             <div>
                                 <div class="col-md-5" style="display:inline-block!important">
                                     <SfDropDownList ID="TicketTypeName"
@@ -238,6 +243,32 @@
             <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
         </div>
     </div>
+
+    <SfDialog @bind-Visible="warningMessageVisiable" Width="20%">
+        <DialogTemplates>
+            <Header>
+                حذف
+            </Header>
+            <Content>
+                <div class="content-wrapper">
+                    <div class="row">
+                        از حذف این اطلاعات مطمئن هستید؟
+                    </div>
+                </div>
+            </Content>
+        </DialogTemplates>
+        <DialogButtons>
+            <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await DeleteTicket(supporterInfo.PersonID,selectedTicketDto.Id))"></DialogButton>
+            <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+        </DialogButtons>
+    </SfDialog>
+
+    <div class="col-lg-4 control-section">
+        <SfToast @ref="ToastObj" ID="toast_type">
+            <ToastPosition X="right" Y="Bottom"></ToastPosition>
+        </SfToast>
+    </div>
+
 </div>
 <style>
     .PagerTemplate {
@@ -287,11 +318,93 @@
         opacity: 0.3;
     }
 </style>
+<style type="text/css" class="cssStyles">
+    .title-temp1, .title-temp2 {
+        border-radius: 2px;
+        padding: 2px 0px 3px 0px;
+        margin: 10px 0px;
+    }
+
+    .col-md-6 {
+        width: 50% !important;
+    }
+
+    .title-temp1 {
+        width: 64px;
+        text-align: left;
+    }
+
+    .title-temp2 {
+        width: 95px;
+        text-align: center;
+    }
+
+    .font {
+        font-size: 11px;
+        font-weight: 400;
+        font-style: normal;
+        height: 9px;
+    }
+
+    .priority {
+        height: 16px;
+        width: 16px;
+    }
+
+    .inprogress {
+        background: #7fddeb9e;
+    }
+
+    .inprogress-font {
+        color: #03659C;
+    }
+
+    .completed {
+        background: #fee07f;
+    }
+
+    .completed-font {
+        color: #067939;
+    }
+
+    .blocked {
+        background: #FFF1F1;
+    }
+
+    .blocked-font {
+        color: #B40000;
+    }
+
+    .wontfix {
+        background: #FFEFE9;
+    }
+
+    .wontfix-font {
+        color: #993105;
+    }
+
+    .notreproduced {
+        background: #FFF8E1;
+    }
+
+    .notreproduced-font {
+        color: #926A04;
+    }
+
+    .bydesign {
+        background: #ECFEFF;
+    }
+
+    .bydesign-font {
+        color: #027C85;
+    }
+</style>
 
 @code {
 
     private List<TicketDto>? ticketDtos { get; set; } = new List<TicketDto>();
     private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>();
+    private TicketDto selectedTicketDto { get; set; } = new TicketDto();
 
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "750px" };
     private PersonDto supporterInfo = new PersonDto();
@@ -316,6 +429,10 @@
     private bool Check = false;
     private bool flag = false;
     private bool alertVisible = false;
+    private bool warningMessageVisiable = false;
+    SfToast ToastObj;
+    private ToastModel toastModel = new ToastModel();
+
 
     private TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
     private MetaData metaData { get; set; } = new MetaData();
@@ -401,10 +518,6 @@
     {
         await Grid.GoToPageAsync(totalPages);
     }
-    private void ValidSubmit(EditContext context)
-    {
-        this.alertVisible = true;
-    }
 
     public void ActionFailureHandler(Syncfusion.Blazor.Grids.FailureEventArgs args)
     {
@@ -442,25 +555,27 @@
                     }
                 }
                 catch(Exception ex)
-                {
-                    errorVisiable = true;
-                    errorMessage = ex.Message.ToString();
+                { 
+                    toastModel = new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" }; 
                     Args.Cancel = true;
+
                 }
                 finally
                 {
                     Args.Cancel = true;
                     //Grid.PreventRender(true);
                     ticketDtos = await GetAllTickets();
+                    await this.ToastObj.ShowAsync(toastModel);
+
                 }
             }
             else if(rType == "Delete")
             {
                 try
                 {
-                    await DeleteTicket(supporterInfo.PersonID, Args.RowData.Id);
-                    StateHasChanged();
-                    Grid.PreventRender(false);
+                    //await DeleteTicket(supporterInfo.PersonID, Args.RowData.Id);
+                    ClickDeleteButton(Args.RowData);
+
                 }
                 catch(Exception ex)
                 {
@@ -512,6 +627,11 @@
         return ticketDtos;
     }
 
+    private void ClickDeleteButton(TicketDto ticketDto)
+    {
+        selectedTicketDto = ticketDto;
+        warningMessageVisiable = true;
+    }
 
     private void Setkeyboardkeyevent(KeyboardEventArgs args)
     {
@@ -530,6 +650,7 @@
         }
         catch(Exception ex)
         {
+            toastModel = new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
 
         }
         return personInfos;
@@ -550,9 +671,11 @@
                 Type = (TicketType)ticketDto.Typeid
             };
         await ticketRepository.CreateNewTicket(createTicketCommand);
-        messageVisiable = true;
-        resultMessage = "تیکت مورد نظر با موفقیت ثبت شد";
-        await GetAllTickets();
+        //messageVisiable = true;
+        //resultMessage = "تیکت مورد نظر ثبت شد";
+        toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+
+        //await GetAllTickets();
     }
 
     private async Task EditTicket(TicketDto seletedticket)
@@ -572,107 +695,42 @@
                 EditorPersonID = supporterInfo.PersonID
             };
         await ticketRepository.UpdateTicket(updateTicketCommand);
-        messageVisiable = true;
+        //messageVisiable = true;
+         
+        toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر با موفقیت ویرایش شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
 
-        resultMessage = "تیکت مورد نظر با موفقیت ویرایش شد";
         await GetAllTickets();
     }
 
     private async Task DeleteTicket(int userId, Guid Id)
     {
-
-        DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
-        deleteTicketCommand.SupporterUser = userId;
-        deleteTicketCommand.Id = Id;
-        await ticketRepository.DeleteTicket(deleteTicketCommand);
-        messageVisiable = true;
-
-        resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
-        await GetAllTickets();
+       
+        try
+        {
+            DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
+            deleteTicketCommand.SupporterUser = userId;
+            deleteTicketCommand.Id = Id;
+            await ticketRepository.DeleteTicket(deleteTicketCommand);
+            //messageVisiable = true;
+            resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
+            toastModel = new ToastModel { Title = "Success!", Content = "اطلاعات برنامه ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        }
+        catch(Exception ex)
+        { 
+            toastModel = new ToastModel { Title = "Error!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+        }
+        finally
+        {
+            await this.ToastObj.ShowAsync(toastModel);
+            warningMessageVisiable = false;
+            await GetAllTickets();
+            StateHasChanged();
+            Grid.PreventRender(false);
+            await Grid.Refresh();
+        }
     }
-}
-
-
-@*Hidden:Lines*@
-<style type="text/css" class="cssStyles">
-    .title-temp1, .title-temp2 {
-        border-radius: 2px;
-        padding: 2px 0px 3px 0px;
-        margin: 10px 0px;
+    private void OnClose()
+    {
+        warningMessageVisiable = false;
     }
-
-    .col-md-6 {
-        width: 50% !important;
-    }
-
-    .title-temp1 {
-        width: 64px;
-        text-align: left;
-    }
-
-    .title-temp2 {
-        width: 95px;
-        text-align: center;
-    }
-
-    .font {
-        font-size: 11px;
-        font-weight: 400;
-        font-style: normal;
-        height: 9px;
-    }
-
-    .priority {
-        height: 16px;
-        width: 16px;
-    }
-
-    .inprogress {
-        background: #E3F5FF;
-    }
-
-    .inprogress-font {
-        color: #03659C;
-    }
-
-    .completed {
-        background: #E7FFF1;
-    }
-
-    .completed-font {
-        color: #067939;
-    }
-
-    .blocked {
-        background: #FFF1F1;
-    }
-
-    .blocked-font {
-        color: #B40000;
-    }
-
-    .wontfix {
-        background: #FFEFE9;
-    }
-
-    .wontfix-font {
-        color: #993105;
-    }
-
-    .notreproduced {
-        background: #FFF8E1;
-    }
-
-    .notreproduced-font {
-        color: #926A04;
-    }
-
-    .bydesign {
-        background: #ECFEFF;
-    }
-
-    .bydesign-font {
-        color: #027C85;
-    }
-</style>
-@*End:Hidden*@
+} 

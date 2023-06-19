@@ -9,9 +9,11 @@ namespace Ticketing.Models.Programs.Dto
 {
     public class ProgramDto
     {
-        public Guid Id { get; set; } 
-        public string ProgamName { get; set; }
-        public string ProgramLink { get; set; }
+        public Guid Id { get; set; }
+        public string ProgamName { get; set; } = "";
+
+        [Required(ErrorMessage = "لینک برنامه الزامی است")] 
+        public string ProgramLink { get; set; } = "";
         public List<ProgramSupporterDto> Supporters { get; set; }
     }
 }
