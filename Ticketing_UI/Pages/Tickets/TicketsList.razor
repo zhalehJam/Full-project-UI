@@ -236,13 +236,7 @@
             </EditForm>
 
         </div>
-    </div>
-    <div class="col-lg-6 control-section msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
-        <div class="content-section">
-            <SfMessage Severity="MessageSeverity.Error" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@errorVisiable">@errorMessage</SfMessage>
-            <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
-        </div>
-    </div>
+    </div> 
 
     <SfDialog @bind-Visible="warningMessageVisiable" Width="20%">
         <DialogTemplates>
@@ -420,17 +414,13 @@
     public bool DisableForwardIcon = false;
     public bool DisableFirstIcon = false;
     public bool DisableLastIcon = false;
-
-    private string Filter_PersonName = "";
-    private string resultMessage = "";
-    private string errorMessage = "";
-    private bool errorVisiable = false;
+     
     private bool messageVisiable = false;
     private bool Check = false;
     private bool flag = false;
     private bool alertVisible = false;
     private bool warningMessageVisiable = false;
-    SfToast ToastObj;
+    private SfToast ToastObj;
     private ToastModel toastModel = new ToastModel();
 
 
@@ -562,8 +552,7 @@
                 }
                 finally
                 {
-                    Args.Cancel = true;
-                    //Grid.PreventRender(true);
+                    Args.Cancel = true; 
                     ticketDtos = await GetAllTickets();
                     await this.ToastObj.ShowAsync(toastModel);
 
@@ -572,23 +561,20 @@
             else if(rType == "Delete")
             {
                 try
-                {
-                    //await DeleteTicket(supporterInfo.PersonID, Args.RowData.Id);
+                { 
                     ClickDeleteButton(Args.RowData);
 
                 }
                 catch(Exception ex)
                 {
-                    errorVisiable = true;
-                    errorMessage = ex.Message.ToString();
+                    var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+                    await this.ToastObj.ShowAsync(t);
                     Args.Cancel = true;
                 }
                 finally
                 {
                     await GetAllTickets();
-                    StateHasChanged();
-                    //Grid.PreventRender(false);
-                    //await Grid.Refresh();
+                    StateHasChanged(); 
                 }
 
             }
@@ -670,12 +656,9 @@
                 PersonID = ticketDto.PersonID,
                 Type = (TicketType)ticketDto.Typeid
             };
-        await ticketRepository.CreateNewTicket(createTicketCommand);
-        //messageVisiable = true;
-        //resultMessage = "تیکت مورد نظر ثبت شد";
+        await ticketRepository.CreateNewTicket(createTicketCommand); 
         toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
-
-        //await GetAllTickets();
+         
     }
 
     private async Task EditTicket(TicketDto seletedticket)
@@ -694,8 +677,7 @@
                 Type = (TicketType)seletedticket.Typeid,
                 EditorPersonID = supporterInfo.PersonID
             };
-        await ticketRepository.UpdateTicket(updateTicketCommand);
-        //messageVisiable = true;
+        await ticketRepository.UpdateTicket(updateTicketCommand); 
          
         toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر با موفقیت ویرایش شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
 
@@ -710,10 +692,8 @@
             DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
             deleteTicketCommand.SupporterUser = userId;
             deleteTicketCommand.Id = Id;
-            await ticketRepository.DeleteTicket(deleteTicketCommand);
-            //messageVisiable = true;
-            resultMessage = "تیکت مورد نظر با موفقیت حذف شد";
-            toastModel = new ToastModel { Title = "Success!", Content = "اطلاعات برنامه ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+            await ticketRepository.DeleteTicket(deleteTicketCommand); 
+            toastModel = new ToastModel { Title = "Success!", Content = " تیکت مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
         }
         catch(Exception ex)
         { 

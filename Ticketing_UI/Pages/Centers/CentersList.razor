@@ -23,7 +23,7 @@
 <div dir="rtl" class="col-lg-12 control-section">
     <div class="content-wrapper">
         <div class="row">
-            <SfGrid @ref="Grid" AllowGrouping="true" DataSource="@centerDtos" AllowPaging="true" AllowSorting="true" AllowFiltering="true" Toolbar="@(new string[]{"Add", "Delete" ,"Search" })" style="width:auto;padding-right: 1px;padding-left: 1px;">
+            <SfGrid @ref="Grid" AllowGrouping="true" DataSource="@centerDtos" AllowPaging="true" AllowSorting="true" AllowFiltering="true" Toolbar="@(new string[]{"Add",   "Search" })" style="width:auto;padding-right: 1px;padding-left: 1px;">
                 <GridPageSettings @ref="GridPage"></GridPageSettings>
                 <GridEvents TValue="CenterDto" OnActionBegin="ActionBeginHandler"></GridEvents>
                 <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
@@ -70,8 +70,8 @@
                                 var centers = (context as CenterDto) ?? new CenterDto();
                                 string partscount = centers.parts.Count.ToString();
                             }
-                            <div >@partscount</div>
-                            <SfDialog @bind-Visible="warningMessageVisiable" Width="60%"  >
+                            <div>@partscount</div>
+                            <SfDialog @bind-Visible="warningMessageVisiable" Width="20%">
                                 <DialogTemplates>
                                     <Header>
                                         حذف
@@ -92,22 +92,22 @@
                         </Template>
                     </GridColumn>
                     <GridColumn HeaderText="عملیات" Width="150">
-                        <GridCommandColumns> 
+                        <GridCommandColumns>
                             <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
                         </GridCommandColumns>
                     </GridColumn>
                 </GridColumns>
             </SfGrid>
-        </div> 
-    </div> 
-</div>
-<div class="col-lg-6 sb-footer-left msg-icon-section sb-property-border" style="max-width: fit-content; margin: auto;">
-    <div class="content-section">
-        <SfMessage Severity="MessageSeverity.Error" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@errorVisiable">@errorMessage</SfMessage>
-        <SfMessage Severity="MessageSeverity.Success" ShowIcon="true" ShowCloseIcon="true" @bind-Visible="@messageVisiable">@resultMessage</SfMessage>
-
+        </div>
     </div>
 </div>
+
+<div class="col-lg-4 control-section">
+    <SfToast @ref="ToastObj" ID="toast_type">
+        <ToastPosition X="Right" Y="Bottom"></ToastPosition>
+    </SfToast>
+</div>
+
 <style>
     .msg-template-section .e-btn.msg-hidden {
         display: none;
@@ -151,11 +151,12 @@
 
     public bool showModal { get; set; }
     private string commandType = "";
-    //private bool confrimButtonsVisiable = false;
     private PartDto selectedpartDto = new PartDto();
     private CenterDto selectCentertDto = new CenterDto();
-    void ModalShow() => showModal = true;
-    void ModalCancel() => showModal = false;
+
+    SfToast ToastObj;
+
+
     void ModalOk()
     {
         Console.WriteLine("Modal ok");
@@ -275,13 +276,15 @@
             {
                 warningMessageVisiable = false;
                 await DeletePart(selectedpartDto);
-                resultMessage = "واحد مورد نظر حذف شد";
-                messageVisiable = true;
+                var t = new ToastModel { Title = "Success!", Content = "واحد مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+                await this.ToastObj.ShowAsync(t);
+
                 StateHasChanged();
             }
             catch(Exception ex)
             {
-                errorVisiable = true;
+                var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+                await this.ToastObj.ShowAsync(t);
                 errorMessage = ex.Message.ToString();
             }
             finally
@@ -300,8 +303,9 @@
             }
             catch(Exception ex)
             {
-                errorMessage = ex.Message.ToString();
-                errorVisiable = true;
+                var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+
+                await this.ToastObj.ShowAsync(t);
             }
             finally
             {
@@ -330,15 +334,16 @@
                     CenterID = centerDto.CenterID
                 };
             await CenterRepository.CreateCenter(createCenterCommand);
-            resultMessage = "مرکز مورد نظر با موفقیت ثبت شد";
-            messageVisiable = true;
+            var t = new ToastModel { Title = "Success!", Content = "مرکز مورد نظر با موفقیت ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+            await this.ToastObj.ShowAsync(t);
             await GetCenterslist();
             StateHasChanged();
         }
         catch(Exception ex)
         {
-            errorMessage = ex.Message.ToString();
-            errorVisiable = true;
+            var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+
+            await this.ToastObj.ShowAsync(t);
         }
     }
 
@@ -350,8 +355,8 @@
             };
         await CenterRepository.EditCenter(editCenterCommand);
         await GetCenterslist();
-        resultMessage = "تغییرات مورد نظر با موفقیت ثبت شد";
-        messageVisiable = true;
+        var t = new ToastModel { Title = "Success!", Content = "تغییرات مورد نظر با موفقیت ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        await this.ToastObj.ShowAsync(t);
         StateHasChanged();
     }
 
@@ -362,7 +367,7 @@
     }
 
     private async Task DeleteCenter(CenterDto centerDto)
-    { 
+    {
         try
         {
             DeleteCenterCommand deleteCenterCommand = new DeleteCenterCommand()
@@ -371,15 +376,15 @@
                 };
             await CenterRepository.DeleteCenter(deleteCenterCommand);
             await GetCenterslist();
-             
-            resultMessage = "مرکز مورد نظر حذف شد";
-            messageVisiable = true;
+            var t = new ToastModel { Title = "Success!", Content = "مرکز مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+            await this.ToastObj.ShowAsync(t);
             StateHasChanged();
         }
         catch(Exception ex)
         {
-            errorMessage = ex.Message.ToString();
-            errorVisiable = true;
+            var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+
+            await this.ToastObj.ShowAsync(t);
         }
     }
 
@@ -393,8 +398,8 @@
 
             };
         await CenterRepository.AddPart(addPartCommand);
-        resultMessage = "واحد مورد نظر با موفقیت ثبت شد";
-        messageVisiable = true;
+        var t = new ToastModel { Title = "Success!", Content = "واحد مورد نظر با موفقیت ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        await this.ToastObj.ShowAsync(t);
     }
 
     private async Task DeletePart(PartDto partDto)
@@ -405,7 +410,7 @@
                 PartID = partDto.PartID
             };
         await CenterRepository.DeletePart(deletePartCommand);
-        resultMessage = "واحد مورد نظر حذف شد";
-        messageVisiable = true;
+        var t = new ToastModel { Title = "Success!", Content = "واحد مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        await this.ToastObj.ShowAsync(t);
     }
 }
