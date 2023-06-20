@@ -17,6 +17,7 @@
 @using Action = Syncfusion.Blazor.Grids.Action
 @using Syncfusion.Blazor.Popups
 @using Ticketing.Cilient.Contracts.Ticket;
+@using Ticketing.Client.Contracts.Persons;
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Programs.Dto;
@@ -47,11 +48,11 @@
                         <Template Context="PagerTemp">
                             <div class="PagerTemplate">
 
-                                <div class="@($"e-next e-icons e-icon-next  align-icons e-next")" hidden="@DisableForwardIcon" @onclick="ShowNextPage" title="Go to next page"></div>
+                                <div class="@($"e-next e-icons e-icon-next   align-icons")" hidden="@DisableBackIcon" @onclick="ShowPreviousPage" title="Go to previous page"></div>
                                 <div>
                                     <div id="totalpages" class="textbox" @oncuechange="@(()=>ValidateFirst())">صفحه @pageNo2 از @metaData.TotalPages</div>
                                 </div>
-                                <div class="@($"e-prev e-icons e-icon-prev   align-icons")" hidden="@DisableBackIcon" @onclick="ShowPreviousPage" title="Go to previous page"></div>
+                                <div class="@($"e-prev e-icons e-icon-prev  align-icons")" hidden="@DisableForwardIcon" @onclick="ShowNextPage" title="Go to next page"></div>
                             </div>
                         </Template>
                     </GridPageSettings>
@@ -88,6 +89,7 @@
                                                     TValue="Guid"
                                                     DataSource="@programDtos"
                                                     FloatLabelType="FloatLabelType.Auto"
+                                                    PopupHeight="230px"
                                                     Placeholder="نام برنامه">
                                         <DropDownListFieldSettings Value="Id" Text="ProgamName">
                                         </DropDownListFieldSettings>
@@ -99,13 +101,16 @@
                             <hr />
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
-                                    <SfNumericTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))" OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
+                                    <SfNumericTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                      OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
                                                                          ticket.PersonName = t.PersonName??"";
                                                                          ticket.PersonCenterName= t.CenterName??"";
                                                                          ticket.PersonPartId=t.PartId;
                                                                          ticket.PersonPartName=t.PartName??"";
-                                                                         })" @bind-Value="@ticket.PersonID"
+                                                                         })"
+                                                      @bind-Value="@ticket.PersonID"
                                                       Placeholder="کد پرسنلی تماس گیرنده "
+                                                      Decimals=0
                                                       FloatLabelType="FloatLabelType.Auto"
                                                       CssClass="e-corner"></SfNumericTextBox>
                                     <ValidationMessage For="@(() => ticket.PersonID)" />
@@ -136,6 +141,7 @@
                                                     TValue="int"
                                                     DataSource="@errorTypes"
                                                     FloatLabelType="FloatLabelType.Auto"
+                                                    PopupHeight="230px"
                                                     Placeholder="نوع خطا">
                                         <DropDownListFieldSettings Value="Key" Text="Value"></DropDownListFieldSettings>
                                     </SfDropDownList>
@@ -163,6 +169,7 @@
                                                     TValue="int"
                                                     DataSource="@TicketTypes"
                                                     FloatLabelType="FloatLabelType.Auto"
+                                                    PopupHeight="230px"
                                                     Placeholder="نوع تیکت">
                                         <DropDownListFieldSettings Value="Key" Text="Value">
                                         </DropDownListFieldSettings>
@@ -188,6 +195,7 @@
                                                     @bind-Value="@(ticket.TicketConditionid)"
                                                     TValue="int"
                                                     DataSource="@TicketConditions"
+                                                    PopupHeight="230px"
                                                     FloatLabelType="FloatLabelType.Auto" Placeholder="وضعیت">
                                         <DropDownListFieldSettings Value="Key" Text="Value">
                                         </DropDownListFieldSettings>
@@ -202,6 +210,7 @@
                         <GridColumn Field=@nameof(TicketDto.Id) Visible=false HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" Visible="@(UserIsAdmin)" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.ProgramName) HeaderText="برنامه" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.ErrorTypeName) HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.TicketTypeName) HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="150"></GridColumn>
@@ -236,7 +245,7 @@
             </EditForm>
 
         </div>
-    </div> 
+    </div>
 
     <SfDialog @bind-Visible="warningMessageVisiable" Width="20%">
         <DialogTemplates>
@@ -409,12 +418,12 @@
     private int pageNo2 = 1;
 
     public int totalPages { get; set; }
-    public bool DisableBackIcon = false;
     public int previouspageNo { get; set; }
+    public bool DisableBackIcon = false;
     public bool DisableForwardIcon = false;
     public bool DisableFirstIcon = false;
     public bool DisableLastIcon = false;
-     
+
     private bool messageVisiable = false;
     private bool Check = false;
     private bool flag = false;
@@ -422,7 +431,7 @@
     private bool warningMessageVisiable = false;
     private SfToast ToastObj;
     private ToastModel toastModel = new ToastModel();
-
+    private bool UserIsAdmin = false;
 
     private TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
     private MetaData metaData { get; set; } = new MetaData();
@@ -448,6 +457,10 @@
         var user = authState.User;
         supporterInfo = await GetPersonInfo(Convert.ToInt32(user.Identity?.Name));
         programDtos = await programRepository.GetSupporterProgramsList(supporterInfo.PersonID);
+        if(supporterInfo.PersonRole == RoleType.Admin)
+        {
+            UserIsAdmin = true;
+        }
         await GetAllTickets();
     }
 
@@ -545,14 +558,14 @@
                     }
                 }
                 catch(Exception ex)
-                { 
-                    toastModel = new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" }; 
+                {
+                    toastModel = new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
                     Args.Cancel = true;
 
                 }
                 finally
                 {
-                    Args.Cancel = true; 
+                    Args.Cancel = true;
                     ticketDtos = await GetAllTickets();
                     await this.ToastObj.ShowAsync(toastModel);
 
@@ -561,7 +574,7 @@
             else if(rType == "Delete")
             {
                 try
-                { 
+                {
                     ClickDeleteButton(Args.RowData);
 
                 }
@@ -574,7 +587,7 @@
                 finally
                 {
                     await GetAllTickets();
-                    StateHasChanged(); 
+                    StateHasChanged();
                 }
 
             }
@@ -656,9 +669,9 @@
                 PersonID = ticketDto.PersonID,
                 Type = (TicketType)ticketDto.Typeid
             };
-        await ticketRepository.CreateNewTicket(createTicketCommand); 
+        await ticketRepository.CreateNewTicket(createTicketCommand);
         toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
-         
+
     }
 
     private async Task EditTicket(TicketDto seletedticket)
@@ -677,8 +690,8 @@
                 Type = (TicketType)seletedticket.Typeid,
                 EditorPersonID = supporterInfo.PersonID
             };
-        await ticketRepository.UpdateTicket(updateTicketCommand); 
-         
+        await ticketRepository.UpdateTicket(updateTicketCommand);
+
         toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر با موفقیت ویرایش شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
 
         await GetAllTickets();
@@ -686,17 +699,17 @@
 
     private async Task DeleteTicket(int userId, Guid Id)
     {
-       
+
         try
         {
             DeleteTicketCommand deleteTicketCommand = new DeleteTicketCommand();
             deleteTicketCommand.SupporterUser = userId;
             deleteTicketCommand.Id = Id;
-            await ticketRepository.DeleteTicket(deleteTicketCommand); 
+            await ticketRepository.DeleteTicket(deleteTicketCommand);
             toastModel = new ToastModel { Title = "Success!", Content = " تیکت مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
         }
         catch(Exception ex)
-        { 
+        {
             toastModel = new ToastModel { Title = "Error!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
         }
         finally

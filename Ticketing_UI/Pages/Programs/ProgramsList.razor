@@ -45,10 +45,12 @@
                     {
                         @foreach(ProgramDto programdto in programDtos)
                         {
-                            <div class="card_sample_1 col-lg-3 col-md-3 col-sm-3" style=" padding: 10px; display:inline-block!important ; "> 
+                            <div class="card_sample_1 col-lg-3 col-md-3 col-sm-3" style=" padding: 10px; display:inline-block!important ; ">
                                 <SfCard ID="BasicCard">
-                                    <CardHeader Title="@programdto.ProgamName"  />
-                                    <CardContent>لینک برنامه :  @(programdto.ProgramLink)</CardContent>
+                                    <CardHeader Title="@programdto.ProgamName" />
+                                    <CardContent>
+                                        لینک برنامه :  @(programdto.ProgramLink) 
+                                    </CardContent>
                                     <CardFooter>
                                         <CardFooterContent>
                                             <div class="row" style="align-items:center">
@@ -86,7 +88,8 @@
                                                           @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
                                                           FloatLabelType="FloatLabelType.Auto"
                                                           OnChange="@(async(e)=>{var personinfo = await SetpersonInfo(e);
-                                                                                     sellectedSupporterDto.SupporterName = personinfo.PersonName??"";} )"></SfNumericTextBox>
+                                                                                     sellectedSupporterDto.SupporterName = personinfo.PersonName??"";} )"
+                                                          Decimals="0"></SfNumericTextBox>
 
 
                                         <SfTextBox ID="SupporterName"
@@ -140,7 +143,7 @@
 
         </div>
     </div>
-      
+
     <SfDialog @bind-Visible="DeletSupporterwarningMessageVisiable" Width="20%">
         <DialogTemplates>
             <Header>
@@ -190,6 +193,7 @@
         height: 120px;
         /*margin: 16px;*/
     }
+
     .e-card {
         margin-bottom: 10px !important;
     }
@@ -219,14 +223,14 @@
 </style>
 
 
-@code { 
+@code {
     private List<ProgramDto> programDtos = new List<ProgramDto>();
     private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
     private ProgramSupporterDto sellectedSupporterDto = new ProgramSupporterDto();
-    private ProgramDto selectedProgramDto = new ProgramDto() { ProgramLink= "-"};
+    private ProgramDto selectedProgramDto = new ProgramDto() { ProgramLink = "-" };
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "550px" };
-    private SfGrid<ProgramSupporterDto> ChildGrid { get; set; } 
-    private SfToast ToastObj; 
+    private SfGrid<ProgramSupporterDto> ChildGrid { get; set; }
+    private SfToast ToastObj;
 
     private SfDialog SupporterDialog { get; set; }
 
@@ -235,7 +239,7 @@
     private bool showSupportersList = false;
     private bool isNew = true;
     private bool warningMessageVisiable = false;
-    private bool DeletSupporterwarningMessageVisiable = false;  
+    private bool DeletSupporterwarningMessageVisiable = false;
     private bool flag = false;
     private bool Check = false;
 
@@ -282,13 +286,13 @@
                         programSupporterDtos = selectedProgramDto.Supporters;
                         ChildGrid.PreventRender(false);
 
-                        StateHasChanged(); 
+                        StateHasChanged();
                         args.Cancel = true;
                     }
                     catch(Exception ex)
                     {
                         var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
-                        await this.ToastObj.ShowAsync(t); 
+                        await this.ToastObj.ShowAsync(t);
                         args.Cancel = true;
                     }
                     finally
@@ -335,9 +339,9 @@
         await programRepository.AddProgramSupporter(addProgramSupporterCommand);
         selectedProgramDto.Supporters.Add(programSupporterDto);
         programSupporterDtos = selectedProgramDto.Supporters;
-        var t = new ToastModel { Title = "Success!", Content = "پشتیبان مورد نظر ثبت شد" , CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        var t = new ToastModel { Title = "Success!", Content = "پشتیبان مورد نظر ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
         await this.ToastObj.ShowAsync(t);
-       
+
     }
 
     private async Task RemoveSupporter(ProgramSupporterDto programSupporterDto)
@@ -351,12 +355,12 @@
         selectedProgramDto.Supporters.Remove(programSupporterDto);
 
         programDtos = await GetAllPrograms();
-        var t = new ToastModel { Title = "Success!", Content = "پشتیبان مورد نظر حذف شد" , CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        var t = new ToastModel { Title = "Success!", Content = "پشتیبان مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
         await this.ToastObj.ShowAsync(t);
-     
+
         programSupporterDtos = selectedProgramDto.Supporters;
         StateHasChanged();
-        DeletSupporterwarningMessageVisiable = false; 
+        DeletSupporterwarningMessageVisiable = false;
         ChildGrid.PreventRender(false);
         ChildGrid.Refresh();
     }
@@ -383,7 +387,7 @@
     private void GetSupporterList(ProgramDto programDto)
     {
         selectedProgramDto = programDto;
-        programSupporterDtos = programDto.Supporters;      
+        programSupporterDtos = programDto.Supporters;
         showSupportersList = true;
     }
 
@@ -432,14 +436,14 @@
                     };
                 await programRepository.UpdateProgramLink(updateProgramLinkCommand);
             }
-             
+
             var t = new ToastModel { Title = "Success!", Content = "اطلاعات برنامه ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
             await this.ToastObj.ShowAsync(t);
         }
         catch(Exception ex)
         {
             var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
-            await this.ToastObj.ShowAsync(t); 
+            await this.ToastObj.ShowAsync(t);
             showEditProgram = false;
         }
         finally
@@ -475,7 +479,7 @@
                 };
 
             await programRepository.DeleteProgram(deletePersonCommand);
-       
+
             var t = new ToastModel { Title = "Success!", Content = "برنامه مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
             await this.ToastObj.ShowAsync(t);
             var programDtos = await GetAllPrograms();
@@ -486,7 +490,7 @@
         catch(Exception ex)
         {
             var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
-            await this.ToastObj.ShowAsync(t); 
+            await this.ToastObj.ShowAsync(t);
             warningMessageVisiable = false;
         }
     }

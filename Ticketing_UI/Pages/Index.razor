@@ -115,12 +115,12 @@
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
                             <div id="card_sample_1" class="card_sample">
                                 <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                                    <CardHeader SubTitle="@( "تیکتهای پشتیبانی")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Supporting).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
+                                    <CardHeader SubTitle="@( "تیکتهای پشتیبانی")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Supporting).ToString())" ImageUrl="@("../images/icons/supporting-icon.png")" />
                                 </SfCard>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                                    <CardHeader SubTitle="@( "تیکتهای توسعه")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Developing).ToString())" ImageUrl="@("../images/icons/completed-icon.jpg")" />
+                                    <CardHeader SubTitle="@( "تیکتهای توسعه")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Developing).ToString())" ImageUrl="@("../images/icons/developing-icon.png")" />
                                 </SfCard>
 
                             </div>
@@ -135,12 +135,12 @@
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
                             <div id="card_sample_1" class="card_sample">
                                 <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                                    <CardHeader SubTitle="@( "خطای کاربر")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.UserError).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
+                                    <CardHeader SubTitle="@( "خطای کاربر")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.UserError).ToString())" ImageUrl="@("../images/icons/usererror-icon.png")" />
                                 </SfCard>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                                    <CardHeader SubTitle="@( "خطای سیستمی")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.SystemError).ToString())" ImageUrl="@("../images/icons/completed-icon.jpg")" />
+                                    <CardHeader SubTitle="@( "خطای سیستمی")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.SystemError).ToString())" ImageUrl="@("../images/icons/systemerror-icon.png")" />
                                 </SfCard>
 
                             </div>
@@ -317,6 +317,8 @@
     .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
         line-height: 10px !important;
         height: 40px;
+        color: #212529;
+        background: #afe2ff;
     }
 
 
@@ -364,10 +366,7 @@
         padding: 10px;
     }
 
-        .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-            line-height: 40px;
-            height: 40px;
-        }
+       
 
     .fluent .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
     .fluent-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
@@ -561,4 +560,6 @@
     .e-gridheader {
         padding-right: 0px !important;
     }
+
+    
 </style>

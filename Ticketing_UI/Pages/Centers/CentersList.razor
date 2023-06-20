@@ -64,7 +64,7 @@
                     <GridColumn Field=@nameof(CenterDto.Id) Visible=false></GridColumn>
                     <GridColumn Field=@nameof(CenterDto.CenterName) HeaderText="نام مرکز"></GridColumn>
                     <GridColumn Field=@nameof(CenterDto.CenterID) HeaderText="کد مرکز"></GridColumn>
-                    <GridColumn HeaderText="تعداد واحد">
+                    <GridColumn  HeaderText="تعداد واحد">
                         <Template>
                             @{
                                 var centers = (context as CenterDto) ?? new CenterDto();
