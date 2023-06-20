@@ -28,7 +28,7 @@ namespace Ticketing.Repository.Tickets
 
     public class TicketRepository : ITicketRepository
     {
-    private readonly JsonSerializerOptions _options;
+        private readonly JsonSerializerOptions _options;
         private readonly HttpClient _httpClient;
 
         public TicketRepository(IHttpClientFactory clientFactory)
@@ -38,10 +38,15 @@ namespace Ticketing.Repository.Tickets
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         }
-        public async Task<List<TicketDto>> GetAllTickets()
+        public async Task<List<TicketDto>> GetUserAllTickets(DateTime fromDate, DateTime toDate)
         {
             List<TicketDto> ticketList = new List<TicketDto>();
-            var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("fromDate", fromDate.ToString());
+            parameters.Add("toDate", toDate.ToString());
+            string request = QueryHelpers.AddQueryString("Ticket/GetUserAllTickets", parameters);
+
+            var response = await _httpClient.GetAsync(request);
             var content = await response.Content.ReadAsStringAsync();
             ticketList = GetTicketDtoFromContent(content);
             return ticketList;
@@ -85,7 +90,7 @@ namespace Ticketing.Repository.Tickets
         }
         public async Task<PagingResponse<TicketDto>> GetUserTicketsByDateRage(TicketQueryParameters parameters)
         {
-            List<TicketDto> ticketList = new List<TicketDto>();  
+            List<TicketDto> ticketList = new List<TicketDto>();
             var response = await _httpClient.GetAsync($"Ticket/GetUserTicketsByDateRage?{parameters.ToQuery()}");
             var content = await response.Content.ReadAsStringAsync();
             if(!response.IsSuccessStatusCode)
@@ -133,7 +138,7 @@ namespace Ticketing.Repository.Tickets
             }
         }
 
-       
+
     }
 }
 

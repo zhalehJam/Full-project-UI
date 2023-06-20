@@ -118,5 +118,16 @@ namespace Ticketing.Repository.Persons
             }
             return personDtos;
         }
+
+        public async Task<string> GetUserPhoto(int personnelCode)
+        { 
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("personnelCode", personnelCode.ToString());
+            string request = QueryHelpers.AddQueryString("Person/GetUserPhoto", parameters);
+            var response = await _httpClient.GetAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+              return JsonConvert.DeserializeObject<string>(content);
+             
+        }
     }
 }
