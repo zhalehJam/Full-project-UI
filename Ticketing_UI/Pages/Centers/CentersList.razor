@@ -31,6 +31,14 @@
                     <HeaderTemplate>
                         اطلاعات
                     </HeaderTemplate>
+                    <Template>
+                        @{
+                            var centerinfo = context as CenterDto;
+                        }
+
+                        <SfTextBox ID="CenterName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@centerinfo.CenterName" Enabled="false" FloatLabelType="FloatLabelType.Auto" Placeholder="نام مرکز"></SfTextBox>
+                        <SfNumericTextBox Decimals="0" ID="CenterID" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@centerinfo.CenterID" Enabled="false" FloatLabelType="FloatLabelType.Auto" Placeholder="کد مرکز"></SfNumericTextBox>
+                    </Template>
                 </GridEditSettings>
                 <GridTemplates>
                     <DetailTemplate>
@@ -64,7 +72,7 @@
                     <GridColumn Field=@nameof(CenterDto.Id) Visible=false></GridColumn>
                     <GridColumn Field=@nameof(CenterDto.CenterName) HeaderText="نام مرکز"></GridColumn>
                     <GridColumn Field=@nameof(CenterDto.CenterID) HeaderText="کد مرکز"></GridColumn>
-                    <GridColumn  HeaderText="تعداد واحد">
+                    <GridColumn HeaderText="تعداد واحد">
                         <Template>
                             @{
                                 var centers = (context as CenterDto) ?? new CenterDto();
@@ -137,8 +145,8 @@
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
 
-    private SfGrid<CenterDto> Grid { get; set; }
-    private SfGrid<PartDto> ChildGrid { get; set; }
+    private SfGrid<CenterDto> Grid { get; set; } = new SfGrid<CenterDto>();
+    private SfGrid<PartDto> ChildGrid { get; set; } = new SfGrid<PartDto>();
     private GridPageSettings GridPage { get; set; } = new GridPageSettings() { PageSize = 10 };
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "350px", Width = "350px" };
     private bool flag = false;
@@ -156,7 +164,11 @@
 
     SfToast ToastObj;
 
-
+    private void Setkeyboardkeyevent(KeyboardEventArgs args)
+    {
+        if(args.Key == "Enter")
+            flag = true;
+    }
     void ModalOk()
     {
         Console.WriteLine("Modal ok");

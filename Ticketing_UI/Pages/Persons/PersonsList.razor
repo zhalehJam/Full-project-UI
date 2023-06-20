@@ -112,7 +112,7 @@
                             </div>
                             <div>
                                 <SfTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
-                                <SfNumericTextBox Enabled="isNew" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always" Decimals=0></SfNumericTextBox>
+                                <SfNumericTextBox Enabled="isNew" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always" Decimals="0"></SfNumericTextBox>
 
                                 <SfDropDownList @onkeypress="@((e)=>Setkeyboardkeyevent(e))" Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="نام دفتر" PopupHeight="230px" DataSource="@centerDtos">
                                     <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
