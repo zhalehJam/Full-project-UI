@@ -1,0 +1,2843 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.ExcelExport.Net</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.ExcelExport.BuiltInProperties">
+            <summary>
+            Represents the document properties in a MS Excel document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.author">
+            <summary>
+            Gets or sets author of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.comments">
+            <summary>
+            Gets or sets comments of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.category">
+            <summary>
+            Gets or sets category of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.company">
+            <summary>
+            Gets or sets company of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.manager">
+            <summary>
+            Gets or sets Manager of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.subject">
+            <summary>
+            Gets or sets subject of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.title">
+            <summary>
+            Gets or sets title of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.createdDate">
+            <summary>
+            Gets or sets creation date of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.modifiedDate">
+            <summary>
+            Gets or sets modified date of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.tags">
+            <summary>
+            Gets or sets tags of the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BuiltInProperties.status">
+            <summary>
+            Gets or sets status of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Author">
+            <summary>
+            Gets or sets author of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Comments">
+            <summary>
+            Gets or sets comments of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Category">
+            <summary>
+            Gets or sets category of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Company">
+            <summary>
+            Gets or sets company of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Manager">
+            <summary>
+            Gets or sets Manager of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Subject">
+            <summary>
+            Gets or sets subject of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Title">
+            <summary>
+            Gets or sets title of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.CreatedDate">
+            <summary>
+            Gets or sets creation date of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.ModifiedDate">
+            <summary>
+            Gets or sets modified date of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Tags">
+            <summary>
+            Gets or sets tags of the document.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BuiltInProperties.Status">
+            <summary>
+            Gets or sets status of the document.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Alignment">
+            <summary>
+            Represetns cell alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Alignment.m_horizontal">
+            <summary>
+            Gets/sets horizontal alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Alignment.m_vertical">
+            <summary>
+            Gets/sets vertical alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Alignment.m_wrapText">
+            <summary>
+            Gets/sets cell wraptext.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Alignment.m_indent">
+            <summary>
+            Gets/sets cell indent.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Alignment.m_rotation">
+            <summary>
+            Gets/sets cell rotation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Alignment.Horizontal">
+            <summary>
+            Gets/sets horizontal alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Alignment.Vertical">
+            <summary>
+            Gets/sets vertical alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Alignment.WrapText">
+            <summary>
+            Gets/sets cell wraptext.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Alignment.Indent">
+            <summary>
+            Gets/sets cell indent.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Alignment.Rotation">
+            <summary>
+            Gets/sets cell rotation.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Border">
+            <summary>
+            Represent cell individual border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Border.m_lineStyle">
+            <summary>
+            Gets/sets border line style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Border.m_color">
+            <summary>
+            Gets/sets borderline color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Border.LineStyle">
+            <summary>
+            Gets/sets border line style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Border.Color">
+            <summary>
+            Gets/sets borderline color.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Border.#ctor(Syncfusion.ExcelExport.LineStyle,System.String)">
+            <summary>
+            Creates a instance of Border
+            </summary>
+            <param name="mLine">LineStyle</param>
+            <param name="mColor">Color</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Borders">
+            <summary>
+            Represents cell borders
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Borders.m_left">
+            <summary>
+            Represent the left border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Borders.m_right">
+            <summary>
+            Represent the right border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Borders.m_bottom">
+            <summary>
+            Represent the bottom border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Borders.m_top">
+            <summary>
+            Represent the top border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Borders.m_all">
+            <summary>
+            Represent the all borders.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Borders.Left">
+            <summary>
+            Represent the left border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Borders.Right">
+            <summary>
+            Represent the right border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Borders.Bottom">
+            <summary>
+            Represent the bottom border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Borders.Top">
+            <summary>
+            Represents the top border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Borders.All">
+            <summary>
+            Represent the all borders.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Borders.#ctor">
+            <summary>
+            Creates an new instances of borders.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CellStyle">
+            <summary>
+            Represents cell style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_name">
+            <summary>
+            Represents cell style name.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_index">
+            <summary>
+            Represents cell style index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_backColor">
+            <summary>
+            Gets/sets back color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_numFmtId">
+            <summary>
+            Gets/sets number format id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_borders">
+            <summary>
+            Gets/sets borders.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_fontName">
+            <summary>
+            Gets/sets font name.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_fontSize">
+            <summary>
+            Gets/sets font size.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_fontColor">
+            <summary>
+            Gets/sets font color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_italic">
+            <summary>
+            Gets/sets font italic.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_bold">
+            <summary>
+            Gets/sets font bold.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_hAlign">
+            <summary>
+            Gets/sets horizontal alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_indent">
+            <summary>
+            Gets/sets cell indent.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_rotation">
+            <summary>
+            Gets/sets cell rotation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_vAlign">
+            <summary>
+            Gets/sets vertical alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_underline">
+            <summary>
+            Gets/sets font underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_wrapText">
+            <summary>
+            Gets/sets cell wraptext.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_numberFormat">
+            <summary>
+            Represents the number format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_type">
+            <summary>
+            Represents the cell style type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyle.m_isGlobalStyle">
+            <summary>
+            Represents the global style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Name">
+            <summary>
+            Represents cell style name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Index">
+            <summary>
+            Represents cell style index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.BackColor">
+            <summary>
+            Gets/sets back color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.NumFmtId">
+            <summary>
+            Gets/sets number format id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Borders">
+            <summary>
+            Gets/sets borders.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.FontName">
+            <summary>
+            Gets/sets font name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.FontSize">
+            <summary>
+            Gets/sets font size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.FontColor">
+            <summary>
+            Gets/sets font color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Italic">
+            <summary>
+            Gets/sets font italic.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Bold">
+            <summary>
+            Gets/sets font bold.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.HAlign">
+            <summary>
+            Gets/sets horizontal alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Indent">
+            <summary>
+            Gets/sets cell indent.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Rotation">
+            <summary>
+            Gets/sets cell italic.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.VAlign">
+            <summary>
+            Gets/sets vertical alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Underline">
+            <summary>
+            Gets/sets font underline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.WrapText">
+            <summary>
+            Gets/sets cell wraptext.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.NumberFormat">
+            <summary>
+            Represents the number format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.Type">
+            <summary>
+            Represents the cell style type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyle.IsGlobalStyle">
+            <summary>
+            Represents the global style.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellStyle.#ctor">
+            <summary>
+            Creates an new instances of the Workbook.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CellStyles">
+            <summary>
+            Represents cell styles.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyles.m_name">
+            <summary>
+            Represents cell style name.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyles.m_xfId">
+            <summary>
+            Represents xf id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyles.m_format">
+            <summary>
+            Number format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyles.Name">
+            <summary>
+            Represents cell style name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyles.XfId">
+            <summary>
+            Represents xf id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyles.NumberFormat">
+            <summary>
+            Represents Number format
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellStyles.#ctor">
+            <summary>
+            Creates an new instances of the cell styles.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CellStyleXfs">
+            <summary>
+            Represents cell style xfs.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyleXfs.m_numFmtId">
+            <summary>
+            Represents number format id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyleXfs.m_fontId">
+            <summary>
+            Represents font id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyleXfs.m_fillId">
+            <summary>
+            Represents fill id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyleXfs.m_borderId">
+            <summary>
+            Represents border id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellStyleXfs.m_alignment">
+            <summary>
+            Represents alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyleXfs.NumFmtId">
+            <summary>
+            Represents number format id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyleXfs.FontId">
+            <summary>
+            Represents font id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyleXfs.FillId">
+            <summary>
+            Represents fill id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyleXfs.BorderId">
+            <summary>
+            Represents border id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellStyleXfs.Alignment">
+            <summary>
+            Represents alignment.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CellXfs">
+            <summary>
+            Represents cell xfs.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellXfs.m_xfId">
+            <summary>
+            Represents xf id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellXfs.m_applyAlignment">
+            <summary>
+            Represents whether the alignment is applied in the cell xfs
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellXfs.XfId">
+            <summary>
+            Represents xf id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellXfs.ApplyAlignment">
+            <summary>
+            Represents whether the alignment is applied in the cell xfs
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.ExtendCompareStyle">
+            <summary>
+            Represents the extend compare style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendCompareStyle.m_index">
+            <summary>
+            Represents the index of cell style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendCompareStyle.m_result">
+            <summary>
+            Represents the result of the compare style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendCompareStyle.Index">
+            <summary>
+            Represents the index of cell style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendCompareStyle.Result">
+            <summary>
+            Represents the result of the compare style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.ExtendStyle">
+            <summary>
+            Represent Extended format style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendStyle.m_x">
+            <summary>
+            Gets/Sets X value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendStyle.m_y">
+            <summary>
+            Gets/Sets Y value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendStyle.m_styleIndex">
+            <summary>
+            Gets/Sets style index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendStyle.X">
+            <summary>
+            Gets/Sets X value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendStyle.Y">
+            <summary>
+            Gets/Sets Y value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendStyle.StyleIndex">
+            <summary>
+            Gets/Sets style index.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Font">
+            <summary>
+            Represents cell font.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Font.m_bold">
+            <summary>
+            Gets/sets font bold.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Font.m_italic">
+            <summary>
+            Gets/sets font italic.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Font.m_underline">
+            <summary>
+            Gets/sets font underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Font.m_size">
+            <summary>
+            Gets/sets font size.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Font.m_name">
+            <summary>
+            Gets/sets font name.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Font.m_color">
+            <summary>
+            Gets/sets font color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Font.Bold">
+            <summary>
+            Gets/sets font bold.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Font.Italic">
+            <summary>
+            Gets/sets font italic.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Font.Underline">
+            <summary>
+            Gets/sets font underline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Font.Size">
+            <summary>
+            Gets/sets font size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Font.Name">
+            <summary>
+            Gets/sets font name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Font.Color">
+            <summary>
+            Gets/sets font color.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Font.#ctor">
+            <summary>
+            Creates an new instances of Font.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.NumberFormat">
+            <summary>
+            Represents cell number format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.NumberFormat.m_numFmtId">
+            <summary>
+            Represents number format id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.NumberFormat.m_formatCode">
+            <summary>
+            Represents number format code
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.NumberFormat.NumFmtId">
+            <summary>
+            Represents number format id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.NumberFormat.FormatCode">
+            <summary>
+            Represents number format code
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.NumberFormat.#ctor(System.Int32,System.String)">
+            <summary>
+            Creates a Number format instance.
+            </summary>
+            <param name="id">Number format id</param>
+            <param name="code">code</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Cell">
+            <summary>
+            Represents an Excel cell.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_index">
+            <summary>
+            Represents the cell index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_rowSpan">
+            <summary>
+            Represents the row span.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_colSpan">
+            <summary>
+            Represents the column span.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_value">
+            <summary>
+            Represents the value of cell.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_formula">
+            <summary>
+            Represents the cell formula.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_cellStyle">
+            <summary>
+            Represents the cell style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_styleIndex">
+            <summary>
+            Represents the style index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_sharedStringIndex">
+            <summary>
+            Represents the shared string index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_saveType">
+            <summary>
+            Represents the save type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_type">
+            <summary>
+            Represents the type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Cell.m_row">
+            <summary>
+            Row
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.Row">
+            <summary>
+            Represents parent row.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.Index">
+            <summary>
+            Represents the cell index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.RowSpan">
+            <summary>
+            Represents the row span.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.ColumnSpan">
+            <summary>
+            Represents the column span.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.Value">
+            <summary>
+            Represents the value of cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.Formula">
+            <summary>
+            Represents the cell formula.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.StyleIndex">
+            <summary>
+            Represents the style index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.SharedStringIndex">
+            <summary>
+            Represents the shared string index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.SaveType">
+            <summary>
+            Represents the save type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.Type">
+            <summary>
+            Represents the type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.RefName">
+            <summary>
+            Represents the reference name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.Workbook">
+            <summary>
+            Workbook
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Cell.CellStyle">
+            <summary>
+            Represents Cell style.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.#ctor(Syncfusion.ExcelExport.Row)">
+            <summary>
+            Creates an instance of Cell
+            </summary>
+            <param name="row">Row</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.SetValue(System.Boolean)">
+            <summary>
+            Set boolean value
+            </summary>
+            <param name="value">True/False.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.SetValue(System.Double)">
+            <summary>
+            Set number value.
+            </summary>
+            <param name="number">Number value.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.SetValue(System.DateTime)">
+            <summary>
+            Set date time value.
+            </summary>
+            <param name="dateTime">Date time value.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.SetValue(System.String)">
+            <summary>
+            Set text value.
+            </summary>
+            <param name="text">Text value.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.SetCellType">
+            <summary>
+            Set cell type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.ToOADate(System.DateTime)">
+            <summary>
+            Converts the value of this instance to the equivalent OLE Automation date.
+            </summary>
+            <param name="inDateTime"></param>
+            <returns>A double-precision floating-point number that contains an OLE Automation date equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.ProcessCellType">
+            <summary>
+            Parse cell type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.GetColors">
+            <summary>
+            Get defualt Excel colors
+            </summary>
+            <returns>Color collection.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.ProcessColor(System.String)">
+            <summary>
+            Process the color
+            </summary>
+            <param name="colorVal">Color value to process</param>
+            <returns>Returns color name</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.ProcessCellValue(System.String)">
+            <summary>
+            Process the cell value
+            </summary>
+            <param name="value">Value to process</param>
+            <returns>Returns the processed cell value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.SwitchNumberFormat(System.String)">
+            <summary>
+            Switch the number format bases on the cell type
+            </summary>
+            <param name="numberFormat">Number format to switch</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.GetCellName(System.Int32,System.Int32)">
+            <summary>
+            Get cell name from row and column.
+            </summary>
+            <param name="row">Cell row.</param>
+            <param name="column">Cell column.</param>
+            <returns>Returns the cell name.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Cell.GetColumnName(System.Int32)">
+            <summary>
+            Get column name from column.
+            </summary>
+            <param name="col">Cell column.</param>
+            <returns>Returns the column name.</returns>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.BaseCollection`1">
+            <summary>
+            Collection
+            </summary>
+            <typeparam name="T">Type</typeparam>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.BaseCollection`1.m_arrItems">
+            <summary>
+            List with collection items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BaseCollection`1.Capacity">
+            <summary>
+            Gets or sets the number of elements that the System.Collections.CollectionBase can contain.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BaseCollection`1.Count">
+            <summary>
+            Gets the number of elements contained in the System.Collections.CollectionBase instance.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BaseCollection`1.InnerList">
+            <summary>
+            Gets the list of elements in the instance.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BaseCollection`1.List">
+            <summary>
+            Gets the list of elements in the instance.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BaseCollection`1.Item(System.Int32)">
+            <summary>
+            Gets the item from the collection based on the index.
+            </summary>
+            <param name="index">Index - Zero based.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of the class with the default initial capacity.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the class with the specified capacity.
+            </summary>
+            <param name="capacity">The number of elements that the new list can initially store.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.Clear">
+            <summary>
+            Removes all objects from the System.Collections.CollectionBase instance.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.Insert(System.Int32,`0)">
+            <summary>
+            Inserts an element into the list at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which item should be inserted.</param>
+            <param name="item">The object to insert. The value can be null for reference types.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through this instance.
+            </summary>
+            <returns>An enumerator for this instance.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnClear">
+            <summary>
+            Performs additional custom processes when clearing the contents of this instance.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnClearComplete">
+            <summary>
+            Performs additional custom processes after clearing the contents of this instance.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnInsert(System.Int32,`0)">
+            <summary>
+             Performs additional custom processes before inserting a new element into this instance.
+            </summary>
+            <param name="index">The zero-based index at which to insert value.</param>
+            <param name="value">The new value of the element at index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnInsertComplete(System.Int32,`0)">
+            <summary>
+             Performs additional custom processes after inserting a new element into this instance.
+            </summary>
+            <param name="index">The zero-based index at which to insert value.</param>
+            <param name="value">The new value of the element at index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnRemove(System.Int32,`0)">
+            <summary>
+             Performs additional custom processes when removing an element from this instance.
+            </summary>
+            <param name="index">The zero-based index at which value can be found.</param>
+            <param name="value">The value of the element to remove from index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnRemoveComplete(System.Int32,`0)">
+            <summary>
+             Performs additional custom processes after removing an element from this instance.
+            </summary>
+            <param name="index">The zero-based index at which value can be found.</param>
+            <param name="value">The value of the element to remove from index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnSet(System.Int32,`0,`0)">
+            <summary>
+            Performs additional custom processes before setting a value in this instance.
+            </summary>
+            <param name="index">The zero-based index at which oldValue can be found.</param>
+            <param name="oldValue">The value to replace with newValue.</param>
+            <param name="newValue">The new value of the element at index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.OnSetComplete(System.Int32,`0,`0)">
+            <summary>
+            Performs additional custom processes after setting a value in this instance.
+            </summary>
+            <param name="index">The zero-based index at which oldValue can be found.</param>
+            <param name="oldValue">The value to replace with newValue.</param>
+            <param name="newValue">The new value of the element at index.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the specified index of this instance.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.Clone">
+            <summary>
+            Creates copy of the collection.
+            </summary>
+            <returns>A copy of the collection.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.IndexOf(`0)">
+            <summary>
+            Index of a item.
+            </summary>
+            <param name="item">Item</param>
+            <returns>Index.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.Add(`0)">
+            <summary>
+            Add a item to the collection.
+            </summary>
+            <param name="item">item</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.Contains(`0)">
+            <summary>
+            Indicates whether the collection contains the item. 
+            </summary>
+            <param name="item">Item</param>
+            <returns>True/False</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the items to an array.
+            </summary>
+            <param name="array">Array</param>
+            <param name="arrayIndex">start index</param>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.BaseCollection`1.IsReadOnly">
+            <summary>
+            Indicates whether it is readonly
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.BaseCollection`1.Remove(`0)">
+            <summary>
+            Removes a item from the collection.
+            </summary>
+            <param name="item">Item</param>
+            <returns>True if the item removed, False otherwise</returns>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CellCollection">
+            <summary>
+            Represents an Excel cells.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellCollection.m_row">
+            <summary>
+            Row
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CellCollection.Row">
+            <summary>
+            Represents parent row.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellCollection.#ctor(Syncfusion.ExcelExport.Row)">
+            <summary>
+            Create an instance of Cells.
+            </summary>
+            <param name="row">Parent Row</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellCollection.Add">
+            <summary>
+            Add a cell to cell list.
+            </summary>
+            <returns>Cell added.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellCollection.Add(Syncfusion.ExcelExport.Cell)">
+            <summary>
+            Add the cell to cell list.
+            </summary>
+            <param name="cell">Cell to be add</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellCollection.Sort">
+            <summary>
+            Sort cells by index.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CellCollection.GetCell(System.Int32)">
+            <summary>
+            Get a cell from cells collection based on column.
+            </summary>
+            <param name="columnIndex">Column Index</param>
+            <returns>Cell</returns>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.ColumnCollection">
+            <summary>
+            Represents Worksheet columns.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ColumnCollection.m_worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ColumnCollection.Worksheet">
+            <summary>
+            Represents parent worksheet.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.ColumnCollection.#ctor(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Create a instance of Column collection.
+            </summary>
+            <param name="worksheet">Worksheet</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.ColumnCollection.Add">
+            <summary>
+            Add column to the column collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.ColumnCollection.Add(Syncfusion.ExcelExport.Column)">
+            <summary>
+            Add column to the columns collection.
+            </summary>
+            <param name="column">Column to add</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.ColumnCollection.Sort">
+            <summary>
+            Sort columns by index.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.HyperlinkCollection">
+            <summary>
+            Represents Worksheet Hyperlink collection.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HyperlinkCollection.m_worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.HyperlinkCollection.Worksheet">
+            <summary>
+            Represents parent worksheet.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.HyperlinkCollection.#ctor">
+            <summary>
+            Create a instance of Column collection.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.HyperlinkCollection.#ctor(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Create a instance of Column collection.
+            </summary>
+            <param name="worksheet">Worksheet</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.HyperlinkCollection.Add">
+            <summary>
+            Add column to the column collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.HyperlinkCollection.Add(Syncfusion.ExcelExport.Hyperlink)">
+            <summary>
+            Add hyperlink to the hyperlinks collection.
+            </summary>
+            <param name="hyperlink">Hyperlink to add</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.MergedCellCollection">
+            <summary>
+            Represents merged cell collection class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.MergedCellCollection.AddCell(Syncfusion.ExcelExport.MergeCell)">
+            <summary>
+            Add merged cell to the collection.
+            </summary>
+            <param name="mergeCell"></param>
+            <returns>Returns the added merged cell</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.MergedCellCollection.IsIntersecting(Syncfusion.ExcelExport.MergeCell,Syncfusion.ExcelExport.MergeCell)">
+            <summary>
+            Indicates whether the merge cells intersect.
+            </summary>
+            <param name="base1">Merge Cell to compared with</param>
+            <param name="compare">Merge cell to be compared</param>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.RowCollection">
+            <summary>
+            Represents the worksheet rows.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.RowCollection.m_worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.RowCollection.Worksheet">
+            <summary>
+            Represents parent worksheet.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.RowCollection.#ctor(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Create a instance of rows collection.
+            </summary>
+            <param name="worksheet">Worksheet</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.RowCollection.Add">
+            <summary>
+            Add row to the row collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.RowCollection.Add(Syncfusion.ExcelExport.Row)">
+            <summary>
+            Add row to the rows collection.
+            </summary>
+            <param name="row">Row to add</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.RowCollection.Sort">
+            <summary>
+            Sort rows by index.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.RowCollection.GetRow(System.Int32)">
+            <summary>
+            Get a row from rows collection based on row index.
+            </summary>
+            <param name="rowIndex">row Index</param>
+            <returns>row</returns>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.WorksheetCollection">
+            <summary>
+            Represents worksheet collection.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.WorksheetCollection.m_book">
+            <summary>
+            Parent workbook
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.WorksheetCollection.IsRightToLeft">
+            <summary>
+            Gets or set value indicating whether sheet is displayed right to left.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.WorksheetCollection.Workbook">
+            <summary>
+            Represents parent workbook
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.WorksheetCollection.#ctor(Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Create an instance of Worksheets
+            </summary>
+            <param name="workbook">Parent workbook</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.WorksheetCollection.#ctor(Syncfusion.ExcelExport.Workbook,System.Int32)">
+            <summary>
+            Create an instance of Worksheets
+            </summary>
+            <param name="workbook">Parent workbook</param>
+            <param name="WorksheetCount">No of worksheets to be added.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.WorksheetCollection.Add(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Add worksheet to the collection.
+            </summary>
+            <param name="worksheet">Worksheet to add</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.WorksheetCollection.Create(System.Int32)">
+            <summary>
+            Add worksheet to the collection.
+            </summary>
+            <param name="count">No of Worksheets to add</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.WorksheetCollection.Add">
+            <summary>
+            Add a worksheet to the workbook.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Column">
+            <summary>
+            Represents the worksheet column.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Column.m_index">
+            <summary>
+            Represents the column index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Column.m_width">
+            <summary>
+            Represents the column width.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Column.m_worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Column.Worksheet">
+            <summary>
+            Represents parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Column.Index">
+            <summary>
+            Represents the column index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Column.Width">
+            <summary>
+            Represents the column width.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Column.#ctor(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Create an instance of Row.
+            </summary>
+            <param name="sheet">Parent worksheet</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CSVHelper">
+            <summary>
+            Represents the CSV helper class.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CSVHelper.m_isMicrosoftBrowser">
+            <summary>
+            Represent whether the application runs in microsoft browser.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CSVHelper.m_csvStr">
+            <summary>
+            Represents the csv seperator string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CSVHelper.m_book">
+            <summary>
+            Workbook
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CSVHelper.Workbook">
+            <summary>
+            Represents workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.CSVHelper.IsMicrosoftBrowser">
+            <summary>
+            Represent whether the application runs in microsoft browser.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CSVHelper.#ctor(Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Creates an new instances of CSVHelper.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CSVHelper.ProcessCellValue(System.String)">
+            <summary>
+            Process cell value for CSV.
+            </summary>
+            <param name="value">Cell value to parse.</param>
+            <returns>Returns the process cell value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CSVHelper.CreateCSVText(Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Creates a CSV text.
+            </summary>
+            <param name="workbook">Workbook</param>
+            <returns>CSV string</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.CSVHelper.Save(System.IO.Stream)">
+            <summary>
+            Save workbook into stream.
+            </summary>
+            <param name="stream">Stream to save.</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.LineStyle">
+            <summary>
+            Specifies the line style for the cell border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.LineStyle.Thin">
+            <summary>
+            Thin line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.LineStyle.Thick">
+            <summary>
+            Thick line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.LineStyle.Medium">
+            <summary>
+            Medium line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.LineStyle.None">
+            <summary>
+            No line.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.HAlignType">
+             <summary>
+            Specifies the horizontal alignment options for cell formatting.
+             </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HAlignType.Center">
+            <summary>
+            Center horizontal alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HAlignType.Justify">
+            <summary>
+            Justify  horizontal alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HAlignType.Left">
+            <summary>
+            Left  horizontal alignment. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HAlignType.Right">
+            <summary>
+            Right  horizontal alignment. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HAlignType.General">
+            <summary>
+            General  horizontal alignment.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.VAlignType">
+             <summary>
+            Specifies the vertical alignment options for cell formatting.
+             </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.VAlignType.Bottom">
+            <summary>
+            Bottom vertical alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.VAlignType.Center">
+            <summary>
+            Center vertical alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.VAlignType.Top">
+            <summary>
+            Top vertical alignment.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.HyperlinkType">
+            <summary>
+            Possible types of hyperlinks.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HyperlinkType.None">
+            <summary>
+            No hyperlink.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HyperlinkType.Url">
+            <summary>
+            Represents the Url hyperlink type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HyperlinkType.File">
+            <summary>
+            Represents the File hyperlink type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HyperlinkType.Unc">
+            <summary>
+            Represents the Unc hyperlink type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.HyperlinkType.Workbook">
+            <summary>
+            Represents the Workbook hyperlink type.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.SaveType">
+            <summary>
+            Supported Xml save types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.SaveType.XLSX">
+            <summary>
+            XLSX format
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.SaveType.CSV">
+            <summary>
+            CSV format
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.CellType">
+            <summary>
+            Specifies the excel cell types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.Boolean">
+            <summary>
+            Cell containing a boolean.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.Error">
+            <summary>
+            Cell containing an error.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.InlineString">
+            <summary>
+            Cell containing an (inline) rich string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.Number">
+            <summary>
+            Cell containing a number.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.String">
+            <summary>
+            Cell containing a shared string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.FormulaString">
+            <summary>
+            Cell containing a formula string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.CellType.Formula">
+            <summary>
+            Cell containing a formula string.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.ExtendCell">
+            <summary>
+            Represents the extended format cell
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendCell.m_x">
+            <summary>
+            Gets/Sets X value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.ExtendCell.m_y">
+            <summary>
+            Gets/Sets Y value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendCell.X">
+            <summary>
+            Gets/Sets X value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.ExtendCell.Y">
+            <summary>
+            Gets/Sets Y value.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.FreezePane">
+            <summary>
+            Represents freeze pane.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.FreezePane.m_row">
+            <summary>
+            Represents row index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.FreezePane.m_column">
+            <summary>
+            Represents column index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.FreezePane.Row">
+            <summary>
+            Represents row index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.FreezePane.Column">
+            <summary>
+            Represents column index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.FreezePane.LeftCell">
+            <summary>
+            Represents left cell name.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Grouping">
+            <summary>
+            Represents rows/column grouping.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Grouping.m_outlineLevel">
+            <summary>
+            Outline level of the rows/columns (0 = no outline).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Grouping.m_isCollapsed">
+            <summary>
+            Indicates whether object is collapsed.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Grouping.m_isHidden">
+            <summary>
+            Indicates whether object is hidden.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Grouping.OutlineLevel">
+            <summary>
+            Outline level of the rows/columns (0 = no outline).
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Grouping.IsCollapsed">
+            <summary>
+            Indicates whether object is collapsed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Grouping.IsHidden">
+            <summary>
+            Indicates whether object is hidden.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Hyperlink">
+            <summary>
+            Represents hyperlink object.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_rId">
+            <summary>
+            Represents hyperlink id.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_toolTip">
+            <summary>
+            Represents tooltip string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_location">
+            <summary>
+            Represents the hyperlink location.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_display">
+            <summary>
+            Returns or sets the text to be displayed for the specified hyperlink.
+            The default value is the address of the hyperlink.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_target">
+            <summary>
+            Represents hyperlink target string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_type">
+            <summary>
+            Returns or sets the hyperlink type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_row">
+            <summary>
+            Row index
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Hyperlink.m_column">
+            <summary>
+            Column Index
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Worksheet">
+            <summary>
+            Represents parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Reference">
+            <summary>
+            Represents the cell reference name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.RId">
+            <summary>
+            Represents hyperlink id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.ToolTip">
+            <summary>
+            Represents tooltip string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Location">
+            <summary>
+            Represents the hyperlink location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Display">
+            <summary>
+            Returns or sets the text to be displayed for the specified hyperlink.
+            The default value is the address of the hyperlink.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Target">
+            <summary>
+            Represents hyperlink target string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Type">
+            <summary>
+            Returns or sets the hyperlink type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Row">
+            <summary>
+            Represents Hyperlink location row.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Hyperlink.Column">
+            <summary>
+            Represents Hyperlink location column.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Hyperlink.#ctor(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Creates an instance of Hyperlink.
+            </summary>
+            <param name="sheet"></param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Image">
+            <summary>
+            Represent the Excel image.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_image">
+            <summary>
+            Gets/Sets the image string.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_row">
+            <summary>
+            Gets/Sets the image row.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_column">
+            <summary>
+            Gets/Sets the image column.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_lastRow">
+            <summary>
+            Gets/Sets the image last row.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_lastColumn">
+            <summary>
+            Gets/Sets the image last column.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_width">
+            <summary>
+            Gets/Sets the image width.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_height">
+            <summary>
+            Gets/Sets the image height.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_horizontalFlip">
+            <summary>
+            Gets/Sets the image horizontal flip.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_verticalFlip">
+            <summary>
+            Gets/Sets the image vertical flip.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_rotation">
+            <summary>
+            Gets/Sets the image rotation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_lastRowOffset">
+            <summary>
+            Gets/Sets the image last row offset.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Image.m_lastColOffset">
+            <summary>
+            Gets/Sets the image last column offset.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.Picture">
+            <summary>
+            Gets/Sets the image string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.Row">
+            <summary>
+            Gets/Sets the image row.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.Column">
+            <summary>
+            Gets/Sets the image column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.LastRow">
+            <summary>
+            Gets/Sets the image last row.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.LastColumn">
+            <summary>
+            Gets/Sets the image last column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.Width">
+            <summary>
+            Gets/Sets the image width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.Height">
+            <summary>
+            Gets/Sets the image height.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.HorizontalFlip">
+            <summary>
+            Gets/Sets the image horizontal flip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.VerticalFlip">
+            <summary>
+            Gets/Sets the image vertical flip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.Rotation">
+            <summary>
+            Gets/Sets the image rotation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Image.LastColOffset">
+            <summary>
+            Gets/Sets the image last column offset.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.MergeCell">
+            <summary>
+            Represents merged cell.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.MergeCell.m_reference">
+            <summary>
+            Represent merged cell reference.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.MergeCell.m_x">
+            <summary>
+            Represents left cell index value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.MergeCell.m_width">
+            <summary>
+            Represents width of the merged cell.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.MergeCell.m_y">
+            <summary>
+            Represents top cell index value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.MergeCell.m_height">
+            <summary>
+            Represents height of the merged cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.MergeCell.Reference">
+            <summary>
+            Represent merged cell reference.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.MergeCell.X">
+            <summary>
+            Represents left cell index value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.MergeCell.Width">
+            <summary>
+            Represents width of the merged cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.MergeCell.Y">
+            <summary>
+            Represents top cell index value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.MergeCell.Height">
+            <summary>
+            Represents height of the merged cell.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Row">
+            <summary>
+            Represents the worksheet row.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Row.m_height">
+            <summary>
+            Represents the row height.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Row.m_index">
+            <summary>
+            Represents the row index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Row.m_cells">
+            <summary>
+            Represents the row cells.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Row.m_spans">
+            <summary>
+            Represents the row spans.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Row.m_grouping">
+            <summary>
+            Represents the row grouping.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Row.m_worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Row.Worksheet">
+            <summary>
+            Represents parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Row.Height">
+            <summary>
+            Represents the row height.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Row.Index">
+            <summary>
+            Represents the row index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Row.Spans">
+            <summary>
+            Represents the row spans.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Row.Cells">
+            <summary>
+            Represents the row cells.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Row.Grouping">
+            <summary>
+            Represents the row grouping.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Row.#ctor(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Create an instance of Row.
+            </summary>
+            <param name="sheet">Parent worksheet</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.SerializeWorkbook">
+            <summary>
+            Class used for serialize Excel workbooks.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.SerializeWorkbook.m_workbook">
+            <summary>
+            Workbook to serialize.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.SerializeWorkbook.Workbook">
+            <summary>
+            Workbook to serialize.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.#ctor(Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Creates an new instances of the SerializeWorkbook.
+            </summary>
+            <param name="book">Represents the workbook</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveInternal">
+            <summary>
+            Serialize workbook
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveWorkbook">
+            <summary>
+            Serialize workbook.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.AddToArchive(System.Byte[],System.String)">
+            <summary>
+            Add the workbook data with filename to ZipArchive.
+            </summary>
+            <param name="data">Workbook data</param>
+            <param name="fileName">File name to save</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveWorksheets">
+            <summary>
+            Serialize worksheets.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveWorksheet(Syncfusion.ExcelExport.Worksheet,System.Int32)">
+            <summary>
+            Serialize worksheet.
+            </summary>
+            <param name="sheet">Worksheet to serialize</param>
+            <param name="index">Worksheet index</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveDrawings(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Serialize drawings
+            </summary>
+            <param name="sheet">Worksheet to serialize</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.UpdateLastRowOffset(Syncfusion.ExcelExport.Worksheet,Syncfusion.ExcelExport.Image)">
+            <summary>
+            Updates the picture shape last row offset.
+            </summary>
+            <param name="sheet">Worksheet</param>
+            <param name="picture">Picure to be updated</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.UpdateLastColumnOffSet(Syncfusion.ExcelExport.Worksheet,Syncfusion.ExcelExport.Image)">
+            <summary>
+            Updates the picture shape last column offset.
+            </summary>
+            <param name="sheet">Worksheet</param>
+            <param name="picture">Picure to be updated</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ConvertToPixels(System.Double)">
+            <summary>
+            Converts the given value to pixels.
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns>Returns the value in pixels</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveDrawingRelations(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Serialize drawing relations.
+            </summary>
+            <param name="sheet">Worksheet to serialize</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.PixelsToColumnWidth(System.Int32)">
+            <summary>
+            Converts pixels to column width.
+            </summary>
+            <param name="pixels">Pixel to convert</param>
+            <returns>Returns column width</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ColumnWidthToPixels(System.Double)">
+            <summary>
+            Converts column width to pixels.
+            </summary>
+            <param name="val">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.Trunc(System.Double)">
+            <summary>
+            Trucates the given value.
+            </summary>
+            <param name="x">Value to truncate</param>
+            <returns>Returns trucated double value</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.PixelsToRowHeight(System.Int32)">
+            <summary>
+            Converts pixels to row height.
+            </summary>
+            <param name="pixels">Pixel to convert</param>
+            <returns>Returns converted row height</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveSheetRelations(Syncfusion.ExcelExport.Worksheet)">
+            <summary>
+            Serialize sheet relations.
+            </summary>
+            <param name="sheet">Worrsheet to convert</param>
+            <returns>Returns the sheet reletions</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveSheetView(Syncfusion.ExcelExport.Worksheet,System.Xml.XmlWriter)">
+            <summary>
+            Serialize sheet view.
+            </summary>
+            <param name="sheet">Worksheet to serialize</param>
+            <param name="writer">Xml Writer</param>
+            <returns>Returns sheet view</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveSharedString">
+            <summary>
+            Serialize workbook shared string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ProcessString(System.String)">
+            <summary>
+            Process cell values.
+            </summary>
+            <param name="value">Value to process</param>
+            <returns>Returns process string</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveStyles">
+            <summary>
+            Serialize styles.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.UpdateCellStyleXfs">
+            <summary>
+            Update cell Xfx Style
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveNumberFormats(System.Xml.XmlWriter)">
+            <summary>
+            Serialize number formats.
+            </summary>
+            <returns>Returns the saved number format</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveFonts(System.Xml.XmlWriter)">
+            <summary>
+            Serialize fonts.
+            </summary>
+            <returns>Returns saved fonts</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveFills(System.Xml.XmlWriter)">
+            <summary>
+            Serialize fills.
+            </summary>
+            <returns>Returns saved fills</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveBorders(System.Xml.XmlWriter)">
+            <summary>
+            Serialize borders.
+            </summary>
+            <returns>Returns saved borders</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SerializeBorders(Syncfusion.ExcelExport.Borders,System.Xml.XmlWriter)">
+            <summary>
+            SerializeBorders collection.
+            </summary>
+            <param name="borders">Borders</param>
+            <param name="writer">XmlWriter</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SerializeBorder(Syncfusion.ExcelExport.Border,System.Xml.XmlWriter,System.String)">
+            <summary>
+            Serialize borders.
+            </summary>
+            <param name="border">Border instance</param>
+            <param name="writer">XmlWriter to write data.</param>
+            <param name="borderType">Border side.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveGlobalCellStyles(System.Xml.XmlWriter)">
+            <summary>
+            Serialize cell styles.
+            </summary>
+            <returns>Returns saved cell styles</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveCellStyleXfs(System.Xml.XmlWriter)">
+            <summary>
+            Serialize cell styles xfs.
+            </summary>
+            <returns>Returns saved cell styles xfs</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveCellXfs(System.Xml.XmlWriter)">
+            <summary>
+            Serialize cell xfs.
+            </summary>
+            <returns>Returns saved cell xfs</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveAlignment(Syncfusion.ExcelExport.CellStyleXfs,System.Xml.XmlWriter)">
+            <summary>
+            Serialize alignment.
+            </summary>
+            <param name="cellXf">Cell style xfs</param>
+            <param name="writer">XmlWriter to write data into. </param>
+            <returns>Returns saved alignment</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveApp(Syncfusion.ExcelExport.BuiltInProperties)">
+            <summary>
+            Serialize app properties
+            </summary>
+            <param name="builtInProperties">Workbook BuiltInProperties</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveCore(Syncfusion.ExcelExport.BuiltInProperties)">
+            <summary>
+            Serialize core properties
+            </summary>
+            <param name="builtInProperties">Workbook BuiltInProperties</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveTopLevelRelation">
+            <summary>
+            Serialize top level releation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveWorkbookRelation">
+            <summary>
+            Serialize workbook releation
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.SaveContentType">
+            <summary>
+            Serialize content type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ApplyGlobalStyle(System.String,Syncfusion.ExcelExport.CellStyle,Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Extracts cell style and set it to cell style.
+            </summary>
+            <param name="name">Style name</param>
+            <param name="cellStyle">Cell style to update</param>
+            <param name="workbook">Workbook.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ProcessCellStyle(Syncfusion.ExcelExport.CellStyle,Syncfusion.ExcelExport.Workbook,System.Boolean)">
+            <summary>
+            Process the cell style.
+            </summary>
+            <param name="style">Cell style to process</param>
+            <param name="workbook">Workbook</param>
+            <param name="isAdd">Indicates whether to add style to workbook.</param>
+            <returns>Returns style index</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ProcessNumFormatId(Syncfusion.ExcelExport.CellStyle,Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Process the number format for cell style
+            </summary>
+            <param name="style">Cell style</param>
+            <param name="workbook">Workbook</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.ProcessMergeCells(Syncfusion.ExcelExport.Cell,System.Int32,Syncfusion.ExcelExport.MergedCellCollection)">
+            <summary>
+            Process merged cells
+            </summary>
+            <param name="cell">Cell to process</param>
+            <param name="rowIndex">Row index</param>
+            <param name="mergeCells">Merged cells to process</param>
+            <returns>Returns Merged cells collection</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.SerializeWorkbook.UpdatedMergedCellStyles(Syncfusion.ExcelExport.ExtendCell,Syncfusion.ExcelExport.ExtendCell,Syncfusion.ExcelExport.Cell)">
+            <summary>
+            Update merged cell styles
+            </summary>
+            <param name="sCell">Source extend cell</param>
+            <param name="eCell">Source extend cell</param>
+            <param name="cell">Current cell</param>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Workbook">
+            <summary>
+            Represents an Excel Workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_archive">
+            <summary>
+            Represents zip archive to save the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_sharedString">
+            <summary>
+            Represents the shared string dictionary.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_sharedStringCount">
+            <summary>
+            Represents the shared string count in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_cellStyles">
+            <summary>
+            Represents the cell style collection in the workbok.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_mergedCellsStyle">
+            <summary>
+            Represents the merged cell collection in the workbok.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_worksheets">
+            <summary>
+            Represents the worksheet collection.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_builtInProperties">
+            <summary>
+            Represents the build in properties.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_fonts">
+            <summary>
+            Represents the font collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_borders">
+            <summary>
+            Represents the border collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_fills">
+            <summary>
+            Represents the Fill collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_numFmt">
+            <summary>
+            Represents the number format collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_styles">
+            <summary>
+            Represents the cell style collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_cellXfs">
+            <summary>
+            Represents the CellXf collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_cellStyleXfs">
+            <summary>
+            Represents the CellStyleXf collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_mergeCells">
+            <summary>
+            Represents the merged cell collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_csvHelper">
+            <summary>
+            Represents the font collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_saveType">
+            <summary>
+            Represents the workbook save type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_hyperlinks">
+            <summary>
+            Represents the hyperlink collection in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_unitsProportions">
+            <summary>
+            Represents the unit conversion list.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_printTitles">
+            <summary>
+            Represents the print title collection.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_culture">
+            <summary>
+            Represents the current culture.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_currency">
+            <summary>
+            Represents the current culture currency.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_rgbColors">
+            <summary>
+            Represents the RGB colors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_drawingCount">
+            <summary>
+            Represents the drawing count in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_imageCount">
+            <summary>
+            Represents the image count in the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Workbook.m_isParsing">
+            <summary>
+            Indicates whether the workbook is parsing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.IsParsed">
+            <summary>
+            Indicates whether the workbook is Parsed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Archive">
+            <summary>
+            Represents zip archive to save the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.SharedStrings">
+            <summary>
+            Represents the shared string list.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.SharedStringCount">
+            <summary>
+            Represents the shared string count in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.GlobalStyles">
+            <summary>
+            Represents the cell style collection in the workbok.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.MergedCellsStyle">
+            <summary>
+            Represents the merged cell collection in the workbok.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Worksheets">
+            <summary>
+            Represents the worksheet collection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.BuiltInProperties">
+            <summary>
+            Represents the build in properties.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Fonts">
+            <summary>
+            Represents the font collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Borders">
+            <summary>
+            Represents the border collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Fills">
+            <summary>
+            Represents the Fill collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.NumFmt">
+            <summary>
+            Represents the number format collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Styles">
+            <summary>
+            Represents the cell style collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.CellXfs">
+            <summary>
+            Represents the CellXf collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.CellStyleXfs">
+            <summary>
+            Represents the CellStyleXf collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.MergeCells">
+            <summary>
+            Represents the merged cell collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.SaveType">
+            <summary>
+            Represents the workbook save type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Hyperlinks">
+            <summary>
+            Represents the hyperlink collection in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.UnitProportions">
+            <summary>
+            Represents the unit conversion list.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.PrintTitles">
+            <summary>
+            Represents the print title collection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Culture">
+            <summary>
+            Represents the current culture.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.Currency">
+            <summary>
+            Represents the current culture currency.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.RgbColors">
+            <summary>
+            Represents the RGB colors.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.DrawingCount">
+            <summary>
+            Represents the drawing count in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.ImageCount">
+            <summary>
+            Represents the image count in the workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Workbook.IsRightToLeft">
+            <summary>
+            Get or set value indicating whether sheet is displayed right to left.
+            </summary> 
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.#ctor">
+            <summary>
+            Creates an new instances of the Workbook.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.#ctor(System.Int32)">
+            <summary>
+            Creates an new instances of the Workbook.
+            </summary>
+            <param name="Count">Number of worksheets to be added.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.#ctor(System.String,System.String)">
+            <summary>
+            Creates an new instances of the Workbook.
+            </summary>
+            <param name="culture">Current culture.</param>
+            <param name="currencyString">Current culture currency.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates an new instances of the Workbook.
+            </summary>
+            <param name="culture">Current culture.</param>
+            <param name="currencyString">Current culture currency.</param>
+            <param name="Count">Number of worksheets to be added.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.Save(System.String)">
+            <summary>
+            Saves workbook with the specified file name.
+            </summary>
+            <param name="fileName">Name of the file into which workbook will be saved.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.Save(System.IO.Stream,System.Boolean)">
+            <summary>
+            Saves workbook as stream.
+            </summary>
+            <param name="stream">Stream to save.</param>
+            <param name="isCSV">Represents whether the stream is saved as CSV or not.</param>
+            <returns>Returns the saved workbook.</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.IsNewFont(Syncfusion.ExcelExport.CellStyle)">
+            <summary>
+            Check whether the cell style font already exists.
+            </summary>
+            <param name="toCompareStyle">Cell style to check</param>
+            <returns>Returns ExtendCompareStyle</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.IsNewBorder(Syncfusion.ExcelExport.CellStyle)">
+            <summary>
+            Check whether the cell border already exists.
+            </summary>
+            <param name="toCompareStyle">Cell style to check</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.IsAllBorder(Syncfusion.ExcelExport.Borders)">
+            <summary>
+            Check if line style and color is applied for all borders
+            </summary>
+            <param name="toCompareBorder">Borders to check</param>
+            <returns>Returns true when all border is applied</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.CompareStyle(Syncfusion.ExcelExport.CellStyle)">
+            <summary>
+            Check whether the cell style font already exists.
+            </summary>
+            <param name="toCompareStyle">Cell style to check</param>
+            <returns>Returns ExtendCompareStyle</returns>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.Dispose(System.Boolean)">
+            <summary>
+            Dispose  objects
+            </summary>
+            <param name="disposing">Indicates whether to dispose managed resources.</param>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Workbook.Dispose">
+            <summary>
+            Dispose  
+            </summary>
+        </member>
+        <member name="T:Syncfusion.ExcelExport.Worksheet">
+            <summary>
+            Represents a worksheet in a workbook. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_isSummaryRowBelow">
+            <summary>
+            True if summary row is below. otherwise, False.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_index">
+            <summary>
+            Represent the worksheet index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_columns">
+            <summary>
+            Represents all the columns in the specified worksheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_rows">
+            <summary>
+            Represents all the rows in the specified worksheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_freezePanes">
+            <summary>
+            Keep rows and columns visible in the Range while the rest of the worksheet scrolls.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_name">
+            <summary>
+            Represents Worksheet's name.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_showGridLines">
+            <summary>
+            True if grid lines are visible. otherwise, False.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_mergeCells">
+            <summary>
+            Collection of all merged cells in the current worksheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_hyperlinks">
+            <summary>
+            Collection of all hyperlinks in the current worksheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_images">
+            <summary>
+            Collection of all Images in the current worksheet.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_book">
+            <summary>
+            Parent workbook
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_PrintTitle">
+            <summary>
+            Print title.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.ExcelExport.Worksheet.m_isRightToLeft">
+            <summary>
+            Represents whether sheet is displayed right to left.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Workbook">
+            <summary>
+            Represents parent workbook
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.IsSummaryRowBelow">
+            <summary>
+            True if summary row is below. otherwise, False.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Index">
+            <summary>
+            Represent the worksheet index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Columns">
+            <summary>
+            Represents all the columns in the specified worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Rows">
+            <summary>
+            Represents all the rows in the specified worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.FreezePanes">
+            <summary>
+            Keep rows and columns visible in the Range while the rest of the worksheet scrolls.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.HasFreezePane">
+            <summary>
+            Indicates whether the worksheet has freezepanes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Name">
+            <summary>
+            Returns or sets the name of the worksheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.ShowGridLines">
+            <summary>
+            True if grid lines are visible. otherwise, False.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.MergeCells">
+            <summary>
+             Gets/Sets a merged cell collections in the worksheet
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Hyperlinks">
+            <summary>
+             Gets/Sets a hyperlink collections in the worksheet
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.Images">
+            <summary>
+             Gets/Sets a images collections in the worksheet
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.PrintTitle">
+            <summary>
+            Represents Worksheet print titles
+            </summary>
+        </member>
+        <member name="P:Syncfusion.ExcelExport.Worksheet.IsRightToLeft">
+            <summary>
+            Get or set value indicating whether sheet is displayed right to left.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.ExcelExport.Worksheet.#ctor(Syncfusion.ExcelExport.Workbook)">
+            <summary>
+            Creates an instance of Worksheet.
+            </summary>
+            <param name="workbook">Workbook</param>
+        </member>
+    </members>
+</doc>

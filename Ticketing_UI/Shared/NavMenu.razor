@@ -47,7 +47,7 @@
 
 @code {
     private bool collapseNavMenu = true;
-    private PersonDto userInfo = new PersonDto();
+    public PersonDto userInfo = new PersonDto();
     [Parameter]
     public string userName { get; set; } = "";
 
@@ -61,7 +61,7 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if(  userName != "" && userInfo.PersonID == 0)
+        if(userName != "" && userInfo.PersonID == 0)
         {
             if(userInfo != await GetPersonInfo(Convert.ToInt32(userName)))
             {

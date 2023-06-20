@@ -4,15 +4,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Net.Http.Json;
-using System.ComponentModel;
-using System.Reflection.Metadata;
-using System.Collections.Specialized;
-using Ticketing.Models.Tickets.Command;
-using Ticketing.Models.Shared;
-using Ticketing.Models.Programs.Command;
-using Ticketing.Models.Tickets.Query;
-using Framework.Pagination;
 using System.Text.Json;
+using Ticketing.Models.Tickets.Command;
+using Ticketing.Models.Tickets.Dto;
+using Ticketing.Models.Tickets.Query;
+using Ticketing.Models.Tickets.Repository;
 
 namespace Ticketing.Repository.Tickets
 {

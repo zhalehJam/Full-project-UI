@@ -4,9 +4,11 @@
 @using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Charts
-@using Syncfusion.Blazor.Layouts
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Inputs 
 @using Syncfusion.Blazor;
 @using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.Layouts;
 @using Ticketing.Client.Contracts.Ticket;
 @using Ticketing.Models.Tickets.Dto;
 @using Ticketing.Models.Tickets.Query;
@@ -17,11 +19,12 @@
 <div class="col-lg-12 control-section">
     <div class="content-wrapper" style="max-width: 100%">
         <div class="e-panel-header row col-lg-3 col-md-3 col-sm-3">
-            <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ" @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
-                <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
-            </SfDateRangePicker>
-        </div>
-        <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
+            <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ"  @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
+                <DateRangePickerEvents  TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+            </SfDateRangePicker> 
+        </div> 
+
+        <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false"  >
             <DashboardLayoutPanels>
 
                 <DashboardLayoutPanel Id="1" Row="1" Column="3" SizeX="9" SizeY="4">
@@ -151,14 +154,34 @@
         </SfDashboardLayout>
     </div>
 </div>
+<style>
+    .e-card .e-card-header .e-card-header-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 32px;
+        width: 32px;
+    }
+
+    .e-card .e-card-header {
+        box-sizing: border-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+        flex-direction: row-reverse;
+        -ms-flex-pack: center;
+        justify-content: center;
+        line-height: normal;
+        min-height: 22.5px;
+        padding: 6px;
+        width: inherit;
+        padding-bottom: 6px;
+    }
 @code {
-<<<<<<< Updated upstream
     SfDashboardLayout dashboardObject;
     private SfChart sfChart { get; set; }
     SfAccumulationChart sfAccumulationChart1 { get; set; }
     SfAccumulationChart sfAccumulationChart2 { get; set; }
 
-    public double[] CellSpacing = { 10, 10 };
     List<TicketDto> ticketDtos = new List<TicketDto>();
     List<Tuple<DateTime, int>> allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
     List<Tuple<DateTime, int>> finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
@@ -213,47 +236,6 @@
         StateHasChanged();
         ShouldRender();
     }
-
-}
-<style>
-    .e-card .e-card-header .e-card-header-image {
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 32px;
-        width: 32px;
-    }
-
-    .e-card .e-card-header {
-        box-sizing: border-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: row;
-        flex-direction: row-reverse;
-        -ms-flex-pack: center;
-        justify-content: center;
-        line-height: normal;
-        min-height: 22.5px;
-        padding: 6px;
-        width: inherit;
-        padding-bottom: 6px;
-    }
-
-    .e-dashboardlayout {
-        padding: 20px;
-        z-index: 0;
-    }
-
-    .e-panel {
-        cursor: auto !important;
-    }
-
-    .e-panel-header {
-        border: none !important;
-        background-color: #303030;
-        height: 50px !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .title {
