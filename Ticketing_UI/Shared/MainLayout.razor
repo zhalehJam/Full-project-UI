@@ -1,9 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization;
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 @using Syncfusion.Blazor.Cards
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager Navigation
-
+@inject SignOutSessionStateManager SignOutManager
 
 <div dir="rtl" class="page">
     <div class="sidebar">
@@ -17,7 +18,11 @@
         </Authorized>
         </AuthorizeView>*@
         <div class="top-row px-4">
-            
+            <div class="d-flex flex-column-auto flex-center">
+                <div class="menu-link opacity-50 opacity-100-hover px-3" style="color:darkslateblue !important;" @onclick="BeginSignOut">خروج از سیستم</div>
+                <img class="thumbnail" style=" width: 27px; height: 23px;"  src="images/icons/signout-icon.jpg" @onclick="BeginSignOut" title="خروج از سیستم" />
+
+            </div>
         </div>
 
         <article class="content px-4">
@@ -30,6 +35,12 @@
 @code {
     private string userName = "";
     
+    private async Task BeginSignOut(MouseEventArgs args)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo("authentication/logout");
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if(firstRender)

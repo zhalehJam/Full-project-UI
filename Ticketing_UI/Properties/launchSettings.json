@@ -13,9 +13,18 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
-      "applicationUrl": "https://localhost:5020",
+      "applicationUrl": "http://192.168.62.76:8089",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "personalgoods.webapi": "StartDebugging",
+        "apigateway": "StartDebugging",
+        "companygoods.webapi": "StartDebugging"
       }
     },
     "IIS Express": {

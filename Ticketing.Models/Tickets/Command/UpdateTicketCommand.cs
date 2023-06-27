@@ -1,4 +1,4 @@
-﻿using Ticketing.Cilient.Contracts.Ticket;
+﻿using Ticketing.Client.Contracts.Ticket;
 
 namespace Ticketing.Models.Tickets.Command
 {
