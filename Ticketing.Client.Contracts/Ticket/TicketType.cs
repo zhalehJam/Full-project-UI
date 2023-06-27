@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ticketing.Cilient.Contracts.Ticket
+namespace Ticketing.Client.Contracts.Ticket
 {
     public enum TicketType
     {

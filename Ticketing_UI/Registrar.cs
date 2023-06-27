@@ -23,7 +23,7 @@ namespace Ticketing_UI
             serviceCollection.AddTransient<ITicketRepository, TicketRepository>();
             serviceCollection.AddScoped<IUserDataManagement, UserDataManagement>();
 
-            var baseaddress = new Uri("https://localhost:44359/API/");
+            //var baseaddress = new Uri("https://localhost:44359/API/");
 
             //serviceCollection.AddHttpClient<ICenterRepository, CenterRepository>(client =>
             //{
