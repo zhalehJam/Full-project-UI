@@ -1,18 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ticketing.Models.Programs.Dto;
-using Ticketing.Models.Tickets.Dto;
-using Ticketing.Models.Tickets.Repository;
+﻿using Framework.Pagination;
 using Microsoft.AspNetCore.WebUtilities;
-using System.Runtime.Serialization;
-using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Net.Http.Json;
+<<<<<<< Updated upstream
 using System.ComponentModel;
 using System.Reflection.Metadata;
 using System.Collections.Specialized;

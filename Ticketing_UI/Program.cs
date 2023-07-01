@@ -1,4 +1,4 @@
-using Blazored.Modal; 
+
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Syncfusion.Blazor;
@@ -11,7 +11,12 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+<<<<<<< Updated upstream
 //SyncfusionLicenseProvider.RegisterLicense("OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
+=======
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
+    "OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
+>>>>>>> Stashed changes
 builder.Services.AddSyncfusionBlazor(options => { options.EnableRtl = true; });
 builder.Services.AddScoped<SfDialogService>();
  
@@ -44,8 +49,6 @@ builder.Services.AddOidcAuthentication(options =>
 
 });
 //builder.Services.AddApiAuthorization();
-
-builder.Services.AddBlazoredModal();
 
 Registrar.RegisterRepositories(builder.Services);
 
