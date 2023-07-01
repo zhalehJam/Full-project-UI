@@ -2,11 +2,33 @@
 @page "/"
 @using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Layouts
+<<<<<<< Updated upstream
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Inputs 
 <div class="col-lg-8 control-section">
     <div class="content-wrapper" style="max-width: 100%">
         <SfDashboardLayout @ref="dashboardObject" AllowResizing="@AllowResizing" AllowFloating="@AllowFloating" CellSpacing="@CellSpacing" Columns="@Columns">
+=======
+@using Syncfusion.Blazor;
+@using Syncfusion.Blazor.Calendars
+@using System.Globalization;
+@using Ticketing.Client.Contracts.Ticket;
+@using Ticketing.Models.Tickets.Dto;
+@using Ticketing.Models.Tickets.Query;
+@using Ticketing.Models.Tickets.Repository;
+
+@inject ITicketRepository ticketRepository
+
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper" style="max-width: 100%">
+        <div class="e-panel-header row col-lg-3 col-md-3 col-sm-3">
+            <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ"  @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
+                <DateRangePickerEvents  TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+            </SfDateRangePicker> 
+        </div> 
+
+        <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="false" AllowResizing="false" CellSpacing="@CellSpacing">
+>>>>>>> Stashed changes
             <DashboardLayoutPanels>
                 <DashboardLayoutPanel Id="1" Row="1" Column="0" SizeX="2" SizeY="2">
                     <HeaderTemplate><div class="e-header-text">Panel 1</div></HeaderTemplate>
@@ -72,6 +94,7 @@
     </div>
 </div>
 @code {
+<<<<<<< Updated upstream
     SfDashboardLayout dashboardObject;
     public double[] CellSpacing = { 10, 10 };
     public bool FloatCheck = true;
@@ -84,11 +107,50 @@
     public void OnFloatChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
     {
         this.AllowFloating = args.Checked;
+=======
+
+    private string? selectedDate = null;
+    [Parameter]
+    public string Id { get; set; } = null!;
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnChange { get; set; }
+
+
+
+
+    SfDashboardLayout dashboardObject = new SfDashboardLayout();
+    private SfChart sfChart { get; set; } = new SfChart();
+    SfAccumulationChart sfAccumulationChart1 { get; set; } = new SfAccumulationChart();
+    SfAccumulationChart sfAccumulationChart2 { get; set; } = new SfAccumulationChart();
+
+    public double[] CellSpacing = { 10, 10 };
+    List<TicketDto> ticketDtos = new List<TicketDto>();
+    List<Tuple<DateTime, int>> allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
+    List<Tuple<DateTime, int>> finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<Tuple<DateTime, int>> ongoingTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<Tuple<string, int>> programsTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+    List<Tuple<string, int>> centersTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+    private string Content { get; set; } = "";
+    public TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
+    public MetaData metaData { get; set; } = new MetaData();
+    public DateTime FromDate { get; set; } = DateTime.Now.AddMonths(-1);
+    public DateTime ToDate { get; set; } = DateTime.UtcNow;
+    private string fdate = DateTime.Now.AddMonths(-1).ToShortDateString();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetData(FromDate, ToDate); 
+>>>>>>> Stashed changes
     }
     public void AllowResizingChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
     {
         this.AllowResizing = args.Checked;
     }
+<<<<<<< Updated upstream
     public async Task AddClick(EventArgs args)
     {
         this.Count = this.Count + 1;
@@ -110,6 +172,22 @@
         List<PanelModel> panel = await this.dashboardObject.Serialize();
         Length = panel.Count;
         if(Length != 0)
+=======
+
+    private async Task GetData(DateTime fromDate, DateTime toDate)
+    {  
+        var response = await ticketRepository.GetUserAllTickets(DateTime.Parse(fromDate.Date.ToString()), DateTime.Parse(toDate.Date.ToString()));
+        allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
+        finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+        ongoingTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+        programsTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+        centersTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+        sfAccumulationChart1 = new SfAccumulationChart();
+        sfAccumulationChart2 = new SfAccumulationChart();
+        ticketDtos = new List<TicketDto>();
+
+        if(response!= null && response.Count() != 0)
+>>>>>>> Stashed changes
         {
             for(var i = Length - 1; i < Length; i++)
             {
@@ -203,10 +281,7 @@
     .highcontrast .e-primary, .highcontrast .e-danger {
         width: 170px;
     }
-
-    .tailwind .sb-demo-section .container-fluid {
-        background: #F9FAFB;
-    }
+     
 
     .mobile .e-control.e-lib.e-dashboardlayout.e-responsive {
         z-index: 0;

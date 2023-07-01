@@ -30,6 +30,7 @@
                             partDtos = centerdtos.parts ?? new List<PartDto>();
                             string gid = centerdtos.Id.ToString();
                         }
+<<<<<<< Updated upstream
 
                         <div class="content-wrapper">
                             <div class="row">
@@ -53,6 +54,27 @@
                                     </GridColumns>
                                 </SfGrid>
                             </div>
+=======
+                        <div class="content-wrapper">
+                            <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})" style="background-color:aquamarine">
+                                <GridEvents TValue="PartDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,centerdtos.Id))"></GridEvents>
+                                <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
+                                    <HeaderTemplate Context="Othercontext">
+                                        اطلاعات
+                                    </HeaderTemplate>
+                                </GridEditSettings>
+                                <GridColumns>
+                                    <GridColumn Field=@nameof(PartDto.Id) Visible=false HeaderText="Id" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn Field=@nameof(PartDto.PartName) HeaderText="نام واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn Field=@nameof(PartDto.PartID) HeaderText="کد واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn HeaderText="عملیات" Width="150">
+                                        <GridCommandColumns>
+                                            <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                                        </GridCommandColumns>
+                                    </GridColumn>
+                                </GridColumns>
+                            </SfGrid>
+>>>>>>> Stashed changes
                         </div>
 
                     </DetailTemplate>
@@ -84,6 +106,7 @@
     private bool flag = false;
     private Boolean Check = false;
 
+<<<<<<< Updated upstream
     public bool showModal { get; set; }
 
     void ModalShow() => showModal = true;
@@ -94,6 +117,24 @@
         showModal = false;
     }
 
+=======
+    private string commandType = "";
+    private PartDto selectedpartDto = new PartDto();
+    private CenterDto selectCentertDto = new CenterDto();
+
+    SfToast ToastObj;
+
+    private void Setkeyboardkeyevent(KeyboardEventArgs args)
+    {
+        if(args.Key == "Enter")
+            flag = true;
+    }
+
+    private void OnClose()
+    {
+        warningMessageVisiable = false;
+    }
+>>>>>>> Stashed changes
     protected override async Task OnInitializedAsync()
     {
         await GetCenterslist();

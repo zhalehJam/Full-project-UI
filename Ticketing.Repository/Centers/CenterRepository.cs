@@ -1,24 +1,19 @@
-﻿using System.Net.Http;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Ticketing.Models.Centers.Dto;
-using Ticketing.Models.Centers.Repository;
-using System.Net.Http.Json;
-using Microsoft.AspNetCore.WebUtilities;
-using System.Collections;
-using System.Data;
-using System.Text.Json.Serialization;
+﻿using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+<<<<<<< Updated upstream
 using System.Text.Json.Nodes;
 using PagedList;
 using Ticketing.Models.Centers.Command;
 using Ticketing.Models.Tickets.Command;
 using Ticketing.Models.Shared;
+=======
+>>>>>>> Stashed changes
 using System.Net;
+using System.Net.Http.Json;
+using Ticketing.Models.Centers.Command;
+using Ticketing.Models.Centers.Dto;
+using Ticketing.Models.Centers.Repository;
 
 namespace Ticketing.Repository.Centers
 {

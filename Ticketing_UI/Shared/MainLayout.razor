@@ -1,8 +1,16 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization;
+<<<<<<< Updated upstream
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager Navigation
 
+=======
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication; 
+@using Syncfusion.Blazor.Cards
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager Navigation 
+>>>>>>> Stashed changes
 
 <div dir="rtl" class="page">
     <div class="sidebar">
@@ -27,8 +35,19 @@
 
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+<<<<<<< Updated upstream
+=======
+    private string userName = "";
+
+    private void BeginSignOut(MouseEventArgs args)
     {
+        Microsoft.AspNetCore.Components.WebAssembly.Authentication.NavigationManagerExtensions.NavigateToLogout(Navigation, "authentication/logout");
+        //Navigation.NavigateTo("authentication/logout");
+    }
+
+>>>>>>> Stashed changes
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    { 
         if(firstRender)
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();

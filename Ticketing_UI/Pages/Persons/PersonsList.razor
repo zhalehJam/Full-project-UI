@@ -1,6 +1,13 @@
+<<<<<<< Updated upstream
 ﻿@page "/PersonsList"
 @using Blazored.Modal
 @using Blazored.Modal.Services
+=======
+﻿@attribute [Authorize]
+
+@page "/PersonsList"
+@using Microsoft.AspNetCore.Authorization;
+>>>>>>> Stashed changes
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Data;
@@ -142,7 +149,6 @@
 @code {
     private List<PersonDto> personDtos = new List<PersonDto>();
     private PersonDto personDto = new PersonDto();
-    public ModalParameters MessageBoxKeys = new ModalParameters();
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
     private CenterDto selectedCenterDto = new CenterDto();
