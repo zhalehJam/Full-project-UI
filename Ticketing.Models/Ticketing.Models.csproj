@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Framework\Framework.Pagination\Framwork.Pagination.csproj" />
-    <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
+    <ProjectReference Include="..\Framework\Framework.Pagination\Framework.Pagination.csproj" />
+    <ProjectReference Include="..\Framework\Framework.Pagination\Framework.Pagination.csproj" />
+    <ProjectReference Include="..\Ticketing.Client.Contracts\Ticketing.Client.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

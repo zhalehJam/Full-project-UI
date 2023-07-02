@@ -17,7 +17,7 @@ COPY NuGet.Config .
 
 FROM build AS publish
 RUN dotnet publish "Ticketing_UI.csproj" -c Release -o /app/publish
- 
+
 FROM nginx:alpine AS final
 WORKDIR /usr/share/nginx/html
 COPY --from=publish /app/publish/wwwroot .

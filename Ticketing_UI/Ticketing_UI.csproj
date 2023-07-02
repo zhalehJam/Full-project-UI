@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS> 
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,12 +14,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
-    <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" />
-<<<<<<< Updated upstream
-=======
-    <PackageReference Include="Syncfusion.Licensing" Version="20.4.0.48" />
->>>>>>> Stashed changes
+    <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" /> 
+    <PackageReference Include="Syncfusion.Licensing" Version="20.4.0.48" /> 
   </ItemGroup>
+	
+	<PropertyGroup>
+		<PublishTrimmed>false</PublishTrimmed>
+	</PropertyGroup>
 
   <ItemGroup>
     <Content Update="Pages\Index.razor">
@@ -78,7 +80,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj" />
-    <ProjectReference Include="..\Ticketing.Cilient.Contracts\Ticketing.Client.Contracts.csproj" />
+    <ProjectReference Include="..\Ticketing.Client.Contracts\Ticketing.Client.Contracts.csproj" />
     <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />
     <ProjectReference Include="..\Ticketing.Repository\Ticketing.Repository.csproj" />
   </ItemGroup>

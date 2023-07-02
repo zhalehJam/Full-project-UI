@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Cilient.Contracts.Ticket
+﻿namespace Ticketing.Client.Contracts.Ticket
 {
     public enum ErrorType
     {

@@ -3,20 +3,17 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Syncfusion.Blazor;
 using Syncfusion.Blazor.Popups;
-//using Syncfusion.Licensing;
+using Syncfusion;
 using Ticketing_UI;
 using Ticketing_UI.Shared.Classes;
-
+if(args == null)
+{ throw new Exception("args is null"); }
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
-
-<<<<<<< Updated upstream
-//SyncfusionLicenseProvider.RegisterLicense("OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
-=======
+ 
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
     "OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
->>>>>>> Stashed changes
 builder.Services.AddSyncfusionBlazor(options => { options.EnableRtl = true; });
 builder.Services.AddScoped<SfDialogService>();
  
@@ -54,7 +51,9 @@ Registrar.RegisterRepositories(builder.Services);
 
 //Registrar registrar = new Registrar(builder.Services);
 //registrar.Register();
-var app = builder.Build();
+Console.WriteLine("Before Build");
+var host = builder.Build();
+//var authenticationService = host.Services.GetRequiredService<IAuthenticationService>();
 
-
-await builder.Build().RunAsync();
+//await authenticationService.Initialize();
+await host.RunAsync();
