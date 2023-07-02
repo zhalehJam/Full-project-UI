@@ -1,11 +1,8 @@
 @attribute [Authorize]
 
 @page "/PersonsList"
-@using Blazored.Modal
-@using Blazored.Modal.Services
-@page "/PersonsList"
 @using Microsoft.AspNetCore.Authorization;
->>>>>>> Stashed changes
+@using Microsoft.AspNetCore.Components.Authorization;
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Data;
@@ -28,9 +25,10 @@
 @inject IPersonRepository personRepository
 @inject ICenterRepository centerRepository
 @inject IProgramRepository programRepository
+@inject AuthenticationStateProvider authenticationStateProvider
 @inject IHttpClientFactory ClientFactory
 
-<SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important " style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:100px; margin-right:23px" @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
+
 <style>
     .hulu {
         background-color: #edf8ff38;
@@ -42,13 +40,22 @@
             background-color: white;
             border: solid 1px gray;
         }
-</style>
-<hr />
+</style> 
 <div class="content-wrapper">
+    <SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important "
+              style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:100px; margin-right:23px"
+              Disabled="!IsAdmin"
+              @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
+
+    <SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important "
+              style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:100px; margin-right:23px"
+              @onclick="@(async e => {await GetAllPersons(); })">بروزرسانی</SfButton>
+              <hr />
     <div class="row">
         <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ; ">
             <div>
-                <SfTextBox Width="150px" @onkeyup="@(async (e)=>await @OnFilter(e))" ValueChanged="@((e)=>ChangeValue(e))" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
+                <SfTextBox Width="150px" @onkeyup="@(async (e)=>await @OnFilter(e))" ValueChanged="@((e)=>ChangeValue(e))" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Auto">جستجو برا اساس کدپرسنلی</SfTextBox>
+
             </div>
             @if(this.personDtos.Count == 0)
             {
@@ -79,13 +86,13 @@
                                     string contentText = persondto.PartName + " " + persondto.CenterName;
                                 }
                                 <div class="col-sm-10 col-md-10 col-lg-10" style="display:inline-block!important ;">
-                                    <h6 style="padding-top:9px;">
+                                    <h6 style="padding-top:8px;font-weight:bold">
                                         @persondto.PersonName
                                     </h6>
-                                    <span style="padding-top:9px;">
+                                    <span style="padding-top:8px;">
                                         @persondto.PersonID.ToString()
                                     </span>
-                                    <p style="padding-top:9px; font-size:14px">
+                                    <p style="padding-top:8px; font-size:14px">
                                         @contentText
                                     </p>
                                 </div>
@@ -114,7 +121,7 @@
                             </div>
                             <div>
                                 <SfTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@selectedPerson.PersonName" Placeholder="نام" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
-                                <SfNumericTextBox Enabled="isNew" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always" Decimals="0"></SfNumericTextBox>
+                                <SfNumericTextBox Enabled="isNew" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@selectedPerson.PersonID" Placeholder="کد پرسنلی" FloatLabelType="FloatLabelType.Always" Format="#########" Decimals="0"></SfNumericTextBox>
 
                                 <SfDropDownList @onkeypress="@((e)=>Setkeyboardkeyevent(e))" Enabled="true" TValue="Guid" TItem="CenterDto" @bind-Value="@selectedCenterDto.Id" FloatLabelType="FloatLabelType.Auto" Placeholder="نام دفتر" PopupHeight="230px" DataSource="@centerDtos">
                                     <DropDownListEvents TItem="CenterDto" TValue="Guid" ValueChange="ChangeCenter"></DropDownListEvents>
@@ -301,13 +308,13 @@
     public bool DisableForwardIcon = false;
     public bool DisableFirstIcon = false;
     public bool DisableLastIcon = false;
+    public bool IsAdmin = true;
 
     private string filterInfo = "";
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "750px", Width = "750px" };
 
     DialogEffect animationEffect = DialogEffect.None;
     SfToast ToastObj;
-    SfAutoComplete<string, PersonDto> AutocompleteObj { get; set; }
 
     private List<KeyValuePair<RoleType, string>> roleTypes { get; set; } = Enum.GetValues(typeof(RoleType)).Cast<RoleType>().ToList()
     .Select(s => new { Key = s, Value = s.ToString() })
@@ -315,13 +322,15 @@
     protected override async Task OnInitializedAsync()
     {
         centerDtos = await centerRepository.GetAllCenters();
-
+        filterInfo = "";
         await GetAllPersons();
-    }
 
-    public async Task OnReset()
-    {
-        this.personDtos = await GetAllPersons();
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        var userInfo = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(user.Identity?.Name));
+        if(userInfo.PersonRole == RoleType.Admin)
+            IsAdmin = true;
+        else IsAdmin = false;
     }
 
     private void OnOpen()
@@ -379,7 +388,7 @@
             else
                 await GetAllPersons();
             StateHasChanged();
-        } 
+        }
     }
 
     public void ChangeCenter(Syncfusion.Blazor.DropDowns.ChangeEventArgs<Guid, CenterDto> args)
@@ -389,6 +398,7 @@
 
     private async Task<List<PersonDto>> GetAllPersons()
     {
+        filterInfo = "";
         personDtos = await personRepository.GetAllPersons(pageNo2.ToString(), "30");
         DisableBackIcon = false;
         DisableForwardIcon = false;
@@ -518,7 +528,8 @@
     }
     private async Task GetUserPhoto(int personnelCode)
     {
-        try{
+        try
+        {
             string personPhoto = await personRepository.GetUserPhoto(personnelCode);
             image = "";
             if(!String.IsNullOrWhiteSpace(personPhoto))
@@ -526,7 +537,7 @@
         }
         catch(Exception ex)
         {
-            
+
         }
 
     }

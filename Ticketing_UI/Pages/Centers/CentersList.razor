@@ -37,7 +37,7 @@
                         }
 
                         <SfTextBox ID="CenterName" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@centerinfo.CenterName" Enabled="false" FloatLabelType="FloatLabelType.Auto" Placeholder="نام مرکز"></SfTextBox>
-                        <SfNumericTextBox Decimals="0" ID="CenterID" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@centerinfo.CenterID" Enabled="false" FloatLabelType="FloatLabelType.Auto" Placeholder="کد مرکز"></SfNumericTextBox>
+                        <SfNumericTextBox Format="#########" Decimals="0" ID="CenterID" @onkeypress="@((e)=>Setkeyboardkeyevent(e))" @bind-Value="@centerinfo.CenterID" Enabled="false" FloatLabelType="FloatLabelType.Auto" Placeholder="کد مرکز"></SfNumericTextBox>
                     </Template>
                 </GridEditSettings>
                 <GridTemplates>
@@ -54,7 +54,7 @@
                                     <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true"></GridEditSettings>
                                     <template>
                                         <div class="col-md-2" style="display:inline-block!important">
-                                            <SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
+                                            @*<SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>*@
                                         </div>
                                     </template>
                                     <GridColumns>
@@ -69,7 +69,7 @@
                                     </GridColumns>
                                 </SfGrid>
                             </div>
-=======
+                        </div>
                         <div class="content-wrapper">
                             <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})" style="background-color:aquamarine">
                                 <GridEvents TValue="PartDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,centerdtos.Id))"></GridEvents>
@@ -89,7 +89,6 @@
                                     </GridColumn>
                                 </GridColumns>
                             </SfGrid>
->>>>>>> Stashed changes
                         </div>
 
                     </DetailTemplate>
@@ -183,7 +182,6 @@
     private bool messageVisiable = false;
     private bool warningMessageVisiable = false;
 
-<<<<<<< Updated upstream
     public bool showModal { get; set; }
     private string commandType = "";
     private PartDto selectedpartDto = new PartDto();
@@ -200,19 +198,7 @@
     {
         Console.WriteLine("Modal ok");
         showModal = false;
-    }
-
-    private string commandType = "";
-    private PartDto selectedpartDto = new PartDto();
-    private CenterDto selectCentertDto = new CenterDto();
-
-    SfToast ToastObj;
-
-    private void Setkeyboardkeyevent(KeyboardEventArgs args)
-    {
-        if(args.Key == "Enter")
-            flag = true;
-    }
+    } 
 
     private void OnClose()
     {
@@ -283,7 +269,8 @@
         }
     }
 
-    private async Task ChildGridActionHandler(ActionEventArgs<PartDto> args, Guid centerId)
+    private async Task ChildGridActionHandler(ActionEventArgs<PartDto>
+        args, Guid centerId)
     {
         var rType = args.RequestType.ToString();
         args.Data.Center = centerId;

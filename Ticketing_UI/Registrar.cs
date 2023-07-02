@@ -15,32 +15,12 @@ namespace Ticketing_UI
     {
         public static void RegisterRepositories(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddHttpContextAccessor();
-            //serviceCollection.AddTransient<IHttpClientFactory>();
+            serviceCollection.AddHttpContextAccessor(); 
             serviceCollection.AddTransient<ICenterRepository, CenterRepository>();
             serviceCollection.AddTransient<IPersonRepository, PersonRepository>();
             serviceCollection.AddTransient<IProgramRepository, ProgramRepository>();
             serviceCollection.AddTransient<ITicketRepository, TicketRepository>();
-            serviceCollection.AddScoped<IUserDataManagement, UserDataManagement>();
-
-            //var baseaddress = new Uri("https://localhost:44359/API/");
-
-            //serviceCollection.AddHttpClient<ICenterRepository, CenterRepository>(client =>
-            //{
-            //    client.BaseAddress = baseaddress;
-            //});
-            //serviceCollection.AddHttpClient<IPersonRepository, PersonRepository>(client =>
-            //{
-            //    client.BaseAddress = baseaddress;
-            //});
-            //serviceCollection.AddHttpClient<IProgramRepository, ProgramRepository>(client =>
-            //{
-            //    client.BaseAddress = baseaddress;
-            //});
-            //serviceCollection.AddHttpClient<ITicketRepository, TicketRepository>(client =>
-            //{
-            //    client.BaseAddress = baseaddress;
-            //});
+            serviceCollection.AddScoped<IUserDataManagement, UserDataManagement>(); 
 
         }
     }

@@ -1,8 +1,6 @@
 @attribute [Authorize]
 
 @page "/programsList"
-@using Blazored.Modal
-@using Blazored.Modal.Services
 @using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Cards
@@ -24,7 +22,6 @@
 @inject IPersonRepository personRepository
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
-@*@inject IModalService modal*@
 
 <div class="col-lg-12 control-section">
     <div class="content-wrapper col-lg-12col-md-12  col-sm-12 ">
@@ -49,7 +46,9 @@
                                 <SfCard ID="BasicCard">
                                     <CardHeader Title="@programdto.ProgamName" />
                                     <CardContent>
-                                        لینک برنامه :  @(programdto.ProgramLink)
+                                        لینک برنامه :
+                                        <a href="@(programdto.ProgramLink)" target="_blank">@programdto.ProgramLink</a>
+                                         
                                     </CardContent>
                                     <CardFooter>
                                         <CardFooterContent>
@@ -89,6 +88,7 @@
                                                           FloatLabelType="FloatLabelType.Auto"
                                                           OnChange="@(async(e)=>{var personinfo = await SetpersonInfo(e);
                                                                                      sellectedSupporterDto.SupporterName = personinfo.PersonName??"";} )"
+                                                          Format="#########"
                                                           Decimals="0"></SfNumericTextBox>
 
 

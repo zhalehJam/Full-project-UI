@@ -8,14 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Syncfusion.Blazor.Themes" Version="21.2.5" />
-=======
->>>>>>> Stashed changes
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="21.2.5" /> 
     <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />
   </ItemGroup>
 
