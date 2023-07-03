@@ -1,19 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ticketing.Models.Centers.Dto;
+using Newtonsoft.Json.Linq;
+using System.Net;
+using System.Net.Http.Json;
+using Ticketing.Models.Persons.Command;
 using Ticketing.Models.Persons.Dto;
 using Ticketing.Models.Persons.Repository;
-using Microsoft.AspNetCore.WebUtilities;
-using Ticketing.Models.Persons.Command;
-using System.Net.Http.Json;
-using Ticketing.Models.Centers.Command;
-using System.Net;
 
 namespace Ticketing.Repository.Persons
 {

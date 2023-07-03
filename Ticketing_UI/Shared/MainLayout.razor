@@ -33,16 +33,17 @@
 
 
 @code {
+ 
     private string userName = "";
-    
-    private async Task BeginSignOut(MouseEventArgs args)
-    {
-        await SignOutManager.SetSignOutState();
-        Navigation.NavigateTo("authentication/logout");
-    }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    private void BeginSignOut(MouseEventArgs args)
     {
+        Microsoft.AspNetCore.Components.WebAssembly.Authentication.NavigationManagerExtensions.NavigateToLogout(Navigation, "authentication/logout");
+        //Navigation.NavigateTo("authentication/logout");
+    }
+ 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    { 
         if(firstRender)
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();

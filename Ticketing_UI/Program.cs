@@ -1,4 +1,4 @@
-using Blazored.Modal; 
+
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Syncfusion.Blazor;
@@ -14,11 +14,11 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
  
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
     "OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
+ 
 builder.Services.AddSyncfusionBlazor(options => { options.EnableRtl = true; });
 builder.Services.AddScoped<SfDialogService>();
  
-
-//builder.Services.AddBlazoredModal();
+ 
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>()
                 .CreateClient("API"));
 builder.Services.AddScoped<CustomAuthorizationMessageHandler>();
@@ -46,8 +46,6 @@ builder.Services.AddOidcAuthentication(options =>
 
 });
 //builder.Services.AddApiAuthorization();
-
-builder.Services.AddBlazoredModal();
 
 Registrar.RegisterRepositories(builder.Services);
 

@@ -17,7 +17,7 @@
 <div class="col-lg-12 control-section">
     <div class="content-wrapper" style="max-width: 100%">
         <div class="e-panel-header row col-lg-3 col-md-3 col-sm-3">
-            <SfDateRangePicker TValue="DateTime" Placeholder="Choose a range" @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
+            <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ" @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
                 <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
             </SfDateRangePicker>
         </div>
@@ -152,6 +152,7 @@
     </div>
 </div>
 @code {
+<<<<<<< Updated upstream
     SfDashboardLayout dashboardObject;
     private SfChart sfChart { get; set; }
     SfAccumulationChart sfAccumulationChart1 { get; set; }
@@ -348,10 +349,7 @@
     .highcontrast .e-primary, .highcontrast .e-danger {
         width: 170px;
     }
-
-    .tailwind .sb-demo-section .container-fluid {
-        background: #F9FAFB;
-    }
+     
 
     .mobile .e-control.e-lib.e-dashboardlayout.e-responsive {
         z-index: 0;
