@@ -21,8 +21,8 @@
             <div class="d-flex flex-column-auto flex-center">
                 <Syncfusion.Blazor.Buttons.SfButton style="color:ivory ;">
                     خروج
-                <img class="thumbnail" style="width: 27px; height: 23px;"  src="images/icons/signout-icon.jpg" @onclick="BeginSignOut" title="خروج از سیستم" />
-               </Syncfusion.Blazor.Buttons.SfButton>
+                    <img class="thumbnail" style="width: 27px; height: 23px;" src="images/icons/signout-icon.jpg" @onclick="BeginSignOut" title="خروج از سیستم" />
+                </Syncfusion.Blazor.Buttons.SfButton>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
-    { 
+    {
         if(firstRender)
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();

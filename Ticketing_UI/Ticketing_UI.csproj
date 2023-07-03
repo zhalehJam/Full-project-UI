@@ -8,14 +8,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\sample-data\**" />
+    <Content Remove="wwwroot\sample-data\**" />
+    <EmbeddedResource Remove="wwwroot\sample-data\**" />
+    <None Remove="wwwroot\sample-data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\fonts\woff2\IRANSansWeb(FaNum).woff2" />
+    <Content Remove="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Black.woff2" />
+    <Content Remove="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Bold.woff2" />
+    <Content Remove="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Light.woff2" />
+    <Content Remove="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Medium.woff2" />
+    <Content Remove="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_UltraLight.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
-    <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" /> 
-    <PackageReference Include="Syncfusion.Licensing" Version="20.4.0.48" /> 
+    <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" />
+ 
+    <PackageReference Include="Syncfusion.Licensing" Version="20.4.0.48" />
+ 
   </ItemGroup>
 	
 	<PropertyGroup>
@@ -72,12 +90,12 @@
     <None Include="Authentication\Signin-oidc.razor" />
     <None Include="Authentication\UnAuthorizedUser.razor" />
     <None Include="Shared\MainLayout.razor" />
-    <None Include="wwwroot\Fonts\fonts\woff2\IRANSansWeb%28FaNum%29.woff2" />
-    <None Include="wwwroot\Fonts\fonts\woff2\IRANSansWeb%28FaNum%29_Black.woff2" />
-    <None Include="wwwroot\Fonts\fonts\woff2\IRANSansWeb%28FaNum%29_Bold.woff2" />
-    <None Include="wwwroot\Fonts\fonts\woff2\IRANSansWeb%28FaNum%29_Light.woff2" />
-    <None Include="wwwroot\Fonts\fonts\woff2\IRANSansWeb%28FaNum%29_Medium.woff2" />
-    <None Include="wwwroot\Fonts\fonts\woff2\IRANSansWeb%28FaNum%29_UltraLight.woff2" />
+    <None Include="wwwroot\fonts\woff2\IRANSansWeb(FaNum).woff2" />
+    <None Include="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Black.woff2" />
+    <None Include="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Bold.woff2" />
+    <None Include="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Light.woff2" />
+    <None Include="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_Medium.woff2" />
+    <None Include="wwwroot\fonts\woff2\IRANSansWeb(FaNum)_UltraLight.woff2" />
     <None Include="wwwroot\styles\common\fonts\open-sans-600.woff2" />
     <None Include="wwwroot\styles\common\fonts\open-sans-700.woff2" />
     <None Include="wwwroot\styles\common\fonts\open-sans-regular.woff2" />
@@ -93,7 +111,6 @@
 
   <ItemGroup>
     <Folder Include="Shared\Common\" />
-    <Folder Include="wwwroot\sample-data\" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,12 @@
-﻿/* SpinnerComponent.css */
+﻿
 
-@import url(/Fonts/styles/fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+@import url(/styles/fontiran.css);
+/*@import url(/Fonts/fontiran.css);*/
 
-.sb-body-overlay {
+/* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+
+    /* SpinnerComponent.css */
+    .sb-body-overlay {
     z-index: 10000023;
     display: block;
     position: absolute;
@@ -287,6 +291,7 @@
 .e-page-refresh {
     text-align: center;
 }
+
 
 html {
     font-family: IRANSans !important;

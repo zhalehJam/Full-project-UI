@@ -14,11 +14,11 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
  
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
     "OTcwMkAzMjMwMkUzNDJFMzBPS3JpdmtTUjlQSmZldndUek5rRHdkSUFpaEtJc296dXdJM3pCdUhzNVpjPQ==");
+ 
 builder.Services.AddSyncfusionBlazor(options => { options.EnableRtl = true; });
 builder.Services.AddScoped<SfDialogService>();
  
-
-//builder.Services.AddBlazoredModal();
+ 
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>()
                 .CreateClient("API"));
 builder.Services.AddScoped<CustomAuthorizationMessageHandler>();

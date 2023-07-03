@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Syncfusion.Blazor</id>
+    <version>19.1.0.69</version>
+    <title>Syncfusion Blazor Components</title>
+    <authors>Syncfusion Inc.</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://www.syncfusion.com/nuget/license?utm_source=nuget&amp;utm_medium=listing</licenseUrl>
+    <projectUrl>https://www.syncfusion.com/blazor-components/?utm_source=nuget&amp;utm_medium=listing</projectUrl>
+    <iconUrl>https://www.syncfusion.com/content/images/nuget/sync_logo_icon.png</iconUrl>
+    <description>Syncfusion Blazor Components are built from the ground up to be lightweight, responsive, and touch-friendly. It includes over 65+ components, including grid, chart, scheduler, barcode generator, listbox, file manager, powerpoint or presentation, excel and much more.
+
+Components Included:
+GRIDS
+    DataGrid
+    Pivot Table
+    Tree Grid
+DATA VISUALIZATION
+    Charts
+    Circular Gauge
+    Diagram
+    Heatmap chart
+    Linear Gauge
+    Maps
+    Range Selector
+    Smith Chart
+    Sparkline Charts
+    Stock Chart
+    TreeMap
+    Kanban
+    Progress Bar
+EDITORS
+    Rich Text Editor
+    In-place Editor
+    Word Processor
+CALENDARS
+    Scheduler
+    Calendar
+    DatePicker
+    DateRangePicker
+    DateTime Picker
+    TimePicker
+BUTTONS
+    Button
+    Chips
+    Dropdown Menu
+    Progress Button
+    Split Button
+DROPDOWNS
+    AutoComplete
+    ComboBox
+    Dropdown List
+    MultiSelect Dropdown
+NAVIGATION
+    Accordion
+    Context Menu
+    Menu Bar
+    Sidebar
+    Tabs
+    Toolbar
+    TreeView
+INPUTS
+    TextBox
+    Input Mask
+    Numeric Textbox
+    Radio Button
+    Checkbox
+    Color Picker
+    File Upload
+    Range Slider
+    Toggle Switch Button
+LAYOUT
+    Dialog
+    ListView
+    Splitter
+    Tooltip
+NOTIFICATIONS
+    Toast
+FORMS
+   Query Builder
+Viewer
+    PDF Viewer
+
+Helpful links:
+Documentation: https://blazor.syncfusion.com/documentation/?utm_source=nuget&amp;utm_medium=listing
+Demos: https://blazor.syncfusion.com/demos/?utm_source=nuget&amp;utm_medium=listing
+
+Support:
+Incident: https://www.syncfusion.com/support/directtrac/incidents/newincident/?utm_source=nuget&amp;utm_medium=listing
+Forum: https://www.syncfusion.com/forums/blazor-components/?utm_source=nuget&amp;utm_medium=listing
+
+This is a commercial product and requires a paid license for possession or use. Syncfusion’s licensed software, including this component, is subject to the terms and conditions of Syncfusion's EULA (https://www.syncfusion.com/eula/es/). To acquire a license, you can purchase one at https://www.syncfusion.com/sales/products or start a free 30-day trial here (https://www.syncfusion.com/account/manage-trials/start-trials).
+
+© Copyright 2021 Syncfusion, Inc. All Rights Reserved. The Syncfusion Essential Studio license and copyright applies to this distribution.</description>
+    <releaseNotes>https://blazor.syncfusion.com/documentation/release-notes/19.1.69/?utm_source=nuget&amp;utm_medium=listing</releaseNotes>
+    <copyright>Copyright 2001 - 2021 Syncfusion Inc.</copyright>
+    <tags>syncfusion blazor datagrid charts scheduler event-calendar diagram flowchart mindmap org-chart datatable richtexteditor rte html-editor markdown-editor dropdown autocomplete datepicker timepicker numericedit treeview file-upload barcode-generator listbox file-manager powerpoint-or-presentation excel dotnet razor Blazor blazor-component ui-controls ui-components tabcontrol</tags>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Microsoft.AspNetCore.Components.Web" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.ExcelExport.Net.Core" version="19.1.0.69" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Licensing" version="19.1.0.69" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.PdfExport.Net.Core" version="19.1.0.69" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Microsoft.AspNetCore.Components.Web" version="3.1.8" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.ExcelExport.Net.Core" version="19.1.0.69" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Licensing" version="19.1.0.69" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.PdfExport.Net.Core" version="19.1.0.69" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
