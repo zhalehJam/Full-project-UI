@@ -126,7 +126,7 @@
                         اطلاعات برنامه
                     </Header>
                     <Content>
-                        <SfTextBox @bind-Value="@selectedProgramDto.ProgamName" Placeholder="نام برنامه" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
+                        <SfTextBox @bind-Value="@selectedProgramDto.ProgamName" Enabled="isNew" Placeholder="نام برنامه" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
 
                         <SfTextBox @bind-Value="@selectedProgramDto.ProgramLink" Placeholder="لینک" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
                         @*<ValidationMessage For="@(() => selectedProgramDto.ProgramLink)" />*@
@@ -242,6 +242,7 @@
     private bool DeletSupporterwarningMessageVisiable = false;
     private bool flag = false;
     private bool Check = false;
+
 
 
     private async Task<PersonDto> SetpersonInfo(ChangeEventArgs args)
