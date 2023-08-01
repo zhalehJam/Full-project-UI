@@ -48,29 +48,6 @@
                             string centerName = centerdtos.CenterName.ToString();
                         }
                         <div class="content-wrapper">
-                            <div class="row">
-                                <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})">
-                                    <GridEvents TValue="PartDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,centerdtos.Id))"></GridEvents>
-                                    <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true"></GridEditSettings>
-                                    <template>
-                                        <div class="col-md-2" style="display:inline-block!important">
-                                            @*<SfTextBox ID="ProgramId" Enabled="false" @bind-Value="@(gid)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>*@
-                                        </div>
-                                    </template>
-                                    <GridColumns>
-                                        <GridColumn Field=@nameof(PartDto.Id) Visible=false HeaderText="Id" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
-                                        <GridColumn Field=@nameof(PartDto.PartName) HeaderText="نام واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
-                                        <GridColumn Field=@nameof(PartDto.PartID) HeaderText="کد واحد" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
-                                        <GridColumn HeaderText="عملیات" Width="150">
-                                            <GridCommandColumns>
-                                                <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
-                                            </GridCommandColumns>
-                                        </GridColumn>
-                                    </GridColumns>
-                                </SfGrid>
-                            </div>
-                        </div>
-                        <div class="content-wrapper">
                             <SfGrid @ref="ChildGrid" DataSource="@partDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})" style="background-color:aquamarine">
                                 <GridEvents TValue="PartDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,centerdtos.Id))"></GridEvents>
                                 <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
@@ -164,6 +141,10 @@
 
     .msg-template-section .e-message .e-btn {
         padding: 0;
+    }
+
+    .e-grid.e-rtl.e-default .e-detailcell, .e-grid.e-rtl.e-default.e-bothlines .e-detailcell {
+        border-right-style: solid; 
     }
 </style>
 @code {
