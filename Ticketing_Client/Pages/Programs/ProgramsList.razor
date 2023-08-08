@@ -1,0 +1,497 @@
+@attribute [Authorize]
+
+@page "/programsList"
+@using Microsoft.AspNetCore.Authorization;
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Grids;
+@using Syncfusion.Blazor.Lists
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Notifications
+
+@using Ticketing.Models.Persons.Dto;
+@using Ticketing.Models.Persons.Repository;
+@using Ticketing.Models.Programs.Command
+@using Ticketing.Models.Programs.Dto
+@using Ticketing.Models.Programs.Repository 
+
+@inject IPersonRepository personRepository
+@inject IProgramRepository programRepository
+@inject IHttpClientFactory ClientFactory
+
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper col-lg-12col-md-12  col-sm-12 ">
+        <div class="row">
+            <SfButton CssClass=".property-panel-section .property-panel-content col-lg-3 col-md-3 col-sm-3 display:inline-block!important " style="background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:100px; margin-right:23px; margin-bottom:10px" @onclick="@(async e => {NewProgram(); })">افزودن</SfButton>
+            <hr />
+            <EditForm Model="@programDtos">
+                <div class="e-card-layout control-section  col-lg-12col-md-12  col-sm-12 card-control-section tile_layout" style="display:inline-block!important ; ">
+
+
+                    @if(this.programDtos.Count == 0)
+                    {
+                        <div class="e-error">
+                            <div class="e-error-content">اطلاعاتی یافت نشد.</div>
+                        </div>
+                    }
+                    else
+                    {
+                        @foreach(ProgramDto programdto in programDtos)
+                        {
+                            <div class="card_sample_1 col-lg-3 col-md-3 col-sm-3" style=" padding: 10px; display:inline-block!important ; ">
+                                <SfCard ID="BasicCard">
+                                    <CardHeader Title="@programdto.ProgamName" />
+                                    <CardContent>
+                                        لینک برنامه :
+                                        <a href="@(programdto.ProgramLink)" target="_blank">@programdto.ProgramLink</a>
+
+                                    </CardContent>
+                                    <CardFooter>
+                                        <CardFooterContent>
+                                            <div class="row" style="align-items:center">
+                                                <SfButton CssClass="e-btn e-outline e-primary col-lg-3 me-4" style=" border-color: #eff0f3; background-color: rgb(211 239 225 / 52%);" @onclick="@( e => {
+                                                 EditButtonClick(programdto);  })">ویرایش</SfButton>
+                                                <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3;background-color: #e75cbc4d;" @onclick="(  e=>{  ClickDeleteButton(programdto);})">حذف</SfButton>
+                                                <SfButton CssClass="e-btn e-outline e-primary col-lg-3  me-4" style="border-color: #eff0f3; background-color: rgb(0 29 237 / 19%);" @onclick="( e=>{ GetSupporterList(programdto);})">پشتیبان ها</SfButton>
+
+                                            </div>
+                                        </CardFooterContent>
+                                    </CardFooter>
+                                </SfCard>
+                            </div>
+                        }
+                    }
+                </div>
+            </EditForm>
+
+            <SfDialog @ref="SupporterDialog" @bind-Visible="showSupportersList" Width="750px" IsModal="true" ShowCloseIcon="true">
+                <DialogTemplates>
+                    <Header>
+                        لیست پشتیبان ها
+                    </Header>
+                    <Content>
+                        <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ; ">
+
+                            <SfGrid @ref="ChildGrid" DataSource="@programSupporterDtos" AllowSorting="true" Toolbar="@(new string[]{"Add"})">
+                                <GridEvents TValue="ProgramSupporterDto" OnActionBegin="@((e)=>ChildGridActionHandler(e,selectedProgramDto.Id))"></GridEvents>
+                                <GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="@EditMode.Dialog" Dialog="DialogParams" ShowConfirmDialog="true">
+                                    <Template Context="ChildName">
+                                        <SfTextBox Enabled="false" @bind-Value="@(selectedProgramDto.ProgamName)" FloatLabelType="FloatLabelType.Auto" Placeholder="برنامه"></SfTextBox>
+                                        <SfNumericTextBox ID="SupporterpersonID"
+                                                          @bind-Value="@sellectedSupporterDto.SupporterpersonID"
+                                                          Placeholder="کد پرسنلی پشتیبان"
+                                                          @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                          FloatLabelType="FloatLabelType.Auto"
+                                                          OnChange="@(async(e)=>{var personinfo = await SetpersonInfo(e);
+                                                                                     sellectedSupporterDto.SupporterName = personinfo.PersonName??"";} )"
+                                                          Format="#########"
+                                                          Decimals="0"></SfNumericTextBox>
+
+
+                                        <SfTextBox ID="SupporterName"
+                                                   @bind-Value="@sellectedSupporterDto.SupporterName"
+                                                   Placeholder="نام پشتیبان"
+                                                   FloatLabelType="FloatLabelType.Auto"
+                                                   Enabled="false">
+                                        </SfTextBox>
+                                    </Template>
+                                </GridEditSettings>
+                                <GridColumns>
+                                    <GridColumn Field=@nameof(ProgramSupporterDto.Id) Visible=false HeaderText="Id" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn Field=@nameof(ProgramSupporterDto.ProgramId) HeaderText="ProgramId" Visible=false TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn Field=@nameof(ProgramSupporterDto.SupporterpersonID) HeaderText="کدپرسنلی" TextAlign="TextAlign.Right" Width="110"> </GridColumn>
+                                    <GridColumn Field=@nameof(ProgramSupporterDto.SupporterName) HeaderText="نام پشتیبان" Width="110"></GridColumn>
+                                    <GridColumn HeaderText="عملیات" Width="150">
+                                        <GridCommandColumns>
+                                            <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                                        </GridCommandColumns>
+                                    </GridColumn>
+                                </GridColumns>
+                            </SfGrid>
+                        </div>
+
+                    </Content>
+                </DialogTemplates>
+                <DialogAnimationSettings Effect="DialogEffect.SlideTop"></DialogAnimationSettings>
+                <DialogEvents Opened="OnOpensupportersDialog" Closed="OnClosesupportersDialog"></DialogEvents>
+            </SfDialog>
+
+            <SfDialog @bind-Visible="showEditProgram" Width="450px" IsModal="true">
+                <DialogTemplates>
+                    <Header>
+                        اطلاعات برنامه
+                    </Header>
+                    <Content>
+                        <SfTextBox @bind-Value="@selectedProgramDto.ProgamName" Enabled="isNew" Placeholder="نام برنامه" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
+
+                        <SfTextBox @bind-Value="@selectedProgramDto.ProgramLink" Placeholder="لینک" FloatLabelType="FloatLabelType.Auto"></SfTextBox>
+                        @*<ValidationMessage For="@(() => selectedProgramDto.ProgramLink)" />*@
+
+                    </Content>
+                </DialogTemplates>
+                <DialogAnimationSettings Effect="DialogEffect.SlideTop"></DialogAnimationSettings>
+                <DialogEvents Opened="OnOpen" Closed="OnClose"></DialogEvents>
+                <DialogButtons>
+                    <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await SaveButtonClick(selectedProgramDto))"></DialogButton>
+                    <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+                </DialogButtons>
+            </SfDialog>
+
+        </div>
+    </div>
+
+    <SfDialog @bind-Visible="DeletSupporterwarningMessageVisiable" Width="20%">
+        <DialogTemplates>
+            <Header>
+                حذف
+            </Header>
+            <Content>
+                <div class="content-wrapper">
+                    <div class="row">
+                        از حذف این اطلاعات مطمئن هستید؟
+                    </div>
+                </div>
+            </Content>
+        </DialogTemplates>
+        <DialogButtons>
+            <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await RemoveSupporter(sellectedSupporterDto))"></DialogButton>
+            <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+        </DialogButtons>
+    </SfDialog>
+
+    <SfDialog @bind-Visible="warningMessageVisiable" Width="20%">
+        <DialogTemplates>
+            <Header>
+                حذف
+            </Header>
+            <Content>
+                <div class="content-wrapper">
+                    <div class="row">
+                        از حذف این اطلاعات مطمئن هستید؟
+                    </div>
+                </div>
+            </Content>
+        </DialogTemplates>
+        <DialogButtons>
+            <DialogButton Content="OK" IsPrimary="true" OnClick="@(async e=> await DeleteProgram(selectedProgramDto))"></DialogButton>
+            <DialogButton Content="Cancel" IsPrimary="true" OnClick="OnClose"></DialogButton>
+        </DialogButtons>
+    </SfDialog>
+</div>
+<div class="col-lg-4 control-section">
+    <SfToast @ref="ToastObj" ID="toast_type">
+        <ToastPosition X="@ToastPosition" Y="Bottom"></ToastPosition>
+    </SfToast>
+</div>
+
+<style>
+    #BasicCard, #NewIconCard {
+        height: 120px;
+        /*margin: 16px;*/
+    }
+
+    .e-card {
+        margin-bottom: 10px !important;
+    }
+
+    #predefinedDialogDefault {
+        margin: 25px 0 0 15px;
+    }
+
+        #predefinedDialogDefault .e-btn {
+            margin-right: 5px;
+        }
+
+        #predefinedDialogDefault .status {
+            margin-top: 20px;
+            font-size: 16px;
+            display: block;
+        }
+
+    .e-card {
+        -webkit-tap-highlight-color: #0d6efd;
+        background-color: #fbfbfb;
+        border: 1px solid #dee2e6;
+        box-shadow: none;
+        color: #212529;
+        outline: none;
+    }
+</style>
+
+
+@code {
+    private List<ProgramDto> programDtos = new List<ProgramDto>();
+    private List<ProgramSupporterDto> programSupporterDtos = new List<ProgramSupporterDto>();
+    private ProgramSupporterDto sellectedSupporterDto = new ProgramSupporterDto();
+    private ProgramDto selectedProgramDto = new ProgramDto() { ProgramLink = "-" };
+    private DialogSettings DialogParams = new DialogSettings { MinHeight = "450px", Width = "550px" };
+    private SfGrid<ProgramSupporterDto> ChildGrid { get; set; }
+    private SfToast ToastObj;
+
+    private SfDialog SupporterDialog { get; set; }
+
+    private string ToastPosition = "Right";
+    private bool showEditProgram { get; set; } = false;
+    private bool showSupportersList = false;
+    private bool isNew = true;
+    private bool warningMessageVisiable = false;
+    private bool DeletSupporterwarningMessageVisiable = false;
+    private bool flag = false;
+    private bool Check = false;
+
+
+
+    private async Task<PersonDto> SetpersonInfo(ChangeEventArgs args)
+    {
+        var personInfos = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(args.Value));
+        ChildGrid.PreventRender(false);
+        return personInfos;
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await GetAllPrograms();
+    }
+
+    private async Task<List<ProgramDto>> GetAllPrograms()
+    {
+        programDtos = await programRepository.GetAllProgram();
+        return programDtos;
+    }
+
+    private async Task ChildGridActionHandler(ActionEventArgs<ProgramSupporterDto> args, Guid programId)
+    {
+        if(args.Data == null)
+            return;
+        var rType = args.RequestType.ToString();
+        args.Data.ProgramId = programId;
+        if(flag)
+        {
+            args.Cancel = true;
+            flag = false;
+        }
+        else
+        {
+            if(rType == "Save")
+            {
+                if(args.Action == "Add")
+                {
+                    try
+                    {
+                        await AddSupporter(args.Data);
+                        await GetAllPrograms();
+                        programSupporterDtos = selectedProgramDto.Supporters;
+                        ChildGrid.PreventRender(false);
+
+                        StateHasChanged();
+                        args.Cancel = true;
+                    }
+                    catch(Exception ex)
+                    {
+                        var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+                        await this.ToastObj.ShowAsync(t);
+                        args.Cancel = true;
+                    }
+                    finally
+                    {
+                        ChildGrid.PreventRender(false);
+                        await ChildGrid.Refresh();
+                    }
+                }
+            }
+            else if(rType == "Delete")
+            {
+                try
+                {
+                    ClickDeletesupporterButton(args.Data);
+                    args.Cancel = true;
+                }
+                catch(Exception ex)
+                {
+                    var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+                    await this.ToastObj.ShowAsync(t);
+                    args.Cancel = true;
+                }
+                finally
+                {
+                    ChildGrid.PreventRender(false);
+                    await ChildGrid.Refresh();
+
+                }
+            }
+            else
+            {
+                sellectedSupporterDto = args.Data;
+            }
+        }
+    }
+
+    private async Task AddSupporter(ProgramSupporterDto programSupporterDto)
+    {
+        AddProgramSupporterCommand addProgramSupporterCommand = new AddProgramSupporterCommand()
+            {
+                ProgramId = programSupporterDto.ProgramId,
+                SupporterID = programSupporterDto.SupporterpersonID
+            };
+        await programRepository.AddProgramSupporter(addProgramSupporterCommand);
+        selectedProgramDto.Supporters.Add(programSupporterDto);
+        programSupporterDtos = selectedProgramDto.Supporters;
+        var t = new ToastModel { Title = "Success!", Content = "پشتیبان مورد نظر ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        await this.ToastObj.ShowAsync(t);
+
+    }
+
+    private async Task RemoveSupporter(ProgramSupporterDto programSupporterDto)
+    {
+        DeleteProgramSupporterCommand deleteProgramSupporterCommand = new DeleteProgramSupporterCommand()
+            {
+                ProgramId = programSupporterDto.ProgramId,
+                SupporterID = programSupporterDto.SupporterpersonID
+            };
+        await programRepository.DeletePorogramSupporter(deleteProgramSupporterCommand);
+        selectedProgramDto.Supporters.Remove(programSupporterDto);
+
+        programDtos = await GetAllPrograms();
+        var t = new ToastModel { Title = "Success!", Content = "پشتیبان مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+        await this.ToastObj.ShowAsync(t);
+
+        programSupporterDtos = selectedProgramDto.Supporters;
+        StateHasChanged();
+        DeletSupporterwarningMessageVisiable = false;
+        ChildGrid.PreventRender(false);
+        ChildGrid.Refresh();
+    }
+
+    private void Setkeyboardkeyevent(KeyboardEventArgs args)
+    {
+        if(args.Key == "Enter")
+            flag = true;
+    }
+
+    private void EditButtonClick(ProgramDto programDto)
+    {
+        selectedProgramDto = programDto;
+        showEditProgram = true;
+        isNew = false;
+    }
+
+    private void ClickDeleteButton(ProgramDto programDto)
+    {
+        warningMessageVisiable = true;
+        selectedProgramDto = programDto;
+    }
+
+    private void GetSupporterList(ProgramDto programDto)
+    {
+        selectedProgramDto = programDto;
+        programSupporterDtos = programDto.Supporters;
+        showSupportersList = true;
+    }
+
+    private void OnOpen()
+    {
+        showEditProgram = true;
+    }
+
+    private void OnClose()
+    {
+        showEditProgram = false;
+        warningMessageVisiable = false;
+    }
+
+    private void OnOpensupportersDialog()
+    {
+        showSupportersList = true;
+    }
+
+    private void OnClosesupportersDialog()
+    {
+        showSupportersList = false;
+        warningMessageVisiable = false;
+    }
+
+    private async Task SaveButtonClick(ProgramDto programDto)
+    {
+        try
+        {
+            if(isNew)
+            {
+                CreateProgramCommand createPersonCommand = new CreateProgramCommand()
+                    {
+                        ProgramName = programDto.ProgamName,
+                        ProgramLink = programDto.ProgramLink
+
+                    };
+                await programRepository.CreateProgram(createPersonCommand);
+            }
+            else
+            {
+                UpdateProgramLinkCommand updateProgramLinkCommand = new UpdateProgramLinkCommand()
+                    {
+                        Id = programDto.Id,
+                        ProgramLink = programDto.ProgramLink
+                    };
+                await programRepository.UpdateProgramLink(updateProgramLinkCommand);
+            }
+
+            var t = new ToastModel { Title = "Success!", Content = "اطلاعات برنامه ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+            await this.ToastObj.ShowAsync(t);
+        }
+        catch(Exception ex)
+        {
+            var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+            await this.ToastObj.ShowAsync(t);
+            showEditProgram = false;
+        }
+        finally
+        {
+
+            OnClose();
+            selectedProgramDto = new ProgramDto();
+            await GetAllPrograms();
+            StateHasChanged();
+        }
+    }
+
+    private void NewProgram()
+    {
+        selectedProgramDto = new ProgramDto();
+        showEditProgram = true;
+        isNew = true;
+    }
+
+    private void ClickDeletesupporterButton(ProgramSupporterDto programSupporterDto)
+    {
+        DeletSupporterwarningMessageVisiable = true;
+        sellectedSupporterDto = programSupporterDto;
+    }
+
+    private async Task DeleteProgram(ProgramDto programDto)
+    {
+        try
+        {
+            DeleteProgramCommand deletePersonCommand = new DeleteProgramCommand()
+                {
+                    Id = programDto.Id
+                };
+
+            await programRepository.DeleteProgram(deletePersonCommand);
+
+            var t = new ToastModel { Title = "Success!", Content = "برنامه مورد نظر حذف شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
+            await this.ToastObj.ShowAsync(t);
+            var programDtos = await GetAllPrograms();
+            StateHasChanged();
+            warningMessageVisiable = false;
+
+        }
+        catch(Exception ex)
+        {
+            var t = new ToastModel { Title = "خطا!", Content = ex.Message.ToString(), CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
+            await this.ToastObj.ShowAsync(t);
+            warningMessageVisiable = false;
+        }
+    }
+}

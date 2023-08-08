@@ -17,16 +17,19 @@ namespace Ticketing.Repository.Tickets
     {
         private readonly JsonSerializerOptions _options;
         private readonly HttpClient _httpClient;
+        private readonly TokenProvider _tokenProvider;
 
-        public TicketRepository(IHttpClientFactory clientFactory)
+        public TicketRepository(IHttpClientFactory clientFactory, TokenProvider tokenProvider)
         {
+            _tokenProvider = tokenProvider;
             _httpClient = clientFactory.CreateClient("API");
             _httpClient.DefaultRequestHeaders.Add("X-Pagination", "CustomValue");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_tokenProvider.AccessToken}");
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-
         }
         public async Task<List<TicketDto>> GetUserAllTickets(DateTime fromDate, DateTime toDate)
         {
+            var token = _tokenProvider.AccessToken;
             List<TicketDto> ticketList = new List<TicketDto>();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("fromDate", fromDate.ToString());

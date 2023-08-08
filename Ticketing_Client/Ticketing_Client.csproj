@@ -1,0 +1,94 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>f7000baf-7955-4933-a65d-60e950420f6b</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Fonts\woff2\IRANSansWeb(FaNum).woff2" />
+    <Content Remove="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Black.woff2" />
+    <Content Remove="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Bold.woff2" />
+    <Content Remove="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Light.woff2" />
+    <Content Remove="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Medium.woff2" />
+    <Content Remove="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_UltraLight.woff2" />
+    <Content Remove="wwwroot\styles\common\fonts\open-sans-600.woff2" />
+    <Content Remove="wwwroot\styles\common\fonts\open-sans-700.woff2" />
+    <Content Remove="wwwroot\styles\common\fonts\open-sans-regular.woff2" />
+    <Content Remove="wwwroot\styles\common\fonts\sbicons.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+    <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Authentication\RedirectToLogin.razor" />
+    <None Include="Authentication\UnAuthorizedUser.razor" />
+    <None Include="Shared\MainLayout.razor" />
+    <None Include="Shared\NavMenu.razor" />
+    <None Include="Shared\SurveyPrompt.razor" />
+    <None Include="wwwroot\css\bootstrap\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\open-iconic\FONT-LICENSE" />
+    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+    <None Include="wwwroot\css\open-iconic\ICON-LICENSE" />
+    <None Include="wwwroot\css\open-iconic\README.md" />
+    <None Include="wwwroot\Fonts\woff2\IRANSansWeb(FaNum).woff2" />
+    <None Include="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Black.woff2" />
+    <None Include="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Bold.woff2" />
+    <None Include="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Light.woff2" />
+    <None Include="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_Medium.woff2" />
+    <None Include="wwwroot\Fonts\woff2\IRANSansWeb(FaNum)_UltraLight.woff2" />
+    <None Include="wwwroot\styles\common\fonts\open-sans-600.woff2" />
+    <None Include="wwwroot\styles\common\fonts\open-sans-700.woff2" />
+    <None Include="wwwroot\styles\common\fonts\open-sans-regular.woff2" />
+    <None Include="wwwroot\styles\common\fonts\sbicons.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="appsettings.Production.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Centers\CentersList.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Persons\PersonsList.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Programs\ProgramsList.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Tickets\TicketsList.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj" />
+    <ProjectReference Include="..\Ticketing.Client.Contracts\Ticketing.Client.Contracts.csproj" />
+    <ProjectReference Include="..\Ticketing.Models\Ticketing.Models.csproj" />
+    <ProjectReference Include="..\Ticketing.Repository\Ticketing.Repository.csproj" /> 
+  </ItemGroup>
+
+</Project>

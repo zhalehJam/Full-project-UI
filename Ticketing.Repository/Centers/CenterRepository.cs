@@ -17,10 +17,16 @@ namespace Ticketing.Repository.Centers
     public class CenterRepository : ICenterRepository
     {
         private readonly HttpClient _httpClient;
+        private readonly TokenProvider _tokenProvider;
 
-        public CenterRepository(HttpClient httpClient)
+
+        public CenterRepository(IHttpClientFactory clientFactory, TokenProvider tokenProvider)
         {
-            _httpClient = httpClient;
+
+            _tokenProvider = tokenProvider;
+            _httpClient = clientFactory.CreateClient("API");
+            _httpClient.DefaultRequestHeaders.Add("X-Pagination", "CustomValue");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_tokenProvider.AccessToken}");
         }
 
         public async Task<List<CenterDto>> GetAllCenters()

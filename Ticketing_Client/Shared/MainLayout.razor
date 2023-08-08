@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization;
+@using Syncfusion.Blazor.Cards
+@using System.IdentityModel.Tokens.Jwt;
+@using Ticketing.Repository;
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager Navigation
+@inject TokenProvider TokenProvider 
+
+<div dir="rtl" class="page">
+    <div class="sidebar">
+        <NavMenu userName="@userName" />
+    </div>
+
+
+    <main>
+
+        <div class="top-row px-4">
+            <div class="d-flex flex-column-auto flex-center">
+                <Syncfusion.Blazor.Buttons.SfButton style="color:ivory ;" @onclick="BeginSignOut">
+                    خروج
+                    <img class="thumbnail" style="width: 27px; height: 23px;" src="images/icons/signout-icon.jpg" title="خروج از سیستم" />
+                </Syncfusion.Blazor.Buttons.SfButton>
+            </div>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+
+@code {
+    private string userName = "";
+    private bool isinvalidtoken = false;
+
+    private void BeginSignOut(MouseEventArgs args)
+    {
+        Navigation.NavigateTo("/logout", true);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+        if (firstRender)
+        {
+            var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+
+            var user = authState.User; 
+
+            string r = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
+            userName = r ?? "";
+            if (user.Identity!.IsAuthenticated == false) return;
+            StateHasChanged();
+        }
+        else
+        {
+            var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+            string r = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
+            userName = r ?? "";
+        } 
+        var jwtToken = new JwtSecurityToken(TokenProvider.AccessToken);
+        if ((jwtToken == null)|| (jwtToken.ValidTo < DateTime.UtcNow))
+        {
+            Navigation.NavigateTo("/login", true);
+        }
+    }
+
+    public bool _isEmptyOrInvalid(string token)
+    {
+        if (string.IsNullOrEmpty(token))
+        {
+            return true;
+        }
+
+        var jwtToken = new JwtSecurityToken(token);
+        return (jwtToken == null) || (jwtToken.ValidFrom > DateTime.UtcNow) || (jwtToken.ValidTo < DateTime.UtcNow);
+    }
+}

@@ -12,10 +12,15 @@ namespace Ticketing.Repository.Persons
     public class PersonRepository : IPersonRepository
     {
         private readonly HttpClient _httpClient;
+        private readonly TokenProvider _tokenProvider;
 
-        public PersonRepository(HttpClient httpClient)
+        public PersonRepository(IHttpClientFactory clientFactory, TokenProvider tokenProvider)
         {
-            _httpClient = httpClient;
+            _httpClient = clientFactory.CreateClient("API");  
+            _tokenProvider = tokenProvider; 
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_tokenProvider.AccessToken}");
+            _httpClient.DefaultRequestHeaders.Add("X-Pagination", "CustomValue");
+
         }
         public async Task<List<PersonDto>> GetAllPersons()
         {
@@ -28,14 +33,17 @@ namespace Ticketing.Repository.Persons
 
         public async Task<PersonDto> GetPersonById(Guid Id)
         {
+
             PersonDto? personDtos = new PersonDto();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("Id", Id.ToString());
             string request = QueryHelpers.AddQueryString("Person/GetPersonById", parameters);
             var response = await _httpClient.GetAsync(request);
-            var content = await response.Content.ReadAsStringAsync();
-            personDtos = GetPersonDtoFromContent(content).First();
-
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                personDtos = GetPersonDtoFromContent(content).First();
+            }
             return personDtos;
         }
         public async Task<PersonDto> GetPersonInfoByPersonelCode(int PersonnelCode)
