@@ -9,17 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Repository", "Tic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{F5941340-B7AA-42CF-8CBE-E262F0EC1B4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing_UI", "Ticketing_UI\Ticketing_UI.csproj", "{92380270-AB52-4068-8B60-FEC8BD387BBB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Core", "Framework\Framework.Core\Framework.Core.csproj", "{07A5750E-0EB1-46D3-A05F-6F7FE5E101CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UserDataManagement", "Framework\Framework.UserDataManagement\Framework.UserDataManagement.csproj", "{90AA6B98-1A61-4A8F-9D18-330F9F712896}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Pagination", "Framework\Framework.Pagination\Framework.Pagination.csproj", "{540D3B50-5C4B-4D57-A3FD-CDF119162776}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Contract", "Ticketing.Contract\Ticketing.Contract.csproj", "{9CBB3389-178E-4468-95FC-45B98FD5EA6E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Client.Contracts", "Ticketing.Client.Contracts\Ticketing.Client.Contracts.csproj", "{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing_Client", "Ticketing_Client\Ticketing_Client.csproj", "{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{019391D3-E5FB-44BC-9145-6348F59F9407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{019391D3-E5FB-44BC-9145-6348F59F9407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{019391D3-E5FB-44BC-9145-6348F59F9407}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92380270-AB52-4068-8B60-FEC8BD387BBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07A5750E-0EB1-46D3-A05F-6F7FE5E101CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07A5750E-0EB1-46D3-A05F-6F7FE5E101CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A5750E-0EB1-46D3-A05F-6F7FE5E101CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,14 +45,14 @@ Global
 		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

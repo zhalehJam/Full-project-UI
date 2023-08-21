@@ -12,10 +12,15 @@ namespace Ticketing.Repository.Programs
     public class ProgramRepository : IProgramRepository
     {
         private readonly HttpClient _httpClient;
+        private readonly TokenProvider _tokenProvider;
 
-        public ProgramRepository(HttpClient httpClient)
+        public ProgramRepository(IHttpClientFactory clientFactory, TokenProvider tokenProvider)
         {
-            _httpClient = httpClient;
+
+            _tokenProvider = tokenProvider;
+            _httpClient = clientFactory.CreateClient("API");
+            _httpClient.DefaultRequestHeaders.Add("X-Pagination", "CustomValue");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_tokenProvider.AccessToken}");
         }
         public async Task<List<ProgramDto>> GetAllProgram()
         {

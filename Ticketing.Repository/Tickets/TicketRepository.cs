@@ -17,16 +17,19 @@ namespace Ticketing.Repository.Tickets
     {
         private readonly JsonSerializerOptions _options;
         private readonly HttpClient _httpClient;
+        private readonly TokenProvider _tokenProvider;
 
-        public TicketRepository(IHttpClientFactory clientFactory)
+        public TicketRepository(IHttpClientFactory clientFactory, TokenProvider tokenProvider)
         {
+            _tokenProvider = tokenProvider;
             _httpClient = clientFactory.CreateClient("API");
             _httpClient.DefaultRequestHeaders.Add("X-Pagination", "CustomValue");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_tokenProvider.AccessToken}");
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-
         }
         public async Task<List<TicketDto>> GetUserAllTickets(DateTime fromDate, DateTime toDate)
         {
+            var token = _tokenProvider.AccessToken;
             List<TicketDto> ticketList = new List<TicketDto>();
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("fromDate", fromDate.ToString());
@@ -53,12 +56,17 @@ namespace Ticketing.Repository.Tickets
         private static List<TicketDto> GetTicketDtoFromContent(string content)
         {
             List<TicketDto> ticketDtos = new List<TicketDto>();
-            JArray jsonResponse = JArray.Parse(content);
-
-            foreach(var item in jsonResponse)
+            if (!string.IsNullOrWhiteSpace(content))
             {
-                var dto = JsonConvert.DeserializeObject<TicketDto>(item.ToString());
-                ticketDtos.Add(dto);
+
+
+                JArray jsonResponse = JArray.Parse(content);
+
+                foreach (var item in jsonResponse)
+                {
+                    var dto = JsonConvert.DeserializeObject<TicketDto>(item.ToString());
+                    ticketDtos.Add(dto);
+                }
             }
             return ticketDtos;
         }
@@ -80,7 +88,7 @@ namespace Ticketing.Repository.Tickets
             List<TicketDto> ticketList = new List<TicketDto>();
             var response = await _httpClient.GetAsync($"Ticket/GetUserTicketsByDateRage?{parameters.ToQuery()}");
             var content = await response.Content.ReadAsStringAsync();
-            if(!response.IsSuccessStatusCode)
+            if (!response.IsSuccessStatusCode)
             {
                 throw new ApplicationException(content);
             }
@@ -114,11 +122,11 @@ namespace Ticketing.Repository.Tickets
                 Content = JsonContent.Create(command)
             };
             var postResponse = await _httpClient.SendAsync(postRequest);
-            if(!postResponse.IsSuccessStatusCode)
+            if (!postResponse.IsSuccessStatusCode)
             {
                 var error = await postResponse.Content.ReadAsStringAsync();
                 string errormessage = error.Split("\r")[0].Split(":")[1];
-                if(postResponse.StatusCode == HttpStatusCode.InternalServerError)
+                if (postResponse.StatusCode == HttpStatusCode.InternalServerError)
                 {
                     throw new Exception(errormessage);
                 }

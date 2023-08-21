@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Framework.Pagination;
+using Ticketing.Client.Contracts.Ticket.Queries;
 using Ticketing.Models.Persons.Command;
 using Ticketing.Models.Persons.Dto;
 
@@ -17,6 +14,7 @@ namespace Ticketing.Models.Persons.Repository
         Task UpdatePerson(UpdatePersonCommand updatePersonCommand);
         Task DeletePerson(DeletePersonCommand deletePersonCommand);
         Task<PersonDto> GetPersonInfoByPersonelCode(int PersonnelCode);
+        Task<PagingResponse<PersonDto>> GetPersonInfoByFilters(GetPersonInfoByFiltersQuery getPersonInfoByFiltersQuery); 
         Task<string>  GetUserPhoto(int personnelCode);
     }
 }

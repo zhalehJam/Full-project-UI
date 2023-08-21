@@ -1,0 +1,31 @@
+﻿@page "/signin-oidc"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavManager
+
+<p>
+    id_token is : @id_token
+</p>
+<p>
+    scope is : @scope
+</p>
+<p>
+    state is : @state
+</p>
+@code {
+    [Parameter] public string id_token { get; set; }
+    [Parameter] public string scope { get; set; }
+    [Parameter] public string state { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("id_token", out var id_tokenValue))
+        {
+            id_token = Convert.ToString(id_tokenValue);
+        }
+    }
+
+
+}

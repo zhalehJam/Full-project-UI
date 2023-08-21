@@ -1,0 +1,69 @@
+﻿@using System.IdentityModel.Tokens.Jwt;
+@using Ticketing.Repository;
+@inject TokenProvider TokenProvider
+
+
+@using Framework.Core.UserDataManagement
+@using Microsoft.AspNetCore.Components.Authorization
+@*@using Ticketing_UI.Shared.Layouts;*@
+@inject IUserDataManagement userDataManager
+@inject NavigationManager Navigation
+
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+           
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)">
+               
+                <NotAuthorized>
+                    @if (!context.User.Identity!.IsAuthenticated)
+                    {
+                        <RedirectToLogin />
+                    }
+                    else
+                    {
+                        <p>شما برای دسترسی به این قسمت باید احراز هویت شوید</p>
+                    }
+                </NotAuthorized>
+            </AuthorizeRouteView>
+
+        </Found>
+        <NotFound>
+            <CascadingAuthenticationState>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <p>Sorry, there's nothing at this address.</p>
+                </LayoutView>
+            </CascadingAuthenticationState>
+           @* <PageTitle>Error 404</PageTitle>
+            <LayoutView Layout="typeof(MainLayout)">
+                <p>نتیجه ای در این آدرس وجود ندارد</p>
+            </LayoutView>*@
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+
+@code {
+    [Parameter]
+    public InitialApplicationState? InitialState { get; set; }
+    private bool isinvalidtoken = false;
+    protected override Task OnInitializedAsync()
+    {
+        TokenProvider.AccessToken = InitialState?.AccessToken;
+        TokenProvider.RefreshToken = InitialState?.RefreshToken;
+        TokenProvider.XsrfToken = InitialState?.XsrfToken;
+        isinvalidtoken= _isEmptyOrInvalid(TokenProvider.AccessToken);
+       
+        return base.OnInitializedAsync();
+    }
+
+    public bool _isEmptyOrInvalid(string token)
+    {
+        if (string.IsNullOrEmpty(token))
+        {
+            return true;
+        }
+
+        var jwtToken = new JwtSecurityToken(token);
+        return (jwtToken == null) || (jwtToken.ValidFrom > DateTime.UtcNow) || (jwtToken.ValidTo < DateTime.UtcNow);
+    }
+}
