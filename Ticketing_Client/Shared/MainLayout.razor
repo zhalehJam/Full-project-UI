@@ -5,7 +5,16 @@
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager Navigation
-@inject TokenProvider TokenProvider 
+@inject TokenProvider TokenProvider
+<style>
+    .e-btn, .e-css.e-btn {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        background-color: #94c7f500;
+        border-color: #3b3e4000;
+        color: #fff;
+        transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+</style>
 
 <div dir="rtl" class="page">
     <div class="sidebar">
@@ -17,7 +26,7 @@
 
         <div class="top-row px-4">
             <div class="d-flex flex-column-auto flex-center">
-                <Syncfusion.Blazor.Buttons.SfButton style="color:ivory ;" @onclick="BeginSignOut">
+                <Syncfusion.Blazor.Buttons.SfButton style="color:black ;" @onclick="BeginSignOut">
                     خروج
                     <img class="thumbnail" style="width: 27px; height: 23px;" src="images/icons/signout-icon.jpg" title="خروج از سیستم" />
                 </Syncfusion.Blazor.Buttons.SfButton>
@@ -33,11 +42,10 @@
 
 @code {
     private string userName = "";
-    private bool isinvalidtoken = false;
 
     private void BeginSignOut(MouseEventArgs args)
     {
-        Navigation.NavigateTo("/logout", true);
+        Navigation.NavigateTo("/login", true);
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -47,7 +55,7 @@
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
 
-            var user = authState.User; 
+            var user = authState.User;
 
             string r = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
             userName = r ?? "";
@@ -60,9 +68,9 @@
             var user = authState.User;
             string r = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
             userName = r ?? "";
-        } 
+        }
         var jwtToken = new JwtSecurityToken(TokenProvider.AccessToken);
-        if ((jwtToken == null)|| (jwtToken.ValidTo < DateTime.UtcNow))
+        if ((jwtToken == null) || (jwtToken.ValidTo < DateTime.UtcNow))
         {
             Navigation.NavigateTo("/login", true);
         }

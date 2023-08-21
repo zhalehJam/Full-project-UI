@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UserDataManagemen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Pagination", "Framework\Framework.Pagination\Framework.Pagination.csproj", "{540D3B50-5C4B-4D57-A3FD-CDF119162776}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Contract", "Ticketing.Contract\Ticketing.Contract.csproj", "{9CBB3389-178E-4468-95FC-45B98FD5EA6E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Client.Contracts", "Ticketing.Client.Contracts\Ticketing.Client.Contracts.csproj", "{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing_Client", "Ticketing_Client\Ticketing_Client.csproj", "{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}"
@@ -47,10 +45,6 @@ Global
 		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{540D3B50-5C4B-4D57-A3FD-CDF119162776}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CBB3389-178E-4468-95FC-45B98FD5EA6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6CDD18E-44E7-4181-9F98-664C0E0AACCF}.Release|Any CPU.ActiveCfg = Release|Any CPU

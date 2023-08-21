@@ -23,6 +23,7 @@
 @using Ticketing.Models.Tickets.Dto
 @using Ticketing.Models.Tickets.Query;
 @using Ticketing.Models.Tickets.Repository
+@using Ticketing_UI.Shared.Classes;
 @inject Microsoft.AspNetCore.Components.NavigationManager UriHelper
 @inject ITicketRepository ticketRepository
 @inject IPersonRepository personRepository
@@ -105,8 +106,7 @@
                                                     @bind-Value="@(ticket.ProgramId)"
                                                     Enabled="@Check"
                                                     IndexChanged="((e)=>{ ticket.ProgramName=programDtos.Single(t=>t.Id==ticket.ProgramId).ProgamName;
-                                                                          Grid.PreventRender(false);}
-)"
+                                                                          Grid.PreventRender(false);})"
                                                     TValue="Guid"
                                                     DataSource="@programDtos"
                                                     FloatLabelType="FloatLabelType.Auto"
@@ -120,7 +120,8 @@
                             <hr />
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
-                                    <SfNumericTextBox @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                    <SfNumericTextBox ID="PersonID"
+                                                      @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
                                                       OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
                                                                          ticket.PersonName = t.PersonName??"";
                                                                          ticket.PersonCenterName= t.CenterName??"";
@@ -133,7 +134,6 @@
                                                       Format="#########"
                                                       FloatLabelType="FloatLabelType.Auto"
                                                       CssClass="e-corner"></SfNumericTextBox>
-                                    <ValidationMessage For="@(() => ticket.PersonID)" />
                                 </div>
                             </div>
 
@@ -184,34 +184,44 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="col-md-5" style="display:inline-block!important">
+                            <div class="row col-md-12">
+                                <div class="col-md-6" style="display:inline-block!important">
                                     <SfTextBox ID="ErrorDescription"
                                                @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
                                                @bind-Value="@(ticket.ErrorDescription)"
                                                FloatLabelType="FloatLabelType.Auto"
                                                Format="0"
                                                Multiline="true"
+                                               style="height: 210px;"
                                                Placeholder="شرح خطا"></SfTextBox>
                                 </div>
-                                <div class="col-md-5" style="display:inline-block!important">
+                                <div class="col-md-6" style="display:inline-block!important">
                                     <SfTextBox ID="SolutionDescription"
                                                @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
                                                @bind-Value="@(ticket.SolutionDescription)"
                                                FloatLabelType="FloatLabelType.Auto"
                                                Multiline="true"
+                                               style="height: 210px;"
                                                Placeholder="شرح راهکار"></SfTextBox>
                                 </div>
                             </div>
                             <hr />
 
-                            <div class="col-md-5" style="display:inline-block!important">
+                            <div class="col-md-5" style="display:inline-block!important; it" >
                                 <SfDateTimePicker TValue="DateTime"
                                                   @bind-Value="@ticket.TicketTime"
                                                   ShowClearButton="false"
                                                   FloatLabelType="FloatLabelType.Auto"
-                                                  Placeholder="زمان"></SfDateTimePicker>
+                                                  Placeholder="زمان" 
+                                                  Format="yyyy/MM/dd HH:mm"
+                                                  >
+
+
+                                </SfDateTimePicker>
+
                             </div>
+
+
                             <div>
                                 <div class="col-md-5" style="display:inline-block!important">
                                     <SfDropDownList ID="TicketTypeName"
@@ -223,7 +233,7 @@
                                                     DataSource="@TicketTypes"
                                                     FloatLabelType="FloatLabelType.Auto"
                                                     PopupHeight="230px"
-                                                    Placeholder="نوع تیکت">
+                                                    Placeholder="نوع تیکت" >
                                         <DropDownListFieldSettings Value="Key" Text="Value">
                                         </DropDownListFieldSettings>
                                     </SfDropDownList>
@@ -251,6 +261,7 @@
                     </GridEditSettings>
                     <GridColumns>
                         <GridColumn Field=@nameof(TicketDto.Id) Visible=false HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonID) Visible=false HeaderText="PersonID" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" Visible="@(UserIsAdmin)" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
@@ -457,7 +468,7 @@
 
     private SfGrid<TicketDto> Grid { get; set; }
     private GridPageSettings GridPage { get; set; } = new GridPageSettings();
-    private int pageNo = 1;
+
     private int pageNo2 = 1;
 
     public int totalPages { get; set; }
@@ -482,19 +493,18 @@
     public DateTime toDate { get; set; } = DateTime.Now;
 
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
-                                                                           .Select(s => new { Key = (int)s, Value = s.ToString() })
+                                                                           .Select(s => new { Key = (int)s, Value = @EnumExtensions.GetDisplayName((ErrorType)s) })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
     private List<KeyValuePair<int, string>> TicketTypes { get; set; } = Enum.GetValues(typeof(TicketType)).Cast<TicketType>().ToList()
-                                                                            .Select(s => new { Key = (int)s, Value = s.ToString() })
+                                                                            .Select(s => new { Key = (int)s, Value = @EnumExtensions.GetDisplayName((TicketType)s) })
                                                                             .ToDictionary(d => d.Key, d => d.Value).ToList();
     private List<KeyValuePair<int, string>> TicketConditions { get; set; } = Enum.GetValues(typeof(TicketCondition)).Cast<TicketCondition>().ToList()
-                                                                           .Select(s => new { Key = (int)s, Value = s.ToString() })
+                                                                           .Select(s => new { Key = (int)s, Value = @EnumExtensions.GetDisplayName((TicketCondition)s) })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
 
 
     protected override async Task OnInitializedAsync()
     {
-        pageNo = 1;
         pageNo2 = 1;
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
@@ -600,6 +610,7 @@
                             await EditTicket(Args.Data);
                             break;
                     }
+                    await GetAllTickets();
                 }
                 catch (Exception ex)
                 {
@@ -610,8 +621,10 @@
                 finally
                 {
                     Args.Cancel = true;
-                    ticketDtos = await GetAllTickets();
                     await this.ToastObj.ShowAsync(toastModel);
+
+                    Grid.PreventRender(false);
+                    await Grid.Refresh();
 
                 }
             }
