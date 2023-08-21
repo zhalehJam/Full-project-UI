@@ -154,8 +154,7 @@
     private SfGrid<PartDto> ChildGrid { get; set; } = new SfGrid<PartDto>();
     private GridPageSettings GridPage { get; set; } = new GridPageSettings() { PageSize = 10 };
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "350px", Width = "350px" };
-    private bool flag = false;
-    private Boolean Check = false;
+    private bool flag = false; 
     private string resultMessage = "";
     private string errorMessage = "";
     private bool errorVisiable = false;
@@ -242,8 +241,7 @@
                 Grid.PreventRender(false);
             }
             else if(rType == "Add")
-            {
-                Check = true;
+            { 
             }
 
         }

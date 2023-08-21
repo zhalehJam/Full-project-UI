@@ -15,7 +15,6 @@ namespace Ticketing.Models.Tickets.Dto
         [Range(1,int.MaxValue, ErrorMessage = "کد پرسنل الزامی است")]
         public int PersonID { get; set; }
 
-        [Required(ErrorMessage = "اطلاعات پرسنل الزامی است")]
         public string PersonName { get; set; }
 
         public Guid PersonPartId { get; set; }

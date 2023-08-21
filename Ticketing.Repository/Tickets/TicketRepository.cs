@@ -56,12 +56,17 @@ namespace Ticketing.Repository.Tickets
         private static List<TicketDto> GetTicketDtoFromContent(string content)
         {
             List<TicketDto> ticketDtos = new List<TicketDto>();
-            JArray jsonResponse = JArray.Parse(content);
-
-            foreach(var item in jsonResponse)
+            if (!string.IsNullOrWhiteSpace(content))
             {
-                var dto = JsonConvert.DeserializeObject<TicketDto>(item.ToString());
-                ticketDtos.Add(dto);
+
+
+                JArray jsonResponse = JArray.Parse(content);
+
+                foreach (var item in jsonResponse)
+                {
+                    var dto = JsonConvert.DeserializeObject<TicketDto>(item.ToString());
+                    ticketDtos.Add(dto);
+                }
             }
             return ticketDtos;
         }
@@ -83,7 +88,7 @@ namespace Ticketing.Repository.Tickets
             List<TicketDto> ticketList = new List<TicketDto>();
             var response = await _httpClient.GetAsync($"Ticket/GetUserTicketsByDateRage?{parameters.ToQuery()}");
             var content = await response.Content.ReadAsStringAsync();
-            if(!response.IsSuccessStatusCode)
+            if (!response.IsSuccessStatusCode)
             {
                 throw new ApplicationException(content);
             }
@@ -117,11 +122,11 @@ namespace Ticketing.Repository.Tickets
                 Content = JsonContent.Create(command)
             };
             var postResponse = await _httpClient.SendAsync(postRequest);
-            if(!postResponse.IsSuccessStatusCode)
+            if (!postResponse.IsSuccessStatusCode)
             {
                 var error = await postResponse.Content.ReadAsStringAsync();
                 string errormessage = error.Split("\r")[0].Split(":")[1];
-                if(postResponse.StatusCode == HttpStatusCode.InternalServerError)
+                if (postResponse.StatusCode == HttpStatusCode.InternalServerError)
                 {
                     throw new Exception(errormessage);
                 }

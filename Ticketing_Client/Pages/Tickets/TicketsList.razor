@@ -15,6 +15,8 @@
 @using Syncfusion.Blazor.Popups
 @using Ticketing.Client.Contracts.Ticket;
 @using Ticketing.Client.Contracts.Persons;
+@using Ticketing.Client.Contracts.Ticket.Queries;
+@using Ticketing.Models.Centers.Dto;
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Programs.Dto;
@@ -51,19 +53,31 @@
                         AllowFiltering="true"
                         Toolbar="@(new string[]{"Add", "Edit" ,"Delete" ,"Search" })"
                         style="width:auto;padding-right: 1px;padding-left: 1px;">
-                    <GridPageSettings PageSize="10">
+                    <GridPageSettings PageSize="@metaData.PageSize">
                         <Template Context="PagerTemp">
                             <div class="PagerTemplate">
 
-                                <div class="@($"e-next e-icons e-icon-next   align-icons")" hidden="@DisableBackIcon" @onclick="ShowPreviousPage" title="رفتن به صفحه قبل"></div>
+                                <div class="@($"e-next e-icons e-icon-next   align-icons")"
+                                     hidden="@DisableBackIcon"
+                                     @onclick="ShowPreviousPage"
+                                     title="رفتن به صفحه قبل"></div>
                                 <div>
-                                    <div id="totalpages" class="textbox" @oncuechange="@(()=>ValidateFirst())">صفحه @pageNo2 از @metaData.TotalPages</div>
+                                    <div id="totalpages"
+                                         class="textbox">
+                                        صفحه @pageNo2 از @metaData.TotalPages
+                                    </div>
                                 </div>
-                                <div class="@($"e-prev e-icons e-icon-prev  align-icons")" hidden="@DisableForwardIcon" @onclick="ShowNextPage" title="رفتن به صفحه بعد"></div>
+                                <div class="@($"e-prev e-icons e-icon-prev  align-icons")"
+                                     hidden="@DisableForwardIcon"
+                                     @onclick="ShowNextPage"
+                                     title="رفتن به صفحه بعد"></div>
                             </div>
                         </Template>
                     </GridPageSettings>
-                    <GridEvents TValue="TicketDto" OnActionBegin="ActionBeginHandler" OnActionFailure="ActionFailureHandler"></GridEvents>
+                    <GridEvents TValue="TicketDto"
+                                OnActionBegin="ActionBeginHandler"
+                                OnActionFailure="ActionFailureHandler">
+                    </GridEvents>
                     <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
                     <GridEditSettings AllowAdding="true"
                                       AllowDeleting="true"
@@ -76,6 +90,7 @@
                                 <span>@text</span>
                             }
                         </HeaderTemplate>
+
                         <Template Context="another_name">
                             @{
                                 var ticket = (another_name as TicketDto);
@@ -118,34 +133,47 @@
                                 </div>
                             </div>
                             <hr />
+
+
+
+
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
-                                    <SfNumericTextBox ID="PersonID"
-                                                      @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                                      OnChange="@(async(e)=>{var t = await SetpersonInfo2(e);
-                                                                         ticket.PersonName = t.PersonName??"";
-                                                                         ticket.PersonCenterName= t.CenterName??"";
-                                                                         ticket.PersonPartId=t.PartId;
-                                                                         ticket.PersonPartName=t.PartName??"";
-                                                                         })"
-                                                      @bind-Value="@ticket.PersonID"
-                                                      Placeholder="کدپرسنلی تماس گیرنده "
-                                                      Decimals="0"
-                                                      Format="#########"
-                                                      FloatLabelType="FloatLabelType.Auto"
-                                                      CssClass="e-corner"></SfNumericTextBox>
+                                    <SfDropDownList TValue="int"
+                                                    TItem="PersonDto"
+                                                    Placeholder="تماس گیرنده:"
+                                                    DataSource="@personDtos"
+                                                    PopupHeight="230px"
+                                                    Value="@ticket.PersonID"
+                                                    AllowFiltering="true"
+                                                    ValueChanged="@(async (e)=>{var personInfo =await SetPersonnfo(e);
+                                                                                ticket.PersonCenterName= personInfo.CenterName;
+                                                                                ticket.PersonPartName = personInfo.PartName;
+                                                                                ticket.PersonID= e;})">
+                                        <DropDownListFieldSettings Text="PersonName" Value="PersonID"></DropDownListFieldSettings>
+
+                                        <DropDownListTemplates TItem="PersonDto">
+                                            <HeaderTemplate>
+                                                <table><tr><th>Name</th><th>Position</th></tr></table>
+                                            </HeaderTemplate>
+                                            <ItemTemplate Context="DropDownListContext">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>@((DropDownListContext as PersonDto).PersonName)</td>
+                                                            <td>@((DropDownListContext as PersonDto).PersonID)</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </ItemTemplate>
+                                        </DropDownListTemplates>
+
+                                    </SfDropDownList>
+
                                 </div>
                             </div>
 
                             <div class="col-md-12">
-                                <div class="col-md-5" style="display:inline-block!important">
-                                    <SfTextBox ID="ticketpersonName"
-                                               @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                               Enabled="false"
-                                               @bind-Value="@ticket.PersonName"
-                                               FloatLabelType="FloatLabelType.Auto"
-                                               Placeholder="نام"></SfTextBox>
-                                </div>
 
                                 <div class="col-md-2" style="display:inline-block!important">
                                     <SfTextBox ID="PersonCenterName"
@@ -165,6 +193,8 @@
                                 </div>
 
                             </div>
+
+
                             <hr />
                             <div class="col-md-12">
                                 <div class="col-md-5" style="display:inline-block!important">
@@ -207,14 +237,13 @@
                             </div>
                             <hr />
 
-                            <div class="col-md-5" style="display:inline-block!important; it" >
+                            <div class="col-md-5" style="display:inline-block!important;  ">
                                 <SfDateTimePicker TValue="DateTime"
                                                   @bind-Value="@ticket.TicketTime"
                                                   ShowClearButton="false"
                                                   FloatLabelType="FloatLabelType.Auto"
-                                                  Placeholder="زمان" 
-                                                  Format="yyyy/MM/dd HH:mm"
-                                                  >
+                                                  Placeholder="زمان"
+                                                  Format="yyyy/MM/dd HH:mm">
 
 
                                 </SfDateTimePicker>
@@ -233,7 +262,7 @@
                                                     DataSource="@TicketTypes"
                                                     FloatLabelType="FloatLabelType.Auto"
                                                     PopupHeight="230px"
-                                                    Placeholder="نوع تیکت" >
+                                                    Placeholder="نوع تیکت">
                                         <DropDownListFieldSettings Value="Key" Text="Value">
                                         </DropDownListFieldSettings>
                                     </SfDropDownList>
@@ -374,8 +403,7 @@
         pointer-events: none;
         opacity: 0.3;
     }
-</style>
-<style type="text/css" class="cssStyles">
+
     .title-temp1, .title-temp2 {
         border-radius: 2px;
         padding: 2px 0px 3px 0px;
@@ -459,6 +487,9 @@
 
 @code {
 
+    private List<CenterDto> centerDtos = new List<CenterDto>();
+    private List<PartDto> partDtos = new List<PartDto>();
+    private List<PersonDto> personDtos = new List<PersonDto>();
     private List<TicketDto>? ticketDtos { get; set; } = new List<TicketDto>();
     private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>();
     private TicketDto selectedTicketDto { get; set; } = new TicketDto();
@@ -472,11 +503,8 @@
     private int pageNo2 = 1;
 
     public int totalPages { get; set; }
-    public int previouspageNo { get; set; }
     public bool DisableBackIcon = false;
     public bool DisableForwardIcon = false;
-    public bool DisableFirstIcon = false;
-    public bool DisableLastIcon = false;
 
     private bool messageVisiable = false;
     private bool Check = false;
@@ -491,6 +519,7 @@
     private MetaData metaData { get; set; } = new MetaData();
     public DateTime fromDate { get; set; } = DateTime.Now.AddMonths(-1);
     public DateTime toDate { get; set; } = DateTime.Now;
+    GetPersonInfoByFiltersQuery getPersonInfoByFiltersQuery = new GetPersonInfoByFiltersQuery();
 
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
                                                                            .Select(s => new { Key = (int)s, Value = @EnumExtensions.GetDisplayName((ErrorType)s) })
@@ -516,6 +545,53 @@
             UserIsAdmin = true;
         }
         await GetAllTickets();
+        await GetPersonData();
+    }
+
+    private async Task SetCenterChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        getPersonInfoByFiltersQuery.CenterId = new Guid(args.Value.ToString());
+        partDtos.Clear();
+        if (getPersonInfoByFiltersQuery.CenterId != Guid.Empty)
+        {
+            partDtos = centerDtos.Single(c => c.Id.Equals(getPersonInfoByFiltersQuery.CenterId)).parts;
+        }
+        await GetPersonData();
+    }
+
+    private async Task SetPartChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        getPersonInfoByFiltersQuery.PartId = new Guid(args.Value.ToString());
+        await GetPersonData();
+    }
+
+    private async Task OnFilter(KeyboardEventArgs args)
+    {
+        if (args.Key == "Enter")
+        {
+            await GetPersonData();
+        }
+    }
+
+    private async Task SetPersonRoleChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        getPersonInfoByFiltersQuery.userRole = args.Value.ToString();
+        await GetPersonData();
+    }
+
+    private async Task GetPersonData()
+    {
+        try
+        {
+            getPersonInfoByFiltersQuery.PageSize = 1000000;
+            getPersonInfoByFiltersQuery.PageNumber = 1;
+            var response = await personRepository.GetAllPersons();
+            personDtos = response.OrderBy(e => e.PersonID).ToList();
+        }
+        catch (Exception ex)
+        {
+            //loadingStatus = LoadingStatus.Failed;
+        }
     }
 
     public async Task ValueChangeHandler(RangePickerEventArgs<DateTime> args)
@@ -525,38 +601,7 @@
         await GetAllTickets();
     }
 
-    public string ValidateFirst()
-    {
-        if (DisableFirstIcon)
-        {
-            return "disableFirst";
-        }
-        return "";
-    }
-    public string ValidateLast()
-    {
-        if (DisableLastIcon)
-        {
-            return "disableLast";
-        }
-        return "";
-    }
-    public string ValidateForward()
-    {
-        if (DisableForwardIcon)
-        {
-            return "disableFront";
-        }
-        return "";
-    }
-    public string ValidateBack()
-    {
-        if (DisableBackIcon)
-        {
-            return "disableBack";
-        }
-        return "";
-    }
+
     public async Task ShowNextPage()
     {
         ++pageNo2;
@@ -566,14 +611,6 @@
     {
         --pageNo2;
         await GetAllTickets();
-    }
-    public async Task ShowFirstPage()
-    {
-        await Grid.GoToPageAsync(1);
-    }
-    public async Task ShowLastPage()
-    {
-        await Grid.GoToPageAsync(totalPages);
     }
 
     public void ActionFailureHandler(Syncfusion.Blazor.Grids.FailureEventArgs args)
@@ -659,7 +696,11 @@
 
         }
     }
+    private async Task<PersonDto> SetPersonnfo(int personID)
+    {
+        return personDtos.Single(p => p.PersonID == personID);
 
+    }
     private async Task<List<TicketDto>> GetAllTickets()
     {
         parameters.fromDate = fromDate;
@@ -695,7 +736,7 @@
             flag = true;
     }
 
-    private async Task<PersonDto> SetpersonInfo2(ChangeEventArgs args)
+    private async Task<PersonDto> SetpersonInfo(ChangeEventArgs args)
     {
         var personInfos = new PersonDto();
         try
@@ -707,7 +748,6 @@
         catch (Exception ex)
         {
             toastModel = new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" };
-
         }
         return personInfos;
     }
@@ -728,12 +768,10 @@
             };
         await ticketRepository.CreateNewTicket(createTicketCommand);
         toastModel = new ToastModel { Title = "Success!", Content = "تیکت مورد نظر ثبت شد", CssClass = "e-toast-success", Icon = "e-success toast-icons" };
-
     }
 
     private async Task EditTicket(TicketDto seletedticket)
     {
-
         UpdateTicketCommand updateTicketCommand = new UpdateTicketCommand()
             {
                 Id = seletedticket.Id,
@@ -779,6 +817,7 @@
             await Grid.Refresh();
         }
     }
+
     private void OnClose()
     {
         warningMessageVisiable = false;

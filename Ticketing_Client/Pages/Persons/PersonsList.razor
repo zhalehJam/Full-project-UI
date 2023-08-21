@@ -33,6 +33,13 @@
 
 
 <style>
+    .e-pager.e-rtl {
+        direction: rtl;
+        position: fixed;
+        bottom: 4px !important;
+        width: 83.5% !important;
+    }
+
     .hulu {
         background-color: #edf8ff38;
         border: solid 2px #e7e6e6;
@@ -122,7 +129,6 @@
 </style>
 
 <div class="col-lg-12 " style="padding:10px;  border: solid 2px #e7e6e6;border-radius: 10px; ">
-
     <div class="col-2" style="width:16%; padding:4px; height: 30px;display:inline-block">
         <label> نقش کاربر:</label>
         <div class="input-icons">
@@ -203,7 +209,6 @@
 
 <div class="row">
     <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ; ">
-
         @if (this.personDtos.Count() == 0)
         {
             <div class="e-error">
@@ -264,14 +269,11 @@
                         </div>
                     </div>
                 </div>
-
             }
 
             <SfDialog @bind-Visible="dialogVisible" Width="350px" IsModal="true">
                 <DialogTemplates>
-                    <Header>
-                        اطلاعات پرسنل
-                    </Header>
+                    <Header>  اطلاعات پرسنل </Header>
                     <Content>
                         <div>
                             <img class="thumbnail" src="@image" style="width:70px; " alt="Employee photo" />
@@ -338,7 +340,6 @@
                 </DialogTemplates>
                 <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
                 <DialogEvents Opened="OnOpen" Closed="OnClose"></DialogEvents>
-
                 <DialogButtons>
                     <DialogButton Content="OK"
                               IsPrimary="true"
@@ -389,9 +390,6 @@
                                 </SfGrid>
                             </div>
                         </div>
-
-                        @if (true)
-                        { }
                     </Content>
                 </DialogTemplates>
                 <DialogAnimationSettings Effect="animationEffect"></DialogAnimationSettings>
@@ -441,15 +439,6 @@
 
 </div>
 
-<style>
-    .e-pager.e-rtl {
-        direction: rtl;
-        position: fixed;
-        bottom: 4px !important;
-        width: 83.5% !important;
-    }
-</style>
-
 @if (true)
 { }
 @code {
@@ -461,7 +450,6 @@
     private CenterDto selectedCenterDto = new CenterDto();
     private PartDto selectedPartdto = new PartDto();
     private PersonDto selectedPerson = new PersonDto();
-    private PersonDto filterPersonInfo = new PersonDto();
     private bool warningMessageVisiable = false;
     private GridPageSettings GridPage { get; set; }
     private string image = "data:image/jpeg;base64,";
@@ -470,15 +458,9 @@
     private bool isNew = true;
     private bool flag = false;
     public SfPager Page { get; set; } = new SfPager();
+    public MetaData metaData { get; set; } = new MetaData();
 
-    public int totalPages { get; set; }
-    public int previouspageNo { get; set; }
-    public bool DisableBackIcon = false;
-    public bool DisableForwardIcon = false;
-    public bool DisableFirstIcon = false;
-    public bool DisableLastIcon = false;
     public bool IsAdmin = true;
-    private RoleType selectedRole { get; set; }
     private DialogSettings DialogParams = new DialogSettings { MinHeight = "750px", Width = "750px" };
     GetPersonInfoByFiltersQuery getPersonInfoByFiltersQuery = new GetPersonInfoByFiltersQuery();
 
@@ -497,7 +479,6 @@
     {
         centerDtos = await centerRepository.GetAllCenters();
         //await GetAllPersons();
-
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         var userInfo = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(user.Identity?.Name));
@@ -505,14 +486,11 @@
             IsAdmin = true;
         else IsAdmin = false;
         await GetData();
-
     }
-    public int SkipValue;
 
     private async Task Click(PagerItemClickEventArgs args)
     {
         //await GetData();
-        SkipValue = (args.CurrentPage * Page.PageSize) - Page.PageSize;
         getPersonInfoByFiltersQuery.PageNumber = args.CurrentPage;
     }
 
@@ -527,7 +505,6 @@
         warningMessageVisiable = false;
     }
 
-
     private async Task OnFilter(KeyboardEventArgs args)
     {
         if (args.Key == "Enter")
@@ -535,9 +512,6 @@
             await GetData();
         }
     }
-
-    public MetaData metaData { get; set; } = new MetaData();
-
 
     private async Task GetData()
     {
@@ -560,25 +534,23 @@
         partDtos = args.ItemData.parts;
     }
 
-
-
     private async Task SetPersonRoleChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
-        getPersonInfoByFiltersQuery.userRole = args.Value.ToString();
-
+        getPersonInfoByFiltersQuery.userRole = args.Value.ToString(); 
         await GetData();
     }
+
     private async Task SetCenterChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
         getPersonInfoByFiltersQuery.CenterId = new Guid(args.Value.ToString());
-        partDtos.Clear();
-        //        partDtos.Add(new PartDto() { Center = Guid.Empty, Id = Guid.Empty, PartID = 0, PartName = "همه" });
+        partDtos.Clear(); 
         if (getPersonInfoByFiltersQuery.CenterId != Guid.Empty)
         {
             partDtos = centerDtos.Single(c => c.Id.Equals(getPersonInfoByFiltersQuery.CenterId)).parts;
         }
         await GetData();
     }
+
     private async Task SetPartChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
         getPersonInfoByFiltersQuery.PartId = new Guid(args.Value.ToString());
@@ -598,7 +570,6 @@
         selectedPartdto = new PartDto();
         selectedCenterDto = new CenterDto();
         isNew = true;
-
     }
 
     private async Task EditButtonClick(PersonDto personDto)

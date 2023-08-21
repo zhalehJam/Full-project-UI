@@ -59,6 +59,11 @@ namespace Ticketing.Repository.Persons
             parameters.Add("personnelCode", PersonnelCode.ToString());
             string request = QueryHelpers.AddQueryString("Person/GetPersonInfoByPersonelCode", parameters);
             var response = await _httpClient.GetAsync(request);
+            if(response.StatusCode==HttpStatusCode.Unauthorized)
+            { 
+                return personDtos;
+            }
+            
             var content = await response.Content.ReadAsStringAsync();
             personDtos = JsonConvert.DeserializeObject<PersonDto>(content);
 
