@@ -4,7 +4,7 @@
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
 @inject AuthenticationStateProvider authenticationStateProvider
-@inject IPersonRepository personRepository 
+@inject IPersonRepository personRepository
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -17,31 +17,36 @@
 
 <div dir="rtl" class="@NavMenuCssClass" style="font:menu;" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        @if(userInfo.PersonRole == RoleType.Admin)
+       
+        @if (userInfo.PersonRole == RoleType.Admin)
+            {
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="CentersList">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> مراکز
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="PersonsList">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> پرسنل
+                    </NavLink>
+                </div>
+            }
+        @if (userInfo.PersonRole == RoleType.Admin || userInfo.PersonRole == RoleType.Supporter)
         {
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="CentersList">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> مراکز
+                <NavLink class="nav-link" href="ProgramsList">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> برنامه ها
                 </NavLink>
             </div>
-
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="PersonsList">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> پرسنل
+                <NavLink class="nav-link" href="TicketsList">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> تیکت ها
                 </NavLink>
             </div>
         }
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="ProgramsList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> برنامه ها
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="TicketsList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> تیکت ها
-            </NavLink> 
-        </div>
-
+            
+        
     </nav>
 </div>
 
@@ -61,9 +66,9 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if(userName != "" && userInfo.PersonID == 0)
+        if (userName != "" && userInfo.PersonID == 0)
         {
-            if(userInfo != await GetPersonInfo(Convert.ToInt32(userName)))
+            if (userInfo != await GetPersonInfo(Convert.ToInt32(userName)))
             {
                 userInfo = await GetPersonInfo(Convert.ToInt32(userName));
                 StateHasChanged();

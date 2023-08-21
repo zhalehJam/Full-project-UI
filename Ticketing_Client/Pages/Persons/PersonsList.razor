@@ -128,7 +128,9 @@
     }
 </style>
 
-<div class="col-lg-12 " style="padding:10px;  border: solid 2px #e7e6e6;border-radius: 10px; ">
+<div class="col-lg-12 " style="padding:10px;  border: solid 2px #e7e6e6;border-radius: 10px; width: 96%;
+    display: inline-block;
+    margin-right: 30px; ">
     <div class="col-2" style="width:16%; padding:4px; height: 30px;display:inline-block">
         <label> نقش کاربر:</label>
         <div class="input-icons">
@@ -198,7 +200,7 @@
     <div class="col-2" style="padding:4px; width:16%; display:inline-block">
         <SfButton CssClass=".property-panel-section .property-panel-content col-5 display:inline-block!important "
                   style="padding:4px; background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:48%;"
-                  Disabled="!IsAdmin"
+                  hidden="!IsAdmin"
                   @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
 
         <SfButton CssClass=".property-panel-section .property-panel-content col-5 display:inline-block!important "
@@ -208,7 +210,7 @@
 </div>
 
 <div class="row">
-    <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ; ">
+    <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ;text-align:-webkit-center; ">
         @if (this.personDtos.Count() == 0)
         {
             <div class="e-error">
@@ -221,7 +223,7 @@
             {
                 string stl = "";
                 <div class="card_sample_3 col-lg-2 col-md-2 col-sm-5 "
-                     style=" padding: 4px; display:inline-block!important  ;width: 268px;height:138px;"
+                     style=" padding: 4px; display:inline-block!important  ;width: 260px;height:138px;"
                      title="@persondto.PersonRole.ToString()">
                     @if (persondto.PersonRole == RoleType.Supporter)
                     {
@@ -481,10 +483,12 @@
         //await GetAllPersons();
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
-        var userInfo = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(user.Identity?.Name));
+        string userIdentityInfo = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
+        var userInfo = await personRepository.GetPersonInfoByPersonelCode(Convert.ToInt32(userIdentityInfo));
         if (userInfo.PersonRole == RoleType.Admin)
             IsAdmin = true;
         else IsAdmin = false;
+        StateHasChanged();
         await GetData();
     }
 
