@@ -128,12 +128,10 @@
     }
 </style>
 
-<div class="col-lg-12 " style="padding:10px;  border: solid 2px #e7e6e6;border-radius: 10px; width: 96%;
-    display: inline-block;
-    margin-right: 30px; ">
+<div class="col-lg-12 " style="padding:8px;  border: solid 2px #e7e6e6;border-radius: 10px; width: 96%; display: inline-block; margin-right: 30px; ">
     <div class="col-2" style="width:16%; padding:4px; height: 30px;display:inline-block">
         <label> نقش کاربر:</label>
-        <div class="input-icons">
+        <div class="input-icons" style="padding-left: 14px;">
             <i class=" icon">
                 @*<img src="Images\svg\Notification-status.svg" />*@
             </i>
@@ -148,7 +146,7 @@
     </div>
     <div class="col-2" style="display:inline-block;">
         <label> کدپرسنلی:</label>
-        <SfNumericTextBox Width="100%" style=" height: 36px; "
+        <SfNumericTextBox Width="95%" style=" height: 36px; "
                           @onkeyup="@(async (e)=>await @OnFilter(e))"
                           @bind-Value="@getPersonInfoByFiltersQuery.PersonCode"
                           Decimals="0"
@@ -159,14 +157,14 @@
 
     <div class="col-2" style="display:inline-block;">
         <label class="col-12"> نام پرسنل:</label>
-        <SfTextBox Width="100%" style=" height: 36px; "
+        <SfTextBox Width="95%" style=" height: 36px; "
                    @onkeyup="@(async (e)=>await @OnFilter(e))"
                    @bind-Value="@getPersonInfoByFiltersQuery.PersonName"
                    FloatLabelType="FloatLabelType.Always">
         </SfTextBox>
 
     </div>
-    <div class="col-2" style="padding:4px; width:16.5%; display:inline-block">
+    <div class="col-2" style="padding:4px; width:16%; display:inline-block">
         <label> دفتر:</label>
         <div class="input-icons">
             <i class=" icon">
@@ -182,7 +180,7 @@
         </div>
     </div>
 
-    <div class="col-2" style="padding:4px; width:16.5%;display:inline-block">
+    <div class="col-2" style="padding:4px; width:16%;display:inline-block">
         <label> واحد:</label>
         <div class="input-icons">
             <i class=" icon">
@@ -197,20 +195,20 @@
             </select>
         </div>
     </div>
-    <div class="col-2" style="padding:4px; width:16%; display:inline-block">
+    <div class="col-2" style="padding:8px; width:16%; display:inline-block">
         <SfButton CssClass=".property-panel-section .property-panel-content col-5 display:inline-block!important "
                   style="padding:4px; background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:48%;"
                   hidden="!IsAdmin"
                   @onclick="@(async e => {NewPerson(); })">افزودن</SfButton>
 
-        <SfButton CssClass=".property-panel-section .property-panel-content col-5 display:inline-block!important "
+        <SfButton CssClass=".property-panel-section .property-panel-content col-5 display:inline-block!important " Disabled="true"
                   style="padding:4px; background-color: #008b8b2e ; color: #497d7e;    border-color: rgba(0,0,0,0); width:48%;"
                   @onclick="@(async e => {await GetData(); })">بروزرسانی</SfButton>
     </div>
 </div>
 
 <div class="row">
-    <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important ;text-align:-webkit-center; ">
+    <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important;padding-right: 35px; ">
         @if (this.personDtos.Count() == 0)
         {
             <div class="e-error">
@@ -540,14 +538,14 @@
 
     private async Task SetPersonRoleChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
-        getPersonInfoByFiltersQuery.userRole = args.Value.ToString(); 
+        getPersonInfoByFiltersQuery.userRole = args.Value.ToString();
         await GetData();
     }
 
     private async Task SetCenterChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
         getPersonInfoByFiltersQuery.CenterId = new Guid(args.Value.ToString());
-        partDtos.Clear(); 
+        partDtos.Clear();
         if (getPersonInfoByFiltersQuery.CenterId != Guid.Empty)
         {
             partDtos = centerDtos.Single(c => c.Id.Equals(getPersonInfoByFiltersQuery.CenterId)).parts;

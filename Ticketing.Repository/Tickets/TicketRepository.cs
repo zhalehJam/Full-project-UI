@@ -29,16 +29,23 @@ namespace Ticketing.Repository.Tickets
         }
         public async Task<List<TicketDto>> GetUserAllTickets(DateTime fromDate, DateTime toDate)
         {
-            var token = _tokenProvider.AccessToken;
-            List<TicketDto> ticketList = new List<TicketDto>();
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("fromDate", fromDate.ToString());
-            parameters.Add("toDate", toDate.ToString());
-            string request = QueryHelpers.AddQueryString("Ticket/GetUserAllTickets", parameters);
+                List<TicketDto> ticketList = new List<TicketDto>();
+            try
+            {
+                var token = _tokenProvider.AccessToken;
+                IDictionary<string, string> parameters = new Dictionary<string, string>();
+                parameters.Add("fromDate", fromDate.ToString());
+                parameters.Add("toDate", toDate.ToString());
+                string request = QueryHelpers.AddQueryString("Ticket/GetUserAllTickets", parameters);
 
-            var response = await _httpClient.GetAsync(request);
-            var content = await response.Content.ReadAsStringAsync();
-            ticketList = GetTicketDtoFromContent(content);
+                var response = await _httpClient.GetAsync(request);
+                var content = await response.Content.ReadAsStringAsync();
+                ticketList = GetTicketDtoFromContent(content);
+            }
+            catch (Exception ex)
+            {
+
+            }
             return ticketList;
         }
 

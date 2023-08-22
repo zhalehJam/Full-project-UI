@@ -17,6 +17,7 @@
 @using Ticketing.Client.Contracts.Persons;
 @using Ticketing.Client.Contracts.Ticket.Queries;
 @using Ticketing.Models.Centers.Dto;
+@using Ticketing.Models.Centers.Repository;
 @using Ticketing.Models.Persons.Dto;
 @using Ticketing.Models.Persons.Repository;
 @using Ticketing.Models.Programs.Dto;
@@ -30,6 +31,7 @@
 @inject ITicketRepository ticketRepository
 @inject IPersonRepository personRepository
 @inject IProgramRepository programRepository
+@inject ICenterRepository centerRepository
 @inject AuthenticationStateProvider authenticationStateProvider
 
 <div class="col-lg-12 control-section">
@@ -132,66 +134,78 @@
                                     </SfDropDownList>
                                 </div>
                             </div>
+
                             <hr />
 
-
-
-
                             <div class="col-md-12">
-                                <div class="col-md-5" style="display:inline-block!important">
-                                    <SfDropDownList TValue="int"
-                                                    TItem="PersonDto"
-                                                    Placeholder="تماس گیرنده:"
-                                                    DataSource="@personDtos"
-                                                    PopupHeight="230px"
-                                                    Value="@ticket.PersonID"
-                                                    AllowFiltering="true"
-                                                    ValueChanged="@(async (e)=>{var personInfo =await SetPersonnfo(e);
+                                <SfDropDownList Width="280px"
+                                                style="margin-left: 25px;"
+                                                TValue="int"
+                                                TItem="PersonDto"
+                                                Placeholder="تماس گیرنده:"
+                                                FloatLabelType="FloatLabelType.Auto"
+                                                DataSource="@AllpersonDtos"
+                                                PopupHeight="230px"
+                                                Value="@ticket.PersonID"
+                                                AllowFiltering="true"
+                                                ValueChanged="@(async (e)=>{    var personInfo =await SetPersonnfo(e);
                                                                                 ticket.PersonCenterName= personInfo.CenterName;
                                                                                 ticket.PersonPartName = personInfo.PartName;
                                                                                 ticket.PersonID= e;})">
-                                        <DropDownListFieldSettings Text="PersonName" Value="PersonID"></DropDownListFieldSettings>
+                                    <DropDownListFieldSettings Text="PersonName" Value="PersonID"></DropDownListFieldSettings>
 
-                                        <DropDownListTemplates TItem="PersonDto">
-                                            <HeaderTemplate>
-                                                <table><tr><th>Name</th><th>Position</th></tr></table>
-                                            </HeaderTemplate>
-                                            <ItemTemplate Context="DropDownListContext">
-                                                <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>@((DropDownListContext as PersonDto).PersonName)</td>
-                                                            <td>@((DropDownListContext as PersonDto).PersonID)</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </ItemTemplate>
-                                        </DropDownListTemplates>
+                                    <DropDownListTemplates TItem="PersonDto">
+                                        <HeaderTemplate>
+                                            <table><tr><th>نام-</th><th>   کدپرسنلی  </th></tr></table>
+                                        </HeaderTemplate>
+                                        <ItemTemplate Context="DropDownListContext">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>@((DropDownListContext as PersonDto).PersonName)  </td>
+                                                        <td>@((DropDownListContext as PersonDto).PersonID)  </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </ItemTemplate>
+                                    </DropDownListTemplates>
 
-                                    </SfDropDownList>
+                                </SfDropDownList>
+                                <div class="col-2" style="padding:4px; width:16%; display:inline-block">
+                                    <label> دفتر:</label>
+                                    <div class="input-icons">
+                                        <i class=" icon">
 
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-
-                                <div class="col-md-2" style="display:inline-block!important">
-                                    <SfTextBox ID="PersonCenterName"
-                                               @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                               Enabled="false"
-                                               @bind-Value="@(ticket.PersonCenterName)"
-                                               FloatLabelType="FloatLabelType.Auto"
-                                               Placeholder="دفتر"></SfTextBox>
-                                </div>
-                                <div class="col-md-2" style="display:inline-block!important">
-                                    <SfTextBox ID="PersonPartName"
-                                               @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                               Enabled="false"
-                                               @bind-Value="@(ticket.PersonPartName)"
-                                               FloatLabelType="FloatLabelType.Auto"
-                                               Placeholder="واحد"></SfTextBox>
+                                        </i>
+                                        <select class="form-control" @oninput="SetCenterChange">
+                                            <option  value="@Guid.Empty">همه</option>
+                                            @foreach (var type in centerDtos)
+                                            {
+                                                <option class="option-style" value=@type.Id> @type.CenterName</option>
+                                            }
+                                            
+                                        </select>
+                                    </div>
                                 </div>
 
+                                <div class="col-2" style="padding:4px; width:16%;display:inline-block">
+                                    <label> واحد:</label>
+                                    <div class="input-icons">
+                                        <i class=" icon">
+
+                                        </i>
+                                        <select class="form-control" @oninput="SetPartChange"> 
+                                            
+                                            
+                                            <option value="@Guid.Empty">همه</option>
+                                            @foreach (var type in partDtos)
+                                            {
+                                                <option class="option-style" value=@type.Id> @type.PartName</option>
+                                            }
+                                        </select>
+                                        
+                                    </div>
+                                </div>
                             </div>
 
 
@@ -490,6 +504,7 @@
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
     private List<PersonDto> personDtos = new List<PersonDto>();
+    private List<PersonDto> AllpersonDtos = new List<PersonDto>();
     private List<TicketDto>? ticketDtos { get; set; } = new List<TicketDto>();
     private List<ProgramDto> programDtos { get; set; } = new List<ProgramDto>();
     private TicketDto selectedTicketDto { get; set; } = new TicketDto();
@@ -544,6 +559,7 @@
         {
             UserIsAdmin = true;
         }
+        centerDtos = await centerRepository.GetAllCenters();
         await GetAllTickets();
         await GetPersonData();
     }
@@ -552,11 +568,15 @@
     {
         getPersonInfoByFiltersQuery.CenterId = new Guid(args.Value.ToString());
         partDtos.Clear();
+        AllpersonDtos = personDtos;
         if (getPersonInfoByFiltersQuery.CenterId != Guid.Empty)
         {
-            partDtos = centerDtos.Single(c => c.Id.Equals(getPersonInfoByFiltersQuery.CenterId)).parts;
+            var selectedCenter = centerDtos.Single(c => c.Id.Equals(getPersonInfoByFiltersQuery.CenterId));
+            AllpersonDtos = personDtos.Where(p => getPersonInfoByFiltersQuery.CenterId == Guid.Empty ? true : p.CenterName == selectedCenter.CenterName).ToList();
+
+
+            partDtos = selectedCenter.parts;
         }
-        await GetPersonData();
     }
 
     private async Task SetPartChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
@@ -587,6 +607,8 @@
             getPersonInfoByFiltersQuery.PageNumber = 1;
             var response = await personRepository.GetAllPersons();
             personDtos = response.OrderBy(e => e.PersonID).ToList();
+            AllpersonDtos = personDtos;
+            StateHasChanged();
         }
         catch (Exception ex)
         {
