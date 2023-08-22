@@ -16,6 +16,13 @@
 
 @inject ITicketRepository ticketRepository
 <style>
+
+    .e-dashboardlayout.e-control .e-panel {
+        background: #652b9d00;
+        box-shadow: 0 2px 4px rgb(58 6 71);
+        box-sizing: border-box;
+        position: absolute;
+    }
     .e-input-group:not(.e-success):not(.e-warning):not(.e-error), .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
         border-color: #e1e1e1;
         direction: ltr;
@@ -101,6 +108,11 @@
         padding: 6px 0 13px 0;
     }
 
+    .e-dashboardlayout.e-control .e-panel.e-panel-transition {
+        transition: top .5s,left .5s;
+        /*height: fit-content !important;*/
+        position: absolute;
+    }
     .e-dashboardlayout.e-control .e-panel .e-panel-header {
         font-size: 15px;
         font-weight: 500;
@@ -114,7 +126,7 @@
         line-height: 10px !important;
         height: 40px;
         color: #212529;
-        background: #788fffd9;
+        background:  #3f48b99e;
     }
 
 
@@ -371,15 +383,16 @@
             <DashboardLayoutPanel Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
                 <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                 <ContentTemplate>
-                    <div dir="ltr">
+                    <div dir="rtl">
                         <SfChart @ref="sfChart" Height="100%" Width="100%">
                             <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
                             <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime"
                                                Interval="1"
                                                IntervalType="IntervalType.Days"
-                                               EdgeLabelPlacement="EdgeLabelPlacement.Shift">
-                                               <ChartAxisLabelStyle >
-                                               </ChartAxisLabelStyle>
+                                               EdgeLabelPlacement="EdgeLabelPlacement.Shift"
+                                               LabelRotation=-45>
+                                <ChartAxisLabelStyle>
+                                </ChartAxisLabelStyle>
                                 <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
                                 <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
                                 <ChartAxisLabelStyle TextAlignment="Alignment.Near"></ChartAxisLabelStyle>
