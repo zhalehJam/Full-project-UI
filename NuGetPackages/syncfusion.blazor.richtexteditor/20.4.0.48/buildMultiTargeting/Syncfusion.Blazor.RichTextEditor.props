@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Syncfusion.Blazor.RichTextEditor.props" />
+</Project>

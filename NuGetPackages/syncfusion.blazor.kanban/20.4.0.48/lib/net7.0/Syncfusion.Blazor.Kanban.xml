@@ -1,0 +1,1708 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.Kanban</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Kanban.SfKanban`1">
+            <summary>
+            The Kanban component is an efficient way to visually depict various stages of a process using cards with transparent workflows.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.IsFirstEventRender">
+            <summary>
+            Specifies refresh without data process and new row generation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.IsCollectionChanged">
+            <summary>
+            If IsCollectionChanged is set to true then it will allow observableCollection data to make change in GridContent.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.OnObservableChange(System.String,System.Object,System.Boolean,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.ComponentDispose">
+            <summary>
+            Handles dispose component.
+            </summary>
+            <remarks>
+            Destroyed event will be invoked if any. Set current state of grid in window.localStorage if EnablePersistence is set as true.
+            </remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.CallStateHasChangedAsync">
+            <summary>
+            Invoke state change.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.Syncfusion#Blazor#Kanban#IKanban#PropertyChanged">
+            <summary>
+            Invoked when kanban properties are dynamically changed.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.ClientPropertyChangeHandler(System.Collections.Generic.List{System.String})">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.GetColumnData(System.Collections.Generic.List{System.String},System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Used to get the corresponding Column data.
+            </summary>
+            <param name="key"> Specifies the corresponding column key.</param>
+            <param name="dataSource">Specifies the dataSource of Column.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SfKanban`1.accessor">
+            <summary>
+            Gets or sets the fast reflection accessor to reflect the data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.ID">
+            <summary>
+            Specifies the unique identifier.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.AllowDragAndDrop">
+            <summary>
+            Enables or disables the drag and drop actions in the Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.AllowKeyboard">
+            <summary>
+            When this property is set to true, it allows the keyboard interaction in the Kanban board.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.CardSettings">
+            <summary>
+            Defines the Kanban board related settings such as header field, content field, template,
+            show or hide header, and single or multiple selection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.Columns">
+            <summary>
+            Defines the Kanban board columns and their properties such as header text, key field, template, allow toggle,
+            expand or collapse state, min or max count, and show or hide item count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.ConstraintType">
+            <summary>
+            Defines the constraint type used to apply validation based on column or swimlane. The possible values are:
+             Column
+             Swimlane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.CssClass">
+            <summary>
+            It is used to customize the Kanban, which accepts custom CSS class names that
+            define specific user-defined styles and themes to be applied on the Kanban element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.DataSource">
+            <summary>
+            Accepts the list items either through local or remote service and binds it to the component.
+            It can be passed either as List or else can create an instance of the `SfDataManager` in case of
+            processing remote data and can be assigned to the `DataSource` property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.DataSourceChanged">
+            <summary>
+            Invokes when data source changes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.DialogSettings">
+            <summary>
+             Defines the dialog settings such as template and fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.EnableRtl">
+            <summary>
+            Enable or disable rendering component in the right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.EnableTooltip">
+            <summary>
+            Enables or disables the tooltip in the Kanban board. The property relates to the tooltipTemplate property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.Syncfusion#Blazor#Kanban#IKanban#KanbanTemplates">
+            <summary>
+            Enables or disables template in the Kanban board. The property relates to the tooltipTemplate property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.Height">
+            <summary>
+            Sets the `Height` of the Kanban component, accepting both string and number values.
+            The string type includes either pixel or percentage values.
+            When `height` is set with specific pixel value, then the Kanban will be rendered to that specified space. In case,
+            if `auto` value is set, then the height of the Kanban gets auto-adjusted within the given container.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.KeyField">
+            <summary>
+            Defines the key field of the Kanban board. The Kanban renders its layout based on this key field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.Locale">
+            <summary>
+            Overrides the global culture and localization value for this component. Default global culture is 'en-US'.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.Query">
+            <summary>
+            Defines the external `Query` that will be executed along with the data processing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.SortSettings">
+            <summary>
+            Defines the sort settings such as field and direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.StackedHeaders">
+            <summary>
+            Defines the stacked header for Kanban columns with text and key fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.SwimlaneSettings">
+            <summary>
+            Defines the swimlane settings to the Kanban board such as key field, text field, template, allow drag-and-drop,
+            show or hide an empty row, show or hide items count, and more.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.Width">
+            <summary>
+            Sets the `Width` of the Kanban component, accepting both string and number values.
+            The string value can be either pixel or percentage format.
+            When set to `auto`, the Kanban width gets auto-adjusted and displays its content related to the viewable screen size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SfKanban`1.ExternalDropId">
+            <summary>
+            Defines the ID of drop component on which drop should occur.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.AddCardAsync(`0,System.Int32)">
+            <summary>
+            Adds the new single card to the data source of Kanban and layout.
+            </summary>
+            <param name="cardData">Specifies the card data.</param>
+            <param name="index"> Specifies the index where it to be inserted.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.AddCard(`0,System.Int32)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.AddCardAsync(System.Collections.Generic.List{`0},System.Int32)">
+            <summary>
+            Adds the new more number of cards to the data source of Kanban and layout.
+            </summary>
+            <param name="cardData">Specifies the list of card data.</param>
+            <param name="index"> Specifies the index where it to be inserted.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.AddCard(System.Collections.Generic.List{`0},System.Int32)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.UpdateCardAsync(`0,System.Int32)">
+            <summary>
+            Updates the changes made in the card object by passing it as a parameter to the data source.
+            </summary>
+            <param name="cardData">Specifies the card data.</param>
+            <param name="index"> Specifies the index where it to be updated.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.UpdateCard(`0,System.Int32)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.UpdateCardAsync(System.Collections.Generic.List{`0},System.Int32)">
+            <summary>
+            Update the more number of cards to the data source of Kanban.
+            </summary>
+            <param name="cardData">Specifies the list of card data.</param>
+            <param name="index"> Specifies the index where it to be updated.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.UpdateCard(System.Collections.Generic.List{`0},System.Int32)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCardAsync(`0)">
+            <summary>
+            Deletes the card based on provided data.
+            </summary>
+            <param name="cardData">Specifies the card data to be deleted.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCard(`0)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCardAsync(System.Collections.Generic.List{`0})">
+            <summary>
+            Deletes the card based on card collection in the argument list.
+            </summary>
+            <param name="cardData">Specifies the list of card data to be deleted.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCard(System.Collections.Generic.List{`0})">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCardAsync(System.String)">
+            <summary>
+            Deletes the card based on the provided ID as String.
+            </summary>
+            <param name="id">Specifies the card id as string.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCard(System.String)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteCardAsync(System.Int32)">
+            <summary>
+            Deletes the card based on the provided ID as Integer.
+            </summary>
+            <param name="id">Specifies the card id as integer.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.HideSpinnerAsync">
+            <summary>
+            Manually showed spinner needs to hide by HideSpinner.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.HideSpinner">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.ShowSpinnerAsync">
+            <summary>
+            By default, Kanban shows the spinner for all its actions. You can use this method to show spinner at your needed time.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.ShowSpinner">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteColumn(System.Int32)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.Refresh">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DeleteColumnAsync(System.Int32)">
+            <summary>
+            To delete the column based on the provided the columns index.
+            </summary>
+            <param name="index">Specifies the column index to be deleted.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.RefreshAsync">
+            <summary>
+            Refreshes the Kanban header and content.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.GetTargetDetailsAsync(System.Double,System.Double)">
+             <summary>
+             Returns the target details which contains the card details based on top and left co-ordinates relative to Kanban.
+             </summary>
+             <param name="left">The left co-ordinate (x) relative to Kanban.</param>
+             <param name="top">The right co-ordinate (x) relative to Kanban.</param>
+             <returns>The targeted details.</returns>
+            <remarks>It returns the card details based on the mouse cursor position. 
+            </remarks> 
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.GetTargetDetails(System.Double,System.Double)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.GetSwimlaneData(System.String)">
+            <summary>
+            Returns the swimlane column data based on the swimlane keyField input.
+            </summary>
+            <param name="keyField">Specifies the key field.</param>
+            <returns>Returns the list of swimlane column data.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.OpenDialogAsync(Syncfusion.Blazor.Kanban.CurrentAction,`0)">
+            <summary>
+            To manually open the dialog.
+            </summary>
+            <param name="action">Specifies the action.</param>
+            <param name="data">Specifies the data.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.OpenDialog(Syncfusion.Blazor.Kanban.CurrentAction,`0)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.CloseDialogAsync">
+            <summary>
+            To manually close the dialog.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.CloseDialog">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.UpdateChildProperties(System.String,System.Object)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DragStart(System.Collections.Generic.List{System.String},System.Double,System.Double)">
+            <summary>
+            Method invoked before drag the card.
+            </summary>
+            <param name="cards"> Specifies the list of cards.</param>
+            <param name="left">Provide the left co-ordinates.</param>
+            <param name="top">Provide the top co-ordinates.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.DragStop(System.Collections.Generic.List{System.String},System.String,System.String,System.Int32,System.Boolean,System.String,System.Boolean,System.Double,System.Double)">
+            <summary>
+            Method invoked after drag the card.
+            </summary>
+            <param name="cards"> Specifies the list of cards.</param>
+            <param name="status"> Specifies the status.</param>
+            <param name="swimlaneKey"> Specifies the swimlane key.</param>
+            <param name="index"> Specifies the index.</param>
+            <param name="prevIndex"> Specifies the previous index.</param>
+            <param name="prevId"> Specifies the previous previous id.</param>
+            <param name="isExternal"> Specifies the isExternal.</param>
+            <param name="left">Provide the left co-ordinates.</param>
+            <param name="top">Provide the top co-ordinates.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.OpenDialog(System.String)">
+            <summary>
+            Method invoked to open the dialog.
+            </summary>
+            <param name="cardId"> Specifies the id of the card.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.WindowWidth(System.Double)">
+            <summary>
+            Method invoked to update window width.
+            </summary>
+            <param name="width"> Specifies the width of the window.</param>
+            <exclude/>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SfKanban`1.dataId">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.SfKanban`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.ConstraintType">
+            <summary>
+            Defines types to be used as the ConstraintType.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.ConstraintType.Column">
+            <summary>
+            Defines ConstraintType as the Column.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.ConstraintType.Swimlane">
+            <summary>
+            Defines ConstraintType as the Swimlane.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.SelectionType">
+            <summary>
+            Defines types to be used as the SelectionType.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SelectionType.Single">
+            <summary>
+            Defines the SelectionType as Single.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SelectionType.Multiple">
+            <summary>
+            Defines the SelectionType as Multiple.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SelectionType.None">
+            <summary>
+            Defines the SelectionType as None.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.SortDirection">
+            <summary>
+            Defines types to be used as the SortDirection.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SortDirection.Ascending">
+            <summary>
+            Defines the SortDirection as Ascending.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SortDirection.Descending">
+            <summary>
+            Defines the SortDirection as Descending.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.SortOrderBy">
+            <summary>
+            Defines types to be used as SortOrder.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SortOrderBy.DataSourceOrder">
+            <summary>
+            Defines the SortOrder as DataSourceOrder.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SortOrderBy.Index">
+            <summary>
+            Defines the SortOrder as Index.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.SortOrderBy.Custom">
+            <summary>
+            Defines the SortOrder as Custom.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.CurrentAction">
+            <summary>
+            Defines types to be used as the CurrentAction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.CurrentAction.Add">
+            <summary>
+            Defines the CurrentAction as Add.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.CurrentAction.Edit">
+            <summary>
+            Defines the CurrentAction as Edit.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.CurrentAction.Delete">
+            <summary>
+            Defines the CurrentAction as Delete.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DialogFieldType">
+            <summary>
+            Defines types used to specify the Dialog Field Type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.DialogFieldType.TextBox">
+            <summary>
+            Defines DialogFieldType as TextBox.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.DialogFieldType.DropDown">
+            <summary>
+            Defines the DialogFieldType as DropDown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.DialogFieldType.Numeric">
+            <summary>
+            Defines the DialogFieldType as Numeric.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Kanban.DialogFieldType.TextArea">
+            <summary>
+            Defines the DialogFieldType as TextArea.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.AddedRecords">
+            <summary>
+            Returns the appropriate added data based on the action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option for the action taking place.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.ChangedRecords">
+            <summary>
+            Returns the appropriate changed data based on the action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.DeletedRecords">
+            <summary>
+            Returns the appropriate deleted data based on the action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.RequestType">
+            <summary>
+            Returns the request type of the current action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.Exception">
+            <summary>
+            Returns the failure exceptions.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ActionEventArgs`1.KeyField">
+            <summary>
+            Defines the key field of the Kanban board. The Kanban renders its layout based on this key field.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.CardClickEventArgs`1">
+            <summary>
+            Provides information about a Card Click/Double Click event.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.CardClickEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option for the action taking place.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.CardClickEventArgs`1.Data">
+            <summary>
+            Returns the object of the element which is currently being clicked or double-clicked.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.CardRenderedEventArgs`1">
+            <summary>
+            Provides information about a CardRendered event.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.CardRenderedEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option for the action taking place.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.CardRenderedEventArgs`1.Data">
+            <summary>
+            Returns the object of the elements which is currently being rendered on the UI.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DialogCloseEventArgs`1">
+            <summary>
+            Provides information about the DialogClose event.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogCloseEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogCloseEventArgs`1.Data">
+            <summary>
+            Returns the cell or event data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogCloseEventArgs`1.Interaction">
+            <summary>
+            Defines the dialog interaction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogCloseEventArgs`1.RequestType">
+            <summary>
+            Defines the dialog actions.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DialogOpenEventArgs`1">
+            <summary>
+            Provides information about the DialogOpen event.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogOpenEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogOpenEventArgs`1.Data">
+            <summary>
+            Returns the cell or event data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogOpenEventArgs`1.RequestType">
+            <summary>
+            Defines the dialog actions.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DragEventArgs`1">
+            <summary>
+            Provides information about the Drag, Drag Start/End event.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.Data">
+            <summary>
+            Returns the dragged event data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.DragIndex">
+            <summary>
+            Specifies index of the dropped element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.IsExternal">
+            <summary>
+            Specifies external drop.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.Left">
+            <summary>
+            Returns the Client X value of target element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.Top">
+            <summary>
+            Returns the Client Y value of target element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DragEventArgs`1.PreviousCardData">
+            <summary>
+            Returns the previous card data.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.QueryCellInfoEventArgs`1">
+            <summary>
+            Provides information about the QueryCellInfo event.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.QueryCellInfoEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel option for the action taking place.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.QueryCellInfoEventArgs`1.Data">
+            <summary>
+            Returns the object of the elements which is currently being rendered on the UI.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.QueryCellInfoEventArgs`1.RequestType">
+            <summary>
+            Returns the request type of the current action.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DataBindingEventArgs`1">
+            <summary>
+            A class that holds options of events before it binds to kanban.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DataBindingEventArgs`1.Count">
+            <summary>
+            Specifies the card count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DataBindingEventArgs`1.Result">
+            <summary>
+            Returns the result data.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DataBoundEventArgs`1">
+            <summary>
+            A class that holds options of events once it bound to kanban.
+            </summary>
+            <typeparam name="TValue">Represents the kanban data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DataBoundEventArgs`1.Count">
+            <summary>
+            Specifies the card count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DataBoundEventArgs`1.Result">
+            <summary>
+            Returns the result data.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.IKanban">
+            <summary>
+            Interface for the class Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.AllowDragAndDrop">
+            <summary>
+            Enables or disables the drag and drop actions in the Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.AllowKeyboard">
+            <summary>
+            When this property is set to true, it allows the keyboard interaction in the Kanban board.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.CardSettings">
+            <summary>
+            Defines the Kanban board related settings such as header field, content field, template,
+            show or hide header, and single or multiple selection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.Columns">
+            <summary>
+            Defines the Kanban board columns and their properties such as header text, key field, template, allow toggle,
+            expand, or collapse state, min or max count, and show or hide item count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.ConstraintType">
+            <summary>
+            Defines the constraint type used to apply validation based on column or swimlane. The possible values are:
+             Column
+             Swimlane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.CssClass">
+            <summary>
+            It is used to customize the Kanban, which accepts custom CSS class names that
+            define specific user-defined styles and themes to be applied on the Kanban element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.DialogSettings">
+            <summary>
+            Defines the dialog settings such as template and fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.EnableRtl">
+            <summary>
+            Enable or disable rendering component in the right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.EnableTooltip">
+            <summary>
+            Enables or disables the tooltip in the Kanban board. The property relates to the tooltipTemplate property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.KanbanTemplates">
+            <summary>
+            Enables or disables the template in the Kanban board. The property relates to the tooltipTemplate property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.Height">
+            <summary>
+            Sets the `Height` of the Kanban component, accepting both string and number values.
+            The string type includes either pixel or percentage values.
+            When `height` is set with specific pixel value, then the Kanban will be rendered to that specified space. In case,
+            if `auto` value is set, then the height of the Kanban gets auto-adjusted within the given container.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.KeyField">
+            <summary>
+            Defines the key field of the Kanban board. The Kanban renders its layout based on this key field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.Query">
+            <summary>
+            Defines the external `Query` that will be executed along with the data processing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.SortSettings">
+            <summary>
+            Defines the sort settings such as sortBy, field and direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.StackedHeaders">
+            <summary>
+            Defines the stacked header for Kanban columns with text and key fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.SwimlaneSettings">
+            <summary>
+            Defines the swimlane settings to the Kanban board such as key field, text field, template, allow drag-and-drop,
+            show or hide an empty row, show or hide items count, and more.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.Width">
+            <summary>
+            Sets the `Width` of the Kanban component, accepting both string and number values.
+            The string value can be either pixel or percentage format.
+            When set to `auto`, the Kanban width gets auto-adjusted and displays its content related to the viewable screen size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.IKanban.ExternalDropId">
+            <summary>
+            Defines the ID of drop component on which drop should occur.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.IKanban.PropertyChanged">
+            <summary>
+            Specifies the PropertyChanged method.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.IKanban.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Used to update the ChildComponent properties.
+            </summary>
+            <param name="childKey"> Specifies the child component key.</param>
+            <param name="childValue"> Specifies the child component value.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.IKanban.CallStateHasChangedAsync">
+            <summary>
+            Represents the StateHasChanged method.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.ColumnModel">
+            <summary>
+            Interface for the class Columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.AllowToggle">
+            <summary>
+            Enable or disable toggle column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.HeaderText">
+            <summary>
+            Defines the column header title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.IsExpanded">
+            <summary>
+            Defines the collapsed or expandable state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.KeyField">
+            <summary>
+            Defines the column keyField.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.MaxCount">
+            <summary>
+            Defines the maximum card count in column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.MinCount">
+            <summary>
+            Defines the minimum card count in column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.AllowAdding">
+            <summary>
+            Enable or disable cell add button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.ShowItemCount">
+            <summary>
+            Enable or disable card count in column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.Visible">
+            <summary>
+            Enable or disable column visibility.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.AllowDrop">
+            <summary>
+            Enable or disable column drop.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.AllowDrag">
+            <summary>
+            Enable or disable column drag.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.TransitionColumns">
+            <summary>
+            Defines the column transition.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.ColumnModel.Index">
+            <summary>
+            Defines the column order.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.DialogFieldsModel">
+            <summary>
+            Interface for the class DialogFields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogFieldsModel.Key">
+            <summary>
+            Defines the field key.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogFieldsModel.Text">
+            <summary>
+            Defines the field text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.DialogFieldsModel.Type">
+            <summary>
+            It defines the field type, which accepts either of the following values.
+             TextBox
+             DropDown
+             Numeric
+             TextArea.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.StackedHeaderModel">
+            <summary>
+            Interface for the class StackedHeaders.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.StackedHeaderModel.KeyFields">
+            <summary>
+            Defines the multiple columns keyField.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.StackedHeaderModel.Text">
+            <summary>
+            Defines the column header text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.SwimlaneSortEventArgs">
+            <summary>
+            Interface for the class SwimlaneSortEventArgs.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSortEventArgs.SwimlaneRows">
+            <summary>
+            Defines the sorting order of swimlane rows.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel">
+            <summary>
+            Interface for the class SwimlaneSettings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.AllowDragAndDrop">
+            <summary>
+            Enables or disables the drag and drop actions in the Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.KeyField">
+            <summary>
+            Defines the key field of the Kanban board. The Kanban renders its layout based on this key field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.ShowEmptyRow">
+            <summary>
+            Enable or disable empty swimlane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.ShowItemCount">
+            <summary>
+            Enable or disable items count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.SortDirection">
+            <summary>
+            Sort the swimlane resources. The possible values are:
+             Ascending
+             Descending.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.TextField">
+            <summary>
+            Defines the swimlane header text field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.Template">
+            <summary>
+            Defines the swimlane template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.SwimlaneSettingsModel.Count">
+            <summary>
+            Defines the swimlane card count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTargetDetails`1.ColumnKeyField">
+            <summary>
+            Returns the column key field based on the mouse cursor position. 
+            </summary>
+            <value>
+            It return the column key field. The default value is <c>String.Empty</c>.
+            </value>
+            <remarks>
+            Returns the Kanban column key field.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTargetDetails`1.SwimlaneKeyField">
+            <summary>
+            Returns the swimlane key field based on the current mouse position. 
+            </summary> 
+            <value> 
+            It return the swimlane key field. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            Returns the Kanban swimlane key field based on the mouse cursor.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTargetDetails`1.Index">
+            <summary>
+            Returns the mouse event arguments. 
+            </summary> 
+            <value> 
+            It return the current card position in the column.  The default value is <c>0</c>. 
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTargetDetails`1.PreviousCardId">
+            <summary>
+            Returns the previous card id based on the cursor position. 
+            </summary> 
+            <value> 
+            It return the previous card unique field Id.  The default value is <c>null</c>. 
+            </value>
+            <remarks>
+            It is used when setting the <see cref="T:Syncfusion.Blazor.Kanban.SortOrderBy" /> as `Index`.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTargetDetails`1.PreviousCardData">
+            <summary>
+            Returns the previous card data.
+            </summary>
+            <value>
+            It return the previous card data. The default value is <c>null</c>.
+            </value>
+            <remarks>
+            It is used when setting the <see cref="T:Syncfusion.Blazor.Kanban.SortOrderBy" /> as `Index`.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTargetDetails`1.CurrentCardId">
+            <summary>
+            Returns the current card id based on the cursor position.
+            </summary>
+            <value>
+            It returns the current card Id based on current mouse position.  The default value is <c>null</c>.
+            </value>
+            <remarks>
+            It will return the current card Id when the cursor moved inside the card element.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.Internal.Card`1.Data">
+            <summary>
+            Specifies the Data of the card.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.Internal.ContentRow`1.Row">
+            <summary>
+            Specifies the Row of the SwimlaneSettings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.Internal.HeaderCell`1.Column">
+            <summary>
+            Specifies the Column of the Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.Internal.Limits`1.ColumnData">
+            <summary>
+            Specifies the ColumnData of the Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.Internal.SwimlaneRow`1.Row">
+            <summary>
+            Specifies the swimlane row.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.Internal.Tooltip`1.Refresh">
+            <summary>
+            Specifies the refresh of the tooltip.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanCardSettings">
+            <summary>
+            Defines the Kanban card related settings such as header field, content field, template,
+            show or hide header, and single or multiple selection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.ContentField">
+            <summary>
+            Defines the card content text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.HeaderField">
+            <summary>
+            Defines the card header text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.TagsField">
+            <summary>
+            Defines the card content labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.GrabberField">
+            <summary>
+            Defines the card color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.FooterCssField">
+            <summary>
+            Defines the card icons.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.SelectionType">
+            <summary>
+            It defines the card selection type, which accepts either of the following values.
+            Single
+            Multiple
+            None.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.ShowHeader">
+            <summary>
+            Show or hide the card header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanCardSettings.Template">
+            <summary>
+            Defines the card template.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanCardSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanColumn">
+            <summary>
+            Defines the Kanban board column and their properties such as header text, key field, template, allow toggle,
+            expand or collapse state, min or max count, and show or hide item count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.AllowToggle">
+            <summary>
+            Enable or disable toggle column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.HeaderText">
+            <summary>
+            Defines the column header title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.IsExpanded">
+            <summary>
+            Defines the collapsed or expandable state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.KeyField">
+            <summary>
+            Defines the column keyField.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.MaxCount">
+            <summary>
+            Defines the maximum card count in column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.MinCount">
+            <summary>
+            Defines the minimum card count in column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.Visible">
+            <summary>
+            Enable or disable column visible.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.AllowAdding">
+            <summary>
+            Enable or disable add button to cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.ShowItemCount">
+            <summary>
+            Enable or disable card count in column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.AllowDrop">
+            <summary>
+            Enable or disable column drop.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.AllowDrag">
+            <summary>
+            Enable or disable column drag.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.TransitionColumns">
+            <summary>
+            Defines the column transition.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.Template">
+            <summary>
+            Defines the column template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.Count">
+            <summary>
+            Defines the column card count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumn.Index">
+            <summary>
+            Defines the column order.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanColumn.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanColumn.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanColumns">
+            <summary>
+            Configure the Kanban board columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanColumns.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanColumns.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanDialogSettings">
+            <summary>
+            Defines the Kanban board dialog settings and their properties such as allow dragging, animation, template, close on escape,
+            css class, enable resize, height, enable Modal, minimum height, position, target, show close icon, width, fields and z-index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.AllowDragging">
+            <summary>
+            Specifies the value that indicates whether the dialog component can be dragged by the end-user or not.
+            The dialog allows to drag by selecting the header and dragging it for re-position the dialog.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.AnimationSettings">
+            <summary>
+            Specifies the animation settings of the dialog component.
+            The animation effect can be applied to open and close the dialog with duration and delay.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.CloseOnEscape">
+            <summary>
+            Specifies the boolean value that indicates whether the dialog can be closed
+            with the escape key (used to control the dialog closing behavior) or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.CssClass">
+            <summary>
+            Specifies the CSS class name that can be appended with the root element of the dialog.
+            One or more custom CSS classes can be added to a dialog.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.EnableResize">
+            <summary>
+            Specifies the value that indicates whether the dialog component can be resized by the end-user or not.
+            If enableResize is true, the dialog component creates a grip to resize its diagonal direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.Height">
+            <summary>
+            Specifies the height of the dialog component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.IsModal">
+            <summary>
+            Specifies the Boolean value that indicates whether the dialog can be displayed as modal or non-modal.
+            `Modal`: It creates an overlay that disables interaction with the parent application and the user who should respond with modal before continuing with other applications.
+            `Modeless`: It does not prevent user interaction with the parent application.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.MinHeight">
+            <summary>
+            Specifies the min-height of the dialog component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.Position">
+            <summary>
+            Specifies the value where the dialog can be positioned within the document or target. The position can be represented with pre-configured positions or specific X and Y values. `
+            X value`: left, center, right, or offset value.
+            `Y value`: top, center, bottom, or offset value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.ShowCloseIcon">
+            <summary>
+            Specifies the value that represents whether the close icon can be shown in the dialog component or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.Target">
+            <summary>
+            Specifies the target element in which the dialog should be displayed.
+            The default value is null, which refers to the `document.body` element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.Width">
+            <summary>
+            Specifies the width of the dialog.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.ZIndex">
+            <summary>
+            Specifies the z-index for rendering that determines whether the dialog is
+            displayed in front or behind of another component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.KanbanDialogFields">
+            <summary>
+            Defines the Kanban Dialog Settings fields and their properties such as key, text and type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettings.Template">
+            <summary>
+            Defines the dialog template.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanDialogSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanDialogSettingsField">
+            <summary>
+            Defines the Kanban board dialog settings field and their properties such as key, text and type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettingsField.Key">
+            <summary>
+            Defines the dialog key.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettingsField.Text">
+            <summary>
+            Defines the dialog text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettingsField.Type">
+            <summary>
+            Defines the dialog field type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanDialogSettingsField.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanDialogSettingsFields">
+            <summary>
+            Configure the Kanban dialog settings fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanDialogSettingsFields.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanDialogSettingsFields.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanEvents`1">
+            <summary>
+            Configure event handlers to handle the events with Kanban component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.OnLoad">
+            <summary>
+            This event allows customization of Kanban properties before rendering.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.ActionBegin">
+            <summary>
+            Event triggers at the beginning of every Kanban action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.ActionComplete">
+            <summary>
+            Event triggers on successful completion of the Kanban actions.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.ActionFailure">
+            <summary>
+            Event triggers when a Kanban action gets failed or interrupted and it will return an error information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.CardClick">
+            <summary>
+            Event triggers on single-clicking the Kanban cards.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.CardDoubleClick">
+            <summary>
+            Event triggers on double-clicking the Kanban cards.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.CardRendered">
+            <summary>
+            Event triggers before each card of the Kanban rendering on the page.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.Created">
+            <summary>
+            Event triggers after the kanban component is created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.DataBinding">
+            <summary>
+            Event triggers before the data binds to the Kanban.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.DialogClose">
+            <summary>
+            Event triggers before the dialog closes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.DialogOpen">
+            <summary>
+            Event triggers before the dialog opens.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.DragStart">
+            <summary>
+            Event triggers when the card drag actions start.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.DragStop">
+            <summary>
+            Event triggers when the card drag actions stop.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.QueryCellInfo">
+            <summary>
+            Event triggers before each column of the Kanban rendering on the page.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanEvents`1.SwimlaneSorting">
+            <summary>
+            Event triggers before swimlane rows rendering on the page.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanEvents`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanSortSettings">
+            <summary>
+            Defines the Kanban board sort settings and their properties such as direction, sort order by and fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSortSettings.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSortSettings.Direction">
+            <summary>
+            Sort the cards. The possible values are:
+            Ascending
+            Descending.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSortSettings.Field">
+            <summary>
+            Defines the sort field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSortSettings.SortBy">
+            <summary>
+            Sort the cards. The possible values are:
+            DataSourceOrder
+            Index
+            Custom.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanSortSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanSortSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanStackedHeader">
+            <summary>
+            Defines the stacked header for Kanban columns with text and key fields.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanStackedHeader.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanStackedHeader.KeyFields">
+            <summary>
+            Defines the multiple columns keyField.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanStackedHeader.Text">
+            <summary>
+            Defines the column header text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanStackedHeader.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanStackedHeaders">
+            <summary>
+            Configure the stacked headers for Kanban columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanStackedHeaders.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanStackedHeaders.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings">
+            <summary>
+            Defines the swimlane settings to Kanban board such as key field, text field, template,
+            allow drag-and-drop, show or hide an empty row, show or hide items count, and more.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.AllowDragAndDrop">
+            <summary>
+            Enable or disable the card drag and drop actions.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.KeyField">
+            <summary>
+            Defines the swimlane key field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.ShowEmptyRow">
+            <summary>
+            Enable or disable empty swimlane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.ShowItemCount">
+            <summary>
+            Enable or disable items count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.SortDirection">
+            <summary>
+            Sort the swimlane resources. The possible values are:
+            Ascending
+            Descending.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.TextField">
+            <summary>
+            Defines the swimlane header text field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.EnableFrozenRows">
+            <summary>
+            Enable or disable freeze swimlane row
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.Template">
+            <summary>
+            Defines the swimlane row template.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanSwimlaneSettings.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Kanban.KanbanTemplates">
+            <summary>
+            Configures kanban templates.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTemplates.ChildContent">
+            <summary>
+            Defines the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Kanban.KanbanTemplates.TooltipTemplate">
+            <summary>
+            Gets or sets the tooltip template.
+            </summary>
+            <remarks>
+            The TooltipTemplate content must be card element.
+            The parameters passed to the templates can be accessed using implicit parameter named <c>context</c>.
+            The context is of type TValue.
+            </remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.Kanban.KanbanTemplates.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Blazor.PersianDatePicker</id>
+    <version>3.0.2</version>
+    <title>Blazor.PersianDatePicker</title>
+    <authors>Farshad Davoudi</authors>
+    <readme>README.md</readme>
+    <description>A free Jalali (Persian) and Gregorian (Miladi) dual datepicker library for Blazor applications</description>
+    <repository url="https://github.com/farshaddavoudi/Blazor.PersianDatePicker" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Delegate.SassBuilder" version="1.4.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Components.Web" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

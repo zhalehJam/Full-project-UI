@@ -8,19 +8,11 @@ namespace Ticketing_Client.Pages
 {
     public class LogoutModel : PageModel
     {
-        public async Task<IActionResult> OnGetAsync()
+        public async Task OnGetAsync()
         {
-            // just to remove compiler warning
-            await Task.CompletedTask;
-
-            return SignOut(
-                new AuthenticationProperties
-                {
-                    RedirectUri = "https://login.shonizcloud.ir"
-                },
-                OpenIdConnectDefaults.AuthenticationScheme,
-                CookieAuthenticationDefaults.AuthenticationScheme);
-
+            // Sign out of Cookies and OIDC schemes
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
         }
 
     }

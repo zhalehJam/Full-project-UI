@@ -1,0 +1,2131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Internal.AnimationSettings">
+            <summary>
+            Animation properties for performing animation transition.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.AnimationSettings.Duration">
+            <summary>
+            Gets or sets the animation duration.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.AnimationSettings.Name">
+            <summary>
+            Gets or sets the animation name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.AnimationSettings.TimingFunction">
+            <summary>
+            Gets or sets the animation timing function.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.AnimationSettings.Delay">
+            <summary>
+            Gets or sets the animation delay.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.RippleSettings">
+            <summary>
+            Ripple settings for performing the ripple effect.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.RippleSettings.Selector">
+            <summary>
+            Gets or sets the ripple selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.RippleSettings.Ignore">
+            <summary>
+            Gets or sets the ripple ignore.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.RippleSettings.RippleFlag">
+            <summary>
+            Gets or sets the ripple flag.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.RippleSettings.IsCenterRipple">
+            <summary>
+            Gets or sets the boolean value whether ripple center enabled or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.RippleSettings.Duration">
+            <summary>
+            Gets or sets the ripple duration.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.BlazorIdJsonConverter">
+            <summary>
+            Custom JSON serialization type converter for the Template DataHashTable properties.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.BlazorIdJsonConverter.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Internal.BlazorIdJsonConverter"/> class.
+            </summary>
+            <param name="values">Dictionary values for json convert.</param>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.BlazorIdJsonConverter.HashData">
+            <summary>
+            Gets or sets hash data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.BlazorIdJsonConverter.CanConvert(System.Type)">
+            <summary>
+            Determines whether this instance can convert the specified object type.
+            </summary>
+            <param name="objectType">Type of the object.</param>
+            <returns>true if this instance can convert the specified object type; otherwise, false.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.BlazorIdJsonConverter.Write(System.Text.Json.Utf8JsonWriter,Syncfusion.Blazor.Internal.BlazorIdJsonConverter,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes the JSON representation of the object.
+            </summary>
+            <param name="writer">The System.Text.Json.Utf8JsonWriter to write value.</param>
+            <param name="value">The value.</param>
+            <param name="options">The calling System.Text.Json Serializer Option.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.BlazorIdJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads the JSON representation of the object.
+            </summary>
+            <param name="reader">The System.Text.Json.Utf8JsonReader to read value.</param>
+            <param name="typeToConvert">Type of the object.</param>
+            <param name="options">The calling System.Text.Json Serializer Option.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.NonFlagStringEnumConverter">
+            <summary>
+            Used to convert the enum integer values into a string
+            Also, ignores the string conversion of number enum.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.NonFlagStringEnumConverter.CanConvert(System.Type)">
+            <summary>
+            Determines whether this instance can convert the specified object type.
+            </summary>
+            <param name="objectType">Type of the object.</param>
+            <returns>true if this instance can convert the specified object type; otherwise, false.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.DateTimeZoneHandlingConverter">
+            <summary>
+            Used to Parse string Date Time values into a DateTime Format
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.DateTimeOffsetCustomConverter">
+            <summary>
+            Used to Parse string Date Time values into a DateTime Offset Format
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.ExpandoObjectConverter">
+            <summary>
+            Custom type converter for ExpandoObject properties. Converts an <see cref="T:System.Dynamic.ExpandoObject"/> to JSON.
+            Also, used to parse the data into their original primitive type data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.ExpandoObjectConverter.Write(System.Text.Json.Utf8JsonWriter,System.Object,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes the JSON representation of the object.
+            </summary>
+            <param name="writer">The System.Text.Json.Utf8JsonWriter to write UTF-8 encoded JSON text.</param>
+            <param name="value">The value that get it from dynamic ExpandoObject.</param>
+            <param name="options">Provides options to be used with JsonSerializer.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.ExpandoObjectConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads the JSON representation of the object.
+            </summary>
+            <param name="reader">The System.Text.Json.Utf8JsonReader to read value from UTF-8 encoded JSON.</param>
+            <param name="typeToConvert">Type of the object.</param>
+            <param name="options">Provides options to be used with JsonSerializer.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.PackageNameAttribute">
+            <summary>
+            Used to get the package name for specific component script loading.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.PackageNameAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Internal.PackageNameAttribute"/> class.
+            </summary>
+            <param name="packageName">package name.</param>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.PackageNameAttribute.PackageName">
+            <summary>
+            Gets the package name.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.FontInfo">
+            <summary>
+            Circular, Linear Gauges and TreeMap common property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.FontInfo.Average">
+            <summary>
+            Gets or sets average.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.FontInfo.Chars">
+            <summary>
+            Gets or sets chars.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.SfScriptModules">
+            <summary>
+            Script modules for the native rendering components.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfBase">
+            <summary>
+            SfBase.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfBaseExtended">
+            <summary>
+            SfBaseExtended.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfGrid">
+            <summary>
+            SfGrid.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfPager">
+            <summary>
+            SfPager.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfChart">
+            <summary>
+            SfChart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfAccumulationChart">
+            <summary>
+            SfAccumulationChart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfRangeNavigator">
+            <summary>
+            SfRangeNavigator.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfProgressBar">
+            <summary>
+            SfProgressBar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfGantt">
+            <summary>
+            SfGantt.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTreeGrid">
+            <summary>
+            SfTreeGrid.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfPivotView">
+            <summary>
+            SfPivotView.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTextBox">
+            <summary>
+            SfTextBox.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfNumericTextBox">
+            <summary>
+            SfNumericTextBox.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfMaskedTextBox">
+            <summary>
+            SfMaskedTextBox.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfUploader">
+            <summary>
+            SfUploader.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSlider">
+            <summary>
+            SfSlider.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDropDownList">
+            <summary>
+            SfDropDownList.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfMention">
+            <summary>
+            SfMention.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfMultiSelect">
+            <summary>
+            SfMultiSelect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfCalendar">
+            <summary>
+            SfCalendarBase.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDatePicker">
+            <summary>
+            SfDatePicker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTimePicker">
+            <summary>
+            SfTimePicker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfToolbar">
+            <summary>
+            SfToolbar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSplitter">
+            <summary>
+            SfSplitter.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDashboardLayout">
+            <summary>
+            SfDashboardLayout.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDialog">
+            <summary>
+            SfDialog.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTab">
+            <summary>
+            SfTab.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDropDownButton">
+            <summary>
+            SfDropDownButton.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTooltip">
+            <summary>
+            SfTooltip.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfBarcode">
+            <summary>
+            SfBarcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfAccordion">
+            <summary>
+            SfAccordion.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfBreadcrumb">
+            <summary>
+            SfBreadcrumb.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfContextMenu">
+            <summary>
+            SfContextMenu.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfMenu">
+            <summary>
+            SfMenu.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfMaps">
+            <summary>
+            SfMaps.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfListView">
+            <summary>
+            SfListView.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfFileManager">
+            <summary>
+            SfFileManager.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTreeView">
+            <summary>
+            SfTreeView.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSidebar">
+            <summary>
+            SfSidebar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfToast">
+            <summary>
+            SfToast.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDateRangePicker">
+            <summary>
+            SfDateRangePicker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfRichTextEditor">
+            <summary>
+            SfRichTextEditor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfCircularGauge">
+            <summary>
+            SfCircularGauge.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfKanban">
+            <summary>
+            SfKanban.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSchedule">
+            <summary>
+            SfSchedule.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfTreeMap">
+            <summary>
+            SfTreeMap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfLinearGauge">
+            <summary>
+            SfLinearGauge.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfListBox">
+            <summary>
+            SfListBox.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfInPlaceEditor">
+            <summary>
+            SfInPlaceEditor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfColorPicker">
+            <summary>
+            SfColorPicker.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSignature">
+            <summary>
+            SfSignature.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSmithChart">
+            <summary>
+            SfSmithChart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfBulletChart">
+            <summary>
+            SfBulletChart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSparkline">
+            <summary>
+            SfSparkline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfStockChart">
+            <summary>
+            SfStockChart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDocumentEditorContainer">
+            <summary>
+            SfDocumentEditorContainer.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDocumentEditor">
+            <summary>
+            SfDocumentEditor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfHeatMap">
+            <summary>
+            HeatMap.
+            </summary> 
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfDiagramComponent">
+            <summary>
+            SfDiagramComponent
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfPdfViewer">
+            <summary>
+            SfPdfViewerComponent
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfFab">
+            <summary>
+            SfFab
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfSpeedDial">
+            <summary>
+            SfSpeedDial
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Internal.SfScriptModules.SfRating">
+            <summary>
+            SfRating
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.GlobalizeJsonGenerator">
+            <summary>
+            Generates globalization details for the specific culture in JSON format.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.GlobalizeJsonGenerator.GetGlobalizeJsonString(System.Globalization.CultureInfo)">
+            <summary>
+            Returns the globalized JSON string.
+            </summary>
+            <param name="cultureData">Specific culture information.</param>
+            <returns>Json serialized globalize string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.GlobalizeJsonGenerator.GetGlobalizeContent(System.Globalization.CultureInfo)">
+            <summary>
+            Returns current culture information in the Dictionary format.
+            </summary>
+            <param name="cultureData">Specific culture information.</param>
+            <returns>Localized contents.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.Intl">
+            <summary>
+            A static class for the Internationalization common features and functionalities.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.Intl.CurrentCulture">
+            <summary>
+            Gets or sets current culture.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Internal.Intl.CurrencyData">
+            <summary>
+            Gets or sets currency date.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetDateFormat``1(``0,System.String,System.String)">
+            <summary>
+            Returns formatted date string based on the current culture.
+            </summary>
+            <typeparam name="T">The date format type.</typeparam>
+            <param name="date">Date value to be formatted.</param>
+            <param name="format">Format string for processing date format.</param>
+            <param name="culture">Optional parameter to override the current culture.</param>
+            <returns>Returns formatted string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetNumericFormat``1(``0,System.String,System.String,System.String)">
+            <summary>
+            Returns formatted number string based on the current culture.
+            </summary>
+            <typeparam name="T">The number format type.</typeparam>
+            <param name="numberValue">Number value to be formatted.</param>
+            <param name="format">Format string for processing number format.</param>
+            <param name="culture">Optional parameter to override the current culture.</param>
+            <param name="currencyCode">Optional parameter to process the currency code.</param>
+            <returns>Returns formatted string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetWeekOfYear(System.DateTime,System.String,System.Boolean,System.Globalization.CalendarWeekRule)">
+            <summary>
+            Returns the week of year based on the current culture.
+            </summary>
+            <param name="dateValue">Date value to be calculated.</param>
+            <param name="culture">Optional parameter to override the current culture.</param>
+            <param name="isLastDayOfWeek">Optional paramaeter to pass last day of week.</param>
+            <param name="weekRule">Optional parameter to pass week rules.</param>
+            <returns>Returns the week of year.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetNarrowDayNames(System.String)">
+            <summary>
+            Returns the narrow day names based on the current culture.
+            </summary>
+            <param name="culture">Optional parameter to override the current culture.</param>
+            <returns>Returns the narrow day names.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetCulture(System.String)">
+            <summary>
+            Returns the current culture information.
+            </summary>
+            <param name="culture">Optional parameter to override the current culture.</param>
+            <returns>Returns the current culture.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.SetCulture(System.Globalization.CultureInfo)">
+            <summary>
+            Set culture info to Intl class.
+            </summary>
+            <param name="culture">Culture info needs to be set to the Intl.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.SetCulture(System.String)">
+            <summary>
+            Set culture string to Intl class.
+            </summary>
+            <param name="culture">Culture string needs to be set to the Intl.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetCultureInfo">
+            <summary>
+            Gets the InvariantCulture object.
+            </summary>
+            <returns>Returns CultureInfo.InvariantCulture when InvariantGlobalization enabled in application. Otherwise, returns new CultureInfo("en-US").</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetNativeDigits(System.String,System.String[])">
+            <summary>
+            Converts native digits based on the current culture.
+            </summary>
+            <param name="formatValue">Format to be converted to native digits.</param>
+            <param name="nativeDigits">Native digits of the current culture.</param>
+            <returns>Returns the current culture.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.Intl.GetCultureFormats(System.String)">
+            <summary>
+            Returns the required patterns from the current culture.
+            </summary>
+            <param name="cultureCode">Culture code to be processed for the required patterns.</param>
+            <returns>Returns culture patterns.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.ISfCircularComponent">
+            <summary>
+            An interface for circular component reference.
+            GridColumns -> GridColumn -> GridColumns -> GridColumn.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.ISfCircularComponent.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Update child property values from parent component.
+            </summary>
+            <param name="key">Child property name.</param>
+            <param name="propertyValue">Child property value.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.IBaseInit">
+            <summary>
+            Common interface for blazor components.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.IBaseInit.OnInitRenderAsync">
+            <summary>
+            Invoked after script loaded at first rendering.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.ModuleInitComponent">
+            <summary>
+            Resource manager component for loading init interop script in .NET Core 3.0 applications.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.SfBaseUtils">
+            <summary>
+            Common utility methods which can be used in all the Syncfusion Blazor components.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.UpdateDictionary(System.String,System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Update the given dictionary value based on the key value check.
+            </summary>
+            <param name="key">Key needs to be updated in the dictionary.</param>
+            <param name="data">Value needs to be updated for the specific key.</param>
+            <param name="dictionary">Dictionary needs to be add or updated.</param>
+            <returns>Returns updated Dictionary.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.GetAttribtues(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Update the dictionary based on the @attributes key value check.
+            <param name="classList">class list to be added in the string format.</param>
+            <param name="dictionary">@attribute property value for updating class list.</param>
+            <returns>Returns Dictionary.</returns>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.Equals``1(``0,``0)">
+            <summary>
+            Returns the bool value based on comparing given values with the EqualityComparer.
+            </summary>
+            <param name="oldValue">Old value of the property.</param>
+            <param name="newValue">New value of the property.</param>
+            <returns>Returns bool value.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.SfBaseUtils.DateOnlyConverter">
+            <summary>
+            custom JsonConverter type to serialize the DateOnly data type.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Internal.SfBaseUtils.TimeOnlyConverter">
+            <summary>
+            custom JsonConverter type to serialize the TimeOnly data type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.UpdateProperty``1(``0,``0,Microsoft.AspNetCore.Components.EventCallback{``0},Microsoft.AspNetCore.Components.Forms.EditContext,System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Invoking events for two-way bindings property changes.
+            </summary>
+            <param name="publicValue">Public value needs to be updated in the two-way binding event.</param>
+            <param name="privateValue">Private value to compare with public value for invoking two-way bindings.</param>
+            <param name="eventCallback">EventCallback for invoking two-way binding event handler function.</param>
+            <param name="editContext">EditContext instance for invoking NotifyFieldChanged method.</param>
+            <param name="expression">Expression needs to be passed in the NotifyFieldChanged method.</param>
+            <returns>Returns public property value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.ToArray(System.Object)">
+            <summary>
+            Convert given arguments into array.
+            </summary>
+            <param name="args">arguments for convert into array.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.ValidateExpression``1(Microsoft.AspNetCore.Components.Forms.EditContext,System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Notify the field changes of the EditContext with specified expression.
+            </summary>
+            <param name="editContext">EditContext instance for invoking the NotifyFieldChanged method.</param>
+            <param name="expression">Expression need to be passed in the NotifyFieldChanged method.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.ImportModule(Microsoft.JSInterop.IJSRuntime,Syncfusion.Blazor.Internal.SfScriptModules,System.String)">
+            <summary>
+            Import component specific interop script modules in the application.
+            </summary>
+            <param name="jsRuntime">JSRuntime service to invoke import method.</param>
+            <param name="scriptModule">Component specific interop script module.</param>
+            <param name="scriptQueryParams">Specifies the script query params.</param>
+            <returns>JSObjectReference.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.InvokeEvent``1(System.Object,``0)">
+            <summary>
+            Invokes event handler function of the corresponding event name with parameters.
+            </summary>
+            <param name="eventFn">EventCallback to invoke the event handler method.</param>
+            <param name="eventArgs">Arguments of the event handler method.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.ChangeType(System.Object,System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Convert an object to the specified type.
+            </summary>
+            <param name="dataValue">Value needs to be converted with specific type.</param>
+            <param name="conversionType">Type that needs to be converted to the given value.</param>
+            <param name="isClientChange">Validate the client changes for the components.</param>
+            <param name="isParseValue">Validate the Parse Value for the components.</param>
+            <returns>Returns converted object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.GenerateID(System.String)">
+            <summary>
+            Generate the unique Guid.
+            </summary>
+            <param name="name">add addtional name into ID.</param>
+            <returns>Returns ID string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.InvokeMethod(Microsoft.JSInterop.IJSRuntime,System.String,System.Object[])">
+            <summary>
+            Invoke void return type methods.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.InvokeMethod``1(Microsoft.JSInterop.IJSRuntime,System.String,System.Object[])">
+            <summary>
+            Invoke object return type methods.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.CompareValues``1(``0,``0)">
+            <summary>
+            compare the two values and returns a value indicating whether one value is less than, equal to, or greater than the second value.
+            </summary>
+            <returns>Less than Zero - value1 is less than value 2.</returns>
+            <returns>Zero - Both are equals.</returns>
+            <returns>Greater than Zero - value1 is greater than value 2.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.AddClass(System.String,System.String)">
+            <summary>
+            Add a class to the existing string content.
+            </summary>
+            <param name="prevClass">Previous class list in string format.</param>
+            <param name="className">Class name needs to be added in the string content.</param>
+            <returns>Returns class string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.RemoveClass(System.String,System.String)">
+            <summary>
+            Remove a class from the existing string content.
+            </summary>
+            <param name="prevClass">Previous class list in string format.</param>
+            <param name="className">Class name needs to be removed in the string content.</param>
+            <returns>Returns class string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.AddArrayValue``1(``0[],``0)">
+            <summary>
+            Adds a value to a array.
+            <param name="arrayValue">array to which value should be added.</param>
+            <param name="addValue">value to be added to the array</param>
+            <returns>Returns Dictionary.</returns>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.RemoveArrayValue``1(``0[],``0)">
+            <summary>
+            Removes a value from a array.
+            <param name="arrayValue">array to which value should be removed.</param>
+            <param name="removeValue">value to be removed from the array</param>
+            <returns>Returns Dictionary.</returns>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.IsNotNullOrEmpty(System.Collections.IList)">
+            <summary>
+            Returns true if the list value is not null or empty.
+            <param name="list">list value to be checked for having null or empty values.</param>
+            <returns>Returns boolean value.</returns>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.FormatUnit(System.String)">
+            <summary>
+            Function to normalize the units applied to the element.
+            </summary>
+            <param name="propertyValue">Value.</param>
+            <returns>Retuns normalized unit value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.GetEnumValue``1(``0)">
+            <summary>
+            Returns enumeration member value.
+            </summary>
+            <param name="enumValue">Actual enumeration value to be processed for its member value.</param>
+            <returns>Returns actual enumeration member value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.Animate(Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.Components.ElementReference,Syncfusion.Blazor.Internal.AnimationSettings)">
+            <summary>
+            Function to perform the animation.
+            </summary>
+            <param name="jsRuntime">JSRuntime service to invoke import method.</param>
+            <param name="reference">Represents a reference to a rendered element.</param>
+            <param name="animationObject">Animation object for performing animation transition.</param>
+            <returns>Async Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.RippleEffect(Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.Components.ElementReference,Syncfusion.Blazor.Internal.RippleSettings)">
+            <summary>
+            Function to perform the ripple effect.
+            </summary>
+            <param name="jsRuntime">JSRuntime service to invoke import method.</param>
+            <param name="reference">Represents a reference to a rendered element.</param>
+            <param name="rippleObject">Ripple object for performing the ripple effect.</param>
+            <returns>Async Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Internal.SfBaseUtils.SetCulture(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Function for set the culture at component initialization.
+            </summary>
+            <param name="JsRuntime">JSRuntime service to check and set the culture into WASM localization.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.DOM">
+            <summary>
+            The HTML DOM equivalent C# class object to define basic properties and perform the basic DOM operations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DOM.ID">
+            <summary>
+            A unique ID of the HTML DOM element object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DOM.XPath">
+            <summary>
+            Gets or sets xPath.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DOM.DomUUID">
+            <summary>
+            Gets or sets DOM UID.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DOM.ElementID">
+            <summary>
+            Gets or sets element ID.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DOM.JsRuntime">
+            <summary>
+            Gets or sets JsRuntime.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DOM.AddClass(System.String[])">
+            <summary>
+            Add a list of CSS classes to the HTML DOM element.
+            </summary>
+            <param name="classList">An array of string CSS class to be added in the HTML DOM.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DOM.RemoveClass(System.String[])">
+            <summary>
+            Remove a list of CSS classes in the HTML DOM element.
+            </summary>
+            <param name="classList">An array of string CSS class to be removed in the HTML DOM.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DOM.GetClassList">
+            <summary>
+            Get the CSS class names from the HTML DOM element.
+            </summary>
+            <returns>CSS class names in string of Array.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DOM.SetAttribute``1(System.String,``0)">
+            <summary>
+            Set the attribute to the HTML DOM element.
+            </summary>
+            <typeparam name="T">The attribute value type.</typeparam>
+            <param name="attributeName">The attribute name needs to be updated in the HTML element.</param>
+            <param name="attributeValue">The attribute value needs to be updated to the corresponding attribute in the HTML element.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DOM.GetAttribute``1(System.String)">
+            <summary>
+            Get the attribute value from the HTML DOM element.
+            </summary>
+            <typeparam name="T">The result.</typeparam>
+            <param name="attributeName">The attribute name to get the attribute value from the HTML element.</param>
+            <returns>Returns the HTML attribute value with specific type.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.AnimationEffect">
+            <summary>
+            Specifies the Animation effects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideLeftIn">
+            <summary>
+            Defines the Animation effect as SlideLeftIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideRightIn">
+            <summary>
+            Defines the Animation effect as SlideRightIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FadeIn">
+            <summary>
+            Defines the Animation effect as FadeIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FadeOut">
+            <summary>
+            Defines the Animation effect as FadeOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FadeZoomIn">
+            <summary>
+            Defines the Animation effect as FadeZoomIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FadeZoomOut">
+            <summary>
+            Defines the Animation effect as FadeZoomOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.ZoomIn">
+            <summary>
+            Defines the Animation effect as ZoomIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.ZoomOut">
+            <summary>
+            Defines the Animation effect as ZoomOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideLeft">
+            <summary>
+            Defines the Animation effect as SlideLeft.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideRight">
+            <summary>
+            Defines the Animation effect as SlideRight.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipLeftDownIn">
+            <summary>
+            Defines the Animation effect as FlipLeftDownIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipLeftDownOut">
+            <summary>
+            Defines the Animation effect as FlipLeftDownOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipLeftUpIn">
+            <summary>
+            Defines the Animation effect as FlipLeftUpIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipLeftUpOut">
+            <summary>
+            Defines the Animation effect as FlipLeftUpOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipRightDownIn">
+            <summary>
+            Defines the Animation effect as FlipRightDownIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipRightDownOut">
+            <summary>
+            Defines the Animation effect as FlipRightDownOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipRightUpIn">
+            <summary>
+            Defines the Animation effect as FlipRightUpIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipRightUpOut">
+            <summary>
+            Defines the Animation effect as FlipRightUpOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipXDownIn">
+            <summary>
+            Defines the Animation effect as FlipXDownIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipXDownOut">
+            <summary>
+            Defines the Animation effect as FlipXDownOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipXUpIn">
+            <summary>
+            Defines the Animation effect as FlipXUpIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipXUpOut">
+            <summary>
+            Defines the Animation effect as FlipXUpOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipYLeftIn">
+            <summary>
+            Defines the Animation effect as FlipYLeftIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipYLeftOut">
+            <summary>
+            Defines the Animation effect as FlipYLeftOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipYRightIn">
+            <summary>
+            Defines the Animation effect as FlipYRightIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.FlipYRightOut">
+            <summary>
+            Defines the Animation effect as FlipYRightOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideBottomIn">
+            <summary>
+            Defines the Animation effect as SlideBottomIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideBottomOut">
+            <summary>
+            Defines the Animation effect as SlideBottomOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideDown">
+            <summary>
+            Defines the Animation effect as SlideDown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideUp">
+            <summary>
+            Defines the Animation effect as SlideUp.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideLeftOut">
+            <summary>
+            Defines the Animation effect as SlideLeftOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideRightOut">
+            <summary>
+            Defines the Animation effect as SlideRightOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideTopIn">
+            <summary>
+            Defines the Animation effect as SlideTopIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.SlideTopOut">
+            <summary>
+            Defines the Animation effect as SlideTopOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.AnimationEffect.None">
+            <summary>
+            Defines the Animation effect as None.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Theme">
+            <summary>
+            Defines the theme style of the Syncfusion component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Material">
+            <summary>
+            Renders the Syncfusion component with material theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Bootstrap">
+            <summary>
+            Renders the Syncfusion component with bootstrap theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.HighContrastLight">
+            <summary>
+            Renders the Syncfusion component with high contrast light theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Fabric">
+            <summary>
+            Renders the Syncfusion component with fabric theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.MaterialDark">
+            <summary>
+            Renders the Syncfusion component with material dark theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.FabricDark">
+            <summary>
+            Renders the Syncfusion component with fabric dark theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.HighContrast">
+            <summary>
+            Renders the Syncfusion component with high contrast theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.BootstrapDark">
+            <summary>
+            Renders the Syncfusion component with bootstrap dark theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Bootstrap4">
+            <summary>
+            Renders the Syncfusion component with bootstrap4 theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Bootstrap5">
+            <summary>
+            Renders the Syncfusion component with bootstrap5 theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Bootstrap5Dark">
+            <summary>
+            Renders the Syncfusion component with bootstrap5Dark theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Tailwind">
+            <summary>
+            Renders the Syncfusion component with tailwind theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.TailwindDark">
+            <summary>
+            Renders the Syncfusion component with tailwind dark theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.Fluent">
+            <summary>
+            Renders the Syncfusion component with fluent theme.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Theme.FluentDark">
+            <summary>
+            Renders the Syncfusion component with fluent dark theme.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.LabelOverflow">
+            <summary> 
+            Specifies text overflow options when the text overflowing the container. 
+            </summary> 
+        </member>
+        <member name="F:Syncfusion.Blazor.LabelOverflow.Ellipse">
+            <summary> 
+            Specifies an ellipsis (“...”) to the clipped text. 
+            </summary>     
+        </member>
+        <member name="F:Syncfusion.Blazor.LabelOverflow.Clip">
+            <summary> 
+            Specifies the text is clipped and not accessible. 
+            </summary> 
+        </member>
+        <member name="T:Syncfusion.Blazor.TextWrap">
+            <summary> 
+            Specifies text wrap options when the text overflowing the container. 
+            </summary> 
+        </member>
+        <member name="F:Syncfusion.Blazor.TextWrap.Normal">
+            <summary> 
+            Specifies to break words only at allowed break points. 
+            </summary> 
+        </member>
+        <member name="F:Syncfusion.Blazor.TextWrap.Wrap">
+            <summary> 
+            Specifies to break a word once it is too long to fit on a line by itself. 
+            </summary>     
+        </member>
+        <member name="F:Syncfusion.Blazor.TextWrap.AnyWhere">
+            <summary> 
+            Specifies to break a word at any point if there are no otherwise-acceptable break points in the line. 
+            </summary> 
+        </member>
+        <member name="T:Syncfusion.Blazor.GlobalAnimationMode">
+            <summary>
+            Defines the Global Animation modes for Syncfusion Blazor components.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.GlobalAnimationMode.Default">
+            <summary>
+            Defines the Global Animation mode as Default for Syncfusion Blazor Components.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.GlobalAnimationMode.Enable">
+            <summary>
+            Defines the Global Animation mode as Enable for Syncfusion Blazor Components.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.GlobalAnimationMode.Disable">
+            <summary>
+            Defines the Global Animation mode as Disable for Syncfusion Blazor Components.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HorizontalAlign">
+            <summary>
+            Defines the horizontal text alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HorizontalAlign.Left">
+            <summary>
+            Align the text on the left.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HorizontalAlign.Right">
+            <summary>
+            Align the text on the right.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HorizontalAlign.Center">
+            <summary>
+            Align the text in the center.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ISyncfusionStringLocalizer">
+            <summary>
+            An interface for processing the Syncfusion UI component's Localization.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ISyncfusionStringLocalizer.ResourceManager">
+            <summary>
+            ResourceManager for processing the resource file parsing.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ISyncfusionStringLocalizer.GetText(System.String)">
+            <summary>
+            Return the Localized value from the resource file.
+            </summary>
+            <param name="key">Key string to get the localized value.</param>
+            <returns>Returns the localized string.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.SyncfusionStringLocalizer">
+            <summary>
+            Provides the mplementation for Syncfusion Localizer for resources localization.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionStringLocalizer.ResourceMan">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionStringLocalizer.ResourceManager">
+            <summary>
+            Gets the <see cref="T:System.Resources.ResourceManager" /> for localization.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionStringLocalizer.GetText(System.String)">
+            <summary>
+            Get localized text from resource file.
+            </summary>
+            <param name="key">Property key to return localized value.</param>
+            <returns>Locale text.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.SfMediaQuery">
+            <summary>
+            The Blazor Media Query component allows developers to create responsive layouts.
+            The component tracks changes in the browser size and notifies when the browser size matches the specified media query.
+            The <see cref="T:Syncfusion.Blazor.MediaBreakpoint"/> class is used to store information about each media query breakpoint, including the <c>Breakpoint</c> name and the <c>MediaQuery</c> itself. 
+            The <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> property returns the <c>Breakpoint</c> of the <c>MediaBreakpoint</c> in the <c>MediaBreakpoints</c> collection that matches the current browser size. 
+            This allows developers to easily create responsive layouts that adapt to different screen sizes and device types.
+            </summary>
+            <example>
+            <code><![CDATA[
+            @if (String.IsNullOrEmpty(activeBreakpoint))
+            {
+                <label>Loading...</label>
+            }
+            else
+            {
+                @if(activeBreakpoint == "Small")
+                {
+                    <button>Mobile</button>
+                }
+                else
+                {
+                    <button>Desktop</button>
+                }
+            }
+            <SfMediaQuery @bind-ActiveBreakpoint="@activeBreakpoint"></SfMediaQuery>
+            @code {
+                private string activeBreakpoint;
+            }
+            ]]></code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.SfMediaQuery.Small">
+            <summary>
+            Gets or sets the predefined media query (<code>(max-width: 768px)</code> for <code>Small</code> break point. 
+            If <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> is not specified, this default media query will be used by <see cref="T:Syncfusion.Blazor.SfMediaQuery"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SfMediaQuery.Medium">
+            <summary>
+            Gets or sets the predefined media query (<code>(min-width: 768px)</code> for <code>Medium</code> break point. 
+            If <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> is not specified, this default media query will be used by <see cref="T:Syncfusion.Blazor.SfMediaQuery"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SfMediaQuery.Large">
+            <summary>
+            Gets or sets the predefined media query (<code>(min-width: 1024px)</code> for <code>Large</code> break point. 
+            If <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> is not specified, this default media query will be used by <see cref="T:Syncfusion.Blazor.SfMediaQuery"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint">
+            <summary>
+            Gets the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.Breakpoint"/> of the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery"/> in <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> collection that matches with the current browser size.
+            Based on the <c>ActiveBreakpoint</c>, developers can easily create responsive layouts that adapt to different screen sizes and device types.
+            </summary>
+            <value>
+            A string value that represents the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.Breakpoint"/> of the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery"/> in <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> collection that matches with the browser size.
+            The default value is <code>null</code>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints">
+            <summary>
+            Gets or sets the collection of <see cref="T:Syncfusion.Blazor.MediaBreakpoint"/> that contains the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.Breakpoint"/> and <see cref="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery"/>.
+            <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> is set when a <see cref="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery"/> matches with the current browser size from this collection.
+            </summary>
+            <value>
+            A collection of <see cref="T:Syncfusion.Blazor.MediaBreakpoint"/> that contains the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.Breakpoint"/> and <see cref="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery"/>.
+            The defaul value is empty collection.
+            </value>
+            <remarks>
+            If <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> is not specified, <see cref="T:Syncfusion.Blazor.SfMediaQuery"/> will use built-in collection of <see cref="T:Syncfusion.Blazor.MediaBreakpoint"/> that contains <see cref="F:Syncfusion.Blazor.SfMediaQuery.Small"/>, <see cref="F:Syncfusion.Blazor.SfMediaQuery.Medium"/> and <see cref="F:Syncfusion.Blazor.SfMediaQuery.Large"/> media queries.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpointChanged">
+            <summary>
+            Gets or sets the event that is triggered when the <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> is changed.
+            </summary>
+            <value>
+            An event that is triggered when the <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> is changed.
+            </value>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfMediaQuery.OnBreakpointChanged">
+            <summary> 
+             Gets or sets the event that is triggered when the <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> is changed.
+            </summary> 
+            <value>
+            An event that is triggered when the <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> is changed.
+            </value>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.OnInitializedAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.OnParametersSetAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.UpdateActiveBreakpoint(System.String)">
+            <summary>
+            A method that is used to update the <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/> which is invoked from interop. 
+            </summary>
+            <remarks>
+            Internal purpose.
+            </remarks>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.OnAfterScriptRendered">
+            <inheritdoc/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.ComponentDispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.UpdatePredefinedBreakpoints">
+            <summary>
+            A method that is used to update <see cref="F:Syncfusion.Blazor.SfMediaQuery.mediaBreakpoints"/> collection
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfMediaQuery.UpdateActiveBreakpointChanged(System.String)">
+            <summary>
+            A method that is used to update the <see cref="P:Syncfusion.Blazor.SfMediaQuery.ActiveBreakpoint"/>.
+            </summary>
+            <param name="activeBreakpoint"></param>
+        </member>
+        <member name="T:Syncfusion.Blazor.MediaBreakpoint">
+            <summary>
+            A class that used to define break point and media query for <see cref="T:Syncfusion.Blazor.SfMediaQuery"/> component.
+            The <c>MediaBreakpoint</c> class has two main properties: <c>Breakpoint</c> and <c>MediaQuery</c>. 
+            The <c>Breakpoint</c> property is a string that specifies the name of the breakpoint and 
+            the <c>MediaQuery</c> property is a string that specifies the media query associated with the breakpoint, which determines when the responsive layout changes associated with the breakpoint should be applied. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.MediaBreakpoint.Breakpoint">
+            <summary>
+            Gets or sets the name of the break point.
+            </summary>
+            <value>
+            A string value that represents the name of the break point.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery">
+            <summary>
+            Gets or sets the media query.
+            </summary>
+            <value>
+            A string value that represents the media query.
+            </value>
+            <example>
+            <code><![CDATA[
+            MediaQuery = "(max-width: 768px)"
+            MediaQuery = "(min-width: 768px)"
+            MediaQuery = "(min-width: 1024px)"
+            ]]></code>
+            </example>
+        </member>
+        <member name="T:Syncfusion.Blazor.BreakpointChangedEventArgs">
+            <summary>
+            Provides information about the <see cref="P:Syncfusion.Blazor.SfMediaQuery.OnBreakpointChanged"/> event callback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BreakpointChangedEventArgs.ActiveBreakpoint">
+            <summary>
+            Gets the active breakpoint. 
+            </summary>
+            <value>
+            A <see cref="P:Syncfusion.Blazor.MediaBreakpoint.Breakpoint"/> of the <see cref="P:Syncfusion.Blazor.MediaBreakpoint.MediaQuery"/> in <see cref="P:Syncfusion.Blazor.SfMediaQuery.MediaBreakpoints"/> collection that matches with the current browser size.
+            </value>
+        </member>
+        <member name="T:Syncfusion.Blazor.FastReflectionExtension">
+            <summary>
+            An extension class which provides various extension methods to reflect the data from an object by storing the accessors for faster reflection.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.FastReflectionExtension.CreateAccessor(System.Reflection.PropertyInfo)">
+            <summary>
+            Creates and returns <see cref="T:Syncfusion.Blazor.IPropertyAccessor"/> that stores the property accessor of a specfied property.
+            </summary>
+            <param name="propertyInfo">The info that provides access to property metadata.</param>
+            <returns><see cref="T:Syncfusion.Blazor.IPropertyAccessor"/></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FastReflectionExtension.CreateAccessor(System.Type,System.String)">
+            <summary>
+            Creates and returns <see cref="T:Syncfusion.Blazor.IPropertyAccessor"/> that stores the property accessor of a specfied property.
+            </summary>
+            <param name="objectType">Type of object.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <returns><see cref="T:Syncfusion.Blazor.IPropertyAccessor"/></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FastReflectionExtension.GetValue(System.Object,System.String,System.Boolean)">
+            <summary>
+            Returns the property value of a specified object of any type includes static types, <see cref="T:System.Dynamic.DynamicObject"/> and <see cref="T:System.Dynamic.ExpandoObject"/> types.
+            </summary>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="reflectComplexProperty">true, if need to reflect complex property. </param>
+            <returns>The property value of the specified object.</returns>
+            <remarks>For accessing complex/nested property value, given the propertyName with field names delimited by dot(.).</remarks>
+        </member>
+        <member name="T:Syncfusion.Blazor.ReflectionHelper">
+            <summary>
+            A class performs property access and cache the getter method for better performance.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper.GetValue(System.Object,System.String)">
+            <summary>
+            Returns the property value of a specified object of any type includes static types, <see cref="T:System.Dynamic.DynamicObject"/> and <see cref="T:System.Dynamic.ExpandoObject"/> types.
+            </summary>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <returns>The property value of the specified object.</returns>
+            <remarks>For accessing complex/nested property value, given the propertyName with field names delimited by dot(.).</remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper.TryGetValue(System.Object,System.String,System.Boolean,System.Object@)">
+            <summary>
+            Returns true, the property value of a specified object of any type includes static types, 
+            <see cref="T:System.Dynamic.DynamicObject"/> and <see cref="T:System.Dynamic.ExpandoObject"/> type is set to value parameter.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper.SetValue(System.Object,System.String,System.Object)">
+            <summary>
+            Sets the property value of a specified object.
+            </summary>
+            <param name="obj">The object whose property value will set.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="value">The new property value.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper.Dispose">
+            <summary>
+            Releases cached property accessor.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper.Dispose(System.Boolean)">
+            <summary>
+            Releases cached property accessor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ReflectionHelper`1">
+            <summary>
+            A class performs property access and cache the getter method for better performance.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="F:Syncfusion.Blazor.ReflectionHelper`1.ValueAccessor">
+            <summary>
+            Gets Stores values accessor for type param.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper`1.#ctor">
+            <summary>
+            Creates an instance.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper`1.GetValue(`0,System.String)">
+            <summary>
+            Returns the property value of a specified object of type param.
+            </summary>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <returns>The property value of the specified object.</returns>
+            <remarks>For accessing complex/nested property value, given the propertyName with field names delimited by dot(.).</remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionHelper`1.Dispose(System.Boolean)">
+            <inheritdoc cref="M:Syncfusion.Blazor.ReflectionHelper.Dispose(System.Boolean)"/>
+        </member>
+        <member name="T:Syncfusion.Blazor.IPropertyAccessor">
+            <summary>
+            Interface stores the property accessor for static types.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.IPropertyAccessor.PropertyInfo">
+            <summary>
+            Gets or sets the info that provides access to property metadata.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.IPropertyAccessor.GetValue(System.Object)">
+            <summary>
+            Returns the property value of a specified object.
+            </summary>
+            <param name="obj">The object whose property value will be returned.</param>
+            <returns>The property value of the specified object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.IPropertyAccessor.GetKeyValue(System.Object)">
+            <summary>
+            Returns the property value of a specified object as string.
+            </summary>
+            <param name="obj">The object whose property value will be returned.</param>
+            <returns>The property value of the specified object as string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.IPropertyAccessor.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the property value of a specified object.
+            </summary>
+            <param name="obj">The object whose property value will be set.</param>
+            <param name="value">The property value.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.IPropertyAccessorProvider">
+            <summary>
+            Interface that declares the methods to be implemented for accessing the properties of an object.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.IPropertyAccessorProvider.PropertyAccessors">
+            <summary>
+            Holds property name and its fast reflection accessors.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.IPropertyAccessorProvider.GetValue(System.Object,System.String)">
+            <summary>
+            Returns the property value of a specified object.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.IPropertyAccessorProvider.TryGetValue(System.Object,System.String,System.Object@)">
+            <summary>
+            Returns true, wehn gets the property value of a specified object.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.IPropertyAccessorProvider.SetValue(System.Object,System.Object,System.String)">
+            <summary>
+            Sets the property value of a specified object.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.PropertyAccessor`2">
+            <summary>
+            A class that holds get and set accessor of a property which is used to retrive the field values using reflection.
+            </summary>
+            <typeparam name="TObject">Type of object.</typeparam>
+            <typeparam name="TValue">Type of property. </typeparam>
+            <remarks>
+            Use <see cref="M:Syncfusion.Blazor.FastReflectionExtension.CreateAccessor(System.Reflection.PropertyInfo)"/> to create accessor based on type.
+            </remarks>
+        </member>
+        <member name="T:Syncfusion.Blazor.ReflectionExtension">
+            <summary>
+            An extension class which provides various extension methods to reflect the data from an object.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.GetValue(System.Object,System.String,System.Boolean)">
+            <summary>
+            Returns the property value of a specified object of any type includes static types, <see cref="T:System.Dynamic.DynamicObject"/> and <see cref="T:System.Dynamic.ExpandoObject"/> types.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="reflectComplexProperty">true, if need to reflect complex property. </param>
+            <returns>The property value of the specified object. Also, returns null if <paramref name="obj"/> and <paramref name="propertyName"/> is null or empty.</returns>
+            <remarks>For accessing complex/nested property value, given the propertyName with field names delimited by dot(.).</remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.TryGetValue(System.Object,System.String,System.Boolean,System.Object@)">
+            <summary>
+            Returns true, the property value of a specified object of any type includes static types, 
+            <see cref="T:System.Dynamic.DynamicObject"/> and <see cref="T:System.Dynamic.ExpandoObject"/> type is set to value parameter.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.GetValueFromStaticObject(System.Object,System.String)">
+            <summary>
+            Returns the property value of a specified object of type s<see cref="T:System.Dynamic.DynamicObject"/>.
+            </summary>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <returns>The property value of the specified object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.SetValue(System.Object,System.String,System.Object,System.Boolean,Syncfusion.Blazor.SetOptions)">
+            <summary>
+            Sets the property value of a specified object.
+            </summary>
+            <param name="obj">The object whose property value will set.</param>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="value">The new property value.</param>
+            <param name="reflectComplexProperty">true, if need to reflect complex property. </param>
+            <param name="options">Options to control set options. </param>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.GetValueFromIDynamicMetaObject(System.Object,System.String,System.Boolean)">
+            <summary>
+            Returns the property value of a specified object of type <see cref="T:System.Dynamic.DynamicObject"/> or <see cref="T:System.Dynamic.ExpandoObject"/>.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="reflectComplexProperty">true, if need to reflect complex property. </param>
+            <returns>The property value of the specified object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.GetValueFromDynamicObject(System.Dynamic.DynamicObject,System.String,System.Boolean)">
+            <summary>
+            Returns the property value of a specified object of type <see cref="T:System.Dynamic.DynamicObject"/>.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="reflectComplexProperty">true, if need to reflect complex property. </param>
+            <returns>The property value of the specified object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.SetValueToIDynamicMetaObject(System.Object,System.String,System.Object)">
+            <summary>
+            Returns the property value of a specified object of type <see cref="T:System.Dynamic.DynamicObject"/> and <see cref="T:System.Dynamic.ExpandoObject"/>.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="value">The new property value.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.SetValueToDynamicObject(System.Dynamic.DynamicObject,System.String,System.Object)">
+            <summary>
+            Returns the property value of a specified object of type <see cref="T:System.Dynamic.DynamicObject"/>.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="value">The new property value.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.GetValueFromExpandoObject(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.Boolean)">
+            <summary>
+            Returns the property value of a specified object of type <see cref="T:System.Dynamic.ExpandoObject"/>.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <param name="reflectComplexProperty">true, if need to reflect complex property. </param>
+            <returns>The property value of the specified object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.SetValueToExpandoObject(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.Object)">
+            <summary>
+            Sets the property value of a specified object.
+            </summary>
+            <param name="propertyName">The string containing the name of the public property.</param>
+            <param name="obj">The object whose property value will be returned.</param>
+            <returns>The property value of the specified object.</returns>
+            <param name="value">The new property value.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.TryCreateInstance``1(System.Boolean)">
+            <summary>
+            Creates an instance of the specified type using that type's parameterless constructor.
+            </summary>
+            <typeparam name="T">The type of object to create.</typeparam>
+            <param name="createsubtypes">true, if nested properties also should be initialized with instance</param>
+            <returns>A reference to the newly created object.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ReflectionExtension.TryCreateInstance(System.Type,System.Boolean)">
+            <summary>
+            Creates an instance of the specified type using that type's parameterless constructor.
+            </summary>
+            <param name="type">The type of object to create.</param>
+            <param name="createsubtypes">true, if nested properties also should be initialized with instance.</param>
+            <returns>A reference to the newly created object.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.CloneUtils">
+            <summary>
+            An extension class which provides various extension methods to clone an object.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.CloneUtils.Clone(System.Object,System.Type)">
+            <summary>
+            Creates and returns a new object that is a copy of the specified <paramref name="obj"/>.
+            </summary>
+            <param name="obj">The object whose clone will be returned.</param>
+            <param name="type">Type of new object type.</param>
+            <returns>A new object that is a copy of <paramref name="obj"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="obj"/> can't be null.</exception>
+        </member>
+        <member name="M:Syncfusion.Blazor.CloneUtils.CloneStaticObjectType(System.Object,System.Type,System.Boolean)">
+            <summary>
+            Creates and returns a new object that is a copy of the specified <paramref name="obj"/>.
+            </summary>
+            <param name="obj">The object whose clone will be returned.</param>
+            <param name="type">Type of new object type.</param>
+            <param name="PreventDataClone">To prevent the object cloning.</param>
+            <returns>A new object that is a copy of <paramref name="obj"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="obj"/> can't be null.</exception>
+        </member>
+        <member name="M:Syncfusion.Blazor.CloneUtils.CloneExpandoObject(System.Dynamic.ExpandoObject,System.Boolean)">
+            <summary>
+            Creates and returns a new object that is a copy of the specified <paramref name="obj"/>.
+            </summary>
+            <param name="obj">The object whose clone will be returned.</param>
+            <param name="PreventDataClone">To prevent the object cloning.</param>
+            <returns>A new object that is a copy of <paramref name="obj"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="obj"/> can't be null.</exception>
+        </member>
+        <member name="M:Syncfusion.Blazor.CloneUtils.CloneDynamicObject(System.Dynamic.DynamicObject,System.Type,System.Boolean)">
+            <summary>
+            Creates and returns a new object that is a copy of the specified <paramref name="obj"/>.
+            </summary>
+            <param name="obj">The object whose clone will be returned.</param>
+            <param name="type">Type of new object type.</param>
+            <param name="PreventDataClone">To prevent the object cloning.</param>
+            <returns>A new object that is a copy of <paramref name="obj"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="obj"/> can't be null.</exception>
+        </member>
+        <member name="T:Syncfusion.Blazor.SetOptions">
+            <summary>
+            Provides options on conversion, complex property handling when set the property value of a object.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.SetOptions.CreateInstanceForComplexType">
+            <summary>
+            Gets or sets whether to create new instances for setting complex property values.
+            Not applicable for <see cref="T:System.Dynamic.ExpandoObject"/> and <see cref="T:System.Dynamic.DynamicObject"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SetOptions.CanConvertToPropertyType">
+            <summary>
+            Gets or sets whether to convert the value to 
+            <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> before set the value.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DataMemberBinder">
+            <summary>
+            Defines the data member binder for getting dynamic object property.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.DataSetMemberBinder">
+            <summary>
+            Defines the data member binder for setting dynamic object property.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.SfBaseComponent">
+            <summary>
+            A Base Component for all the Syncfusion Blazor UI components to implement the common functionalities.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfBaseComponent.showLicenseComponent">
+            <summary>
+            Gets or sets whether to show component on rendering this component. The default value is false and it will be set to true right before init the component.
+            So, OnAfterRender will get called for SyncfusionLicense component in all use cases.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfBaseComponent.PropertyChanges">
+            <summary>
+            A dictionary maintains changes properties names and value. Based on the count, you can refresh UI in OnParametersSetAsync.
+            This dictionary will be cleared in <see cref="M:Syncfusion.Blazor.SfBaseComponent.OnAfterRenderAsync(System.Boolean)"/>. 
+            </summary>
+            <remarks>
+            Changes properties should be added in OnParametersSetAsync by calling <see cref="M:Syncfusion.Blazor.SfBaseComponent.NotifyPropertyChanges``1(System.String,``0,``0,System.Boolean)"/>.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SfBaseComponent.PrevChanges">
+            <summary>
+            While update the two way binding property value in set method the component change event call repeatedly, 
+            so that we have add the value this dictionary and restrict based on this value.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Set to true for the first time component rendering; otherwise gets false.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.Dispose">
+            <summary>
+            Dispose unmanaged resources in the Syncfusion Blazor component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.Dispose(System.Boolean)">
+            <summary>
+            Dispose unmanaged resources in the Syncfusion Blazor component.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.ComponentDispose">
+            <summary>
+            The virtual method to override the Dispose method at component side.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.OnAfterScriptRendered">
+            <summary>
+            Notify the component about the required scripts are rendered in the web page.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.InvokeMethod(System.String,System.Object[])">
+            <summary>
+            Invokes JSInterop for void return type methods.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.InvokeMethod``1(System.String,System.Boolean,System.Object[])">
+            <summary>
+            Invokes JSInterop for object return type methods.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.NotifyPropertyChanges``1(System.String,``0,``0,System.Boolean)">
+            <summary>
+            Notify the property value changes and it will be tracked in the PropertyChanges.
+            </summary>
+            <param name="propertyName">Name of the property needs to be compared.</param>
+            <param name="publicValue">Public value of the property.</param>
+            <param name="privateValue">Private value of the property.</param>
+            <param name="updatePrevProps">Private value of the Previous property</param>
+            <returns>Returns T.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.UpdateObservableEventsForObject(System.String,System.Object,System.Boolean)">
+            <summary>
+            Wire or unwire observable events to a specific collection object.
+            </summary>
+            <param name="propertyName">ObservableCollection property name to track it in PropertyChanges.</param>
+            <param name="dataValue">A ObservableCollection data object to bind or unbind the events.</param>
+            <param name="unwire">Set true to unwire observable events to the ObservableCollection object.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.UpdateObservableEvents(System.String,System.Collections.IEnumerable,System.Boolean)">
+            <summary>
+            Wire or unwire observable events to a specific ObservableCollection object.
+            </summary>
+            <param name="propertyName">ObservableCollection property name to track it in PropertyChanges.</param>
+            <param name="dataValue">A ObservableCollection data object to bind or unbind the events.</param>
+            <param name="unwire">Set true to unwire observable events to the ObservableCollection object.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.ObservableCollectionChanged(System.String,System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            INotifyCollectionChanged event handler method to track the changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.ObservablePropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            INotifyPropertyChanged event handler method to track the changes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.OnObservableChange(System.String,System.Object,System.Boolean,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Overridable Method for INotifyCollectionChanged event handler to track the changes.
+            </summary>
+            <param name="propertyName">Observable property name.</param>
+            <param name="sender">Observable model object.</param>
+            <param name="isCollectionChanged">Sets true if the observable collection changed.</param>
+            <param name="e">Changed Event Args</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfBaseComponent.updateIsDeviceMode">
+            <summary>
+            Method to update the IsDevice mode property. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SfComponentActivator">
+            <summary>
+            A implementation of <see cref="T:Microsoft.AspNetCore.Components.IComponentActivator"/> for Syncfusion Blazor components used to initialize custom components
+            that can be registered through dependency injection.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfComponentActivator.#ctor(System.IServiceProvider)">
+            <summary>
+            Default constructor for SfComponentActivator class.
+            </summary>
+            <param name="provider">Service provider for registered components.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SfComponentActivator.CreateInstance(System.Type)">
+            <summary>
+            Create component for the specified component type.
+            </summary>
+            <param name="componentType">Type of component need to be created.</param>
+            <returns>Returns newly created component.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.SyncfusionBlazor">
+            <summary>
+            An extension class controls methods to add the Syncfusion Blazor service to the <see href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">service collection</see>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazor.AddSyncfusionBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Syncfusion.Blazor.GlobalOptions})">
+            <summary>
+            Adds Syncfusion Blazor service to the <see href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">service collection</see> and configure components global options.
+            </summary>
+            <param name="services">The collection of services.</param>
+            <param name="configure">A delegate that is used to configure <see cref="T:Syncfusion.Blazor.GlobalOptions"/>.</param>
+            <returns>The collection of services.</returns>
+            <example>
+            <code lang="C#"><![CDATA[
+            services.AddSyncfusionBlazor(options =>
+            {
+                options.IgnoreScriptIsolation = true;
+            });
+            ]]></code>
+            </example>
+        </member>
+        <member name="T:Syncfusion.Blazor.SyncfusionBlazorService">
+            <summary>
+            Represents an instance of Syncfusion Blazor service.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazorService.#ctor(Microsoft.Extensions.Options.IOptions{Syncfusion.Blazor.GlobalOptions},Microsoft.JSInterop.IJSRuntime)">
+            <exclude />
+            /// <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.SyncfusionBlazorService"/> class.
+            </summary>
+            <param name="configure">Configured global options for Syncfusion Blazor.</param>
+            <param name="jsRuntime"></param>
+        </member>
+        <member name="F:Syncfusion.Blazor.SyncfusionBlazorService.MAXCOMPCOUNT">
+            <summary>
+            Specifies the maximum component count to allow the component without license overlay popup.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsCultureLoaded">
+            <summary>
+            Specifies the current culture is set to the library for all type of components.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsScriptRendered">
+            <summary>
+            Specifies the init JSInterop script is loaded, when DisableScriptManager is false.
+            Specifies the IsDevice JSInterop call invoked, when DisableScriptManager is true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsModuleInitComponentInitialized">
+            <summary>
+            Specifies whether the module init component is initialized.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsDeviceMode">
+            <summary>
+            Specifies the application is rendering in device mode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsFirstResource">
+            <summary>
+            Specifies the first component rendering in the application.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsFirstBaseResource">
+            <summary>
+            Specifies the first BaseComponent inherited rendering in the application.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.ScriptQueryParams">
+            <summary>
+            Specifies the script query params in script reference to avoid cache issue.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.ComponentCount">
+            <summary>
+            Gets or sets the trial component rendered count to show the license alert to the user.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SyncfusionBlazorService.IsLicValidated">
+            <summary>
+            Specifies whether the license component is validated.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazorService.EnableRipple(System.Boolean)">
+            <summary>
+            Enable ripple effect to the Syncfusion Blazor components for material design theme.
+            </summary>
+            <param name="enable">Set false to disable ripple effect.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazorService.EnableRtl(System.Boolean)">
+            <summary>
+            Enable right-to-left text direction to the Syncfusion Blazor components.
+            </summary>
+            <param name="enable">Set false to disable right-to-left text direction.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazorService.IsDevice">
+            <summary>
+            Returns true when the application is running on a mobile or IPad device.
+            This method should be called only in the OnAfterRenderAsync life cycle method.
+            </summary>
+            <returns>Returns true, if the application rendering in mobile or IPad devices.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazorService.UpdateSyncfusionService(System.Boolean)">
+            <summary>
+            Update the device mode property and import the components interop scripts when <c>IgnoreScriptIsolation</c> is <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.SyncfusionBlazorService.SetIsDevice(System.Boolean)">
+            <exclude />
+            <summary>Method invokable by JS to update the device mode and initialize components interop scripts importing after the init script is loaded on the web page when <c>IgnoreScriptIsolation</c> is <c>false</c>.</summary>
+            <param name="isDevice">Boolean value to identify whether the application is rendering in mobile or IPad devices.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.GlobalOptions">
+            <summary>
+            A class that provides options to configure global settings for our Syncfusion Blazor components.
+            </summary>
+            <example>
+            <code lang="C#"><![CDATA[
+            services.AddSyncfusionBlazor(options =>
+            {
+                options.IgnoreScriptIsolation = true;
+            });
+            ]]></code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.GlobalOptions.IgnoreScriptIsolation">
+            <summary>
+            Gets or sets whether the Syncfusion Blazor scripts are loaded internally using JavaScript Isolation or refer to the required scripts from the application-end for better performance. 
+            </summary>
+            <value>
+            true, if the scripts should be referenced externally in the application-end from NuGet or CDN or by generating from CRG. The default value is true.
+            </value>
+            <remarks>
+            When the property value is false, the Blazor scripts are loaded from built-in source using JavaScript Isolation internally. 
+            </remarks>
+            <example>
+            <para> You can add script reference in one of the following ways externally for better performance when <c>IgnoreScriptIsolation</c> is <c>true</c>.</para>
+            <para><b>Reference scripts from NuGet</b></para>
+            To add script reference for all component except PdfViewer and DocumentEditor.
+            <code lang="html"><![CDATA[
+            <script  src="_content/Syncfusion.Blazor/scripts/syncfusion-blazor.min.js"  type="text/javascript"></script>
+            ]]></code>
+            To add script reference for PdfViewer.
+            <code lang="html"><![CDATA[
+            <script  src="_content/Syncfusion.Blazor.PdfViewer/scripts/syncfusion-blazor-pdfviewer.min.js"  type="text/javascript"></script>
+            ]]></code>
+            To add script reference for DocumentEditor.
+            <code lang="html"><![CDATA[
+            <script  src="_content/Syncfusion.Blazor.WordProcessor/scripts/syncfusion-blazor-documenteditor.min.js"  type="text/javascript"></script>
+            ]]></code>
+            <para><b>Reference scripts from CDN</b></para>
+            To add script reference for all component except PdfViewer and DocumentEditor.
+            <code lang="html"><![CDATA[
+            <script  src="https://cdn.syncfusion.com/blazor/19.3.43/syncfusion-blazor.min.js"  type="text/javascript"></script>
+            ]]></code>
+            To add script reference for PdfViewer.
+            <code lang="html"><![CDATA[
+            <script  src="https://cdn.syncfusion.com/blazor/19.3.43/syncfusion-blazor-pdfviewer.min.js"  type="text/javascript"></script>
+            ]]></code>
+            To add script reference for DocumentEditor.
+            <code lang="html"><![CDATA[
+            <script  src="https://cdn.syncfusion.com/blazor/19.3.43/syncfusion-blazor-documenteditor.min.js"  type="text/javascript"></script>
+            ]]></code>
+            <em>Note: Ensure to change the version in CDN link based on the syncfusion version you are using.</em>
+            <para><b>Reference scripts by generating from <see href="https://blazor.syncfusion.com/crg/">Blazor CRG</see> for only used components</b></para>
+            Generate a required component script and styles from Blazor custom resource generator(Blazor CRG) and refer to them in your application.
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.GlobalOptions.EnableRippleEffect">
+            <summary>
+            Specifies whether the ripple effect is enabled in the application.
+            </summary>
+            <value>
+            true, if the ripple effect is enabled in the application. The default value is false.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.GlobalOptions.EnableRtl">
+            <summary>
+            Specifies whether the Rtl mode enabled in the application.
+            </summary>
+            <value>
+            true, if the Rtl mode enabled in the application. The default value is false.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.GlobalOptions.Animation">
+            <summary>
+            Gets or sets global options to control animation behaviors for animation supported Syncfusion Blazor components.
+            </summary>
+            <value>
+            Default, if the animation works in all the Syncfusion Blazor components based on its animation property value. Enable/Disable, to control the animation in all the Syncfusion Blazor components. The default value is 'Default'.
+            </value>
+            <remarks>
+            Control the animation globally in all Syncfusion Blazor components. By default, the animation works based on the individual component's animation property value. But the animation is enabled or disabled globally in all Syncfusion Blazor components by configure this GlobalOptions property as Enable/Disable.
+            For example,
+            If GlobalOptions.Animation is �Enable� and Blazor Chart animation is false, the animation applies to the Blazor Chart component.
+            If GlobalOptions.Animation is �Disable� and Blazor Chart animation is true, the animation doesn't applies to the Chart component.
+            </remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blazor.PersianDatePicker</name>
+    </assembly>
+    <members>
+        <member name="F:Blazor.PersianDatePicker.Calendar.DualModeJalaliDefault">
+            <summary>
+            Both Jalali (Persian) and Miladi (Gregorian) calendars, with default set to Jalali 
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.Calendar.DualModeMiladiDefault">
+            <summary>
+            Both Jalali (Persian) and Miladi (Gregorian) calendars, with default set to Miladi 
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.Calendar.SingleModeJalali">
+            <summary>
+            Only Jalali (Persian) calendar
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.Calendar.SingleModeMiladi">
+            <summary>
+            Only Miladi (Gregorian) calendar
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.DateFormat.yyyy_slash_MM_slash_dd">
+            <summary>
+            e.g. 1400/01/01
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.DateFormat.yyyy_dash_MM_dash_dd">
+            <summary>
+            e.g. 1400-01-01
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.DigitType.BasedOnCalendar">
+            <summary>
+            For dual calendar mode, will change based on current calendar
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.DigitType.Persian">
+            <summary>
+            e.g. ۱۴۰۰/۰۱/۱۱
+            </summary>
+        </member>
+        <member name="F:Blazor.PersianDatePicker.DigitType.English">
+            <summary>
+            e.g. 1400/01/11
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.Id">
+            <summary>
+            Html input element id attribute (Required)
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.Name">
+            <summary>
+            Html input element name attribute (Optional)
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.Visible">
+            <summary>
+            Control visibility of input
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.Disabled">
+            <summary>
+            Disabled make input disabled. Meaning only showing value and picker popup won't open
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.PickerAlign">
+            <summary>
+            Picker align relative to input
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.ShowCalendarIcon">
+            <summary>
+            Show calendar icon on input
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.CalendarIconPosition">
+            <summary>
+            Calendar icon position relative to input
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.PickerOffsetTopPositionInPixels">
+            <summary>
+            Can be used in changing vertical position of picker popup relative to input
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.InitialValue">
+            <summary>
+            Initial value for input set on today
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.CalendarType">
+            <summary>
+            Calendar type for date picker including Dual, Single, etc
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.DigitType">
+            <summary>
+            Control the digit type showing in input after selecting by picker
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.DateFormat">
+            <summary>
+            Format of date to show in input after selecting by picker
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.MinDateSetOnToday">
+            <summary>
+            Prevent user select date before today
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.ReadOnly">
+            <summary>
+            Set datepicker readonly
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.CssClass">
+            <summary>
+            CSS class for input element
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.Style">
+            <summary>
+            Inline styles for input element
+            </summary>
+        </member>
+        <member name="P:Blazor.PersianDatePicker.InputPersianDatePicker.Theme">
+            <summary>
+            Choose a theme for changing look and feel of picker
+            </summary>
+        </member>
+    </members>
+</doc>

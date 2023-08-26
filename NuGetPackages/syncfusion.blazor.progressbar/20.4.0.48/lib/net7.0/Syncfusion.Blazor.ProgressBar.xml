@@ -1,0 +1,684 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.ProgressBar</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.ProgressBar.CornerType">
+            <summary>
+            Specifies the progress bar corner type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.CornerType.Auto">
+            <summary>
+            Specifies the edges of the progress bar based on theme style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.CornerType.Square">
+            <summary>
+            Specifies the square edges of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.CornerType.Round">
+            <summary>
+             Specifies the round edges of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.CornerType.Round4px">
+            <summary>
+            Specifies the 4px edges of the progress bar.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ModeType">
+            <summary>
+            Specifies the modes of progress indication of the progress bar component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ModeType.Auto">
+            <summary>
+            Defines the auto mode of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ModeType.Success">
+            <summary>
+            Defines the success mode of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ModeType.Info">
+            <summary>
+            Defines the info mode of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ModeType.Danger">
+            <summary>
+            Defines the danger mode of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ModeType.Warning">
+            <summary>
+            Defines the warning mode of the progress bar.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressType">
+            <summary>
+            Specifies the progress bar component type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ProgressType.Linear">
+            <summary>
+            Defines the progress bar type is linear.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.ProgressType.Circular">
+            <summary>
+            Defines the  progress bar type is circular.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.TextAlignmentType">
+            <summary>
+            Specifies the text alignment of the progress bar component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.TextAlignmentType.Near">
+            <summary>
+            Defines the alignment is near of the progress bar text content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.TextAlignmentType.Center">
+            <summary>
+            Defines the alignment is center of the progress bar text content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.ProgressBar.TextAlignmentType.Far">
+            <summary>
+            Defines the alignment is far of the progress bar text content.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.BaseEventArgs">
+            <summary>
+            Specifies the event arguments which has common for progress bar component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.BaseEventArgs.Cancel">
+            <summary>
+            Specifies the cancel state for the event. The default value is false.
+            If set as true, the event progress will be stopped.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.AnnotationRenderEventArgs">
+            <summary>
+            Specifies the event arguments for annotation render in progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.AnnotationRenderEventArgs.Location">
+            <summary>
+            Defines the current annotation location.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressValueEventArgs">
+            <summary>
+            Specifies the event arguments available on progress value changed or completed on task.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressValueEventArgs.ProgressColor">
+            <summary>
+            Indicates the color of the progress bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressValueEventArgs.TrackColor">
+            <summary>
+            Indicates the color of the track bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressValueEventArgs.Value">
+            <summary>
+            Indicates the progress value of the progress bar component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.TextRenderEventArgs">
+            <summary>
+            Specifies the event arguments available on progress bar text render.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.TextRenderEventArgs.Color">
+            <summary>
+            Defines the color of the progress bar text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.TextRenderEventArgs.Text">
+            <summary>
+            Defines the text of the progress bar.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.Internal.SizeInfo">
+            <summary>
+            Defines the height and width of DOM element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.Internal.SizeInfo.Height">
+            <summary>
+            Specifies the height of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.Internal.SizeInfo.Width">
+            <summary>
+            Specifies the width of element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.Internal.Rect">
+            <summary>
+            Defines the bounds of element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.Internal.Rect.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.ProgressBar.Internal.Rect"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.Internal.Rect.X">
+            <summary>
+            Specifies the X position of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.Internal.Rect.Y">
+            <summary>
+            Specifies the Y position of element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.Internal.CircularProgressBar">
+            <summary>
+            Specifies the circular progress bar rendering functionality.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.Internal.CircularProgressBar.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.Internal.LinearProgressBar">
+            <summary>
+            Specifies the linear progress bar rendering functionality.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.Internal.LinearProgressBar.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.SfProgressBar">
+            <summary>
+            Specifies the progress bar rendering functionality.
+            </summary>
+            <summary>
+            The progress bar control is used to indicates the progress of a task with built-in features like rectangular and circular shapes, determinate and indeterminate states, segments, and more.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.RefreshAsync">
+            <summary>
+            The method is used to re-render the progressbar component.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.Refresh">
+            <summary>
+            The method is used to re-render the progressbar component.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.TriggerAnimationComplete">
+            <summary>
+            JS intropt while the progressbar animation gets completed.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.TriggerResize">
+            <summary>
+            JS intropt while the window resized.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.ID">
+            <summary>
+            Set the id string for the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.CornerRadius">
+            <summary>
+            Sets and gets the corner radius type of the progress bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.EnablePieProgress">
+            <summary>
+            Enable or disable whether the progress bar component appear in the pie visualization.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.EnableProgressSegments">
+            <summary>
+            Enable or disable whether the progress bar component appear as segments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.EnableRtl">
+            <summary>
+            Enable or disable whether the progress bar component rendering in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.EndAngle">
+            <summary>
+            Gets and sets the value of the end angle for circular progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.GapWidth">
+            <summary>
+            Gets and sets the segment gap width of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Height">
+            <summary>
+            Gets and sets the height of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.InnerRadius">
+            <summary>
+            Gets and sets a value of the progress radius for circular progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.IsActive">
+            <summary>
+            Gets and sets the active state of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.IsGradient">
+            <summary>
+            Gets and sets whether the progress bar in gradient visualization.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.IsIndeterminate">
+            <summary>
+            Gets and sets whether the progress bar value indicating in indeterminate state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.IsStriped">
+            <summary>
+            Get and sets whether the linear progress bar component to be visualized as a striped.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Maximum">
+            <summary>
+            Get and sets the maximum progress value of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Minimum">
+            <summary>
+            Get and sets the minimum progress value of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.ProgressColor">
+            <summary>
+            Gets and sets the progress color of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.ProgressThickness">
+            <summary>
+            Gets and sets the progress height of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Radius">
+            <summary>
+            Gets and sets a value of the track radius for circular progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Role">
+            <summary>
+            Gets and sets the modes of progress indication of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.SecondaryProgress">
+            <summary>
+            Gets and sets the secondary progress value of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.SegmentColor">
+            <summary>
+            Gets and sets a segment color of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.SegmentCount">
+            <summary>
+            Gets and sets a segment count of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.ShowProgressValue">
+            <summary>
+            Gets and sets whether to show the progress value of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.StartAngle">
+            <summary>
+            Sets and get the start angle for circular progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Theme">
+            <summary>
+            Sets and gets the options for customizing the theme of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.TrackColor">
+            <summary>
+            Gets and sets the track color of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.TrackThickness">
+            <summary>
+            Gets and sets the track height of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Type">
+            <summary>
+            Gets and sets the type (Linear or Circular) of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Value">
+            <summary>
+            Gets and sets the progress value of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.SfProgressBar.Width">
+            <summary>
+            Gets and sets the width of the progress bar component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.SfProgressBar.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarAnimation">
+            <summary>
+            Sets and gets the animation options of progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnimation.Delay">
+            <summary>
+            Sets and gets the delay of the progress bar to be started in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnimation.Duration">
+            <summary>
+            Sets and gets the duration of the progress bar to be completed in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnimation.Enable">
+            <summary>
+            Enables and disables the animation of the progress bar component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarAnimation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarAnimation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotation">
+            <summary>
+            Sets and gets the annotation element of progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotation.ContentTemplate">
+            <summary>
+            Sets and gets the content of the annotation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotation.AnnotationAngle">
+            <summary>
+            Sets and gets the angle of the custom content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotation.AnnotationRadius">
+            <summary>
+            Sets and gets the Radius of the custom content.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotations">
+            <summary>
+            Specifies the annotations that are to be added to the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotations.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarAnnotations.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarEvents">
+            <summary>
+            Specifies the events to be triggered in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.AnimationComplete">
+            <summary>
+            Triggers after the animation completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.Loaded">
+            <summary>
+            Triggers after the progress bar component loaded.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.TextRender">
+            <summary>
+            Triggers before the progress bar label renders.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.ProgressCompleted">
+            <summary>
+            Triggers after the progress value completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.ValueChanged">
+            <summary>
+            Triggers after the value has changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.AnnotationRender">
+            <summary>
+            Triggers before the annotations renders.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle">
+            <summary>
+            Sets and gets the options for customizing the text style of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.Color">
+            <summary>
+            Sets and gets the color for the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.FontFamily">
+            <summary>
+            Sets and gets the font family for the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.FontStyle">
+            <summary>
+            Sets and gets the font style for the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.FontWeight">
+            <summary>
+            Sets and gets the font weight for the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.Opacity">
+            <summary>
+            Sets and gets the opacity of the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.Size">
+            <summary>
+            Sets and gets the size for the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.Text">
+            <summary>
+            Sets and gets the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.TextAlignment">
+            <summary>
+            Sets and gets the alignment for the label text in the progress bar component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarMargin">
+            <summary>
+            Sets and gets the options for customizing the bottom, left, right, top margin of the  progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarMargin.Bottom">
+            <summary>
+            Sets and gets the bottom margin for the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarMargin.Left">
+            <summary>
+            Sets and gets the left margin for the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarMargin.Right">
+            <summary>
+            Sets and gets the right margin for the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarMargin.Top">
+            <summary>
+            Sets and gets the top margin for the progress bar component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarMargin.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColor">
+            <summary>
+            Sets and gets the properties on rangle color of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColor.Color">
+            <summary>
+            Sets and gets the value of the range color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColor.End">
+            <summary>
+            Sets and gets the value to which the range of color mapping ends.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColor.Start">
+            <summary>
+            Sets and gets the value from which the range of color mapping starts.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColor.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColor.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColors">
+            <summary>
+            Sets and gets the options for customizing the color range of the progress bar component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColors.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.ProgressBar.ProgressBarRangeColors.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+    </members>
+</doc>

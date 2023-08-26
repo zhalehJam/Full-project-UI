@@ -5,6 +5,7 @@ using Syncfusion.Blazor;
 using Ticketing_Client;
 using Ticketing_Client.Data;
 using Ticketing_Client.Shared.Classes;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
@@ -35,7 +36,7 @@ builder.Services.AddHttpClient("API", client =>
     client.Timeout = new TimeSpan(0, 0, 0, 30);
     client.DefaultRequestHeaders.Accept.Add(
         new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-});//.AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
+}); 
 
 builder.Services.AddScoped<TokenProvider>();
 
@@ -50,51 +51,38 @@ builder.Services.AddAuthentication(options =>
     .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme,
         options =>
         {
+            options.SignOutScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             options.Authority = builder.Configuration["IdentityServer:Authority"];
-            options.ClientId = "Ticketing";
-            options.SignedOutRedirectUri = builder.Configuration["IdentityServer:PostLogoutRedirectUri"]; 
             options.ForwardSignIn=  builder.Configuration["IdentityServer:RedirectUri"];
-            options.ResponseType = "code";            
+            options.SignedOutRedirectUri = builder.Configuration["IdentityServer:PostLogoutRedirectUri"]; 
+            options.ResponseType = "code";  
+            options.ClientId = "Ticketing";
+            options.ClientSecret = "Ticketing";
+            options.Scope.Add("roles");
+            options.Scope.Add("openid");
             options.Scope.Add("Ticketing.API");
             options.Scope.Add("offline_access");
             options.Scope.Add("Ticketing_Identity_Resource");
-            options.Scope.Add("roles"); 
-            options.ClientSecret = "Ticketing";  
+            options.UsePkce = true;
             options.SaveTokens = true;
-            options.GetClaimsFromUserInfoEndpoint = true;
             options.UseTokenLifetime = true;
+            options.RequireHttpsMetadata = true;
+            options.GetClaimsFromUserInfoEndpoint = true;
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                //map claim to name for display on the upper right corner after login.  Can be name, email, etc.
+                NameClaimType = "name"
+            };
         });
 
-
-//var app = builder.Build();
-
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/Error");
-//    app.UseHsts();
-//}
-
-
-
-
-//app.UseHttpsRedirection();
-
-//app.UseStaticFiles();
-
-//app.UseRouting();
-
-//app.MapBlazorHub();
-//app.MapFallbackToPage("/_Host");
-
-//app.Run();
- 
 
 builder.Services.AddAuthorization(options =>
 {
     // By default, all incoming requests will be authorized according to the default policy  
     options.FallbackPolicy = options.DefaultPolicy;
-}); 
-builder.Services.AddSingleton<WeatherForecastService>();
+});
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -115,8 +103,11 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
-app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapBlazorHub();
+    endpoints.MapFallbackToPage("/_Host");
+});
 
 app.Run();

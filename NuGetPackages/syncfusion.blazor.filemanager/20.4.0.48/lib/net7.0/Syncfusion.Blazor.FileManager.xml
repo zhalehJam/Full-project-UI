@@ -1,0 +1,2746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.FileManager</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.FileManager.SortOrder">
+            <summary>
+            Defines the sorting order of the folders and files.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.SortOrder.Ascending">
+            <summary>
+            Indicates that the folders and files are sorted in the ascending order in FileManager component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.SortOrder.Descending">
+            <summary>
+            Indicates that the folders and files are sorted in the descending order.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.SortOrder.None">
+            <summary>
+            Indicates that the folders and files are not sorted.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ViewType">
+            <summary>
+            Defines the view type of the FileManager.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.ViewType.LargeIcons">
+            <summary>
+            To display the folders and files in the large icon view.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.ViewType.Details">
+            <summary>
+            To display the folders and files in the details view.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.TextAlign">
+            <summary>
+            Defines alignments of text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.TextAlign.Left">
+            <summary>
+            Represents the text alignment as left. The text content will be shown in the left side.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.TextAlign.Right">
+            <summary>
+            Represents the text alignment as Right. The text content will be shown in the right side.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.TextAlign.Center">
+            <summary>
+            Represents the text alignment as Center. The text content will be shown at the center.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.TextAlign.Justify">
+            <summary>
+            Represents the text alignment as Justify. The text will be aligned along the left margin.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FilterType">
+            <summary>
+            Specifies the filter type for Search settings of the File Manager.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.FilterType.Contains">
+            <summary>
+            Search the folders or files name which contains the typed characters.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.FilterType.StartsWith">
+            <summary>
+            Search the folders or files name which starts with the typed characters.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.FilterType.EndsWith">
+            <summary>
+            Search the folders or files name which ends with the typed characters.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ClipMode">
+            <summary>
+            Defines the cell content's overflow mode. The available modes are
+             `Clip` -  Truncates the cell content when it overflows its area.
+             `Ellipsis` -  Displays ellipsis when the cell content overflows its area.
+             `EllipsisWithTooltip` - Displays ellipsis when the cell content overflows its area
+            also it will display tooltip while hover on ellipsis applied cell.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.ClipMode.Clip">
+            <summary>
+            Truncates the cell content when it overflows its area.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.ClipMode.Ellipsis">
+            <summary>
+            Displays ellipsis when the cell content overflows its area.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.ClipMode.EllipsisWithTooltip">
+            <summary>
+            Displays ellipsis when the cell content overflows its area.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.AccessPermission">
+            <summary>
+            Class for File Access Permission.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.Copy">
+            <summary>
+            Return the current item having copy permission or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.Download">
+            <summary>
+            Return the current item having download permission or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.Write">
+            <summary>
+            Return the current item having write permission or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.WriteContents">
+            <summary>
+            Return the current item having WriteContents permission or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.Read">
+            <summary>
+            Return the current item having read permission or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.Upload">
+            <summary>
+            Return the current item having upload permission or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.AccessPermission.Message">
+            <summary>
+            Return the current item permission message.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerResponse`1">
+            <summary>
+            Class for FileManager Response data.
+            </summary>
+            <typeparam name="T">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerResponse`1.CWD">
+            <summary>
+            Specifies the current directory details.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerResponse`1.Files">
+            <summary>
+            Specifies the details of the files/folders in the directory.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerResponse`1.Error">
+            <summary>
+            Specifies the error details with the response.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerResponse`1.Details">
+            <summary>
+            Specifies the details of the files/folder.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent">
+            <summary>
+            Class for File Manager Directory content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Path">
+            <summary>
+            Specify the path for File Manager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Action">
+            <summary>
+            Specify the corresponding File Operation name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.NewName">
+            <summary>
+            Specify the Rename operation for new name value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Names">
+            <summary>
+            Specify the selected items value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Name">
+            <summary>
+            Specify the selected item value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Size">
+            <summary>
+            Specify the selected item size value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.PreviousName">
+            <summary>
+            Specify the Rename operation for previous name value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.DateModified">
+            <summary>
+            Specify the file item date modified value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.DateCreated">
+            <summary>
+            Specify the file item date created value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.HasChild">
+            <summary>
+            Specify the file file item having child or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.IsFile">
+            <summary>
+            Specify the file item is file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Type">
+            <summary>
+            Specify the file item Type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Id">
+            <summary>
+            Specify the file item Id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.FilterPath">
+            <summary>
+            Specify the file item filter path.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.FilterId">
+            <summary>
+            Specify the file item filter id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.ParentId">
+            <summary>
+            Specify the file item parent id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.TargetPath">
+            <summary>
+            Specify the file item target path.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.RenameFiles">
+            <summary>
+            Specify the renamed item file names.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.CaseSensitive">
+            <summary>
+            Specify the file item case sensitive.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.SearchString">
+            <summary>
+            Specify the file item search string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.ShowHiddenItems">
+            <summary>
+            Specify the permission for view the value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Data">
+            <summary>
+            Specify the data for file items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.TargetData">
+            <summary>
+            Specify the target data for file items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDirectoryContent.Permission">
+            <summary>
+            Specify the permission for file items.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.DownloadData`1">
+            <summary>
+            Class for DownloadData.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.DownloadData`1.Path">
+            <summary>
+            Specifies the path in which download operation is performed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.DownloadData`1.Names">
+            <summary>
+            Specifies the names of the downloading files.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.DownloadData`1.DownloadFileDetails">
+            <summary>
+            Specifies file details of the downloading files.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.BeforeDownloadEventArgs`1">
+            <summary>
+            Class for BeforeDownload event arguments.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeDownloadEventArgs`1.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeDownloadEventArgs`1.DownloadData">
+            <summary>
+            Specifies the data to be sent to server.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.BeforeImageLoadEventArgs`1">
+            <summary>
+            Class for BeforeImageLoad event arguments.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeImageLoadEventArgs`1.FileDetails">
+            <summary>
+            Return the current rendering image item as an array of JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeImageLoadEventArgs`1.ImageUrl">
+            <summary>
+            Specifies the URL along with custom attributes to be sent to server.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.BeforePopupOpenCloseEventArgs">
+            <summary>
+            Class for BeforePopupOpenClose event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforePopupOpenCloseEventArgs.Cancel">
+            <summary>
+            Prevents the dialog from opening when it is set to true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforePopupOpenCloseEventArgs.PopupName">
+            <summary>
+            Returns the current dialog action name.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.BeforeSendEventArgs">
+            <summary>
+            Class for BeforeSend event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeSendEventArgs.Action">
+            <summary>
+            Return the name of the AJAX action will be performed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeSendEventArgs.AjaxSettings">
+            <summary>
+            Return the AJAX details, which are send to server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeSendEventArgs.CustomData">
+            <summary>
+            Defines the custom data to be passed to the service.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeSendEventArgs.HttpClientInstance">
+            <summary>
+            HttpClient instance through which http request for the file providers are sent.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.BeforeSendEventArgs.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ErrorDetails">
+            <summary>
+            Class for Error Details.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ErrorDetails.Code">
+            <summary>
+            Specifies the Error code.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ErrorDetails.Message">
+            <summary>
+            Specifies the Error Message.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ErrorDetails.FileExists">
+            <summary>
+            Specifies whether the issue occurs since the file/folder already exist in the current path.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FailureEventArgs">
+            <summary>
+            Class for Failure event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FailureEventArgs.Action">
+            <summary>
+            Return the name of the AJAX action will be performed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FailureEventArgs.Error">
+            <summary>
+            Return the AJAX details, which are send to server.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileDetails">
+            <summary>
+            Class for File details.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.Created">
+            <summary>
+            Specify the file item created value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.IsFile">
+            <summary>
+            Specify the file item is file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.Location">
+            <summary>
+            Specify the file item location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.Modified">
+            <summary>
+            Specify the file item modified.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.MultipleFiles">
+            <summary>
+            Specify the file items contains more than one value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.Name">
+            <summary>
+            Specify the file item name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.Permission">
+            <summary>
+            Specify the file item permission.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDetails.Size">
+            <summary>
+            Specify the file item size.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileDragEventArgs`1">
+            <summary>
+            Class for Drag Event arguments.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDragEventArgs`1.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDragEventArgs`1.FileDetails">
+            <summary>
+            Return the current items as an array of JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDragEventArgs`1.Left">
+            <summary>
+            Return the Client X value of target element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileDragEventArgs`1.Top">
+            <summary>
+            Return the Client Y value of target element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileLoadEventArgs`1">
+            <summary>
+            Class for FileLoad event arguments.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileLoadEventArgs`1.FileDetails">
+            <summary>
+            Return the current rendering item as JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileLoadEventArgs`1.Module">
+            <summary>
+            Return the name of the rendering module in File Manager.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileOpenEventArgs`1">
+            <summary>
+            Class for FileOpen event arguments.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileOpenEventArgs`1.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileOpenEventArgs`1.FileDetails">
+            <summary>
+            Return the currently selected item as JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileOpenEventArgs`1.Module">
+            <summary>
+            Returns the name of the target module in file manager.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileSelectEventArgs`1">
+            <summary>
+            Class for FileSelect event arguments.
+            </summary>
+            <typeparam name="TValue">The generic type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectEventArgs`1.Action">
+            <summary>
+            Return the name of action like select or unselect.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectEventArgs`1.FileDetails">
+            <summary>
+            Return the currently selected item as JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectEventArgs`1.IsInteracted">
+            <summary>
+            Defines whether event is triggered by interaction or not.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1">
+            <summary>
+            Class for FileSelection event arguments.
+            </summary>
+            <typeparam name="TValue">TValue.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1.Action">
+            <summary>
+            Return the name of action like select or unselect.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1.Cancel">
+            <summary>
+            Defines the cancel selected file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1.FileDetails">
+            <summary>
+            Return the currently selected item as JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1.IsInteracted">
+            <summary>
+            Defines whether event is triggered by interaction or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1.Event">
+            <summary>
+            Defines the Mouse Event
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileSelectionEventArgs`1.Target">
+            <summary>
+            Specifies the actual target.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.MenuClickEventArgs`1">
+            <summary>
+            Class for MenuClick event arguments.
+            </summary>
+            <typeparam name="TValue">TValue.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuClickEventArgs`1.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuClickEventArgs`1.FileDetails">
+            <summary>
+            Return the currently selected folder/file items as an array of JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuClickEventArgs`1.Item">
+            <summary>
+            Return the currently clicked context menu item as JSON object.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1">
+            <summary>
+            Class for MenuOpen event arguments.
+            </summary>
+            <typeparam name="TValue">TValue.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1.Element">
+            <summary>
+            Returns the current context menu element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1.FileDetails">
+            <summary>
+            Returns the target folder/file item as an array of JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1.IsSubMenu">
+            <summary>
+            Returns whether the current context menu is sub-menu or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1.Items">
+            <summary>
+            Returns the current context menu items as JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuOpenEventArgs`1.MenuType">
+            <summary>
+            Returns the current context menu type based on current target.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.PopupOpenCloseEventArgs">
+            <summary>
+            Class for PopupOpenClose event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.PopupOpenCloseEventArgs.Element">
+            <summary>
+            Returns the current dialog element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.PopupOpenCloseEventArgs.PopupName">
+            <summary>
+            Returns the current dialog action name.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.SuccessEventArgs`1">
+            <summary>
+            Provides information about the <see cref="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnSuccess"/> event callback.
+            </summary>
+            <typeparam name="TValue">Specifies the TValue of File Manager events.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SuccessEventArgs`1.Action">
+            <summary>
+            Gets the name of the AJAX action that will be performed in file manager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SuccessEventArgs`1.Result">
+            <summary>
+            Gets or sets the AJAX details that are sent to server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SuccessEventArgs`1.UploadResult">
+            <summary>
+            Gets the result of the upload operation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SuccessEventArgs`1.IsSelected">
+            <summary>
+            Gets or sets a value indicating whether the uploaded file can be selected after the upload action will be completed successfully
+            and rendered within the file manager component.
+            </summary>
+            <value>
+            `true`, if the uploaded file will be selected. The default value is `false`.
+            </value>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ToolbarClickEventArgs`1">
+            <summary>
+            Class for ToolbarClick event arguments.
+            </summary>
+            <typeparam name="TValue">TValue.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolbarClickEventArgs`1.Cancel">
+            <summary>
+            If you want to cancel this event then, set cancel to true. Otherwise, false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolbarClickEventArgs`1.FileDetails">
+            <summary>
+            Return the currently selected folder/file items as an array of JSON object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolbarClickEventArgs`1.Item">
+            <summary>
+            Return the currently clicked toolbar item as JSON object.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ToolBarItemModel">
+            <summary>
+            Class for a Toolbar item model.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Click">
+            <summary>
+            Event triggers when `click` the toolbar item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Align">
+            <summary>
+            Specifies the location for aligning Toolbar items on the Toolbar. Each command will be aligned according to the `align` property.
+            Possible values are:
+            - Left: To align commands to the left side of the Toolbar.
+            - Center: To align commands at the center of the Toolbar.
+            - Right: To align commands to the right side of the Toolbar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.CssClass">
+            <summary>
+            Defines single/multiple classes (separated by space) to be used for customization of commands.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Disabled">
+            <summary>
+            Specifies whether an item should be disabled or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.HtmlAttributes">
+            <summary>
+            Defines htmlAttributes used to add custom attributes to Toolbar command.
+            Supports HTML attributes such as style, class, etc.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Id">
+            <summary>
+            Specifies the unique ID to be used with button or input element of Toolbar items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Overflow">
+            <summary>
+            Specifies the Toolbar command display area when an element's content is too large to fit available space.
+            This is applicable only to `popup` mode. Possible values are:
+            - Show:  Always shows the item as the primary priority on the Toolbar.
+            - Hide: Always shows the item as the secondary priority on the popup.
+            - None: No priority for display, and as per normal order moves to popup when content exceeds.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.PrefixIcon">
+            <summary>
+            Defines single/multiple classes separated by space used to specify an icon for the button.
+            The icon will be positioned before the text content if text is available, otherwise the icon alone will be rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.ShowAlwaysInPopup">
+            <summary>
+            Defines the priority of items to display it in popup always.
+            It allows to maintain toolbar item on popup always but it does not work for toolbar priority items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.ShowTextOn">
+            <summary>
+            Specifies where the button text will be displayed on popup mode of the Toolbar.
+            Possible values are:
+            - Toolbar:  Text will be displayed on Toolbar only.
+            - Overflow: Text will be displayed only when content overflows to popup.
+            - Both: Text will be displayed on popup and Toolbar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.SuffixIcon">
+            <summary>
+            Defines single/multiple classes separated by space used to specify an icon for the button.
+            The icon will be positioned after the text content if text is available.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Template">
+            <summary>
+            Specifies the HTML element/element ID as a string that can be added as a Toolbar command.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Text">
+            <summary>
+            Specifies the text to be displayed on the Toolbar button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.TooltipText">
+            <summary>
+            Specifies the text to be displayed on hovering the Toolbar button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Type">
+            <summary>
+            Specifies the types of command to be rendered in the Toolbar.
+            Supported types are:
+            - Button: Creates the Button control with its given properties like text, prefixIcon, etc.
+            - Separator: Adds a horizontal line that separates the Toolbar commands.
+            - Input: Creates an input element that is applicable to template rendering with Syncfusion controls like DropDownList,
+            AutoComplete, etc.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Visible">
+            <summary>
+            Specifies whether an item should be hidden or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolBarItemModel.Width">
+            <summary>
+            Specifies the width of the Toolbar button commands.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.ChildContent">
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.IconCss">
+            <summary>
+            Defines class/multiple classes separated by a space for the menu Item that is used to include an icon.
+            Menu Item can include font icon and sprite image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Id">
+            <summary>
+            Specifies the id for menu item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Items">
+            <summary>
+            Specifies the sub menu items that is the array of MenuItem.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Separator">
+            <summary>
+            Specifies separator between the menu items. Separator are either horizontal or vertical lines used to group menu items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Disabled">
+            <summary>
+            Used to enable or disable the menu item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Hidden">
+            <summary>
+            Used to hide or show the menu item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Text">
+            <summary>
+            Specifies text for menu item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.Url">
+            <summary>
+            Specifies URL for menu item that creates the anchor link to navigate to the url provided.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.MenuItemModel.HtmlAttributes">
+            <summary>
+            You can add the additional HTML attributes such as style, title etc., to the menu item
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ToolbarCreateEventArgs">
+            <summary>
+            Class for ToolbarCreate event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ToolbarCreateEventArgs.Items">
+            <summary>
+            Return an array of items that is used to configure toolbar content.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ActionEventArgs">
+            <summary>
+            Specifies class for denotes the event name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ActionEventArgs.Name">
+            <summary>
+            Return the Event name.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.UploadListCreateArgs">
+            <summary>
+            Class for UploadListCreate event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.UploadListCreateArgs.Element">
+            <summary>
+            Return the current file item element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.UploadListCreateArgs.FileInfo">
+            <summary>
+            Return the current rendering file item data as file object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.UploadListCreateArgs.Index">
+            <summary>
+            Return the index of the file item in the file list.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.UploadListCreateArgs.IsPreload">
+            <summary>
+            Return whether the file is preloaded.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.ValidationMessages">
+            <summary>
+            Class for min / max size validation messages.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ValidationMessages.MaxSize">
+            <summary>
+            Returns the maximum file size validation message, if selected file size is less than specified maxFileSize property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.ValidationMessages.MinSize">
+            <summary>
+            Returns the minimum file size validation message, if selected file size is less than the specified minFileSize property.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerAjaxSettings">
+            <summary>
+            Defines the Ajaxsettings for the filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerAjaxSettings.DownloadUrl">
+            <summary>
+            Specifies URL to download the files from server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerAjaxSettings.GetImageUrl">
+            <summary>
+            Specifies URL to get the images from server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerAjaxSettings.UploadUrl">
+            <summary>
+            Specifies URL to upload the files to server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerAjaxSettings.Url">
+            <summary>
+            Specifies URL to read the files from server.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerAjaxSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerColumn">
+            <summary>
+            Defines the columns settings for the each column in details view of filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.ChildContent">
+            <exclude/>
+            <summary>
+            Update child content from parent component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.AllowResizing">
+            <summary>
+            Allows to disables or enables resize option of a particular column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.AllowSorting">
+            <summary>
+            Allows to disables or enables sorting option of a particular column.
+            By default all columns are sortable.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.CustomAttributes">
+            <summary>
+            The CSS styles and attributes of the content cells of a particular column can be customized.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.Field">
+            <summary>
+            Defines the field name of column which is mapped with mapping name of DataSource.
+            The bounded columns can be sort, filter and group etc.,
+            The `Field` name must be a valid JavaScript identifier,
+            the first character must be an alphabet and should not contain spaces and special characters.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.Format">
+            <summary>
+            It is used to change display value with the given format and does not affect the original data.
+            Gets the format from the user which can be standard or custom.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.HeaderTemplate">
+            <summary>
+            Defines the column template as string or HTML element ID which is used to add customized element in the column header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.HeaderText">
+            <summary>
+            Defines the header text of column which is used to display in column header.
+            If `HeaderText` is not defined, then field name value will be assigned to header text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.HeaderTextAlign">
+            <summary>
+            Define the alignment of column header which is used to align the text of column header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.HideAtMedia">
+            <summary>
+            Column visibility can change based on Media Queries.
+            HideAtMedia accepts only valid Media Queries.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.MaxWidth">
+            <summary>
+            Defines the maximum width of the column in pixel or percentage, which will restrict resizing beyond this pixel or percentage.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.MinWidth">
+            <summary>
+            Defines the minimum width of the column in pixels or percentage.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.Template">
+            <summary>
+            Defines the column template that renders customized element in each cell of the column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.TextAlign">
+            <summary>
+            Defines the alignment of the column in both header and content cells.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.Type">
+            <summary>
+            Defines the data type of the column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumn.Width">
+            <summary>
+            Defines the width of the column in pixels or percentage.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerColumn.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerColumns">
+            <summary>
+            Defines the columns settings for the details view of filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerColumns.ChildContent">
+            <exclude/>
+            <summary>
+            Update child content from parent component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerColumns.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings">
+            <summary>
+            Defines the context menu settings for the filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings.File">
+            <summary>
+            Specifies the array of string that is used to configure file items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings.Folder">
+            <summary>
+            An array of string that is used to configure folder items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings.Layout">
+            <summary>
+            An array of string that is used to configure layout items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings.Visible">
+            <summary>
+            Enables or disables the ContextMenu.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerContextMenuSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerDetailsViewSettings">
+            <summary>
+            Defines the Details view settings of the FileManager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDetailsViewSettings.ChildContent">
+            <exclude/>
+            <summary>
+            Update child content from parent component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDetailsViewSettings.ColumnResizing">
+            <summary>
+            If `ColumnResizing` is set to true, Grid columns can be resized.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerDetailsViewSettings.Columns">
+            <summary>
+            Specifies the customizable details view.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerDetailsViewSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerEvents`1">
+            <summary>
+            Configure handlers to handle the events of the FileManager component.
+            </summary>
+            <typeparam name="TValue">TValue.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.BeforeDownload">
+            <summary>
+            Triggers before sending the download request to the server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.BeforeImageLoad">
+            <summary>
+            Triggers before sending the getImage request to the server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.BeforePopupClose">
+            <summary>
+            Triggers before the dialog is closed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.BeforePopupOpen">
+            <summary>
+            Triggers before the dialog is opened.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnSend">
+            <summary>
+            Triggers before sending the AJAX request to the server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.Created">
+            <summary>
+            Triggers when the file manager component is created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.Destroyed">
+            <summary>
+            Triggers when the file manager component is destroyed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnError">
+            <summary>
+            Triggers when the AJAX request is failed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnFileDragStart">
+            <summary>
+            Triggers when the file/folder dragging is started.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnFileDragStop">
+            <summary>
+            Triggers when the file/folder is about to be dropped at the target.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.FileDragging">
+            <summary>
+            Triggers while dragging the file/folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.FileDropped">
+            <summary>
+            Triggers when the file/folder is dropped.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnFileLoad">
+            <summary>
+            Triggers before the file/folder is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnFileOpen">
+            <summary>
+            Triggers before the file/folder is opened.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.FileSelected">
+            <summary>
+            Triggers when the file/folder is selected/unselected.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.FileSelection">
+            <summary>
+            Triggers before the file/folder is selected.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnMenuClick">
+            <summary>
+            Triggers when the context menu item is clicked.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.MenuOpened">
+            <summary>
+            Triggers before the context menu is opened.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.PopupClosed">
+            <summary>
+            Triggers when the dialog is closed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.PopupOpened">
+            <summary>
+            Triggers when the dialog is opened.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnSuccess">
+            <summary>
+            Triggers when the AJAX request is success.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.ToolbarItemClicked">
+            <summary>
+            Triggers when the toolbar item is clicked.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.ToolbarCreated">
+            <summary>
+            Triggers before creating the toolbar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerEvents`1.UploadListCreated">
+            <summary>
+            Triggers before rendering each file item in upload dialog box.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerEvents`1.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings">
+            <summary>
+            Defines the navigation pane settings for the filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.MaxWidth">
+            <summary>
+            Specifies the maximum width of navigation pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.MinWidth">
+            <summary>
+            Specifies the minimum width of navigation pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.SortOrder">
+            <summary>
+            Gets or sets a value that indicates how to sort the folders in the navigation pane of the file manager component.
+            </summary>
+            <value>
+            One of the <see cref="P:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.SortOrder"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.FileManager.SortOrder.Ascending"/>
+            </value>
+            <remarks>
+            If the <c>SortOrder</c> is <c>Ascending</c>, the folders are sorted in ascending order.
+            If the <c>SortOrder</c> is <c>Descending</c>, the folders are sorted in descending order.
+            If the <c>SortOrder</c> is <c>None</c>, the folders are not sorted.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.Visible">
+            <summary>
+            Enables or disables the visibility of the navigation pane.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerNavigationPaneSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerSearchSettings">
+            <summary>
+            Defines the search settings for the filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.ChildContent">
+            <exclude/>
+            <summary>
+            Update child content from parent component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.AllowSearchOnTyping">
+            <summary>
+            Enables or disables the allowSearchOnTyping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.FilterType">
+            <summary>
+            Specifies the filter type while searching the content. The available filter types are:
+             `Contains`
+             `StartsWith`
+             `EndsWith`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.IgnoreCase">
+            <summary>
+            If ignoreCase is set to false, searches files that match exactly,
+            else searches files that are case insensitive(uppercase and lowercase letters treated the same).
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.Placeholder">
+            <summary>
+            Gets or sets the placeholder value to the search input of the File Manager component.
+            </summary>
+            <value>
+            Accepts a string. The default value is <c>Null</c>.
+            </value>
+            <remarks>
+            The search input displays the default placeholder text value as "Search + current selected folder name".
+            </remarks>    
+            <example>
+            In the below code example, the placeholder value sets a "Search More Files.." in the FileManager component.
+            <code><![CDATA[
+            <SfFileManager TValue="FileManagerDirectoryContent">
+            <FileManagerSearchSettings Placeholder="Search More Files.."></FileManagerSearchSettings>
+            </SfFileManager>
+            ]]></code>
+            </example>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerSearchSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component parameter changed.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerToolbarSettings">
+            <summary>
+            Defines the toolbar settings for the filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerToolbarSettings.Items">
+            <summary>
+            An array of string or object that is used to configure the toolbar items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerToolbarSettings.Visible">
+            <summary>
+            Enables or disables the visibility of toolbar in the file manager component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerToolbarSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerToolbarSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.FileManagerUploadSettings">
+            <summary>
+            Defines the upload settings for the filemanager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerUploadSettings.AllowedExtensions">
+            <summary>
+            Specifies the extensions of the file types allowed in the file manager component and pass the extensions with comma separators.
+            For example, if you want to upload specific image files, pass allowedExtensions as ".jpg,.png".
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerUploadSettings.AutoClose">
+            <summary>
+            Defines whether to close the upload dialog after uploading all the files.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerUploadSettings.AutoUpload">
+            <summary>
+            By default, the FileManager component initiates automatic upload when the files are added in upload queue.
+            If you want to manipulate the files before uploading to server, disable the autoUpload property.
+            The buttons "upload" and "clear" will be hided from file list when the autoUpload property is true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerUploadSettings.MaxFileSize">
+            <summary>
+            Specifies the maximum allowed file size to be uploaded in bytes.
+            The property is used to make sure that you cannot upload too large files.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.FileManagerUploadSettings.MinFileSize">
+            <summary>
+            Specifies the minimum file size to be uploaded in bytes.
+            The property is used to make sure that you cannot upload empty files and small files.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.FileManagerUploadSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.IFileManager">
+            <summary>
+            Interface for SfFileManager.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.IFileManager.UpdateChildProperties(System.String,System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            This method updates the child properties of file manager.
+            </summary>
+            <param name="key">Specifies the key parameter.</param>
+            <param name="propValue">Specifies the property value parameter.</param>
+            <param name="isDynamicPropUpdate">Specifies the parameter to check dynamic property update.</param>
+            <param name="isVisibleChanged">Specifies the paramter to check the visibility.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1">
+            <summary>
+            This class holds contextmenu operations required functionalities.
+            </summary>
+            <typeparam name="TValue">Generic TValue parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.CssClass">
+            <summary>
+            The `CssClass` property is used to add a user-preferred class name in the root element of the context menu.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.ID">
+            <summary>
+            The `ID` property is used to set id for context menu.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.MenuItemsValue">
+            <summary>
+            The `MenuItemsValue` property is to set menu item values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.FileManagerContextMenuIsLayout">
+            <summary>
+            The `isLayout` property is to check the layout of filemanager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.FileManagerContextMenuType">
+            <summary>
+            The `type` property is to set type for context menu.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.GetMenuID(System.String)">
+            <summary>
+            Return the id of each menu item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.GetItemPrefixIcon(System.String)">
+            <summary>
+            Return the prefix icon for the item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.BeforeMenuOpen(Syncfusion.Blazor.Navigations.BeforeOpenCloseMenuEventArgs{Syncfusion.Blazor.Navigations.MenuItem})">
+            <summary>
+            Updating the menu items before close.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.OpenContextMenu(System.Double,System.Double,Syncfusion.Blazor.FileManager.Internal.MenuOpenModel)">
+            <summary>
+            Opening the context menu and updating the menu items based target.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.GetItemLocaleValue(System.String)">
+            <summary>
+            Return the locale value for each item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.GetMenuItems">
+            <summary>
+            Returns the menu Items.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.SortByClick(System.String,Syncfusion.Blazor.FileManager.SortOrder)">
+            <summary>
+            Sortby menu item click handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerContextMenu`1.OnItemSelect(Syncfusion.Blazor.Navigations.MenuEventArgs{Syncfusion.Blazor.Navigations.MenuItem})">
+            <summary>
+            Item select event handler.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.FileManagerDialog`1">
+            <summary>
+            This class holds filemanager dialog operations.
+            </summary>
+            <typeparam name="TValue">Generic type paramater.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerDialog`1.DialogName">
+            <summary>
+            The `DialogName` property is used set dialog name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerDialog`1.ID">
+            <summary>
+            The `Id` property is used set id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerDialog`1.CssClass">
+            <summary>
+            The `CssClass` property is used set custom class in the root element of Dialog.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerDialog`1.ResponseData">
+            <summary>
+            The `ResponseData` property is used set response data.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1">
+            <summary>
+            This class contains the methods for breadcrumbar functionalities.
+            </summary>
+            <typeparam name="TValue">Generic Type parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.Parent">
+            <summary>
+            Specifies the instance object of the parent component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.ID">
+            <summary>
+            This `ID` property is used to set Id for breadcrumbar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.SearchID">
+            <summary>
+            This `SearchID` property is used to set search id for input.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.CurrentDirectory">
+            <summary>
+            This `CurrentDirectory` property is used to set current directory.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.RootDirectoryName">
+            <summary>
+            This `RootDirectoryName` property is used to root directory name.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.GetSearchAttributes">
+            <summary>
+            Adds attribute for search textbox in FileManager component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.GetRootAttribute(System.String,System.Boolean)">
+            <summary>
+            Adds attribute for each li in bread crumb bar.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.GetFileList">
+            <summary>
+            Obtains the files list from the response data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.OnChange(Syncfusion.Blazor.Inputs.InputEventArgs)">
+            <summary>
+            Search input change event handler to perform search operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.GetSearchString(System.String)">
+            <summary>
+            Get string for search settings.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.BreadCrumbRootClick">
+            <summary>
+            Root li element click handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.BreadCrumbClick(System.String)">
+            <summary>
+            Breadcrumb click handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerBreadCrumbBar`1.BreadCrumbKeyDown(System.String,Microsoft.AspNetCore.Components.Web.KeyboardEventArgs)">
+            <summary>
+            Bread crumb keyboard interaction handler.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1">
+            <summary>
+            This class contains file items operations functionalities.
+            </summary>
+            <typeparam name="TValue">Specifies the TValue parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.FileManager">
+            <summary>
+            Instance object of the FileManager component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.FileName">
+            <summary>
+            This `FileName` property is used to file name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.IconClass">
+            <summary>
+            This `IconClass` property is used set icon class for file items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.IsFile">
+            <summary>
+            This `IsFile` property is used to check the file or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.IsSelected">
+            <summary>
+            This `IsSelected` property is used to set a file in selected state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.DataUId">
+            <summary>
+            This `DataUId` property is used to set data UID for file item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.Data">
+            <summary>
+            This `Data` property is used to set data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Set to true for the first time component rendering; otherwise gets false.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.GetClass">
+            <summary>
+            Returns the class to be added for each file item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.IsImage">
+            <summary>
+            Returns whether the current file item is an image or not.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.MouseMove">
+            <summary>
+            Mouse move event handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.GetAttributes">
+            <summary>
+            Returns the attributes to be added for each file item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.GetSrcLink(`0)">
+            <summary>
+            Returns the image source link for image files.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.OnDoubleClick(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            Double click event hander to perform folder navigation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.CheckBoxClicked(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            Click event handler for checkbox.
+            </summary>.
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerFileItems`1.UpdateSelected(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            Click event handler for updating the selected item.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1">
+            <summary>
+            This class contains file manager's grid functionalities.
+            </summary>
+            <typeparam name="TValue">Specifies the TValue parameter.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.Data">
+            <summary>
+            This `Data` property is used to set data to details view.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.GetIconClass(`0)">
+            <summary>
+            Returns the icon class for the record.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Set to true for the first time component rendering; otherwise gets false.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.GetTextValue(System.String)">
+            <summary>
+            Returns the file text value (with or without extension).
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.GetDirection">
+            <summary>
+            Returns sorting direction.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnRecordClick(Syncfusion.Blazor.Grids.RecordClickEventArgs{`0})">
+            <summary>
+            Record click event handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnRowSelected(Syncfusion.Blazor.Grids.RowSelectEventArgs{`0})">
+            <summary>
+            Row selected event handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnRowDeselect(Syncfusion.Blazor.Grids.RowDeselectEventArgs{`0})">
+            <summary>
+            Row Deselect event handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.SortData(System.String)">
+            <summary>
+            Sorts Grid data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnRecordDoubleClick(Syncfusion.Blazor.Grids.RecordDoubleClickEventArgs{`0})">
+            <summary>
+            Grid double click event handler for folder navigation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.RemoveSelection(Microsoft.AspNetCore.Components.Web.MouseEventArgs,System.Boolean)">
+            <summary>
+            Removes the selection of files.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnUnSelection(Syncfusion.Blazor.Grids.RowDeselectEventArgs{`0})">
+            <summary>
+            Trigger FileSelect Event.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.OnSelection(Syncfusion.Blazor.Grids.RowSelectingEventArgs{`0})">
+            <summary>
+            Trigger FileSelect Event.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.GetRowDataByIndex(System.Double)">
+            <summary>
+            Returns the selected row data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.UpdateSelection">
+            <summary>
+            Updates the grid selection based on the selected items.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.RowDataBound(Syncfusion.Blazor.Grids.RowDataBoundEventArgs{`0})">
+            <summary>
+            Row Data bound event handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerGridView`1.Created">
+            <summary>
+            Created event handler to update the seleted rows.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1">
+            <summary>
+            This class contains the treeview in filemanager functionalities.
+            </summary>
+            <typeparam name="TValue">TValue.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.ResponseData">
+            <summary>
+            This `ResponseData` property is used to set response data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Set to true for the first time component rendering; otherwise gets false.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.SetRootLevelData">
+            <summary>
+            Constructs data for tree view based on file manager response data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.UpdatePathDetails">
+            <summary>
+            Updates the path details.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.SetSortOrder(Syncfusion.Blazor.FileManager.SortOrder)">
+            <summary>
+            Updates the sort order property of navigation pane.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.GetAttributes(`0)">
+            <summary>
+            Returns the attributes for tree view.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.RemoveSelection">
+            <summary>
+            Updated selection in the grid control.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.NodeSelecting(Syncfusion.Blazor.Navigations.NodeSelectEventArgs)">
+            <summary>
+            Node selection event handler to navigate folder.
+            </summary>
+            <param name="args">Specifies node select event arguments.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.OnNodeExpanding(Syncfusion.Blazor.Navigations.NodeExpandEventArgs)">
+            <summary>
+            Node expanding event handler to expand tree node.
+            </summary>
+            <param name="args">Specifies the node expanding arguments.</param>
+            <returns>Tasks.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.UpdateSelectedNode(`0,System.Boolean)">
+            <summary>
+            Updated the selected of treeview based on folder navigation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.OnRender(Syncfusion.Blazor.Navigations.NodeRenderEventArgs{Syncfusion.Blazor.FileManager.Internal.InternalData})">
+            <summary>
+            Triggers on each node renders in treeview.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.RemoveTreeData(System.Collections.Generic.List{`0})">
+            <summary>
+            Removes the data from data source on folder delete.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.UpdateHasChild(System.String)">
+            <summary>
+            Updates the has child property for each node.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.RenameTreeData(`0,System.String)">
+            <summary>
+            Renames the node text on folder rename.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.Internal.FileManagerTreeView`1.AddTreeData(System.Collections.Generic.List{`0},System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Adds new data on creating a new folder.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.PersistenceValues">
+            <summary>
+            Interface for persistence values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.PersistenceValues.View">
+            <summary>
+            Gets or sets the view of the File Manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.PersistenceValues.Path">
+            <summary>
+            Gets or sets the path of the File Manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.PersistenceValues.SelectedItems">
+            <summary>
+            Gets or sets the selected items of the File Manager.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.InternalData">
+            <summary>
+            Interface for Internal data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.Id">
+            <summary>
+            Gets or sets the id of file.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.ParentId">
+            <summary>
+            Gets or sets the parent id of file.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.Attributes">
+            <summary>
+            Gets or sets the attributes of file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.HasChild">
+            <summary>
+            Gets or sets the haschild field for folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.Selected">
+            <summary>
+            Gets or sets the selection for file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.IconCSS">
+            <summary>
+            Gets or sets the icon css for file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.Expanded">
+            <summary>
+            Gets or sets the expanded field for file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.InternalData.Text">
+            <summary>
+            Gets or sets the text for file or folder.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.RequestData`1">
+            <summary>
+            Interface for request data.
+            </summary>
+            <typeparam name="T">Type param.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.Action">
+            <summary>
+            Gets or sets the file action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.Names">
+            <summary>
+            Gets or sets the file or folder names.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.Name">
+            <summary>
+            Gets or sets the file or folder name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.NewName">
+            <summary>
+            Gets or sets the file or folder new name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.RenameFiles">
+            <summary>
+            Gets or sets the rename for file or folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.SearchString">
+            <summary>
+            Gets or sets the search string to find files.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.CaseSensitive">
+            <summary>
+            Gets or sets the search case sensitive.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.Data">
+            <summary>
+            Gets or sets the file or folder data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.TargetData">
+            <summary>
+            Gets or sets the target data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.Path">
+            <summary>
+            Gets or sets the path.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.TargetPath">
+            <summary>
+            Gets or sets the target path.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.ShowHiddenItems">
+            <summary>
+            Gets or sets the show hidden items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.RequestData`1.CustomData">
+            <summary>
+            Gets or sets the custom data.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.Internal.MenuOpenModel">
+            <summary>
+            Interface for MenuOpenModel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.MenuOpenModel.IsFile">
+            <summary>
+            It is used to check Menu open option for file.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.MenuOpenModel.IsFolder">
+            <summary>
+            It is used to check Menu open option for folder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.MenuOpenModel.IsLayout">
+            <summary>
+            It is used to check Menu open option for layout.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.MenuOpenModel.IsTree">
+            <summary>
+            It is used to check Menu open option for tree.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.Internal.MenuOpenModel.RowIndex">
+            <summary>
+            It is used to check Menu open option for grid row.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.FileManager.SfFileManager`1">
+            <summary>
+            This class holds the filemanager actions methods.
+            </summary>
+            <summary>
+            This class contains the filemanager utitility functionalities.
+            </summary>
+            <summary>
+            This class contains the toolbar operation functionalities of filemanager.
+            </summary>
+            <summary>
+            This class hold constants of file manager.
+            </summary>
+            <summary>
+            The SfFileManager is a graphical user interface component for managing the file system that allows the users to perform most common file operations
+            like accessing, editing, and sorting the files and folders.
+            </summary>
+            <typeparam name="TValue"> The generic type parameter.</typeparam>
+            <summary>
+            The SfFileManager is a graphical user interface component for managing the file system that allows the users to perform most common file operation like accessing, editing, and sorting the files and folders.
+            </summary>
+            <summary>
+            This class holds the property members of file manager.
+            </summary>
+            <summary>
+            This class holds the methods required to execute file manager functionalities.
+            </summary>
+            <summary>
+            This class holds the methods for file manager operation functionalities.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Read``1(``0[],``0,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,System.Boolean)">
+            <summary>
+            Performs read operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Create``1(``0[],``0,System.String,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,System.Boolean)">
+            <summary>
+            Performs new folder operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Rename``1(``0[],``0,System.String,System.String,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,System.Boolean)">
+            <summary>
+            Performs rename operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Search``1(``0[],``0,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Performs search operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Delete``1(``0[],``0,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,System.Boolean,System.String[])">
+            <summary>
+            Performs delete operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Paste``1(System.String,``0[],System.String,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,``0,System.String[],System.String[],System.Boolean)">
+            <summary>
+            Performs paste operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Details``1(System.String,``0[],System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,``0,System.String[],System.Boolean)">
+            <summary>
+            Performs get details operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Filter``1(``0[],``0,System.String,Syncfusion.Blazor.FileManager.FileManagerAjaxSettings,System.Boolean)">
+            <summary>
+            Performs filtering operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetItemId(System.String)">
+            <summary>
+            Return the id of each toolbar item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetToolbarItemPrefixIcon(System.String)">
+            <summary>
+            Return the icon css for toolbar item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetPopupId(System.String)">
+            <summary>
+            Return the id of each popup item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetMenuID(System.String)">
+            <summary>
+            Return the id of each menu item.
+            </summary>.
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetViewPopupAttributes(Syncfusion.Blazor.FileManager.ViewType)">
+            <summary>
+            Return attributes value of the root element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.ToolbarChangeView(Syncfusion.Blazor.FileManager.ViewType)">
+            <summary>
+            Change view item click hander.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DropDownButtonOpen(Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs)">
+            <summary>
+            Toolbar change DropDownButton OnOpen handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SortItemSelected(Syncfusion.Blazor.SplitButtons.MenuEventArgs)">
+            <summary>
+            Sort item cick handler.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SortByClick(System.String,Syncfusion.Blazor.FileManager.SortOrder)">
+            <summary>
+            Performs sorting operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OnToolBarItemClick(Syncfusion.Blazor.Navigations.ClickEventArgs)">
+            <summary>
+            Event hanlder for toolbar item click.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.FileManager.SfFileManager`1.accessor">
+            <summary>
+            Gets or sets the fast reflection accessor to reflect the data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetItemPrefixIcon(System.String,Syncfusion.Blazor.FileManager.ViewType)">
+            <summary>
+            return the prefix icon for each item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetValue(System.String,`0)">
+            <summary>
+            Return the required Data from the Ttype.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SetValue(`0,System.String,System.Object)">
+            <summary>
+            Sets the value to Data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.FileType(`0)">
+            <summary>
+            Returns the icon class for listbase data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetPermission(`0)">
+            <summary>
+            Returns the permission data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetDataKey(`0)">
+            <summary>
+            Generates the data key for each file data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetClass">
+            <summary>
+            Returns class to be added to the root element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetProperties">
+            <summary>
+            Returns class to be added to the root element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetDataId(`0)">
+            <summary>
+            Generates unique data id for each file data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetDataWithId(System.String)">
+            <summary>
+            Returns the data for the provided unique id.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SetDataWithId(System.String,`0)">
+            <summary>
+            Returns the data for the provided unique id.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.ReRenderComponent">
+            <summary>
+            Rerenders the component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.CheckItemOnClick(System.String,System.String[])">
+            <summary>
+            Getting the item clicked based on locale value.
+            </summary>
+            <param name="text"> Specifies item text.</param>
+            <param name="items"> Specifies item details.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UpdateSelectedItems(System.Collections.Generic.List{`0},Microsoft.AspNetCore.Components.Web.MouseEventArgs,System.Boolean)">
+            <summary>
+            Updates the selected items of the component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UpdateSorting(System.String,Syncfusion.Blazor.FileManager.SortOrder)">
+            <summary>
+            Sorts data based on the field value.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.ChangePath(System.String)">
+            <summary>
+            Updates the path during navigation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OnSplitterClick(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            Click event handler for splitter.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DialogClose(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Closes the dialog after performing operations.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UpdateDataKey(System.String,System.String,System.String,`0)">
+            <summary>
+            Updates the data key for each file data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OpenContextMenu(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            Finds the exact target and opens the context menu.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerShowDialog">
+            <summary>
+            Performs idevice upload operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.ChangeMobileMultiSelection(System.String)">
+            <summary>
+            Performs mobile multiselection opertaion.
+            </summary>
+            <param name="dataId">Specifies the data id parameter.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.PerformTreeViewKeyboardAction(System.String)">
+            <exclude/>
+            <summary>
+            Performs keyboard actions.
+            </summary>
+            <param name="action">Specifies the action parameter.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.PerformKeyboardAction(System.String)">
+            <exclude/>
+            <summary>
+            Performs keyboard actions.
+            </summary>
+            <param name="action">Specifies the action parameter.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.IsImage(`0)">
+            <summary>
+            Returns whether the file is image or not.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UpdateViewData(`0,System.Boolean)">
+            <summary>
+            Updates the data on file navigation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SetLocalStorage(System.String,System.String)">
+            <summary>
+            Update the Persistence value to local storage.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SerializeModel">
+            <summary>
+            Updating the persisting values to our component properties.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SetCurrentDirectoryPermission">
+            <summary>
+            Returns the permission for current directory.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UploadRetry(System.String)">
+            <summary>
+            Retry upload operation when issue occurs on file upload.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DragStartCall(System.Double,System.Double)">
+            <summary>
+            Server call for drag start operation.
+            </summary>
+            <param name="left"> Specifies the left coordinates.</param>
+            <param name="top"> Specifies the top coordinates.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DraggingCall(System.Double,System.Double)">
+            <summary>
+            Server call for drag start operation.
+            </summary>
+            <param name="left"> Specifies the left coordinates.</param>
+            <param name="top"> Specifies the top coordinates.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DragStopCall(System.String,System.String,System.String,System.String,System.Boolean,System.Double,System.Double)">
+            <summary>
+            Server call for drag stop operation.
+            </summary>
+            <param name="dragDataId">Specifies the drag data id.</param>
+            <param name="dropDataId">Specifies the drop data id.</param>
+            <param name="targetModule">Specifies the target module.</param>
+            <param name="activeModule">Specifies the active module.</param>
+            <param name="isLayout">Specifies layout parameter.</param>
+            <param name="left"> Specifies the left coordinates.</param>
+            <param name="top"> Specifies the top coordinates.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Set to true for the first time component rendering; otherwise gets false.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.ID">
+            <summary>
+            Specifies the ID value of the file manager element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.ChildContent">
+            <exclude/>
+            <summary>
+            Update child content from parent component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileAjaxSettings">
+            <summary>
+            Specifies the AJAX settings of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.AllowDragAndDrop">
+            <summary>
+            Enables or disables drag-and-drop of files.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.AllowMultiSelection">
+            <summary>
+            Enables or disables the multiple files selection of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerContextMenuSettings">
+            <summary>
+            Specifies the context menu settings of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.CssClass">
+            <summary>
+            Specifies the root CSS class of the file manager that allows you to customize the appearance by overriding the styles.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerDetailsViewSettings">
+            <summary>
+            Specifies the details view settings of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.EnableHtmlSanitizer">
+            <summary>
+            Defines whether to allow the cross-scripting site or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.EnablePersistence">
+            <summary>
+            Enables or disables persisting component's state between page reloads. If enabled, the following APIs will persist:
+            1. `View`: Represents the previous view of the file manager.
+            2. `path`: Represents the previous path of the file manager.
+            3. `selectedItems`: Represents the previous selected items in the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.Height">
+            <summary>
+            Specifies the height of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerLocale">
+            <summary>
+            Overrides the global culture and localization value for this component. Default global culture is 'en-US'.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerNavigationPaneSettings">
+            <summary>
+            Specifies the navigationpane settings of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.Path">
+            <summary>
+            Specifies the current path of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.PopupTarget">
+            <summary>
+            Specifies the target element in which the file manager's dialog will be displayed.
+            The default value is null, which refers to the File Manager element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.RootAliasName">
+            <summary>
+            Specifies the root folder alias name in file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerSearchSettings">
+            <summary>
+            Specifies the search settings of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.SelectedItems">
+            <summary>
+            Specifies the selected folders and files name of the  file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.SelectedItemsChanged">
+            <summary>
+            Gets or sets a callback of the bound value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.ShowFileExtension">
+            <summary>
+            Shows or hides the file extension in file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.ShowHiddenItems">
+            <summary>
+            Shows or hides the files and folders that are marked as hidden.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.ShowThumbnail">
+            <summary>
+            Shows or hides the thumbnail images in largeicons view.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.SortOrder">
+            <summary>
+            Specifies a value that indicates whether the folders and files are sorted in the ascending or descending order,
+            or they are not sorted at all. The available types of sort orders are,
+            `None` - Indicates that the folders and files are not sorted.
+            `Ascending` - Indicates that the folders and files are sorted in the ascending order.
+            `Descending` - Indicates that the folders and files are sorted in the descending order.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.SortBy">
+            <summary>
+            Gets or sets the field name being used as the sorting criteria to sort the files of the File Manager component.
+            </summary>
+            <value>
+            A field name used to sort files in the File Manager component. The default value is <c>Name</c>.
+            </value>
+            <remarks>
+            The <see cref="P:Syncfusion.Blazor.FileManager.SfFileManager`1.SortOrder"/> property indicates whether to sort in ascending or descending order.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileManagerToolbarSettings">
+            <summary>
+            Specifies the group of items aligned horizontally in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileUploadSettings">
+            <summary>
+            Specifies the upload settings for the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.View">
+            <summary>
+            Specifies the initial view of the file manager.
+            With the help of this property, initial view can be changed to details or largeicons view. The available views are:
+             `LargeIcons`
+             `Details`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.ViewChanged">
+            <summary>
+            Gets or sets a callback of the bound value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.Width">
+            <summary>
+            Specifies the width of the file manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.FileManager.SfFileManager`1.FileHtmlAttributes">
+            <summary>
+            You can add the additional html attributes such as title, native events etc., to the file manager element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.ClearSelectionAsync">
+            <summary>
+            Deselects the currently selected folders and files in current path.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.CreateFolderAsync(System.String)">
+            <summary>
+            Creates a new folder in file manager.
+            </summary>
+            <param name="folderName"> Specifies the folder name parameter.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DeleteFilesAsync(System.String[])">
+            <summary>
+            Deletes the folders or files from the given unique identifiers.
+            </summary>
+            <param name="deleteFiles"> Specifies the file name parameter to be deleted.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DisableMenuItems(System.String[])">
+            <summary>
+            Disables the specified context menu items in file manager. This method is used only in the menuOpen event.
+            </summary>
+            <param name="menuItems"> Specifies the menu item arguement to be disabled.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DisableToolbarItems(System.String[])">
+            <summary>
+            Disables the specified toolbar items of the file manager.
+            </summary>
+            <param name="toolbarItems"> Specifies the toolbar items parameter to be disabled.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.DownloadFilesAsync(System.String[])">
+            <summary>
+            Downloads the folders or files from the given unique identifiers.
+            </summary>
+            <param name="downloadFiles"> Specifies the files names to be downloaded.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.EnableToolbarItems(System.String[])">
+            <summary>
+            Enables the specified toolbar items of the file manager.
+            </summary>
+            <param name="toolbarItems">Specifies toolbar items to be enabled.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.FilterFilesAsync(System.Collections.Generic.List{`0})">
+            <summary>
+            Display the custom filtering files in file manager.
+            </summary>
+            <param name="filterData">Specifies file(s)/folder(s) to be filtered.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetMenuItemIndex(System.String)">
+            <summary>
+            Returns the index position of given current context menu item in file manager.
+            </summary>
+            <param name="item">Specifies menu item to get its index.</param>
+            <returns>int.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetSelectedFiles">
+            <summary>
+            Gets the details of the selected files in the file manager.
+            </summary>
+            <returns>List.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetToolbarItemIndex(System.String)">
+            <summary>
+            Returns the index position of given toolbar item in file manager.
+            </summary>
+            <param name="item">Specifies item to get toolbar item index.</param>
+            <returns>int.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.OpenFileAsync(System.String)">
+            <summary>
+            Opens the corresponding file or folder from the given unique identifier.
+            </summary>
+            <param name="file">Specifies file to be opened.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.RefreshFilesAsync">
+            <summary>
+            Refreshes the folder files of the file manager.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.RefreshLayoutAsync">
+            <summary>
+            Refreshes the layout of the file manager.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.RenameFileAsync(System.String,System.String)">
+            <summary>
+            Renames the file or folder with given new name in file manager.
+            </summary>
+            <param name="renameFile">Specifies rename files.</param>
+            <param name="name">Specifies new name for renaming file.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.SelectAllAsync">
+            <summary>
+            Selects the entire folders and files in current path.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UploadFilesAsync">
+            <summary>
+            Opens the upload dialog in file manager.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.UpdateChildProperties(System.String,System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            Updates the child property of the component.
+            </summary>
+            <param name="key">Specifies the key parameter.</param>
+            <param name="propValue">Specifies the property value.</param>
+            <param name="isDynamicPropUpdate"> Parameter to check dynamic property update or not.</param>
+            <param name="isVisibleChanged">Parameter to check visibility state is changed or not.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.Paste(`0,System.String[],System.Boolean)">
+            <summary>
+            Performs paste operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.GetDataPermisson(System.String,System.Collections.Generic.List{`0})">
+            <summary>
+            Returns the permission for actions to be performed for a file data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.ActionDenied(System.String,System.String)">
+            <summary>
+            Returns the access denied message for file operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.CopyDenied">
+            <summary>
+            Checks for permission to perform copy operation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.PerformOperation(System.String,System.Boolean)">
+            <summary>
+            Performs operation on files.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.FileManager.SfFileManager`1.PerformDownload">
+            <summary>
+            Performs the download operation.
+            </summary>
+        </member>
+    </members>
+</doc>

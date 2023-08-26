@@ -1,0 +1,2215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.BarcodeGenerator</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText">
+            <summary>
+            Specifies the class which contains barcode display text data and functionalities.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="200" Value="65213323" Type="BarcodeType.Code11" BackgroundColor="white" ForeColor="black" EnableCheckSum="true" >
+              <BarcodeGeneratorDisplayText Text = "" Font="monospace" Size="25" Alignment="Alignment.Right" Position="TextPosition.Top" Visibility="true">
+              <BarcodeTextMargin Left = "0" Top="0" Right="0" Bottom="0"></BarcodeTextMargin>
+              </BarcodeGeneratorDisplayText>
+            </SfBarcodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.ChildContent">
+            <summary>
+            Sets content for Barcode generator display text element including HTML support and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Alignment">
+            <summary>
+            Defines the horizontal alignment of the text. By default, it is set to Center.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Font">
+            <summary>
+            Defines the font style of the text. By default, it is set to monospace.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Margin">
+            <summary>
+            It sets the space to be left between the text and its barcode. By default, it is set to 10 from all sides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Position">
+            <summary>
+            Defines the position of the text. By default, it is set to Bottom.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Size">
+            <summary>
+            Defines the size of the text. By default, it is set to 20.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Text">
+            <summary>
+            Sets the textual description of the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.Visibility">
+            <summary>
+            Defines the visibility of the text.  By default, it is set to true.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.BarcodeGeneratorDisplayText.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.BarcodeTextMargin">
+            <summary>
+            Specifies the space to be left from the display text of the barcode.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="150" Value="65213323" Type="BarcodeType.Code11">
+             <BarcodeGeneratorDisplayText >
+               <BarcodeTextMargin Left = "0" Top="20" Right="0" Bottom="0"></BarcodeTextMargin>
+             </BarcodeGeneratorDisplayText>
+            </SfBarcodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeTextMargin.Bottom">
+            <summary>
+            It sets the space to be left from the bottom side of the display text of the barcode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeTextMargin.Left">
+            <summary>
+            It sets the space to be left from the left side of the display text of the barcode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeTextMargin.Right">
+            <summary>
+            It sets the space to be left from the right side of the display text of the barcode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeTextMargin.Top">
+            <summary>
+            It sets the space to be left from the top side of the display text of the barcode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.BarcodeTextMargin.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.BarcodeMargin">
+            <summary>
+            Specifies the space to be left from the barcode.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="150" Value="65213323" Type="BarcodeType.Code11" >
+               <BarcodeMargin Left = "10" Top="10" Right="10" Bottom="10"></BarcodeMargin>
+            </SfBarcodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeMargin.Bottom">
+            <summary>
+            It sets the space to be left from the bottom side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeMargin.Left">
+            <summary>
+            It sets the space to be left from the left side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeMargin.Right">
+            <summary>
+            It sets the space to be left from the right side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeMargin.Top">
+            <summary>
+            It sets the space to be left from the top side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.BarcodeMargin.OnInitializedAsync">
+            <summary>
+            OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.BarcodeType">
+            <summary>
+            Represents the type of barcode to be generated.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="150" Value="65213323" Type="BarcodeType.Code11" >
+            </SfBarcodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code128">
+            <summary>
+            Generate the Code128type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code39">
+            <summary>
+            Generate the Code39 type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code128A">
+            <summary>
+            Generate the Code128A type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code128B">
+            <summary>
+            Generate the Code128B type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code128C">
+            <summary>
+            Generate the Code128C type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Codabar">
+            <summary>
+            Generate the Codabar type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Ean8">
+            <summary>
+            Generate the Ean8 type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Ean13">
+            <summary>
+            Generate the Ean13 type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.UpcA">
+            <summary>
+            Generate the UpcA type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.UpcE">
+            <summary>
+            Generate the UpcE type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code11">
+            <summary>
+            Generate the Code128type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code93">
+            <summary>
+            Generate the Code93 type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code93Extension">
+            <summary>
+            Generate the Code39Extension type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code39Extension">
+            <summary>
+            Generate the Code39Extension type barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeType.Code32">
+            <summary>
+            Generate the Code32 type barcode.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator">
+            <summary>
+            Represents the class, which contains data and functionalities for SfBarcode.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="200" Value="65213323" Type="BarcodeType.Code11" BackgroundColor="white" ForeColor="black" EnableCheckSum="true" OnValidationFailed="@OnInvalid">
+             <BarcodeGeneratorDisplayText Text = "" Font="monospace" Size="25" Alignment="Alignment.Left" Position="TextPosition.Top">
+               <BarcodeTextMargin Left = "10" Top="10" Right="10" Bottom="10"></BarcodeTextMargin>
+             </BarcodeGeneratorDisplayText>
+             <BarcodeMargin Left = "10" Top="10" Right="10" Bottom="10"></BarcodeMargin>
+            </SfBarcodeGenerator>
+            @code{
+             public void OnInvalid(ValidationFailedEventArgs args)
+             {
+             }
+            }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.ChildContent">
+            <summary>
+            Sets content for Barcode generator element including HTML support and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.BackgroundColor">
+            <summary>
+            Specifies the background color of the barcode. By default, it is set to white.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.DisplayText">
+            <summary>
+            Specifies the text properties for the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.EnableCheckSum">
+            <summary>
+            Specifies an error detection in which some additional characters are added to a barcode to protect the integrity of barcode data.  By default, it is set to true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.ForeColor">
+            <summary>
+            Specifies the line and text color of the barcode. By default, it is set to black.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.Height">
+            <summary>
+            Specifies the height of the barcode model.By default, it is set to 100%.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.Margin">
+            <summary>
+            Specifies the margin properties for the barcode.  By default, it is set to 10 from all sides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.type">
+            <summary>
+            Specifies the type of barcode to be rendered. By default, it is set to Code128.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.Type">
+            <summary>
+            Specifies the type of barcode to be rendered. By default, it is set to Code128.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.Value">
+            <summary>
+            Specifies the value of the barcode to be rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.Width">
+            <summary>
+            Specifies the width of the barcode model. By default, it is set to 100%.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.OnValidationFailed">
+            <summary>
+            Triggers when the barcode input is an invalid string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.Export(System.String,Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType)">
+            <summary>
+            Export the barcode as an image in the specified image type and downloads it in the browser.
+            </summary>
+            <param name="exportType">Specifies the type used to export the barcode.</param>
+            <param name="fileName">Specifies the filename of the barcode image to be download.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.ExportAsBase64Image(Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType)">
+            <summary>
+            Export the barcode as an image in the specified image type and returns it as base64 string.
+            </summary>
+            <param name="exportType"></param>
+            <returns>Returns the base64 string value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.OnParametersSetAsync">
+            <summary>
+            Sets the parameters for the SfBarcodeGenerator component in the render tree.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfBarcodeGenerator.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+             The OnAfterRenderAsync method is invoked after the SfBarcodeGenerator component has finished rendering.
+            </summary>
+            <param name="firstRender">The first time the component instance is rendered is set to true.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.BarcodeHelper.ValidateInput(System.String,System.String,Syncfusion.Blazor.BarcodeGenerator.BarcodeType)">
+            <summary>
+            Validate the given input to check whether the input is valid or not.
+            </summary>
+            <param name="value"></param>
+            <param name="validatorExpression"></param>
+            <param name="barcodeType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.ValidationFailedEventArgs">
+            <summary>
+            Specifies the event triggers when the barcode input is an invalid string.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="150" Value="A" Type="BarcodeType.Code11" OnValidationFailed="@OnInvalid">
+            </SfBarcodeGenerator>
+            @code{
+             public void OnInvalid(ValidationFailedEventArgs args)
+             {
+             }
+            }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.ValidationFailedEventArgs.Message">
+            <summary>
+            Represents the validation message for the barcode.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType">
+            <summary>
+            Represents the export type of barcode. By default, it is set to JPG.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <input type = "button" value="Export" @onclick="@OnExport" />
+            <SfQRCodeGenerator Width = "200px" Height="150px" Value="Syncfusion" >
+               <QRCodeGeneratorDisplayText text = "Text" ></ QRCodeGeneratorDisplayText >
+            </ SfQRCodeGenerator >
+              @code{
+              private void OnExport()
+              {
+              QRcode.Export("fileName", BarcodeExportType.JPG);
+              }
+             }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType.JPG">
+            <summary>
+            Barcode will be exported as a JPG file.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType.PNG">
+            <summary>
+            Barcode will be exported as a PNG file.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.Alignment">
+            <summary>
+            Represents the horizontal alignment of the text. By default, it is set to Center.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="150" Value="65213323" Type="BarcodeType.Code11" >
+              <BarcodeGeneratorDisplayText Alignment = "Alignment.Right" >
+              </BarcodeGeneratorDisplayText>
+            </SfBarcodeGenerator >
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.Alignment.Center">
+            <summary>
+            Align the text to the center side of the barcode element.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.Alignment.Left">
+            <summary>
+            Align the text to the left side of the barcode element.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.Alignment.Right">
+            <summary>
+            Align the text to the right side of the barcode element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.TextPosition">
+            <summary>
+            Represents the text position for the text to be rendered in the barcode.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfBarcodeGenerator Width="200" Height="150" Value="65213323" Type="BarcodeType.Code11" >
+              <BarcodeGeneratorDisplayText Position = "TextPosition.Top" >
+              </ BarcodeGeneratorDisplayText >
+            </ SfBarcodeGenerator >
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.TextPosition.Bottom">
+            <summary>
+            Text will be rendered in the Bottom of the barcode element.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.TextPosition.Top">
+            <summary>
+            Text will be rendered in the Top of the barcode element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.actualRows">
+            <summary>
+            Returns the actual number of rows (including quietzones).
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.actualColumns">
+            <summary>
+            Returns the actual number of columns (including quietzones).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.dataMatrixArray">
+            <summary>
+            Holds the final array.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.symbolAttributes">
+            <summary>
+            Array containing all possible datamatrix symbol attributes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.symbolAttribute">
+            <summary>
+            Holds the suitable symbol attribute based on input text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.log">
+            <summary>
+            Holds log array.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.aLog">
+            <summary>
+            Holds ALog array.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.polynomial">
+            <summary>
+            Internal variable for Reed Solomon polynomial.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.blockLength">
+            <summary>
+            Internal variable for block length.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.quiteZoneLeft">
+            <summary>
+            Initializes default quiteZone for data matrix.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.createLogArrays">
+            <summary>
+            Create log and alog arrays.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.createPolynomial(System.Int32)">
+            <summary>
+            Creates factors for Reed Solomon polynomial based on the data.
+            </summary>
+            <param name="step">Number of correction codewords required.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.createMatrix(System.Int32[])">
+            <summary>
+            Create matrix.
+            </summary>
+            <param name="codeword">Input data matrix.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.getData">
+            <summary>
+            Returns the data as byte array.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.buildDataMatrix(Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator)">
+            <summary>
+            Builds data matrix.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.prepareCodeword(System.Byte[],Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator)">
+            <summary>
+            Prepares data codeword by encoding and appending error correction codes.
+            </summary>
+            <param name="dataCodeword">Data in bytes.</param>
+            <param name="dataMatrix">Reference for the component SfDataMatrixGenerator.</param>
+            <returns>Final codeword ready for generating matrix.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.dataMatrixBaseEncoder(System.Byte[])">
+            <summary>
+            Encodes the data using Base256 encoder.
+            </summary>
+            <param name="dataCodeword">Data to be encoded.</param>
+            <returns>Encoded data.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.computeBase256Codeword(System.Int32,System.Int32)">
+            <summary>
+            Compute codeword using 255 state algorithm.
+            </summary>
+            <param name="codeWordValue">Codeword to compute.</param>
+            <param name="index">Index of the codeword.</param>
+            <returns>Encoded codeword.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.dataMatrixASCIINumericEncoder(System.Byte[])">
+            <summary>
+            Encodes the data using Numeric encoder.
+            </summary>
+            <param name="dataCodeword">Data to be encoded.</param>
+            <returns>Encoded data.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.dataMatrixASCIIEncoder(System.Byte[])">
+            <summary>
+            Encodes the data using ASCII encoder.
+            </summary>
+            <param name="dataCodeword">Data to be encoded.</param>
+            <returns>Encoded data.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.computeErrorCorrection(System.Byte[]@,Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator)">
+            <summary>
+            Compute error correction codewords.
+            </summary>
+            <param name="codeword">Data codewords.</param>
+            <param name="dataMatrix">Reference for the component SfDataMatrixGenerator.</param>
+            <returns>Correction codeword array.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.padCodewords(System.Int32,System.Byte[],System.Byte[]@)">
+            <summary>
+            Data codeword is padded to match the chosen symbol attribute.
+            </summary>
+            <param name="dataCodeWordLength">Length of data codeword.</param>
+            <param name="temp">Codeword without padding.</param>
+            <param name="codeword">Codeword with padding.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.prepareDataCodeword(System.Byte[],Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator)">
+            <summary>
+            Choose suitable encoding.
+            </summary>
+            <param name="dataCodeword">Data codeword.</param>
+            <param name="dataMatrix">Reference for the component SfDataMatrixGenerator.</param>
+            <returns>Encoded codeword.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.addQuiteZone(System.Byte[][])">
+            <summary>
+            Adds quietzone on all sides of the data matrix.
+            </summary>
+            <param name="dataMatrix">Input data matrix.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.DataMatrix.PdfDataMatrixSymbolAttribute">
+            <summary>
+            Symbol attribute structure for the DataMatrix.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText">
+            <summary>
+            Specifies the class which contains DataMatrix display text data and functionalities.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfDataMatrixGenerator Width="200" Height="200" Value="65213323" Encoding="DataMatrixEncoding.ASCIINumeric" >
+             <DataMatrixGeneratorDisplayText Text="" Font="monospace" Size="25" Alignment="Alignment.Left" Position="TextPosition.Top">
+             </DataMatrixGeneratorDisplayText>
+            </SfDataMatrixGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.ChildContent">
+            <summary>
+            Sets content for data matrix display text element including HTML support and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Alignment">
+            <summary>
+            Defines the horizontal alignment of the text. By default, it is set to Center.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Font">
+            <summary>
+            Defines the font style of the text. By default, it is set to monospace.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Margin">
+            <summary>
+            It sets the space to be left between the text and its DataMatrix. By default, it is set to 0 from all sides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Position">
+            <summary>
+            Defines the position of the text. By default, it is set to Bottom.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Size">
+            <summary>
+            Defines the size of the text. By default, it is set to 20.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Text">
+            <summary>
+            Sets the textual description of the DataMatrix.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.Visibility">
+            <summary>
+            Defines the visibility of the text.  By default, it is set to true.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrixGeneratorDisplayText.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.DataMatrixTextMargin">
+            <summary>
+            Specifies the space to be left from the display text of the DataMatrix.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfDataMatrixGenerator Width="200" Height="150" Value="23" Encoding="DataMatrixEncoding.ASCIINumeric">
+              <DataMatrixGeneratorDisplayText >
+                <DataMatrixTextMargin Left = "0" Top="0" Right="0" Bottom="0"></DataMatrixTextMargin>
+              </DataMatrixGeneratorDisplayText>
+            </SfDataMatrixGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixTextMargin.Bottom">
+            <summary>
+            It sets the space to be left from the bottom side of the display text of the DataMatrix. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixTextMargin.Left">
+            <summary>
+            It sets the space to be left from the left side of the display text of the DataMatrix. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixTextMargin.Right">
+            <summary>
+            It sets the space to be left from the right side of the display text of the DataMatrix. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixTextMargin.Top">
+            <summary>
+            It sets the space to be left from the top side of the display text of the DataMatrix. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrixTextMargin.OnInitializedAsync">
+            <summary>
+            OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.DataMatrixMargin">
+            <summary>
+            Specifies the space to be left from the DataMatrix.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfDataMatrixGenerator Width="200" Height="150" Value="65213323" Encoding="DataMatrixEncoding.ASCIINumeric" >
+                <DataMatrixMargin Left = "10" Top="10" Right="10" Bottom="10"></DataMatrixMargin>
+            </SfDataMatrixGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixMargin.Bottom">
+            <summary>
+            It sets the space to be left from the bottom side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixMargin.Left">
+            <summary>
+            It sets the space to be left from the left side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixMargin.Right">
+            <summary>
+            It sets the space to be left from the right side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.DataMatrixMargin.Top">
+            <summary>
+            It sets the space to be left from the top side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.DataMatrixMargin.OnInitializedAsync">
+            <summary>
+            OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.DataMatrixEncoding">
+            <summary>
+            Represents the encoding type for the datamatrix code.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfDataMatrixGenerator Width="200" Height="150" Value="65213323" Encoding="DataMatrixEncoding.ASCIINumeric">
+            </SfDataMatrixGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixEncoding.Auto">
+            <summary>
+            Encoding type will be automatically assigned for the given input
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixEncoding.ASCII">
+            <summary>
+            Accept only the ASCII values
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixEncoding.ASCIINumeric">
+            <summary>
+            Accept only the ASCII numeric values.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixEncoding.Base256">
+            <summary>
+            Accept the base256 values.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize">
+            <summary>
+            Represents the size for the DataMatrix code.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfDataMatrixGenerator Width="200" Height="150" Value="65323" Encoding=" DataMatrixEncoding.ASCIINumeric" Size="DataMatrixSize.Size104x104">
+            </SfDataMatrixGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Auto">
+            <summary>
+            Generate the size of the data matrix for the given input
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size104x104">
+            <summary>
+            Generate 21*21 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size10x10">
+            <summary>
+            Generate 10*10 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size120x120">
+            <summary>
+            Generate 120*120 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size12x12">
+            <summary>
+            Generate 12*12 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size12x26">
+            <summary>
+            Generate 12*26 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size12x36">
+            <summary>
+            Generate 12*36 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size132x132">
+            <summary>
+            Generate 132*132 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size144x144">
+            <summary>
+            Generate 144*144 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size14x14">
+            <summary>
+            Generate 14*14 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size16x16">
+            <summary>
+            Generate 16*16 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size16x36">
+            <summary>
+            Generate 16*36 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size16x48">
+            <summary>
+            Generate 16*48 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size18x18">
+            <summary>
+            Generate 18*18 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size20x20">
+            <summary>
+            Generate 20*20 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size22x22">
+            <summary>
+            Generate 22*22 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size24x24">
+            <summary>
+            Generate 24*24 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size26x26">
+            <summary>
+            Generate 26*26 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size32x32">
+            <summary>
+            Generate 32*32 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size36x36">
+            <summary>
+            Generate 36*36 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size40x40">
+            <summary>
+            Generate 40*40 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size44x44">
+            <summary>
+            Generate 44*44 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size48x48">
+            <summary>
+            Generate 48*48 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size52x52">
+            <summary>
+            Generate 52*52 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size64x64">
+            <summary>
+            Generate 64*64 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size72x72">
+            <summary>
+            Generate 72*72 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size80x80">
+            <summary>
+            Generate 80*80 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size88x88">
+            <summary>
+            Generate 88*88 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size8x18">
+            <summary>
+            Generate 8*18 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size8x32">
+            <summary>
+            Generate 8*32 size for the datamatrix
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.DataMatrixSize.Size96x96">
+            <summary>
+            Generate 96*96 size for the datamatrix
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator">
+            <summary>
+            Represents the data and functionalities for SfDataMatrixGenerator.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfDataMatrixGenerator Width="200" Height="200" Value="65213323" Encoding="DataMatrixEncoding.ASCIINumeric" BackgroundColor="white" ForeColor="black" OnValidationFailed="@OnInvalid">
+             <DataMatrixGeneratorDisplayText Text = "" Font="monospace" Size="25" Alignment="Alignment.Left" Position="TextPosition.Top">
+                 <DataMatrixTextMargin Left = "0" Top="0" Right="0" Bottom="0"></DataMatrixTextMargin>
+             </DataMatrixGeneratorDisplayText>
+             <DataMatrixMargin Left = "10" Top="10" Right="10" Bottom="10"></ DataMatrixMargin >
+            </SfDataMatrixGenerator>
+            @code{
+              public void OnInvalid(ValidationFailedEventArgs args)
+              {
+              }
+             }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.ChildContent">
+            <summary>
+            Sets content for data matrix element including HTML support and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.BackgroundColor">
+            <summary>
+            Specifies the background color of the DataMatrix. By default, it is set to white.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.DisplayText">
+            <summary>
+            Specifies the text properties for the DataMatrix.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Encoding">
+            <summary>
+            Specifies the encoding type of the DataMatrix.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.ForeColor">
+            <summary>
+            Specifies the line and text color of the DataMatrix. By default, it is set to black.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Height">
+            <summary>
+            Specifies the height of the DataMatrix model. By default, it is set to 100%.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Margin">
+            <summary>
+            Specifies the margin properties for the DataMatrix.  By default, it is set to 10 from all sides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Size">
+            <summary>
+            Specifies the amount of data to be encoded in the data matrix symbol.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Value">
+            <summary>
+            Specifies the value of the DataMatrix to be rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Width">
+            <summary>
+            Specifies the width of the DataMatrix model. By default, it is set to 100%.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.XDimension">
+            <summary>
+            Represents the width of the smallest element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.OnValidationFailed">
+            <summary>
+            Triggers when the DataMatrix input is an invalid string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.Export(System.String,Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType)">
+            <summary>
+            Export the DataMatrix as an image in the specified image type and downloads it in the browser.
+            </summary>
+            <param name="exportType">Specifies the type used to export the DataMatrix.</param>
+            <param name="fileName">Specifies the filename of the DataMatrix image to be download.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.ExportAsBase64Image(Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType)">
+            <summary>
+            Export the DataMatrix as an image in the specified image type and returns it as base64 string.
+            </summary>
+            <param name="exportType"></param>
+            <returns>Returns the base64 string value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the SfDataMatrixGenerator component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+             The OnAfterRenderAsync method is invoked after the SfDataMatrixGenerator component has finished rendering.
+            </summary>
+            <param name="firstRender">The first time the component instance is rendered is set to true.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfDataMatrixGenerator.OnParametersSetAsync">
+            <summary>
+            Sets the parameters for the SfDataMatrixGenerator component in the render tree.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel">
+            <summary>
+            Represents the recovery capacity of the QRcode.
+            </summary>
+            <remarks>
+            <table style = "border: none">
+            <tr>
+            <td style = "border: none">The default capacity levels are</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    Low</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    Medium</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    Quartile</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    High</td>
+            </tr>
+            </table>
+            </remarks>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfQRCodeGenerator Width="200" Height="150" Value="65323" ErrorCorrectionLevel="ErrorCorrectionLevel.High" >
+            </SfQRCodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel.High">
+            <summary>
+            The Recovery capacity is 30%(approx.)
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel.Low">
+            <summary>
+            The Recovery capacity is 7%(approx.)
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel.Medium">
+            <summary>
+            The Recovery capacity is 15%(approx.)
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel.Quartile">
+            <summary>
+            The Recovery capacity is 25%(approx.)
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion">
+            <summary>
+            Represents the QRCodeVersion.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfQRCodeGenerator Width="200" Height="150" Value="65323" Version="QRCodeVersion.Version23" >
+            </SfQRCodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Auto">
+            <summary>
+            Specifies the default version.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version01">
+            <summary>
+            Specifies version 1 (21 x 21 modules)
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version02">
+            <summary>
+            Specifies version 2 (25 x 25 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version03">
+            <summary>
+            Specifies version 3 (29 x 29 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version04">
+            <summary>
+            Specifies version 4 (33 x 33 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version05">
+            <summary>
+            Specifies version 5 (37 x 37 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version06">
+            <summary>
+            Specifies version 6 (41 x 41 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version07">
+            <summary>
+            Specifies version 7 (45 x 45 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version08">
+            <summary>
+            Specifies version 8 (49 x 49 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version09">
+            <summary>
+            Specifies version 9 (53 x 53 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version10">
+            <summary>
+            Specifies version 10 (57 x 57 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version11">
+            <summary>
+            Specifies version 11 (61 x 61 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version12">
+            <summary>
+            Specifies version 12 (65 x 65 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version13">
+            <summary>
+            Specifies version 13 (69 x 69 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version14">
+            <summary>
+            Specifies version 14 (73 x 73 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version15">
+            <summary>
+            Specifies version 15 (77 x 77 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version16">
+            <summary>
+            Specifies version 17 (85 x 85 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version17">
+            <summary>
+            Specifies version 17 (85 x 85 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version18">
+            <summary>
+            Specifies version 18 (89 x 89 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version19">
+            <summary>
+            Specifies version 19 (93 x 93 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version20">
+            <summary>
+            Specifies version 20 (97 x 97 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version21">
+            <summary>
+            Specifies version 21 (101 x 101 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version22">
+            <summary>
+            Specifies version 22 (105 x 105 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version23">
+            <summary>
+            Specifies version 23 (109 x 109 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version24">
+            <summary>
+            Specifies version 24 (113 x 113 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version25">
+            <summary>
+            Specifies version 25 (117 x 117 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version26">
+            <summary>
+            Specifies version 26 (121 x 121 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version27">
+            <summary>
+            Specifies version 27 (125 x 125 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version28">
+            <summary>
+            Specifies version 28 (129 x 129 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version29">
+            <summary>
+            Specifies version 29 (133 x 133 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version30">
+            <summary>
+            Specifies version 30 (137 x 137 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version31">
+            <summary>
+            Specifies version 31 (141 x 141 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version32">
+            <summary>
+            Specifies version 32 (145 x 145 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version33">
+            <summary>
+            Specifies version 33 (149 x 149 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version34">
+            <summary>
+            Specifies version 34 (153 x 153 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version35">
+            <summary>
+            Specifies version 35 (157 x 157 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version36">
+            <summary>
+            Specifies version 36 (161 x 161 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version37">
+            <summary>
+            Specifies version 37 (165 x 165 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version38">
+            <summary>
+            Specifies version 38 (169 x 169 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version39">
+            <summary>
+            Specifies version 39 (173 x 173 modules).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion.Version40">
+            <summary>
+            Specifies version 40 (177 x 177 modules).
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QRInputMode">
+            <summary>
+            Defines the Qrcode input mode.
+            </summary>
+            <remarks>
+            <table style = "border: none">
+            <tr>
+            <td style = "border: none">The QR input modes are</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    NumericMode</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    BinaryMode</td>
+            </tr>
+            <tr>
+            <td style = "border: none">�    AlphaNumericMode</td>
+            </tr>
+            </table>
+            </remarks>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRInputMode.NumericMode">
+            <summary>
+            Changes its mode to NumericMode when the given input is numeric.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRInputMode.BinaryMode">
+            <summary>
+            Changes its mode to BinaryMode when the given input is numeric or smaller case or both.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRInputMode.AlphaNumericMode">
+            <summary>
+            Changes its mode to AlphaNumericMode when the given is numeric or upper case or both.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRInputMode.MixingMode">
+            <summary>
+            MixingMode
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QuietZone">
+            <summary>
+            Defines the quite zone for the QRCode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QuietZone.All">
+            <summary>
+            quite zone for the QRCode.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText">
+            <summary>
+            Specifies the class which contains QRCode display text data and functionalities.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfQRCodeGenerator Width="200" Height="200" Version="QRCodeVersion.Version01" Value="65213323">
+              <QRCodeGeneratorDisplayText Text = "" Font="monospace" Size="15" Alignment="Alignment.Left" Position="TextPosition.Top">
+              </QRCodeGeneratorDisplayText>
+            </SfQRCodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.ChildContent">
+            <summary>
+            Sets content for QR code generator display text element including HTML support and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Alignment">
+            <summary>
+            Defines the horizontal alignment of the text. By default, it is set to Center.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Font">
+            <summary>
+            Defines the font style of the text. By default, it is set to monospace.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Margin">
+            <summary>
+            It sets the space to be left between the text and its QRCode. By default, it is set to 0 from all sides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Position">
+            <summary>
+            Defines the position of the text. By default, it is set to Bottom.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Size">
+            <summary>
+            Defines the size of the text. By default, it is set to 20.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Text">
+            <summary>
+            Sets the textual description of the QRCode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.Visibility">
+            <summary>
+            Defines the visibility of the text.  By default, it is set to true.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRCodeGeneratorDisplayText.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QRCodeTextMargin">
+            <summary>
+            Specifies the space to be left from the display text of the QRCode.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfQRCodeGenerator Width="200" Height="150" Version="QRCodeVersion.Version40" Value="65213323">
+             <QRCodeGeneratorDisplayText >
+               <QRCodeTextMargin Left = "0" Top="0" Right="0" Bottom="0"></QRCodeTextMargin>
+             </QRCodeGeneratorDisplayText>
+            </SfQRCodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeTextMargin.Bottom">
+            <summary>
+            It sets the space to be left from the bottom side of the display text of the QRCode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeTextMargin.Left">
+            <summary>
+            It sets the space to be left from the left side of the display text of the QRCode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeTextMargin.Right">
+            <summary>
+            It sets the space to be left from the right side of the display text of the QRCode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRCodeTextMargin.Top">
+            <summary>
+            It sets the space to be left from the top side of the display text of the QRCode. By default, it is set to 0.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRCodeTextMargin.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QRMargin">
+            <summary>
+            Specifies the space to be left from the QRCode.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfQRCodeGenerator Width="200" Height="150" Version="QRCodeVersion.Version40" Value="65213323">
+             <QRMargin Left = "10" Top="10" Right="10" Bottom="10"></QRMargin>
+            </SfQRCodeGenerator>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRMargin.Bottom">
+            <summary>
+            It sets the space to be left from the bottom side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRMargin.Left">
+            <summary>
+            It sets the space to be left from the left side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRMargin.Right">
+            <summary>
+            It sets the space to be left from the right side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRMargin.Top">
+            <summary>
+            It sets the space to be left from the top side of the parent of an element. By default, it is set to 10.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRMargin.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.ModuleValue">
+            <summary>
+            Struct to hold the value of each dots in Barcode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.ModuleValue.IsBlack">
+            <summary>
+            Specifies if the Dot is black.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.ModuleValue.IsFilled">
+            <summary>
+            Specifies if the Dot is already filled.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.ModuleValue.IsPDP">
+            <summary>
+            Specifies if the Dot is PDP.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeVersion">
+            <summary>
+            Holds the Version Information.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.noOfModules">
+            <summary>
+            Holds the Number of Modules.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeModuleValue">
+            <summary>
+            Holds the data of Function Pattern.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeDataAllocationValues">
+            <summary>
+            Holds the Data in the Encoding Region.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.isMixMode">
+            <summary>
+            Check if mode is mixing mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.mixVersionERC">
+            <summary>
+            Set version for mixing mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.mixExecutablePart">
+            <summary>
+            Data to be currently encoded in Mixing Mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.mixRemainingPart">
+            <summary>
+            Data remaining for encoding in mixing mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.totalBits">
+            <summary>
+            Total bits required in mixing mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.mixDataCount">
+            <summary>
+            Count of mixing mode blocks.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeText">
+            <summary>
+            Stores data blocks of particular mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeMode">
+            <summary>
+            Stores Mode of each data block.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeInputMode">
+            <summary>
+            Holds the Input Mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.errorCorrectionLevel">
+            <summary>
+            Holds the Error correction level.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.dataBits">
+            <summary>
+            Holds the Data Bit value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.blocks">
+            <summary>
+            Holds the Number of Blocks.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.isUserMentionedMode">
+            <summary>
+            Check if User Mentioned Mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.isUserMentionedVersion">
+            <summary>
+            Check if User Mentioned Version.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.isUserMentionedErrorCorrectionLevel">
+            <summary>
+            Check if User Mentioned Error Correction Level.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.isEci">
+            <summary>
+            Check if ECI.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.eciAssignmentNumber">
+            <summary>
+            Holds the ECI Assignment Number.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.barcodeValues">
+            <summary>
+            Variable to hold the QR Barcode Values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.ErrorCorrectionLevel">
+            <summary>
+            Gets or sets the Error correction level.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.InputMode">
+            <summary>
+            Gets or sets the Mode of the input text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.generateValues">
+            <summary>
+            Generates the values of the QR Barcode.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.addQuietZone">
+            <summary>
+            Adds quietzone to the QR Barcode.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.drawPDP(System.Int32,System.Int32)">
+            <summary>
+            Draw the PDP in the given location.
+            </summary>
+            <param name="x">The x co-ordinate.</param>
+            <param name="y">The y co-ordinate.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.drawTimingPattern">
+            <summary>
+            Draw the Timing Pattern.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.drawAlignmentPattern(System.Int32,System.Int32)">
+            <summary>
+            Draw the Alignment Pattern in the given location.
+            </summary>
+            <param name="x">The x co-ordinate.</param>
+            <param name="y">The y co-ordinate.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.encodedData">
+            <summary>
+            Encode the Input Data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.dataAllocationAndMasking(System.Boolean[])">
+            <summary>
+            Allocates the Encoded Data and then Mask.
+            </summary>
+            <param name="Data">Encoded Data.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.drawFormatInformation">
+            <summary>
+            Draw the Format Information.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.chooseDefaultMode">
+            <summary>
+            Initializes the Version, Error correction level, Input Mode.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.splitCodeWord(System.String[][],System.Int32,System.Int32)">
+            <summary>
+            Splits the Code words.
+            </summary>
+            <param name="ds">The Encoded value Blocks.</param>
+            <param name="blk">Index of Block Number.</param>
+            <param name="count">Length of the Block.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.createBlocks(System.Collections.Generic.List{System.Boolean},System.Int32)">
+            <summary>
+            Creates the Blocks.
+            </summary>
+            <param name="encodeData">The Encoded value.</param>
+            <param name="noOfBlocks">Number of Blocks.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.intToBoolArray(System.Int32,System.Int32)">
+            <summary>
+            Converts Integer value to Boolean.
+            </summary>
+            <param name="number">The Integer value.</param>
+            <param name="noOfBits">Number of Bits.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.stringToBoolArray(System.String,System.Int32)">
+            <summary>
+            Converts string value to Boolean.
+            </summary>
+            <param name="numberInString">The String value.</param>
+            <param name="noOfBits">Number of Bits.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.getAlignmentPatternCoOrdinates">
+            <summary>
+            Gets the Allignment pattern coordinates of the current version.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.allocateFormatAndVersionInformation">
+            <summary>
+            Allocates Format and Version Information.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcode.GetAlphanumericvalues(System.Char)">
+            <summary>
+            Gets the Alphanumeric values.
+            </summary>
+            <param name="value">given a character.</param>
+            <returns>returns an equal interger value of the character.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.BarcodeQuietZones">
+            <summary>
+            Represents the Class for specifying Quiet zones around the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeQuietZones.Right">
+            <summary>
+            Gets or sets the quiet zones at the right side of the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeQuietZones.Top">
+            <summary>
+             Gets or sets the quiet zones at Top of the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeQuietZones.Left">
+            <summary>
+             Gets or sets the quiet zones at the left side of the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeQuietZones.Bottom">
+            <summary>
+             Gets or sets the quiet zones at bottom of the barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.BarcodeQuietZones.All">
+            <summary>
+             Gets or sets the quiet zones around the bar code.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.barcodeVersion">
+            <summary>
+            Holds the Version Information.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.numberOfErrorCorrectingCodeWordsCollection">
+            <summary>
+            Holds all the values of Error correcting code words.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.endValues">
+            <summary>
+            Holds all the end values.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.DataCapacityValues">
+            <summary>
+            Holds all the Data capacity values.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumericDataCapacityLow">
+            <summary>
+            Holds all  the Numeric Data capacity of the Error correction level Low.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumericDataCapacityMedium">
+            <summary>
+            Holds all  the Numeric Data capacity of the Error correction level Medium.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumericDataCapacityQuartile">
+            <summary>
+            Holds all  the Numeric Data capacity of the Error correction level Quartile.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumericDataCapacityHigh">
+            <summary>
+            Holds all  the Numeric Data capacity of the Error correction level High.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.AlphanumericDataCapacityLow">
+            <summary>
+            Holds all  the Alphaumeric Data capacity of the Error correction level Low.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.AlphanumericDataCapacityMedium">
+            <summary>
+            Holds all  the Alphaumeric Data capacity of the Error correction level Medium.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.AlphanumericDataCapacityQuartile">
+            <summary>
+            Holds all  the Alphaumeric Data capacity of the Error correction level Quartile.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.AlphanumericDataCapacityHigh">
+            <summary>
+            Holds all  the Alphaumeric Data capacity of the Error correction level High.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.BinaryDataCapacityLow">
+            <summary>
+            Holds all  the Binary Data capacity of the Error correction level Low.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.BinaryDataCapacityMedium">
+            <summary>
+            Holds all  the Binary Data capacity of the Error correction level Medium.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.BinaryDataCapacityQuartile">
+            <summary>
+            Holds all  the Binary Data capacity of the Error correction level Quartile.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.BinaryDataCapacityHigh">
+            <summary>
+            Holds all  the Binary Data capacity of the Error correction level High.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.MixedDataCapacityLow">
+            <summary>
+            Holds all  the Mixed Data capacity of the Error correction level Low.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.MixedDataCapacityMedium">
+            <summary>
+            Holds all  the Mixed Data capacity of the Error correction level Medium.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.MixedDataCapacityQuartile">
+            <summary>
+            Holds all  the Mixed Data capacity of the Error correction level Quartile.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.MixedDataCapacityHigh">
+            <summary>
+            Holds all  the Mixed Data capacity of the Error correction level High.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumberOfDataCodeWord">
+            <summary>
+            Holds the Number of Data code word.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumberOfErrorCorrectingCodeWords">
+            <summary>
+            Holds the Number of Error correcting code words.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.NumberOfErrorCorrectionBlocks">
+            <summary>
+            Holds the Number of Error correction Blocks.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.End">
+            <summary>
+            Holds the End value of the version.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.DataCapacity">
+            <summary>
+            Holds the Data copacity of the version.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.FormatInformation">
+            <summary>
+            Holds the Format Information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.VersionInformation">
+            <summary>
+            Holds the Version Information.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.#ctor(Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion,Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel)">
+            <summary>
+            Initializes the Values.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainNumberOfDataCodeWord">
+            <summary>
+            Gets number of Data code words.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainNumberOfErrorCorrectingCodeWords">
+            <summary>
+            Get number of Error correction code words.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainNumberOfErrorCorrectionBlocks">
+            <summary>
+            Gets number of Error correction Blocks.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainEnd">
+            <summary>
+            Gets the End of the version.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainDataCapacity">
+            <summary>
+            Gets Data capacity.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainFormatInformation">
+            <summary>
+            Gets Format Information.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.obtainVersionInformation">
+            <summary>
+            Gets Version Information.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.GetNumericDataCapacity(Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion,Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel)">
+            <summary>
+            Gets Numeric Data capacity.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.QRBarcodeValues.GetAlphanumericDataCapacity(Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion,Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel)">
+            <summary>
+            Gets Alphanumeric data capacity.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.length">
+            <summary>
+            Holds the Length.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.eccw">
+            <summary>
+            Holds the Error Correction Code Word.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.dataBits">
+            <summary>
+            Holds the DataBits.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.dataCodeWord">
+            <summary>
+            Holds the Data Code word.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.gxValue">
+            <summary>
+            Holds G(x).
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.alpha">
+            <summary>
+            Holds all the values of Alpha.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.decimalValue">
+            <summary>
+            Holds the Decimal value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.barcodeValues">
+            <summary>
+            Holds the values of QR Barcode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.DC">
+            <summary>
+            Sets and Gets the Data code word.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.DataBits">
+            <summary>
+            Sets and Gets the DataBits.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.ECCW">
+            <summary>
+            Sets and Gets the Error Correction Code Words.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.#ctor(Syncfusion.Blazor.BarcodeGenerator.QRCodeVersion,Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionLevel)">
+            <summary>
+            Initializes Error correction code word.
+            </summary>
+            <param name="version">Version.</param>
+            <param name="correctionLevel">Error correction level.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.GetERCW">
+            <summary>
+            Gets the Error correction code word.
+            <returns>Error correction code word.</returns>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.toDecimal(System.String[])">
+            <summary>
+            Convert to Decimal.
+            </summary>
+            <param name="inString">Binary values.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.toBinary(System.Int32[])">
+            <summary>
+            Convert decimal to Binary value.
+            <returns>Binary Representation.</returns>
+            </summary>
+            <param name="decimalRepresentation"> Decimal Representation.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.divide">
+            <summary>
+            Polynomial division.
+            <returns>Polynomial coefficient.</returns>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.findElement(System.Int32,System.Int32[])">
+            <summary>
+            Find the element in the alpha.
+            <returns>Index of the element.</returns>
+            </summary>
+            <param name="element">Element.</param>
+            <param name="alpha">Alpha.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.ErrorCorrectionCodewords.getElement(System.Int32[],System.Int32[])">
+            <summary>
+            Gets g(x) of the element.
+            <returns>g(x)</returns>
+            </summary>
+            <param name="element">Element.</param>
+            <param name="alpha">Alpha.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator">
+            <summary>
+            Specifies all the properties for the QRCode to be rendered.
+            </summary>
+            <example>
+            <code lang="Razor">
+            <![CDATA[
+            <SfQRCodeGenerator Width="200" Height="200" Version="QRCodeVersion.Version40" Value="65213323"  BackgroundColor="white" ForeColor="black" OnValidationFailed="@OnInvalid">
+             <QRCodeGeneratorDisplayText Text = "" Font="monospace" Size="25" Alignment="Alignment.Left" Position="TextPosition.Top">
+                <QRCodeTextMargin Left = "0" Top="0" Right="0" Bottom="0"></QRCodeTextMargin>
+             </QRCodeGeneratorDisplayText>
+             <QRMargin Left = "10" Top="10" Right="10" Bottom="10"></QRMargin>
+            </SfQRCodeGenerator>
+            @code{
+             public void OnInvalid(ValidationFailedEventArgs args)
+             {
+             }
+            }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.ChildContent">
+            <summary>
+            Sets content for QRCode generator element including HTML support and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.BackgroundColor">
+            <summary>
+            Specifies the background color of the QRCode. By default, it is set to white.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.DisplayText">
+            <summary>
+            Specifies the text properties for the QRCode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.ErrorCorrectionLevel">
+            <summary>
+            Specifies the error correction level of the QR code.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.ForeColor">
+            <summary>
+            Specifies the line and text color of the QRCode. By default, it is set to black.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.Height">
+            <summary>
+            Specifies the height of the QRCode model. By default, it is set to 100%.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.Margin">
+            <summary>
+            Specifies the margin properties for the QRCode.  By default, it is set to 10 from all sides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.Value">
+            <summary>
+            Specifies the value of the QRCode to be rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.Version">
+            <summary>
+             Specifies the version of the QR code.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.Width">
+            <summary>
+            Specifies the width of the QRCode model. By default, it is set to 100%.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.XDimension">
+            <summary>
+            Represents the width of the smallest element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.OnValidationFailed">
+            <summary>
+            Triggers when the QRCode input is an invalid string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.Export(System.String,Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType)">
+            <summary>
+            Export the barcode as an image in the specified image type and downloads it in the browser.
+            </summary>
+            <param name="exportType">Specifies the type used to export the barcode.</param>
+            <param name="fileName">Specifies the filename of the barcode image to be download.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.ExportAsBase64Image(Syncfusion.Blazor.BarcodeGenerator.BarcodeExportType)">
+            <summary>
+            Export the barcode as an image in the specified image type and returns it as base64 string.
+            </summary>
+            <param name="exportType"></param>
+            <returns>Returns the base64 string value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.OnInitializedAsync">
+            <summary>
+             OnInitializedAsync is invoked when the SfQRCodeGenerator component is initialized.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+             The OnAfterRenderAsync method is invoked after the SfQRCodeGenerator component has finished rendering.
+            </summary>
+            <param name="firstRender">The first time the component instance is rendered is set to true.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.BarcodeGenerator.SfQRCodeGenerator.OnParametersSetAsync">
+            <summary>
+            Sets the parameters for the SfQRCodeGenerator component in the render tree.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

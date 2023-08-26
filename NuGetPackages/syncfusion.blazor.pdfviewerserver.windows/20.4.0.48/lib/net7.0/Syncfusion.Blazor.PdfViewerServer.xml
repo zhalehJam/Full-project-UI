@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.PdfViewerServer</name>
+    </assembly>
+    <members>
+        <member name="M:Syncfusion.Blazor.PdfViewerServer.PdfViewerComponent.Unload(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Unload the PDF document while destroy the PDF Viewer resources on Dispose call.
+            </summary>
+            <param name="obj">JsonObject which have the parameters to unload the document.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.PdfViewerServer.PdfViewerComponentJSInteropAdaptor.Unload(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Unload the PDF document while destroy the PDF Viewer resources on Dispose call.
+            </summary>
+            <param name="obj">JsonObject which have the parameters to unload the document.</param>
+            <exclude />
+        </member>
+    </members>
+</doc>

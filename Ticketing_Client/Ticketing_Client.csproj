@@ -29,6 +29,7 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
     <PackageReference Include="Syncfusion.Blazor" Version="20.4.0.48" />
+    <PackageReference Include="Syncfusion.Licensing" Version="20.4.0.48" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,2756 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.TreeMap</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.TreeMap.ColorMapping">
+            <summary>
+            Sets and gets for customizing the color mapping properties of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.Color">
+            <summary>
+            Sets and gets the color for the color-mapping in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.StartRange">
+            <summary>
+            Sets and gets the value from which the range of color mapping starts.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.Label">
+            <summary>
+            Sets and gets the label text for the legend based on color mapping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.MaxOpacity">
+            <summary>
+            Sets and gets the maximum opacity for the color-mapping in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.MinOpacity">
+            <summary>
+            Sets and gets the minimum opacity for the color-mapping in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.ShowLegend">
+            <summary>
+            Enables or disables the visibility of the legend for color mapping in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ColorMapping.EndRange">
+            <summary>
+            Sets and gets the value to which the range of color mapping ends.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LayoutMode">
+            <summary>
+            Specifies the layout rendering mode of the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LayoutMode.Squarified">
+            <summary>
+            This visualizes the treemap as the nested rectangles having size proportionate to weight value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LayoutMode.SliceAndDiceHorizontal">
+            <summary>
+            This visualizes the treemap as the horizontal rectangles having size proportionate to weight value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LayoutMode.SliceAndDiceVertical">
+            <summary>
+            This visualizes the treemap as the vertical rectangles having size proportionate to weight value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LayoutMode.SliceAndDiceAuto">
+            <summary>
+            This visualizes the treemap as the rectangles having size proportionate to weight value.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.RenderingMode">
+            <summary>
+            Defines the rendering directions to render the treemap items in the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.RenderingMode.TopLeftBottomRight">
+            <summary>
+            Renders the treemap items from top left to bottom right direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.RenderingMode.TopRightBottomLeft">
+            <summary>
+            Renders the treemap items from top right to bottom left direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.RenderingMode.BottomLeftTopRight">
+            <summary>
+            Renders the treemap items from bottom left to top right direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.RenderingMode.BottomRightTopLeft">
+            <summary>
+            Renders the treemap items from bottom right to top left direction.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Alignment">
+            <summary>
+            Specifies the alignment of the elements in the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.Alignment.Near">
+            <summary>
+            Defines the alignment is near the treemap with respect to the treemap leaf position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.Alignment.Center">
+            <summary>
+            Defines the alignment is at center of the treemap with respect the treemap leaf position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.Alignment.Far">
+            <summary>
+            Defines the alignment is far from the treemap with respect the treemap leaf position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LabelPosition">
+            <summary>
+            Defines the position of the label in treemap leaf node.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.TopLeft">
+            <summary>
+            Specifies to show the position of the label based on the top and left of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.TopCenter">
+            <summary>
+            Specifies to show the position of the label based on the top and center of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.TopRight">
+            <summary>
+            Specifies to show the position of the label based on the top and right of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.CenterLeft">
+            <summary>
+            Specifies to show the position of the label based on the center and left of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.Center">
+            <summary>
+            Specifies to show the position of the label based on the center of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.CenterRight">
+            <summary>
+            Specifies to show the position of the label based on the center and right of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.BottomLeft">
+            <summary>
+            Specifies to show the position of the label based on the bottom and left of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.BottomCenter">
+            <summary>
+            Specifies to show the position of the label based on the bottom and center of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPosition.BottomRight">
+            <summary>
+            Specifies to show the position of the label based on the bottom and right of the treemap leaf nodes.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.HighLightMode">
+            <summary>
+            Specifies the element which must be highlighted when mouse over is performed in treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.HighLightMode.Item">
+            <summary>
+            Highlights the treemap item when the mouse over is done on the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.HighLightMode.Child">
+            <summary>
+            Highlights the treemap item and the child level when the mouse over is done on the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.HighLightMode.Parent">
+            <summary>
+            Highlights the treemap item and parent level when the mouse over is done on the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.HighLightMode.All">
+            <summary>
+            Highlights all the related nodes when the mouse over is done on the treemap item.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.SelectionMode">
+            <summary>
+            Specifies the element which must be selected when click event is performed in treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.SelectionMode.Item">
+            <summary>
+            Selects the treemap item when the click operation is done on the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.SelectionMode.Child">
+            <summary>
+            Selects the treemap item and the child level when the click operation is done on the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.SelectionMode.Parent">
+            <summary>
+            Selects the treemap item and parent level when the click operation is done on the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.SelectionMode.All">
+            <summary>
+            Selects all the related nodes when the click operation is done on the treemap item.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LabelIntersectAction">
+            <summary>
+            Defines the label intersection action in treemap component. Label intersection action handles the label text
+            when it intersects with other label contents.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelIntersectAction.None">
+            <summary>
+            Specifies that no action will be taken when the label contents intersect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelIntersectAction.Trim">
+            <summary>
+            Specifies the label to be trimmed when it intersects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelIntersectAction.Hide">
+            <summary>
+            Specifies the label to be hidden when it intersects.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LabelPlacement">
+            <summary>
+            Defines the placement type of the label in the legend.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPlacement.After">
+            <summary>
+            Specifies the label placement after the legend shape.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelPlacement.Before">
+            <summary>
+            Specifies the label placement before the legend shape.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LegendMode">
+            <summary>
+            Defines the rendering modes of the legend in the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendMode.Default">
+            <summary>
+            Renders the legend with the shapes provided in the legend settings of the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendMode.Interactive">
+            <summary>
+            Renders the legend as interactive with an arrow to indicate the shape in the legend while interaction.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LegendOrientation">
+            <summary>
+            Specifies the orientation of the legend items in the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendOrientation.None">
+            <summary>
+            Specifies the legend item to be placed by default based on legend orientation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendOrientation.Horizontal">
+            <summary>
+            Defines the legend renders with items places horizontally.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendOrientation.Vertical">
+            <summary>
+            Defines the legend renders with items places vertically.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LegendPosition">
+            <summary>
+            Defines the position of the legend in the treemap component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendPosition.Bottom">
+            <summary>
+            Specifies to place the legend below the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendPosition.Top">
+            <summary>
+            Specifies to place the legend above the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendPosition.Left">
+            <summary>
+            Specifies to place the legend on the left of the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendPosition.Right">
+            <summary>
+            Specifies to place the legend on the right of the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendPosition.Float">
+            <summary>
+            Specifies the legend to be floated above the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendPosition.Auto">
+            <summary>
+            Specifies to place the legend based on width and height.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LegendShape">
+            <summary>
+            Defines the shape of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Circle">
+            <summary>
+            Defines the legend shape as circle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Rectangle">
+            <summary>
+            Defines the legend shape as rectangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Triangle">
+            <summary>
+            Defines the legend shape as triangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Diamond">
+            <summary>
+            Defines the legend shape as diamond.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Cross">
+            <summary>
+            Defines the legend shape as cross.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Star">
+            <summary>
+            Defines the legend shape as star.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.HorizontalLine">
+            <summary>
+            Defines the legend shape as horizontal line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.VerticalLine">
+            <summary>
+            Defines the legend shape as vertical line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Pentagon">
+            <summary>
+            Defines the legend shape as pentagon.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.InvertedTriangle">
+            <summary>
+            Defines the legend shape as inverted triangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LegendShape.Image">
+            <summary>
+            Defines the legend shape as image.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LabelAlignment">
+            <summary>
+            Defines the label text to be placed within the defined size of the treemap item.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelAlignment.Trim">
+            <summary>
+            Specifies that the data label will trim if exceeded the defined margins.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelAlignment.Hide">
+            <summary>
+            Specifies that the data label will hide if exceeded the defined margins.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelAlignment.WrapByWord">
+            <summary>
+            Specifies the word to force all text to fit within the defined margins.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.LabelAlignment.Wrap">
+            <summary>
+            Specifies to wrap the data label if exceed the defined margins.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.MarkerShape">
+            <summary>
+            Sets and gets the shape of the marker in the treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Circle">
+            <summary>
+            Defines the marker shape as circle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Rectangle">
+            <summary>
+            Defines the marker shape as rectangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Triangle">
+            <summary>
+            Defines the marker shape as triangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Diamond">
+            <summary>
+            Defines the marker shape as diamond.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Cross">
+            <summary>
+            Defines the marker shape as cross.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.HorizontalLine">
+            <summary>
+            Defines the marker shape as horizontal line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.VerticalLine">
+            <summary>
+            Defines the marker shape as vertical line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Pentagon">
+            <summary>
+            Defines the marker shape as pentagon.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.InvertedTriangle">
+            <summary>
+            Defines the marker shape as inverted triangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.MarkerShape.Image">
+            <summary>
+            Defines the marker shape as image.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ExportType">
+            <summary>
+            Specifies the export type for the rendered treemap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.ExportType.PNG">
+            <summary>
+            Specifies the rendered treemap to be exported in the PNG format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.ExportType.JPEG">
+            <summary>
+            Specifies the rendered treemap to be exported in the JPEG format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.ExportType.SVG">
+            <summary>
+            Specifies the rendered treemap to be exported in the SVG format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.TreeMap.ExportType.PDF">
+            <summary>
+            Specifies the rendered treemap to be exported in the PDF format.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.BaseEventArgs">
+            <summary>
+            Specifies the event arguments which has common for treemap component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.BaseEventArgs.Cancel">
+            <summary>
+            Specifies the cancel state for the event. The default value is false.
+            If set as true, the event progress will be stopped.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ItemMoveEventArgs">
+            <summary>
+            Specifies the event arguments available on performing mouse move on the treemap items.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ClickEventArgs">
+            <summary>
+            Specifies the event arguments available on performing click event on the treemap items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ClickEventArgs.IsRightClick">
+            <summary>
+            Returns whether or not the click action was performed with the right mouse button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ClickEventArgs.PageX">
+            <summary>
+            Gets the horizontal position of the current position of the mouse pointer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ClickEventArgs.PageY">
+            <summary>
+            Gets the vertical position of the current position of the mouse pointer.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ItemClickEventArgs">
+            <summary>
+            Defines the event arguments for treemap item click event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemClickEventArgs.ContentItemTemplate">
+            <summary>
+            Defines the template of treemap item.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemClickEventArgs.Text">
+            <summary>
+            Defines the header name of the current treemap item.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ItemGroupEventArgs">
+            <summary>
+            Specifies the event arguments which is related to TreeMap item.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemGroupEventArgs.GroupIndex">
+            <summary>
+            Defines the level of the current treemap item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemGroupEventArgs.GroupName">
+            <summary>
+            Defines the parent name of the current treemap item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemGroupEventArgs.Item">
+            <summary>
+            Defines the current item in the click event.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ItemRenderingEventArgs">
+            <summary>
+            Specifies the event arguments in item rendering event in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemRenderingEventArgs.CurrentItem">
+            <summary>
+            Defines the current rendering item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemRenderingEventArgs.Text">
+            <summary>
+            Defines the header text of the treemap item.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LegendItemRenderingEventArgs">
+            <summary>
+            Specifies the event arguments available when rendering each legend item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.LegendItemRenderingEventArgs.Fill">
+            <summary>
+            Specifies the shape color of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.LegendItemRenderingEventArgs.ImageUrl">
+            <summary>
+            Defines the URL of the legend if the shape is rendered as image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.LegendItemRenderingEventArgs.Shape">
+            <summary>
+            Defines the legend shape of the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.LegendItemRenderingEventArgs.ShapeBorder">
+            <summary>
+            Specifies the options for customizing the color and width of the shape border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapTooltipArgs">
+            <summary>
+            Specifies the event arguments available for the tooltip events in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipArgs.Data">
+            <summary>
+            Defines the data for rendering the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipArgs.Location">
+            <summary>
+            Defines the location of the tooltip rendering event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipArgs.Text">
+            <summary>
+            Defines the text rendered in the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipArgs.TextStyle">
+            <summary>
+            Defines the text style for customizing the tooltip text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LegendRenderingEventArgs">
+            <summary>
+            Specifies the event arguments in legend rendering event in treemap.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.DoubleClickEventArgs">
+            <summary>
+            Specifies the event arguments available on performing double click event on the treemap items.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.RightClickEventArgs">
+            <summary>
+            Specifies the event arguments available on performing mouse right click on the treemap items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.RightClickEventArgs.PageX">
+            <summary>
+            Gets the horizontal position of the current position of the mouse pointer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.RightClickEventArgs.PageY">
+            <summary>
+            Gets the vertical position of the current position of the mouse pointer.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ItemSelectedEventArgs">
+            <summary>
+            Specifies the event arguments available when the item is selected in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemSelectedEventArgs.ContentItemTemplate">
+            <summary>
+            Defines the template of treemap item.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ItemSelectedEventArgs.Text">
+            <summary>
+            Defines the text used in the label contents.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.PrintEventArgs">
+            <summary>
+            Specifies the event arguments for print event in treemap.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.DrillEndEventArgs">
+            <summary>
+            Specifies the event arguments for the drill down end event of the treemap.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.DrillStartEventArgs">
+            <summary>
+            Specifies the event arguments for the drill down start event of treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.DrillStartEventArgs.RightClick">
+            <summary>
+            Returns a boolean value whether it is right click or not.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ItemHighlightEventArgs">
+            <summary>
+            Specifies the event arguments available when the item is highlighted in the treemap component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LoadEventArgs">
+            <summary>
+            Specifies the event arguments for on load event in treemap.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.LoadedEventArgs">
+            <summary>
+            Specifies the event arguments for loaded event in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.LoadedEventArgs.IsResized">
+            <summary>
+            Specifies whether the load event is triggered due to component resize or not.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ResizeEventArgs">
+            <summary>
+            Specifies the event arguments available for resize event of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ResizeEventArgs.CurrentSize">
+            <summary>
+            Defines the size of the treemap after resizing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ResizeEventArgs.PreviousSize">
+            <summary>
+            Defines the size of the treemap before resizing.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.Rect">
+            <summary>
+             Represents the bounds of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.Rect.X">
+            <summary>
+            Specifies the X position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.Rect.Y">
+            <summary>
+            Specifies the Y position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.SizeInfo">
+            <summary>
+            Represents the height and width of the DOM element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SizeInfo.Height">
+            <summary>
+            Sets or gets the height of the element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SizeInfo.Width">
+            <summary>
+            Sets or gets the width of the element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.BrowserType">
+            <summary>
+            Represents the browser type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.BrowserType.IsIE">
+            <summary>
+            Sets or gets whether the browser is internet explorer.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle">
+            <summary>
+            Represents the style of TreeMap tooltip text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle.Color">
+            <summary>
+            Set or gets the color of text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle.FontFamily">
+            <summary>
+            Set or gets the font family of text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle.FontStyle">
+            <summary>
+            Set or gets the font style of text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle.FontWeight">
+            <summary>
+            Set or gets the font weight of text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle.Opacity">
+            <summary>
+            Set or gets the opacity of text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.TooltipTextStyle.Size">
+            <summary>
+            Set or gets the size of text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.LegendShapeBorder">
+            <summary>
+            Represents the border of legend shape.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.LegendShapeBorder.Color">
+            <summary>
+            Sets or gets the color of border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.LegendShapeBorder.Width">
+            <summary>
+            Sets or gets the width of border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip">
+            <summary>
+            Represents the SVG tooltip of TreeMap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.ID">
+            <summary>
+            Sets or gets the identification of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.TextSize">
+            <summary>
+            Sets or gets the text size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.FontColor">
+            <summary>
+            Sets or gets the text color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.FontWeight">
+            <summary>
+            Sets or gets the font weight.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.FontFamily">
+            <summary>
+            Sets or gets the font family.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.FontStyle">
+            <summary>
+            Sets or gets the font style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.FontOpacity">
+            <summary>
+            Sets or gets the font opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.BorderColor">
+            <summary>
+            Sets or gets the border color of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.BorderWidth">
+            <summary>
+            Sets or gets the border width of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.X">
+            <summary>
+            Sets or gets the X axis of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.Y">
+            <summary>
+            Sets or gets the Y axis of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.Height">
+            <summary>
+            Sets or gets the height of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.Width">
+            <summary>
+            Sets or gets the width axis of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.EnableShadow">
+            <summary>
+            Sets or gets the x axis of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.Fill">
+            <summary>
+            Sets or gets the fill of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.Opacity">
+            <summary>
+            Sets or gets the opacity of tooltip fill.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.Content">
+            <summary>
+            Sets or gets the content of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.LocationX">
+            <summary>
+            Sets or gets the X axis of tooltip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.LocationY">
+            <summary>
+            Sets or gets the Y axis of tooltip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.RX">
+            <summary>
+            Sets or gets the X axis of tooltip radius.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.RY">
+            <summary>
+            Sets or gets the Y axis of tooltip radius.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.MarginX">
+            <summary>
+            Sets or gets the X axis of tooltip margin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.MarginY">
+            <summary>
+            Sets or gets the Y axis of tooltip margin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.EnableRtl">
+            <summary>
+            Sets or gets the right-to-left rendering.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.IsInverted">
+            <summary>
+            Sets or gets whether the tooltip to be inverted rendering.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.RenderArrow">
+            <summary>
+            Sets or gets whether the tooltip arrow to be rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.IsIE">
+            <summary>
+            Sets or gets whether the browser type is Internet Explorer.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.Internal.SvgTooltip.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.TooltipRender`1">
+            <summary>
+            Specifies the treemap tooltip rendering functionality.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of the treemap tooltip.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.Internal.TooltipRender`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.TreeMapLegend">
+            <summary>
+            Specifies the treemap legend rendering functionality.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.Internal.TreeMapLegend.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.Internal.TreeMapRenderer">
+            <summary>
+            Specifies the treemap rendering functionality.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.ITreeMap">
+            <summary>
+            The interface specifies the properties of the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.AllowImageExport">
+            <summary>
+            Enables or disables the export to image functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.AllowPdfExport">
+            <summary>
+            Enables or disables the export to PDF functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.AllowPrint">
+            <summary>
+            Enables or disables the print functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Background">
+            <summary>
+            Sets and gets the background color of the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.BreadcrumbConnector">
+            <summary>
+            Specifies the connection between the two words.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.ColorValuePath">
+            <summary>
+            Sets and gets the value path from the data source, based on which color is filled in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Description">
+            <summary>
+            Sets and gets the description for treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.DrillDownView">
+            <summary>
+            Enables or disables the initial drill in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.EnableBreadcrumb">
+            <summary>
+            Enables or disables the connection text in the header of the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.EnableDrillDown">
+            <summary>
+            Enables or disables the drill down functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.EnableRtl">
+            <summary>
+            Enables or disables the rendering of the component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.EqualColorValuePath">
+            <summary>
+            Sets and gets the value path from the data source, based on which color is filled in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Format">
+            <summary>
+            Sets and gets format for the texts in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Height">
+            <summary>
+            Sets and gets the height of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.LayoutType">
+            <summary>
+            Specifies the rendering type of layout of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Palette">
+            <summary>
+            Sets and gets the set of colors to apply in the treemap items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Query">
+            <summary>
+            Sets and gets the query to select particular data from the shape data.
+            This property is applicable only when the data source is created by data manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.RangeColorValuePath">
+            <summary>
+            Sets and gets the value path from the data source, based on which color is filled in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.RenderDirection">
+            <summary>
+            Specifies the rendering direction of layout of the treemap items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.TabIndex">
+            <summary>
+            Sets and gets the tab index value for treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Theme">
+            <summary>
+            Sets and gets the theme style for the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.EnableGroupingSeparator">
+            <summary>
+            Enables or disables the visibility state of the separator for grouping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.WeightValuePath">
+            <summary>
+            Sets and gets the value path of the weight from the data source, based on which the map item is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Width">
+            <summary>
+            Sets and gets the width of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Renderer">
+            <summary>
+            Sets and gets the treemap panel item rendering.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.TreeMapLegend">
+            <summary>
+            Sets and gets the treemap legend rendering.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Events">
+            <summary>
+            Sets and gets the treemap events.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.TitleSettings">
+            <summary>
+            Sets and gets the treemap title settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.TooltipSettings">
+            <summary>
+            Sets and gets the treemap tooltip settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.SelectionSettings">
+            <summary>
+            Sets and gets the treemap item selection settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.LeafItemSettings">
+            <summary>
+            Sets and gets the treemap leaf item settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.LegendSettings">
+            <summary>
+            Sets and gets the treemap legend settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Levels">
+            <summary>
+            Sets and gets the treemap level settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Margin">
+            <summary>
+            Sets and gets the treemap margin settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.HighlightSettings">
+            <summary>
+            Sets and gets the treemap item highlight settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.InitialDrillDown">
+            <summary>
+            Sets and gets the initial drill down settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.ITreeMap.Border">
+            <summary>
+            Sets and gets the treemap  border.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.ITreeMap.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies the dependent class value.
+            </summary>
+            <param name="key">Represents the class name.</param>
+            <param name="value">Represents the value of class.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.ITreeMap.PropertyChanged(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Specifies to render the component based on property changes.
+            </summary>        
+            <param name="parent">The class belongs too.</param>
+            <param name="properties">List changed properties.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.ITreeMap.IsRtlEnabled">
+            <summary>
+            Specifies the right-to-left rendering direction of the component.
+            </summary>
+            <exclude />
+            <returns>Returns the boolean value.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.SfTreeMap`1">
+            <summary>
+            The treemap control is used to visualize both hierarchical and flat data in the form of nodes along with built-in features like color mapping, legends, label templates, and more.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of the treemap control.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Export(Syncfusion.Blazor.TreeMap.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            The method is used to perform the export functionality for the rendered treemap.
+            </summary>
+            <param name="type">Specifies the export type for the rendered treemap.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <param name="allowDownload">Specifies whether to download or not.</param>
+            <returns>Returns base64 string.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.ExportAsync(Syncfusion.Blazor.TreeMap.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            The method is used to perform the export functionality for the rendered treemap.
+            </summary>
+            <param name="type">Specifies the export type for the rendered treemap.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <param name="allowDownload">Specifies whether to download or not.</param>
+            <returns>Returns base64 string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Print">
+            <summary>
+            The method is used to perform the print functionality in treemap.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.PrintAsync">
+            <summary>
+            The method is used to perform the print functionality in treemap.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Refresh">
+            <summary>
+            The method is used to render the treemap again.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.RefreshAsync">
+            <summary>
+            The method is used to render the treemap again.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.SelectItem(System.String[],System.Boolean)">
+            <summary>
+            The method is used to select or remove the selection of treemap item based on the provided selection settings.
+            </summary>
+            <param name="levelOrder">Specifies the level order name for the treemap item.</param>
+            <param name="isSelected">Specifies whether the treemap item is selected or not. Default value is true.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.SelectItemAsync(System.String[],System.Boolean)">
+            <summary>
+            The method is used to select or remove the selection of treemap item based on the provided selection settings.
+            </summary>
+            <param name="levelOrder">Specifies the level order name for the treemap item.</param>
+            <param name="isSelected">Specifies whether the treemap item is selected or not. Default value is true.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.IsRtlEnabled">
+            <summary>
+            Specifies the right-to-left rendering direction of the component.
+            </summary>
+            <exclude />
+            <returns>Returns the boolean value.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerResize(System.Double,System.Double,System.Boolean)">
+            <summary>
+            JS interopt while resize the window.
+            </summary>
+            <param name="width">Represents the width of the window.</param>
+            <param name="height">Represents the height of the window.</param>
+            <param name="isIE">Represents the IE browser.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerMouseUp(System.String,System.String,System.Boolean)">
+            <summary>
+            JS interopt while mouse up.
+            </summary>
+            <param name="elementId">Represents the element id.</param>
+            <param name="labelText">Represents the element label text.</param>
+            <param name="isRightClick">Represents the right or left mouse click.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerRightClick(System.Double,System.Double)">
+            <summary>
+            JS interopt while mouse right click.
+            </summary>
+            <param name="pageX">Specifies the horizontal position of the current position of the mouse pointer.</param>
+            <param name="pageY">Specifies the vertical position of the current position of the mouse pointer.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerMouseDown(System.String,System.String,System.Boolean,System.Double,System.Double)">
+            <summary>
+            JS interopt while mouse down.
+            </summary>
+            <param name="id">Represents the element id.</param>
+            <param name="labelText">Represents the element text.</param>
+            <param name="isRightClick">Specifies whether or not the click action was performed with the right mouse button.</param>
+            <param name="pageX">Specifies the horizontal position of the current position of the mouse pointer.</param>
+            <param name="pageY">Specifies the vertical position of the current position of the mouse pointer.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerMouseMove(System.String,System.Double,System.Double,System.Boolean)">
+            <summary>
+            JS interopt while treemap item is selected.
+            </summary>
+            <param name="id">Represents the element id.</param>
+            <param name="mouseX">Represents the x axis of mouse.</param>
+            <param name="mouseY">Represents the y axis of mouse.</param>
+            <param name="isKeyBoard">Represents the mouse or keyboard event.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerItemSelect(System.String)">
+            <summary>
+            JS interopt while treemap item is selected.
+            </summary>
+            <param name="text">Represents the element text.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerItemHighlight">
+            <summary>
+            JS interopt while treemap item is highlighted.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TriggerMouseLeave">
+            <summary>
+            JS interopt while mouse leave on component.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Events">
+            <summary>
+            Sets and gets the treemap events.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Renderer">
+            <summary>
+            Sets and gets the treemap panel item rendering.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TreeMapLegend">
+            <summary>
+            Sets and gets the treemap legend rendering.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Border">
+            <summary>
+            Sets and gets the treemap  border.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.LeafItemSettings">
+            <summary>
+            Sets and gets the treemap leaf item settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.LegendSettings">
+            <summary>
+            Sets and gets the treemap legend settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Levels">
+            <summary>
+            Sets and gets the treemap level settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.HighlightSettings">
+            <summary>
+            Sets and gets the treemap item highlight settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.InitialDrillDown">
+            <summary>
+            Sets and gets the initial drill down settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TitleSettings">
+            <summary>
+            Sets and gets the treemap title settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TooltipSettings">
+            <summary>
+            Sets and gets the treemap tooltip settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Margin">
+            <summary>
+            Sets and gets the treemap margin settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.SelectionSettings">
+            <summary>
+            Sets and gets the treemap item selection settings.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.ID">
+            <summary>
+            Set the id string for the linear gauge component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.AllowImageExport">
+            <summary>
+            Enables and disables the export to image functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.AllowPdfExport">
+            <summary>
+            Enables and disables the export to PDF functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.AllowPrint">
+            <summary>
+            Enables and disables the print functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Background">
+            <summary>
+            Sets and gets the background color of the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.BreadcrumbConnector">
+            <summary>
+            Specifies the connection between the two words.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.ColorValuePath">
+            <summary>
+            Sets and gets the value path from the data source, based on it color is filled in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.DataSource">
+            <summary>
+            Sets and gets the data source for the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Description">
+            <summary>
+            Sets and gets the description for treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.DrillDownView">
+            <summary>
+            Enables or disables the initial drill in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.EnableBreadcrumb">
+            <summary>
+            Enables or disables the connection text in the header of the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.EnableDrillDown">
+            <summary>
+            Enables or disables the drill down functionality in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.EqualColorValuePath">
+            <summary>
+            Sets and gets the value path from the data source, based on it color is filled in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Format">
+            <summary>
+            Sets and gets format for the texts in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Height">
+            <summary>
+            Sets and gets the height of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.LayoutType">
+            <summary>
+            Specifies the rendering type of layout of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Palette">
+            <summary>
+            Sets and gets the set of colors to apply in the treemap items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Query">
+            <summary>
+            Sets and gets the query to select particular data from the shape data. This property is applicable only when the data source is created by data manager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.RangeColorValuePath">
+            <summary>
+            Sets and gets the value path from the data source, based on it color is filled in treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.RenderDirection">
+            <summary>
+            Specifies the rendering direction of layout of the treemap items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.TabIndex">
+            <summary>
+            Sets and gets the tab index value for treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Theme">
+            <summary>
+            Sets and gets the options for customizing the theme of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.EnableGroupingSeparator">
+            <summary>
+            Enables or disables the visibility state of the separator for grouping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.WeightValuePath">
+            <summary>
+            Sets and gets the value path of the weight from the data source, based on which the map item is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.SfTreeMap`1.Width">
+            <summary>
+            Sets and gets the width of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies the dependent class value.
+            </summary>
+            <param name="key">Represents the class name.</param>
+            <param name="value">Represents the value of class.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.OnObservableChange(System.String,System.Object,System.Boolean,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            INotifyCollectionChanged event handler to track the changes in the TreeMap data source.
+            </summary>
+            <param name="propertyName">Observable property name.</param>
+            <param name="sender">Observable model object.</param>
+            <param name="isCollectionChanged">Sets true if the observable collection changed.</param>
+            <param name="e">Changed Event Args</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.SfTreeMap`1.PropertyChanged(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Specifies to render the component based on property changes.
+            </summary>
+            <param name="parent">The class belongs too.</param>
+            <param name="properties">List changed properties.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendLocation">
+            <summary>
+            Sets and gets the float position of the legend location using x and y values for the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendLocation.X">
+            <summary>
+            Sets and gets the color for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendLocation.Y">
+            <summary>
+            Sets and gets the color for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendLocation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendLocation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapBorder">
+            <summary>
+            Sets and gets the options for customizing the color and width of the treemap component border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapBorder.Color">
+            <summary>
+            Sets and gets the color of the border. This property accepts the value in hex code and rgba string as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapBorder.Width">
+            <summary>
+            Defines the width of the border in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapBorderSettings">
+            <summary>
+            Sets and gets the options for customizing the style of the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapBorderSettings.Color">
+            <summary>
+            Sets and gets the color of the border. This property accepts the value in hex code and rgba string as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapBorderSettings.Width">
+            <summary>
+            Defines the width of the border in the treemap component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapEvents">
+            <summary>
+            Specifies the events to be triggered in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnItemMove">
+            <summary>
+            Triggers after mouse hover on the treemap item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.ItemSelected">
+            <summary>
+            Triggers after selecting a treemap item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnPrint">
+            <summary>
+            Triggers before the prints gets started.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnClick">
+            <summary>
+            Triggers after clicking on the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnDoubleClick">
+            <summary>
+            Triggers after double clicking on the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.DrillCompleted">
+            <summary>
+            Triggers after drill down functionality gets completed in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnDrillStart">
+            <summary>
+            Triggers on performing drill down functionality in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnItemClick">
+            <summary>
+            Triggers after clicking an item in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.ItemHighlighted">
+            <summary>
+            Triggers after highlighting on the treemap item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.ItemRendering">
+            <summary>
+            Triggers before item rendering in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.LegendRendering">
+            <summary>
+            Triggers before rendering the legend in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.LegendItemRendering">
+            <summary>
+            Triggers before rendering each legend item in the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.Load">
+            <summary>
+            Triggers when the treemap is on load.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.Loaded">
+            <summary>
+            Triggers after treemap is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.Resizing">
+            <summary>
+            Triggers after resizing the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnRightClick">
+            <summary>
+            Triggers after right clicking on the treemap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapEvents.TooltipRendering">
+            <summary>
+            Triggers on rendering of the tooltip in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapFontSettings">
+            <summary>
+            Sets and gets the options for customizing the font style of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapFontSettings.Color">
+            <summary>
+            Sets and gets the color for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapFontSettings.FontFamily">
+            <summary>
+            Sets and gets the font family for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapFontSettings.FontStyle">
+            <summary>
+            Sets and gets the font style for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapFontSettings.FontWeight">
+            <summary>
+            Sets and gets the font weight for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapFontSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of the text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapFontSettings.Size">
+            <summary>
+            Sets and gets the size for the text in the treemap component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapHeaderStyle">
+            <summary>
+            Sets and gets the options for customizing the header style of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapHeaderStyle.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapHeaderStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapHeaderStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapHighlightBorder">
+            <summary>
+            Sets and gets the options for customizing the highlight border setting of the treemap component item on mouse over.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapHighlightBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings">
+            <summary>
+            Sets and gets the options for customizing the highlight of the treemap item on mouse over of the treemap component item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings.Enable">
+            <summary>
+            Enables or disables the highlight functionality of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings.Fill">
+            <summary>
+            Sets and gets the highlight color of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings.Mode">
+            <summary>
+            Sets and gets the element in which highlight must be done in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapHighlightSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapInitialDrillSettings">
+            <summary>
+            Sets and gets the properties for the initial drill down of the treemap component item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapInitialDrillSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapInitialDrillSettings.GroupIndex">
+            <summary>
+            Sets and gets the initial rendering level index in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapInitialDrillSettings.GroupName">
+            <summary>
+            Sets and gets the initial rendering level name in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapInitialDrillSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLeafBorder">
+            <summary>
+            Sets and gets the options for customizing the color and width of the leaf item of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafBorder.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMapping">
+            <summary>
+            Sets and gets the properties on leaf item color mapping of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMapping.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMapping.LeafValue">
+            <summary>
+            Sets and gets the value for the color-mapping from the data source.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMapping.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMapping.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMappings">
+            <summary>
+            Sets and gets the options for customizing the color of the leaf item on treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMappings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafColorMappings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings">
+            <summary>
+            Sets and gets the options for customizing the leaf item of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.AutoFill">
+            <summary>
+            Enables or disables automatic filling of colors in leaf items of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.Fill">
+            <summary>
+            Sets and gets the fill color of leaf items in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.Gap">
+            <summary>
+            Sets and gets the gap between the leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.InterSectAction">
+            <summary>
+            Sets and gets the label intersect action of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.LabelFormat">
+            <summary>
+            Sets and gets the label text format of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.LabelPath">
+            <summary>
+            Sets and gets the value path from the data source for label of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.LabelPosition">
+            <summary>
+            Sets and gets the position of the labels in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.LabelTemplate">
+            <summary>
+            Sets and gets the label template of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.Padding">
+            <summary>
+            Sets and gets the padding of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.ShowLabels">
+            <summary>
+            Shows or hides the labels in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.TemplatePosition">
+            <summary>
+            Sets and gets the position of the template of leaf item in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafItemSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLeafLabelStyle">
+            <summary>
+            Sets and gets the options for customizing the style of the treemap leaf item label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLeafLabelStyle.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLeafLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendBorder">
+            <summary>
+            Sets and gets the options for customizing legend border color and width of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendBorder.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings">
+            <summary>
+            Sets and gets the options for customizing the legend of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Alignment">
+            <summary>
+            Sets and gets the alignment of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Background">
+            <summary>
+            Sets and gets the background color of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Fill">
+            <summary>
+            Sets and gets the shape color of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Height">
+            <summary>
+            Sets and gets the height of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ImageUrl">
+            <summary>
+            Sets and gets the URL path of the legend shapes rendered as image in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.InvertedPointer">
+            <summary>
+            Enables or disables the pointer for interactive legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.LabelDisplayMode">
+            <summary>
+            Sets and gets the label intersect action of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.LabelPosition">
+            <summary>
+            Sets and gets the label position for interactive legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Mode">
+            <summary>
+            Sets and gets the mode of legend in the treemap component. The modes available are default and interactive modes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of legends in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Orientation">
+            <summary>
+            Sets and gets the orientation of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Position">
+            <summary>
+            Sets and gets the position of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.RemoveDuplicateLegend">
+            <summary>
+            Enables or disables to remove the duplicate legend item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Shape">
+            <summary>
+            Sets and gets the shape of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ShapeHeight">
+            <summary>
+            Sets and gets the height of the shapes of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ShapePadding">
+            <summary>
+            Sets and gets the shape padding of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ShapeWidth">
+            <summary>
+            Sets and gets the width of the shapes in legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ShowLegendPath">
+            <summary>
+            Sets and gets the visibility state of the legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.ValuePath">
+            <summary>
+            Sets and gets the value path from the data source to render legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Visible">
+            <summary>
+            Enables or disables the visibility of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.Width">
+            <summary>
+            Sets and gets the width of legend in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendShapeBorder">
+            <summary>
+            Sets and gets the options for customizing the legend shape border of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendShapeBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendShapeBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendTextStyle">
+            <summary>
+            Sets and gets the options for customizing the legend text style of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendTextStyle.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendTitle">
+            <summary>
+            Sets and gets the options for customizing the legend title of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendTitle.Description">
+            <summary>
+            Define the description of the title for the accessibility in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendTitle.Text">
+            <summary>
+            Sets and gets the text for the title in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendTitle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendTitle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLegendTitleStyle">
+            <summary>
+            Sets and gets the options for customizing the legend title style of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLegendTitleStyle.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendTitleStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLegendTitleStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLevel">
+            <summary>
+            Sets and gets the options for customizing the levels of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.AutoFill">
+            <summary>
+            Enables or disables the automatic filling of the colors in the items in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.Fill">
+            <summary>
+            Sets and gets the fill color of the level in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.GroupGap">
+            <summary>
+            Sets and gets the gap between the levels in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.GroupPadding">
+            <summary>
+            Sets and gets the padding of levels in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.GroupPath">
+            <summary>
+            Sets and gets the value path from the data source in the treemap component to render the item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.HeaderAlignment">
+            <summary>
+            Sets and gets the alignment of the header of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.HeaderFormat">
+            <summary>
+            Sets and gets the format of header of the levels in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.HeaderHeight">
+            <summary>
+            Sets and gets the height of header in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.HeaderTemplate">
+            <summary>
+            Sets and gets the template for header in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.Opacity">
+            <summary>
+            Sets and gets the opacity in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.ShowHeader">
+            <summary>
+            Shows or hides the header in level of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevel.TemplatePosition">
+            <summary>
+            Sets and gets the options for customizing the template position of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevel.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevel.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLevelBorder">
+            <summary>
+            Sets and gets the options for customizing the levels border of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevelBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevelBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMapping">
+            <summary>
+            Sets and gets the properties on level item color mapping of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMapping.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMapping.LevelValue">
+            <summary>
+            Sets and gets the value for the color-mapping from the data source.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMapping.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMapping.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMappings">
+            <summary>
+            Sets and gets the options for customizing the level items color of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMappings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevelColorMappings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapLevels">
+            <summary>
+            Sets and gets the options for customizing the levels of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapLevels.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapLevels.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapMargin">
+            <summary>
+            Sets and gets the options for customizing the bottom, left, right, top margin of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapMargin.Bottom">
+            <summary>
+            Sets and gets the bottom margin for the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapMargin.Left">
+            <summary>
+            Sets and gets the left margin for the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapMargin.Right">
+            <summary>
+            Sets and gets the right margin for the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapMargin.Top">
+            <summary>
+            Sets and gets the top margin for the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapMargin.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapSelectionBorder">
+            <summary>
+            Sets and gets the options for customizing the selection border of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSelectionBorder.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapSelectionBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings">
+            <summary>
+            Sets and gets the options for customizing the selection of the treemap component item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings.Enable">
+            <summary>
+            Enables or disables the selection functionality in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings.Fill">
+            <summary>
+            Sets and gets the color of the selection when the leaf item is selected in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings.Mode">
+            <summary>
+            Sets and gets the element in which selection must be done in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of the selection when the leaf item is selected in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapSelectionSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings">
+            <summary>
+            Sets and gets the options for customizing the subtitle of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings.Alignment">
+            <summary>
+            Sets and gets the alignment of the subtitle text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings.Description">
+            <summary>
+            Define the description of the title for the accessibility in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings.Text">
+            <summary>
+            Sets and gets the text for the title in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapSubtitleSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapSubtitleTextStyle">
+            <summary>
+            Sets and gets the options for customizing the subtitle style of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapSubtitleTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapSubtitleTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings">
+            <summary>
+            Sets and gets the title of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings.Alignment">
+            <summary>
+            Sets and gets the text position of the title text in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings.Description">
+            <summary>
+            Define the description of the title for the accessibility in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings.Text">
+            <summary>
+            Sets and gets the text for the title in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTitleSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapTitleTextStyle">
+            <summary>
+            Sets and gets the options for customizing the title style of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTitleTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTitleTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapTooltipBorder">
+            <summary>
+            Sets and gets the options for customizing the tooltip border color and width of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTooltipBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTooltipBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings">
+            <summary>
+            Sets and gets the options for customizing the tooltip of the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.TooltipTemplate">
+            <summary>
+            Sets and gets the custom template of the tooltip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.Fill">
+            <summary>
+            Sets and gets the background color of tooltip in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.Format">
+            <summary>
+            Sets and gets the format of the tooltip in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of tooltip in the treemap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.Visible">
+            <summary>
+            Enables or disables the visibility state of tooltip in the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTooltipSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.TreeMap.TreeMapTooltipTextStyle">
+            <summary>
+            Sets and gets the options for customizing the text style in tooltip of the treemap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTooltipTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.TreeMap.TreeMapTooltipTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+    </members>
+</doc>

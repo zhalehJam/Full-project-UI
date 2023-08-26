@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MD.PersianDateTime</id>
+    <version>4.5.0</version>
+    <authors>Mohammad Dayyan</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <icon>PersianDateTimePng.png</icon>
+    <projectUrl>https://github.com/Mds92/MD.PersianDateTime</projectUrl>
+    <description>A C# library to use PersianCalendar as easy as DateTime</description>
+    <releaseNotes>Change ToTimeInt1 To ToTimeShort</releaseNotes>
+    <copyright>Mohammad Dayyan - @mdssoft</copyright>
+    <tags>c# .net-standard persiandatetime datetime calendar</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,1201 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.QueryBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.Internal.Predicates`1">
+            <summary>
+            Handles the predicate.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.Internal.Rules`1">
+            <summary>
+            Handles the Rule collection.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.Internal.SqlRules`1">
+            <summary>
+            Handles the SQL rules processing.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel">
+            <summary>
+            Interface for a class Columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Category">
+            <summary>
+            Specifies the category for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Field">
+            <summary>
+            Specifies the fields in columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Format">
+            <summary>
+            Specifies the date format for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Label">
+            <summary>
+            Specifies the labels name in columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Operators">
+            <summary>
+            Specifies the operators in columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Step">
+            <summary>
+            Specifies the step value(numeric textbox) for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Type">
+            <summary>
+            Specifies the types in columns field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Validation">
+            <summary>
+            Specifies the validation for columns (text, number and date).
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Value">
+            <summary>
+            Specifies the default value for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Values">
+            <summary>
+            Specifies the values in columns or bind the values from sub controls.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.Columns">
+            <summary>
+            Specifies the values in columns or bind the values from sub controls.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.Internal.ColumnsModel.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies the UpdateChildProperties.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.DisplayMode">
+            <summary>
+            Specifies the display Mode as Horizontal or Vertical.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.DisplayMode.Horizontal">
+            <summary>
+            To display in horizontal mode.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.DisplayMode.Vertical">
+            <summary>
+            To display in vertical mode.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.SortDirection">
+            <summary>
+            Specifies the sort direction of the field names.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.SortDirection.Default">
+            <summary>
+            No sorting
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.SortDirection.Ascending">
+            <summary>
+            To sort the field name in ascending.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.SortDirection.Descending">
+            <summary>
+            To sort the field name in descending.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.ColumnType">
+            <summary>
+            Specifies the column types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.ColumnType.Number">
+            <summary>
+            A number type column
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.ColumnType.String">
+            <summary>
+            A string type column
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.ColumnType.Date">
+            <summary>
+            A date type column
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.ColumnType.Boolean">
+            <summary>
+            A boolean type column
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.ColumnType.Object">
+            <summary>
+            A object type column
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.UniqueFilterMode">
+            <summary>
+             Defines whether to allow creating multiple filter conditions for a field in a group or all groups in query builder. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.UniqueFilterMode.None">
+            <summary>
+            Defines the unique filter mode as 'None' to disable the unique filter where end-user can create multiple filter conditions for a field option.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.UniqueFilterMode.Group">
+            <summary>
+            Defines the unique filter mode as 'Group' to allow the unique filters within a group. Once filter condition is created for a field then user can create filter condition for the same field in next group only.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.QueryBuilder.UniqueFilterMode.All">
+            <summary>
+            Defines the unique filter mode as 'All' to allow unique filters within entire query builder. Once filter condition is created for a field then user can’t create filter condition for the same field in any group.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1">
+            <summary>
+            Query Builder is a graphical user interface that used for filtering large amounts of data by creating or editing conditions.
+            </summary>
+            <summary>
+            Query Builder is a graphical user interface that used for filtering large amounts of data by creating or editing conditions.
+            </summary>
+            <summary>
+            Query Builder is a graphical user interface that used for filtering large amounts of data by creating or editing conditions.
+            </summary>
+            <summary>
+            Query Builder is a graphical user interface that used for filtering large amounts of data by creating or editing conditions.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.ID">
+            <summary>
+            Gets or sets a value that indicates the id attribute for query builder element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.ChildContent">
+            <summary>
+            Gets or sets a value that indicates content for query builder element including HTML and its customizations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.AllowValidation">
+            <summary>
+            Gets or sets a value that indicates whether to enables or disables the validation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.ColumnTemplate">
+            <summary>
+            Gets or sets a value that indicates the template for all columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.CssClass">
+            <summary> 
+            Gets or sets CSS class string to customize the appearance of querybuilder. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of querybuilder. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.DataSource">
+            <summary>
+            Gets or sets a value that indicates the data source of querybuilder.
+            </summary>
+            <value>
+            Accepts the list items either through local or remote service and binds it to the component.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.DisplayMode">
+            <summary>
+            Gets or sets a value that indicates the displayMode as Horizontal or Vertical.
+            </summary>
+            <value> 
+            One of the <c>DisplayMode</c> enumeration. The default value is <c>DisplayMode.Horizontal</c> 
+            </value> 
+            <remarks> 
+            If the <c>DisplayMode</c> is <c>Horizontal</c>, the columns will be aligned horizontally. 
+            If the <c>DisplayMode</c> is <c>Vertical</c>, the columns will be aligned vertically. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.EnableNotCondition">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the not group condition in query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.EnablePersistence">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable persisting component's state between page reloads.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.EnableRtl">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the right to left direction option in query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.Height">
+            <summary>
+            Gets or sets a value that indicates the height of the query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.ImmediateModeDelay">
+            <summary>
+            Gets or sets a value that indicates the time delay to trigger the rule change event.
+            </summary>
+            <value>
+            Accepts double value and the rule change event is triggered after that specified time delay.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.MatchCase">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the grid filtering with exact match.
+            </summary>
+            <value> 
+            <c>true</c>, if the match case is enabled it filters with case sensitive. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.MaxGroupCount">
+            <summary>
+            Gets or sets a value that indicates the maximum group count or restricts the group count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.Readonly">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the user interactions in the component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.SortDirection">
+            <summary>
+             Gets or sets a value that indicates the sort direction of the field names.
+            </summary>
+            <value> 
+            One of the <c>SortDirection</c> enumeration. The default value is <c>SortDirection.Default</c> 
+            </value> 
+            <remarks> 
+            If the <c>SortDirection</c> is <c>Default</c>, the field names will be ordered in default order. 
+            If the <c>SortDirection</c> is <c>Ascending</c>, the field names will be ordered in ascending order.
+            If the <c>SortDirection</c> is <c>Descending</c>, the field names will be ordered in descending order. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.SummaryView">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable filtered query as summary view.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.Width">
+            <summary>
+            Gets or sets a value that indicates the width of the query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.Separator">
+            <summary>
+            Gets or sets a value that indicates the seprator for complex data binding.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.UniqueFilterMode">
+            <summary>
+            Gets or sets whether to allow creating multiple filter conditions for a field in a group or all groups. Be default, end-user can create multiple filter conditions for a field. 
+            The unique filter option for the fields in query builder where once filter condition created for a field then you can prevent creating further conditions in a group or for all groups.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.AddGroup(Syncfusion.Blazor.QueryBuilder.RuleModel,System.String)">
+            <summary>
+            Adds single or multiple groups, which contains the collection of rules.
+            </summary>
+            <param name = "group">Groups be passed to add the group.</param>
+            <param name = "groupID">GroupID be be added in the group.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.AddRule(Syncfusion.Blazor.QueryBuilder.RuleModel,System.String,System.Boolean)">
+             <summary>
+             Adds the specified rule into the group which is specified using <c>GroupID</c> parameter.
+             </summary>
+             <remarks>
+             The rule can be added as group of rules if the <c>IsGroupRule></c> property is true other wise it is added at the bottom of the group.
+             </remarks>
+             <param name = "rule">The rule be passed to add the rules. </param>
+             <param name = "groupID">The groupID to be passed to specify the group to add rules.</param>
+             <param name = "isGroupRule">To add the rule under the respected group tree.</param>
+             <example>
+             In the below code example, <c>AddRule</c> is used to insert the rule.
+             <code><![CDATA[
+             <SfButton Content=”Add Rule” @onclick="AddRule"></SfButton>
+             <SfQueryBuilder TValue="Employee" @ref="QueryBuilderObj">
+                <QueryBuilderColumns>
+                  <QueryBuilderColumn Field="EmployeeID" Label="Employee ID" Type="ColumnType.Number"></QueryBuilderColumn>
+                  <QueryBuilderColumn Field="FirstName" Label="First Name" Type="ColumnType.String"></QueryBuilderColumn>
+                  <QueryBuilderColumn Field="LastName" Label="Last Name" Type="ColumnType.String"></QueryBuilderColumn>
+                  <QueryBuilderColumn Field="HireDate" Label="Hire Date" Type="ColumnType.Date">
+            </QueryBuilderColumn>
+                  <QueryBuilderColumn Field="Country" Label="Country" Type="ColumnType.String"></QueryBuilderColumn>
+                </QueryBuilderColumns>
+             </SfQueryBuilder>
+             @code
+             {
+             SfQueryBuilder<Employee> QueryBuilderObj;
+             private string groupID;
+             public class Employee
+             {
+                 public int EmployeeID { get; set; }
+                 public string FirstName { get; set; }
+                 public string LastName { get; set; }
+                 public DateTime HireDate { get; set; }
+                 public string Country { get; set; }
+             }
+             private void AddRule(MouseEventArgs args)
+             {
+                 QueryBuilderObj.AddRule(new RuleModel(), “group0”);
+             }
+             ]]></code>
+             </example>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.DeleteGroup(System.String)">
+            <summary>
+            Deletes the group or groups based on the group ID.
+            </summary>
+            <param name = "groupId">GroupId be passed to delete the group.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.DeleteRule(System.String)">
+            <summary>
+            Deletes the rule or rules based on the rule ID.
+            </summary>
+            <param name = "ruleId">RuleId be passed to delete the rule.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetDataManagerQuery(Syncfusion.Blazor.QueryBuilder.RuleModel)">
+            <summary>
+            Gets the query for Data Manager.
+            </summary>
+            <param name = "rule">Rule be passed to get the query.</param>
+            <returns>
+            It returns the data manger <c>Query</c> using the created rule.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetFilteredRecords">
+            <summary>
+            Gets the filtered records using the created rules.
+            </summary>
+            <returns>
+            It returns collection of records.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetGroup">
+            <summary>
+            Gets the group.
+            </summary>
+            <returns>
+            It returns the valid rules as <c>RuleModel</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetPredicate(Syncfusion.Blazor.QueryBuilder.RuleModel)">
+            <summary>
+            Gets the predicate from the created rules.
+            </summary>
+            <param name = "rule">Rule be passed to get the predicate.</param>
+            <returns>
+            It returns the data manager predicates using the created rule.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetRules">
+            <summary>
+            Gets the rule or rule collection.
+            </summary>
+            <returns>
+            It returns the reated rule as <c>RuleModel</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetRulesFromSql(System.String)">
+            <summary>
+            Gets the rules from the sql query.
+            </summary>
+            <param name = "sqlString">SqlString be passed to get the rules.</param>
+            <returns>
+            It returns the rule model from the sql query as <c>RuleModel</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetSqlFromRules(Syncfusion.Blazor.QueryBuilder.RuleModel,System.Boolean)">
+            <summary>
+            Gets the sql query from rules.
+            </summary>
+            <param name = "rule">Rule be passed to get the sql rules.</param>
+            <param name = "allowEscape">Set `true` to enable escape.</param>
+            <returns>
+            It returns the sql query from the <c>RuleModel</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetValidRules">
+            <summary>
+            Gets the valid rule or rules collection.
+            </summary>
+            <returns>
+            It returns the rule from the created rules as <c>RuleModel</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.Reset">
+            <summary>
+            Clears the rules without root rule.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.SetRules(System.Collections.Generic.List{Syncfusion.Blazor.QueryBuilder.RuleModel},System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Sets the rule or rules collection.
+            </summary>
+            <param name = "rule">Rule be passed to set the rules.</param>
+            <param name = "condition">Condition be passed to set the condition.</param>
+            <param name = "not">Not be passed to set the not condition.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.SetRulesFromSql(System.String)">
+            <summary>
+            Sets the rules from the sql query.
+            </summary>
+            <param name = "sqlString">sql string be passed to set the rules.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetOperators(System.String)">
+            <summary>
+            Gets the operators list for given field.
+            </summary>
+            <param name = "field">Fields be passed to get the operators.</param>
+            <returns>
+            It returns the collection of operators as <c>OperatorsModel</c>.
+            </returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            To update the child properties
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.SfQueryBuilder`1.GetColumn(System.String)">
+            <summary>
+            Gets the column of given field.
+            </summary>
+            <param name = "field">Field be passed to get the column.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1">
+            <summary>
+            Used to configure the query builder events.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1.OnValueChange">
+            <summary>
+            Gets or sets an event callback that is raised before the condition (And/Or), field, operator, value is changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1.Changed">
+            <summary>
+            Gets or sets an event callback that is raised after changing the condition(AND/OR), field, value, operator is changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1.Created">
+            <summary>
+            Gets or sets an event callback that is raised after the component is created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1.DataBound">
+            <summary>
+            Triggers when data source is populated in the Querybuilder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1.RuleChanged">
+            <summary>
+            Gets or sets an event callback that is raised after changing the condition(AND/OR), field, value, operator is changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderEvents`1.OnActionFailure">
+            <summary>
+            Gets or sets an event callback that is raised after the data fetch request from the remote server fails.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderField">
+             <summary>
+             A class that represents the field model of <c>SfQueryBuilder</c> component to specify the customized option to the field dropdown list.
+             </summary>
+             <remarks>
+             You can customize filtering, popup width and height, width  of the field dropdown list by specifying value to corresponding property.
+             Remaining necessary properties were added to dropdown list by default.
+             </remarks>
+             <example>
+             In the below code example, field dropdown list can be customized using <see cref="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderField"/> tag directive.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderField AllowFiltering="true"></QueryBuilderField>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.AllowFiltering">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the filtering option in the field dropdown list.
+            </summary>
+            <value>
+            <c>true</c>, if the filtering option is enabled in the field dropdown list. The default value is <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FilterType">
+            <summary>
+            Gets or sets a value that indicates the filter type.
+            </summary>
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FilterType"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.DropDowns.FilterType.StartsWith"/> 
+            </value> 
+            <remarks> 
+            If the <c>FilterType</c> is <c>StartsWith</c>, the filtering will be performed using starts with operator. 
+            If the <c>FilterType</c> is <c>EndsWith</c>, the filtering will be performed using ends with operator. 
+            If the <c>FilterType</c> is <c>Contains</c>, the filtering will be performed using contains operator. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FilterBarPlaceholder">
+            <summary>
+            Gets or sets a value that indicates place holder for filtering option in field dropdown list.
+            </summary>
+            <value>
+            The filter bar place holder accepts a string value. The default value is <c>"Select Field"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.Placeholder">
+            <summary>
+            Gets or sets a value that indicates place holder for field dropdown list.
+            </summary>
+            <value>
+            The place holder accepts a string value. The default value is <c>"Select Field"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.PopupHeight">
+            <summary>
+            Gets or sets a value that indicates height of field dropdown list's popup.
+            </summary>
+            <value>
+            The popup height accepts a string value. The default value is <c>"200px"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.PopupWidth">
+            <summary>
+            Gets or sets a value that indicates width of field dropdown list's popup.
+            </summary>
+            <value>
+            The popup width accepts a string value. The default value is <c>"100%"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.ShowClearButton">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the clear button in the field dropdown list.
+            </summary>
+            <value>
+            <c>true</c>, if the clear button is enabled in the field dropdown list. The default value is <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.Width">
+            <summary>
+            Gets or sets a value that indicates width of field dropdown list.
+            </summary>
+            <value>
+            The width accepts a string value. The default value is <c>"100%"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FieldDropDownOpening">
+             <summary>
+             Gets or sets an event callback that is raised while opening field dropdown list.
+             </summary>
+             <remarks>
+             You can customize the dropdown list item rendering using <c>BeforeOpenEventArgs</c>.
+             </remarks>
+             <example>
+             In the below code example, the <c>FieldDropDownOpening</c> event is used.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderField FieldDropDownOpening="FieldDropDownOpening"></QueryBuilderField>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+            @code {
+            private void FieldDropDownOpening(BeforeOpenEventArgs args)
+            {
+                  //write your code here
+            }
+            }
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FieldDropDownClosed">
+             <summary>
+             Gets or sets an event callback that is raised while closing field dropdown list.
+             </summary>
+             <remarks>
+             You can customize the dropdown list item rendering using <see cref="T:System.Object"/>.
+             </remarks>
+             <example>
+             In the below code example, the <c>FieldDropDownClosed</c> event is used.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderField FieldDropDownClosed="OnBlur"></QueryBuilderField>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+            @code {
+            private void OnBlur(object args)
+            {
+                  //write your code here
+            }
+            }
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FieldDropDownOpened">
+             <summary>
+             Gets or sets an event callback that is raised after opening field dropdown list.
+             </summary>
+             <remarks>
+             You can customize the dropdown list item rendering using <c>PopupEventArgs</c>.
+             </remarks>
+             <example>
+             In the below code example, the <c>FieldDropDownOpened</c> event is used.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderField FieldDropDownOpened="Opened"></QueryBuilderField>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+            @code {
+            private void Opened(PopupEventArgs args)
+            {
+                  //write your code here
+            }
+            }
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderField.FieldDropDownFiltering">
+            <summary>
+            Gets or sets an event callback that is raised while filtering on field dropdown list.
+            </summary>
+            <remarks>
+            You can customize the filtering using <c>FilteringEventArgs</c>.
+            </remarks>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator">
+             <summary>
+             A class that represents the operator model of <c>"SfQueryBuilder"</c> component to specify the customized option to the operator dropdown list.
+             </summary>
+             <remarks>
+             You can customize filtering, popup width and height, width  of the operator dropdown list by specifying value to corresponding property.
+             Remaining necessary properties were added to dropdown list by default.
+             </remarks>
+             <example>
+             In the below code example, field dropdown list can be customized using <see cref="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator"/> tag directive.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderOperator AllowFiltering="true"></QueryBuilderField>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.AllowFiltering">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the filtering option in the operator dropdown list.
+            </summary>
+            <value>
+            <c>true</c>, if the filtering option is enabled in the operator dropdown list. The default value is <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.FilterType">
+            <summary>
+            Gets or sets a value that indicates the filter type.
+            </summary>
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.FilterType"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.DropDowns.FilterType.StartsWith"/> 
+            </value> 
+            <remarks> 
+            If the <c>FilterType</c> is <c>StartsWith</c>, the filtering will be performed using starts with operator. 
+            If the <c>FilterType</c> is <c>EndsWith</c>, the filtering will be performed using ends with operator. 
+            If the <c>FilterType</c> is <c>Contains</c>, the filtering will be performed using contains operator. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.FilterBarPlaceholder">
+            <summary>
+            Gets or sets a value that indicates place holder for filtering option in operator dropdown list.
+            </summary>
+            <value>
+            The filter bar place holder accepts a string value. The default value is <c>"Select Operator"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.Placeholder">
+            <summary>
+            Gets or sets a value that indicates place holder for operator dropdown list.
+            </summary>
+            <value>
+            The place holder accepts a string value. The default value is <c>"Select Operator"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.PopupHeight">
+            <summary>
+            Gets or sets a value that indicates height of operator dropdown list's popup.
+            </summary>
+            <value>
+            The popup height accepts a string value. The default value is <c>"200px"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.PopupWidth">
+            <summary>
+            Gets or sets a value that indicates width of operator dropdown list's popup.
+            </summary>
+            <value>
+            The popup width accepts a string value. The default value is <c>"100%"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.ShowClearButton">
+            <summary>
+            Gets or sets a value that indicates whether to enable or disable the clear button in the operator dropdown list.
+            </summary>
+            <value>
+            <c>true</c>, if the clear button is enabled in the field dropdown list. The default value is <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.Width">
+            <summary>
+            Gets or sets a value that indicates width of operator dropdown list.
+            </summary>
+            <value>
+            The width accepts a string value. The default value is <c>"100%"</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.OperatorDropDownOpening">
+             <summary>
+             Gets or sets an event callback that is raised while opening operator dropdown list.
+             </summary>
+             <remarks>
+             You can customize the dropdown list item rendering using <c>BeforeOpenEventArgs</c>.
+             </remarks>
+             <example>
+             In the below code example, the <c>OperatorDropDownOpening</c> event is used.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderOperator OperatorDropDownOpening="OperatorDropDownOpening"></QueryBuilderOperator>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+            @code {
+            private void OperatorDropDownOpening(BeforeOpenEventArgs args)
+            {
+                  //write your code here
+            }
+            }
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.OperatorDropDownClosed">
+             <summary>
+             Gets or sets an event callback that is raised while closing operator dropdown list.
+             </summary>
+             <remarks>
+             You can customize the dropdown list item rendering using <see cref="T:System.Object"/>.
+             </remarks>
+             <example>
+             In the below code example, the <c>OperatorDropDownClosed</c> event is used.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderOperator OperatorDropDownClosed="OnBlur"></QueryBuilderOperator>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+            @code {
+            private void OnBlur(object args)
+            {
+                  //write your code here
+            }
+            }
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.OperatorDropDownOpened">
+             <summary>
+             Gets or sets an event callback that is raised after opening operator dropdown list.
+             </summary>
+             <remarks>
+             You can customize the dropdown list item rendering using <c>PopupEventArgs</c>.
+             </remarks>
+             <example>
+             In the below code example, the <c>OperatorDropDownOpened</c> event is used.
+             <code><![CDATA[
+            <SfQueryBuilder TValue="Employee">
+            <QueryBuilderOperator OperatorDropDownOpened="Opened"></QueryBuilderOperator>
+            <QueryBuilderColumns>
+            <QueryBuilderColumn Field="CustomerID" Label="CustomerID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.String Values="values">
+            </QueryBuilderColumn>
+            <QueryBuilderColumn Field="EmployeeID" Label="EmployeeID" Type=Syncfusion.Blazor.QueryBuilder.ColumnType.Number></QueryBuilderColumn>
+            </QueryBuilderColumns>
+            </SfQueryBuilder>
+            @code {
+            private void Opened(PopupEventArgs args)
+            {
+                  //write your code here
+            }
+            }
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderOperator.OperatorDropDownFiltering">
+            <summary>
+            Gets or sets an event callback that is raised while filtering on operator dropdown list.
+            </summary>
+            <remarks>
+            You can customize the filtering using <c>FilteringEventArgs</c>.
+            </remarks>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderRule">
+            <summary>
+            Specifies the rule for the query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderRule.Condition">
+            <summary>
+            Specifies the condition value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderRule.Not">
+            <summary>
+            Specifies whether not condition is true/false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderRule.Rules">
+            <summary>
+            Specifies the rules in group.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderShowButtons">
+            <summary>
+            Specifies the show button settings for the query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderShowButtons.GroupDelete">
+            <summary>
+            Specifies the boolean value in groupDelete that the enable/disable the buttons in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderShowButtons.GroupInsert">
+            <summary>
+            Specifies the boolean value in groupInsert that the enable/disable the buttons in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderShowButtons.RuleDelete">
+            <summary>
+            Specifies the boolean value in ruleDelete that the enable/disable the buttons in rule.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn">
+            <summary>
+            Specifies the column for the query builder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.ChildContent">
+            <summary>
+            Specifies the child content for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Category">
+            <summary>
+            Specifies the category for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Field">
+            <summary>
+            Specifies the fields in columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Format">
+            <summary>
+            Specifies the date format for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Label">
+            <summary>
+            Specifies the labels name in columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Operators">
+            <summary>
+            Specifies the operators in columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Step">
+            <summary>
+            Specifies the step value(numeric textbox) for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.ValueTemplate">
+            <summary>
+            Specifies the template for value field such as slider or any other widgets.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.ColumnTemplate">
+            <summary>
+            Specifies the template for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Type">
+            <summary>
+            Specifies the types in columns field.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Value">
+            <summary>
+            Specifies the default value for columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.Values">
+            <summary>
+            Specifies the values in columns or bind the values from sub controls.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.OnInitializedAsync">
+             <summary>
+            Specifies the OnInitializedAsync method
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumn.OnParametersSetAsync">
+            <summary>
+            Specifies the OnParametersSetAsync method
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumns">
+            <summary>
+            Specifies the columns for the query builder.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumnValidation">
+            <summary>
+            Defines the validation of Query Builder column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumnValidation.IsRequired">
+            <summary>
+            Specifies whether the value is required or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumnValidation.Min">
+            <summary>
+            Specifies the minimum value in textbox validation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderColumnValidation.Max">
+            <summary>
+            Specifies the maximum value in textbox validation.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.QueryBuilderTemplates">
+            <summary>
+            Specifies the template settings for the querybuilder column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderTemplates.ValueTemplate">
+            <summary>
+            Specifies the template for querybuilder column value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderTemplates.ColumnTemplate">
+            <summary>
+            Specifies the template for querybuilder column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.QueryBuilderTemplates.HeaderTemplate">
+            <summary>
+            Specifies the template for the AND/OR condition with any other widgets.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs">
+            <summary>
+            Interface for Change event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.Cancel">
+            <summary>
+            Set true to prevent rules from changing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.Name">
+            <summary>
+            Specifies name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.Not">
+            <summary>
+            Specifies not condition of the rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.SelectedField">
+            <summary>
+            Specifies selected field of the rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.SelectedIndex">
+            <summary>
+            Specifies selected index of the rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.Type">
+            <summary>
+            Specifies type of the rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.Value">
+            <summary>
+            Specifies value of the rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.ChangeEventArgs.RuleId">
+            <summary>
+            Specifies id of the rule.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.RuleChangeEventArgs">
+            <summary>
+            Interface for RuleChange event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleChangeEventArgs.Name">
+            <summary>
+            Specifies name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleChangeEventArgs.PreviousRule">
+            <summary>
+            Specifies previous rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleChangeEventArgs.Rule">
+            <summary>
+            Specifies current rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleChangeEventArgs.Type">
+            <summary>
+            Specifies type of the rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleChangeEventArgs.RuleId">
+            <summary>
+            Specifies id of the rule.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.OperatorsModel">
+            <summary>
+            Interface for a class Operator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.OperatorsModel.Text">
+            <summary>
+            Specifies text or label of the operator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.OperatorsModel.Value">
+            <summary>
+            Specifies value of the operator.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.HeaderTemplateModel">
+            <summary>
+            Interface for a class Header Template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.HeaderTemplateModel.ID">
+            <summary>
+            Specifies Group ID.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.HeaderTemplateModel.Condition">
+            <summary>
+            Specifies Group Condition.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.HeaderTemplateModel.Not">
+            <summary>
+            Specifies Group NOT condition.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.QueryBuilder.RuleModel">
+            <summary>
+            Interface for a class Rule.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Condition">
+            <summary>
+            Specifies the condition value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Field">
+            <summary>
+            Specifies the field value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Label">
+            <summary>
+            Specifies the label value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Not">
+            <summary>
+            Specifies whether not condition is true/false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Operator">
+            <summary>
+            Specifies the operator value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Type">
+            <summary>
+            Specifies the type value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Value">
+            <summary>
+            Specifies the sub controls value in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.Rules">
+            <summary>
+            Specifies the rules in group.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.QueryBuilder.RuleModel.RuleId">
+            <summary>
+            Specifies the rule id in group.
+            </summary>
+        </member>
+    </members>
+</doc>

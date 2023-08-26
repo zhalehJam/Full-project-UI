@@ -1,5 +1,5 @@
 {
   "version": 2,
   "contentHash": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
-  "source": "https://dockerreg.shonizcloud.ir/repository/nuget.org-proxy/index.json"
+  "source": "https://api.nuget.org/v3/index.json"
 }

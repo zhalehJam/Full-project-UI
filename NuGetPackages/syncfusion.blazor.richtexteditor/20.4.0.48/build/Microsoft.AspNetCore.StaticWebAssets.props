@@ -1,0 +1,20 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\scripts\sf-richtexteditor.min.js))">
+      <SourceType>Package</SourceType>
+      <SourceId>Syncfusion.Blazor.RichTextEditor</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Syncfusion.Blazor.RichTextEditor</BasePath>
+      <RelativePath>scripts/sf-richtexteditor.min.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\scripts\sf-richtexteditor.min.js))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

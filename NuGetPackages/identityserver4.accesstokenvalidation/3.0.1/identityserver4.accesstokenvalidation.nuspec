@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>IdentityServer4.AccessTokenValidation</id>
+    <version>3.0.1</version>
+    <authors>Brock Allen,Dominick Baier</authors>
+    <owners>Brock Allen,Dominick Baier</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.jpg</icon>
+    <projectUrl>https://github.com/IdentityServer/IdentityServer4.AccessTokenValidation</projectUrl>
+    <description>ASP.NET Core authentication handler to validate JWT and reference tokens from IdentityServer4</description>
+    <releaseNotes>https://github.com/IdentityServer/IdentityServer4/releases</releaseNotes>
+    <tags>OAuth2 OAuth 2.0 OpenID Connect Security Identity IdentityServer Bearer tokens</tags>
+    <repository type="git" url="https://github.com/IdentityServer/IdentityServer4.AccessTokenValidation.git" commit="677bf6863a27c851270436faf9dfac437f46d90d" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0">
+        <dependency id="IdentityModel.AspNetCore.OAuth2Introspection" version="4.0.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Authentication.JwtBearer" version="3.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

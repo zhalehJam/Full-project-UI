@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Azure.Cosmos</id>
+    <version>3.33.0</version>
+    <title>Microsoft Azure Cosmos DB Client library</title>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://aka.ms/netcoregaeula</licenseUrl>
+    <icon>Icon.png</icon>
+    <projectUrl>https://github.com/Azure/azure-cosmos-dotnet-v3</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288890</iconUrl>
+    <description>This client library enables client applications to connect to Azure Cosmos DB via the NoSQL API. Azure Cosmos DB is a globally distributed, multi-model database service. For more information, refer to http://azure.microsoft.com/services/cosmos-db/.</description>
+    <releaseNotes>The change log for this SDK is made available at https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/changelog.md at the time of release.</releaseNotes>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>microsoft azure cosmos cosmosdb documentdb docdb nosql azureofficial dotnetcore netcore netstandard</tags>
+    <repository type="git" url="https://github.com/Azure/azure-cosmos-dotnet-v3" commit="e5972ac0ffd53595b2f1f0f10a3faf913ff882e1" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Azure.Core" version="1.19.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Bcl.AsyncInterfaces" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Bcl.HashCode" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Immutable" version="1.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Memory" version="4.5.4" exclude="Build,Analyzers" />
+        <dependency id="System.Numerics.Vectors" version="4.5.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Extensions" version="4.5.4" exclude="Build,Analyzers" />
+        <dependency id="System.ValueTuple" version="4.5.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/netstandard2.0/ThirdPartyNotice.txt" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+</package>

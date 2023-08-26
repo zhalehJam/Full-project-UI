@@ -1,0 +1,84 @@
+version: '3.4'
+
+services:
+
+  Ticketing_API:
+    image: dockerreg.shonizcloud.ir/ticketing/api:0.0.12
+    container_name: Ticketing_API
+    hostname: ticketingapi.shonizcloud.ir
+    build:
+      context: ../Ticketing
+      dockerfile: ../Ticketing/API/Dockerfile
+    networks:
+      - dbConnection
+      - nginx-net
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - TZ=Asia/Tehran
+      #- ServiceHost=localhost
+      - Scheme=http
+      - ServicePort=80
+    depends_on:
+      - Ticketing_DB
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+
+  Ticketing_UI:
+    container_name: Ticketing_UI
+    hostname: Ticketing_UI
+    restart: always
+    image: dockerreg.shonizcloud.ir/ticketing/ticketing-ui:0.0.12
+    environment:
+      - ASPNETCORE_URLS=https://+:443
+      - TZ=Asia/Tehran
+    build:
+      context: . 
+      dockerfile:  Ticketing_Client/Dockerfile
+    networks:
+      - nginx-net
+    ports:
+      - 8080:80
+      - 8443:443
+    depends_on:
+      - Ticketing_API
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+
+  Ticketing_DB:
+    container_name: Ticketing_DB
+    hostname: Ticketing_DB
+    networks:
+      - dbConnection
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=123qaz!@#
+      - MSSQL_AGENT_ENABLED=True
+      - TZ=Asia/Tehran
+#    ports:
+#      - '8433:1433'
+    volumes:
+      - 'ticketing-mssql:/var/opt/mssql'
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+
+volumes:
+  ticketing-mssql:
+    name: Ticketing-mssql-volume
+
+networks:
+  nginx-net:
+    external: true
+    driver: bridge
+  dbConnection:
+    external: false
+    driver: bridge

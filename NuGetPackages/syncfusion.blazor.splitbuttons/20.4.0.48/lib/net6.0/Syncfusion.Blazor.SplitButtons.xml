@@ -1,0 +1,1521 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.SplitButtons</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton">
+            <summary> 
+            Button Group Button component is creates a button component which is a graphical user interface that helps to triggers an event on its click action. 
+            It can contain a text, an icon, svg or both. 
+            </summary> 
+            <remarks> 
+            The button content is either by specifying <see cref="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Content"/> property or by specifying content within <see cref="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton"/> tag directive. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.ChildContent">
+            <exclude />
+            <summary> 
+            Gets or sets a value that indicates the child content for the button including HTML element. If the child content is not specified, button is rendered using <see cref="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Content"/> property. 
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            The child content which is specified within <see cref="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton"/> tag directive is either a string or HTML Element. The string content is also specified using <see cref="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Content"/> property. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.CssClass">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to customize the appearance of button. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.IconCss">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to include an icon or image for the button.  
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to include an icon or image for the button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Disabled">
+            <summary> 
+            Gets or sets whether the button is disabled or not. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the button component is disabled. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Selected">
+            <summary> 
+            Gets or sets whether the component is selected or not. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the component is selected. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Name">
+            <summary> 
+            Gets or sets a value that indicates the name of the component. 
+            </summary> 
+            <value> 
+            Accepts a string value. The default value is <c>String.Empty</c>. 
+            </value> 
+            <remarks> 
+            The <see cref="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Name"/> property is used to set the name attribute of input element. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Value">
+            <summary> 
+            Gets or sets a value that indicates the value of the component. 
+            </summary> 
+            <value> 
+            Accepts a string value. The default value is <c>String.Empty</c>. 
+            </value> 
+            <remarks> 
+            The <see cref="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Value"/> property is used to set the value attribute of input element. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.Content">
+            <summary> 
+            Gets or sets a value that indicates the content of button. 
+            </summary> 
+            <value> 
+            Accepts a string value. The default value is <c>String.Empty</c>. 
+            </value> 
+            <remarks> 
+            Set child content within <see cref="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton"/> tag directive, to render as HTML content. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.IsToggle">
+            <summary> 
+            Gets or sets whether the toggle option is enabled for button component. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the toggle option is enabled for button component. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.IsPrimary">
+            <summary> 
+            Gets or sets whether the primary style is enabled for button component. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the primary style is enabled for button component. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.IconPosition">
+            <summary> 
+            Gets or sets a value that indicates how to display icons in the button component. 
+            </summary> 
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.IconPosition"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.Buttons.IconPosition.Left"/> 
+            </value> 
+            <remarks> 
+            If the <c>IconPosition</c> is <c>Left</c>, the icon will be placed left to the content of the button. 
+            If the <c>IconPosition</c> is <c>Right</c>, the icon will be placed right to the content of the button. 
+            If the <c>IconPosition</c> is <c>Top</c>, the icon will be placed above the content of the button. 
+            If the <c>IconPosition</c> is <c>Bottom</c>, the icon will be placed below the content of the button. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.HtmlAttributes">
+            <exclude/>
+            <summary> 
+            Gets or sets a collection of additional attributes that will applied to the button container element. 
+            </summary> 
+            <remarks> 
+            Additional attributes can be added by specifying as inline attributes or by specifying <c>@attributes</c> directive. 
+            </remarks> 
+            <example> 
+            In the below code example, button width has been specified as style attribute in <see cref="T:Syncfusion.Blazor.Buttons.SfButton"/> tag directive. 
+            <code><![CDATA[ 
+            <SfButtonGroup> 
+            <ButtonGroupButton style="width:200px">Left</ButtonGroupButton> 
+            <ButtonGroupButton>Center</ButtonGroupButton> 
+            <ButtonGroupButton>Right</ButtonGroupButton> 
+            </SfButtonGroup> 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ButtonGroupButton.SelectedChanged">
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SfButtonGroup">
+            <summary> 
+            ButtonGroup is a container that groups a series of buttons on a single line. It has an optional radio button (single selection) and checkbox (multiple selection) behavior. 
+            It may contain DropDownButton or SplitButton component. 
+            </summary> 
+            <example> 
+            In the below code example, a basic button group is initialized with <see cref="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton"/> property. 
+            <code><![CDATA[ 
+            <SfButtonGroup> 
+            <ButtonGroupButton>Left</ButtonGroupButton> 
+            <ButtonGroupButton>Center</ButtonGroupButton> 
+            <ButtonGroupButton>Right</ButtonGroupButton> 
+            </SfButtonGroup> 
+            ]]></code> 
+            </example> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfButtonGroup.ChildContent">
+            <exclude/>
+            <summary> 
+            Gets or sets a value that indicates the child content for button group including HTML element. If the child content is not specified, button is rendered using <see cref="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton"/> property. 
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            The child content which is specified within <see cref="T:Syncfusion.Blazor.SplitButtons.SfButtonGroup"/> tag directive is either a string or HTML Element. The string content is also specified using <see cref="T:Syncfusion.Blazor.SplitButtons.ButtonGroupButton"/> property. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfButtonGroup.CssClass">
+            <summary> 
+            Gets or sets a value that indicates CSS class string to customize the appearance of button group. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of button group. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfButtonGroup.HtmlAttributes">
+            <exclude/>
+            <summary> 
+            Gets or sets a collection of additional attributes that will applied to the button group container element. 
+            </summary> 
+            <remarks> 
+            Additional attributes can be added by specifying as inline attributes or by specifying <c>@attributes</c> directive. 
+            </remarks> 
+            <example> 
+            In the below code example, button group width has been specified as style attribute in <see cref="T:Syncfusion.Blazor.SplitButtons.SfButtonGroup"/> tag directive. 
+            <code><![CDATA[ 
+            <SfButtonGroup style="width:200px"> 
+            <ButtonGroupButton>Left</ButtonGroupButton> 
+            <ButtonGroupButton>Center</ButtonGroupButton> 
+            <ButtonGroupButton>Right</ButtonGroupButton> 
+            </SfButtonGroup> 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfButtonGroup.Mode">
+            <summary> 
+            Gets or sets a value that indicates the selection mode of the button group component. 
+            </summary> 
+            <value> 
+            One of the <see cref="T:Syncfusion.Blazor.SplitButtons.SelectionMode"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.SplitButtons.SelectionMode.Default"/> 
+            </value> 
+            <remarks> 
+            If the <c>Mode</c> is <c>Default</c>, it allows default selection in the button group component. 
+            If the <c>Mode</c> is <c>Single</c>, it allows single selection in the button group component. 
+            If the <c>Mode</c> is <c>Multiple</c>, it allows multiple selection in the button group component. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfButtonGroup.Created">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfButtonGroup"/> rendering is completed.  
+            </summary> 
+            <example> 
+            <code><![CDATA[ 
+            <SfButtonGroup Created="@Created"> 
+            <ButtonGroupButton>Left</ButtonGroupButton> 
+            <ButtonGroupButton>Center</ButtonGroupButton> 
+            <ButtonGroupButton>Right</ButtonGroupButton> 
+            </SfButtonGroup> 
+            @code { 
+                private void Created() { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SelectionMode">
+            <summary>
+            Defines the selection mode of ButtonGroup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SelectionMode.Default">
+            <summary>
+            Default selection in the ButtonGroup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SelectionMode.Single">
+            <summary>
+            Allows you to select a single button in the ButtonGroup.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SelectionMode.Multiple">
+            <summary>
+            Allows you to select more than one button in the ButtonGroup.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SplitButtonIconPosition">
+            <summary>
+            Defines the icon position of Split Button and DropDown Button.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SplitButtonIconPosition.Left">
+            <summary>
+            To position icon left to content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SplitButtonIconPosition.Top">
+            <summary>
+            To position icon above the content.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.AnimationEffect">
+            <summary>
+            Defines the animation effect of progress button.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.None">
+            <summary>
+            No effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.SlideLeft">
+            <summary>
+            To set the slide left effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.SlideRight">
+            <summary>
+            To set the slide right effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.SlideUp">
+            <summary>
+            To set the slide up effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.SlideDown">
+            <summary>
+            To set the slide down effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.ZoomIn">
+            <summary>
+            To set the zoom in effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.ZoomOut">
+            <summary>
+            To set the zoom out effect.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SpinPosition">
+            <summary>
+            Defines the spin position of progress button.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SpinPosition.Left">
+            <summary>
+            To position spinner left to content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SpinPosition.Right">
+            <summary>
+            To position spinner right to content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SpinPosition.Top">
+            <summary>
+            To position spinner top to content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SpinPosition.Bottom">
+            <summary>
+            To position spinner bottom to content.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.SplitButtons.SpinPosition.Center">
+            <summary>
+            To position spinner at center.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs">
+            <summary>
+            Provides information about the in <c>OnOpen</c> and <c>OnClose</c> event callback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs.Cancel">
+            <summary>
+            Gets or sets whether the dropdown menu open/close needs to be prevented or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs.Element">
+            <summary>
+            Specifies the button or dropdown element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs.Event">
+            <summary>
+            Gets or sets whether the color picker popup open needs to be prevented or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs.Items">
+            <summary>
+            Gets or sets a value that indicates the list of dropdown menu items..
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs.Name">
+            <summary>
+            Gets or sets a value that indicates the name of the event.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.MenuEventArgs">
+            <summary>
+            Provides information about the in <c>OnItemRender</c> and <c>Select</c> event callback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.MenuEventArgs.Element">
+            <summary>
+            Gets or sets a value that indicates the selected list element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.MenuEventArgs.Item">
+            <summary>
+            Gets or sets a value that indicates the selected dropdown item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.MenuEventArgs.Name">
+            <summary>
+            Gets or sets a value that indicates the name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.MenuEventArgs.Event">
+            <summary>
+            Gets or sets a value that indicates the selected dropdown item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.MenuEventArgs.Cancel">
+            <summary>
+            Gets or sets whether the dropdown button selection needs to be prevented or not.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs">
+            <summary>
+            Provides information about the in <c>Opened</c> and <c>Closed</c> event callback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs.Element">
+            <summary>
+            Gets or sets a value that indicates the dropdown element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs.Items">
+            <summary>
+            Gets or sets a value that indicates the button or dropdown items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs.Name">
+            <summary>
+            Gets or sets a value that indicates name of the event.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.ProgressEventArgs">
+            <summary>
+            Provides information about the in <c>Progressing</c> event callback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressEventArgs.CurrentDuration">
+            <summary>
+            Gets or sets a value that indicates the current duration of the progress.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressEventArgs.Name">
+            <summary>
+            Gets or sets a value that indicates name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressEventArgs.Percent">
+            <summary>
+            Gets or sets a value that indicates the current state of progress in percentage.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressEventArgs.Step">
+            <summary>
+            Gets or sets a value that indicates the step value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.OnClose">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> popup is closing.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. And you can access the DropDownButton popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfDropDownButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <DropDownButtonEvents OnClose="@OnClose"></DropDownButtonEvents> 
+            </SfDropDownButton> 
+            @code { 
+                private void OnClose(BeforeOpenCloseMenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.OnItemRender">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> rendering is completed.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. And you can customize the DropDownButton items rendering using <see cref="T:Syncfusion.Blazor.SplitButtons.MenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfDropDownButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <DropDownButtonEvents OnItemRender="@OnItemRender"></DropDownButtonEvents> 
+            </SfDropDownButton> 
+            @code { 
+                private void OnItemRender(MenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.OnOpen">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> popup is opening.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. And you can access the DropDownButton popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs"/>. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.Closed">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> popup is closed.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. And you can access the DropDownButton popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfDropDownButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <DropDownButtonEvents Closed="@Closed"></DropDownButtonEvents> 
+            </SfDropDownButton> 
+            @code { 
+                private void Closed(OpenCloseMenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.Created">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> rendering is completed.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.Opened">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> popup is opened.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. And you can access the DropDownButton popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs"/>. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents.ItemSelected">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> item is clicked.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownButtonEvents"/> tag directive. And you can access the DropDownButton item related values using <see cref="T:Syncfusion.Blazor.SplitButtons.MenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfDropDownButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <DropDownButtonEvents ItemSelected="@ItemSelected"></DropDownButtonEvents> 
+            </SfDropDownButton> 
+            @code { 
+                private void ItemSelected(MenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton">
+            <summary>
+            DropDownButton component is used to toggle contextual overlays for displaying list of action items.
+            It can contain both text and images.
+            </summary>
+            <summary>
+            DropDownButton component is used to toggle contextual overlays for displaying list of action items.
+            It can contain both text and images.
+            </summary>
+            <summary>
+            DropDownButton component is used to toggle contextual overlays for displaying list of action items.
+            It can contain both text and images.
+            </summary>
+             <summary> 
+            The DropDownButton component is used to toggle contextual overlays for displaying list of action items. 
+             It can contain a text, an icon, svg or both. 
+             </summary> 
+             <example> 
+             In the below code example, a basic DropDownButton component initialized with <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItems"/> and <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItem"/>  tag directives. 
+             <code><![CDATA[ 
+             <SfDropDownButton> 
+                <DropDownMenuItems> 
+                   <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                   <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                   <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                   <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+                </DropDownMenuItems> 
+             </SfDropDownButton> 
+             ]]></code> 
+             </example> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.ChildContent">
+            <summary> 
+            Gets or sets a value that indicates the child content for the dropdown button including HTML element. If the child content is not specified, Dropdown button is rendered using <see cref="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.Content"/> property. 
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            The child content which is specified within <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> tag directive is either a string or HTML Element. The string content is also specified using <see cref="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.Content"/> property. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.Content">
+            <summary> 
+            Gets or sets a value that indicates the content of dropdown button.
+            </summary> 
+            <value> 
+            Accepts a string value. The default value is <c>String.Empty</c>. 
+            </value> 
+            <remarks> 
+            Set child content within <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> tag directive, to render as HTML content. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.CssClass">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to customize the appearance of dropdown button. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of dropdown button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.IconCss">
+            <summary> 
+            Gets or sets a a value that indicates the CSS class string to include an icon or image for the dropdown button.  
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to include an icon or image for the dropdown button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.IconPosition">
+            <summary> 
+            Gets or sets a value that indicates how to display icons in the dropdown button. 
+            </summary> 
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.IconPosition"/> enumeration. The default value is <c>Left</c>.
+            </value> 
+            <remarks> 
+            If the <c>IconPosition</c> is <c>Left</c>, the icon will be placed left to the content of the dropdown button. 
+            If the <c>IconPosition</c> is <c>Right</c>, the icon will be placed right to the content of the dropdown button. 
+            If the <c>IconPosition</c> is <c>Top</c>, the icon will be placed above the content of the dropdown button. 
+            If the <c>IconPosition</c> is <c>Bottom</c>, the icon will be placed below the content of the dropdown button. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.Items">
+            <summary> 
+            Gets or sets a value that indicates the the action items with its properties which will be rendered in dropdown button popup.  
+            </summary> 
+            <value> 
+            Accepts a collection of <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItem"/> object. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            If the <c>Items</c> property is not specified, the dropdown button component is populated using <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItems"/> and <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItem"/> tag directives. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.Disabled">
+            <summary> 
+            Gets or sets whether the dropdown button is disabled or not. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the dropdown button component is disabled. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.EnableRtl">
+            <summary> 
+            Gets or sets whether the right to left direction is enabled for dropdown button. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the right to left direction is enabled for dropdown button. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.PopupContent">
+            <summary> 
+            Gets or sets a value that indicates the custom element as action items which will be rendered in DropDownButton popup.  
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            If the <c>Items</c> property and <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItems"/> tag directive is not specified, the DropDownButton component is populated using <see cref="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.PopupContent"/>. 
+            </remarks>
+            <example>
+            In the below code example, a dropdown button component rendered with <c>ListView</c> component as <see cref="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.PopupContent"/>. 
+            <code><![CDATA[ 
+            <SfDropDownButton CssClass="e-caret-hide" IconCss="e-icons e-down"> 
+            <PopupContent>  
+            <SfListView ID="listview" DataSource="@Data" ShowCheckBox="true"> 
+            <ListViewFieldSettings Text="Text" TValue="ListData"></ListViewFieldSettings> 
+            </SfListView> 
+            </PopupContent>  
+            </SfDropDownButton>  
+            @code { 
+            public List<ListData> Data = new List<ListData>{  
+            new ListData{ Class = "data", Text = "Print", Id = "data1" },  
+            new ListData{ Class = "data", Text = "Save As", Id = "data2" },  
+            new ListData{ Class = "data", Text = "Update Folder", Id = "data3" }, 
+            new ListData{ Class = "data", Text = "Reply", Id = "data4" }  
+            };  
+            public class ListData {  
+            public string Text { get; set; }  
+            public string Id { get; set; }  
+            public string Class { get; set; }  
+            } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfDropDownButton.HtmlAttributes">
+            <summary> 
+            Gets or sets a collection of additional attributes such as id, title etc. that will applied to the dropdown button container element. 
+            </summary> 
+            <remarks> 
+            Additional attributes can be added by specifying as inline attributes or by specifying <c>@attributes</c> directive. 
+            </remarks> 
+            <example> 
+            In the below code example, dropdown button width has been specified as style attribute in <c>SfButton</c> tag directive. 
+            <code><![CDATA[ 
+            <SfDropDownButton style="width:200px"> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+            </SfDropDownButton> 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfDropDownButton.AddItems(System.Collections.Generic.List{Syncfusion.Blazor.SplitButtons.DropDownMenuItem},System.String,System.Boolean)">
+            <summary> 
+            Adds a new item to the menu. By default, new item appends to the list as the last item, 
+            but you can insert based on the text parameter. 
+            </summary> 
+            <param name="items">Specifies the list of items to be added.</param> 
+            <param name="text">Specifies the existing item text. If specified, adds the items of the collection before this item. 
+            If not specified, adds the items of the collection to the end of the list.</param> 
+            <param name="isUniqueId">Set true if text parameter is a unique id.</param> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfDropDownButton.RemoveItems(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary> 
+            Removes the items from the menu. 
+            </summary> 
+            <param name="items">Specifies the list of items to be removed.</param> 
+            <param name="isUniqueId">Set true if text parameter is a unique id.</param> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfDropDownButton.Toggle">
+            <summary> 
+            Opens/closes a DropDownButton popup based on current state of the DropDownButton. 
+            </summary> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfDropDownButton.ButtonClickAsync(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SfProgressButton">
+            <summary>
+            ProgressButton visualizes the progression of an operation to indicate the user that a process is happening in the background with visual representation.
+            </summary>
+            <summary>
+            ProgressButton visualizes the progression of an operation to indicate the user that a process is happening in the background with visual representation.
+            </summary>
+            <summary>
+            ProgressButton visualizes the progression of an operation to indicate the user that a process is happening in the background with visual representation.
+            </summary>
+            <summary>
+            ProgressButton visualizes the progression of an operation to indicate the user that a process is happening in the background with visual representation.
+            </summary>
+            <summary> 
+            ProgressButton visualizes the progression of an operation to indicate the user that a process is happening in the background with visual representation. 
+            It can contain a text, an icon, svg or both. 
+            </summary> 
+            <remarks> 
+            Progress Button content is either by specifying <see cref="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Content"/> property or by specifying content within <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/> tag directive. 
+            </remarks> 
+            <example> 
+            In the below code example, a basic button initialized with <see cref="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Content"/> property. 
+            <code><![CDATA[ 
+            <SfProgressButton Content="Click"> 
+            </SfProgressButton> 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.OnClick">
+            <summary>
+            Gets or sets a event callback when button element is clicked.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.ChildContent">
+            <summary> 
+            Gets or sets a value that indicates the child content for the progress button including HTML element. If the child content is not specified, progress button is rendered using <see cref="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Content"/> property. 
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            The child content which is specified within <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/> tag directive is either a string or HTML Element. The string content is also specified using <see cref="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Content"/> property. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Content">
+            <summary> 
+            Gets or sets a value that indicates the content of progress button. 
+            </summary> 
+            <value> 
+            Accepts a string value. The default value is <c>String.Empty</c>. 
+            </value> 
+            <remarks> 
+            Set child content within <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/> tag directive, to render as HTML content. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.CssClass">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to customize the appearance of progress button. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of progress button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Disabled">
+            <summary> 
+            Gets or sets whether the progress button is disabled or not. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the button is disabled. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.Duration">
+            <summary> 
+            Gets or sets a value that indicates the duration of the progression in the progress. 
+            </summary> 
+            <value> 
+            Accepts a double value to set the duration of progress button. The default value is <c>2000</c> milliseconds. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.EnableProgress">
+            <summary> 
+            Gets or sets whether the progress UI is enabled or not in progress button. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the progress UI is enabled. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.EnableRtl">
+            <summary> 
+            Gets or sets whether the right to left direction is enabled for progress button. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the right to left direction is enabled for progress button. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.HtmlAttributes">
+            <summary> 
+            Gets or sets a collection of additional attributes that will applied to the progress button container element. 
+            </summary> 
+            <remarks> 
+            Additional attributes can be added by specifying as inline attributes or by specifying <c>@attributes</c> directive. 
+            </remarks> 
+            <example> 
+            In the below code example, progress button width has been specified as style attribute in <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/> tag directive. 
+            <code><![CDATA[ 
+            <SfProgressButton style="width:200px"> 
+            </SfProgressButton> 
+            ]]></code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.IconCss">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to include an icon or image for the progress button.  
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to include an icon or image for the button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.IconPosition">
+            <summary> 
+            Gets or sets a value that indicates how to display icons in the progress button ==. 
+            </summary> 
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.IconPosition"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.Buttons.IconPosition.Left"/> 
+            </value> 
+            <remarks> 
+            If the <c>IconPosition</c> is <c>Left</c>, the icon will be placed left to the content of the progress button. 
+            If the <c>IconPosition</c> is <c>Right</c>, the icon will be placed right to the content of the progress button. 
+            If the <c>IconPosition</c> is <c>Top</c>, the icon will be placed above the content of the progress button. 
+            If the <c>IconPosition</c> is <c>Bottom</c>, the icon will be placed below the content of the progress button. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.IsPrimary">
+            <summary> 
+            Gets or sets whether the primary style is enabled for progress button. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the primary style is enabled for progress button. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfProgressButton.IsToggle">
+            <summary> 
+            Gets or sets whether the toggle option is enabled for progress button. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the toggle option is enabled for progress button. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.Start(System.Double)">
+            <summary>
+            Starts the button progress at the specified percent.
+            </summary>
+            <param name="percent">Specifies the Progress percent.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.StartAsync(System.Double)">
+            <summary> 
+            Starts the button progress with the specified percent. 
+            </summary> 
+            <param name="percent">Specifies the Progress percent.</param> 
+            <returns><see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.Stop">
+            <summary>
+            Stops the button progress.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.StopAsync">
+            <summary> 
+            Stops the button progress. 
+            </summary> 
+            <returns><see cref="T:System.Threading.Tasks.Task"/>.</returns> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.FocusIn">
+            <summary>
+            Sets the focus to ProgressButton.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.FocusAsync">
+            <summary> 
+            focuses the progress button to perform action. 
+            </summary> 
+            <returns><see cref="T:System.Threading.Tasks.Task"/>.</returns> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.ProgressComplete">
+            <summary>
+            Complete the button progress.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.EndProgressAsync">
+            <summary> 
+            Completes the button progress. 
+            </summary> 
+            <returns><see cref="T:System.Threading.Tasks.Task"/>.</returns> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.Click">
+            <summary>
+            Click the button element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfProgressButton.ClickAsync">
+            <summary> 
+            Clicks the button element to perform action. 
+            </summary> 
+            <returns><see cref="T:System.Threading.Tasks.Task"/>.</returns> 
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.ProgressButtonAnimationSettings">
+            <summary>
+            Specifies the animation settings for the progress button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonAnimationSettings.Duration">
+            <summary> 
+            Gets or sets a value that indicates the duration of the animation done in the progress button. 
+            </summary> 
+            <value> 
+            Accepts a double value to set the duration of the animation of progress button. The default value is <c>400</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonAnimationSettings.Easing">
+            <summary> 
+            Gets or sets a value that indicates the animation timing function of the progress button component. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the progress UI is enabled. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonAnimationSettings.Effect">
+            <summary> 
+            Gets or sets the animation effect of the progress button component. 
+            </summary> 
+            <value> 
+            One of the <see cref="T:Syncfusion.Blazor.SplitButtons.AnimationEffect"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.SplitButtons.AnimationEffect.None"/> 
+            </value> 
+            <remarks> 
+            If the <c>AnimationEffect</c> is <c>SlideLeft</c>, the content will be moved with slide left  animation. 
+            If the <c>AnimationEffect</c> is <c>SlideRight</c>, the content will be moved with slide right animation. 
+            If the <c>AnimationEffect</c> is <c>SlideUp</c>, the content will be moved with slide up animation. 
+            If the <c>AnimationEffect</c> is <c>SlideDown</c>, the content will be moved with slide down animation. 
+            If the <c>AnimationEffect</c> is <c>ZoomIn</c>, the content will be moved with zoom in  animation. 
+            If the <c>AnimationEffect</c> is <c>ZoomOut</c>, the content will be moved with zoom out  animation 
+            </remarks> 
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.ProgressButtonEvents">
+            <summary>
+            Used to configure the progress button events.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonEvents.OnBegin">
+            <summary> 
+            Gets or sets an event callback that is raised when the progress is started in the <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/>.  
+            </summary> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonEvents.Created">
+            <summary> 
+            Gets or sets an event callback that is raised when the <c>SfButton</c> rendering is completed.  
+            </summary> 
+            <example> 
+            <code><![CDATA[ 
+            <SfProgressButton> 
+                 <ProgressButtonEvents Created="@Created"></ProgressButtonEvents> 
+            </SfProgressButton > 
+            @code { 
+                private void Created() { 
+                // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonEvents.OnEnd">
+            <summary> 
+            Gets or sets an event callback that is raised when the progress is completed in the <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/>.  
+            </summary> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonEvents.OnFailure">
+            <summary> 
+            Gets or sets an event callback that is raised when the progress is uncompleted in the <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/>.  
+            </summary> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonEvents.Progressing">
+            <summary> 
+            Gets or sets an event callback in a specific interval that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/> is progressing.  
+            </summary> 
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.ProgressButtonSpinSettings">
+            <summary>
+            Specifies the spin settings for the progress button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonSpinSettings.Position">
+            <summary> 
+            Gets or sets a value that indicates the spinner position of the progress button. 
+            </summary> 
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.SplitButtons.ProgressButtonSpinSettings.Position"/> enumeration. The default value is <c>Left</c>. 
+            </value> 
+            <remarks> 
+            If the <c>Position</c> is <c>Left</c>, the spinner will be placed left to the content of the progress button. 
+            If the <c>Position</c> is <c>Right</c>, the spinner will be placed right to the content of the progress button. 
+            If the <c>Position</c> is <c>Top</c>, the spinner will be placed above the content of the progress button. 
+            If the <c>Position</c> is <c>Bottom</c>, spinner icon will be placed below the content of the progress button. 
+            If the <c>Position</c> is <c>Center</c>, spinner icon will be placed below the content of the progress button. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonSpinSettings.SpinTemplate">
+            <summary> 
+            Gets or sets a template content to be displayed in the progress button.  
+            </summary> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ProgressButtonSpinSettings.Width">
+            <summary> 
+            Gets or sets a width of the spinner in the <see cref="T:Syncfusion.Blazor.SplitButtons.SfProgressButton"/> component.  
+            </summary> 
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.ClickEventArgs">
+            <summary>
+            Provide information about the <c>Click</c> event arguments of split Button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ClickEventArgs.Element">
+            <summary>
+            Gets or sets a value that indicates the primary split button element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.ClickEventArgs.Name">
+            <summary>
+            Gets or sets a value that indicates the name of the event.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.SplitButtons.SfSplitButton">
+            <summary>
+            SplitButton component has primary and secondary button. Primary button is used to select 
+            default action and secondary button is used to toggle contextual overlays for displaying list of 
+            action items. It can contain both text and images.
+            </summary>
+            <summary>
+            SplitButton component has primary and secondary button. Primary button is used to select 
+            default action and secondary button is used to toggle contextual overlays for displaying list of 
+            action items. It can contain both text and images.
+            </summary>
+            <summary>
+            SplitButton component has primary and secondary button. Primary button is used to select 
+            default action and secondary button is used to toggle contextual overlays for displaying list of 
+            action items. It can contain both text and images.
+            </summary>
+            <summary> 
+            SplitButton component has primary and secondary button. Primary button is used to select  
+            default action and secondary button is used to toggle contextual overlays for displaying list of  
+            action items. It can contain both text and images. 
+            </summary> 
+            <example> 
+            In the below code example, a basic SplitButton component initialized with <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItems"/> and <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItem"/>  tag directives. 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+            </SfSplitButton> 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.ChildContent">
+            <summary> 
+            Gets or sets a value that indicates the child content for the primary button element including HTML element. If the child content is not specified, primary button is rendered using <see cref="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.Content"/> property. 
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            The child content which is specified within <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> tag directive is either a string or HTML Element. The string content is also specified using <see cref="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.Content"/> property. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.Content">
+            <summary> 
+            Gets or sets a value that indicates the content of split button component's primary button. 
+            </summary> 
+            <value> 
+            Accepts a string value. The default value is <c>String.Empty</c>. 
+            </value> 
+            <remarks> 
+            Set child content within <see cref="T:Syncfusion.Blazor.SplitButtons.SfDropDownButton"/> tag directive, to render as HTML content. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.CssClass">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to customize the appearance of split button component. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of split button component. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.Disabled">
+            <summary> 
+            Gets or sets whether the split button is disabled or not. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the split button is disabled. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.EnableRtl">
+            <summary> 
+            Gets or sets whether the right to left direction is enabled for split button. 
+            </summary> 
+            <value> 
+            <c>true</c>, if the right to left direction is enabled for split button. The default value is <c>false</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.IconCss">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to include an icon or image for the split button.  
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to include an icon or image for the split button. The default value is <c>String.Empty</c>. 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.IconPosition">
+            <summary> 
+            Gets or sets a value that indicates how to display icons in the split button. 
+            </summary> 
+            <value> 
+            One of the <see cref="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.IconPosition"/> enumeration. The default value is <c>Left</c>/> 
+            </value> 
+            <remarks> 
+            If the <c>IconPosition</c> is <c>Left</c>, the icon will be placed left to the content of the split button component. 
+            If the <c>IconPosition</c> is <c>Right</c>, the icon will be placed right to the content of the split button component. 
+            If the <c>IconPosition</c> is <c>Top</c>, the icon will be placed above the content of the split button component. 
+            If the <c>IconPosition</c> is <c>Bottom</c>, the icon will be placed below the content of the split button component. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.Items">
+            <summary> 
+            Gets or sets a value that indicates the action items with its properties which will be rendered as split button's secondary button.  
+            </summary> 
+            <value> 
+            Accepts a collection of <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItem"/> object. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            If the <c>Items</c> property is not specified, the split button component's secondary button is populated using <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItems"/> and <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItem"/> tag directives. 
+            </remarks> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.PopupContent">
+            <summary> 
+            Gets or sets a value that indicates the custom element as action items which will be rendered in split button popup.  
+            </summary> 
+            <value> 
+            The template content. The default value is <c>null</c>. 
+            </value> 
+            <remarks> 
+            If the <c>Items</c> property and <see cref="T:Syncfusion.Blazor.SplitButtons.DropDownMenuItems"/> tag directive is not specified, the dropdown button is populated using <see cref="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.PopupContent"/>. 
+            </remarks>
+            <example>
+            In the below code example, a DropDownButton component rendered with ListView component as <see cref="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.PopupContent"/>.
+            <code><![CDATA[ 
+            <SfSplitButton CssClass="e-caret-hide" IconCss="e-icons e-down"> 
+            <PopupContent>  
+            <SfListView ID="listview" DataSource="@Data" ShowCheckBox="true"> 
+            <ListViewFieldSettings Text="Text" TValue="ListData"></ListViewFieldSettings> 
+            </SfListView> 
+            </PopupContent>  
+            </SfSplitButton>  
+            @code { 
+            public List<ListData> Data = new List<ListData>{  
+            new ListData{ Class = "data", Text = "Print", Id = "data1" },  
+            new ListData{ Class = "data", Text = "Save As", Id = "data2" },  
+            new ListData{ Class = "data", Text = "Update Folder", Id = "data3" }, 
+            new ListData{ Class = "data", Text = "Reply", Id = "data4" }  
+            };  
+            public class ListData {  
+            public string Text { get; set; }  
+            public string Id { get; set; }  
+            public string Class { get; set; }  
+            } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SfSplitButton.HtmlAttributes">
+            <summary> 
+            Gets or sets a collection of additional attributes such as id, title etc. that will applied to the split button container element. 
+            </summary> 
+            <remarks> 
+            Additional attributes can be added by specifying as inline attributes or by specifying <c>@attributes</c> directive. 
+            </remarks> 
+            <example> 
+            In the below code example, split button width has been specified as style attribute in <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> tag directive. 
+            <code><![CDATA[ 
+            <SfSplitButton style="width:200px"> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+            </SfSplitButton> 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfSplitButton.AddItems(System.Collections.Generic.List{Syncfusion.Blazor.SplitButtons.DropDownMenuItem},System.String,System.Boolean)">
+            <summary> 
+            Adds a new item to the menu. By default, new item appends to the list as the last item, 
+            but you can insert based on the text parameter. 
+            </summary> 
+            <param name="items">Specifies the list of items to be added.</param> 
+            <param name="text">Specifies the existing item text. If specified, adds the items of the collection before this item. 
+            If not specified, adds the items of the collection to the end of the list.</param> 
+            <param name="isUniqueId">Set true if text parameter is a unique id.</param> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfSplitButton.RemoveItems(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary> 
+            Removes the items from the menu. 
+            </summary> 
+            <param name="items">Specifies the list of items to be removed.</param> 
+            <param name="isUniqueId">Set true if text parameter is a unique id.</param> 
+        </member>
+        <member name="M:Syncfusion.Blazor.SplitButtons.SfSplitButton.Toggle">
+            <summary> 
+            Opens/closes a DropDownButton popup based on current state of the DropDownButton. 
+            </summary> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.OnClose">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> popup is closing.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. And you can access the split button popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <SplitButtonEvents OnClose="@OnClose"></SplitButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void OnClose(BeforeOpenCloseMenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example> 
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.OnItemRender">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> rendering is completed.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. And you can customize the DropDownButton items rendering using <see cref="T:Syncfusion.Blazor.SplitButtons.MenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <SplitButtonEvents OnItemRender="@OnItemRender"></SplitButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void OnItemRender(MenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.OnOpen">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> popup is opening.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. And you can access the split button popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.BeforeOpenCloseMenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <SplitButtonEvents OnOpen="@OnOpen"></SplitButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void OnOpen(BeforeOpenCloseMenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.Clicked">
+            <summary>
+            Triggers when the primary button of split button has been clicked.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.Closed">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> popup is closed.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. And you can access the split button popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+               <SpliButtonEvents Closed="@Closed"></DropDownButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void Closed(OpenCloseMenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.Created">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> rendering is completed.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <SplitButtonEvents Created="@Created"></SplitButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void Created() { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.Opened">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> popup is opened.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. And you can access the split button popup related values using <see cref="T:Syncfusion.Blazor.SplitButtons.OpenCloseMenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <SplitButtonEvents Opened="@Opened"></SplitButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void Opened(OpenCloseMenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.SplitButtonEvents.ItemSelected">
+            <summary> 
+            Gets or sets an event callback that is raised when the <see cref="T:Syncfusion.Blazor.SplitButtons.SfSplitButton"/> item is clicked.  
+            </summary> 
+            <remarks> 
+            The events were specified in <see cref="T:Syncfusion.Blazor.SplitButtons.SplitButtonEvents"/> tag directive. And you can access the split button item related values using <see cref="T:Syncfusion.Blazor.SplitButtons.MenuEventArgs"/>. 
+            </remarks> 
+            <example> 
+            <code><![CDATA[ 
+            <SfSplitButton> 
+               <DropDownMenuItems> 
+                  <DropDownMenuItem Text="Dashboard"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Notifications"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="User Settings"></DropDownMenuItem> 
+                  <DropDownMenuItem Text="Log Out"></DropDownMenuItem> 
+               </DropDownMenuItems> 
+                <SplitButtonEvents ItemSelected="@ItemSelected"></SplitButtonEvents> 
+            </SfSplitButton> 
+            @code { 
+                private void ItemSelected(MenuEventArgs args) { 
+                    // Write your code here. 
+                } 
+            } 
+            ]]></code> 
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.ChildContent">
+            <summary>
+            Set custom content for items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.IconCss">
+            <summary>
+            Defines class/multiple classes separated by a space for the item that is used to include an icon.
+            Action item can include font icon and sprite image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Separator">
+            <summary>
+            Specifies separator between the items. Separator are horizontal lines used to group action items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Disabled">
+            <summary>
+            Used to enable or disable the action items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Text">
+            <summary>
+            Specifies text for item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Url">
+            <summary>
+            Specifies url for item that creates the anchor link to navigate to the url provided.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Id">
+            <summary>
+            Specifies unique id for item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.HtmlAttributes">
+            <summary>
+            You can add the additional HTML attributes such as style, title etc., to the item
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItems.ChildContent">
+            <exclude />
+        </member>
+    </members>
+</doc>

@@ -12,16 +12,16 @@ namespace Ticketing_Client.Pages
         {
             // just to remove compiler warning
             await Task.CompletedTask;
-            if (string.IsNullOrWhiteSpace(redirectUri))
+            if (!HttpContext.User.Identity.IsAuthenticated)
             {
-                redirectUri = "https://login.shonizcloud.ir";
+                //Call the challenge on the OIDC scheme and trigger the redirect to IdentityServer
+                await HttpContext.ChallengeAsync(OpenIdConnectDefaults.AuthenticationScheme);
             }
-            // If user is already logged in, we can redirect directly...
-            if (HttpContext.User.Identity.IsAuthenticated)
+            else
             {
-                //Response.Redirect(redirectUri);
+                // redirect to the root
+                Response.Redirect(Url.Content("~/").ToString());
             }
-             
 
             return SignOut(
                 new AuthenticationProperties

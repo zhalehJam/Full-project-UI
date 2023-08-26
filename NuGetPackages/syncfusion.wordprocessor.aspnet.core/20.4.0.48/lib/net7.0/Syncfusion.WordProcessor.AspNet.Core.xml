@@ -1,0 +1,2748 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.WordProcessor.AspNet.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.BaselineAlignment">
+            <summary>
+            Specifes the baseline alignment style for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>.
+            </summary>
+            <seealso cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.BaselineAlignment.Normal">
+            <summary>
+            Specifies the text to be rendered normally.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.BaselineAlignment.Superscript">
+            <summary>
+            Specifies the text to appear above the baseline of text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.BaselineAlignment.Subscript">
+            <summary>
+            Specifies the text to appear below the baseline of text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.Underline">
+            <summary>
+            Specifies the underline style for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>.
+            </summary>
+            <seealso cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.None">
+            <summary>
+            No underline will be drawn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Single">
+            <summary>
+            Draws single underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Words">
+            <summary>
+            Draws underline for words only.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Double">
+            <summary>
+            Draws double underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Dotted">
+            <summary>
+            Draws dotted underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Thick">
+            <summary>
+            Draws thick underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Dash">
+            <summary>
+            Draws dash underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DashLong">
+            <summary>
+            Draws dash long underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DotDash">
+            <summary>
+            Draws dot dash underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DotDotDash">
+            <summary>
+            Draws dot dot dash underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.Wavy">
+            <summary>
+            Draws wavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DottedHeavy">
+            <summary>
+            Draws dotted heavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DashHeavy">
+            <summary>
+            Draws dash heavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DashLongHeavy">
+            <summary>
+            Draws dash long heavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DotDashHeavy">
+            <summary>
+            Draws dot dash heavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.DotDotDashHeavy">
+            <summary>
+            Draws dot dot dash heavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.WavyHeavy">
+            <summary>
+            Draws wavy heavy underline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Underline.WavyDouble">
+            <summary>
+            Draws wavy double underline.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.Strikethrough">
+            <summary>
+            Specifies the strike through style for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>.
+            </summary>
+            <seealso cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Strikethrough.None">
+            <summary>
+            No strike will be drawn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Strikethrough.SingleStrike">
+            <summary>
+            Draws single strike.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.Strikethrough.DoubleStrike">
+            <summary>
+            Draws double strike.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.HighlightColor">
+            <summary>
+            Specifies the highlight color for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>.
+            </summary>
+            <seealso cref="T:Syncfusion.Blazor.DocumentEditor.WCharacterFormat"/>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.NoColor">
+            <summary>
+            No highlight color will be applied.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Yellow">
+            <summary>
+            Highlights the content with yellow (#ffffff00) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.BrightGreen">
+            <summary>
+            Highlights the content with bright green (#ff00ff00) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Turquoise">
+            <summary>
+            Highlights the content with turquoise (#ff00ffff) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Pink">
+            <summary>
+            Highlights the content with pink (#ffff00ff) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Blue">
+            <summary>
+            Highlights the content with blue (#ff0000ff) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Red">
+            <summary>
+            Highlights the content with red (#ffff0000) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.DarkBlue">
+            <summary>
+            Highlights the content with dark blue (#ff000080) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Teal">
+            <summary>
+            Highlights the content with teal (#ff008080) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Green">
+            <summary>
+            Highlights the content with green (#ff008000) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Violet">
+            <summary>
+            Highlights the content with violet (#ff800080) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.DarkRed">
+            <summary>
+            Highlights the content with dark red (#ff800000) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.DarkYellow">
+            <summary>
+            Highlights the content with dark yellow (#ff808000)  color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Gray50">
+            <summary>
+            Highlights the content with gray 50 (#ff808080) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Gray25">
+            <summary>
+            Highlights the content with gray 25 (#ffc0c0c0) color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HighlightColor.Black">
+            <summary>
+            Highlights the content with black (#ff000000) color.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.LineSpacingType">
+            <summary>
+            Specifies the line spacing type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineSpacingType.AtLeast">
+            <summary>
+            The line spacing can be greater than or equal to, but never less than,
+            the value specified in the LineSpacing property. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineSpacingType.Exactly">
+            <summary>
+            The line spacing never changes from the value specified in the LineSpacing property, 
+            even if a larger font is used within the paragraph. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineSpacingType.Multiple">
+            <summary>
+            The line spacing is specified in the LineSpacing property as the number of lines. 
+            </summary>
+            <remarks>Single line spacing equals 12 points.</remarks>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.OutlineLevel">
+            <summary>
+            Specifies the outline level to apply to a paragraph.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level1">
+            <summary>
+            Outline level 1.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level2">
+            <summary>
+            Outline level 2.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level3">
+            <summary>
+            Outline level 3.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level4">
+            <summary>
+            Outline level 4.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level5">
+            <summary>
+            Outline level 5.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level6">
+            <summary>
+            Outline level 6.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level7">
+            <summary>
+            Outline level 7.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level8">
+            <summary>
+            Outline level 8.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.Level9">
+            <summary>
+            Outline level 9.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.OutlineLevel.BodyText">
+            <summary>
+            No outline level.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.TextAlignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WidthType">
+            <summary>
+            Specifies the width type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.WidthType.Auto">
+            <summary>
+            Specifies the width to be determined automatically.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.WidthType.Percent">
+            <summary>
+            Specifies the width in percentage.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.WidthType.Point">
+            <summary>
+            Specifies the width in points.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.TableAlignment">
+            <summary>
+            Specifies the table alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TableAlignment.Left">
+            <summary>
+            Aligns the table to the left.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TableAlignment.Center">
+            <summary>
+            Aligns the table to the center.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TableAlignment.Right">
+            <summary>
+            Aligns the table to the right.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.LineStyle">
+            <summary>
+            Specifies the border style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.None">
+            <summary>
+            No border.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Single">
+            <summary>
+            A single solid line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Dot">
+            <summary>
+            Dots.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.DashSmallGap">
+            <summary>
+            A dash followed by a small gap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.DashLargeGap">
+            <summary>
+            A dash followed by a large gap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.DashDot">
+            <summary>
+            A dash followed by a dot.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.DashDotDot">
+            <summary>
+            A dash followed by two dots.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Double">
+            <summary>
+            Double solid lines.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Triple">
+            <summary>
+            Three solid thin lines.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThinThickSmallGap">
+            <summary>
+            An internal single thin solid line surrounded by a single thick solid line with 
+            a small gap between them.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThickThinSmallGap">
+            <summary>
+            An internal single thick solid line surrounded by a single thin solid line with
+            a small gap between them.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThinThickThinSmallGap">
+            <summary>
+            An internal single thin solid line surrounded by a single thick solid line surrounded
+            by a single thin solid line with a small gap between all lines.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThinThickMediumGap">
+            <summary>
+            An internal single thin solid line surrounded by a single thick solid line with
+            a medium gap between them.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThickThinMediumGap">
+            <summary>
+            An internal single thick solid line surrounded by a single thin solid line with
+            a medium gap between them.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThinThickThinMediumGap">
+            <summary>
+            An internal single thin solid line surrounded by a single thick solid line surrounded
+            by a single thin solid line with a medium gap between all lines.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThinThickLargeGap">
+            <summary>
+            An internal single thin solid line surrounded by a single thick solid line with
+            a large gap between them.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThickThinLargeGap">
+            <summary>
+            An internal single thick solid line surrounded by a single thin solid line with
+            a large gap between them.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.ThinThickThinLargeGap">
+            <summary>
+            An internal single thin solid line surrounded by a single thick solid line surrounded
+            by a single thin solid line with a large gap between all lines.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.SingleWavy">
+            <summary>
+            A single wavy solid line.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.DoubleWavy">
+            <summary>
+            Double wavy solid lines.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.DashDotStroked">
+            <summary>
+            A dash followed by a dot stroke, thus rendering a border similar to a barber
+            pole.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Emboss3D">
+            <summary>
+            The border appears to have a 3-D embossed look.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Engrave3D">
+            <summary>
+            The border appears to have a 3-D engraved look.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Outset">
+            <summary>
+            The border appears to be outset.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Inset">
+            <summary>
+            The border appears to be inset.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Thick">
+            <summary>
+            Additional enums supported in Microsoft word in the XML level as well as by DocIO.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.LineStyle.Cleared">
+            <summary>
+            Cleared border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.TextureStyle">
+            <summary>
+            Specifies the texture style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureNone">
+            <summary>
+             No shading
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture2Pt5Percent">
+            <summary>
+            2.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture5Percent">
+            <summary>
+            5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture7Pt5Percent">
+            <summary>
+            7.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture10Percent">
+            <summary>
+            10 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture12Pt5Percent">
+            <summary>
+            12.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture15Percent">
+            <summary>
+            15 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture17Pt5Percent">
+            <summary>
+            17.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture20Percent">
+            <summary>
+            20 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture22Pt5Percent">
+            <summary>
+            22.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture25Percent">
+            <summary>
+            25 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture27Pt5Percent">
+            <summary>
+            27.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture30Percent">
+            <summary>
+            30 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture32Pt5Percent">
+            <summary>
+            32.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture35Percent">
+            <summary>
+            35 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture37Pt5Percent">
+            <summary>
+            37.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture40Percent">
+            <summary>
+            40 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture42Pt5Percent">
+            <summary>
+            42.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture45Percent">
+            <summary>
+            45 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture47Pt5Percent">
+            <summary>
+            47.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture50Percent">
+            <summary>
+            50 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture52Pt5Percent">
+            <summary>
+            52.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture55Percent">
+            <summary>
+            55 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture57Pt5Percent">
+            <summary>
+            57.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture60Percent">
+            <summary>
+            60 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture62Pt5Percent">
+            <summary>
+            62.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture65Percent">
+            <summary>
+            65 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture67Pt5Percent">
+            <summary>
+            67.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture70Percent">
+            <summary>
+            70 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture72Pt5Percent">
+            <summary>
+            72.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture75Percent">
+            <summary>
+            75 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture77Pt5Percent">
+            <summary>
+            77.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture80Percent">
+            <summary>
+            80 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture82Pt5Percent">
+            <summary>
+            82.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture85Percent">
+            <summary>
+            85 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture87Pt5Percent">
+            <summary>
+            87.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture90Percent">
+            <summary>
+            90 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture92Pt5Percent">
+            <summary>
+            92.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture95Percent">
+            <summary>
+            95 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.Texture97Pt5Percent">
+            <summary>
+            97.5 percent shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureSolid">
+            <summary>
+            Solid shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDarkHorizontal">
+            <summary>
+            Dark horizontal shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDarkVertical">
+            <summary>
+            Dark vertical shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDarkDiagonalDown">
+            <summary>
+            Dark diagonal down shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDarkDiagonalUp">
+            <summary>
+            Dark diagonal up shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDarkCross">
+            <summary>
+            Dark horizontal cross shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDarkDiagonalCross">
+            <summary>
+            Dark diagonal cross shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureHorizontal">
+            <summary>
+            Horizontal shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureVertical">
+            <summary>
+            Vertical shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDiagonalDown">
+            <summary>
+            Diagonal down shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDiagonalUp">
+            <summary>
+            Diagonal up shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureCross">
+            <summary>
+            Horizontal cross shading.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.TextureStyle.TextureDiagonalCross">
+            <summary>
+            Diagonal cross shading.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.HeightType">
+            <summary>
+            Specifies the height type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HeightType.Auto">
+            <summary>
+            Specifies the height to be determined automatically.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HeightType.Atleast">
+            <summary>
+            Specifies the least height in points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.HeightType.Exactly">
+            <summary>
+            Specifies the exact height in points.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.CellVerticalAlignment">
+            <summary>
+            Specifies the vertical alignment.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.CellVerticalAlignment.Top">
+            <summary>
+            Aligns the content to the top.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.CellVerticalAlignment.Center">
+            <summary>
+            Aligns the content to the center.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.CellVerticalAlignment.Bottom">
+            <summary>
+            Aligns the content ot the bottom.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.ListLevelPattern">
+            <summary>
+            Specifies the list level pattern.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.Arabic">
+            <summary>
+            Specifies the default pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.UpRoman">
+            <summary>
+            Specifies the upper roman (I, II, III, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.LowRoman">
+            <summary>
+            Specifies the lower roman (i, ii, iii, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.UpLetter">
+            <summary>
+            Specifies the uppercase letter (A, B, C, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.LowLetter">
+            <summary>
+            Specifies the lowercase letter (a, b, c, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.Ordinal">
+            <summary>
+            Specifies the ordinal (1st, 2nd, 3rd, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.Number">
+            <summary>
+            Specifies the numbering (1, 2, 3, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>. 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.OrdinalText">
+            <summary>
+            Specifies the ordinal text (First, Second, Third, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.LeadingZero">
+            <summary>
+            Specifies the leading zero (01, 02, 03, ...) pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.Bullet">
+            <summary>
+            Specifies the bullet pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.FarEast">
+            <summary>
+            Specifies the far east pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.Special">
+            <summary>
+            Specifies the special pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ListLevelPattern.None">
+            <summary>
+            Specifies no pattern for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.FollowCharacterType">
+            <summary>
+            Specifies the follow character type for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>.
+            </summary>
+            <seealso cref="T:Syncfusion.Blazor.DocumentEditor.WListLevel"/>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.FollowCharacterType.Tab">
+            <summary>
+            Specifies the list value to be followed with a single tab.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.FollowCharacterType.Space">
+            <summary>
+            Specifies the list value to be followed with a single space.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.FollowCharacterType.None">
+            <summary>
+            Specifies the list value to be followed with no follow character.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.StyleType">
+            <summary>
+            Specifies the style type for the <see cref="T:Syncfusion.Blazor.DocumentEditor.WStyle"/>.
+            </summary>
+            <seealso cref="T:Syncfusion.Blazor.DocumentEditor.WStyle"/>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.StyleType.Paragraph">
+            <summary>
+            Specifies Paragraph style.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.StyleType.Character">
+            <summary>
+            Specifies Character style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.ProtectionType">
+            <summary>
+            Specifies the document protection type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ProtectionType.ReadOnly">
+            <summary>
+            Allow read-only access to the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ProtectionType.NoProtection">
+            <summary>
+            Do not apply protection to the document.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ProtectionType.FormFieldsOnly">
+            <summary>
+            Allow Form filling only.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ProtectionType.CommentsOnly">
+            <summary>
+            Allow Comments only.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ProtectionType.RevisionsOnly">
+            <summary>
+            Allow Revisions only.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.RevisionType">
+            <summary> 
+            Represents the type of track change revision types. 
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.FootnoteType">
+            <summary>
+            Specifies the type of the footnote.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.FootnoteType.Footnote">
+            <summary>
+            Specifies object is a footnote.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.FootnoteType.Endnote">
+            <summary>
+            Specifies object is a endnote.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.FootnoteRestartIndex">
+            <summary>
+            Specifies the footnote restart index.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.FootEndNoteNumberFormat">
+            <summary>
+            Specifies the foot and endnote number format.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WSectionFormat">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSectionFormat"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.Borders">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.LeftMargin">
+            <summary>
+            Gets or sets the left margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.RightMargin">
+            <summary>
+            Gets or sets the right margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.TopMargin">
+            <summary>
+            Gets or sets the top margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.BottomMargin">
+            <summary>
+            Gets or sets the bottom margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.CellWidth">
+            <summary>
+            Gets or sets the width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.ColumnSpan">
+            <summary>
+            Gets or sets the number of columns that the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/> should span.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.RowSpan">
+            <summary>
+            Gets or sets the number of rows that the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/> should span.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.Shading">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.Shading"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.VerticalAlignment">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.CellVerticalAlignment"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.PreferredWidthType">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WidthType">PreferredWidthType</see> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WCellFormat.PreferredWidth">
+            <summary>
+            Gets or sets the preferred width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCellFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DocIO.DLS.CellFormat"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCellFormat.HasValue">
+            <summary>
+            Return true if any of the cell format property has value
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCellFormat.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.LeftIndent">
+            <summary>
+            Gets or sets the left indent value for <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.LeftMargin">
+            <summary>
+            Gets or sets the default left margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.RightMargin">
+            <summary>
+            Gets or sets the default right margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.TopMargin">
+            <summary>
+            Gets or sets the default top margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.BottomMargin">
+            <summary>
+            Gets or sets the default bottom margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.AllowBreakAcrossPages">
+            <summary>
+            Determines whether the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/> is allowed to break across pages.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.IsHeader">
+            <summary>
+            Determines whether the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/> is header row or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.Height">
+            <summary>
+            Gets or sets the height of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.HeightType">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.HeightType"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.GridBefore">
+            <summary>
+            Gets or sets the grid before.
+            </summary>
+            <value>
+            The grid before.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.BeforeWidth">
+            <summary>
+            Gets or sets the before width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/> based on grid columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.GridAfter">
+            <summary>
+            Gets or sets the grid after.
+            </summary>
+            <value>
+            The grid after.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.AfterWidth">
+            <summary>
+            Gets or sets the after width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/> based on grid columns.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.GridBeforeWidthType">
+            <summary>
+            Gets or sets the grid before <see cref="T:Syncfusion.Blazor.DocumentEditor.WidthType"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.GridBeforeWidth">
+            <summary>
+            Gets or sets the grid before preferred width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.GridAfterWidthType">
+            <summary>
+            Gets or sets the grid afterr <see cref="T:Syncfusion.Blazor.DocumentEditor.WidthType"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.GridAfterWidth">
+            <summary>
+            Gets or sets the grid after preferred width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.Borders">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRowFormat.RevisionIds">
+            <summary>
+            Gets the revision information for row format.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WRowFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DocIO.DLS.RowFormat"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WRowFormat.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WTableFormat">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTableFormat"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.AllowAutoFit">
+            <summary>
+            Gets or Sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/> is allowed to fit automatically.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.Borders">
+            <summary>
+            Gets or sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.CellSpacing">
+            <summary>
+            Gets or sets the spacing between the cells in the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.LeftMargin">
+            <summary>
+            Gets or sets the default cell left margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.RightMargin">
+            <summary>
+            Gets or sets the default cell right margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.TopMargin">
+            <summary>
+            Gets or sets the default cell top margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.BottomMargin">
+            <summary>
+            Gets or sets the default cell bottom margin of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.LeftIndent">
+            <summary>
+            Gets or sets the left indent of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.Shading">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.Shading"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.TableAlignment">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.TableAlignment"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.PreferredWidth">
+            <summary>
+            Gets or sets the preferred width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTableFormat.PreferredWidthType">
+            <summary>
+            Gets or sets the preferred width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WTableFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTableFormat"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WTableFormat.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WShading">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WShading"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WShading.BackgroundColor">
+            <summary>
+            Gets or Sets the background.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WShading.ForegroundColor">
+            <summary>
+            Gets or Sets the foreground.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WShading.Texture">
+            <summary>
+            Gets or Sets the texture.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WShading.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WBorder">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders"/> class
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorder.Color">
+            <summary>
+            Gets or sets the Color
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorder.LineStyle">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WBorder.LineStyle"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorder.LineWidth">
+            <summary>
+            Gets or sets the line width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorder.HasNoneStyle">
+            <summary>
+            Determines whether the border has none style or not.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WBorder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WBorder.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WBorders">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders"/> class
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.Left">
+            <summary>
+            Gets or sets the left <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.Right">
+            <summary>
+            Gets or sets the right <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.Top">
+            <summary>
+            Gets or sets the top <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.Bottom">
+            <summary>
+            Gets or sets the bottom <see cref="P:Syncfusion.Blazor.DocumentEditor.WBorders.Bottom"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.Horizontal">
+            <summary>
+            Gets or sets the horizontal <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.Vertical">
+            <summary>
+            Gets or sets the vertical <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.DiagonalUp">
+            <summary>
+            Gets or sets the diagonal up <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBorders.DiagonalDown">
+            <summary>
+            Gets or sets the diagonal down <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorder"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WBorders.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBorders" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WBorders.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartArea">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartArea"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartArea.ChartAreaBackgroundColor">
+            <summary>
+            Gets or Sets the ChartAreaBackgroundColor of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartArea"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartArea.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WPlotArea">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WPlotArea"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WPlotArea.PlotAreaBackgroundColor">
+            <summary>
+            Gets or Sets the PlotAreaBackgroundColor of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WPlotArea"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WPlotArea.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.FontName">
+            <summary>
+            Gets or Sets the FontName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.FontSize">
+            <summary>
+            Gets or Sets the FontSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.DataFormat">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.DataFormat"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.Layout">
+            <summary>
+            Gets or Sets the Layout of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTitleArea" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartTitleArea.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartData">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartData"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartData.YValue">
+            <summary>
+            Gets or Sets the YValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartData"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartData.BubbleSize">
+            <summary>
+            Gets or Sets the BubbleSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartData"/>.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartData.ChartDataConverter`1">
+            <summary>
+            Gets the object data.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartCategory">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartCategory"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartCategory.CategoryXName">
+            <summary>
+            Gets or Sets the CategoryXName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartCategory"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartCategory.ChartData">
+            <summary>
+            Gets the List of WChartData from the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartCategory"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartCategory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartCategory"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartCategory.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartDataFormat">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataFormat"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataFormat.Fill">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChartDataFormat.Fill"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartFill"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataFormat.Line">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChartDataFormat.Line"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLine"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartDataFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartDataFormat.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartFill">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartFill"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartFill.FillForeColor">
+            <summary>
+            Gets or Sets the ChartFillProperties FillForeColor of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartFill"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartFill.FillType">
+            <summary>
+            Gets or Sets the ChartFillProperties FillType of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartFill"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartFill.FillForeRGB">
+            <summary>
+            Gets or Sets the ChartFillProperties FillForeRGB of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartFill"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartFill.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartLine">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLine"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLine.LinePattern">
+            <summary>
+            Gets or Sets the ChartLineProperties LineType of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLine"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLine.LineColor">
+            <summary>
+            Gets or Sets the ChartLineProperties LineForeColor of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLine"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLine.LineRGB">
+            <summary>
+            Gets or Sets the ChartLineProperties LineForeRGB of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLine"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartLine.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartLayout">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLayout"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLayout.LayoutX">
+            <summary>
+            Gets or Sets the Chart LayoutX of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLayout"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLayout.LayoutY">
+            <summary>
+            Gets or Sets the Chart LayoutY of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLayout"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartLayout.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartErrorBar">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartErrorBar"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartErrorBar.Type">
+            <summary>
+            Gets or Sets the Type of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartErrorBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartErrorBar.Direction">
+            <summary>
+            Gets or Sets the Direction of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartErrorBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartErrorBar.EndStyle">
+            <summary>
+            Gets or Sets the EndStyle of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartErrorBar"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartErrorBar.NumberValue">
+            <summary>
+            Gets or Sets the NumberValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartErrorBar"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartErrorBar.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat.MarkerStyle">
+            <summary>
+            Gets or Sets the MarkerStyle of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat.MarkerSize">
+            <summary>
+            Gets or Sets the MarkerSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat.MarkerColor">
+            <summary>
+            Gets or Sets the MarkerColor of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartSeriesFormat.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.Type">
+            <summary>
+            Gets or Sets the Type of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.Name">
+            <summary>
+            Gets or Sets the Name of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.Forward">
+            <summary>
+            Gets or Sets the Forward of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.BackWard">
+            <summary>
+            Gets or Sets the BackWard of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.Intercept">
+            <summary>
+            Gets or Sets the Intercept of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.DisplayRSquared">
+            <summary>
+            Gets or Sets the DisplayRSquared of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.DisplayEquation">
+            <summary>
+            Gets or Sets the DisplayEquation of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartTrendLines"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartTrendLines.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WSeries">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.Name">
+            <summary>
+            Gets or Sets the Name of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.FirstSliceAngle">
+            <summary>
+            Gets or Sets FirstSliceAngle of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.HoleSize">
+            <summary>
+            Gets or Sets HoleSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.DataLabel">
+            <summary>
+            Gets or Sets the DataLabel of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.ErrorBar">
+            <summary>
+            Gets or Sets the ErrorBar of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.SeriesFormat">
+            <summary>
+            Gets or Sets the SeriesFormat of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.TrendLines">
+            <summary>
+            Gets or Sets the TrendLines of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WSeries.DataPoints">
+            <summary>
+            Gets the Chart Series collection of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataFormat"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WSeries.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WSeries.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.LabelPosition">
+            <summary>
+            Gets or Sets the LabelPosition of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.IsLegendKey">
+            <summary>
+            Gets or Sets the IsLegendKey of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.IsBubbleSize">
+            <summary>
+            Gets or Sets the IsBubbleSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.IsCategoryName">
+            <summary>
+            Gets or Sets the IsCategoryName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.IsSeriesName">
+            <summary>
+            Gets or Sets the IsSeriesName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.IsValue">
+            <summary>
+            Gets or Sets the IsValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.IsPercentage">
+            <summary>
+            Gets or Sets the IsPercentage of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.ShowLeaderLines">
+            <summary>
+            Gets or Sets the ShowLeaderLines of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.FontName">
+            <summary>
+            Gets or Sets the FontName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.FontColor">
+            <summary>
+            Gets or Sets the FontColor of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.FontSize">
+            <summary>
+            Gets or Sets the FontSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataLabels"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartDataLabels.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartLegend">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLegend"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLegend.ChartLegendPosition">
+            <summary>
+            Gets or Sets the ChartLegend Position of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartLegend"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartLegend.ChartTitleArea">
+            <summary>
+            Gets or Sets the chartTitleArea of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartLegend.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartLegend.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartDataTable">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataTable"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataTable.ShowSeriesKeys">
+            <summary>
+            Gets or Sets the ShowSeriesKeys of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataTable.HasHorzBorder">
+            <summary>
+            Gets or Sets the HasHorzBorder of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataTable.HasVertBorder">
+            <summary>
+            Gets or Sets the HasVertBorder of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartDataTable.HasBorders">
+            <summary>
+            Gets or Sets the HasBorders of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartDataTable"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartDataTable.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.Title">
+            <summary>
+            Gets or Sets the Title of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.FontSize">
+            <summary>
+            Gets or Sets the FontSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.FontName">
+            <summary>
+            Gets or Sets the FontName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.HasMajorGridLines">
+            <summary>
+            Gets or Sets the HasMajorGridLines of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.HasMinorGridLines">
+            <summary>
+            Gets or Sets the HasMinorGridLines of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.MajorTickMark">
+            <summary>
+            Gets or Sets the MajorTickMark of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.MinorTickMark">
+            <summary>
+            Gets or Sets the MinorTickMark of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.TickLabelPosition">
+            <summary>
+            Gets or Sets the TickLabelPosition of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.CategoryType">
+            <summary>
+            Gets or Sets the CategoryType of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.NumberFormat">
+            <summary>
+            Gets or Sets the NumberFormat of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.MaximumValue">
+            <summary>
+            Gets or Sets the MaximumValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.MinimumValue">
+            <summary>
+            Gets or Sets the MinimumValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.MajorUnit">
+            <summary>
+            Gets or Sets the MajorUnit of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.ChartTitleArea">
+            <summary>
+            Gets or Sets the chartTitleArea of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.Title">
+            <summary>
+            Gets or Sets the Title of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.FontSize">
+            <summary>
+            Gets or Sets the FontSize of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.FontName">
+            <summary>
+            Gets or Sets the FontName of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.HasMajorGridLines">
+            <summary>
+            Gets or Sets the HasMajorGridLines of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.HasMinorGridLines">
+            <summary>
+            Gets or Sets the HasMinorGridLines of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.MajorTickMark">
+            <summary>
+            Gets or Sets the MajorTickMark of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.MinorTickMark">
+            <summary>
+            Gets or Sets the MinorTickMark of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.TickLabelPosition">
+            <summary>
+            Gets or Sets the TickLabelPosition of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.ChartTitleArea">
+            <summary>
+            Gets or Sets the chartTitleArea of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.MaximumValue">
+            <summary>
+            Gets or Sets the MaximumValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.MinimumValue">
+            <summary>
+            Gets or Sets the MinimumValue of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.MajorUnit">
+            <summary>
+            Gets or Sets the MajorUnit of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WChart">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartTitle">
+            <summary>
+            Gets or Sets the title of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.DataTable">
+            <summary>
+            Gets or Sets the DataTable of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.GapWidth">
+            <summary>
+            Gets or Sets the gapWidth of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.Overlap">
+            <summary>
+            Gets or Sets the overlap of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartPrimaryCategoryAxis">
+            <summary>
+            Gets or Sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryCategoryAxis"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartPrimaryValueAxis">
+            <summary>
+            Gets or Sets the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChartPrimaryValueAxis"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartType">
+            <summary>
+            Gets or Sets the type of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.Height">
+            <summary>
+            Gets or Sets the height of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.Width">
+            <summary>
+            Gets or Sets the width of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.Categories">
+            <summary>
+            Gets the Chart Category collection of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.Series">
+            <summary>
+            Gets the Chart Series collection of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartArea">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartArea"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.PlotArea">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChart.PlotArea"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartTitleArea">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChart.ChartTitleArea"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WChart.Legend">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WChart.Legend"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WChart" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WChart.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WInlineContentControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WInlineContentControl"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WShapeCommon.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WShapeCommon"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WShape.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DocIO.DLS.WTextBox"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WLineFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WLineFormat"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WFillFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFillFormat"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WTextFrame.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTextFrame"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WFieldCharacter">
+            <summary>
+            Represents the base class for <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldCharacter"/>.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.WFieldCharacter.FieldCharacterType">
+            <summary>
+            Gets or Sets the type of <see cref="T:Syncfusion.DocIO.DLS.FieldCharType"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WFieldCharacter.#ctor(Syncfusion.DocIO.DLS.FieldCharType)">
+            <summary>
+            Initializes a new instance of <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldCharacter"/> with the specified <see cref="T:Syncfusion.DocIO.DLS.FieldCharType"/>.
+            </summary>
+            <param name="type">The type of <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldCharacter"/>.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WFieldBegin">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldBegin"/> class.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.WFieldBegin.HasFieldEnd">
+            <summary>
+            Determines whether field end is present.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WFieldBegin.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldBegin"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WFieldSeparator">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldSeparator"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WFieldSeparator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldSeparator"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WFieldEnd">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldEnd"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WFieldEnd.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WFieldEnd"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WCommentStart">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCommentStart"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCommentStart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCommentStart"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WCommentEnd">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCommentEnd"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCommentEnd.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCommentEnd"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WComment">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WComment"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WComment.Blocks">
+            <summary>
+            Gets the block collection of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WComment"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WComment.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WComment"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WComment.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCommentExtended.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCommentExtended"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.CustomXml.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.CustomXml"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WBlockContentControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBlockContentControl"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WContentControlProperties.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WContentControlProperties"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCheckBoxState.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCheckBoxState"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WContentControlListItems.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WContentControlListItems"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.XmlMapping.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.XmlMapping"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.CustomXMLPart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.CustomXMLPart"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WCell.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WCell"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRow.RowFormat">
+            <summary>
+            Gets or Sets the row format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WRow.Cells">
+            <summary>
+            Gets the List of WCell from the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </summary>
+            <value>
+            The List of WCell from the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/>.
+            </value>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WRow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WRow"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WRow.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WTable">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTable.Rows">
+            <summary>
+            Gets the TableRows collection of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTable.Title">
+            <summary>
+            Gets or Sets the title of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTable.Description">
+            <summary>
+            Gets or Sets the description of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WTable.TableFormat">
+            <summary>
+            Gets or sets the <see cref="P:Syncfusion.Blazor.DocumentEditor.WTable.TableFormat"/> of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable"/>.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WTable.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTable" /> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WTable.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.TablePosition.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.TablePosition"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeaderFooter.Blocks">
+            <summary>
+            Gets the block collection of the <see cref="T:Syncfusion.DocIO.DLS.HeaderFooter"/>.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeadersFooters.Header">
+            <summary>
+            Gets or sets the odd page or default header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeadersFooters.Footer">
+            <summary>
+            Gets or sets the odd page or default footer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeadersFooters.EvenHeader">
+            <summary>
+            Gets or sets the even page header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeadersFooters.EvenFooter">
+            <summary>
+            Gets or sets the even page footer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeadersFooters.FirstPageHeader">
+            <summary>
+            Gets or sets the first page header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WHeadersFooters.FirstPageFooter">
+            <summary>
+            Gets or sets the first page footer.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventHandler">
+            <summary>
+            Represents the method that handles MetafileImageParsed event
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs">
+            <summary>
+            Represents the parameters required for MetafileImageParsed event that occurs while importing a Word document.
+            </summary>
+            <example>
+            <para>The following code example demonstrates how to hook MetafileImageParsed event
+            for creating a fallback raster image from a metafile image using any third-party image converter
+            while converting Word document to SFDT.</para>
+            <code lang="C#">
+            //Hooks MetafileImageParsed event.
+            WordDocument.MetafileImageParsed += OnMetafileImageParsed;
+            //Converts DocIO DOM to SFDT DOM.
+            WordDocument sfdtDocument = WordDocument.Load(docIODocument);
+            //Unhooks MetafileImageParsed event.
+            WordDocument.MetafileImageParsed -= OnMetafileImageParsed;
+            //Serializes SFDT DOM to SFDT string.
+            string sfdt = Newtonsoft.Json.JsonConvert.SerializeObject(sfdtDocument);
+            //Disposes the SFDT document.
+            sfdtDocument.Dispose();
+            <summary>
+            //Converts Metafile to raster image.
+            </summary>
+            private static void OnMetafileImageParsed(object sender, MetafileImageParsedEventArgs args)
+            {
+                //You can write your own method definition for converting metafile to raster image using any third-party image converter.
+                args.ImageStream = ConvertMetafileToRasterImage(args.MetafileStream);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs.ImageStream">
+            <summary>
+            Gets or sets the alternate raster image stream used as fallback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs.MetafileStream">
+            <summary>
+            Gets the original metafile image stream.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs.#ctor(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Initialize a new instance of <see cref="T:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs" /> class.
+            </summary>
+            <param name="metafileStream">The Metafile stream data.</param>
+            <param name="imageStream">The image stream data.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs.Dispose">
+            <summary>
+             Releases all resources used by the <see cref="T:Syncfusion.Blazor.DocumentEditor.MetafileImageParsedEventArgs"/> instance.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WordDocument">
+            <summary>
+            Represents the root element of the rich text contents in Syncfusion.DocumentEditor.Portable library.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.Blazor.DocumentEditor.WordDocument.MetafileImageParsed">
+            <summary>
+            Throws event when a metafile image is parsed on importing a Word document.
+            This event is used to add an equivalent raster image as a fallback.
+            </summary>
+            <example>
+            <para>The following code example demonstrates how to hook MetafileImageParsed event
+            for creating a fallback raster image from a metafile image using any third-party image converter
+            while converting Word document to SFDT.</para>
+            <code lang="C#">
+            //Hooks MetafileImageParsed event.
+            WordDocument.MetafileImageParsed += OnMetafileImageParsed;
+            //Converts DocIO DOM to SFDT DOM.
+            WordDocument sfdtDocument = WordDocument.Load(docIODocument);
+            //Unhooks MetafileImageParsed event.
+            WordDocument.MetafileImageParsed -= OnMetafileImageParsed;
+            //Serializes SFDT DOM to SFDT string.
+            string sfdt = Newtonsoft.Json.JsonConvert.SerializeObject(sfdtDocument);
+            //Disposes the SFDT document.
+            sfdtDocument.Dispose();
+            <summary>
+            //Converts Metafile to raster image.
+            </summary>
+            private static void OnMetafileImageParsed(object sender, MetafileImageParsedEventArgs args)
+            {
+                //You can write your own method definition for converting metafile to raster image using any third-party image converter.
+                args.ImageStream = ConvertMetafileToRasterImage(args.MetafileStream);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WordDocument.LastParagraphMarkCopied">
+            <summary>
+            Gets or sets a value indicating whether the last paragraph copied from source document including the paragraph mark (contains "\par" RTF tag). 
+            </summary>
+            <value>if the last paragraph copied from source document including the paragraph mark, set to <c>true</c>.</value>
+            <Remarks>
+            This property true means that the copied content includes the last paragraph mark and its formatting should be copied in the pasted document. Also, the last paragraph should be preserved as separate paragraph and should not be merged in cursor position.
+            </Remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Syncfusion.Blazor.DocumentEditor.WordDocument"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.Load(Syncfusion.DocIO.DLS.WordDocument)">
+            <summary>
+            Loads the SFDT document from the specified <see cref="T:Syncfusion.DocIO.DLS.WordDocument">DocIO WordDocument</see> instance.
+            </summary>
+            <param name="wordDocument">The <see cref="T:Syncfusion.DocIO.DLS.WordDocument">DocIO WordDocument</see> instance.</param>
+            <returns>The <see cref="T:Syncfusion.Blazor.DocumentEditor.WordDocument">SFDT document</see> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">The input Word document instance cannot be null.</exception>
+            <remarks>
+            <para>This overload accepts the <see cref="T:Syncfusion.DocIO.DLS.WordDocument">DocIO WordDocument</see> instance as parameter for loading SFDT document. By passing this instance, you can directly perform DocIO's built-in functionalities (like mail merge, update fields) before converting the document to SFDT. It reduces intermediate DOCX conversion.</para>
+            <para>Also allows you open the document from all file formats supported by Syncfusion Word library (DocIO).</para>
+            </remarks>
+            <example>
+            <para>The following code example demonstrates how to perform mail merge using Syncfusion Word library (DocIO) and convert the resultant document to SFDT for opening it in Syncfusion Word Processor (Document editor) component in client-side.</para>
+            </example>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.Load(System.IO.Stream,Syncfusion.Blazor.DocumentEditor.ImportFormatType)">
+            <summary>
+            Loads the stream with the specified <see cref="T:Syncfusion.Blazor.DocumentEditor.ImportFormatType"/>
+            </summary>
+            <param name="stream">The input stream.</param>
+            <param name="type">The format type.</param>
+            <returns>The <see cref="T:Syncfusion.Blazor.DocumentEditor.WordDocument"/> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">The input stream cannot be null.</exception>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.LoadString(System.String,Syncfusion.Blazor.DocumentEditor.ImportFormatType)">
+            <summary>
+            Load the string
+            </summary>
+            <param name="inputString">The input string</param>
+            <param name="type"> The Format type</param>
+            <returns>The <see cref="T:Syncfusion.Blazor.DocumentEditor.WordDocument"/> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">The input string cannot be null.</exception>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.Save(System.String)">
+            <summary>
+            Saves the specified SFDT text as the new instance of <see cref="T:Syncfusion.DocIO.DLS.WordDocument">DocIO WordDocument</see> class.
+            </summary>
+            <param name="sfdtText">The SFDT text.</param>
+            <exception cref="T:System.ArgumentException">The input SFDT text cannot be null.</exception>
+            <returns>The <see cref="T:Syncfusion.DocIO.DLS.WordDocument">DocIO WordDocument</see> instance.</returns>
+            <remarks>
+            <para>This overload returns the <see cref="T:Syncfusion.DocIO.DLS.WordDocument">DocIO WordDocument</see> instance for the specified SFDT. Using this instance, you can directly perform DocIO's built-in functionalities (like mail merge, update fields) before saving the document. It reduces intermediate saving to stream and opening it again.</para>
+            <para>Also allows you save the document in all file formats supported by Syncfusion Word library (DocIO).</para>
+            </remarks>
+            <example>
+            <para>The following code example demonstrates how to perform mail merge using Syncfusion Word library (DocIO) for Syncfusion Word Processor (Document editor) component's SDFT document and save the final document as DOCX in server-side.</para>
+            <code lang="C#">
+            //Converts the SFDT document to DocIO WordDocument instance.
+            using (Syncfusion.DocIO.DLS.WordDocument docIODocument = WordDocument.Save(sfdt))
+            {
+                //You can add or modify any required DocIO's logic here.
+                //Performs mail merge.
+                docIODocument.MailMerge.Execute(GetRecords());
+                //You can add or modify logic to save the document in any file formats supported by DocIO.
+                //Saves the final document as DOCX in server-side.
+                docIODocument.Save(docxStream, Syncfusion.DocIO.FormatType.Docx);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.Save(System.String,Syncfusion.Blazor.DocumentEditor.ImportFormatType)">
+            <summary>
+            Saves the sfdt text with the specified <see cref="T:Syncfusion.Blazor.DocumentEditor.ImportFormatType"/>.
+            </summary>
+            <param name="sfdtText">The SFDT text.</param>
+            <param name="formatType">The format type.</param>
+            <exception cref="T:System.ArgumentException">The input text cannot be null.</exception>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.ComputeHash(System.String,System.String,System.Int32)">
+            <summary>
+            Compute SHA 512 hash for restrict editing
+            </summary>
+            <param name="passwordBase64">Base64 string of passowrd</param>
+            <param name="saltBase64">Base64 string of salt</param>
+            <param name="spinCount">Spin count</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.CombineByteArrays(System.Byte[],System.Byte[])">
+            <summary>
+            Combines the byte arrays.
+            </summary>
+            <param name="array1">The array1.</param>
+            <param name="array2">The array2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.CreateSalt(System.Int32)">
+            <summary>
+            Creates the salt.
+            </summary>
+            <param name="length">The length.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WordDocument.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Syncfusion.Blazor.DocumentEditor.WordDocument"/> instance.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.ImportFormatType">
+            <summary>
+             Specifies the format type supported by the Syncfusion.DocumentEditor.Portable library.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ImportFormatType.Doc">
+            <summary>
+            Microsoft Word 97-2003 Format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ImportFormatType.Docx">
+            <summary>
+            Microsoft Word Open XML Format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ImportFormatType.Rtf">
+            <summary>
+            Rich Text Format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ImportFormatType.Txt">
+            <summary>
+            Plain Text Format.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ImportFormatType.WordML">
+            <summary>
+            Specifies the WordProcessingML (.XML) documents.
+            </summary>
+            <remarks>
+            Provides Read/Write support for Microsoft Office Word  XML format (FlatOPC) documents.
+            Provides read only support for Microsoft Office Word 2003 XML format documents.
+            </remarks>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.ImportFormatType.Html">
+            <summary>
+            Html format
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.BiDirectionalOverride">
+            <summary>
+            Specifies the text rendering direction
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.BiDirectionalOverride.LTR">
+             <summary>
+            Left to Right
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.BiDirectionalOverride.RTL">
+            <summary>
+            Right to left
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WBookmark">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WBookmark"/> class.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.DocumentEditor.WBookmark.Type">
+            <summary>
+            Gets or Sets the type of bookmark (begin / end).
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WBookmark.Name">
+            <summary>
+            Determines the bookmark name.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WBookmark.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of <see cref="T:Syncfusion.Blazor.DocumentEditor.WBookmark"/> with the specified bookmark type>.
+            </summary>
+            <param name="type">The type of bookmark</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WTabStop">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WTabStop"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WEditableRangeStart.Id">
+            <summary>
+            Gets or Sets the Id of Editable range start.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WEditableRangeStart.ColumnFirst">
+            <summary>
+            Gets or Sets the column first index of table
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WEditableRangeStart.ColumnLast">
+            <summary>
+            Gets or Sets the column last index of table
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WEditableRangeStart.Ed">
+            <summary>
+            Gets or Sets the user name
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WEditableRangeStart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WEditableRangeStart"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WEditableRangeEnd.Id">
+            <summary>
+            Gets or Sets the Id of Editable range end.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WEditableRangeEnd.EditableRangeStart">
+            <summary>
+            Gets or Sets the matched editable range start.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WEditableRangeEnd.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WEditableRangeEnd"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.DocumentEditor.WColumn">
+            <summary>
+            Represents the <see cref="T:Syncfusion.Blazor.DocumentEditor.WColumn"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WColumn.Width">
+            <summary>
+            Gets or Sets the Width of column.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.DocumentEditor.WColumn.Space">
+            <summary>
+            Determines the space after column.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.WColumn.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.DocumentEditor.WColumn"/> class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxExporting.RetrieveItemRevisions(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Retrieve revision ID
+            </summary>
+            <param name="inline"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxExporting.AddRevisionsToRange(System.Object,System.Collections.Generic.List{Syncfusion.DocIO.DLS.Revision})">
+            <summary>
+            Adds revision to the range
+            </summary>
+            <param name="item">item</param>
+            <param name="revisions">revisions</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxImporting.DownloadImage(System.Object,Syncfusion.DocIO.DLS.ImageNodeVisitedEventArgs)">
+            <summary>
+            Event handler to download the image from website 
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxImporting.ParseRevisions(Syncfusion.DocIO.DLS.RevisionCollection,Syncfusion.Blazor.DocumentEditor.WordDocument)">
+            <summary>
+            Parse revisions collection for the word document
+            </summary>
+            <param name="revisions">revisions</param>
+            <param name="document">document</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxImporting.CreateRevision(Syncfusion.DocIO.DLS.Revision)">
+            <summary>
+            Method to create new revision from DOCIO revision
+            </summary>
+            <param name="docRevision">revision</param>
+            <returns>returns document editor revision</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxImporting.ParseRevisionForInLine(Syncfusion.DocIO.DLS.Entity,Syncfusion.Blazor.DocumentEditor.WInline)">
+            <summary>
+            Method to parse inline revisions
+            </summary>
+            <param name="item">entity</param>
+            <param name="range">range</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxImporting.ParseRevisionRowFormat(Syncfusion.DocIO.DLS.FormatBase,Syncfusion.Blazor.DocumentEditor.WRowFormat,Syncfusion.Blazor.DocumentEditor.WordDocument,System.Boolean@)">
+            <summary>
+            Method to parse row revisions
+            </summary>
+            <param name="item"></param>
+            <param name="range"></param>
+            <param name="document"></param>
+            <param name="removeRowRevision"></param>
+        </member>
+        <member name="M:Syncfusion.Blazor.DocumentEditor.DocxImporting.ParseRevisionFormat(Syncfusion.DocIO.DLS.FormatBase,Syncfusion.Blazor.DocumentEditor.WCharacterFormat)">
+            <summary>
+            Method to parse character format revisions
+            </summary>
+            <param name="item">item</param>
+            <param name="range">range</param>
+        </member>
+    </members>
+</doc>

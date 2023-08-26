@@ -1,0 +1,2316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.SmithChart</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis">
+            <summary>
+            Options to customize the horizontal axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis.LabelIntersectAction">
+            <summary>
+            Axis labels will be hide when overlap with each other.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis.LabelPosition">
+            <summary>
+            Position of  axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis.Visible">
+            <summary>
+            Visibility of the axis.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalAxis.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLabelStyle">
+            <summary>
+            Options to customize the axis label style for horizontal axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLabelStyle.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLabelStyle.Size">
+            <summary>
+            Size of the horizontal axis label.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLine">
+            <summary>
+            Options to customize the axis line for horizontal axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLine.ChildContent">
+            <summary>
+            Gets and set the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLine.Visible">
+            <summary>
+            Visible of the axis line.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalAxisLine.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartHorizontalMajorGridLines">
+            <summary>
+            Options to customize the major grid lines for horizontal axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMajorGridLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMajorGridLines.Visible">
+            <summary>
+            Visible of the axis major grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMajorGridLines.Opacity">
+            <summary>
+            Opacity of the major grid lines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalMajorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalMajorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines">
+            <summary>
+            Options to customize the minor grid lines for horizontal axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines.Visible">
+            <summary>
+            Visible of the minor grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines.Width">
+            <summary>
+            Width for minor grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines.Count">
+            <summary>
+            Gets and sets minor grid lines count.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartHorizontalMinorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartRadialAxis">
+            <summary>
+            Options to customize the radial axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxis.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxis.LabelIntersectAction">
+            <summary>
+            Axis labels will be hide when overlap with each other.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxis.LabelPosition">
+            <summary>
+            Position of  axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxis.Visible">
+            <summary>
+            Visibility of  axis.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialAxis.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialAxis.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartRadialAxisLabelStyle">
+            <summary>
+            Options to customize the axis label style for the radial axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxisLabelStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxisLabelStyle.Size">
+            <summary>
+            Gets and sets font size for radial axis label size.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialAxisLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialAxisLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartRadialAxisLine">
+            <summary>
+            Options to customize the axis line for radial axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxisLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialAxisLine.Visible">
+            <summary>
+            Visile of the axisline.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialAxisLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialAxisLine.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartRadialMajorGridLines">
+            <summary>
+            Options to customize the major grid lines for radial axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMajorGridLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMajorGridLines.Visible">
+            <summary>
+            Visible of the major grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMajorGridLines.Opacity">
+            <summary>
+            Opacity for the major grid lines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialMajorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialMajorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines">
+            <summary>
+            Options to customize the minor grid lines for radial axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines.Visible">
+            <summary>
+            Visible of the minor grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines.Width">
+            <summary>
+            Width of the minor grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines.Count">
+            <summary>
+            Gets and sets count for minor grid lines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartRadialMinorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartAxisLine">
+            <summary>
+            Defines the axis line settings of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartAxisLine.Color">
+            <summary>
+            The color of the axis line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartAxisLine.DashArray">
+            <summary>
+            The dash array of the axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartAxisLine.Width">
+            <summary>
+            Width of the line in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartAxisLine.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartCommonBorder">
+            <summary>
+            Gets and sets the options for customizing the color and width of the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonBorder.Color">
+            <summary>
+            Gets and sets the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonBorder.Width">
+            <summary>
+            Gets and sets the the width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartCommonBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartCommonFont">
+            <summary>
+            Gets and sets the options for customizing the text style of the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonFont.Color">
+            <summary>
+            Gets and sets the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonFont.FontFamily">
+            <summary>
+            Gets and sets the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonFont.FontStyle">
+            <summary>
+            Gets and sets the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonFont.FontWeight">
+            <summary>
+            Gets and sets the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonFont.Opacity">
+            <summary>
+            Gets and sets the opacity for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartCommonFont.Size">
+            <summary>
+            Gets and sets the size for the text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartCommonFont.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartMajorGridLines">
+            <summary>
+            Options to customize the major grid lines of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMajorGridLines.Color">
+            <summary>
+            The color of the major grid line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMajorGridLines.DashArray">
+            <summary>
+            The dash array of the grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMajorGridLines.Width">
+            <summary>
+            The width of the line in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartMajorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartMinorGridLines">
+            <summary>
+            Options to customize the minor grid lines of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMinorGridLines.Color">
+            <summary>
+            The color of the minor grid line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMinorGridLines.DashArray">
+            <summary>
+            The dash array of grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMinorGridLines.Width">
+            <summary>
+            The width of the line in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartMinorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.LegendItemStyleBorder">
+            <summary>
+            Options to customize the border for legend in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.LegendItemStyleBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.LegendItemStyleBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.LegendItemStyleBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendBorder">
+            <summary>
+            Options to customize the border for legend in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendItemStyle">
+            <summary>
+            Options to customize the item style for legend in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendItemStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendItemStyle.Height">
+            <summary>
+            Specify the height for legend item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendItemStyle.Width">
+            <summary>
+            Specify the width for legend item.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendItemStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendItemStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendLocation">
+            <summary>
+            Options to customize the legend location in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendLocation.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendLocation.X">
+            <summary>
+            X position for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendLocation.Y">
+            <summary>
+            Y position for legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendLocation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendLocation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendSettings">
+            <summary>
+            Options to customize the legend in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Alignment">
+            <summary>
+            Alignment for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.ColumnCount">
+            <summary>
+            Column count for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Description">
+            <summary>
+            Description for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Height">
+            <summary>
+            Height of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.ItemPadding">
+            <summary>
+            Spacing between legend items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Position">
+            <summary>
+            Position of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.RowCount">
+            <summary>
+            Row count for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Shape">
+            <summary>
+            Shape of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.ShapePadding">
+            <summary>
+            Padding between the legend shape and text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.ToggleVisibility">
+            <summary>
+            If set to true, series visibility collapses based on the legend visibility.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Visible">
+            <summary>
+            Visibility of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendSettings.Width">
+            <summary>
+            Width of the legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendTextStyle">
+            <summary>
+            Options to customize the text style for legend title of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTextStyle.Size">
+            <summary>
+            Font size of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTextStyle.Color">
+            <summary>
+            Specifies the color of the legend text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendTitle">
+            <summary>
+            Options to customize the tilte for legend of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitle.Description">
+            <summary>
+            Description for legend title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitle.Text">
+            <summary>
+            Text for legend title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitle.TextAlignment">
+            <summary>
+            Alignment for legend title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitle.Visible">
+            <summary>
+            Visibility for legend title.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendTitle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendTitle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendTitleTextStyle">
+            <summary>
+            Options to customize the text style for legend title of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitleTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendTitleTextStyle.Size">
+            <summary>
+            Font size for text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendTitleTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartLegendTitleTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartDataLabelConnectorLine">
+            <summary>
+            Defines the data label connector line settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartDataLabelConnectorLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartDataLabelConnectorLine.Color">
+            <summary>
+            Border color for data label connector line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartDataLabelConnectorLine.Width">
+            <summary>
+            Border width for data label connector line.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartDataLabelConnectorLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartDataLabelConnectorLine.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartDataLabelTextStyle">
+            <summary>
+            Defines the data label text settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartDataLabelTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartDataLabelTextStyle.Size">
+            <summary>
+            Font size of the text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartDataLabelTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartDataLabelTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel">
+            <summary>
+            Defines data label settings for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.Fill">
+            <summary>
+            Color for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.Opacity">
+            <summary>
+            Opacity for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.Template">
+            <summary>
+            Showing data label template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.Visible">
+            <summary>
+            Visibility for data label.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesDatalabel.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesDataLabelBorder">
+            <summary>
+            Defines data label border settings for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDataLabelBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDataLabelBorder.Color">
+            <summary>
+            Border color for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesDataLabelBorder.Width">
+            <summary>
+            Border width for data label.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesDataLabelBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesDataLabelBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesMarker">
+            <summary>
+            Options to customize the marker in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.Fill">
+            <summary>
+            Color for marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.Height">
+            <summary>
+            Height of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.Opacity">
+            <summary>
+            Opacity of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.Shape">
+            <summary>
+            Shape of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.Visible">
+            <summary>
+            Visibility of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.Width">
+            <summary>
+            Width of the marker.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesMarker.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesMarkerBorder">
+            <summary>
+            Options to customize the marker border in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarkerBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarkerBorder.Color">
+            <summary>
+            Border color for marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesMarkerBorder.Width">
+            <summary>
+            Border width for marker.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesMarkerBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesMarkerBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeries">
+            <summary>
+            Options to customize the series of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.AnimationDuration">
+            <summary>
+            Perform animation of series based on animation duration.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.DataSource">
+            <summary>
+            Specifies the data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.EnableAnimation">
+            <summary>
+            Enable or disable the animation of series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.EnableSmartLabels">
+            <summary>
+            Avoid the overlap of data labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Fill">
+            <summary>
+            Color for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Name">
+            <summary>
+            The name of the series visible in legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Opacity">
+            <summary>
+            Opacity for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Points">
+            <summary>
+            Points for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Reactance">
+            <summary>
+            Reactance name from data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Resistance">
+            <summary>
+            Resistance name from data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.TooltipMappingName">
+            <summary>
+            Tooltip mapping name for the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Visible">
+            <summary>
+            Visibility of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeries.Width">
+            <summary>
+            Width of the series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeries.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeries.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesCollection">
+            <summary>
+            Options to customize the series collection of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesCollection.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesCollection.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip">
+            <summary>
+            Options to customize the tooltip of the chart series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.Fill">
+            <summary>
+            Color for the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.Opacity">
+            <summary>
+            Opacity for the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.Template">
+            <summary>
+            Template for the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.Visible">
+            <summary>
+            Visibility of the tooltip.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesTooltip.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesTooltipBorder">
+            <summary>
+            Options to customize the border for tooltip in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesTooltipBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesTooltipBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSeriesTooltipBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartPoint">
+            <summary>
+            Specifying the smith chart data points.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartPoint.Reactance">
+            <summary>
+            Specifying the reactance to the series data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartPoint.Resistance">
+            <summary>
+            Specifying the resistance to the series data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartPoint.Tooltip">
+            <summary>
+            Specifying the tooltip mapping name to series tooltip.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartBorder">
+            <summary>
+            Options to customize the border of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartBorder.Color">
+            <summary>
+            Color for the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartBorder.Opacity">
+            <summary>
+            Opacity for the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartBorder.Width">
+            <summary>
+            Width for the border.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartEvents">
+            <summary>
+            Chart events are defined by this class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.AxisLabelRendering">
+            <summary>
+            Triggers before each axis label is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.OnPrintComplete">
+            <summary>
+            Triggers after print is completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.OnExportComplete">
+            <summary>
+            Triggers after export is completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.LegendRendering">
+            <summary>
+            Triggers before the legend is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.Loaded">
+            <summary>
+            Triggers when the chart rendering completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.SizeChanged">
+            <summary>
+            Triggers when the window is re-sizing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.SeriesRender">
+            <summary>
+            Triggers when the series is rendering.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.TextRendering">
+            <summary>
+            Triggers before the data label text is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.TooltipRender">
+            <summary>
+            Triggers before the tooltip rendering.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.SubtitleRendering">
+            <summary>
+             Triggers before the sub-title is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartEvents.TitleRendering">
+            <summary>
+            Triggers before the title is rendered.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartFont">
+            <summary>
+            Options to customize the font style of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartFont.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartFont.Size">
+            <summary>
+            Font size for text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartMargin">
+            <summary>
+            Options to customize the margin of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMargin.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMargin.Bottom">
+            <summary>
+            Gets and sets the bottom margin for the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMargin.Left">
+            <summary>
+            Gets and sets the left margin for the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMargin.Right">
+            <summary>
+            Gets and sets the right margin for the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartMargin.Top">
+            <summary>
+            Gets and sets the top margin for the chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartMargin.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSubtitle">
+            <summary>
+            Options to customize the subtitle of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.Description">
+            <summary>
+            Description for the subtitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.EnableTrim">
+            <summary>
+            Trim the subtitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.MaximumWidth">
+            <summary>
+            Maximum width of the subtitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.Text">
+            <summary>
+            Text for the subtitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.TextAlignment">
+            <summary>
+            Text alignment for the subtitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitle.Visible">
+            <summary>
+            Visibility of the subtitle.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSubtitle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSubtitle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSubtitleTextStyle">
+            <summary>
+            Options to customize the text style for subtitle of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitleTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitleTextStyle.Size">
+            <summary>
+            Font size of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSubtitleTextStyle.Color">
+            <summary>
+            Specifies the color of the title text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSubtitleTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartSubtitleTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartTitle">
+            <summary>
+            Options to customize the title of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.Description">
+            <summary>
+            Description for the title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.EnableTrim">
+            <summary>
+            Trim the title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.MaximumWidth">
+            <summary>
+            Maximum width of the subtitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.Text">
+            <summary>
+            Text for the title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.TextAlignment">
+            <summary>
+            Text alignment for the title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitle.Visible">
+            <summary>
+            Visibility of the title.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartTitle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartTitle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartTitleFont">
+            <summary>
+            Options to customize the font for title of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitleFont.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitleFont.Size">
+            <summary>
+            Font size of the text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartTitleTextStyle">
+            <summary>
+            Options to customize the text style for title in the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitleTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitleTextStyle.Size">
+            <summary>
+            Font size of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTitleTextStyle.Color">
+            <summary>
+            Specifies the color of the title text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartTitleTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChartTitleTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RenderType">
+            <summary>
+            Defines render type of smithchart. They are
+             Impedance - Render a smithchart with Impedance type.
+             Admittance - Render a smithchart with Admittance type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.RenderType.Impedance">
+            <summary>
+            Impedance - Render a smithchart with Impedance type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.RenderType.Admittance">
+            <summary>
+            Admittance - Render a smithchart with Admittance type.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartAlignment">
+            <summary>
+            Defines the Alignment. They are
+             Near - Align the element to the left.
+             Center - Align the element to the center.
+             Far - Align the element to the right.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SmithChartAlignment.Near">
+            <summary>
+            Near - Align the element to the left.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SmithChartAlignment.Center">
+            <summary>
+            Center - Align the element to the center.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SmithChartAlignment.Far">
+            <summary>
+            Far - Align the element to the right.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLabelIntersectAction">
+            <summary>
+            Defines the label intersect action.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SmithChartLabelIntersectAction.Hide">
+            <summary>
+            Hide - hide the labels when intersecting.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SmithChartLabelIntersectAction.None">
+            <summary>
+            None - place all labels when intersecting.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.AxisLabelPosition">
+            <summary>
+            Defines axis label position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.AxisLabelPosition.Outside">
+            <summary>
+            Outside - axis label position is outside.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.AxisLabelPosition.Inside">
+            <summary>
+            Inside - axis label position is inside.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Shape">
+            <summary>
+            Defines the shape of legend. They are
+             Circle - Renders a circle.
+             Rectangle - Renders a rectangle.
+             Triangle - Renders a triangle.
+             Diamond - Renders a diamond.
+             Pentagon - Renders a pentagon.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.Shape.Circle">
+            <summary>
+            Circle - Renders a circle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.Shape.Rectangle">
+            <summary>
+            Rectangle - Renders a rectangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.Shape.Triangle">
+            <summary>
+            Triangle - Renders a triangle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.Shape.Diamond">
+            <summary>
+            Diamond - Renders a diamond.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.Shape.Pentagon">
+            <summary>
+            Pentagon - Renders a pentagon.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.AxisRenderer">
+            <summary>
+            Specifies the axis rendering of smith chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChart.Internal.AxisRenderer.#ctor(Syncfusion.Blazor.Charts.SfSmithChart)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.SmithChart.Internal.AxisRenderer"/> class.
+            </summary>
+            <param name="chart">Represents the <see cref="T:Syncfusion.Blazor.Charts.SfSmithChart"/> instance.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartDataLabel">
+            <summary>
+            Specifies the data label rendering of smith chart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.Point">
+            <summary>
+            Specifies the X and Y axis of point.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChart.Internal.Point.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.SmithChart.Internal.Point"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.Point.X">
+            <summary>
+            Specifies the X position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.Point.Y">
+            <summary>
+            Specifies the X position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.Size">
+            <summary>
+            Specifies the height and width of element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChart.Internal.Size.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.SmithChart.Internal.Size"/> class.
+            </summary>
+            <param name="width">Represents the width of element.</param>
+            <param name="height">Represents the height of element.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SmithChart.Internal.Size.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.SmithChart.Internal.Size"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.Size.Width">
+            <summary>
+             Specifies the width of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.Size.Height">
+            <summary>
+             Specifies the height of element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.DomRect">
+            <summary>
+            Specifies the margin of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.DomRect.Left">
+            <summary>
+            Specifies the left margin of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.DomRect.Top">
+            <summary>
+            Specifies the top margin of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.DomRect.Right">
+            <summary>
+            Specifies the right margin of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.DomRect.Bottom">
+            <summary>
+            Specifies the bottom margin of element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartPointData">
+            <summary>
+            Specifies the data point of smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartPointData.Point">
+            <summary>
+            Specifies the point of series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartPointData.Series">
+            <summary>
+            Specifies the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartPointData.LierIndex">
+            <summary>
+            Specifies the index.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs">
+            <summary>
+            Specifies the mouse information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs.Type">
+            <summary>
+            Specifies the type of browser.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs.PointerId">
+            <summary>
+            Specifies the identification of pointer.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs.MouseX">
+            <summary>
+            Specifies the X position of mouse.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs.MouseY">
+            <summary>
+            Specifies the Y position of mouse.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs.PointerType">
+            <summary>
+            Specifies the pointer type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs.Target">
+            <summary>
+            Specifies the target element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle">
+            <summary>
+            Specifies the text style of tooltip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle.FontStyle">
+            <summary>
+            Specifies the font style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle.Opacity">
+            <summary>
+            Specifies the font color opactity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle.Color">
+            <summary>
+            Specifies the font color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle.Size">
+            <summary>
+            Specifies the font size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle.FontFamily">
+            <summary>
+            Specifies the font family.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipBorder">
+            <summary>
+            Specifies the color and width of tooltip border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipBorder.Color">
+            <summary>
+            Specifies the color of border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipBorder.Width">
+            <summary>
+            Specifies the width of border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipLocation">
+            <summary>
+            Specifies the location of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipLocation.X">
+            <summary>
+            Specifies the X position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipLocation.Y">
+            <summary>
+            Specifies the Y position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipAreaBounds">
+            <summary>
+            Specifies height and width of tooltip element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipAreaBounds.Width">
+            <summary>
+            Specifies the width of tooltip element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipAreaBounds.Height">
+            <summary>
+            Specifies the height of tooltip element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip">
+            <summary>
+            Specifies the style of tooltip SVG.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Fill">
+            <summary>
+            Specifies the fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Header">
+            <summary>
+            Specifies the header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Opacity">
+            <summary>
+            Specifies the opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.TextStyle">
+            <summary>
+            Specifies the style of text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Template">
+            <summary>
+            Specifies the template of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Duration">
+            <summary>
+            Specifies the duration.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Border">
+            <summary>
+            Specifies color and width of tooltip border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Content">
+            <summary>
+            Specifies content of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.ClipBounds">
+            <summary>
+            Specifies the location of tooltip element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Palette">
+            <summary>
+            Specifies the palette color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Shapes">
+            <summary>
+            Specifies the shape.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Location">
+            <summary>
+            Specifies the location of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.ArrowPadding">
+            <summary>
+            Specifies the tooltip arrow padding.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Data">
+            <summary>
+            Specifies the data of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.Theme">
+            <summary>
+            Specifies the theme of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.AreaBounds">
+            <summary>
+            Specifies the bounds of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.SvgTooltip.AvailableSize">
+            <summary>
+            Specifies the available size of tooltip element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SeriesRenderer">
+            <summary>
+            Specifies the series rendering of smith chart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartTooltip">
+            <summary>
+            Specifies the rendering of tooltip in smith chart component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipComponent">
+            <summary>
+            Specifies the rendering data of tooltip element in smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipComponent.GivenContent">
+            <summary>
+            Specifies the content of toottip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipComponent.ID">
+            <summary>
+            Specifies the identification of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipComponent.Class">
+            <summary>
+            Specifies the class of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChart.Internal.TooltipComponent.Style">
+            <summary>
+            Specifies the style of tooltip.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartHelper">
+            <summary>
+            Specifies the helper methods of smith chart component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SfSmithChart">
+            <summary>
+            The Blazor Smith Chart is a component for showing the parameters of transmission lines in high-frequency circuit applications.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.Print">
+            <summary>
+            The method is used to perform the print functionality in smith chart.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.PrintAsync(Microsoft.AspNetCore.Components.ElementReference)">
+            <summary>
+            The method is used to perform the print functionality in smith chart.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.Export(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation})">
+            <summary>
+            The method is used to perform the export functionality for the rendered smith chart.
+            </summary>
+            <param name="type">Specifies the export type for the rendered smith chart.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.ExportAsync(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation})">
+            <summary>
+            The method is used to perform the export functionality for the rendered smith chart.
+            </summary>
+            <param name="type">Specifies the export type for the rendered smith chart.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.ID">
+            <summary>
+            Gets and sets the ID for smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.Background">
+            <summary>
+            Gets and sets the background color of the smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.ElementSpacing">
+            <summary>
+            Use to set space between elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.Height">
+            <summary>
+            Gets and sets the height of the smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.Radius">
+            <summary>
+            Gets and sets the radius of the smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.RenderType">
+            <summary>
+            Gets and sets the render type of the smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.Theme">
+            <summary>
+            Gets and sets the theme for the smith chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSmithChart.Width">
+            <summary>
+            Gets and sets the width of the smith chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnSmithChartMouseMove(Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse move over the smith chart.
+            </summary>
+            <param name="args">Represents the mouse event arguments.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnSmithChartMouseClick(Syncfusion.Blazor.Charts.SmithChart.Internal.SmithChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse click on the smith chart.
+            </summary>
+            <param name="args">Represents the mouse event arguments.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnSmithChartMouseLeave">
+            <summary>
+            JS interopt while mouse leave on the smith chart.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.OnSmithChartResize">
+            <summary>
+            JS interopt while window resized.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.Refresh(System.Boolean)">
+            <summary>
+            The method is used to render the smith chart again.
+            </summary>
+            <param name="isUpdateData">Specifies to update the smith chart data.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSmithChart.RefreshAsync(System.Boolean)">
+            <summary>
+            The method is used to render the smith chart again.
+            </summary>
+            <param name="isUpdateData">Specifies to update the smith chart data.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartBaseEventArgs">
+            <summary>
+            Specifies the event arguments which has common for smith chart component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartBaseEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartExportEventArgs">
+            <summary>
+            Specifies the event arguments available for export event of the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartExportEventArgs.DataUrl">
+            <summary>
+            Defines the DataUrl for export file.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartTooltipEventArgs">
+            <summary>
+            Specifies the tooltip render event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTooltipEventArgs.HeaderText">
+            <summary>
+            Defines the headerText of tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTooltipEventArgs.Point">
+            <summary>
+            Defines point of the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTooltipEventArgs.Template">
+            <summary>
+            Defines the template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTooltipEventArgs.Text">
+            <summary>
+            Defines the tooltip text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartResizeEventArgs">
+            <summary>
+            Specifies the event arguments available for resize event of the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartResizeEventArgs.CurrentSize">
+            <summary>
+            Defines the current size of the  chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartResizeEventArgs.PreviousSize">
+            <summary>
+            Defines the previous size of the  chart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartAnimationCompleteEventArgs">
+            <summary>
+            Specifies the animation complete event arguments.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartAxisLabelRenderEventArgs">
+            <summary>
+            Specifies the Axis Label Render Event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartAxisLabelRenderEventArgs.Text">
+            <summary>
+            Defines the current axis label text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartAxisLabelRenderEventArgs.X">
+            <summary>
+            Defines the current axis label x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartAxisLabelRenderEventArgs.Y">
+            <summary>
+            Defines the current axis label y location.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLegendRenderEventArgs">
+            <summary>
+            Specifies the Legend Render Event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendRenderEventArgs.Fill">
+            <summary>
+            Defines the current legend fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendRenderEventArgs.Shape">
+            <summary>
+            Defines the current legend shape.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartLegendRenderEventArgs.Text">
+            <summary>
+            Defines the current legend text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartLoadedEventArgs">
+            <summary>
+            Specifies the Loaded Event arguments.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartSeriesRenderEventArgs">
+            <summary>
+            Specifies the Series Render Event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesRenderEventArgs.Fill">
+            <summary>
+            Defines the current series fill.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesRenderEventArgs.Index">
+            <summary>
+            Defines the current series index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartSeriesRenderEventArgs.Text">
+            <summary>
+            Defines name of the event.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs">
+            <summary>
+            Specifies the Text Render Event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.PointIndex">
+            <summary>
+            Defines the current datalabel pointIndex.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.SeriesIndex">
+            <summary>
+            Defines the current datalabel seriesIndex.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.Text">
+            <summary>
+            Defines the current datalabel text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.X">
+            <summary>
+            Defines the current datalabel text x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.Y">
+            <summary>
+            Defines the current datalabel text y location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.Color">
+            <summary>
+            Defines the text color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.Border">
+            <summary>
+            Defines the information of the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SmithChartTextRenderEventArgs.Template">
+            <summary>
+            Defines the template.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SubTitleRenderEventArgs">
+            <summary>
+            Specifies the SubTitle Render Event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SubTitleRenderEventArgs.Text">
+            <summary>
+            Defines the current subtitle text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SubTitleRenderEventArgs.X">
+            <summary>
+            Defines the current subtitle text x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SubTitleRenderEventArgs.Y">
+            <summary>
+            Defines the current subtitle text y location.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.TitleRenderEventArgs">
+            <summary>
+            Specifies the Title Render Event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.TitleRenderEventArgs.Text">
+            <summary>
+            Defines the current title text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.TitleRenderEventArgs.X">
+            <summary>
+            Defines the current title text x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.TitleRenderEventArgs.Y">
+            <summary>
+            Defines the current title text y location.
+            </summary>
+        </member>
+    </members>
+</doc>
