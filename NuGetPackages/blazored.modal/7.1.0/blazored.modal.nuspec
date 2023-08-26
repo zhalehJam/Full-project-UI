@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Blazored.Modal</id>
+    <version>7.1.0</version>
+    <authors>Chris Sainty</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/Blazored/Modal</projectUrl>
+    <description>A powerful and customizable modal implementation for Blazor applications.</description>
+    <copyright>Copyright 2021 (c) Chris Sainty. All rights reserved.</copyright>
+    <tags>Blazored Blazor Razor Components Modal Dialogue ASP.NET Core CSharp Web</tags>
+    <repository type="git" url="https://github.com/Blazored/Modal" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.AspNetCore.Components" version="6.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Components.Web" version="6.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.JSInterop.WebAssembly" version="6.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

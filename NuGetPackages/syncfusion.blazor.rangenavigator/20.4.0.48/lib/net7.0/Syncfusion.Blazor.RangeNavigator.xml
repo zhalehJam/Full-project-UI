@@ -1,0 +1,1138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.RangeNavigator</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorBorder">
+            <summary>
+            Sets and gets the options to customize the border for range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorEvents">
+            <summary>
+            Range Navigator events customization are mentioned through this.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.Loaded">
+            <summary>
+            Triggers after the range navigator loaded.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.Resized">
+            <summary>
+            Triggers after resizing of chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.TooltipRender">
+            <summary>
+            Triggers before the tooltip for series is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.LabelRender">
+            <summary>
+            Triggers for each label renderig.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.Changed">
+            <summary>
+            Triggers value changed when start and end value for range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.OnPrintCompleted">
+            <summary>
+            Triggers before  print.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEvents.SelectorRender">
+            <summary>
+            Triggers value changed.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorLabelStyle">
+            <summary>
+            Sets and gets the options to customize the label style for range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorMajorGridLines">
+            <summary>
+            Sets and gets the options to customize the major grid lines for range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorMajorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorMajorGridLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorMajorTickLines">
+            <summary>
+            Sets and gets the options to customize the major tick lines for range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorMajorTickLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorMajorTickLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorMargin">
+            <summary>
+            Sets and gets the options to customize the margin for range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorMargin.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorStyleSettings">
+            <summary>
+            Sets and gets the options to customize the navigator style settings for range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorStyleSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorStyleSettings.SelectedRegionColor">
+            <summary>
+            Defines the selected region color for selected area.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorStyleSettings.UnselectedRegionColor">
+            <summary>
+            Un Selected region color for un selected area.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorStyleSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorStyleSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorThumbBorder">
+            <summary>
+            Sets and gets the options to customize the border for navigator thumb.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorThumbBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorThumbBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings">
+            <summary>
+            Sets and gets the options to customize the navigator thumb settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.Fill">
+            <summary>
+            Set and gets the fill color for the thumb.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.Height">
+            <summary>
+            Get and sets the height of thumb.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.Type">
+            <summary>
+            Get and sets the type of thumb.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.Width">
+            <summary>
+            Get and sets the width of thumb.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorThumbSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Internal.PeriodSelectorContent">
+            <summary>
+            Sets and gets the period selector for range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Internal.PeriodSelectorContent.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.Internal.PeriodSelectorContent.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.Internal.PeriodSelectorContent.ShouldRender">
+            <summary>
+            Returns a flag to indicate whether the component should render.
+            </summary>
+            <returns>Returns boolean value.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorPeriod">
+            <summary>
+            Sets and gets the period element for an periodselector in range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriod.Interval">
+            <summary>
+            Gets and sets the interval value for the periods.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriod.IntervalType">
+            <summary>
+            Gets and sets the IntervalType of period.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriod.Selected">
+            <summary>
+            To select the default period.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriod.Text">
+            <summary>
+            Text to be displayed on the button.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorPeriod.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorPeriods">
+            <summary>
+            Specifies the periods that are to be added to the periodselector of the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriods.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorPeriods.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorPeriods.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorPeriodSelectorSettings">
+            <summary>
+            Sets and gets the periodselector for range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriodSelectorSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriodSelectorSettings.Height">
+            <summary>
+            Height for the period selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorPeriodSelectorSettings.Position">
+            <summary>
+            vertical position of the period selector.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorPeriodSelectorSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorAnimation">
+            <summary>
+            Sets and gets animation of thumb for the range slider in range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorAnimation.Delay">
+            <summary>
+            The option to delay animation of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorAnimation.Duration">
+            <summary>
+            The duration of animation in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorAnimation.Enable">
+            <summary>
+            If set to true, series gets animated on initial loading.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorAnimation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorAnimation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorSeries">
+            <summary>
+            Sets and gets the series for range navigator.
+            </summary>
+            <summary>
+            Sets and gets the options for customizing the range navigator series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.DashArray">
+            <summary>
+            Defines the pattern of dashes and gaps to stroke the lines in `Line` type series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.DataSource">
+            <summary>
+            It defines the data source for a series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.Fill">
+            <summary>
+            The fill color for the series that accepts value in hex and rgba as a valid CSS color string.
+            It also represents the color of the signal lines in technical indicators.
+            For technical indicators, the default value is 'blue' and for series, it has null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.Opacity">
+            <summary>
+            The opacity for the background.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.Query">
+            <summary>
+            It defines the query for the data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.Type">
+            <summary>
+            It defines the series type of the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.Width">
+            <summary>
+            The stroke width for the series that is applicable only for `Line` type series.
+            It also represents the stroke width of the signal lines in technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.XName">
+            <summary>
+            It defines the xName for the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeries.YName">
+            <summary>
+            It defines the yName for the series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorSeries.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorSeries.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorSeries.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.RangeNavigatorSeries"/> class.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorSeriesBorder">
+            <summary>
+            Sets and gets the options to customize the border for range navigator series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorSeriesBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorSeriesBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorSeriesCollection">
+            <summary>
+            Specifies the series collections that are added to the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorSeriesCollection.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorSeriesCollection.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings">
+            <summary>
+            Gets and sets the tooltip settings for the annotation in range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.DisplayMode">
+            <summary>
+            It defines display mode for tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.Enable">
+            <summary>
+            Enables / Disables the visibility of the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.Fill">
+            <summary>
+            The fill color of the tooltip that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.Format">
+            <summary>
+            Format the ToolTip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.Opacity">
+            <summary>
+            The fill color of the tooltip that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorRangeTooltipSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorTooltipBorder">
+            <summary>
+            Sets and gets the options to customize the border for range navigator tooltip.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorTooltipBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorTooltipTextStyle">
+            <summary>
+            Gets and sets the tooltip text style of range navigator tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorTooltipTextStyle.Size">
+            <summary>
+            Gets and sets the size of the tooltip text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigatorTooltipTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigatorEventArgs">
+            <summary>
+            Specifies the event arguments which has common for range navigator component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigatorEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeLoadedEventArgs">
+            <summary>
+            Specifies the event arguments available for on loaded events in the range navigator component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeLoadedEventArgs.Theme">
+            <summary>
+            Defines the theme of the range navigator.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeResizeEventArgs">
+            <summary>
+            Specifies the event arguments available for resize event of the range navigator component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeResizeEventArgs.CurrentSize">
+            <summary>
+            Defines the current size of the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeResizeEventArgs.PreviousSize">
+            <summary>
+            Defines the previous size of the range navigator.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeSelectorRenderEventArgs">
+            <summary>
+            Specifies the event arguments available for selector event of the range navigator component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeSelectorRenderEventArgs.Selector">
+            <summary>
+            Defines selector collections.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeSelectorRenderEventArgs.Content">
+            <summary>
+            content fro calendar format.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.ChangedEventArgs">
+            <summary>
+            Specifies the event arguments available for the changed events in the range navigator component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ChangedEventArgs.Start">
+            <summary>
+            Defines the start value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ChangedEventArgs.End">
+            <summary>
+            Defines the end value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ChangedEventArgs.SelectedData">
+            <summary>
+            Defines the selected data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ChangedEventArgs.ZoomPosition">
+            <summary>
+            Defined the zoomPosition of the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ChangedEventArgs.ZoomFactor">
+            <summary>
+            Defined the zoomFactor of the range navigator.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeTooltipRenderEventArgs">
+            <summary>
+            Specifies the event arguments available for the tooltip render events in the range navigator component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeTooltipRenderEventArgs.Text">
+            <summary>
+            Defines tooltip text collections.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeTooltipRenderEventArgs.TextStyle">
+            <summary>
+            Defines tooltip text style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeLabelRenderEventArgs">
+            <summary>
+            Specifies the event arguments available for the label render events in the range navigator component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeLabelRenderEventArgs.Text">
+            <summary>
+            Defines label text collections.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeLabelRenderEventArgs.LabelStyle">
+            <summary>
+            Defines label style for labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeLabelRenderEventArgs.Region">
+            <summary>
+            Defines region for labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeLabelRenderEventArgs.Value">
+            <summary>
+            Defines the value for label.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SliderOptions">
+            <summary>
+            Specifies the slider information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SliderOptions.Transform">
+            <summary>
+            Specifies the transform.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SliderOptions.Id">
+            <summary>
+            Specifies the id of the element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SliderOptions.ShapeOptions">
+            <summary>
+            Specifies the shape of slider thump.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SliderOptions.Style">
+            <summary>
+            Specifies the style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigator.Internal.DataPoint">
+            <summary>
+            Specifies the data point of the range navigator.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems">
+            <summary>
+            Specifies the period selector for range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems.RangeToolbarItems">
+            <summary>
+            Specifies the toolbar item for period selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems.Min">
+            <summary>
+            Specifies the minimum value for period selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems.Max">
+            <summary>
+            Specifies the maximum value for period selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems.StartDate">
+            <summary>
+            Specifies the start date for period selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems.EndDate">
+            <summary>
+            Specifies the end date for period selector.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.PeriodSelectorItems.Height">
+            <summary>
+            Specifies the height for period selector.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigator.Internal.RangeSlider">
+            <summary>
+            Specifies the slider of range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigator.Internal.RangeSlider.PerformSnapping(System.Double,System.Double,System.Boolean,System.Boolean)">
+            <summary>
+            JS interopt to perform the snapping the range navigator thump.
+            </summary>
+            <param name="start">Represents the mouse start range.</param>
+            <param name="end">Represents the mouse end range.</param>
+            <param name="trigger">Represents the event state.</param>
+            <param name="tooltip">Represents the tooltip visibility state.</param>
+            <exclude />
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SvgSliderGroup">
+            <summary>
+            Specifies the slider of range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SvgSliderGroup.Id">
+            <summary>
+            Specifies the identification of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SvgSliderGroup.Transform">
+            <summary>
+            Specifies the transform of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SvgSliderGroup.Style">
+            <summary>
+            Specifies the style of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SvgSliderGroup.ShapeOptions">
+            <summary>
+            Specifies the shape information of the slider thump.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.RangeNavigator.Internal.SvgSliderGroup.ChangeTransform(System.String)">
+            <summary>
+            Specifies to update the transform of element.
+            </summary>
+            <param name="transform">Represents the transform.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SfRangeNavigator">
+            <summary>
+            The range navigator component is quickly visualize high-level data and select a time period with a modern interface to filter data for in-depth analysis.
+            The range navigator contains labels, ticks, and an axis line to customize its appearance.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.Print">
+            <summary>
+            The method is used to perform the print functionality in range navigator.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.PrintAsync(Microsoft.AspNetCore.Components.ElementReference)">
+            <summary>
+            The method is used to perform the print functionality in range navigator.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.Export(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            The method is used to perform the export functionality for the rendered range navigator.
+            </summary>
+            <param name="type">Specifies the export type for the rendered range navigator.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <param name="allowDownload">Specifies whether to download or not.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.ExportAsync(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            The method is used to perform the export functionality for the rendered range navigator.
+            </summary>
+            <param name="type">Specifies the export type for the rendered range navigator.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <param name="allowDownload">Specifies whether to download or not.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.RemoveElements">
+            <summary>
+            JS interop for remove the existing element.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Id">
+            <summary>
+            Set and gets the id for the chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.AllowIntervalData">
+            <summary>
+            Allow the data to be selected for that particular interval while clicking the particular label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.AllowSnapping">
+            <summary>
+            Enable snapping for range navigator sliders.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.AnimationDuration">
+            <summary>
+            It defines the duration for an animation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.DataSource">
+            <summary>
+            It defines the data source for a range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.DisableRangeSelector">
+            <summary>
+            To render the period selector with out range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.IsStockChart">
+            <summary>
+            Specifies the stock chart instance.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.ChartHeight">
+            <summary>
+            Specifies the chart height.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.UpdateChartData">
+            <summary>
+            Specifies the data to be update in range navigator.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.ShouldSelectorRender">
+            <summary>
+            Specifies the rendering in range navigator.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.UpdatePeriodEvent">
+            <summary>
+            Specifies the event to update the period.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.UpdateCustomElement">
+            <summary>
+            Specifies to update the element in range navigator.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.UpdateDropdownElement">
+            <summary>
+            Specifies to update the dropdown element in range navigator.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.GetRangeNavigator">
+            <summary>
+            Specifies to get the range navigator instance..
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.EnableGrouping">
+            <summary>
+            Enable grouping for the labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.GroupBy">
+            <summary>
+            GroupBy property for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Height">
+            <summary>
+            The height of the chart as a string accepts input both as '100px' or '100%'.
+            If specified as '100%, range navigator renders to the full height of its parent element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Interval">
+            <summary>
+            interval value for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.IntervalType">
+            <summary>
+            IntervalType for the dateTime axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.LabelFormat">
+            <summary>
+            Used to format the axis label that accepts any global string format like 'C', 'n1', 'P' etc.
+            It also accepts placeholder like '{value}°C' in which value represent the axis label, e.g, 20°C.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.LabelIntersectAction">
+            <summary>
+            Specifies, when the axis labels intersect with each other.They are,
+            None: Shows all the labels.
+            Hide: Hides the label when it intersects.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.LabelPosition">
+            <summary>
+            Label positions for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.LogBase">
+            <summary>
+            Get and sets the base value for log axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Maximum">
+            <summary>
+            Get and sets maximum value for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Minimum">
+            <summary>
+            Get and sets minimum value for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Query">
+            <summary>
+            Get and sets the query for the data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.SecondaryLabelAlignment">
+            <summary>
+            It specifies the label alignment for secondary axis labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Theme">
+            <summary>
+            Specifies the theme for the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.TickPosition">
+            <summary>
+            Specifies the tick Position for axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.UseGroupingSeparator">
+            <summary>
+            Specifies whether a grouping separator should be used for a number.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Value">
+            <summary>
+            Selected range for range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.ValueChanged">
+            <summary>
+            Specifies the callback to trigger when the value changes.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.ValueType">
+            <summary>
+            Get and sets the valueType for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.Width">
+            <summary>
+            The width of the range navigator as a string accepts input as both like '100px' or '100%'.
+            If specified as '100%, range navigator renders to the full width of its parent element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.XName">
+            <summary>
+            It defines the xName for the range navigator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfRangeNavigator.YName">
+            <summary>
+            It defines the yName for the range navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.RefreshAsync">
+            <summary>
+            The method is used to re-render the Range Navigator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnRangeMouseDown(Syncfusion.Blazor.Charts.Chart.Internal.ChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse down.
+            </summary>
+            <param name="args">Represents the mouse events.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.SetStartEndValue(System.Double,System.Double,System.Boolean,System.Boolean)">
+            <summary>
+            JS interopt to set slider range.
+            </summary>
+            <param name="start">Represents the mouse start range.</param>
+            <param name="end">Represents the mouse end range.</param>
+            <param name="trigger">Represents the event state.</param>
+            <param name="showTooltip">Represents the tooltip visibility state.</param>
+            <exclude />
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnRangeMouseMove(Syncfusion.Blazor.Charts.Chart.Internal.ChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse move.
+            </summary>
+            <param name="args">Represents the mouse events.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnRangeMouseEnd(Syncfusion.Blazor.Charts.Chart.Internal.ChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse end.
+            </summary>
+            <param name="args">Represents the mouse events.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnRangeMouseClick(Syncfusion.Blazor.Charts.Chart.Internal.ChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse click.
+            </summary>
+            <param name="args">Represents the mouse events.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnRangeMouseLeave(Syncfusion.Blazor.Charts.Chart.Internal.ChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse leave the component.
+            </summary>
+            <param name="args">Represents the mouse events.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfRangeNavigator.OnRangeResize">
+            <summary>
+            JS interopt while resize the window.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.PeriodSelector">
+            <summary>
+            Sets and gets the period selector which allows to select a range with specified periods.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.PeriodSelector.#ctor(Syncfusion.Blazor.Charts.SfRangeNavigator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.PeriodSelector"/> class.
+            </summary>
+            <param name="rangeNavigator">Specifies the instance of component.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Chart.Internal.RNAreaSeries">
+            <summary>
+            Specifies the series of range navigator.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Chart.Internal.RangeNavigatorLineBase">
+            <summary>
+            Sets and gets the options for customizing the range navigator line series.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.Chart.Internal.RangeNavigatorLineBase.SPACE">
+            <summary>
+            Specifies the space notation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.RangeNavigatorLineBase.Culture">
+            <summary>
+            Specifies the culture info.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Chart.Internal.RangeStepLineSeries">
+            <summary>
+            Specifies the range navigator step line series.
+            </summary>
+        </member>
+    </members>
+</doc>

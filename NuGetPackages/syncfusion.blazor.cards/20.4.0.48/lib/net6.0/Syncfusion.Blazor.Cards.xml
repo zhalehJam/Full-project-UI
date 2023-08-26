@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.Cards</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Cards.CardContent">
+            <summary>
+            The content in Card holds texts, images, links and all possible HTML elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardContent.Content">
+            <summary>
+            Represents a content of the card component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardContent.EnableSeparator">
+            <summary>
+            Enable the separator for card content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardContent.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.CardOrientation">
+            <summary>
+            <table style = "border: none">
+            <tr>
+            <td style = "border: none">Defines the Orientation of the card, They are,</td>
+            </tr>
+            <tr>
+            <td style = "border: none">Vertical - Top to Bottom alignment of the card component.</td>
+            </tr>
+            <tr>
+            <td style = "border: none">Horizontal - Right to Left alignment of the card component.</td>
+            </tr>
+            </table>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.CardOrientation.Vertical">
+            <summary>
+            Vertical - Top to Bottom alignment of the card component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.CardOrientation.Horizontal">
+            <summary>
+            Horizontal - Right to Left alignment of the card component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.TitlePositions">
+            <summary>
+            <table style = "border: none">
+            <tr>
+            <td style = "border: none">Defines the Title position of title in the Card Image, They are,</td>
+            </tr>
+            <tr>
+            <td style = "border: none">BottomLeft - Title position BottomLeft of card Image.</td>
+            </tr>
+            <tr>
+            <td style = "border: none">BottomRight - Title position BottomRight of card Image.</td>
+            </tr>
+            <tr>
+            <td style = "border: none">TopLeft - Title position TopLeft of card Image.</td>
+            </tr>
+            <tr>
+            <td style = "border: none">TopRight - Title position TopRight of card Image.</td>
+            </tr>
+            </table>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.TitlePositions.BottomLeft">
+            <summary>
+             BottomLeft - Title position BottomLeft of card Image.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.TitlePositions.BottomRight">
+            <summary>
+            BottomRight - Title position BottomRight of card Image.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.TitlePositions.TopLeft">
+            <summary>
+            TopLeft - Title position TopLeft of card Image.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.TitlePositions.TopRight">
+            <summary>
+            TopRight - Title position TopRight of card Image.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.ImagePosition">
+            <summary>
+            <table style = "border: none">
+            <tr>
+            <td style = "border: none">Defines the image position in the Card Header. They are,</td>
+            </tr>
+            <tr>
+            <td style = "border: none">Left - Image position in the left of card header</td>
+            </tr>
+            <tr>
+            <td style = "border: none">Right - Image position in the right of card header</td>
+            </tr>
+            </table>
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.ImagePosition.Left">
+            <summary>
+            Left - Image position in the left of card header
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Cards.ImagePosition.Right">
+            <summary>
+            Right - Image position in the right of card header
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.CardFooter">
+            <summary>
+            The Card footer is used to display descriptive information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardFooter.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardFooter.Orientation">
+            <summary>
+            Represents the orientation of the Card component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Cards.CardFooter.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.CardFooterContent">
+            <summary>
+            The Card footer content is used to display descriptive information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardFooterContent.Text">
+            <summary>
+            Represents the text for the card footer content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardFooterContent.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.CardHeader">
+            <summary>
+            The Card header is used to display descriptive information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardHeader.Title">
+            <summary>
+            Represents a Tile for the Card Header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardHeader.SubTitle">
+            <summary>
+            Represents a SubTile for the Card Header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardHeader.ImageUrl">
+            <summary>
+            Represents a Header image location for the card component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardHeader.ImagePosition">
+            <summary>
+            Represents image position in the card header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardHeader.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.CardImage">
+            <summary>
+            The Card image is used to includes image as direct element anywhere inside the root card.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardImage.Image">
+            <summary>
+            Represents a url location of a image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardImage.Title">
+            <summary>
+            Represents a title for the image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardImage.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardImage.TitlePosition">
+            <summary>
+            Represents a title position in the image.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Cards.CardImage.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.CardStacked">
+            <summary>
+            The Card stacked is used to group the content vertically or horizontally.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.CardStacked.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Cards.SfCard">
+            <summary>
+            The Card is a container-based user interface control built using for displaying organized content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.SfCard.ID">
+            <summary>
+            Defines Id for the Card component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.SfCard.CssClass">
+            <summary>
+            Defines CssClass for the Card component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.SfCard.EnableRtl">
+            <summary>
+            Enable or disable rendering component in the right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.SfCard.HtmlAttributes">
+            <summary>
+            You can add the additional html attributes such as id, title etc., to the button element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.SfCard.ChildContent">
+            <summary>
+            Represents a segment of UI content, implemented.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Cards.SfCard.Orientation">
+            <summary>
+            Defines the Orientation of the card.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Cards.SfCard.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Cards.SfCard.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+    </members>
+</doc>

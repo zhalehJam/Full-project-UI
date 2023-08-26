@@ -1,0 +1,2818 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.HeatMap</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapAxisLabelBorder">
+            <summary>
+            Specifies the heatmap axis labels border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle">
+            <summary>
+            Specifies the settings to customize the text style of the axis title in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.Color">
+            <summary>
+            Gets or sets the color for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.FontFamily">
+            <summary>
+            Gets or sets the font family for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.FontStyle">
+            <summary>
+            Gets or sets the font style for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.FontWeight">
+            <summary>
+            Gets or sets the font weight for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.Size">
+            <summary>
+            Gets or sets the font size for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.TextAlignment">
+            <summary>
+            Gets or sets the text alignment mode for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisTitleTextStyle.TextOverflow">
+            <summary>
+            Gets or sets the text overflow mode for the title of the axes in HeatMap.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis">
+            <summary>
+            Specifies the heatmap common axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.EnableTrim">
+            <summary>
+            Enable Trim for heatmap yAxis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.Increment">
+            <summary>
+            Specifies the increment for an axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.Interval">
+            <summary>
+            Specifies the interval for an axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.IntervalType">
+             <summary>
+             <para>Specifies the types like `Years`, `Months`, `Days`, `Hours`, `Minutes` in date-time axis. They are,</para>
+             <list type="bullet">
+             <item>
+             <term>Years:</term>
+             <description>Defines the interval of the axis in years.</description>
+            </item>
+             <item>
+             <term>Months:</term>
+             <description>Defines the interval of the axis in months.</description>
+             </item>
+             <item>
+             <term>Days:</term>
+             <description>Defines the interval of the axis in days.</description>
+             </item>
+             <item>
+             <term>Hours:</term>
+             <description>Defines the interval of the axis in hours.</description>
+             </item>
+             <item>
+             <term>Minutes:</term>
+             <description>Defines the interval of the axis in minutes.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.IsInversed">
+            <summary>
+            Specifies whether the axis to be rendered in the inversed manner or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.LabelFormat">
+            <summary>
+            Used to format the axis label that accepts any global string format like 'C', 'n1', 'P' etc.
+            It also accepts placeholder like '{value}°C' in which value represents the axis label, e.g, 20°C.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.LabelIntersectAction">
+             <summary>
+             <para>Specifies the actions like `Rotate45`, `None` and `Trim` when the axis labels intersect with each other. They are,</para>
+             <list type="bullet">
+             <item>
+             <term>None:</term>
+             <description>Shows all the labels.</description>
+            </item>
+             <item>
+             <term>Rotate45:</term>
+             <description>Rotates the label to 45 degrees when it intersects.</description>
+             </item>
+             <item>
+             <term>Trim:</term>
+             <description>Trim the label when label text width exceeds the label width.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.LabelRotation">
+            <summary>
+            Specifies the angle to rotate the axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.Labels">
+            <summary>
+            Specifies the options for label assignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.MaxLabelLength">
+            <summary>
+            Specifies the maximum length of an axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.Maximum">
+            <summary>
+            Specifies the maximum range of an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.Minimum">
+            <summary>
+            Specifies the minimum range of an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.ShowLabelOn">
+             <summary>
+             <para>Defines the axis label display type for date-time axis.</para>
+             <list type="bullet">
+             <item>
+             <term>None:</term>
+             <description>Axis labels are displayed based on the value type.</description>
+            </item>
+             <item>
+             <term>Years:</term>
+             <description>Defines the axis labels display in years.</description>
+             </item>
+             <item>
+             <term>Months:</term>
+             <description> Defines the axis labels display in months.</description>
+             </item>
+             <item>
+             <term>Days:</term>
+             <description>Defines the axis labels display in days.</description>
+             </item>
+             <item>
+             <term>Hours:</term>
+             <description>Defines the axis labels display in hours.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.ValueType">
+             <summary>
+             <para>Specifies the type of data the axis handles.</para>
+             <list type="bullet">
+             <item>
+             <term>Numeric:</term>
+             <description>Renders a numeric axis.</description>
+            </item>
+             <item>
+             <term>DateTime:</term>
+             <description>Renders a dateTime axis.</description>
+             </item>
+             <item>
+             <term>Category:</term>
+             <description>Renders a category axis.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.OpposedPosition">
+            <summary>
+            If set to true, the axis will render at the opposite side of its default position.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapCommonAxis.UpdateProperties(System.String,System.Object)">
+            <summary>
+            Update child properties values.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapCommonLabelBorder">
+            <summary>
+            Specifies the heatmap common axis label border.
+            </summary>
+            <exclude /> 
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonLabelBorder.Color">
+            <summary>
+            Specifies the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonLabelBorder.Type">
+             <summary>
+             <para>Specifies label border type.</para>
+             <list type="bullet">
+             <item>
+             <term>Rectangle:</term>
+             <description>Defines Rectangle border type.</description>
+            </item>
+             <item>
+             <term>Without Top Border:</term>
+             <description>Defines WithoutTopBorder type.</description>
+             </item>
+             <item>
+             <term>Without Top/Bottom Border:</term>
+             <description>Defines WithoutTopandBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Without Border:</term>
+             <description> Defines WithoutBorder type.</description>
+             </item>
+             <item>
+             <term>Without Bottom Border:</term>
+             <description>Defines WithoutBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Brace:</term>
+             <description>Defines Brace type border.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCommonLabelBorder.Width">
+            <summary>
+            Specifies the width of the border in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapXAxis">
+            <summary>
+            Specifies the heatmap x-axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxis.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapXAxis.UpdateProperties(System.String,System.Object)">
+            <summary>
+            Update child property values.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle">
+            <summary>
+            Specifies the x-axis text style of the heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.TextAlignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTextStyle.TextOverflow">
+            <summary>
+            Specifies the heatmap text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapXAxisTitle">
+            <summary>
+            specifies the heatmap x-axis title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTitle.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisTitle.Text">
+            <summary>
+            Specifies the title text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapXAxisTitle.UpdateProperties(Syncfusion.Blazor.HeatMap.HeatMapXAxisTitleTextStyle)">
+            <summary>
+            updating child properties values.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapXAxisTitleTextStyle">
+            <summary>
+            Specifies the heatmap x-axis title text style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapYAxis">
+            <summary>
+            Specifies the heatmap y-axis class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxis.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapYAxis.UpdateProperties(System.String,System.Object)">
+            <summary>
+            Updated child property values
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle">
+            <summary>
+            Specifies the heatmap y-axis class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.TextAlignment">
+            <summary>
+            Defines the text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTextStyle.TextOverflow">
+            <summary>
+            Specifies the heat map text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapYAxisTitle">
+            <summary>
+            specifies heatmap axis title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTitle.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisTitle.Text">
+            <summary>
+            Title text
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapYAxisTitle.UpdateProperties(Syncfusion.Blazor.HeatMap.HeatMapYAxisTitleTextStyle)">
+            <summary>
+            updating child properties values.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapYAxisTitleTextStyle">
+            <summary>
+            Specifies the heatmap y-axis title text style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelCategories">
+            <summary>
+            Specifies the heatmap axis multi-level categories class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelCategories.End">
+            <summary>
+            Specifies the end value of the multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelCategories.MaximumTextWidth">
+            <summary>
+            Specifies the maximum width of the text for multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelCategories.Start">
+            <summary>
+            Specifies the start value of the multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelCategories.Text">
+            <summary>
+            Specifies the multi-level labels text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle">
+            <summary>
+            Specifies the axis text style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.TextAlignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapAxisMultiLevelLabelsTextStyle.TextOverflow">
+            <summary>
+            Specifies the heatmap text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapMultiLevelLabel">
+            <summary>
+            Specifies the heatmap multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMultiLevelLabel.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMultiLevelLabel.Alignment">
+             <summary>
+             <para>Defines the position of the multi-level labels. They are,</para>
+             <list type="bullet">
+             <item>
+             <term>Near:</term>
+             <description>Places the multi-level labels Near.</description>
+            </item>
+             <item>
+             <term>Center:</term>
+             <description>Places the multi-level labels at Center.</description>
+             </item>
+             <item>
+             <term>Far:</term>
+             <description>Places the multi-level labels Far.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMultiLevelLabel.Overflow">
+             <summary>
+             <para>Defines the text overflow for multi-level labels. They are,</para>
+             <list type="bullet">
+             <item>
+             <term>Trim:</term>
+             <description>Trim text overflow for multi-level labels.</description>
+            </item>
+             <item>
+             <term>Wrap:</term>
+             <description> Wrap text overflow for multi-level labels.</description>
+             </item>
+             <item>
+             <term>None:</term>
+             <description>No text overflow for multi-level labels.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapMultiLevelLabels">
+            <summary>
+            Specifies the heatmap multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMultiLevelLabels.ChildContent">
+            <summary>
+            Specifies child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapXAxisMultiLevelLabelBorder">
+            <summary>
+            Specifies the heatmap x-axis multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisMultiLevelLabelBorder.Color">
+            <summary>
+            Specifies the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisMultiLevelLabelBorder.Type">
+             <summary>
+             <para>Specifies label border type.</para>
+             <list type="bullet">
+             <item>
+             <term>Rectangle:</term>
+             <description>Defines Rectangle border type.</description>
+            </item>
+             <item>
+             <term>Without Top Border:</term>
+             <description>Defines WithoutTopBorder type.</description>
+             </item>
+             <item>
+             <term>Without Top/Bottom Border:</term>
+             <description>Defines WithoutTopandBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Without Border:</term>
+             <description> Defines WithoutBorder type.</description>
+             </item>
+             <item>
+             <term>Without Bottom Border:</term>
+             <description>Defines WithoutBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Brace:</term>
+             <description>Defines Brace type border.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapXAxisMultiLevelLabelBorder.Width">
+            <summary>
+            Specifies the width of the border in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapYAxisMultiLevelLabelBorder">
+            <summary>
+            Specifies the heatmap y-axis multi-level labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisMultiLevelLabelBorder.Color">
+            <summary>
+            Specifies the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisMultiLevelLabelBorder.Type">
+             <summary>
+             <para>Specifies label border type.</para>
+             <list type="bullet">
+             <item>
+             <term>Rectangle:</term>
+             <description>Defines Rectangle border type.</description>
+            </item>
+             <item>
+             <term>Without Top Border:</term>
+             <description>Defines WithoutTopBorder type.</description>
+             </item>
+             <item>
+             <term>Without Top/Bottom Border:</term>
+             <description>Defines WithoutTopandBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Without Border:</term>
+             <description> Defines WithoutBorder type.</description>
+             </item>
+             <item>
+             <term>Without Bottom Border:</term>
+             <description>Defines WithoutBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Brace:</term>
+             <description>Defines Brace type border.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapYAxisMultiLevelLabelBorder.Width">
+            <summary>
+            Specifies the width of the border in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings">
+            <summary>
+            Specifies the heatmap datasource settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings.AdaptorType">
+            <summary>
+            Specifies adaptor type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings.IsJsonData">
+            <summary>
+            Specifies that the provided datasource is JSON data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings.ValueMapping">
+            <summary>
+            Specifies value mapping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings.XDataMapping">
+            <summary>
+            Specifies xAxis mapping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapDataSourceSettings.YDataMapping">
+            <summary>
+            Specifies yAxis mapping.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings">
+            <summary>
+            Specifies the heatmap legend settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.Alignment">
+            <summary>
+            Specifies the alignment of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.EnableSmartLegend">
+            <summary>
+            Specifies whether the smart legend should be displayed or not when the palette type is fixed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.Height">
+            <summary>
+            Specifies the height of Legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.LabelDisplayType">
+             <summary>
+             <para>Specifies the type of label display for the smart legend.</para>
+             <list type="bullet">
+             <item>
+             <term>All:</term>
+             <description>All labels are displayed.</description>
+            </item>
+             <item>
+             <term>Edge:</term>
+             <description>Labels will be displayed only at the edges of the legend.</description>
+             </item>
+             <item>
+             <term>None:</term>
+             <description>No labels are displayed.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.LabelFormat">
+            <summary>
+            Specifies the formatting options for the legend label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.Position">
+            <summary>
+            Specifies the position of Legend to render.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.ShowGradientPointer">
+            <summary>
+            Specifies whether the gradient pointer should be visible or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.ShowLabel">
+            <summary>
+            Specifies whether the label should be visible or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.ToggleVisibility">
+            <summary>
+            Specifies whether to toggle the visibility of heatmap cells based on legend range selection or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.Visible">
+            <summary>
+            Specifies whether the Legend should be visible or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.Width">
+            <summary>
+            Specifies the width of Legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapLegendSettings.UpdateProperties(System.String,System.Object)">
+            <summary>
+            Specifies updating child property values.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle">
+            <summary>
+            Specifies the heatmap legend title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.TextAlignment">
+            <summary>
+            Specifies the text alignment
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTextStyle.TextOverflow">
+            <summary>
+            Specifies the heat map text overflow
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapLegendTitle">
+            <summary>
+            Specifies the heatmap legend title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitle.ChildContent">
+            <summary>
+            Specifies the content child.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitle.Text">
+            <summary>
+            Specifies the title text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.HeatMapLegendTitle.UpdateProperties(Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle)">
+            <summary>
+            updating child properties values.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle">
+            <summary>
+            Specifies the heatmap legend title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.TextAlignment">
+            <summary>
+            Specifies the text alignment
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapLegendTitleTextStyle.TextOverflow">
+            <summary>
+            Specifies the heat map text overflow
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapMargin">
+            <summary>
+            Specifies the heatmap margin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMargin.Bottom">
+            <summary>
+            Specifies the bottom margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMargin.Left">
+            <summary>
+            Specifies the left margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMargin.Right">
+            <summary>
+            Specifies the right margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMargin.Top">
+            <summary>
+            Specifies the top margin in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapFillColor">
+            <summary>
+            Specifies the fill colors for the heatmap cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFillColor.MaxColor">
+            <summary>
+            Specifies the maximum fill color for cell color range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFillColor.MinColor">
+            <summary>
+            Specifies the minimum fill color for cell color range.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapPalette">
+            <summary>
+            Specifies the heatmap palettes collections.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.Color">
+            <summary>
+            Specifies the palette color text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.EndValue">
+            <summary>
+            Specifies the palette end value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.Label">
+            <summary>
+            Specifies the palette color label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.MaxColor">
+            <summary>
+            Specifies the palette max-color value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.MinColor">
+            <summary>
+            Specifies the palette min-color value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.StartValue">
+            <summary>
+            Specifies the palette start value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalette.Value">
+            <summary>
+            Specifies the palette color value.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapPalettes">
+            <summary>
+            Specifies the heatmap palettes collections.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPalettes.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapPaletteSettings">
+            <summary>
+            Specifies the heatmap palette settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPaletteSettings.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPaletteSettings.ColorGradientMode">
+            <summary>
+            Specifies the color gradient mode in heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPaletteSettings.EmptyPointColor">
+            <summary>
+            Specifies the color for empty points in heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapPaletteSettings.Type">
+             <summary>
+             <para>Specifies the color style</para>
+             <list type="bullet">
+             <item>
+             <term>Gradient:</term>
+             <description>Render heatmap cells with linear gradient color.</description>
+            </item>
+             <item>
+             <term>Fixed:</term>
+             <description>Render heatmap cells with fixed color.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapBubbleDataMapping">
+            <summary>
+            Specifies the heatmap bubble data mapping.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleDataMapping.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleDataMapping.Color">
+            <summary>
+            Specifies the mapping property to set color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleDataMapping.Size">
+            <summary>
+            Specifies the mapping property to set size.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapBubbleSize">
+            <summary>
+            Specifies the heatmap bubble size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleSize.parent">
+            <summary>
+            Specifies the heatmap bubble data mapping class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleSize.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleSize.Maximum">
+            <summary>
+            Specifies the maximum radius value of the cell in percentage.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapBubbleSize.Minimum">
+            <summary>
+            Specifies the minimum radius value of the cell in percentage.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapCellBorder">
+            <summary>
+            Specifies the heatmap cell border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellBorder.Color">
+            <summary>
+            Specifies the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellBorder.Radius">
+            <summary>
+            Specifies the radius of the border in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellBorder.Width">
+            <summary>
+            Specifies the width of the border in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapCellSettings">
+            <summary>
+            Specifies the heatmap cell settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.BubbleType">
+             <summary>
+             <para>Defines Bubble Type. They are</para>
+             <list type="bullet">
+             <item>
+             <term>Size:</term>
+             <description>Defines the bubble type as size.</description>
+            </item>
+             <item>
+             <term>Color:</term>
+             <description>Defines the bubble type as color.</description>
+             </item>
+             <item>
+             <term>Sector:</term>
+             <description>Defines the bubble type as sector.</description>
+             </item>
+             <item>
+             <term>SizeAndColor:</term>
+             <description>Defines the bubble type as size and color.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.EnableCellHighlighting">
+            <summary>
+            Enable or disable the cell highlighting on mouse hover.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.Format">
+            <summary>
+            Specifies the formatting options for the data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.IsInversedBubbleSize">
+            <summary>
+            Enable or disable the bubble to display in inverse.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.ShowLabel">
+            <summary>
+            Toggles the visibility of data label over the heatmap cells.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellSettings.TileType">
+             <summary>
+             <para>Defines cell Type. They are.</para>
+             <list type="bullet">
+             <item>
+             <term>Rect:</term>
+             <description>Render heatmap cells in rectangle shape.</description>
+            </item>
+             <item>
+             <term>Bubble:</term>
+             <description>Render heatmap cells in bubble shape.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle">
+            <summary>
+            Specifies the heatmap cell value text style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.TextAlignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellTextStyle.TextOverflow">
+            <summary>
+            Specifies the heat map text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapTitleSettings">
+            <summary>
+            Specifies the heatmap title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleSettings.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleSettings.Text">
+            <summary>
+            Specifies the title text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle">
+            <summary>
+            Specifies the heatmap title text style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.TextAlignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTitleTextStyle.TextOverflow">
+            <summary>
+            Specifies the heatmap text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapFont">
+            <summary>
+            Specifies the heatmap tooltip font.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.Color">
+            <summary>
+            Specifies the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.FontFamily">
+            <summary>
+            Specifies the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.FontStyle">
+            <summary>
+            Specifies the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.FontWeight">
+            <summary>
+            Specifies the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.Size">
+            <summary>
+            Specifies the font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.TextAlignment">
+            <summary>
+            Specifies the text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapFont.TextOverflow">
+            <summary>
+            Specifies the heatmap text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapTooltipBorder">
+            <summary>
+            Specifies the heatmap tooltip border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipBorder.Color">
+            <summary>
+            Specifies the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipBorder.Width">
+            <summary>
+            Specifies the width of the border in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Internal.HeatMapTooltipComponent">
+            <summary>
+            Specifies the heatmap tooltip component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Internal.HeatMapTooltipComponent.GivenContent">
+            <summary>
+            Specifies the heatmap tooltip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Internal.HeatMapTooltipComponent.ID">
+            <summary>
+            Specifies the heatmap tooltip component id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Internal.HeatMapTooltipComponent.Class">
+            <summary>
+            Specifies the heatmap tooltip component class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Internal.HeatMapTooltipComponent.Style">
+            <summary>
+            Specifies the heatmap tooltip component styles.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Internal.Axis`1">
+            <summary>
+            Specifies the class for Axis.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Internal.DataSource`1">
+            <summary>
+            Specifies the class for Datasource.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.DataSource`1.#ctor(Syncfusion.Blazor.HeatMap.SfHeatMap{`0})">
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.DataSource`1.DataProcessing(`0)">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Internal.Legend`1">
+            <summary>
+            Specifies the class for Legend.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.Legend`1.#ctor(Syncfusion.Blazor.HeatMap.SfHeatMap{`0})">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Internal.Palette`1">
+            <summary>
+            Specifies the class for Palette.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.Palette`1.#ctor(Syncfusion.Blazor.HeatMap.SfHeatMap{`0})">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Internal.SvgPrintExport">
+            <summary>
+            Specifies the class for Svg print export.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.SvgPrintExport.Print(System.String)">
+            <summary>
+            Handles the print method for heatmap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.SvgPrintExport.Export(Syncfusion.Blazor.HeatMap.ExportType,System.String,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            The method is used to perform the export functionality for the heatmap component.
+            </summary>
+            <param name="type">Specifies the format of the file to export the heatmap component.</param>
+            <param name="fileName">Specifies the name of the file for the exported heatmap component.</param>
+            <param name="id">Specifies the id of the file for the exported heatmap component.</param>
+            <param name="orientation">Specifies the orientation of the exported PDF document when the type parameter is PDF</param>
+            <param name="allowDownload">Specifies whether the exported file is to be downloaded or not.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.Internal.Tooltip`1.#ctor(Syncfusion.Blazor.HeatMap.SfHeatMap{`0})">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings">
+            <summary>
+            Specifies the heatmap tooltip settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.Border">
+            <summary>
+            Specifies the cell border style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.Enable">
+            <summary>
+            Enables / Disables the visibility of the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.Header">
+            <summary>
+            Specifies the header for the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.Fill">
+            <summary>
+            Specifies the color collection for heatmap cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.Template">
+            <summary>
+            Specifies the custom template to format the tooltip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapTooltipSettings.TextStyle">
+            <summary>
+            Specifies the cell label style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapConstant">
+            <summary>
+            Specifies the class for heatmap constant.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.IntervalType">
+             <summary>
+             <para>Defines the interval type of date-time axis. They are</para>
+             <list type="bullet">
+             <item>
+             <term>Years:</term>
+             <description>Defines the interval of the axis in years.</description>
+            </item>
+             <item>
+             <term>Months:</term>
+             <description>Defines the interval of the axis in months.</description>
+             </item>
+             <item>
+             <term>Days:</term>
+             <description>Defines the interval of the axis in days.</description>
+             </item>
+             <item>
+             <term>Hours:</term>
+             <description>Defines the interval of the axis in hours.</description>
+             </item>
+             <item>
+             <term>Minutes:</term>
+             <description>Defines the interval of the axis in minutes.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.IntervalType.Years">
+            <summary>
+             Defines the interval of the axis in years.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.IntervalType.Months">
+            <summary>
+             Defines the interval of the axis in months.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.IntervalType.Days">
+            <summary>
+             Defines the interval of the axis in days.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.IntervalType.Hours">
+            <summary>
+             Defines the interval of the axis in hours.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.IntervalType.Minutes">
+            <summary>
+             Defines the interval of the axis in minutes.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LabelIntersectAction">
+             <summary>
+             <para>Specifies the label intersect action for axis</para>
+             <list type="bullet">
+             <item>
+             <term>None:</term>
+             <description>Shows all the labels with overlap.</description>
+            </item>
+             <item>
+             <term>Trim:</term>
+             <description>Trim the label when it intersects.</description>
+             </item>
+             <item>
+             <term>Rotate45:</term>
+             <description>Rotate the label to 45 degrees when it intersects.</description>
+             </item>
+             <item>
+             <term>MultipleRows:</term>
+             <description>Shows all the labels in multiple rows when they intersect.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelIntersectAction.None">
+            <summary>
+             Shows all the labels with overlap.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelIntersectAction.Trim">
+            <summary>
+             Trim the label when it intersects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelIntersectAction.Rotate45">
+            <summary>
+             Rotate the label to 45 degrees when it intersects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelIntersectAction.MultipleRows">
+            <summary>
+             Shows all the labels in multiple rows when they intersect.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LabelType">
+             <summary>
+             <para>Defines the axis label display type for date-time axis. They are</para>
+             <list type="bullet">
+             <item>
+             <term>None:</term>
+             <description>Axis labels displayed based on the value type.</description>
+            </item>
+             <item>
+             <term>Years:</term>
+             <description>Defines the axis labels display in years.</description>
+             </item>
+             <item>
+             <term>Months:</term>
+             <description>Defines the axis labels display in months.</description>
+             </item>
+             <item>
+             <term>Days:</term>
+             <description>Defines the axis labels display in days.</description>
+             </item>
+             <item>
+             <term>Hours:</term>
+             <description>Defines the axis labels display in hours.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelType.None">
+            <summary>
+             Axis labels displayed based on the type
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelType.Years">
+            <summary>
+             Defines the axis labels display in years.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelType.Months">
+            <summary>
+              Defines the axis labels display in months.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelType.Days">
+            <summary>
+              Defines the axis labels display in days.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelType.Hours">
+            <summary>
+              Defines the axis labels display in hours.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.ValueType">
+             <summary>
+             <para>Defines the type of axis. They are</para>
+             <list type="bullet">
+             <item>
+             <term>Numeric:</term>
+             <description>Renders a numeric axis.</description>
+            </item>
+             <item>
+             <term>DateTime:</term>
+             <description>Renders a dateTime axis.</description>
+             </item>
+             <item>
+             <term>Category:</term>
+             <description>Renders a category axis.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ValueType.Numeric">
+            <summary>
+              Defines a numeric axis.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ValueType.DateTime">
+            <summary>
+              Defines a dateTime axis.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ValueType.Category">
+            <summary>
+              Defines a category axis.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.BorderType">
+             <summary>
+             <para>Defines border type for multi-level labels</para>
+             <list type="bullet">
+             <item>
+             <term>Rectangle:</term>
+             <description>Defines Rectangle border type.</description>
+            </item>
+             <item>
+             <term>Without Top Border:</term>
+             <description>Defines WithoutTopBorder type.</description>
+             </item>
+             <item>
+             <term>Without Top/Bottom Border:</term>
+             <description>Defines WithoutTopandBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Without Border:</term>
+             <description> Defines WithoutBorder type.</description>
+             </item>
+             <item>
+             <term>Without Bottom Border:</term>
+             <description>Defines WithoutBottomBorder type.</description>
+             </item>
+             <item>
+             <term>Brace:</term>
+             <description>Defines Brace type border.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BorderType.Rectangle">
+            <summary>
+              Defines Rectangle border type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BorderType.WithoutTopBorder">
+            <summary>
+             Defines WithoutTopBorder type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BorderType.WithoutBottomBorder">
+            <summary>
+              Defines WithoutBottomBorder type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BorderType.WithoutBorder">
+            <summary>
+              Defines WithoutBorder type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BorderType.WithoutTopandBottomBorder">
+            <summary>
+              Defines WithoutTopandBottomBorder type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BorderType.Brace">
+            <summary>
+              Defines Brace type border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Alignment">
+             <summary>
+             <para>Defines the Alignment. They are</para>
+             <list type="bullet">
+             <item>
+             <term>Near:</term>
+             <description>Aligns the element to the left.</description>
+            </item>
+             <item>
+             <term>Center:</term>
+             <description>Aligns the element to the center.</description>
+             </item>
+             <item>
+             <term>Far:</term>
+             <description>Aligns the element to the right.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.Alignment.Near">
+            <summary>
+              Aligns the element to the left.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.Alignment.Center">
+            <summary>
+              Aligns the element to the center.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.Alignment.Far">
+            <summary>
+             Aligns the element to the right.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.TextOverflow">
+             <summary>
+             <para>Defines the text overflow.</para>
+             <list type="bullet">
+             <item>
+             <term>None:</term>
+             <description>Used to show the heatmap text with overlap to other elements.</description>
+            </item>
+             <item>
+             <term>Wrap:</term>
+             <description>Used to show the heatmap text with Wrap support.</description>
+             </item>
+             <item>
+             <term>Trim:</term>
+             <description>Used to show the heatmap text with Trim.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.TextOverflow.None">
+            <summary>
+              Used to show the heatmap text with overlap to other elements.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.TextOverflow.Wrap">
+            <summary>
+             Used to show the heatmap text with Wrap support.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.TextOverflow.Trim">
+            <summary>
+             Used to show the heatmap text with Trim.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.BubbleType">
+             <summary>
+             <para>Defines the Bubble Type. They are</para>
+             <list type="bullet">
+             <item>
+             <term>Size:</term>
+             <description>Defines the bubble type as size.</description>
+            </item>
+             <item>
+             <term>Color:</term>
+             <description>Defines the bubble type as color.</description>
+             </item>
+             <item>
+             <term>Sector:</term>
+             <description>Defines the bubble type as sector.</description>
+             </item>
+             <item>
+             <term>SizeAndColor:</term>
+             <description>Defines the bubble type as size and color.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BubbleType.Size">
+            <summary>
+              Defines the bubble type as size.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BubbleType.Color">
+            <summary>
+              Defines the bubble type as color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BubbleType.Sector">
+            <summary>
+             Defines the bubble type as sector.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.BubbleType.SizeAndColor">
+            <summary>
+              Defines the bubble type as sizeandcolor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.CellType">
+             <summary>
+             <para>Defines the cell Type. They are.</para>
+             <list type="bullet">
+             <item>
+             <term>Rect:</term>
+             <description>Renders the heatmap cells in rectangle shape.</description>
+            </item>
+             <item>
+             <term>Bubble:</term>
+             <description>Renders the heatmap cells in bubble shape.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.CellType.Rect">
+            <summary>
+             Specifies the heatmap cells in rectangle shape.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.CellType.Bubble">
+            <summary>
+             Specifies the heatmap cells in bubble shape.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.ColorGradientMode">
+             <summary>
+             <para>Specifies the type of label display for the smart legend.</para>
+             <list type="bullet">
+             <item>
+             <term>Table:</term>
+             <description>Calculates minimum and maximum for overall datasource.</description>
+            </item>
+             <item>
+             <term>Row:</term>
+             <description>Calculates minimum and maximum for every row.</description>
+             </item>
+             <item>
+             <term>Column:</term>
+             <description>Calculates minimum and maximum for every column.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ColorGradientMode.Table">
+            <summary>
+            Calculates minimum and maximum for overall datasource.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ColorGradientMode.Row">
+            <summary>
+            Calculates minimum and maximum for every row.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ColorGradientMode.Column">
+            <summary>
+            Calculates minimum and maximum for every column.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.PaletteType">
+             <summary>
+             <para>Defines Color type for the heatmap cell.</para>
+             <list type="bullet">
+             <item>
+             <term>Gradient:</term>
+             <description>Renders the heatmap cells with linear gradient color.</description>
+            </item>
+             <item>
+             <term>Fixed:</term>
+             <description>Renders the heatmap cells with fixed color.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.PaletteType.Gradient">
+            <summary>
+            Specifies the cells with linear gradient color.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.PaletteType.Fixed">
+            <summary>
+            Specifies the cells with fixed color.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LabelDisplayType">
+             <summary>
+             <para>Specifies the type of label display for the smart legend.</para>
+             <list type="bullet">
+             <item>
+             <term>All:</term>
+             <description>All labels are displayed.</description>
+            </item>
+             <item>
+             <term>Edge:</term>
+             <description>Labels will be displayed only at the edges of the legend.</description>
+             </item>
+             <item>
+             <term>None:</term>
+             <description>No labels are displayed.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelDisplayType.All">
+            <summary>
+            Specifies all Legend label displayed.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelDisplayType.Edge">
+            <summary>
+            Specifies Legend label displayed in edge alone.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LabelDisplayType.None">
+            <summary>
+            Specifies Legend labels displayed type as none.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LegendPosition">
+             <summary>
+             <para>Defines the Legend position</para>
+             <list type="bullet">
+             <item>
+             <term>Right:</term>
+             <description>Legend in the left-right position.</description>
+             </item>
+             <item>
+             <term>Left:</term>
+             <description>Legend in the left position.</description>
+            </item>
+             <item>
+             <term>Up:</term>
+             <description>Legend in the left-up position</description>
+             </item>
+             <item>
+             <term>Down:</term>
+             <description>Legend in the left-down position</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LegendPosition.Right">
+            <summary>
+            Specifies Legend in the right position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LegendPosition.Left">
+            <summary>
+            Specifies Legend in the left position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LegendPosition.Top">
+            <summary>
+            Specifies Legend in the top position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.LegendPosition.Bottom">
+            <summary>
+             Specifies Legend in the bottom position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.AdaptorType">
+             <summary>
+             <para>Specifies the adapter type in heatmap.</para>
+             <list type="bullet">
+             <item>
+             <term>Cell:</term>
+             <description>Heatmap is rendered using cell type data source.</description>
+            </item>
+             <item>
+             <term>Table:</term>
+             <description>Heatmap is rendered using table type data source.</description>
+             </item>
+             <item>
+             <term>None:</term>
+             <description>Defines no adaptor type is used for the data source.</description>
+             </item>
+             </list>
+             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.AdaptorType.Cell">
+            <summary>
+            Specifies cell type data source.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.AdaptorType.Table">
+            <summary>
+            Specifies table type data source.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.AdaptorType.None">
+            <summary>
+            Defines no adaptor type is used for the data source.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.ExportType">
+            <summary>
+            Specifies the Export Type
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ExportType.PNG">
+            <summary>
+            Specifies the PNG Export Type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ExportType.JPEG">
+            <summary>
+            Specifies the JPEG Export Type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ExportType.SVG">
+            <summary>
+            Specifies the SVG Export Type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.ExportType.PDF">
+            <summary>
+            Specifies the PDF Export Type.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapEvents">
+            <summary>
+            Configure handlers to handle the events with the HeatMap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.CellClicked">
+            <summary>
+            Triggers when you click the heat map cell in the HeatMap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.CellRendering">
+            <summary>
+            Gets or sets an event callback that is raised on rendering each cell of the Heatmap component.
+            </summary>
+            <remarks>
+            You can customize the heatmap cell value and cell color.
+            </remarks>
+            <example>
+            In the below code example, the heatmap cell value and cell color can be customized using <c>CellRendering</c> event.
+            <code><![CDATA[
+            <SfHeatMap DataSource="@dataSource">
+                <HeatMapEvents CellRendering="@CellRender"></HeatMapEvents>
+                <HeatMapTitleSettings Text="GDP Growth Rate for Major Economies (in Percentage)">
+                </HeatMapTitleSettings>
+                <HeatMapXAxis Labels="@xAxisLabels"></HeatMapXAxis>
+                <HeatMapYAxis Labels="@yAxisLabels"></HeatMapYAxis>
+            </SfHeatMap>
+            @code{
+                private void CellRender(HeatMapCellRenderEventArgs args)
+                {
+                    if (args.CellValue == "2.2")
+                    {
+                        args.CellValue = "Low";
+                        args.CellColor = "#EEEEEE";
+                    }
+                }
+                double[,] dataSource = new double[2, 2]
+                {
+                        {9.5, 2.2 },
+                        {4.3, 8.9 }
+                };
+                string[] xAxisLabels = new string[] { "China", "India" };
+                string[] yAxisLabels = new string[] { "2008", "2009" };
+            }
+            ]]></code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.CellSelected">
+            <summary>
+            Triggers when multiple cells get selected in the HeatMap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.Created">
+            <summary>
+            Triggers when the component is created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.Destroyed">
+            <summary>
+            Triggers after the HeatMap is destroyed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.OnLoad">
+            <summary>
+            Triggers before the HeatMap is loaded.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.Loaded">
+            <summary>
+            Triggers after the HeatMap is loaded.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.Resized">
+            <summary>
+            Triggers after resizing the Heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.TooltipRendering">
+            <summary>
+            Triggers when the HeatMap tooltip is rendered.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.RectModel">
+            <summary>
+            Interface for a class Rect
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.CellColor">
+            <summary>
+            Defines the cell color of a particular cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.DisplayText">
+            <summary>
+            Defines the cell value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.Value">
+            <summary>
+            Defines the current hover cell value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.XLabel">
+            <summary>
+            Defines the x-axis label
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.XValue">
+            <summary>
+            Defines the x-axis value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.YLabel">
+            <summary>
+            Defines the y-axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.YValue">
+            <summary>
+            Defines the y-axis value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.Width">
+            <summary>
+            Defines the width value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.Height">
+            <summary>
+            Defines the height value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.XIndex">
+            <summary>
+            Defines the XIndex value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.YIndex">
+            <summary>
+            Defines the YIndex value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.X">
+            <summary>
+            Defines the X value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.Y">
+            <summary>
+            Defines the Y value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.ID">
+            <summary>
+            Defines ID.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.TextID">
+            <summary>
+            Defines TextID.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.RectModel.Visible">
+            <summary>
+            Defines the visible state of the cell.
+            </summary>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.SVGTooltip">
+            <summary>
+            Interface for a class SVGTooltip
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SVGTooltip.Fill">
+            <summary>
+            Allows to set the fill color of the SVGTooltip that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SVGTooltip.Template">
+            <summary>
+            Allows to set the custom template to format the ToolTip content
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SVGTooltip.Content">
+            <summary>
+            Specifies tooltip content
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.CellClickEventArgs">
+            <summary>
+            Defines the CellClickEventArgs.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.CellElement">
+            <summary>
+            Defines current clicked cell element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.Value">
+            <summary>
+            Defines current clicked cell value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.XLabel">
+            <summary>
+            Defines x-axis label for current clicked cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.XValue">
+            <summary>
+            Defines x-axis value for current clicked cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.X">
+            <summary>
+            Specifies X value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.Y">
+            <summary>
+            Specifies Y value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.YLabel">
+            <summary>
+            Defines y-axis label for current clicked cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.CellClickEventArgs.YValue">
+            <summary>
+            Defines y-axis value for current clicked cell.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapEventArgs">
+            <summary>
+            Defines the HeatMapEventArgs
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LegendRenderEventArgs">
+            <summary>
+            Defines the LegendRenderEventArgs.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LegendRenderEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LegendRenderEventArgs.Text">
+            <summary>
+            Defines the current legend text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LoadedEventArgs">
+            <summary>
+            Defines the LoadedEventArgs.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LoadedEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.ResizeEventArgs">
+            <summary>
+            Defines the ResizeEventArgs.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ResizeEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ResizeEventArgs.CurrentSize">
+            <summary>
+            Defines the current size of the heatmap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ResizeEventArgs.PreviousSize">
+            <summary>
+            Defines the previous size of the heatmap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Size.Height">
+            <summary>
+            Defines the height of Heatmap.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Size.Width">
+            <summary>
+            Defines the width of the Heatmap.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.SelectedEventArgs">
+            <summary>
+            Defines the SelectedEventArgs.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SelectedEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SelectedEventArgs.Data">
+            <summary>
+            Defines the details of a cell.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.ThemeStyle">
+            <summary>
+            Specifies the Theme style for the heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.AxisLabel">
+            <summary>
+            Defines the AxisLabel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.AxisTitle">
+            <summary>
+            Defines the AxisTitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.Background">
+            <summary>
+            Defines the Background.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.CellBorder">
+            <summary>
+            Defines the CellBorder.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.CellTextColor">
+            <summary>
+            Defines the CellTextColor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.EmptyCellColor">
+            <summary>
+            Defines the EmptyCellColor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.HeatMapTitle">
+            <summary>
+            Defines the HeatMapTitle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.LegendLabel">
+            <summary>
+            Defines the LegendLabel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.ToggledColor">
+            <summary>
+            Defines the ToggledColor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.FontFamily">
+            <summary>
+            Defines the font family of the text in HeatMap for theming.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.FontWeight">
+            <summary>
+            Defines the font weight of the text in HeatMap for theming.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.FontSize">
+            <summary>
+            Defines the font size of the text in HeatMap for theming.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ThemeStyle.AxisTitleFontWeight">
+            <summary>
+            Defines the font weight of the text in HeatMap AxisTitle for theming.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.TooltipEventArgs">
+            <summary>
+            Specifies the TooltipEventArgs for the heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.Content">
+            <summary>
+            Defines tooltip text value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.Value">
+            <summary>
+            Defines current hover cell value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.XLabel">
+            <summary>
+            Defines x-axis label for current hover cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.XValue">
+            <summary>
+            Defines x-axis value for current hover cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.YLabel">
+            <summary>
+            Defines y-axis label for current hover cell.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.TooltipEventArgs.YValue">
+            <summary>
+            Defines y-axis value for current hover cell.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Rect">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.RgbColor">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.ClientXY">
+            <summary>
+            Specifies Class for ClientXY
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ClientXY.ClientX">
+            <summary>
+            Specifies ClientX value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.ClientXY.ClientY">
+            <summary>
+            Specifies ClientY value.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.Touches">
+            <summary>
+            Specifies class for Touches
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Touches.PageX">
+            <summary>
+            Specifies PageX value
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Touches.PageY">
+            <summary>
+            Specifies PageY value
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.Touches.PointerId">
+            <summary>
+            Specifies pointer id.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs">
+            <summary>
+            Specifies class for HeatMap Mouse event args.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.PreventDefault">
+            <summary>
+            If sets to true, default action will be prevented.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.Touches">
+            <summary>
+            Specifies a list of all the touch objects that are currently in contact with the surface
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.PointerId">
+            <summary>
+            Specifies the Pointer id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.MouseX">
+            <summary>
+            Specifies the MouseX
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.MouseY">
+            <summary>
+            Specifies the MouseY
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.PointerType">
+            <summary>
+            Specifies the Pointer type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.Target">
+            <summary>
+            Specifies the Target.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.ChangedTouches">
+            <summary>
+            Specifies a list of all the touch objects whose state changed between the previous touch and this touch.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs.CtrlKey">
+            <summary>
+            Specifies whether CTRL key is pressed.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.BaseEventArgs">
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.BaseEventArgs.Cancel">
+            <summary>
+            Defines the event cancel status.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.PointEventArgs">
+            <summary>
+            Specifies the event arguments available to click on the point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.PointEventArgs.PageX">
+            <summary>
+            Defines current window page x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.PointEventArgs.PageY">
+            <summary>
+            Defines current window page y location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.PointEventArgs.PointIndex">
+            <summary>
+            Defines the point index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.PointEventArgs.X">
+            <summary>
+            Defines current mouse x location
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.PointEventArgs.Y">
+            <summary>
+            Defines current mouse y location.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.LegendToggleCollection">
+            <summary>
+            Defines toggle legend collections.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LegendToggleCollection.StartValue">
+            <summary>
+            Defines the start value of color range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LegendToggleCollection.EndValue">
+            <summary>
+            Defines the end value of color range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LegendToggleCollection.Value">
+            <summary>
+            Defines cell value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.LegendToggleCollection.Visible">
+            <summary>
+            Defines visible state of cells.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs">
+            <summary>
+            Provides information about the <see cref="P:Syncfusion.Blazor.HeatMap.HeatMapEvents.CellRendering"/> event callback.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs.CellValue">
+            <summary>
+            Gets or sets the cell value of the Heatmap cell currently rendering.
+            </summary>
+            <value>
+            During cell rendering, we could get the current cell's value.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs.Height">
+            <summary>
+            Gets the height of the Heatmap cell that is currently being rendered.
+            </summary>
+            <value>
+            During cell rendering, we could get the current cell's height.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs.Width">
+            <summary>
+            Gets the width of the Heatmap cell that is currently being rendered.
+            </summary>
+            <value>
+            During cell rendering, we could get the current cell's width.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs.XLabel">
+            <summary>
+            Gets the x-axis label of the Heatmap cell currently rendering.
+            </summary>
+            <value>
+            During cell rendering, we could get the current cell's x-axis label name.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs.YLabel">
+            <summary>
+            Gets the y-axis label of the Heatmap cell currently rendering. 
+            </summary>
+            <value>
+            During cell rendering, we could get the current cell's y-axis label name.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.HeatMapCellRenderEventArgs.CellColor">
+            <summary>
+            Gets or sets the background color of the Heatmap cell currently rendering.
+            </summary>
+            <value>
+            During cell rendering, we could get the current cell's background color.
+            </value>
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.IHeatMap">
+            <summary>
+            Interface for the heatmap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.IHeatMap.UpdateChildProperties(System.String,System.Object)">
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.IHeatMap.PropertyChange(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.IHeatMap.IsComponentRendered">
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.HeatMap.SfHeatMap`1">
+            <summary>
+            Specifies the class for the heatmap component.
+            </summary>
+            <summary>
+            Specifies the class for the heatmap component.
+            </summary>
+            <summary>
+            Specifies the class for the heatmap component.
+            </summary>
+            <summary>
+            Specifies the class for the heatmap component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.AllowSelection">
+            <summary>
+            The `AllowSelection` provides an option to enable or disable the
+            selection of multiple cells in the heatmap component.
+            </summary>
+            <value>
+            <c>true</c>, if the selection can be enabled. Otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.DataSource">
+             <summary>
+            The `DataSource` provides the data to render the heatmap component.
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.Height">
+            <summary>
+            The height of the HeatMap as a string accepts input as both '100px' or '100%'.
+            If specified as '100%, HeatMap renders to the full height of its parent element.
+            </summary>
+            <value>
+            Accepts the string value. The default value is <c>100%</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.ID">
+            <summary>
+            Specifies ID property for the heatmap component.
+            </summary>
+            <value>
+            Accepts the string value. The default value is empty.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.Theme">
+            <summary>
+             Specifies the theme for heatmap.
+            </summary>
+            <value>
+            Accepts a value from the <see cref="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.Theme"/> enum. The default value is <see cref="F:Syncfusion.Blazor.Theme.Material"/>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.IsComponentRendered">
+            <summary>
+             Specifies the initial rendering of HeatMap.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.CssClass">
+            
+            <summary>
+            The `CssClass` property is used to add a user-preferred class name in the root element of the HeatMap,
+             that can be used to customize the component (both CSS and functionality customization)
+            </summary>
+            <value>
+            Accepts the CSS class string separated by space to customize the appearance of component.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.HeatMap.SfHeatMap`1.Width">
+            <summary>
+            The width of the HeatMap as a string accepts input as both '100px' or '100%'.
+            If specified as '100%, HeatMap renders to the full width of its parent element.
+            </summary>
+            <value>
+            Accepts the string value.
+            </value>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.ClearSelection">
+            <summary>
+            To clear the multi-cell selection.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.ClearSelectionAsync">
+            <summary>
+            To clear the multi-cell selection.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.Export(Syncfusion.Blazor.HeatMap.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            Handles the export method for the heatmap component.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.ExportAsync(Syncfusion.Blazor.HeatMap.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation},System.Boolean)">
+            <summary>
+            Handles the export method for the heatmap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.Print">
+            <summary>
+            Method to print the heatmap component.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.PrintAsync">
+            <summary>
+            Method to print the heatmap component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.RefreshBound">
+            <summary>
+            Method to Refresh the heatmap component.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.RefreshBoundAsync">
+            <summary>
+            Method to Refresh the heatmap component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.HeatMap.SfHeatMap`1.accessor">
+            <summary>
+            Gets or sets the fast reflection accessor to reflect the data.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.CalculateSize(System.Collections.Generic.Dictionary{System.String,System.Int32},System.Collections.Generic.Dictionary{System.String,System.Int32},System.Collections.Generic.Dictionary{System.String,System.Int32},System.Collections.Generic.Dictionary{System.String,System.Int32},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+            updating heatmap element size.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.HeatMapMouseClick(Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs,System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <exclude />  
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.HeatMapMouseMove(Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs,System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <exclude />  
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.ResizeBound(System.Double,System.Double,System.Double)">
+            <exclude />  
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.InterSectLabels(System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.LabelInterSect(System.Boolean,System.String[],System.String[])">
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.HeatMapMouseLeave(Syncfusion.Blazor.HeatMap.HeatMapMouseEventArgs,System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <exclude /> 
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.OnObservableChange(System.String,System.Object,System.Boolean,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            INotifyCollectionChanged event handler to track the changes in the HeatMap data source.
+            </summary>
+            <param name="propertyName">Observable property name.</param>
+            <param name="sender">Observable model object.</param>
+            <param name="isCollectionChanged">Sets true if the observable collection changed.</param>
+            <param name="e">Changed Event Args</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.HeatMap.SfHeatMap`1.PropertyChange(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            On property change support for HeatMap
+            </summary>
+            <exclude />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1657 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.Notifications</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Notifications.MessageSeverity">
+            <summary>
+            Specifies the type of severity to display the message with distinctive icons and colors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageSeverity.Normal">
+            <summary>
+            The message is displayed with icons and colors for the normal severity.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageSeverity.Success">
+            <summary>
+            The message is displayed with icons and colors for the success severity.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageSeverity.Info">
+            <summary>
+            The message is displayed with icons and colors to denote it as information.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageSeverity.Warning">
+            <summary>
+            The message is displayed with icons and colors to denote it as a warning message.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageSeverity.Error">
+            <summary>
+            The message is displayed with icons and colors to denote it as an error message.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.MessageVariant">
+            <summary>
+            Specifies the predefined appearance variants for the <see cref="T:Syncfusion.Blazor.Notifications.SfMessage"/> component to display.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageVariant.Text">
+            <summary>
+            Denotes the <see cref="T:Syncfusion.Blazor.Notifications.MessageSeverity"/> is differentiated using text color and light back colors.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageVariant.Outlined">
+            <summary>
+            Denotes the <see cref="T:Syncfusion.Blazor.Notifications.MessageSeverity"/> is differentiated using text color and border without background.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.MessageVariant.Filled">
+            <summary>
+            Denotes the <see cref="T:Syncfusion.Blazor.Notifications.MessageSeverity"/> is differentiated using text color and dark back colors.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.MessageCloseEventArgs">
+            <summary>
+            Provides information about the <see cref="P:Syncfusion.Blazor.Notifications.SfMessage.Closed"/> event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.MessageCloseEventArgs.IsInteracted">
+            <summary>
+            Determines whether the event is triggered by interaction.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.SfMessage">
+            <summary>
+            The Blazor Message component displays messages with severity by differentiating icons and colors to denote the importance and context of the message to the end user.
+            </summary>
+            <example>
+            The below code example shows Message component with simple content.
+            <code><![CDATA[
+            <SfMessage Severity="MessageSeverity.Success">
+                <p>The <b>Nature.png</b> file is uploaded successfully.</p>
+            </SfMessage>
+            ]]></code>
+            The below code example shows the Message component with multiline content.
+            <code><![CDATA[
+            <SfMessage Severity="MessageSeverity.Info" ShowIcon="false">
+                <div>
+                    <h3>Transform your web apps today with Syncfusion Blazor components</h3>
+                    <ul>
+                        <li><span>70+ high-performance and responsive UI components</span></li>
+                        <li><span>Dedicated support</span></li>
+                        <li><span>Hassle-free licensing</span></li>
+                    </ul>
+                    <div><a href="https://www.syncfusion.com/downloads/blazor/" target="_blank"><button>Try It for Free</button></a></div>
+                </div>
+            </SfMessage>
+            ]]></code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.ChildContent">
+            <summary>
+            Gets or sets the child content for the Message component, including the HTML elements.
+            </summary>
+            <value>
+            The template content. The default value is <c>null</c>. 
+            </value>
+            <remarks>
+            The child content which is specified within <see cref="T:Syncfusion.Blazor.Notifications.SfMessage"/> tag directive is either a string or HTML elements.
+            </remarks>
+            <example>
+            The below code example shows the Message component with simple content.
+            <code><![CDATA[
+            <SfMessage Severity="MessageSeverity.Success">
+                <p>The <b>Nature.png</b> file is uploaded successfully.</p>
+            </SfMessage>
+            ]]></code>
+            The below code example shows the Message component with multiline content.
+            <code><![CDATA[
+            <SfMessage Severity="MessageSeverity.Info" ShowIcon="false">
+                <div>
+                    <h3>Transform your web apps today with Syncfusion Blazor components</h3>
+                    <ul>
+                        <li><span>70+ high-performance and responsive UI components</span></li>
+                        <li><span>Dedicated support</span></li>
+                        <li><span>Hassle-free licensing</span></li>
+                    </ul>
+                    <div><a href="https://www.syncfusion.com/downloads/blazor/" target="_blank"><button>Try It for Free</button></a></div>
+                </div>
+            </SfMessage>
+            ]]></code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.ContentAlignment">
+            <summary>
+            Gets or sets the alignment of message content. The available content alignments are Left, Center and Right.
+            </summary>
+            <value>
+            One of the <see cref="T:Syncfusion.Blazor.HorizontalAlign"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.HorizontalAlign.Left"/>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.CssClass">
+            <summary>
+            Gets or sets the CSS class or multiple classes separated by space that can be appended with the root element of the Message component to customize a message.
+            </summary>
+            <value>
+            The default value is <c>String.Empty</c>.
+            </value>
+            <example>
+            The below code example shows border customization of the Message component.
+            <code><![CDATA[
+            <SfMessage CssClass="custom">
+               Conference Room no 01 / Building 135 10:00 AM - 10:30 AM
+            </SfMessage>
+            <style>
+            .custom {
+                border-color: pink;
+            }
+            </style>
+            ]]></code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.Severity">
+            <summary>
+            Gets or sets the severity of the message, which is used to define the appearance (icons and colors) of the message. The available severity messages are <c>Normal</c>, <c>Info</c>, <c>Success</c>, <c>Warning</c> and <c>Error</c>.
+            </summary>
+            <value>
+            One of the <see cref="T:Syncfusion.Blazor.Notifications.MessageSeverity"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.Notifications.MessageSeverity.Normal"/>
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.ShowCloseIcon">
+            <summary>
+            Gets or sets whether to show or hide the close icon in the Message component. The end user can click the close icon to hide the message. The <see cref="P:Syncfusion.Blazor.Notifications.SfMessage.Closed"/> event triggered when message closed.
+            </summary>
+            <value>
+            <c>true</c>, the close icon for the Message component is visible at the top right corner of the Message component. The default value is <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.ShowIcon">
+            <summary>
+            Gets or sets whether to show or hide the severity icon in the Message component. When set to true, the severity icon is displayed at the left edge of the Message component.
+            This icon will be distinctive based on the <see cref="P:Syncfusion.Blazor.Notifications.SfMessage.Severity"/> property.
+            </summary>
+            <value>
+            <c>false</c> hides the severity icon in the Message component. The default value is <c>true</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.Variant">
+            <summary>
+            Gets or sets the variant from predefined appearance variants to display the content of the Message component. The available variants are <c>Text</c>, <c>Outlined</c> and <c>Filled</c>.
+            </summary>
+            <value>
+            One of the <see cref="T:Syncfusion.Blazor.Notifications.MessageVariant"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.Notifications.MessageVariant.Text"/>
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.Visible">
+            <summary>
+            Gets or sets the visibility of the Message component. The Message component will be hidden when set to <c>false</c>.
+            </summary>
+            <value>
+            <c>false</c>, hides the Message component. The default value is <c>true</c>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.VisibleChanged">
+            <summary>
+            Gets or sets a callback for the bound Visible property value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfMessage.Closed">
+            <summary>
+            Triggers when the Message component is closed (hided) successfully.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.SfSkeleton">
+            <summary>
+            The Skeleton is a placeholder that animates a shimmer effect to let users know that the page’s content is loading at the moment.
+            In other terms, it simulates the layout of page content while loading the actual content.
+            </summary>
+            <remarks>
+            The `Width` property will be prioritize and used as dimension for Circle and Square <see cref="P:Syncfusion.Blazor.Notifications.SfSkeleton.Shape"/>.
+            </remarks>
+            <example>
+            Skeleton with default text shape.
+            <code><![CDATA[
+            <SfSkeleton Width="100%" Height="10px"></SfSkeleton>
+            ]]>
+            </code>
+            Skeleton with rectangle <see cref="P:Syncfusion.Blazor.Notifications.SfSkeleton.Shape"/>.
+            <code>
+            <![CDATA[
+            <SfSkeleton Width="100px" Height="50px" Shape="SkeletonType.Rectangle"></SfSkeleton>
+            ]]>
+            </code>
+            Skeleton with fade effect <see cref="P:Syncfusion.Blazor.Notifications.SfSkeleton.Effect"/>.
+            <code>
+            <![CDATA[
+            <SfSkeleton Width="50pt" Shape="SkeletonType.Circle" Effect="ShimmerEffect.Fade"></SfSkeleton>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.Width">
+            <summary>
+            Gets or sets a value that defines the width of the Skeleton.
+            </summary>
+            <value>
+            Accept the CSS units as string value. The default value is <c>null</c>.
+            </value>
+            <remarks>
+            The property will be prioritize and used as dimension when <see cref="P:Syncfusion.Blazor.Notifications.SfSkeleton.Shape"/> is `Circle` and `Square`.
+            </remarks>
+            <example>
+            Skeleton with `50px` radius applied for <see cref="F:Syncfusion.Blazor.Notifications.SkeletonType.Circle"/>.
+            <code>
+            <![CDATA[
+            <SfSkeleton Width="50px" Shape="SkeletonType.Circle"></SfSkeleton>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.Height">
+            <summary>
+            Gets or sets a value that defines the height of the Skeleton.
+            </summary>
+            <value>
+            Accept the CSS units as string value. The default value is <c>null</c>.
+            </value>
+            <remarks>
+            Not required to define this property when <see cref="P:Syncfusion.Blazor.Notifications.SfSkeleton.Shape"/> is `Circle` and `Square`.
+            </remarks>
+            <example>
+            Skeleton with `10px` height applied for <see cref="F:Syncfusion.Blazor.Notifications.SkeletonType.Text"/>.
+            <code>
+            <![CDATA[
+            <SfSkeleton Width="100px" Height="10px"></SfSkeleton>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.Visible">
+            <summary>
+            Gets or sets the visibility state of the Skeleton.
+            </summary>
+            <value>
+            <c>true</c>, if the Skeleton is in visible state; otherwise, <b>false</b>. The default value is <c>true</c>.
+            </value>
+            <example>
+            Skeleton rendered with hidden state.
+            <code>
+            <![CDATA[
+            <SfSkeleton Visible="false" Width="50px" Shape="SkeletonType.Square"></SfSkeleton>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.Shape">
+            <summary>
+            Gets or sets a value that indicates the shape of the Skeleton.
+            </summary>
+            <value>
+            One of the <see cref="T:Syncfusion.Blazor.Notifications.SkeletonType"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.Notifications.SkeletonType.Text"/>.
+            </value>
+            <remarks>
+            If the <see cref="T:Syncfusion.Blazor.Notifications.SkeletonType"/> is<see cref="F:Syncfusion.Blazor.Notifications.SkeletonType.Circle"/> or<see cref="F:Syncfusion.Blazor.Notifications.SkeletonType.Square"/>, the width property value will be prioritize and used as dimension when <see cref="P:Syncfusion.Blazor.Notifications.SfSkeleton.Shape"/> is Circle and Square.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.Effect">
+            <summary>
+            Gets or sets a value that indicates the animation effect of the Skeleton.
+            </summary>
+            <value>
+            One of the <see cref="T:Syncfusion.Blazor.Notifications.ShimmerEffect"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.Notifications.ShimmerEffect.Wave"/>.
+            </value>
+            <example>
+            Skeleton with fade effect.
+            <code>
+            <![CDATA[
+            <SfSkeleton Effect="ShimmerEffect.Fade" Width="50px" Shape="SkeletonType.Circle"></SfSkeleton>
+            ]]>
+            </code>
+            Skeleton with pulse effect.
+            <code>
+            <![CDATA[
+            <SfSkeleton Effect="ShimmerEffect.Pulse" Width="50px" Shape="SkeletonType.Circle"></SfSkeleton>
+            ]]>
+            </code>
+            Skeleton with no effect.
+            <code>
+            <![CDATA[
+            <SfSkeleton Effect="ShimmerEffect.None" Width="100px" Height="10px"></SfSkeleton>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.Label">
+            <summary>
+            Gets or sets a value that defines 'aria-label' for Skeleton accessibility.
+            </summary>
+            <value>
+            Accepts a string value. The default value is <c>Loading...</c>.
+            </value>
+            <example>
+            Skeleton with custom ARIA label.
+            <code>
+            <![CDATA[
+            <SfSkeleton Label="Fetching data..." Width="50px" Shape="SkeletonType.Circle"></SfSkeleton>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfSkeleton.CssClass">
+            <summary> 
+            Gets or sets a value that indicates the CSS class string to customize the appearance of Skeleton. 
+            </summary> 
+            <value> 
+            Accepts a CSS class string separated by space to customize the appearance of Skeleton. The default value is <c>string.Empty</c>. 
+            </value>
+            <example>
+            In the below code example, Skeleton background color has been customized by using `CssClass` property.
+            <code>
+            <![CDATA[
+            <SfSkeleton CssClass="customize-skeleton" Width="100px" Shape="SkeletonType.Circle"></SfSkeleton>
+            <style>
+            .e-skeleton.customize-skeleton {
+                background-color:darkgray;
+            }
+            </style>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.SkeletonType">
+            <summary>
+            Defines the shape of the Skeleton.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.SkeletonType.Text">
+            <summary>
+            Defines the Skeleton shape as text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.SkeletonType.Circle">
+            <summary>
+            Defines the Skeleton shape as circle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.SkeletonType.Square">
+            <summary>
+            Defines the Skeleton shape as square.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.SkeletonType.Rectangle">
+            <summary>
+            Defines the Skeleton shape as rectangle.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ShimmerEffect">
+            <summary>
+            Defines the animation effect of the Skeleton.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ShimmerEffect.Wave">
+            <summary>
+            Defines the animation as shimmer wave effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ShimmerEffect.Fade">
+            <summary>
+            Defines the animation as fade effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ShimmerEffect.Pulse">
+            <summary>
+            Defines the animation as pulse effect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ShimmerEffect.None">
+            <summary>
+            Defines the animation as no effect.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastAnimationSettings">
+            <summary>
+            Specifies the show and hide animation settings of Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationSettings.ChildContent">
+            <summary>
+            Gets or sets the content of the Spinner element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationSettings.HideSettings">
+            <summary>
+            Specifies the animation to appear when hiding the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationSettings.ShowSettings">
+            <summary>
+            Specifies the animation to appear when showing the Toast.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastAnimationSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastAnimationSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastAnimationSettings.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastAnimationSettings.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastButton">
+            <summary>
+            Provides data to configure the Toast button properties.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.OnClick">
+            <summary>
+            Specifies the click event binding of action buttons created within Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.Content">
+            <summary>
+            Defines the text `Content` of the Button element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.CssClass">
+            <summary>
+            Defines the class/multiple classes separated by a space in the Button element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.Disabled">
+            <summary>
+            Specifies a value that indicates whether the Button is `Disabled`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.EnableRtl">
+            <summary>
+            Enable or disable rendering component in the right to left (RTL) direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.IconCss">
+            <summary>
+            Defines the class/multiple classes separated by a space for the Button that is used to include an icon.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.IconPosition">
+            <summary>
+            Positions the icon before or after the text content in the Button.
+            The possible values are: Left: The icon will be positioned to the left of the text content.
+            Right: The icon will be positioned to the right of the text content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.IsPrimary">
+            <summary>
+            Allows the appearance of the Button to be enhanced and visually appealing when set to `true`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.IsToggle">
+            <summary>
+            Makes the Button toggle, when set to `true`.
+            When you click it, the state changes from normal to active.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButton.Type">
+            <summary>
+            Specifies the type of the button.
+            Possible values are Button, Submit, and Reset.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastButton.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastButton.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastButton.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastButtons">
+            <summary>
+            A list of buttons that are used to configure the Toast buttons.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastButtons.ChildContent">
+            <summary>
+            Gets or sets the content of the Spinner element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastButtons.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastButtons.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastButtons.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastEvents">
+            <summary>
+            Configure the event handlers to handle the events with Toast component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.OnOpen">
+            <summary>
+            Triggers the event before the toast shown.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.OnClose">
+            <summary>
+            Triggers the event before the toast close.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.OnClick">
+            <summary>
+            The event will be fired while clicking on the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.Closed">
+            <summary>
+            Trigger the event after the Toast hides.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.Created">
+            <summary>
+            Triggers the event after the Toast gets created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.Destroyed">
+            <summary>
+            Triggers the event after the Toast gets destroyed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastEvents.Opened">
+            <summary>
+            Triggers the event after the Toast shown on the target container.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastEvents.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastEvents.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings">
+            <summary>
+            Specifies the animation to appear while hiding the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.ChildContent">
+            <summary>
+            Gets or sets the content of the Spinner element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.Duration">
+            <summary>
+            Specifies the duration to animate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.Easing">
+            <summary>
+            Specifies the animation timing function.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.Effect">
+            <summary>
+            Specifies the animation name that should be applied on while opening and closing the toast.
+            If the user sets Fade animation, the toast will open with the `FadeIn` effect and close with the `FadeOut` effect.
+            The following are the list of animation effects available to configure to the toast:
+            1. Fade
+            2. FadeZoom
+            3. FlipLeftDown
+            4. FlipLeftUp
+            5. FlipRightDown
+            6. FlipRightUp
+            7. FlipXDown
+            8. FlipXUp
+            9. FlipYLeft
+            10. FlipYRight
+            11. SlideBottom
+            12. SlideLeft
+            13. SlideRight
+            14. SlideTop
+            15. Zoom
+            16. None.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastHideAnimationSettings.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastPosition">
+            <summary>
+            Configures to display a toast in the custom position within the document or target.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastPosition.X">
+            <summary>
+            Specifies the position of the Toast notification with respect to the target container's left edge.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastPosition.Y">
+            <summary>
+            Specifies the position of the Toast notification with respect to the target container's top edge.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastPosition.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastPosition.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastPosition.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings">
+            <summary>
+            Specifies the animation to appear while showing the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.ChildContent">
+            <summary>
+            Gets or sets the content of the Spinner element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.Duration">
+            <summary>
+            Specifies the duration to animate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.Easing">
+            <summary>
+            Specifies the animation timing function.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.Effect">
+            <summary>
+            Specifies the animation name that should be applied on while opening and closing the toast.
+            If the user sets Fade animation, the toast will open with the `FadeIn` effect and close with the `FadeOut` effect.
+            The following are the list of animation effects available to configure to the toast:
+            1. Fade
+            2. FadeZoom
+            3. FlipLeftDown
+            4. FlipLeftUp
+            5. FlipRightDown
+            6. FlipRightUp
+            7. FlipXDown
+            8. FlipXUp
+            9. FlipYLeft
+            10. FlipYRight
+            11. SlideBottom
+            12. SlideLeft
+            13. SlideRight
+            14. SlideTop
+            15. Zoom
+            16. None.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastShowAnimationSettings.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastTemplates">
+            <summary>
+            Configure templates to display within a header, content, and footer section of Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastTemplates.ChildContent">
+            <exclude/>
+            <summary>
+            Gets or sets the content of the Spinner element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastTemplates.Title">
+            <summary>
+            Defines the toast title template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastTemplates.Content">
+            <summary>
+            Defines the toast content template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastTemplates.Template">
+            <summary>
+            Defines the toast template.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastTemplates.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastTemplates.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.ToastTemplates.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.SfToast">
+            <summary>
+            Toast is a small, nonblocking notification pop-up and it is shown to users with readable message content
+            at the bottom of the screen or at a specific target and disappears automatically after a few seconds (time-out)
+            with different animation effects.
+            </summary>
+            <summary>
+            Toast is a small, nonblocking notification pop-up and it is shown to users with readable message content
+            at the bottom of the screen or at a specific target and disappears automatically after a few seconds (time-out)
+            with different animation effects.
+            </summary>
+            <summary>
+            Toast is a small, nonblocking notification pop-up and it is shown to users with readable message content
+            at the bottom of the screen or at a specific target and disappears automatically after a few seconds (time-out)
+            with different animation effects.
+            </summary>
+            <summary>
+            Toast is a small, nonblocking notification pop-up and it is shown to users with readable message content
+            at the bottom of the screen or at a specific target and disappears automatically after a few seconds (time-out)
+            with different animation effects.
+            </summary>
+            <summary>
+            Toast is a small, nonblocking notification pop-up and it is shown to users with readable message content
+            at the bottom of the screen or at a specific target and disappears automatically after a few seconds (time-out)
+            with different animation effects.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Content">
+            <summary>
+            Specifies the content to be displayed on the Toast.
+            Accepts selectors, string values and HTML elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.CssClass">
+            <summary>
+            Defines single/multiple classes (separated by space) to be used for customization of Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ExtendedTimeout">
+            <summary>
+            Specifies the Toast display time duration after interacting with the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Height">
+            <summary>
+            Specifies the height of the Toast in pixels/number/percentage. Number value is considered as pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Icon">
+            <summary>
+            Defines CSS classes to specify an icon for the Toast which is to be displayed at top left corner of the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.NewestOnTop">
+            <summary>
+            Specifies the newly created Toast message display order while multiple toast's are added to page one after another.
+            By default, newly added Toast will be added after old Toast's.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ProgressDirection">
+            <summary>
+             Specifies the direction for the Toast progressBar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ShowCloseButton">
+            <summary>
+            Specifies whether to show the close button in Toast message to close the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ShowProgressBar">
+            <summary>
+            Specifies whether to show the progress bar to denote the Toast message display timeout.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Target">
+            <summary>
+            Specifies the target container where the Toast to be displayed.
+            Based on the target, the positions such as `Left`, `Top` will be applied to the Toast.
+            The default value is null, which refers the `document.body` element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ContentTemplate">
+            <summary>
+            Specifies the HTML element/element ID as a string that can be displayed as a Toast content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Timeout">
+            <summary>
+            Specifies the Toast display time duration on the page in milliseconds.
+            - Once the time expires, Toast message will be removed.
+            - Setting 0 as a time out value displays the Toast on the page until the user closes it manually.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Title">
+            <summary>
+            Specifies the title to be displayed on the Toast.
+            Works only with string values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.Width">
+            <summary>
+            Specifies the width of the Toast in pixels/numbers/percentage. Number value is considered as pixels.
+            In mobile devices, default width is considered as `100%`.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.HideAsync(Microsoft.AspNetCore.Components.ElementReference)">
+            <summary>
+            To Hide Toast element on a document.
+            To Hide all toast element when passing 'All'.
+            </summary>
+            <param name="element"> Specifies the particular element to Hide.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.Hide(Microsoft.AspNetCore.Components.ElementReference)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.HideAsync(System.String)">
+            <summary>
+            To Hide Toast element on a document.
+            To Hide all toast element when passing 'All'.
+            </summary>
+            <param name="hideAll"> Pass 'All' to hide all Toast.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.Hide(System.String)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.HideAsync">
+            <summary>
+            To Hide Toast element on a document.
+            To Hide all toast element when passing 'All'.
+            </summary>
+            /// <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.Hide">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.Hide(System.Int32)">
+            <summary>
+            To Hide Toast element on a document.
+            </summary>
+            <param name="key"> Specifies the particular toast key to Hide.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.HideAsync(System.Int32)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.ShowAsync(Syncfusion.Blazor.Notifications.ToastModel)">
+            <summary>
+            To show Toast element on a document with the relative position.
+            </summary>
+            <param name="toastModel"> Specifies the ToastModel to show Toast element on screen.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.Show(Syncfusion.Blazor.Notifications.ToastModel)">
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ID">
+            <summary>
+            Specifies the unique identifier.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.SfToast.ChildContent">
+            <summary>
+            Sets the content of the Toast.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.CreatedEvent">
+            <summary>
+            Method invoked when the component has been created.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.ClearTimeout(System.Int32)">
+            <summary>
+            Method invoked when the component has been created.
+            </summary>
+            <param name="index">Specifies the current toast index.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.BeforeOpenEvent(System.Int32)">
+            <summary>
+            Method invoked before toast open.
+            </summary>
+            <param name="index">Specifies the current toast index.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.OpenEvent(System.Int32,Syncfusion.Blazor.DOM)">
+            <summary>
+            Method invoked after toast opened.
+            </summary>
+            <param name="index">Specifies the current toast index.</param>
+            <param name="element">Specifies the current toast element.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.CloseEvent(System.Int32)">
+            <summary>
+            Method invoked after toast closed.
+            </summary>
+            <param name="index">Specifies the current toast index.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.ClickEvent(System.Int32,Microsoft.AspNetCore.Components.ElementReference,System.Boolean)">
+            <summary>
+            Method invoked after toast clicked.
+            </summary>
+            <param name="id">Specifies the current toast id.</param>
+            <param name="element">Specifies the current toast element.</param>
+            <param name="isCloseIcon">Specifies whether close icon is clicked or not.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.OnCloseEvent(System.Int32,System.String)">
+            <summary>
+            Method invoked before toast close.
+            </summary>
+            <param name="id">Specifies the current toast id.</param>
+            <param name="interactionType">Specifies the type of the interaction.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.MouseoverEvent(System.Int32)">
+            <summary>
+            Method invoked when hover the toast element.
+            </summary>
+            <param name="id">Specifies the current toast id.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.SfToast.DestroyTimer(System.Int32)">
+            <summary>
+            Method invoked when hover the toast element.
+            </summary>
+            <param name="id">Specifies the current toast id.</param>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ButtonType">
+            <summary>
+             Defines the type of a button in the toast.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ButtonType.Button">
+            <summary>
+            Defines ButtonType as Button.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ButtonType.Submit">
+            <summary>
+            Defines ButtonType as Submit.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ButtonType.Reset">
+            <summary>
+            Defines ButtonType as Reset.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastEasing">
+            <summary>
+            Specifies the Toast Easing effects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEasing.Ease">
+            <summary>
+            Defines ToastEasing as Easing.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEasing.Linear">
+            <summary>
+            Defines ToastEasing as Linear.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastEffect">
+            <summary>
+            Specifies the Toast animation effects.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FadeIn">
+            <summary>
+            Defines ToastEffect as FadeIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FadeOut">
+            <summary>
+            Defines ToastEffect as FadeOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FadeZoomIn">
+            <summary>
+            Defines ToastEffect as FadeZoomIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FadeZoomOut">
+            <summary>
+            Defines ToastEffect as FadeZoomOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipLeftDownIn">
+            <summary>
+            Defines ToastEffect as FlipLeftDownIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipLeftDownOut">
+            <summary>
+            Defines ToastEffect as FlipLeftDownOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipLeftUpIn">
+            <summary>
+            Defines ToastEffect as FlipLeftUpIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipLeftUpOut">
+            <summary>
+            Defines ToastEffect as FlipLeftUpOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipRightDownIn">
+            <summary>
+            Defines ToastEffect as FlipRightDownIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipRightDownOut">
+            <summary>
+            Defines ToastEffect as FlipRightDownOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipRightUpIn">
+            <summary>
+            Defines ToastEffect as FlipRightUpIn
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipRightUpOut">
+            <summary>
+            Defines ToastEffect as FlipRightUpOut
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipXDownIn">
+            <summary>
+            Defines ToastEffect as FlipXDownIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipXDownOut">
+            <summary>
+            Defines ToastEffect as FlipXDownOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipXUpIn">
+            <summary>
+            Defines ToastEffect as FlipXUpIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipXUpOut">
+            <summary>
+            Defines ToastEffect as FlipXUpOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipYLeftIn">
+            <summary>
+            Defines ToastEffect as FlipYLeftIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipYLeftOut">
+            <summary>
+            Defines ToastEffect as FlipYLeftOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipYRightIn">
+            <summary>
+            Defines ToastEffect as FlipYRightIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.FlipYRightOut">
+            <summary>
+            Defines ToastEffect as FlipYRightOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideBottomIn">
+            <summary>
+            Defines ToastEffect as SlideBottomIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideBottomOut">
+            <summary>
+            Defines ToastEffect as SlideBottomOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideDown">
+            <summary>
+            Defines ToastEffect as SlideDown.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideLeft">
+            <summary>
+            Defines ToastEffect as SlideLeft.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideLeftIn">
+            <summary>
+            Defines ToastEffect as SlideLeftIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideLeftOut">
+            <summary>
+            Defines ToastEffect as SlideLeftOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideRight">
+            <summary>
+            Defines ToastEffect as SlideRight.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideRightIn">
+            <summary>
+            Defines ToastEffect as SlideRightIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideRightOut">
+            <summary>
+            Defines ToastEffect as SlideRightOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideTopIn">
+            <summary>
+            Defines ToastEffect as SlideTopIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideTopOut">
+            <summary>
+            Defines ToastEffect as SlideTopOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.SlideUp">
+            <summary>
+            Defines ToastEffect as SlideUp.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.ZoomIn">
+            <summary>
+            Defines ToastEffect as ZoomIn.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.ZoomOut">
+            <summary>
+            Defines ToastEffect as ZoomOut.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ToastEffect.None">
+            <summary>
+            Defines ToastEffect as None.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ProgressDirection">
+            <summary>
+            Specifies the ProgressBar direction types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ProgressDirection.RTL">
+            <summary>
+            Defines progressDirection as RTL.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Notifications.ProgressDirection.LTR">
+            <summary>
+            Defines progressDirection as LTR.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastBeforeOpenArgs">
+            <summary>
+            Specifies the event arguments of Toast before open.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastBeforeOpenArgs.Cancel">
+            <summary>
+            Defines the prevent action for before opening toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastBeforeOpenArgs.Options">
+            <summary>
+            Defines current Toast model properties as options.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastBeforeCloseArgs">
+            <summary>
+            Specifies the event arguments of Toast before close.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastBeforeCloseArgs.Cancel">
+            <summary>
+            Defines the prevent action for before closing toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastBeforeCloseArgs.Key">
+            <summary>
+            Defines the current Toast Key.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastBeforeCloseArgs.RequestType">
+            <summary>
+            Defines the current Toast is interacted or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastBeforeCloseArgs.Options">
+            <summary>
+            Defines current Toast model properties as options.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastClickEventArgs">
+            <summary>
+            Specifies the event arguments of Toast click.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastClickEventArgs.Cancel">
+            <summary>
+            Defines the prevent action for Toast click event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastClickEventArgs.ClickToClose">
+            <summary>
+            Defines the close action for click or tab on the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastClickEventArgs.Options">
+            <summary>
+            Defines current Toast model properties as options.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastCloseArgs">
+            <summary>
+            Specifies the event arguments of Toast close.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastCloseArgs.Options">
+            <summary>
+            Defines current Toast model properties as options.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastCloseArgs.Key">
+            <summary>
+            Defines the current Toast Key.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastOpenArgs">
+            <summary>
+            Specifies the event arguments of Toast open.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastOpenArgs.Options">
+            <summary>
+            Defines current Toast model properties as options.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastOpenArgs.Key">
+            <summary>
+            Defines current Toast Key.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastAnimationSettingsModel">
+            <summary>
+            Interface for a class ToastAnimationSettings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationSettingsModel.Hide">
+            <summary>
+            Specifies the animation to appear while hiding the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationSettingsModel.Show">
+            <summary>
+            Specifies the animation to appear while showing the Toast.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastAnimationsModel">
+            <summary>
+            Interface for a class ToastAnimations.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationsModel.Duration">
+            <summary>
+            Specifies the duration to animate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationsModel.Easing">
+            <summary>
+            Specifies the animation timing function.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastAnimationsModel.Effect">
+            <summary>
+            Specifies the animation name that should be applied on while opening and closing the toast.
+            If the user sets Fade animation, the toast will open with the `FadeIn` effect and close with the `FadeOut` effect.
+            The following are the list of animation effects available to configure to the toast:
+            1. Fade
+            2. FadeZoom
+            3. FlipLeftDown
+            4. FlipLeftUp
+            5. FlipRightDown
+            6. FlipRightUp
+            7. FlipXDown
+            8. FlipXUp
+            9. FlipYLeft
+            10. FlipYRight
+            11. SlideBottom
+            12. SlideLeft
+            13. SlideRight
+            14. SlideTop
+            15. Zoom
+            16. None.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastModel">
+            <summary>
+            Interface for a class Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Animation">
+            <summary>
+            Specifies the animation configuration settings for showing and hiding the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Content">
+            <summary>
+            Specifies the content to be displayed on the Toast.
+            Accepts selectors, string values and HTML elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.CssClass">
+            <summary>
+            Defines single/multiple classes (separated by space) to be used for customization of Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.EnablePersistence">
+            <summary>
+            Enable or disable persisting component's state between page reloads.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.ExtendedTimeout">
+            <summary>
+            Specifies the Toast display time duration after interacting with the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Height">
+            <summary>
+            Specifies the height of the Toast in pixels/number/percentage. Number value is considered as pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Icon">
+            <summary>
+            Defines CSS classes to specify an icon for the Toast which is to be displayed at top left corner of the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.NewestOnTop">
+            <summary>
+            Specifies the newly created Toast message display order while multiple toast's are added to page one after another.
+            By default, newly added Toast will be added after old Toast's.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Position">
+            <summary>
+            Specifies the position of the Toast message to be displayed within target container.
+            In the case of multiple Toast display, new Toast position will not update on dynamic change of property values
+            until the old Toast messages removed.
+            X values are: Left , Right ,Center
+            Y values are: Top , Bottom.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.ProgressDirection">
+            <summary>
+             Specifies the direction for the Toast progressBar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.ShowCloseButton">
+            <summary>
+            Specifies whether to show the close button in Toast message to close the Toast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.ShowProgressBar">
+            <summary>
+            Specifies whether to show the progress bar to denote the Toast message display timeout.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Target">
+            <summary>
+            Specifies the target container where the Toast to be displayed.
+            Based on the target, the positions such as `Left`, `Top` will be applied to the Toast.
+            The default value is null, which refers the `document.body` element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.ContentTemplate">
+            <summary>
+            Specifies the HTML element/element ID as a string that can be displayed as a Toast content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Timeout">
+            <summary>
+            Specifies the Toast display time duration on the page in milliseconds.
+            - Once the time expires, Toast message will be removed.
+            - Setting 0 as a time out value displays the Toast on the page until the user closes it manually.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Title">
+            <summary>
+            Specifies the title to be displayed on the Toast.
+            Works only with string values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Width">
+            <summary>
+            Specifies the width of the Toast in pixels/numbers/percentage. Number value is considered as pixels.
+            In mobile devices, default width is considered as `100%`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastModel.Key">
+            <summary>
+            Defines current Toast Key.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.ToastPositionModel">
+            <summary>
+            Interface for a class ToastPosition.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastPositionModel.X">
+            <summary>
+            Specifies the position of the Toast notification with respect to the target container's left edge.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.ToastPositionModel.Y">
+            <summary>
+            Specifies the position of the Toast notification with respect to the target container's top edge.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.Internal.ToastContent">
+            <summary>
+            Specifies the content to be displayed on the Toast.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.Internal.ToastContent.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.Internal.ToastContent.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.Internal.ToastContent.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Notifications.Internal.ToastContent.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.Internal.ToastShowModel">
+            <summary>
+            Provides information about a ToastShowModel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastShowModel.IsRendered">
+            <summary>
+            Specifies toast is rendered or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastShowModel.ID">
+            <summary>
+            Specifies the toast ID.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastShowModel.TitleTemplate">
+            <summary>
+            Provides information about a TitleTemplate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastShowModel.Templates">
+            <summary>
+            Provides information about a Templates.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastShowModel.ChildContent">
+            <summary>
+            Provides information about a ChildContent.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.Internal.ToastContentModel">
+            <summary>
+            Provides information about a ToastContentModel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastContentModel.Model">
+            <summary>
+            Provides information about a Model.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastContentModel.Index">
+            <summary>
+            Specifies the current toast index.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Notifications.Internal.ToastProgressBar">
+            <summary>
+            Provides information about a ToastProgressBar class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastProgressBar.MaxHideTime">
+            <summary>
+            Specifies the toast maximum hide time.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Notifications.Internal.ToastProgressBar.HideEstimatedTimeOfArrival">
+            <summary>
+            Specifies the toast estimated time of arrival.
+            </summary>
+        </member>
+    </members>
+</doc>

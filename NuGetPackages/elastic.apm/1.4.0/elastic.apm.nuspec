@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Elastic.Apm</id>
+    <version>1.4.0</version>
+    <authors>Elastic and contributors</authors>
+    <owners>Elastic and contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/elastic/apm-agent-dotnet/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/elastic/apm-agent-dotnet</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/elastic/apm-agent-dotnet/master/build/nuget-icon.png</iconUrl>
+    <description>Elastic APM .NET Agent base package. This package provides core functionality for transmitting of all Elastic APM types and is a dependent package for all other Elastic APM package. Additionally this package contains the public Agent API that allows you to manually capture transactions and spans. Please install the platform specific package for the best experience. See: https://github.com/elastic/apm-agent-dotnet/tree/master/docs</description>
+    <copyright>2020 Elasticsearch BV</copyright>
+    <tags>apm, monitoring, elastic, elasticapm, analytics, sdk</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="Microsoft.Diagnostics.Tracing.TraceEvent" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.DiagnosticSource" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Dataflow" version="4.9.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Diagnostics.Tracing.TraceEvent" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.DiagnosticSource" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.PerformanceCounter" version="4.5.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Dataflow" version="4.9.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

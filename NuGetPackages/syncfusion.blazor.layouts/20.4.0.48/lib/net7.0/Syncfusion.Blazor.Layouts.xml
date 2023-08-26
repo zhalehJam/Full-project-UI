@@ -1,0 +1,1543 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.Layouts</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Layouts.DashboardLayoutEvents">
+            <summary>
+            Specifies the DashboardLayout events.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.Parent">
+            <summary>
+            DashboardLayout component reference.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.Changed">
+            <summary>
+            Triggers whenever the panel’s positions are changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.Created">
+            <summary>
+            Triggers when the Dashboard Layout is created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.Destroyed">
+            <summary>
+            Triggers when the Dashboard Layout is destroyed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.PanelDragging">
+            <summary>
+            Triggers when a panel is dragged continuously.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.OnDragStart">
+            <summary>
+            Triggers when a panel is about to drag.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.OnDragStop">
+            <summary>
+            Triggers when a dragged panel is dropped.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.Resizing">
+            <summary>
+            Triggers when a panel is being resized continuously.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.OnResizeStart">
+            <summary>
+            Triggers when a panel is started to resize.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.OnResizeStop">
+            <summary>
+            Triggers when a panel resize ends.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.OnWindowResize">
+            <summary>
+            Triggers when re-sizing the window.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.DashboardLayoutEvents.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.DashboardLayoutPanel">
+            <summary>
+            Specifies the DashboardLayoutPanel.
+            </summary>
+            <summary>
+            DashboardLayout panel.
+            </summary>
+            <summary>
+            Defines the DashboardLayout panel.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.GetIdValues(Syncfusion.Blazor.Layouts.DashboardLayoutPanel)">
+            <summary>
+            Get the panel id values.
+            </summary>
+            <param name="panel">panel.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.OnInitializedAsync">
+            <summary>
+            Override the initialized method to customize the panel at server side. Method invoked when the component is ready to start.
+            </summary>
+            <returns>"Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>"Task".</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.ChildContent">
+            <summary>
+            Defines the ChildContent of the panels.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.HeaderTemplate">
+            <summary>
+            Defines the HeaderTemplate of the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.ContentTemplate">
+            <summary>
+            Defines the ContentTemplate of the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.AllowDragging">
+            <summary>
+            Defines the dragging panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Col">
+            <summary>
+            Defines the column value where the panel to be placed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Column">
+            <summary>
+            Defines the column value where the panel to be placed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Content">
+            <summary>
+            Defines the template value that should be displayed as the panel's content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.CssClass">
+            <summary>
+            Defines the CSS class name that can be appended with each panel element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Enabled">
+            <summary>
+            Defines whether to the panel should be enabled or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Header">
+            <summary>
+            Defines the template value that should be displayed as the panel's header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Id">
+            <summary>
+            Defines the id of the panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.MaxSizeX">
+            <summary>
+            Specifies the maximum width of the panel in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.MaxSizeY">
+            <summary>
+            Specifies the maximum height of the panel in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.MinSizeX">
+            <summary>
+            Specifies the minimum width of the panel in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.MinSizeY">
+            <summary>
+            Specifies the minimum height of the panel in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.Row">
+            <summary>
+            Defines a row value where the panel should be placed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.SizeX">
+            <summary>
+            Specifies the width of the panel in the layout in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.SizeY">
+            <summary>
+            Specifies the height of the panel in the layout in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanel.ZIndex">
+            <summary>
+            Specifies the z-index of the panel.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.DashboardLayoutPanels">
+            <summary>
+            Specifies the DashboardLayoutPanels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanels.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DashboardLayoutPanels.Panels">
+            <summary>
+            Specifies the Panels property.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.DashboardLayoutPanels.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>"Task".</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.ResizableHandle">
+            <summary>
+            Defines the dashboard panel’s resize handle position.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.SouthEast">
+            <summary>
+            Specifies south-east direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.SouthWest">
+            <summary>
+            Specifies south-west direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.NorthEast">
+            <summary>
+            Specifies north-east direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.NorthWest">
+            <summary>
+            Specifies north-west direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.North">
+            <summary>
+            Specifies north direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.South">
+            <summary>
+            Specifies south direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.East">
+            <summary>
+            Specifies east direction.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.ResizableHandle.West">
+            <summary>
+            Specifies west direction.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.ResizeArgs">
+            <summary>
+            Defines the resize event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeArgs.Element">
+            <summary>
+            Specifies the cell element being resized.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeArgs.IsInteracted">
+            <summary>
+            Specifies whether the event is triggered by user interaction or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeArgs.Name">
+            <summary>
+            Specifies the Event name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeArgs.Id">
+            <summary>
+            Specifies Resizing panel id.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.ChangeEventArgs">
+            <summary>
+            Defines the change event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ChangeEventArgs.AddedPanels">
+            <summary>
+            Specifies the panel added to the DashboardLayout.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ChangeEventArgs.ChangedPanels">
+            <summary>
+            Specifies the model values of the position changed panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ChangeEventArgs.IsInteracted">
+            <summary>
+            Specifies whether the event is triggered by user interaction or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ChangeEventArgs.RemovedPanels">
+            <summary>
+            Specifies the panels removed from the DashboardLayout.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.DragStartArgs">
+            <summary>
+            Defines the dragstart event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DragStartArgs.Cancel">
+            <summary>
+            Illustrates whether the current action needs to be prevented or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DragStartArgs.Element">
+            <summary>
+            Specifies the cell element being dragged.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DragStartArgs.Id">
+            <summary>
+            Specifies dragging panel id.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.DragStopArgs">
+            <summary>
+            Defines the dragstop event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DragStopArgs.Element">
+            <summary>
+            Specifies the cell element being dragged.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DragStopArgs.Id">
+            <summary>
+            Specifies dragged panel id.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.DraggedEventArgs">
+            <summary>
+            Defines the Drag event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DraggedEventArgs.Element">
+            <summary>
+            Specifies the cell element being dragged.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DraggedEventArgs.Target">
+            <summary>
+            Specifies the element below the cell element being dragged.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.DraggedEventArgs.Id">
+            <summary>
+            Specifies dragging panel id.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.PanelModel">
+            <summary>
+            Defines the PanelModel class for Panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.AllowDragging">
+            <summary>
+            Defines the dragging panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.Column">
+            <summary>
+            Defines the column value where the panel to be placed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.Content">
+            <summary>
+            Defines the template value that should be displayed as the panel's content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.CssClass">
+            <summary>
+            Defines the CSS class name that can be appended with each panel element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.Enabled">
+            <summary>
+            Defines whether the panel should be enabled or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.Header">
+            <summary>
+            Defines the template value that should be displayed as the panel's header.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.Id">
+            <summary>
+            Defines the id of the panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.MaxSizeX">
+             <summary>
+             Specifies the maximum width of the panel in cells count.
+            
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.MaxSizeY">
+             <summary>
+             Specifies the maximum height of the panel in cells count.
+            
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.MinSizeX">
+             <summary>
+             Specifies the minimum width of the panel in cells count.
+            
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.MinSizeY">
+            <summary>
+            Specifies the minimum height of the panel in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.Row">
+            <summary>
+            Defines a row value where the panel should be placed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.SizeX">
+            <summary>
+            Specifies the width of the panel in the layout in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.SizeY">
+            <summary>
+            Specifies the height of the panel in the layout in cells count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelModel.ZIndex">
+            <summary>
+            Specifies the z-index of the panel.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.PanelHeaderModel">
+            <summary>
+            Defines the id and header height of the panel.
+            </summary>
+            <exclude/>  
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelHeaderModel.Id">
+            <summary>
+            Gets or sets the panel id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanelHeaderModel.Height">
+            <summary>
+            Gets or sets the panel header height.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.InitialClientModel">
+            <summary>
+            Defines the parent element offset, media query and, panel model values.
+            </summary>
+            <exclude/>  
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.InitialClientModel.ParentOffset">
+            <summary>
+            Gets or sets the parent element offset height and width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.InitialClientModel.EnableMediaQuery">
+            <summary>
+            Gets or sets whether the media query is enabled or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.InitialClientModel.PanelHeaderModel">
+            <summary>
+            Gets or sets the id and header height of the panel element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SfDashboardLayout">
+            <summary>
+            Specifies the DashboardLayout component.
+            </summary>
+            <summary>
+            Specifies the DashboardLayout component.
+            </summary>
+            <summary>
+            Specifies the DashboardLayout component.
+            </summary>
+            <summary>
+            The DashboardLayout is a grid structured layout component, that helps to create a dashboard with panels.
+            Panels hold the UI components or data to be visualized with flexible options like resize, reorder, drag-n-drop, remove and add,
+            that allows users to easily place the panels at a desired position within the grid layout.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.OnInitializedAsync">
+            <summary>
+            Override the initialized method to customize the component at server side. Method invoked when the component is ready to start.
+            </summary>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.OnParametersSetAsync">
+            <summary>
+            Method invoked when any changes in component state occurs.
+            </summary>
+            <returns>"Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">firstRender.</param>
+            <returns>"Task".</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.ID">
+            <summary>
+            Sets id attribute for the dashboard element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.ChildContent">
+            <summary>
+            Specifies the child content.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.AllowDragging">
+            <summary>
+            If allowDragging is set to true, then the DashboardLayout allows you to drag and reorder the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.AllowFloating">
+            <summary>
+            If allowFloating is set to true, then the DashboardLayout will automatically move the panels upwards to fill the empty available cells while dragging or resizing the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.AllowResizing">
+            <summary>
+            If allowResizing is set to true, then the DashboardLayout allows you to resize the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.CellAspectRatio">
+            <summary>
+            Defines the cell aspect ratio of the panel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.CellSpacing">
+            <summary>
+            Defines the spacing between the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.Columns">
+            <summary>
+            Defines the number of columns to be created in the DashboardLayout.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.DraggableHandle">
+             <summary>
+             Defines the draggable handle selector which will act as dragging handler for the panels.
+            
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.EnablePersistence">
+            <summary>
+            Enable or disable persisting component's state between page reloads.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.MediaQuery">
+            <summary>
+            Defines the media query value where the dashboardlayout becomes stacked layout when the resolution meets.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.DashboardHtmlAttributes">
+            <summary>
+            Used to specify additional html attributes such as styles, class, and more to the root element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.SfDashboardPanels">
+            <summary>
+            Defines the panels property of the DashboardLayout component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.ResizableHandles">
+            <summary>
+            Defines the resizing handles directions used for resizing the panels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.ShowGridLines">
+            <summary>
+            Enables or disables the grid lines for the Dashboard Layout panels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.MovePanelAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            Moves the panel in the DashboardLayout.
+            </summary>
+            <param name="idValue">Specifies the Id value of moved panel.</param>
+            <param name="rowValue">Specifies the Row value of moved panel.</param>
+            <param name="colValue">Specifies the Column value of moved panel.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.RemoveAllAsync">
+            <summary>
+            Removes all the panels from the DashboardLayout.
+            </summary>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.RemovePanel(System.String)">
+            <summary>
+            Removes the panel from the DashboardLayout.
+            idValue - Specifies the Id value of the removed panel.
+            </summary>
+            <param name="idValue">idValue.</param>
+            <returns>="Task".</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.RemovePanelAsync(System.String)">
+            <summary>
+            Removes the panel from the DashboardLayout.
+            idValue - Specifies the Id value of the removed panel.
+            </summary>
+            <param name="idValue">idValue.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.ResizePanelAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            Resize the panel in the DashboardLayout.
+            </summary>
+            <param name="idValue">Specifies the Id value of resize panel.</param>
+            <param name="sizeXValue">Specifies the SizeX value of resize panel.</param>
+            <param name="sizeYValue">Specifies the SizeY value of resize panel.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.Serialize">
+            <summary>
+            Returns the panels as object of the DashboardLayout.
+            </summary>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.AddPanel(Syncfusion.Blazor.Layouts.PanelModel)">
+            <summary>
+            Allows to add a panel to the Dashboardlayout.
+            panel - Specifies the added panel.
+            </summary>
+            <param name="panel">panel.</param>
+            <returns>="Task".</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.AddPanelAsync(Syncfusion.Blazor.Layouts.PanelModel)">
+            <summary>
+            Allows to add a panel to the Dashboardlayout.
+            panel - Specifies the added panel.
+            </summary>
+            <param name="panel">panel.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.Refresh">
+            <summary>
+            Refreshes the DashboardLayout component.
+            </summary>
+            <returns>"Task".</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.RefreshAsync">
+            <summary>
+            Refreshes the DashboardLayout component.
+            </summary>
+            <returns>"Task".</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfDashboardLayout.IsAddPanelCalled">
+            <summary>
+            protected variable declared.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.UpdatePanelContentHeight(Syncfusion.Blazor.Layouts.PanelModel[],System.Collections.Generic.List{Syncfusion.Blazor.Layouts.PanelHeaderModel})">
+            <summary>
+            Update panel position and content height after collision calculation.
+            </summary>
+            <param name="updatedValues">UpdatedValues.</param>
+            <param name="contentId">contentId.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.UpdatedPanelsValues(Syncfusion.Blazor.Layouts.PanelModel[])">
+            <summary>
+            Update panel position after collision calculation.
+            </summary>
+            <param name="updatedValues">UpdatedValues.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.SetDragPanelHeight(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Update Dashboard height on dragging the panels.
+            </summary>
+            <param name="row"> Defines the row values.</param>
+            <param name="sizeY">Defines the sizeY values.</param>
+            <param name="addRows">Increments the row value.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.UpdateMaximumRow(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Update Dashboard height and max row value after dropping of panels.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.CalculateSize(System.Int32[],System.Boolean,System.Boolean,System.Collections.Generic.List{Syncfusion.Blazor.Layouts.PanelHeaderModel})">
+            <summary>
+            Update element offset values.
+            </summary>
+            <param name="offsets"> Defines the Offset values.</param>
+            <param name="isMediaquery">Defines the isMediaquery variable.</param>
+            <param name="isResized">Defines the isResized variable.</param>
+            <param name="contentId">Defines the contentId of panel.</param>
+            <exclude/>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.TriggerResizeStart(System.Boolean,System.String,System.String)">
+            <summary>
+            Trigger Resize Event for Dashboard component.
+            </summary>
+            <exclude/>
+            <param name="isInteracted">Defines the isInteracted variable.</param>
+            <param name="idValue">Defines the idValue.</param>
+            <param name="name">Defines the name attribute.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.TriggerDragStart(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Trigger Drag start Event for dashboard component.
+            </summary>
+            <exclude/>
+            <param name="idValue">Defines the idValue.</param>
+            <param name="row"> Defines the row values.</param>
+            <param name="sizeY">Defines the sizeY values.</param>
+            <param name="addRows">Increments the row value.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.TriggerDragStop(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Trigger Resizing Event for dashboard component.
+            </summary>
+            <param name="idValue">Defines the idValue.</param>
+            <param name="changedId">Defines the changedId.</param>
+            <exclude/>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.TriggerDraging(System.String)">
+            <summary>
+            Trigger Dragging Event for dashboard component.
+            </summary>
+            <exclude/>
+            <param name="idValue">Specifies the idValue.</param>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.TriggerChange(System.Boolean,System.Collections.Generic.List{System.String})">
+            <summary>
+            Trigger change Event for Dashboard component.
+            </summary>
+            <param name="isInteracted">Specifies the isInteracted attribute.</param>
+            <param name="changedId">Specifies the changedId of panel.</param>
+            <exclude/>
+            <returns>="Task".</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfDashboardLayout.GetIdValues(Syncfusion.Blazor.Layouts.DashboardLayoutPanel)">
+            <summary>
+            Update the id values for panels.
+            </summary>
+            <param name="panel">Specifies the panel.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SplitterEvents">
+            <summary>
+            Configure the event handlers to handle the events with Splitter component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.Parent">
+            <summary>
+            The splitter is a layout user interface (UI) component that splits the layout into multiple panes with resizable and collapsible support.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.OnCollapse">
+            <summary>
+            Triggers on collapsing the panes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.OnExpand">
+            <summary>
+            Triggers on expanding the panes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.Collapsed">
+            <summary>
+            Triggers when the panes get collapsed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.Created">
+            <summary>
+            Triggers after creating the splitter component with its panes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.Expanded">
+            <summary>
+            Triggers when the panes get expanded.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.OnResizeStart">
+            <summary>
+            Triggers when the split pane is started to resize.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.OnResizeStop">
+            <summary>
+            Triggers when the resizing of split pane is stopped.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.Destroyed">
+            <summary>
+            The event triggers when the splitter is destroyed with its elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterEvents.Resizing">
+            <summary>
+            Triggers when a split pane is being resized.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            /// <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SplitterPane">
+            <summary>
+            Configure each pane and its properties to handle the pane behavior.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.ChildContent">
+            <summary>
+            Gets or sets the content of the splitter pane element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.ContentTemplate">
+            <summary>
+            Defines the pane content as a template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Collapsed">
+            <summary>
+            Specifies whether a pane is collapsed on the initial rendering of the splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.CollapsedChanged">
+            <summary>
+            Gets or sets a callback of the bound value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Collapsible">
+            <summary>
+            Specifies whether a pane is capable to collapse.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Content">
+            <summary>
+            Specifies the content of the split pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.CssClass">
+            <summary>
+            One or more custom CSS classes can be specified to the Splitter panes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Max">
+            <summary>
+            Specifies the maximum size of a pane. The pane cannot be resized more than the specified maximum limit.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.MaxChanged">
+            <summary>
+            Gets or sets a callback of the bound value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Min">
+            <summary>
+            Specifies the minimum size of a pane. The pane cannot be resized less than the specified minimum size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.MinChanged">
+            <summary>
+            Gets or sets a callback of the bound value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Resizable">
+            <summary>
+            Specifies the value whether a pane is resizable or not. By default, the Splitter panes are resizable.
+            You can disable resize functionality for any specific panes using this property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Size">
+            <summary>
+            SizeConfigures the properties for each pane. For horizontal splitter, the size act as width.
+            For vertical splitter, the size act as height.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.SizeChanged">
+            <summary>
+            Gets or sets a callback of the bound value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPane.Visible">
+            <summary>
+            Specifies the value that represents whether the pane is visible.
+            </summary>
+            <remarks> If this property is set to `false`, the pane element will not be shown in the DOM. This property can be used to provide conditional pane rendering in Splitter. </remarks>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPane.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPane.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPane.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPane.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SplitterPanes">
+            <summary>
+            Configure one or more panes to construct different layouts.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPanes.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPanes.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPanes.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterPanes.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterPanes.ChildContent">
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SplitterTemplates">
+            <summary>
+            Configure each pane and its properties to handle the pane behavior.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SplitterTemplates.Separator">
+            <summary>
+            Specifies the separator icon that can be displayed in the Splitter separator.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterTemplates.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterTemplates.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SplitterTemplates.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SfSplitter">
+            <summary>
+            The splitter is a layout user interface (UI) component that splits the layout into multiple panes with resizable and collapsible support.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.ID">
+            <summary>
+            Specifies the unique identifier.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.ChildContent">
+            <summary>
+            Sets the content for panes of the Splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.CssClass">
+            <summary>
+            Specifies the CSS class names that defines specific user-defined styles and
+            themes to be appended on the root element of the Splitter.
+            It is used to customize the Splitter component.
+            One or more custom CSS classes can be specified to the Splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.EnableReversePanes">
+            <summary>
+            Specifies the value whether splitter panes are reordered or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.EnableRtl">
+            <summary>
+            Enable or disable rendering component in the right to left (RTL) direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.Enabled">
+            <summary>
+            Specifies a Boolean value that indicates whether the component is enabled or disabled.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.EnablePersistence">
+            <summary>
+            Enables or disables the persisting component's state between page reloads.
+            If enabled, the pane settings of Splitter is persisted.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.Height">
+            <summary>
+            Specifies the height of the Splitter component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.Orientation">
+            <summary>
+            Specifies a value that indicates whether to align the split panes horizontally or vertically.
+            Set the orientation property as "Horizontal" to create a horizontal splitter that aligns the panes left-to-right.
+            Set the orientation property as "Vertical" to create a vertical splitter that aligns the panes top-to-bottom.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.Width">
+            <summary>
+            Specifies the width of the Splitter component. The value can be either in pixel or percentage format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.SfSplitter.HtmlAttributes">
+            <summary>
+            You can add the additional Html attributes such as id, title, etc., to the splitter element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.AddPane(Syncfusion.Blazor.Layouts.SplitterPane,System.Int32)">
+            <summary>
+            Allows you to add a pane dynamically to the specified index position by passing the pane properties.
+            </summary>
+            <param name="paneProperties"> Specifies the pane's properties that apply to new pane.</param>
+            <param name="index">Specifies the index where the pane will be inserted.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.CollapseAsync(System.Double)">
+            <summary>
+            Collapses corresponding pane based on the index is passed.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <param name="index"> Specifies the index value of the corresponding pane to be collapsed.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.Collapse(System.Double)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.ExpandAsync(System.Double)">
+            <summary>
+            Expands the corresponding pane based on the index is passed.
+            </summary>
+            <param name="index"> Specifies the index value of the corresponding pane to be Expanded.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.Expand(System.Double)">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.RemovePane(System.Int32)">
+            <summary>
+            Allows you to remove the specified pane dynamically by passing its index value.
+            </summary>
+            <param name="index">Specifies the index value to remove the corresponding pane.</param>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.AddPaneAsync(Syncfusion.Blazor.Layouts.SplitterPane,System.Int32)">
+            <summary>
+            Allows you to add a pane dynamically to the specified index position by passing the pane properties.
+            </summary>
+            <param name="paneProperties"> Specifies the pane's properties that apply to new pane.</param>
+            <param name="index">Specifies the index where the pane will be inserted.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.RemovePaneAsync(System.Int32)">
+            <summary>
+            Allows you to remove the specified pane dynamically by passing its index value.
+            </summary>
+            <param name="index">Specifies the index value to remove the corresponding pane.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.ToggleAsync(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            Expand and Collapse the Splitter panes based on the given indexes.
+            </summary>
+            <remarks> This method allows us to collapse and expand the multiple panes from the application end with a single method call. </remarks>
+            <param name="expandIndices"> Specifies the indexes of the corresponding panes to be Expanded. </param>
+            <param name="collapseIndices"> Specifies the indexes of the corresponding panes to be Collapsed. </param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <seealso cref="F:Syncfusion.Blazor.Layouts.SplitterPane.collapsible"/>
+            <seealso cref="F:Syncfusion.Blazor.Layouts.SplitterPane.collapsed"/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.CreatedEvent">
+            <summary>
+            Method invoked after component has been created.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.ResizeStartEvent(Syncfusion.Blazor.Layouts.ResizeEventArgs)">
+            <summary>
+            Method invoked before resizing the separator.
+            </summary>
+            <param name="args"> Specifies the resize start event arguments.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.ResizingEvent(Syncfusion.Blazor.Layouts.ResizingEventArgs)">
+            <summary>
+            Method invoked while resizing the separator.
+            </summary>
+            <param name="args"> Specifies the resize event arguments.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.SplitterResizeInfo(Syncfusion.Blazor.Layouts.SplitterResizeInfoArgs)">
+            <summary>
+            Method invoked after resized.
+            </summary>
+            <param name="args"> Specifies the resize event arguments.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.OnCollapseEvent(System.Int32,Syncfusion.Blazor.Layouts.BeforeExpandEventArgs)">
+            <summary>
+            Method invoked before collapsing the pane.
+            </summary>
+            <param name="index"> Specifies the collapsed pane index.</param>
+            <param name="args"> Specifies the collapse event arguments.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.OnExpandEvent(Syncfusion.Blazor.Layouts.BeforeExpandEventArgs)">
+            <summary>
+            Method invoked before expanding the pane.
+            </summary>
+            <param name="args"> Specifies the expand event arguments.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.CollapsedEvent(Syncfusion.Blazor.Layouts.ExpandedEventArgs)">
+            <summary>
+            Method invoked after collapsed the pane.
+            </summary>
+            <param name="args"> Specifies the collapse event arguments.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.UpdateCollapsed(System.Int32,System.Boolean)">
+            <summary>
+            Method invoked for updating the collapsed property.
+            </summary>
+            <param name="index"> Specifies the updated pane index.</param>
+            <param name="status"> Specifies the corresponding pane collapsed state.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.SfSplitter.ExpandedEvent(Syncfusion.Blazor.Layouts.ExpandedEventArgs)">
+            <summary>
+            Method invoked after expanding the pane.
+            </summary>
+            <param name="args"> Specifies the expanded event args.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.Orientation">
+            <summary>
+            Specifies a value that indicates whether to align the split panes horizontally or vertically.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.Orientation.Horizontal">
+            <summary>
+             Defines Splitter as Horizontal.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Layouts.Orientation.Vertical">
+            <summary>
+            Defines Splitter as Vertical.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs">
+            <summary>
+            Provides data for the BeforeExpand event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Cancel">
+            <summary>
+            The argument determines whether the action can be canceled or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Element">
+            <summary>
+            Returns the root element of the Splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Event">
+            <summary>
+            Returns the original event arguments when you trigger the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Index">
+            <summary>
+            Returns the index of a pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Pane">
+            <summary>
+            Returns the pane elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Name">
+            <summary>
+            Specifies the name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.BeforeExpandEventArgs.Separator">
+            <summary>
+            Returns the corresponding split-bar element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.ExpandedEventArgs">
+            <summary>
+            Provides data for the Expanded event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.Element">
+            <summary>
+            Returns the root element of the Splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.Event">
+            <summary>
+            Returns the original event arguments when you trigger the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.Index">
+            <summary>
+            Returns the index of a pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.Pane">
+            <summary>
+            Returns the pane elements.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.PaneSizes">
+            <summary>
+            Contains the pane size when it resizes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.Name">
+            <summary>
+            Specifies the name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ExpandedEventArgs.Separator">
+            <summary>
+            Returns the corresponding split-bar element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.ResizeEventArgs">
+            <summary>
+            Provides data for a Resize event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Cancel">
+            <summary>
+            Controls the resize action when the resize action happens continuously.
+            When you set this argument to true, the resize process will be stopped.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Element">
+            <summary>
+            Returns the root element of the Splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Event">
+            <summary>
+            Returns the original event arguments when you trigger the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Index">
+            <summary>
+            Returns the index of a pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Name">
+            <summary>
+            Specifies the name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Pane">
+            <summary>
+            Contains the corresponding resizing pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizeEventArgs.Separator">
+            <summary>
+            Contains the resizing panes separator element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.ResizingEventArgs">
+            <summary>
+            Provides data for a Resizing event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.Element">
+            <summary>
+            Returns the root element of the Splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.Event">
+            <summary>
+            Returns the original event arguments when you trigger the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.Index">
+            <summary>
+            Returns the index of a pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.Name">
+            <summary>
+            Specifies the name of the event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.Pane">
+            <summary>
+            Contains the corresponding resizing pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.PaneSize">
+            <summary>
+            Contains the pane size when it resizes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.ResizingEventArgs.Separator">
+            <summary>
+            Contains the resizing panes separator element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.SplitterResizeInfoArgs">
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.PanePropertiesModel">
+            <summary>
+            Interface for a class PaneProperties.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Collapsed">
+            <summary>
+            Specifies whether a pane is collapsed on the initial rendering of the splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Collapsible">
+            <summary>
+            Specifies whether a pane is capable to collapse.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Content">
+            <summary>
+            Specifies the content of the split pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.CssClass">
+            <summary>
+            Specifies the CSS class names that defines specific user-defined styles and themes
+            to be appended on the corresponding pane of the Splitter.
+            It is used to customize the Splitter component panes.
+            One or more custom CSS classes can be specified to the Splitter panes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Max">
+            <summary>
+            Specifies the maximum size of a pane. The pane cannot be resized more than the specified maximum limit.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Min">
+            <summary>
+            Specifies the minimum size of a pane. The pane cannot be resized less than the specified minimum size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Resizable">
+            <summary>
+            Specifies the value whether a pane is resizable or not. By default, the Splitter panes are resizable.
+            You can disable resize functionality for any specific panes using this property.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.PanePropertiesModel.Size">
+            <summary>
+            Configures the properties for each pane. For horizontal splitter, the size act as width.
+            For vertical splitter, the size act as height.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.Internal.PaneSetting">
+            <summary>
+            Specifies PaneSettings value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.PaneSetting.Collapsed">
+            <summary>
+            Specifies whether a pane is collapsed on the initial rendering of the splitter.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.PaneSetting.Max">
+            <summary>
+            Specifies the maximum size of a pane. The pane cannot be resized more than the specified maximum limit.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.PaneSetting.Min">
+            <summary>
+            Specifies the minimum size of a pane. The pane cannot be resized less than the specified minimum size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.PaneSetting.Size">
+            <summary>
+            Configures the properties for each pane. For horizontal splitter, the size act as width.
+            For vertical splitter, the size act as height.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.Internal.Pane">
+            <summary>
+            Defines the splitter pane.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.Pane.PaneIndex">
+            <summary>
+            Specifies the current pane index.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.Pane.PaneSetting">
+            <summary>
+            Defines the PaneSettings.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.Internal.Pane.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.Internal.Pane.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.Internal.Panes">
+            <summary>
+            Used to render the panes.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.Internal.Panes.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Layouts.Internal.Panes.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Layouts.Internal.Separator">
+            <summary>
+            Class for create the separator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.Separator.PaneIndex">
+            <summary>
+            Defines the current pane index.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Layouts.Internal.Separator.PaneSetting">
+            <summary>
+            Defines the current pane PaneSettings value.
+            </summary>
+            <exclude/>
+        </member>
+    </members>
+</doc>

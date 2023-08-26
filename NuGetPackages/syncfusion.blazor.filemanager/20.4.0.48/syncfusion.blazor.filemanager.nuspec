@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Syncfusion.Blazor.FileManager</id>
+    <version>20.4.0.48</version>
+    <title>Syncfusion Blazor FileManager Component</title>
+    <authors>Syncfusion Inc.</authors>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>syncfusion_logo.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://www.syncfusion.com/blazor-components/?utm_source=nuget&amp;utm_medium=listing</projectUrl>
+    <description>This package provides the functionality to utilize the features of Syncfusion Blazor File Manager component and more.</description>
+    <releaseNotes>https://blazor.syncfusion.com/documentation/release-notes/20.4.48/?utm_source=nuget&amp;utm_medium=listing</releaseNotes>
+    <copyright>Copyright 2001 - 2023 Syncfusion Inc.</copyright>
+    <tags>syncfusion blazor blazor-file-manager blazor-wasm blazor-webassembly file-manager</tags>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Syncfusion.Blazor.Buttons" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Core" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Data" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Grid" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Inputs" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Layouts" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Lists" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Navigations" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Popups" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Spinner" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.SplitButtons" version="20.4.0.48" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net7.0">
+        <dependency id="Syncfusion.Blazor.Buttons" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Core" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Data" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Grid" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Inputs" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Layouts" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Lists" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Navigations" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Popups" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.Spinner" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Blazor.SplitButtons" version="20.4.0.48" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

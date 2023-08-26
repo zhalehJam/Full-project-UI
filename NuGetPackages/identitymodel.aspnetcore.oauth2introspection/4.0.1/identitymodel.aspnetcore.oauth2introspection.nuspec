@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>IdentityModel.AspNetCore.OAuth2Introspection</id>
+    <version>4.0.1</version>
+    <authors>Dominick Baier,Brock Allen</authors>
+    <owners>Dominick Baier,Brock Allen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.jpg</icon>
+    <projectUrl>https://github.com/IdentityModel/IdentityModel.AspNetCore.OAuth2Introspection</projectUrl>
+    <description>ASP.NET Core authentication handler for validating tokens using OAuth 2.0 introspection</description>
+    <tags>OAuth2 OAuth 2.0 Introspection Security Identity IdentityServer</tags>
+    <repository type="git" url="https://github.com/IdentityModel/IdentityModel.AspNetCore.OAuth2Introspection.git" commit="15b76eb03c3707c75fa25398e3c671c4b3fda631" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0">
+        <dependency id="IdentityModel" version="4.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

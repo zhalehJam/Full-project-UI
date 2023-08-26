@@ -1,0 +1,30 @@
+The [Blazor Word Processor](https://www.syncfusion.com/blazor-components/blazor-word-processor?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget) is a component with editing capabilities like Microsoft Word. Also known as the document editor, it is used to create, edit, view, and print Word documents. It provides all the common Word processing features including editing text, formatting contents, resizing images and tables, finding and replacing text, bookmarks, tables of contents, printing, and importing and exporting Word documents.
+
+## Related links
+[Learn More about Blazor Word Processor](https://www.syncfusion.com/blazor-components/blazor-word-processor?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+[Documentation](https://blazor.syncfusion.com/documentation/document-editor/?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+[Release History](https://blazor.syncfusion.com/documentation/release-notes/19.1.59/?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+[Online Demos](https://blazor.syncfusion.com/demos/document-editor/default-functionalities?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+[Contact Support](https://support.syncfusion.com/support/tickets/create/?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+[Suggest a feature or report a bug](https://www.syncfusion.com/feedback/blazor-components?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+[Pricing](https://www.syncfusion.com/sales/products/blazor?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)
+
+## About Syncfusion
+Founded in 2001 and headquartered in Research Triangle Park, N.C., Syncfusion has more than 23,000+ customers and more than 1 million users, including large financial institutions, Fortune 500 companies, and global IT consultancies.
+ 
+Today, we provide 1600+ controls and frameworks for web ([Blazor](https://www.syncfusion.com/blazor-components?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [ASP.NET Core](https://www.syncfusion.com/aspnet-core-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [ASP.NET MVC](https://www.syncfusion.com/aspnet-mvc-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [ASP.NET WebForms](https://www.syncfusion.com/jquery/aspnet-webforms-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [JavaScript](https://www.syncfusion.com/javascript-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [Angular](https://www.syncfusion.com/angular-ui-components?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [React](https://www.syncfusion.com/react-ui-components?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [Vue](https://www.syncfusion.com/vue-ui-components?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), and [Flutter](https://www.syncfusion.com/flutter-widgets?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)), mobile ([Xamarin](https://www.syncfusion.com/xamarin-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [Flutter](https://www.syncfusion.com/flutter-widgets?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [UWP](https://www.syncfusion.com/uwp-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), and [JavaScript](https://www.syncfusion.com/javascript-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)), and desktop development ([Windows Forms](https://www.syncfusion.com/winforms-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [WPF](https://www.syncfusion.com/wpf-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [WinUI(Preview)](https://www.syncfusion.com/winui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget), [Flutter](https://www.syncfusion.com/flutter-widgets?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget) and [UWP](https://www.syncfusion.com/uwp-ui-controls?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget)). We provide ready-to-deploy enterprise software for dashboards, reports, data integration, and big data processing. Many customers have saved millions in licensing fees by deploying our software.
+
+		
+This is a commercial product and requires a paid license for possession or use. Syncfusion’s licensed software, including this component, is subject to the terms and conditions of [Syncfusion's EULA](https://www.syncfusion.com/eula/es/?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget). To acquire a license, you can purchase one [here]( https://www.syncfusion.com/sales/products?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget) or start a free 30-day trial [here](https://www.syncfusion.com/account/manage-trials/start-trials?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget).
+
+___
+
+[sales@syncfusion.com](mailto:sales@syncfusion.com?Subject=Syncfusion%20Blazor%20WordProcessor%20-%20NuGet) | [www.syncfusion.com](https://www.syncfusion.com?utm_source=nuget&utm_medium=listing&utm_campaign=blazor-word-processor-nuget) | Toll Free: 1-888-9 DOTNET
+
+© Copyright 2021 Syncfusion, Inc. All Rights Reserved. The Syncfusion Essential Studio license and copyright applies to this distribution.

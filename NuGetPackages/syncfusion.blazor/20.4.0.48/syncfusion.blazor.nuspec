@@ -19,6 +19,7 @@
         <dependency id="Microsoft.AspNetCore.Components.Web" version="6.0.5" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
         <dependency id="Syncfusion.ExcelExport.Net.Core" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Licensing" version="20.4.0.48" exclude="Build,Analyzers" />
         <dependency id="Syncfusion.PdfExport.Net.Core" version="20.4.0.48" exclude="Build,Analyzers" />
         <dependency id="System.Text.Json" version="6.0.0" exclude="Build,Analyzers" />
       </group>
@@ -26,6 +27,7 @@
         <dependency id="Microsoft.AspNetCore.Components.Web" version="7.0.0" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
         <dependency id="Syncfusion.ExcelExport.Net.Core" version="20.4.0.48" exclude="Build,Analyzers" />
+        <dependency id="Syncfusion.Licensing" version="20.4.0.48" exclude="Build,Analyzers" />
         <dependency id="Syncfusion.PdfExport.Net.Core" version="20.4.0.48" exclude="Build,Analyzers" />
         <dependency id="System.Text.Json" version="6.0.0" exclude="Build,Analyzers" />
       </group>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Elastic.CommonSchema</id>
+    <version>1.5.3</version>
+    <title>Elastic Common Schema (ECS) Types</title>
+    <authors>Elastic and contributors</authors>
+    <owners>Elastic and contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>nuget-icon.png</icon>
+    <projectUrl>https://github.com/elastic/ecs-dotnet</projectUrl>
+    <description>Maps Elastic Common Schema (ECS) to .NET types including (de)serialization using System.Text.Json</description>
+    <releaseNotes>https://github.com/elastic/ecs-dotnet/releases</releaseNotes>
+    <copyright>Elasticsearch BV</copyright>
+    <repository type="git" url="https://github.com/elastic/ecs-dotnet" commit="ee52142b32789808a016cdacf5eac4c42b73f74a" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="System.Text.Json" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Text.Json" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.Text.Json" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

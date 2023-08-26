@@ -1,0 +1,1518 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.Sparkline</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineAxisLineSettings">
+            <summary>
+            Sets and gets the configures of line settings in sparkline axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.Color">
+            <summary>
+            Sets and gets the sparkline axis line color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.DashArray">
+            <summary>
+            Sets and gets the sparkline axis line dashArray.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.Opacity">
+            <summary>
+            Sets and gets the sparkline axis line opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.Visible">
+            <summary>
+            Sets and gets the axis line visibility.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.Width">
+            <summary>
+            Sets and gets the sparkline axis line width.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineAxisLineSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineAxisSettings">
+            <summary>
+            Sets and gets the configures of sparkline axis settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisSettings.MaxX">
+            <summary>
+            Sets and gets the sparkline X axis maximum value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisSettings.MaxY">
+            <summary>
+            Sets and gets the sparkline Y axis maximum value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisSettings.MinX">
+            <summary>
+            Sets and gets the sparkline X axis minimum value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisSettings.MinY">
+            <summary>
+            Sets and gets the sparkline Y axis minimum value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineAxisSettings.Value">
+            <summary>
+            Sets and gets the sparkline horizontal axis line position.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineAxisSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineAxisSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BorderSettings">
+            <summary>
+            Sets and gets the options for customizing the color and width of the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BorderSettings.Color">
+            <summary>
+            Sets and gets the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BorderSettings.Width">
+            <summary>
+            Sets and gets the width of the border.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BorderSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineBorder">
+            <summary>
+            Sets and gets the options for customizing the border of the sparkline series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineContainerArea">
+            <summary>
+            Sets and gets the options for customizing the container area of the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineContainerArea.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineContainerArea.Background">
+            <summary>
+            Sets and gets the sparkline background color.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineContainerArea.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineContainerArea.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineContainerAreaBorder">
+            <summary>
+            Sets and gets the options for customizing the border of the sparkline component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineContainerAreaBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineContainerAreaBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineDataLabelBorder">
+            <summary>
+            Sets and gets the options for customizing the color and width of the sparkline data label border.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineDataLabelBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineDataLabelBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineDataLabelOffset">
+            <summary>
+            Sets and gets the options for customizing the X and Y axis of the sparkline data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelOffset.X">
+            <summary>
+            Sets and gets the X axis of the data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelOffset.Y">
+            <summary>
+            Sets and gets the Y axis of the data label.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineDataLabelOffset.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineDataLabelOffset.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineDataLabelSettings">
+            <summary>
+            Sets and gets the options for customizing the data label settings of the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.EdgeLabelMode">
+            <summary>
+            Sets and gets the edge placement of the data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.Fill">
+            <summary>
+            Sets and gets the dataLabel fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.Format">
+            <summary>
+            Sets and gets to configure the data label format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.Opacity">
+            <summary>
+            Sets and gets the data label opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.Visible">
+            <summary>
+            Sets and gets the data label visibility type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineDataLabelSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.FontSettings">
+            <summary>
+            Sets and gets the options for customizing the font style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.FontSettings.Color">
+            <summary>
+             Sets and gets the color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.FontSettings.FontFamily">
+            <summary>
+             Sets and gets the font family for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.FontSettings.FontStyle">
+            <summary>
+             Sets and gets the font style for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.FontSettings.FontWeight">
+            <summary>
+             Sets and gets the font weight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.FontSettings.Opacity">
+            <summary>
+             Sets and gets the opacity for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.FontSettings.Size">
+            <summary>
+             Sets and gets the font size for the text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.FontSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineFont">
+            <summary>
+            Sets and gets the options for customizing the data label style of the sparkline component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineFont.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineFont.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineMarkerBorder">
+            <summary>
+            Sets and gets the options for customizing the border of the sparkline marker.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineMarkerBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineMarkerBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineMarkerSettings">
+            <summary>
+            Sets and gets the options for customizing the sparkline marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineMarkerSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineMarkerSettings.Fill">
+            <summary>
+            Sets and gets the marker fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineMarkerSettings.Opacity">
+            <summary>
+            Sets and gets the marker opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineMarkerSettings.Size">
+            <summary>
+            Sets and gets the marker size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineMarkerSettings.Visible">
+            <summary>
+            Sets and gets the marker visibility type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineMarkerSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineMarkerSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SfSparkline`1">
+            <summary>
+            The Sparkline Charts is a replacement for normal charts to display trends in a very small area. Customize sparklines completely by changing the series or axis type and by adding markers, data labels, range bands, and more.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of the sparkline control.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.ID">
+            <summary>
+            Set the id string for the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.DataSource">
+            <summary>
+            To configure sparkline data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.EndPointColor">
+            <summary>
+            To configure sparkline series last x value point color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Fill">
+            <summary>
+            To configure sparkline series fill.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Format">
+            <summary>
+            To apply internationalization for sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Height">
+            <summary>
+            To configure Sparkline height.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.HighPointColor">
+            <summary>
+            To configure sparkline series highest y value point color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.LineWidth">
+            <summary>
+            To configure sparkline line series width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.LowPointColor">
+            <summary>
+            To configure sparkline series lowest y value point color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.NegativePointColor">
+            <summary>
+            To configure sparkline series negative y value point color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Opacity">
+            <summary>
+            To configure sparkline line series opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Palette">
+            <summary>
+            To configure sparkline series color palette. It applicable to column and pie type series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Query">
+            <summary>
+            Specifies the query for filter the data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.RangePadding">
+            <summary>
+            To configure Sparkline series type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.StartPointColor">
+            <summary>
+            To configure sparkline series first x value point color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Theme">
+            <summary>
+            To configure sparkline theme.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.TiePointColor">
+            <summary>
+            To configure sparkline winloss series tie y value point color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Type">
+            <summary>
+            To configure Sparkline series type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.EnableGroupingSeparator">
+            <summary>
+            To enable the separator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.ValueType">
+            <summary>
+            To configure sparkline series value type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Width">
+            <summary>
+            To configure Sparkline width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.XName">
+            <summary>
+            To configure sparkline series xName.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.YName">
+            <summary>
+            To configure sparkline series yName.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.RangeBandSettings">
+            <summary>
+            Specifies the range band settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.MarkerSettings">
+            <summary>
+            Specifies the marker settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.AxisSettings">
+            <summary>
+            Specifies the axis settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Border">
+            <summary>
+            Specifies the border settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.ContainerArea">
+            <summary>
+            Specifies the container settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.DataLabelSettings">
+            <summary>
+            Specifies the data label settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Padding">
+            <summary>
+            Specifies the padding settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfSparkline`1.Events">
+            <summary>
+            Specifies the events of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.Refresh">
+            <summary>
+            The method is used to render the sparkline again.
+            </summary>
+            <returns>>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.RefreshAsync">
+            <summary>
+            The method is used to render the sparkline again.
+            </summary>
+            <returns>>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnPropertyChanged(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Specifies to render the component, based on property changes.
+            </summary>
+            <param name="propertyChanges">List changed properties.</param>
+            <param name="parent">The class belongs too.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnMouseMove(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.String,System.Boolean)">
+            <summary>
+            JS interopt while mouse move.
+            </summary>
+            <param name="mouseX">Represents the X axis of mouse.</param>
+            <param name="mouseY">Represents the Y axis of mouse.</param>
+            <param name="rectTop">Represents the top padding of element.</param>
+            <param name="rectLeft">Represents the left padding of element.</param>
+            <param name="svgTop">Represents the top padding of SVG element.</param>
+            <param name="svgLeft">Represents the left padding of SVG element.</param>
+            <param name="id">Represents the identification of element.</param>
+            <param name="isIE">Represents whether the browser type is Internet Explorer.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnMouseLeave">
+            <summary>
+            JS interopt while mouse leave the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnClick">
+            <summary>
+            JS interopt while mouse click on the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfSparkline`1.OnResize">
+            <summary>
+            JS interopt while resize the window.
+            </summary>
+            <exclude />
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklinePadding">
+            <summary>
+            Sets and gets the options for customizing the top, left, right and bottom padding of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePadding.Bottom">
+            <summary>
+            Sets and gets the sparkline bottom padding.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePadding.Left">
+            <summary>
+            Sets and gets the sparkline left padding.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePadding.Right">
+            <summary>
+            Sets and gets the sparkline right padding.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePadding.Top">
+            <summary>
+            Sets and gets the sparkline top padding.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklinePadding.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklinePadding.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineRangeBand">
+            <summary>
+            Sets and gets the options for customizing the range band of the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineRangeBand.Color">
+            <summary>
+            Sets and gets sparkline rangeband color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineRangeBand.EndRange">
+            <summary>
+            Sets and gets the end range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineRangeBand.Opacity">
+            <summary>
+            Sets and gets the rangeband opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineRangeBand.StartRange">
+            <summary>
+            Sets and gets the start range.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineRangeBand.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineRangeBand.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineRangeBandSettings">
+            <summary>
+             Sets and gets the options for providing the list of range band of the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineRangeBandSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineRangeBandSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineTooltipBorder">
+            <summary>
+            Sets and gets the options for customizing the toolip border.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTooltipBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1">
+            <summary>
+            Sets and gets the options for customizing the sparkline tooltip.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of tooltip in sparkline component.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.Fill">
+            <summary>
+            Sets and gets the tooltip fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.Format">
+            <summary>
+            Sets and gets the tooltip text format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.Template">
+            <summary>
+            Sets and gets the tooltip template.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.Visible">
+            <summary>
+            Sets and gets the tooltip visibility.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTooltipSettings`1.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies to update the dependent class value.
+            </summary>
+            <param name="key">Represents the class name.</param>
+            <param name="keyValue">Represents the value of class.</param>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineTooltipTextStyle">
+            <summary>
+            Sets and gets the options for customizing the tooltip text style of the sparkline component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTooltipTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineTrackLineSettings">
+            <summary>
+            Sets and gets the options for customizing the track line of the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTrackLineSettings.Color">
+            <summary>
+            Sets and gets the tracker line color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTrackLineSettings.Visible">
+            <summary>
+            Sets and gets the tracker line visibility.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineTrackLineSettings.Width">
+            <summary>
+            Sets and gets the tracker line width.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTrackLineSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineTrackLineSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineRangePadding">
+            <summary>
+            Defines the range padding of the sparkline series.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineRangePadding.None">
+            <summary>
+            Specifies the none type of range paddding.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineRangePadding.Normal">
+            <summary>
+            Specifies the normal type of range paddding.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineRangePadding.Additional">
+            <summary>
+            Specifies the additional type of range paddding.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineType">
+            <summary>
+            Defines the sparkline types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineType.Line">
+            <summary>
+            Specifies the line type of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineType.Column">
+            <summary>
+            Specifies the column type of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineType.WinLoss">
+            <summary>
+            Specifies the winLoss type of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineType.Pie">
+            <summary>
+            Specifies the pie type of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineType.Area">
+            <summary>
+            Specifies the area type of the sparkline.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineValueType">
+            <summary>
+            Defines the sparkline data value types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineValueType.Numeric">
+            <summary>
+            Specifies the numeric type of the data value.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineValueType.Category">
+            <summary>
+            Specifies the category type of the data value..
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.SparklineValueType.DateTime">
+            <summary>
+            Specifies the date time type of the data value..
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.EdgeLabelMode">
+            <summary>
+            Defines the edge of the data label placement, if exceeds the sparkline area horizontally.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.EdgeLabelMode.None">
+            <summary>
+            Specifies the edge data label shown as clipped text.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.EdgeLabelMode.Shift">
+            <summary>
+            Specifies the edge data label moved inside the sparkline area.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.EdgeLabelMode.Hide">
+            <summary>
+            Specifies edge data label will hide, if exceeds the sparkline area.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.VisibleType">
+            <summary>
+            Defines the sparkline marker | datalabel visible types.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.All">
+            <summary>
+            Specifies the visible at all points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.High">
+            <summary>
+            Specifies the visible at high points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.Low">
+            <summary>
+            Specifies the visible at low points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.Start">
+            <summary>
+            Specifies the visible at start points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.End">
+            <summary>
+            Specifies the visible at end points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.Negative">
+            <summary>
+            Specifies the visible at negative points.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.VisibleType.None">
+            <summary>
+            Specifies the visible at none points.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineBaseEventArgs">
+            <summary>
+            Specifies the event arguments which has common for sparkline component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineBaseEventArgs.Cancel">
+            <summary>
+            Specifies the cancel state for the event. The default value is false.
+            If set as true, the event progress will be stopped.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.AxisRenderingEventArgs">
+            <summary>
+            Specifies the axis render event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.MaxX">
+            <summary>
+            Defines the maximum X point of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.MinX">
+            <summary>
+            Defines the maximum X point of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.MinY">
+            <summary>
+            Defines the maximum Y point of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.MaxY">
+            <summary>
+            Defines the maximum Y point of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.Value">
+            <summary>
+            Defines the value point of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.LineColor">
+            <summary>
+            Defines the line color of the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.AxisRenderingEventArgs.LineWidth">
+            <summary>
+            Defines the line width of the axis.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs">
+            <summary>
+            Specifies the data label rendering event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.Border">
+            <summary>
+            Defines the color and width of the label border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.Fill">
+            <summary>
+            Defines the fill color of the label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.PointIndex">
+            <summary>
+            Defines the point index of the label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.X">
+            <summary>
+            Defines the x position of the label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.Y">
+            <summary>
+            Defines the y position of the label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.Text">
+            <summary>
+            Defines the text of the label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.DataLabelRenderingEventArgs.Color">
+            <summary>
+            Defines the color of the label.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs">
+            <summary>
+            Specifies the market rendering event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs.Border">
+            <summary>
+            Defines the color and width of the marker border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs.Fill">
+            <summary>
+            Defines the fill color of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs.PointIndex">
+            <summary>
+            Defines the point index of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs.X">
+            <summary>
+            Defines the x position of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs.Y">
+            <summary>
+            Defines the y position of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.MarkerRenderingEventArgs.Size">
+            <summary>
+            Defines the size of the marker.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.PointRegionEventArgs">
+            <summary>
+            Specifies the point event arguments in mouse click action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.PointRegionEventArgs.PointIndex">
+            <summary>
+            Defines the index of the point in mouse click action.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklinePointEventArgs">
+            <summary>
+            Specifies the point rendering event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePointEventArgs.PointIndex">
+            <summary>
+            Defines the index of the point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePointEventArgs.Fill">
+            <summary>
+            Defines the fill color of the point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklinePointEventArgs.Border">
+            <summary>
+            Defines the color and width of the point border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineResizeEventArgs">
+            <summary>
+            Specifies the sparkline resize event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineResizeEventArgs.PreviousSize">
+            <summary>
+            Defines the previous size of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineResizeEventArgs.CurrentSize">
+            <summary>
+            Defines the current size of the sparkline.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SeriesRenderingEventArgs">
+            <summary>
+            Specifies the series rendering event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SeriesRenderingEventArgs.Fill">
+            <summary>
+            Defines the fill color of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SeriesRenderingEventArgs.LineWidth">
+            <summary>
+            Defines the line width of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SeriesRenderingEventArgs.Border">
+            <summary>
+            Defines the color and width of the series border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SparklineEvents">
+            <summary>
+            Specifies the events to be triggered in the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnAxisRendering">
+            <summary>
+            Triggers before sparkline axis render.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnPointRegionMouseClick">
+            <summary>
+            Triggers while mouse click on the sparkline point region.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnDataLabelRendering">
+            <summary>
+            Triggers before the sparkline datalabel render.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnLoaded">
+            <summary>
+            Triggers after the sparkline component is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnMarkerRendering">
+            <summary>
+            Triggers before the sparkline marker render.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnPointRendering">
+            <summary>
+            Triggers before sparkline points render.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnResizing">
+            <summary>
+            Triggers on resizing the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SparklineEvents.OnSeriesRendering">
+            <summary>
+            Triggers before sparkline series render.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SparklineEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.ISparkline">
+            <summary>
+            The interface specifies the properties of the sparkline component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.ID">
+            <summary>
+            Set the id string for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.EnableRtl">
+            <summary>
+            Enable right to left rendering of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.EndPointColor">
+            <summary>
+            End point color customizations for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Fill">
+            <summary>
+            Fill color customization for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Format">
+            <summary>
+            Label format for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Height">
+            <summary>
+            Height customization for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.HighPointColor">
+            <summary>
+            HighPointColor customizations for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.LineWidth">
+            <summary>
+            LineWidth customizations for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.LowPointColor">
+            <summary>
+            LowPointColor customizations for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.NegativePointColor">
+            <summary>
+            Negative point color customizations for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Opacity">
+            <summary>
+            Opacity for the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Palette">
+            <summary>
+            Palete for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Query">
+            <summary>
+            Query to be performed in the dataSource of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.RangePadding">
+            <summary>
+            Range padding for the sparkline y axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.StartPointColor">
+            <summary>
+            Customization of startPoint color for the sparkline chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Theme">
+            <summary>
+            Theme customization for the sparkline .
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.TiePointColor">
+            <summary>
+            Customization of TiePointColor .
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Type">
+            <summary>
+            Series type for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.EnableGroupingSeparator">
+            <summary>
+            Grouping seperator for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.ValueType">
+            <summary>
+            valueType customization for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Width">
+            <summary>
+            Customization of width for the sparkline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.XName">
+            <summary>
+            XName field mapping for the sparkline datasource.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.YName">
+            <summary>
+            YName field mapping for the sparkline datasource.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.MarkerSettings">
+            <summary>
+            Specifies the marker settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.AxisSettings">
+            <summary>
+            Specifies the axis settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Border">
+            <summary>
+            Specifies the border settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.ContainerArea">
+            <summary>
+            Specifies the container settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.DataLabelSettings">
+            <summary>
+            Specifies the data label settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.RangeBandSettings">
+            <summary>
+            Specifies the range band settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Padding">
+            <summary>
+            Specifies the padding settings of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.ISparkline.Events">
+            <summary>
+            Specifies the events of sparkline.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.ISparkline.OnPropertyChanged(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Specifies to render the component, based on property changes.
+            </summary>
+            <param name="propertyChanges">List changed properties.</param>
+            <param name="parent">The class belongs too.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.ISparklineTooltip">
+            <summary>
+            The interface specifies the properties of the spark line tooltip.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.ISparklineTooltip.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies to update the dependent class value.
+            </summary>
+            <param name="key">Represents the class name.</param>
+            <param name="keyValue">Represents the value of class.</param>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Sparkline.Internal.SparklineTooltip`1">
+            <summary>
+            Specifies the rendering of tooltip in sparkline component.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of tooltip in sparkline component.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.Sparkline.Internal.SparklineTooltip`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.Sparkline.Internal.SparklineTooltip`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Sparkline.Internal.SparklineTrackline`1">
+            <summary>
+            Specifies the rendering of trackline in sparkline component.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of trackline in sparkline component.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.Sparkline.Internal.SparklineTrackline`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Sparkline.Internal.Border">
+            <summary>
+            Specifies the color and width of the border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.Border.Color">
+            <summary>
+            Sets or gets the color of border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.Border.Width">
+            <summary>
+            Sets or gets the width of border.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Sparkline.Internal.Size">
+            <summary>
+            Specifies the size of element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Sparkline.Internal.Size.#ctor(System.Double,System.Double,System.Double,System.Double,System.Boolean,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Sparkline.Internal.Size"/> class.
+            </summary>
+            <param name="width">Represents the width of element.</param>
+            <param name="height">Represents the height of element.</param>
+            <param name="parentHeight">Represents the parent height of element.</param>
+            <param name="parentWidth">Represents the parent width of element.</param>
+            <param name="isDevice">Represents the device information.</param>
+            <param name="windowWidth">Represents the window width.</param>
+            <param name="windowHeight">Represents the window height.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Sparkline.Internal.ElementInfo">
+            <summary>
+            Specifies the information of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.Width">
+            <summary>
+            Sets or gets the width of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.Height">
+            <summary>
+            Sets or gets the height of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.ParentWidth">
+            <summary>
+            Sets or gets the parent width of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.ParentHeight">
+            <summary>
+            Sets or gets the parent height of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.IsDevice">
+            <summary>
+            Sets or gets device information.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.WindowWidth">
+            <summary>
+            Sets or gets the window width.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.ElementInfo.WindowHeight">
+            <summary>
+            Sets or gets the window height.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Sparkline.Internal.Location">
+            <summary>
+             Represents the X and Y position of element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.Location.X">
+            <summary>
+            Specifies the X position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Sparkline.Internal.Location.Y">
+            <summary>
+            Specifies the Y position.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,910 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.InPlaceEditor</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.EditorComponent">
+            <summary>
+            Specifies the component which is rendered while editing in the In-place editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.EditorComponent.ChildContent">
+            <summary>
+            Specifies the components to render inside the InPlaceEditor as Editable Field.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.EditorComponent.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.EditorComponent.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.EditorComponent.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton">
+            <summary>
+            Provides properties of the In-place Editor Button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.OnClick">
+            <summary>
+            Binds the click event for the In-place Editor buttons.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.Content">
+            <summary>
+            Defines the text `Content` which is displayed in the Button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.CssClass">
+            <summary>
+            Defines the single or multiple CSS classes with space to apply in the Button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.Disabled">
+            <summary>
+            Specifies a value that indicates whether the component is enabled or disabled.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.EnableRtl">
+            <summary>
+            Enable or disable rendering component in the right to left (RTL) direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.IconCss">
+            <summary>
+            Defines the single or multiple CSS classes with space to include an icon in the Button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.IconPosition">
+            <summary>
+            Place the icon before or after the text content in the Button. The possible values are:
+            Left: Positions the icon on the left side of the text content.
+            Right: Positions the icon on the right side of the text content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.IsPrimary">
+            <summary>
+            Specifies a value that determines which button is primary.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.IsToggle">
+            <summary>
+            Determines whether the button can be on or off.
+            When you click on it, the button's state changes from normal to active.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorButtton.Type">
+            <summary>
+            Specifies the type of the button. The possible values are:
+            1.Button
+            2.Submit
+            3.Reset
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorCancelButton">
+            <summary>
+            Provides properties of the In-place Editor's cancel Button.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorCancelButton.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorCancelButton.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorCancelButton.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1">
+            <summary>
+            Configures the handler to handle the In-place Editor's events.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.OnActionBegin">
+            <summary>
+            Event triggers before the data is submitted to the server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.OnActionFailure">
+            <summary>
+            Event triggers when data submission is failed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.OnActionSuccess">
+            <summary>
+            Event triggers when the data is submitted successfully to the server.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.BeginEdit">
+            <summary>
+            Event triggers before changing edit mode from default.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.EndEdit">
+            <summary>
+            Event triggers when the edit action is finished and begin to submit/cancel the current value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.ValueChange">
+            <summary>
+            Event triggers when the integrated component value has changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.Created">
+            <summary>
+            Event triggers once the component rendering is completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.Destroyed">
+            <summary>
+            Event triggers when the component gets destroyed.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorEvents`1.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings">
+            <summary>
+            Configures the properties to customize the popup mode of the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Animation">
+            <summary>
+            Specifies the animation that displays while opening and closing the popup.
+            The animation property allows to set delay, duration, and effect.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.CloseDelay">
+            <summary>
+            Specifies a duration in milliseconds that will close the popup after a specified delay.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.CssClass">
+            <summary>
+            Defines the specific user-defined styles to customize the popup.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Height">
+            <summary>
+            Specifies the height of the popup which accepts the string values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.IsSticky">
+            <summary>
+            Enables to freeze a popup in an open state until it is closed manually.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.OffsetX">
+            <summary>
+            Specifies an X-coordinate value which is the horizontal space between the target and popup element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.OffsetY">
+            <summary>
+            Specifies an Y-coordinate value which is the vertical space between the target and popup element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.OpenDelay">
+            <summary>
+            Specifies a duration in milliseconds that will open the popup after a specified delay.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.OpensOn">
+            <summary>
+            Determines the mode when invoking the popup. The available open modes are:
+            1.Auto
+            2.Hover
+            3.Click
+            4.Focus
+            5.Custom
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Position">
+            <summary>
+            Set the position of the popup based on the target element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.ShowTipPointer">
+            <summary>
+            Determines whether to show or hide the tip pointer on the popup.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.TipPointerPosition">
+            <summary>
+            Specifies to customize the position of the tip pointer on the popup.
+            The available options are:
+            1.Auto
+            2.Start
+            3.Middle
+            4.End
+            When set to auto, the tip pointer adjusts its position automatically based on the available space on the target.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Width">
+            <summary>
+            Set the width of the popup component which accepts a string value.
+            When set width as auto, the popup width will be adjusted automatically to display its content within the viewable screen.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.HtmlAttributes">
+            <summary>
+            Adds the additional html attributes to the Popup element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Title">
+            <summary>
+            Specifies the title of the editor's popup.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorSaveButton">
+            <summary>
+            Provides properties of the In-place Editor's save button.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorSaveButton.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorSaveButton.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorSaveButton.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate">
+            <summary>
+            Configures the custom components, such as Blazor native Textbox, HTML select which is rendered while editing in the In-place editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate.ChildContent">
+            <summary>
+            Configure the components to render inside the InPlaceEditor.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1">
+            <summary>
+            The In-place Editor component is most useful for editing a value dynamically within its context (in-place).
+            It has the built-in support to handle all the form components, including TextBox, Dropdown List, DatePicker, and Rich Text Editor.
+            The component comes with different edit modes and a fully customizable UI.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender"> Set to true if this is the first time OnAfterRender(Boolean) has been invoked.</param>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.ID">
+            <summary>
+            Overridden.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.ChildContent">
+            <summary>
+            Gets or sets the content of the InPlace Editor element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.ActionOnBlur">
+            <summary>
+            Specifies the action that is performed when we focus-out from the In-place Editor. It can be a Submit or Cancel or Ignore action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Adaptor">
+            <summary>
+            Specifies the adaptor type that is used by the DataManager to communicate with DataSource.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.CssClass">
+            <summary>
+            Defines single or multiple classes (separated by space) to be used to customize the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Disabled">
+            <summary>
+            Specifies whether to enable or disable the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.EditableOn">
+            <summary>
+            Specifies whether to enable or disable the editing mode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.EmptyText">
+            <summary>
+            Sets the text to be shown when a component is Empty.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.EnableEditMode">
+            <summary>
+            Specifies to show and hide the editing mode.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.EnablePersistence">
+            <summary>
+            Enable or disable persisting component's state between page reloads.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.EnableRtl">
+            <summary>
+            Enable or disable the rendering component in the right to left (RTL) direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Mode">
+            <summary>
+            Specifies how to render its components whether in inline or popup mode while editing in the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Name">
+            <summary>
+            Specifies the name of the component which is used to retrieve data from the server.
+            If the name is not given, then the component ID will be considered as the mapping name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.PrimaryKey">
+            <summary>
+            Defines the unique key of an editable field that can be used for saving data in the Database.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.ShowButtons">
+            <summary>
+            Specifies whether to show or hide the Save and Cancel buttons of the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.SubmitOnEnter">
+            <summary>
+            Enables to trigger the submit action when the enter key is pressed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Type">
+            <summary>
+            Specifies the component which is rendered within the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.ValueChanged">
+            <summary>
+            Specifies the callback to trigger when the value changes in the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.ValueExpression">
+            <summary>
+            Specifies the expression for defining the value of the bound.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.SaveUrl">
+            <summary>
+            Specifies the server URL which triggers on submit action in the In-place Editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Value">
+            <summary>
+            Specifies the display value for the component when the original value is empty.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.HtmlAttributes">
+            <summary>
+            You can add the additional Html attributes such as id, title, etc., to the InPlaceEditor element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.SaveAsync">
+            <summary>
+            Submit the edited input value to the server.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Save">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.UpdateSaveButton(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorSaveButton)">
+            <summary>
+            Method invoked to update save button.
+            </summary>
+            <param name="button">Specifies the inplace editor save button.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.UpdateCancelButton(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorCancelButton)">
+            <summary>
+            Method invoked to update cancel button.
+            </summary>
+            <param name="button">Specifies the inplace editor cancel button.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.UpdatePopupSettings(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings)">
+            <summary>
+            Method invoked to update the popup settings.
+            </summary>
+            <param name="popupSettings">Specifies the inplace editor popup settings.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.UpdateComponent(Syncfusion.Blazor.InPlaceEditor.EditorComponent)">
+            <summary>
+            Method invoked to update the editor component.
+            </summary>
+            <param name="component">Specifies the inplace editor dependent component.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.UpdateTemplate(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate)">
+            <summary>
+            Method invoked to update the template.
+            </summary>
+            <param name="component">Specifies the inplace editor template.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.CancelAction">
+            <summary>
+            Method invoked when the cancel action is performed.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.SaveAction">
+            <summary>
+            Method invoked when the save action is performed.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.RenderEditor">
+            <summary>
+            Method invoked to render the editor.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.FocusEditor">
+            <summary>
+            Method invoked to focus the dependent component inside the editor.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.SfInPlaceEditor`1.Created">
+            <summary>
+            Method invoked once the component has been rendered.
+            </summary>
+            <returns>A System.Threading.Tasks.Task representing any asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.ActionBlur">
+            <summary>
+            Specifies the action that is performed when focus-out from the In-place Editor. The available actions are:
+            1.Submit
+            2.Cancel
+            3.Ignore.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.ActionBlur.Submit">
+            <summary>
+            Specifies to submit a value while focus-out from the In-place Editor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.ActionBlur.Cancel">
+            <summary>
+            Specifies to cancel the action while focus-out from the In-place Editor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.ActionBlur.Ignore">
+            <summary>
+            Specifies to ignore the action while focus-out from the In-place Editor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.EditableType">
+            <summary>
+            Specifies a value when the component changes to the editable mode. The available options are:
+            1.Click
+            2.DoubleClick
+            3.EditIconClick
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.EditableType.Click">
+            <summary>
+            Change to the editable mode when clicking on the In-place Editor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.EditableType.DoubleClick">
+            <summary>
+            Change to the editable mode when double-clicking on the In-place Editor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.EditableType.EditIconClick">
+            <summary>
+            Change to the editable mode when clicking on the edit icon of the In-place Editor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.RenderMode">
+            <summary>
+            Specifies how to render its components whether in inline or popup mode while editing in the In-place Editor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.RenderMode.Inline">
+            <summary>
+            Defines the render mode as Inline.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.RenderMode.Popup">
+            <summary>
+            Defines the render mode as Popup.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.OpenType">
+            <summary>
+            Determines the type of open mode to display the popup content.
+            The available open modes are Auto, Hover, Click, Focus, and Custom.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.OpenType.Custom">
+            <summary>
+            Defines the open type as Custom.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.OpenType.Auto">
+            <summary>
+            Defines the open type as Auto.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.OpenType.Hover">
+            <summary>
+            Defines the open type as Hover.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.OpenType.Click">
+            <summary>
+            Defines the open type as Click.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.OpenType.Focus">
+            <summary>
+            Defines the OpenType as Focus.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InputType">
+            <summary>
+            Determines which component to be rendered while editing on the In-place Editor.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Text">
+            <summary>
+            Defines the input type as Text to render the SfTextbox component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.AutoComplete">
+            <summary>
+            Defines the input type as AutoComplete to render the SfAutoComplete component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Color">
+            <summary>
+            Defines the input type as Color to render the SfColorPicker component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.ComboBox">
+            <summary>
+            Defines the input type as ComboBox to render the SfComboBox component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Date">
+            <summary>
+            Defines the input type as Date to render the SfDatePicker component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.DateRange">
+            <summary>
+            Defines the input type as DateRange to render the SfDateRangePicker component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.DateTime">
+            <summary>
+            Defines the input type as DateTime to render the SfDateTimePicker component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.DropDownList">
+            <summary>
+            Defines the input type as DropDownList to render the SfDropDownLIst component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Mask">
+            <summary>
+            Defines the input type as Mask to render the SfMaskedTextBox component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.MultiSelect">
+            <summary>
+            Defines the input type as MultiSelect to render the SfMultiSelect component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Numeric">
+            <summary>
+            Defines the input type as Numeric to render the SfNumericTextBox component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.RichTextEditor">
+            <summary>
+            Defines the input type as RichTextEditor to render the SfRichTextEditor component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Slider">
+            <summary>
+            Defines the input type as Slider to render the SfSlider component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Time">
+            <summary>
+            Defines the input type as Time to render the SfTimePicker component.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.InPlaceEditor.InputType.Template">
+            <summary>
+            Defines the input type as Template to render the custom Blazor UI component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorRequestData`1">
+            <summary>
+            Provides information about the ActionSuccess event.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorRequestData`1.PrimaryKey">
+            <summary>
+            Defines the unique key of an editable field that can be used for saving data in the Database.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.InPlaceEditorRequestData`1.Value">
+            <summary>
+            Defines the current value of the In-place Editor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.ActionBeginEventArgs`1">
+            <summary>
+            Provides information about the ActionBegin event.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ActionBeginEventArgs`1.Cancel">
+            <summary>
+            Prevents the submit action from continuing.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ActionBeginEventArgs`1.Data">
+            <summary>
+            Provides information about the event, such as edited value and primary key.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.ActionEventArgs`1">
+            <summary>
+            Provides information about ActionSuccess and ActionFailure events.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ActionEventArgs`1.Cancel">
+            <summary>
+            Prevents to update the current value in the editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ActionEventArgs`1.Data">
+            <summary>
+            Provides information about the BeginEdit event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ActionEventArgs`1.Value">
+            <summary>
+            Defines the current value of the In-place Editor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.BeginEditEventArgs">
+            <summary>
+            Provides information about the BeginEdit event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.BeginEditEventArgs.Cancel">
+            <summary>
+            Prevents the open action of the editor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.BeginEditEventArgs.CancelFocus">
+            <summary>
+            Determines whether to set focus on the editor or not when the editable mode is ON.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.BeginEditEventArgs.Mode">
+            <summary>
+            Provides information about the current editor mode.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.EndEditEventArgs">
+            <summary>
+            Provides information about the EndEdit event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.EndEditEventArgs.Action">
+            <summary>
+            Provides information about the type of action ends the edit.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.EndEditEventArgs.Cancel">
+            <summary>
+            Specifies whether to cancel the end edit action.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.EndEditEventArgs.Mode">
+            <summary>
+            Provides information about the current editor mode.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.ChangeEventArgs`1">
+            <summary>
+            Provides information about the Change event.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ChangeEventArgs`1.ItemData">
+            <summary>
+            Returns the information about the selected item from the AutoComplete/ComboBox/DropDownList data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ChangeEventArgs`1.PreviousItemData">
+            <summary>
+            Returns the information about the previously selected item from the AutoComplete/ComboBox/DropDownList data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ChangeEventArgs`1.PreviousValue">
+            <summary>
+            Returns the information about the previously selected item's value in the InPlaceEditor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.InPlaceEditor.ChangeEventArgs`1.Value">
+            <summary>
+            Returns the current value of the InPlaceEditor.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.Internal.IInPlaceEditor">
+            <summary>
+            Interface for InPlace Editor component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.IInPlaceEditor.UpdateCancelButton(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorCancelButton)">
+            <summary>
+            Method invoked to update cancel button.
+            </summary>
+            <param name="button">Specifies the inplace editor cancel button.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.IInPlaceEditor.UpdateSaveButton(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorSaveButton)">
+            <summary>
+            Method invoked to update save button.
+            </summary>
+            <param name="button">Specifies the inplace editor save button.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.IInPlaceEditor.UpdatePopupSettings(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorPopupSettings)">
+            <summary>
+            Method invoked to update the popup settings.
+            </summary>
+            <param name="popupSettings">Specifies the inplace editor popup settings.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.IInPlaceEditor.UpdateComponent(Syncfusion.Blazor.InPlaceEditor.EditorComponent)">
+            <summary>
+            Method invoked to update the editor component.
+            </summary>
+            <param name="component">Specifies the inplace editor dependent component.</param>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.IInPlaceEditor.UpdateTemplate(Syncfusion.Blazor.InPlaceEditor.InPlaceEditorTemplate)">
+            <summary>
+            Method invoked to update the template.
+            </summary>
+            <param name="component">Specifies the inplace editor template.</param>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.InPlaceEditor.Internal.Component`1">
+            <summary>
+            Configures the dependent compoenent of the Inplace Editor type.
+            </summary>
+            <typeparam name="TValue">Represents the Inplace Editor data source's type.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.Component`1.OnInitialized">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.Component`1.Dispose">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.InPlaceEditor.Internal.Component`1.Dispose(System.Boolean)">
+            <summary>
+            Dispose the unmanaged resources.
+            </summary>
+            <param name="disposing">Boolean value to dispose the object.</param>
+        </member>
+    </members>
+</doc>

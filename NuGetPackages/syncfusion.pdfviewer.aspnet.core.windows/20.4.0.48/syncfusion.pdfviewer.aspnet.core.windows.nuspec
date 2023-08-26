@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Syncfusion.PdfViewer.AspNet.Core.Windows</id>
+    <version>20.4.0.48</version>
+    <title>Syncfusion Pdf Viewer for Essential Asp.Net Core</title>
+    <authors>Syncfusion Inc.</authors>
+    <owners>Syncfusion Inc.</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>syncfusion_logo.png</icon>
+    <projectUrl>https://www.syncfusion.com/blazor-components/blazor-pdf-viewer?utm_source=nuget&amp;utm_medium=listing</projectUrl>
+    <description>Syncfusion Pdf Viewer for Essential JS 2 Asp.Net Core Windows is a .NET class library for converting PDF document into images and extracting PDF documents for Windows platform.</description>
+    <releaseNotes>https://blazor.syncfusion.com/documentation/release-notes/20.4.48?utm_source=nuget&amp;utm_medium=listing</releaseNotes>
+    <copyright>Copyright 2001 - 2023 Syncfusion Inc.</copyright>
+    <tags>syncfusion syncfusion.blazor blazor asp-net-core aspnetcore pdfviewer pdf pdf-viewer webviewer</tags>
+    <readme>README.md</readme>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Extensions.Caching.Memory" version="2.2.0" />
+        <dependency id="System.Drawing.Common" version="6.0.0" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" />
+        <dependency id="Syncfusion.Pdf.Net.Core" version="20.4.0.48" />
+        <dependency id="Syncfusion.Compression.Net.Core" version="20.4.0.48" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.Extensions.Caching.Memory" version="6.0.0" />
+        <dependency id="SkiaSharp" version="2.88.2" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" />
+        <dependency id="Syncfusion.Pdf.Net.Core" version="20.4.0.48" />
+        <dependency id="Syncfusion.Compression.Net.Core" version="20.4.0.48" />
+        <dependency id="Syncfusion.SkiaSharpHelper.Net.Core" version="20.4.0.48" />
+        <dependency id="System.Drawing.Common" version="6.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

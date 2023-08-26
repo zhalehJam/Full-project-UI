@@ -1,0 +1,3560 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.StockChart</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAnnotation">
+            <summary>
+            Specifies annotation for stockchart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.ContentTemplate">
+            <summary>
+            Gets and sets the template of the annotation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.CoordinateUnits">
+            <summary>
+            Specifies the coordinate units of the annotation. They are
+            Pixel - Annotation renders based on x and y pixel value.
+            Point - Annotation renders based on x and y axis value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.Description">
+            <summary>
+            Information about annotation for assistive technology.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.Region">
+            <summary>
+            Specifies the regions of the annotation. They are
+            Chart - Annotation renders based on chart coordinates.
+            Series - Annotation renders based on series coordinates.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.X">
+            <summary>
+            if set coordinateUnit as `Pixel` X specifies the axis value
+            else is specifies pixel or percentage of coordinate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.XAxisName">
+            <summary>
+            The name of horizontal axis associated with the annotation.
+            It requires `Axes` of chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.Y">
+            <summary>
+            if set coordinateUnit as `Pixel` Y specifies the axis value
+            else is specifies pixel or percentage of coordinate.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotation.YAxisName">
+            <summary>
+            The name of vertical axis associated with the annotation.
+            It requires `Axes` of chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAnnotation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAnnotation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAnnotations">
+            <summary>
+            Specifies annotation collection for stockchart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAnnotations.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAnnotations.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxes">
+            <summary>
+            To specify customization values for stockchart Axes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxes.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxes.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxis">
+            <summary>
+            To specify customization values for stockchart Axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxis.OpposedPosition">
+            <summary>
+            If set to true, the axis will render at the opposite side of its default position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxis.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxis.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisCrosshairTooltip">
+            <summary>
+            To specify customization values for stockchart crosshair tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisCrosshairTooltip.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisCrosshairTooltip.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisLabelStyle">
+            <summary>
+            To specify customization values for stockchart axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisLabelStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisLabelStyle.Size">
+            <summary>
+            Sets and gets the size for the axis labels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisLineStyle">
+            <summary>
+            To specify customization values for stockchart axis line.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisLineStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisMajorGridLines">
+            <summary>
+            To specify customization values for stockchart axis major gridlines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisMajorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisMajorTickLines">
+            <summary>
+            To specify customization values for stockchart axis major tick lines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisMajorTickLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisMinorGridLines">
+            <summary>
+            To specify customization values for stockchart axis minor grid lines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisMinorGridLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisMinorTickLines">
+            <summary>
+            To specify customization values for stockchart axis minor tick lines.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisMinorTickLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisStripLine">
+            <summary>
+            To specify customization values for stockchart axis stripline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisStripLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisStripLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisStripLineBorder">
+            <summary>
+            To specify customization values for stockchart axis stripline border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisStripLineBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisStripLineBorder.Color">
+            <summary>
+            Sets and gets the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisStripLineBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisStripLines">
+            <summary>
+            To specify customization values for stockchart axis striplines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisStripLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisStripLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisStripLineTextStyle">
+            <summary>
+            To specify customization values for stockchart axis stripline text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisStripLineTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisStripLineTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisTitleStyle">
+            <summary>
+            To specify customization values for stockchart axis title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisTitleStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisTitleStyle.Size">
+            <summary>
+            Unique size of the axis labels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartAxisTitleStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPrimaryXAxis">
+            <summary>
+            To specify customization options for stockchart PrimaryXAxis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryXAxis.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryXAxis.ValueType">
+            <summary>
+            Specifies the type of data the axis is handling.
+            Double:  Renders a numeric axis.
+            DateTime: Renders a dateTime axis.
+            Category: Renders a category axis.
+            Logarithmic: Renders a log axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryXAxis.Name">
+            <summary>
+            Unique identifier of an axis.
+            To associate an axis with the series, set this name to the xAxisName/yAxisName properties of the series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartPrimaryXAxis.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPrimaryYAxis">
+            <summary>
+            To specify customization options for stockchart PrimaryYAxis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryYAxis.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryYAxis.OpposedPosition">
+            <summary>
+            If set to true, the axis will render at the opposite side of its default position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryYAxis.LabelPosition">
+            <summary>
+            Specifies the placement of a labels to the axis line. They are,
+            inside: Renders the labels inside to the axis line.
+            outside: Renders the labels outside to the axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPrimaryYAxis.Name">
+            <summary>
+            Unique identifier of an axis.
+            To associate an axis with the series, set this name to the xAxisName/yAxisName properties of the series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartPrimaryYAxis.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonAxis">
+            <summary>
+            To specify customization options for stockchart axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.CrossesAt">
+            <summary>
+            Specifies the value at which the axis line has to be intersect with the vertical axis or vice versa.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.CrossesInAxis">
+            <summary>
+            Specifies axis name with which the axis line has to be crossed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Description">
+            <summary>
+            Description for axis and its element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.DesiredIntervals">
+            <summary>
+            With this property, you can request axis to calculate intervals approximately equal to your specified interval.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.EdgeLabelPlacement">
+            <summary>
+            Specifies the position of labels at the edge of the axis.They are,
+            None: No action will be performed.
+            Hide: Edge label will be hidden.
+            Shift: Shifts the edge labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.EnableAutoIntervalOnZooming">
+            <summary>
+            If set to true, axis interval will be calculated automatically with respect to the zoomed range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.EnableTrim">
+            <summary>
+            Specifies the Trim property for an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Interval">
+            <summary>
+            Specifies the interval for an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.IntervalType">
+            <summary>
+            Specifies the types like `Years`, `Months`, `Days`, `Hours`, `Minutes`, `Seconds` in date time axis.They are,
+            Auto: Defines the interval of the axis based on data.
+            Years: Defines the interval of the axis in years.
+            Months: Defines the interval of the axis in months.
+            Days: Defines the interval of the axis in days.
+            Hours: Defines the interval of the axis in hours.
+            Minutes: Defines the interval of the axis in minutes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.IsInversed">
+            <summary>
+            It specifies whether the axis to be rendered in inversed manner or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.LabelFormat">
+            <summary>
+            Used to format the axis label that accepts any global string format like 'C', 'n1', 'P' etc.
+            It also accepts placeholder like '{value}°C' in which value represent the axis label, e.g, 20°C.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.LabelIntersectAction">
+            <summary>
+            Specifies the actions like `Hide`, `Rotate45`, and `Rotate90` when the axis labels intersect with each other.They are,
+            None: Shows all the labels.
+            Hide: Hides the label when it intersects.
+            Rotate45: Rotates the label to 45 degree when it intersects.
+            Rotate90: Rotates the label to 90 degree when it intersects.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.LabelPlacement">
+            <summary>
+            Specifies the placement of a label for category axis. They are,
+            betweenTicks: Renders the label between the ticks.
+            onTicks: Renders the label on the ticks.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.LabelPosition">
+            <summary>
+            Specifies the placement of a labels to the axis line. They are,
+            inside: Renders the labels inside to the axis line.
+            outside: Renders the labels outside to the axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.LabelRotation">
+            <summary>
+            The angle to which the axis label gets rotated.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.LogBase">
+            <summary>
+            The base value for logarithmic axis. It requires `ValueType` to be `Logarithmic`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Maximum">
+            <summary>
+            Specifies the maximum range of an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.MaximumLabelWidth">
+            <summary>
+            Specifies the maximum width of an axis label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.MaximumLabels">
+            <summary>
+            The maximum number of label count per 100 pixels with respect to the axis length.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Minimum">
+            <summary>
+            Specifies the minimum range of an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.MinorTicksPerInterval">
+            <summary>
+            Specifies the number of minor ticks per interval.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Name">
+            <summary>
+            Unique identifier of an axis.
+            To associate an axis with the series, set this name to the xAxisName/yAxisName properties of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.OpposedPosition">
+            <summary>
+            If set to true, the axis will render at the opposite side of its default position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.PlaceNextToAxisLine">
+            <summary>
+            Specifies whether axis elements like axis labels, axis title, etc has to be crossed with axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.PlotOffset">
+            <summary>
+            Left and right padding for the plot area in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.RangePadding">
+            <summary>
+            Specifies the padding for the axis range in terms of interval.They are,
+             none: Padding cannot be applied to the axis.
+             normal: Padding is applied to the axis based on the range calculation.
+             additional: Interval of the axis is added as padding to the minimum and maximum values of the range.
+             round: Axis range is rounded to the nearest possible value divided by the interval.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.RowIndex">
+             <summary>
+             Specifies the index of the row where the axis is associated, when the chart area is divided into multiple plot areas by using `Rows`.
+            
+             </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Skeleton">
+            <summary>
+            Specifies the skeleton format in which the dateTime format will process.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.SkeletonType">
+            <summary>
+            It specifies the type of format to be used in dateTime format process.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Span">
+            <summary>
+            Specifies the number of `Columns` or `rows` an axis has to span horizontally or vertically.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.StartAngle">
+            <summary>
+            The start angle for the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.TabIndex">
+            <summary>
+            TabIndex value for the axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.TickPosition">
+            <summary>
+            Specifies the placement of a ticks to the axis line. They are,
+            inside: Renders the ticks inside to the axis line.
+            outside: Renders the ticks outside to the axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Title">
+            <summary>
+            Specifies the title of an axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.ValueType">
+            <summary>
+            Specifies the type of data the axis is handling.
+            Double:  Renders a numeric axis.
+            DateTime: Renders a dateTime axis.
+            Category: Renders a category axis.
+            Logarithmic: Renders a log axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.Visible">
+            <summary>
+            If set to true, axis label will be visible.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.ZoomFactor">
+            <summary>
+            The axis is scaled by this factor. When zoomFactor is 0.5, the chart is scaled by 200% along this axis. Value ranges from 0 to 1.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAxis.ZoomPosition">
+            <summary>
+            Position of the zoomed axis. Value ranges from 0 to 1.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartCommonAxis.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonCrosshairTooltip">
+            <summary>
+            To specify customization options for stockchart common crosshair tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonCrosshairTooltip.Enable">
+            <summary>
+            If set to true, crosshair ToolTip will be visible.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonCrosshairTooltip.Fill">
+            <summary>
+            The fill color of the ToolTip accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonLineStyle">
+            <summary>
+            To specify customization options for stockchart axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonLineStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonLineStyle.Color">
+            <summary>
+            The color of the axis line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonLineStyle.DashArray">
+            <summary>
+            The dash array of the axis line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonLineStyle.Width">
+            <summary>
+            The width of the line in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonMajorGridLines">
+            <summary>
+            To specify customization options for stockchart axis major gridlines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorGridLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorGridLines.Color">
+            <summary>
+            The color of the major grid line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorGridLines.DashArray">
+            <summary>
+            The dash array of the grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorGridLines.Width">
+            <summary>
+            The width of the line in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonMajorTickLines">
+            <summary>
+            To specify customization options for stockchart axis major tick lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorTickLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorTickLines.Color">
+            <summary>
+            The color of the major tick line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorTickLines.Height">
+            <summary>
+            The height of the ticks in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMajorTickLines.Width">
+            <summary>
+            The width of the tick lines in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonMinorGridLines">
+            <summary>
+            To specify customization options for stockchart axis minor gridlines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorGridLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorGridLines.Color">
+            <summary>
+            The color of the minor grid line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorGridLines.DashArray">
+            <summary>
+            The dash array of grid lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorGridLines.Width">
+            <summary>
+            The width of the line in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonMinorTickLines">
+            <summary>
+            To specify customization options for stockchart axis minor tick lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorTickLines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorTickLines.Color">
+            <summary>
+            The color of the minor tick line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorTickLines.Height">
+            <summary>
+            The height of the ticks in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonMinorTickLines.Width">
+            <summary>
+            The width of the tick line in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonStripLine">
+            <summary>
+            To specify customization options for stockchart axis stripline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Color">
+            <summary>
+            Color of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.DashArray">
+            <summary>
+            Dash Array of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Delay">
+            <summary>
+            The option to delay animation of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Duration">
+            <summary>
+            The duration of animation in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Enable">
+            <summary>
+            If set to true, series gets animated on initial loading.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.End">
+            <summary>
+            End value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.HorizontalAlignment">
+            <summary>
+            Defines the position of the strip line text horizontally. They are,
+            Start: Places the strip line text at the start.
+            Middle: Places the strip line text in the middle.
+            End: Places the strip line text at the end.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.IsRepeat">
+            <summary>
+            isRepeat value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.IsSegmented">
+            <summary>
+            isSegmented value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Opacity">
+            <summary>
+            Strip line Opacity.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.RepeatEvery">
+            <summary>
+            RepeatEvery value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.RepeatUntil">
+            <summary>
+            RepeatUntil value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Rotation">
+            <summary>
+            The angle to which the strip line text gets rotated.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.SegmentAxisName">
+            <summary>
+            SegmentAxisName of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.SegmentEnd">
+            <summary>
+            SegmentEnd value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.SegmentStart">
+            <summary>
+            SegmentStart value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Size">
+            <summary>
+            Size of the strip line, when it starts from the origin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.SizeType">
+            <summary>
+            Size type of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Start">
+            <summary>
+            Start value of the strip line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.StartFromAxis">
+            <summary>
+             If set true, strip line get render from axis origin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Text">
+            <summary>
+            Strip line text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.VerticalAlignment">
+            <summary>
+            Defines the position of the strip line text vertically. They are,
+            Start: Places the strip line text at the start.
+            Middle: Places the strip line text in the middle.
+            End: Places the strip line text at the end.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.Visible">
+            <summary>
+            If set true, strip line for axis renders.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonStripLine.ZIndex">
+            <summary>
+            Specifies the order of the strip line. They are,
+            Behind: Places the strip line behind the series elements.
+            Over: Places the strip line over the series elements.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartCommonStripLine.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart">
+            <summary>
+            To specify customization options for stockchart internal chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.StockChart">
+            <summary>
+            Specifies the instance of the component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.ChartSize">
+            <summary>
+            Specifies the characters size.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.Series">
+            <summary>
+            Specifies the series of stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.ChartArea">
+            <summary>
+            Specifies the area of stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.Tooltip">
+            <summary>
+            Specifies the tooltip of stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.Crosshair">
+            <summary>
+            Specifies the cross hair of stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.PrimaryXAxis">
+            <summary>
+            Specifies the X axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.PrimaryYAxis">
+            <summary>
+            Specifies the Y axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.ZoomSettings">
+            <summary>
+            Specifies the zoom settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Chart.Internal.CustomChart.LegendSettings">
+            <summary>
+            Specifies the legend settings of stock chart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartChartArea">
+            <summary>
+            To specify customization options for stockchart chart area.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartArea.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartArea.Background">
+            <summary>
+            The background of the chart area that accepts value in hex and rgba as a valid CSS color string..
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartArea.BackgroundImage">
+            <summary>
+            The background image of the chart area that accepts value in string as url link or location of an image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartArea.Opacity">
+            <summary>
+            The opacity for background.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartChartArea.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartChartAreaBorder">
+            <summary>
+            To specify customization options for stockchart chartarea border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartAreaBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartAreaBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartAreaBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartChartAreaBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartChartBorder">
+            <summary>
+            To specify customization options for stockchart border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartBorder.Color">
+            <summary>
+            Sets and gets the color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartChartBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartChartMargin">
+            <summary>
+            To specify customization options for stockchart margin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartChartMargin.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartChartMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonAnimation">
+            <summary>
+            To specify customization options for stockchart animation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAnimation.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAnimation.Delay">
+            <summary>
+            The option to delay animation of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAnimation.Duration">
+            <summary>
+            The duration of animation in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonAnimation.Enable">
+            <summary>
+            If set to true, series gets animated on initial loading.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartEvents">
+            <summary>
+            To specify customization options for stockchart events.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.OnLoaded">
+            <summary>
+            Triggers after the stock chart rendering.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.OnZooming">
+            <summary>
+            Triggers after the zoom selection is done.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.OnPointClick">
+            <summary>
+            Triggers during point click.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.RangeChange">
+            <summary>
+            Triggers when the range is changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.OnPrintComplete">
+            <summary>
+            Triggers when print operation is completed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.PeriodChanged">
+            <summary>
+            Triggers when the period is selected.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.AxisLabelRendering">
+            <summary>
+            Triggers before each axis label is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.TooltipRendering">
+            <summary>
+            Triggers before the tooltip for series is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEvents.SharedTooltipRendering">
+            <summary>
+            Triggers before the shared tooltip for series is rendered.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartFont">
+            <summary>
+            To specify customization options for stockchart datalabel font.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.Color">
+            <summary>
+            Color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.FontFamily">
+            <summary>
+            FontFamily for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.FontStyle">
+            <summary>
+            FontStyle for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.FontWeight">
+            <summary>
+            FontWeight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.Opacity">
+            <summary>
+            Opacity for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.Size">
+            <summary>
+            Font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.TextAlignment">
+            <summary>
+            text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartFont.TextOverflow">
+            <summary>
+            Specifies the chart title text overflow.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartMargin">
+            <summary>
+            To specify customization options for stockchart datalabel margin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMargin.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMargin.Bottom">
+            <summary>
+            Bottom margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMargin.Left">
+            <summary>
+            Left margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMargin.Right">
+            <summary>
+            Right margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMargin.Top">
+            <summary>
+            Top margin in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPeriod">
+            <summary>
+            To specify customization options for stockchart period.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriod.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriod.Interval">
+            <summary>
+            Count value for the button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriod.IntervalType">
+            <summary>
+            IntervalType of button.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriod.Selected">
+            <summary>
+            To select the default period.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriod.Text">
+            <summary>
+            Text to be displayed on the button.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartPeriod.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPeriods">
+            <summary>
+            To specify customization options for stockchart periods.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriods.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartPeriods.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSelectedDataIndex">
+            <summary>
+            To specify customization options for stockchart selected data index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSelectedDataIndex.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSelectedDataIndex.Point">
+            <summary>
+            Specifies index of point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSelectedDataIndex.Series">
+            <summary>
+            Specifies index of series.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSelectedDataIndex.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSelectedDataIndexes">
+            <summary>
+            To specify customization options for stockchart selected data indexes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSelectedDataIndexes.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSelectedDataIndexes.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTitleStyle">
+            <summary>
+            To specify customization options for stockchart title.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.Color">
+            <summary>
+            Color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.FontFamily">
+            <summary>
+            FontFamily for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.FontStyle">
+            <summary>
+            FontStyle for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.FontWeight">
+            <summary>
+            FontWeight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.Opacity">
+            <summary>
+            Opacity for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.Size">
+            <summary>
+            Font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.TextAlignment">
+            <summary>
+            text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTitleStyle.TextOverflow">
+            <summary>
+            Specifies the chart title text overflow.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTitleStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCommonConnector">
+            <summary>
+            To specify customization options for stockchart indicator connector line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonConnector.Color">
+            <summary>
+            Color of the connector line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonConnector.DashArray">
+            <summary>
+            dashArray of the connector line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonConnector.Length">
+            <summary>
+            Length of the connector line in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonConnector.Type">
+            <summary>
+            specifies the type of the connector line. They are
+             Smooth
+             Line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCommonConnector.Width">
+            <summary>
+            Width of the connector line in pixels.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartIndicator">
+            <summary>
+            To specify customization options for stockchart indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.BandColor">
+            <summary>
+            Options for customizing the BollingerBand in the indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Close">
+            <summary>
+            The DataSource field that contains the close value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.DPeriod">
+            <summary>
+            Defines the period, the price changes over which will define the %D value in stochastic indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.DashArray">
+            <summary>
+            Defines the pattern of dashes and gaps to stroke the lines in `Line` type series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.DataSource">
+            <summary>
+            Specifies the DataSource for the series. It can be an array of JSON objects or an instance of DataManager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.FastPeriod">
+            <summary>
+            Sets the fast period to define the Macd line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Field">
+            <summary>
+            Defines the field to compare the current value with previous values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Fill">
+            <summary>
+            The fill color for the series that accepts value in hex and rgba as a valid CSS color string.
+            It also represents the color of the signal lines in technical indicators.
+            For technical indicators, the default value is 'blue' and for series, it has null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.High">
+            <summary>
+            The DataSource field that contains the high value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.KPeriod">
+            <summary>
+            Defines the look back period, the price changes over which will define the %K value in stochastic indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Low">
+            <summary>
+            The DataSource field that contains the low value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.MacdNegativeColor">
+            <summary>
+            Defines the color of the negative bars in Macd indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.MacdPositiveColor">
+            <summary>
+            Defines the color of the positive bars in Macd indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.MacdType">
+            <summary>
+            Defines the type of the Macd indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Open">
+            <summary>
+            The DataSource field that contains the open value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.OverBought">
+            <summary>
+            Defines the over-bought(threshold) values. It is applicable for RSI and stochastic indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.OverSold">
+            <summary>
+            Defines the over-sold(threshold) values. It is applicable for RSI and stochastic indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Period">
+            <summary>
+            Defines the period, the price changes over which will be considered to predict the trend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.PointColorMapping">
+            <summary>
+            The DataSource field that contains the color value of point.
+            It is applicable for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Query">
+            <summary>
+            Specifies query to select data from DataSource. This property is applicable only when the DataSource is `Ej.DataManager`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.SeriesName">
+            <summary>
+            Defines the name of the series, the data of which has to be depicted as indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.ShowZones">
+            <summary>
+            Enables/Disables the over-bought and over-sold regions.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.SlowPeriod">
+            <summary>
+            Sets the slow period to define the Macd line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.StandardDeviation">
+            <summary>
+            Sets the standard deviation values that helps to define the upper and lower bollinger bands.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Type">
+            <summary>
+            Defines the type of the technical indicator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Volume">
+            <summary>
+            Defines the data source field that contains the volume value in candle charts
+            It is applicable for financial series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.Width">
+            <summary>
+            The stroke width for the series that is applicable only for `Line` type series.
+            It also represents the stroke width of the signal lines in technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.XAxisName">
+            <summary>
+            The name of the horizontal axis associated with the series. It requires `Axes` of the chart.
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.XName">
+            <summary>
+            The DataSource field that contains the x value.
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicator.YAxisName">
+            <summary>
+            The name of the vertical axis associated with the series. It requires `Axes` of the chart.
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartIndicator.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartIndicatorAnimation">
+            <summary>
+            To specify customization options for stockchart indicator animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartIndicatorAnimation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartIndicators">
+            <summary>
+            To specify customization options for stockchart indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartIndicators.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartIndicators.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartLowerLine">
+            <summary>
+            To specify customization options for stockchart indicator lower line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLowerLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartLowerLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartMacdLine">
+            <summary>
+            To specify customization options for stockchart indicator macd line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMacdLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartMacdLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPeriodLine">
+            <summary>
+            To specify customization options for stockchart indicator period line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriodLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartPeriodLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartUpperLine">
+            <summary>
+            To specify customization options for stockchart indicator upper line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartUpperLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartUpperLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartLegendMargin">
+            <summary>
+            To specify customization options for stock chart legend margin.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendMargin.Parent">
+            <summary>
+            Indicates the StockChartLegendSettings component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendMargin.Bottom">
+            <summary>
+            Bottom margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendMargin.Left">
+            <summary>
+            Left margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendMargin.Right">
+            <summary>
+            Right margin in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendMargin.Top">
+            <summary>
+            Top margin in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartLegendMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartLegendSettings">
+            <summary>
+            To specify customization options for stock chart legend settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.TextStyle">
+            <summary>
+            Specifies the text style for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Margin">
+            <summary>
+            Specifies the margin for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Parent">
+            <summary>
+            Indicates the SfStockChart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Visible">
+            <summary>
+            Specifies the visibility of legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.EnableHighlight">
+            <summary>
+            Enabling the highlight options of legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Width">
+            <summary>
+            Specifies the width for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Height">
+            <summary>
+            Specifies the height for legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Position">
+            <summary>
+            Position of the legend in the chart are,
+             Auto: Places the legend based on chart area type.
+             Top: Displays the legend at the top of the chart.
+             Left: Displays the legend at the left of the chart.
+             Bottom: Displays the legend at the bottom of the chart.
+             Right: Displays the legend at the right of the chart.
+             Custom: Displays the legend  based on the given x and y values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Padding">
+            <summary>
+            Option to customize the padding around legend collection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.ItemPadding">
+            <summary>
+            Option to customize the padding between legend items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Alignment">
+            <summary>
+            Legend in chart can be aligned as follows:
+             Near: Aligns the legend to the left of the chart.
+             Center: Aligns the legend to the center of the chart.
+             Far: Aligns the legend to the right of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.ShapeWidth">
+            <summary>
+            Shape width of the legend shape.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.ShapeHeight">
+            <summary>
+            Shape height of the legend shape.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.ShapePadding">
+            <summary>
+            Padding between the legend shape and text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Background">
+            <summary>
+            The background of the chart legend area.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Opacity">
+            <summary>
+             Options to customize left, right, top and bottom margins of the chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.ToggleVisibility">
+            <summary>
+            If set to true, series' visibility collapses based on the legend visibility.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.BorderColor">
+            <summary>
+            The color of the legend border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.BorderWidth">
+            <summary>
+            The width of the legend border in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.X">
+            <summary>
+            Specifies the X value of legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Y">
+            <summary>
+            Specifies the Y value of legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.IsInversed">
+            <summary>
+            Gets or sets whether to inverse legend item content (image and text).
+            </summary>
+            <value> 
+            true if the legend should be inversed; otherwise, false. 
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.Reversed">
+            <summary>
+            Gets or sets whether to reverse the legend items order.
+            </summary>
+            <value> 
+            true if the legend should be reverse; otherwise, false. 
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.TextOverFlow">
+            <summary> 
+             Gets and sets the text overflow behavior to employ when the individual legend text overflowing the legend bounds or 
+             <see cref="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.MaxLabelWidth"> MaximumLabelWidth </see> 
+            </summary> 
+            <value> 
+             One of the <see cref="T:Syncfusion.Blazor.Charts.TextOverflow"/> enumeration.The default value is <see cref="F:Syncfusion.Blazor.LabelOverflow.Ellipse"/> 
+            </value> 
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.TextWrap">
+            <summary> 
+             Gets and sets the text wrap behavior to employ when the individual legend text overflowing the legend bounds or <see cref="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.MaxLabelWidth"> MaximumLabelWidth </see> 
+            </summary> 
+            <value> 
+             One of the <see cref="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.TextWrap"/> enumeration. The default value is <see cref="F:Syncfusion.Blazor.TextWrap.Normal"/> 
+            </value>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendSettings.MaxLabelWidth">
+            <summary> 
+             Gets and sets the maximum width of the individual legend item after which they get trimmed, wrapped or clipped. 
+            </summary> 
+            <value> 
+             Specifies the maximum width for the legend text. The default value is <c>null</c>. 
+            </value> 
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartLegendSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartLegendTextStyle">
+            <summary>
+            To specify customization options for stock chart legend  text styles.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendTextStyle.Parent">
+            <summary>
+            Indicates the StockChartLegendSettings component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartLegendTextStyle.Size">
+            <summary>
+            Sets and gets the size for the legend text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartLegendTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartRow">
+            <summary>
+            To specify customization options for stockchart row.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRow.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRow.Height">
+            <summary>
+            The height of the row as a string accept input both as '100px' and '100%'.
+            If specified as '100%, row renders to the full height of its chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartRow.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartRowBorder">
+            <summary>
+            To specify customization options for stockchart row border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRowBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartRowBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartRows">
+            <summary>
+            To specify customization options for stockchart rows.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRows.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartRows.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.AnimationModel">
+            <summary>
+            Set and gets the trend line animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.AnimationModel.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.OffsetModel">
+            <summary>
+            Set and gets the stockchart series marker offset position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.OffsetModel.X">
+            <summary>
+            x value of the marker position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.OffsetModel.Y">
+            <summary>
+            y value of the marker position.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.OffsetModel.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCornerRadius">
+            <summary>
+            To specify customization options for stockchart series corner radius.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCornerRadius.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCornerRadius.BottomLeft">
+            <summary>
+            Specifies the bottom left corner radius value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCornerRadius.BottomRight">
+            <summary>
+            Specifies the bottom right corner radius value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCornerRadius.TopLeft">
+            <summary>
+            Specifies the top left corner radius value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCornerRadius.TopRight">
+            <summary>
+            Specifies the top right corner radius value.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartCornerRadius.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartDataLabel">
+            <summary>
+            To specify customization options for stockchart series datalabel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Alignment">
+            <summary>
+            Specifies the alignment for data Label. They are,
+            Near: Aligns the label to the left of the point.
+            Center: Aligns the label to the center of the point.
+            Far: Aligns the label to the right of the point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Angle">
+            <summary>
+            Specifies angle for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.EnableRotation">
+            <summary>
+            Enables rotation for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Fill">
+            <summary>
+            The background color of the data label accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.LabelIntersectAction">
+            <summary>
+            Show Datalabel Even two Data Labels Are Overflow.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Name">
+            <summary>
+            The DataSource field that contains the data label value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Opacity">
+            <summary>
+            The opacity for the background.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Position">
+            <summary>
+            Specifies the position of the data label. They are,
+            Outer: Positions the label outside the point.
+            top: Positions the label on top of the point.
+            Bottom: Positions the label at the bottom of the point.
+            Middle: Positions the label to the middle of the point.
+            Auto: Positions the label based on series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Rx">
+            <summary>
+            The roundedCornerX for the data label. It requires `Border` values not to be null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Ry">
+            <summary>
+            The roundedCornerY for the data label. It requires `Border` values not to be null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabel.Visible">
+            <summary>
+            If set true, data label for series renders.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartDataLabel.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartDatalabelBorder">
+            <summary>
+            To specify customization options for stockchart series datalabel border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDatalabelBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDatalabelBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDatalabelBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartDatalabelBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartDataLabelSettings">
+            <summary>
+            To specify customization options for stockchart series datalabel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Alignment">
+            <summary>
+            Specifies the alignment for data Label. They are,
+            Near: Aligns the label to the left of the point.
+            Center: Aligns the label to the center of the point.
+            Far: Aligns the label to the right of the point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Angle">
+            <summary>
+            Specifies angle for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.EnableRotation">
+            <summary>
+            Enables rotation for data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Fill">
+            <summary>
+            The background color of the data label accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.LabelIntersectAction">
+            <summary>
+            Show Datalabel Even two Data Labels Are Overflow.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Name">
+            <summary>
+            The DataSource field that contains the data label value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Opacity">
+            <summary>
+            The opacity for the background.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Position">
+            <summary>
+            Specifies the position of the data label. They are,
+            Outer: Positions the label outside the point.
+            top: Positions the label on top of the point.
+            Bottom: Positions the label at the bottom of the point.
+            Middle: Positions the label to the middle of the point.
+            Auto: Positions the label based on series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Rx">
+            <summary>
+            The roundedCornerX for the data label. It requires `Border` values not to be null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Ry">
+            <summary>
+            The roundedCornerY for the data label. It requires `Border` values not to be null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Template">
+            <summary>
+            Custom template to show the data label. Use ${point.x} and ${point.y} as a placeholder
+            text to display the corresponding data point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.Visible">
+            <summary>
+            If set true, data label for series renders.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartDataLabelSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartEmptyPointBorder">
+            <summary>
+            To specify customization options for stockchart empty point border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEmptyPointBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEmptyPointBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEmptyPointBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartEmptyPointBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartEmptyPointSettings">
+            <summary>
+            To specify customization options for stockchart empty point settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEmptyPointSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEmptyPointSettings.Fill">
+            <summary>
+            To customize the fill color of empty points.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartEmptyPointSettings.Mode">
+            <summary>
+            To customize the mode of empty points.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartEmptyPointSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartMarkerBorder">
+            <summary>
+            To specify customization options for stockchart marker border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartMarkerBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartMarkerSettings">
+            <summary>
+            To specify customization options for stockchart trendline marker settings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.Fill">
+            <summary>
+             The fill color of the marker that accepts value in hex and rgba as a valid CSS color string. By default, it will take series' color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.Height">
+            <summary>
+            The height of the marker in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.ImageUrl">
+            <summary>
+            The URL for the Image that is to be displayed as a marker.  It requires marker `Shape` value to be an `Image`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.Opacity">
+            <summary>
+            The opacity of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.Shape">
+            <summary>
+            The different shape of a marker:
+            Circle
+            Rectangle
+            Triangle
+            Diamond
+            HorizontalLine
+            VerticalLine
+            Pentagon
+            InvertedTriangle
+            Image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.Visible">
+            <summary>
+            If set to true the marker for series is rendered. This is applicable only for line and area type series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMarkerSettings.Width">
+            <summary>
+            The width of the marker in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartMarkerSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSeries">
+            <summary>
+            To specify customization options for stockchart series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.BearFillColor">
+            <summary>
+            This property is used in stock charts to visualize the price movements in stock.
+            It defines the color of the candle/point, when the opening price is less than the closing price.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.BullFillColor">
+            <summary>
+            This property is used in financial charts to visualize the price movements in stock.
+            It defines the color of the candle/point, when the opening price is higher than the closing price.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.CardinalSplineTension">
+            <summary>
+            It defines tension of cardinal spline types.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Close">
+            <summary>
+            The DataSource field that contains the close value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.ColumnSpacing">
+            <summary>
+            To render the column series points with particular column spacing. It takes value from 0 - 1.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.ColumnWidth">
+            <summary>
+            To render the column series points with particular column width. If the series type is histogram the
+            default value is 1 otherwise 0.7.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.DashArray">
+            <summary>
+            Defines the pattern of dashes and gaps to stroke the lines in `Line` type series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.DataSource">
+            <summary>
+            Specifies the DataSource for the series. It can be an array of JSON objects or an instance of DataManager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.EnableSolidCandles">
+            <summary>
+            This property is applicable for candle series.
+            It enables/disables to visually compare the current values with the previous values in stock.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.EnableTooltip">
+            <summary>
+            If set true, the Tooltip for series will be visible.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Fill">
+            <summary>
+            The fill color for the series that accepts value in hex and rgba as a valid CSS color string.
+            It also represents the color of the signal lines in technical indicators.
+            For technical indicators, the default value is 'blue' and for series, it has null.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.High">
+            <summary>
+            The DataSource field that contains the high value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Low">
+            <summary>
+            The DataSource field that contains the low value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Name">
+            <summary>
+            The name of the series visible in legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Opacity">
+            <summary>
+            The opacity of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Open">
+            <summary>
+            The DataSource field that contains the open value of y
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.PointColorMapping">
+            <summary>
+            The DataSource field that contains the color value of point
+            It is applicable for series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Query">
+            <summary>
+            Specifies query to select data from DataSource. This property is applicable only when the DataSource is `Ej.DataManager`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.SelectionStyle">
+            <summary>
+            Custom style for the selected series or points.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.TooltipMappingName">
+            <summary>
+            The provided value will be considered as a Tooltip name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.LegendShape">
+            <summary>
+            Specifies the legend shape of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Type">
+            <summary>
+            The type of the series are
+            Line
+            Column
+            Area
+            Spline
+            Hilo
+            HiloOpenClose
+            Candle.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Visible">
+            <summary>
+            Specifies the visibility of series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Volume">
+            <summary>
+            Defines the data source field that contains the volume value in candle charts
+            It is applicable for financial series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.Width">
+            <summary>
+            The stroke width for the series that is applicable only for `Line` type series.
+            It also represents the stroke width of the signal lines in technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.XAxisName">
+            <summary>
+            The name of the horizontal axis associated with the series. It requires `Axes` of the chart.
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.XName">
+            <summary>
+            The DataSource field that contains the x value.
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.YAxisName">
+            <summary>
+            The name of the vertical axis associated with the series. It requires `Axes` of the chart.
+            It is applicable for series and technical indicators.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.YName">
+            <summary>
+            The DataSource field that contains the y value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeries.TooltipFormat">
+            <summary>
+            The provided format will be considered as a Tooltip format.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSeries.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSeries.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSeriesAnimation">
+            <summary>
+            To specify customization options for stockchart series animation.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSeriesAnimation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSeriesBorder">
+            <summary>
+            To specify customization options for stockchart series border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSeriesBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSeriesCollection">
+            <summary>
+            To specify customization options for stockchart series collection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesCollection.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSeriesCollection.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartSeriesMarker">
+            <summary>
+            To specify customization options for stockchart series marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.Fill">
+            <summary>
+             The fill color of the marker that accepts value in hex and rgba as a valid CSS color string. By default, it will take series' color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.Height">
+            <summary>
+            The height of the marker in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.ImageUrl">
+            <summary>
+            The URL for the Image that is to be displayed as a marker.  It requires marker `Shape` value to be an `Image`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.Opacity">
+            <summary>
+            The opacity of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.Shape">
+            <summary>
+            The different shape of a marker:
+            Circle
+            Rectangle
+            Triangle
+            Diamond
+            HorizontalLine
+            VerticalLine
+            Pentagon
+            InvertedTriangle
+            Image.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.Visible">
+            <summary>
+            If set to true the marker for series is rendered. This is applicable only for line and area type series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartSeriesMarker.Width">
+            <summary>
+            The width of the marker in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartSeriesMarker.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTrendline">
+            <summary>
+            To specify customization options for stockchart trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.BackwardForecast">
+            <summary>
+            Defines the period, by which the trend has to backward forecast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.EnableTooltip">
+            <summary>
+            Enables/disables tooltip for trendlines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.Fill">
+            <summary>
+            Defines the fill color of trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.ForwardForecast">
+            <summary>
+            Defines the period, by which the trend has to forward forecast.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.Intercept">
+            <summary>
+            Defines the intercept of the trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.LegendShape">
+            <summary>
+            Sets the legend shape of the trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.Name">
+            <summary>
+            Defines the name of trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.Period">
+            <summary>
+            Defines the period, the price changes over which will be considered to predict moving average trend line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.PolynomialOrder">
+            <summary>
+            Defines the polynomial order of the polynomial trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.Type">
+            <summary>
+            Defines the type of the trendline.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendline.Width">
+            <summary>
+            Defines the width of the trendline.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTrendline.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTrendline.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTrendlineMarkerBorder">
+            <summary>
+            To specify customization options for stockchart trendline marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendlineMarkerBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendlineMarkerBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendlineMarkerBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTrendlineMarkerBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTrendlines">
+            <summary>
+            To specify customization options for stockchart trendlines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTrendlines.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTrendlines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SfStockChart">
+            <summary>
+            Stock Chart is a well-crafted, easy-to-use financial charting package to track and visualize the stock price of any
+            company over a specific period using charting (such as Candlestick chart, OHLC, etc) and range tools.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.ID">
+            <summary>
+            Gets and sets the identification of the component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.Background">
+            <summary>
+            The background color of the stock chart that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.DataSource">
+            <summary>
+            Specifies the data source for the stock chart. It can be an array of JSON objects or an instance of DataManager.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.EnableCustomRange">
+            <summary>
+            Defines the custom range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.EnablePeriodSelector">
+            <summary>
+            It specifies whether the period selector to be rendered in financial chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.EnableSelector">
+            <summary>
+            It specifies whether the range navigator to be rendered in financial chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.ExportType">
+            <summary>
+            It specifies the types of export options in financial chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.IndicatorType">
+            <summary>
+            It specifies the types of indicators in financial chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.SeriesType">
+            <summary>
+            It specifies the types of series in financial chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.TrendlineType">
+            <summary>
+            It specifies the types of trendline types in financial chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.Height">
+            <summary>
+            The height of the stock chart as a string accepts input both as '100px' or '100%'.
+            If specified as '100%, stockChart renders to the full height of its parent element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.IsMultiSelect">
+            <summary>
+            If set true, enables the multi-selection in chart. It requires `SelectionMode` set to be `Point` | `Series` | or `Cluster`.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.IsSelect">
+            <summary>
+            If set true, enables the animation in chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.IsTransposed">
+            <summary>
+            It specifies whether the stock chart should be render in transposed manner or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.SelectionMode">
+            <summary>
+            Specifies whether series or data point has to be selected. They are,
+             None: Disables the selection.
+             Series: Selects a series.
+             Point: Selects a point.
+             Cluster: Selects a cluster of point.
+             DragXY: Selects points by dragging with respect to both horizontal and vertical axes.
+             DragX: Selects points by dragging with respect to horizontal axis.
+             DragY: Selects points by dragging with respect to vertical axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.Theme">
+            <summary>
+            Specifies the theme for the stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.Title">
+            <summary>
+            Title of the stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfStockChart.Width">
+            <summary>
+            The width of the stock chart as a string accepts input as both like '100px' or '100%'. If specified as '100%, stock chart renders to the full width of its parent element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Represents the first render.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.Refresh">
+            <summary>
+            Method helps to re-render the stock chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.UpdateStockChart">
+            <summary>
+            Method helps to re-render the stock chart UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.OnStockChartMouseMove(Syncfusion.Blazor.Charts.Chart.Internal.ChartInternalMouseEventArgs)">
+            <summary>
+            JS interopt while mouse move.
+            </summary>
+            <param name="args">Represents the mouse events arguments.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.OnStockChartMouseLeave">
+            <summary>
+            JS interopt while mouse leave.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.OnStockChartResize">
+            <summary>
+            JS interopt while window get resized.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.LegendPositionChanged">
+            <summary>
+            Method to change the chart settings while legend properties were changed.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.Export(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation})">
+            <summary>
+            The method is used to perform the export functionality for the rendered stock chart.
+            </summary>
+            <param name="type">Specifies the export type for the rendered stock chart.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.ExportAsync(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation})">
+            <summary>
+            The method is used to perform the export functionality for the rendered stock chart.
+            </summary>
+            <param name="type">Specifies the export type for the rendered stock chart.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.Print">
+            <summary>
+            The method is used to perform the print functionality in stock chart.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfStockChart.PrintAsync(Microsoft.AspNetCore.Components.ElementReference)">
+            <summary>
+            The method is used to perform the print functionality in stock chart.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartStockEvent">
+            <summary>
+            To specify customization options for stockchart stockevent.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.Background">
+            <summary>
+            The background of the stock event that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.Date">
+            <summary>
+            Date value of stock event in which stock event shows.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.Description">
+            <summary>
+            Specifies the description for the chart which renders in tooltip for stock event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.PlaceAt">
+            <summary>
+            Corresponding values in which stock event placed.
+            Close
+            Open
+            High
+            Close.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.ShowOnSeries">
+            <summary>
+            Enables the stock events to be render on series. If it disabled, stock event rendered on primaryXAxis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.Text">
+            <summary>
+            Specifies the text for the stock chart text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.SeriesIndexes">
+            <summary>
+            To render stock events in particular series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvent.Type">
+            <summary>
+            Specifies type of stock events
+            Circle
+            Square
+            Flag
+            Text
+            Sign
+            Triangle
+            InvertedTriangle
+            ArrowUp
+            ArrowDown
+            ArrowLeft
+            ArrowRight.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartStockEvent.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartStockEvents">
+            <summary>
+            To specify customization options for stockchart stockevents.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEvents.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartStockEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartStockEventsBorder">
+            <summary>
+            To specify customization options for stockchart stockevents border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsBorder.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsBorder.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartStockEventsBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle">
+            <summary>
+            To specify customization options for stockchart stockevents text style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.Color">
+            <summary>
+            Color for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.FontFamily">
+            <summary>
+            FontFamily for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.FontStyle">
+            <summary>
+            FontStyle for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.FontWeight">
+            <summary>
+            FontWeight for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.Opacity">
+            <summary>
+            Opacity for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.Size">
+            <summary>
+            Font size for the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.TextAlignment">
+            <summary>
+            Text alignment.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.TextOverflow">
+            <summary>
+            Specifies the chart title text overflow.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartStockEventsTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCrosshairLine">
+            <summary>
+            To specify customization options for stockchart crosshair line.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairLine.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairLine.Color">
+            <summary>
+            The color of the border that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairLine.Width">
+            <summary>
+            The width of the border in pixels.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartCrosshairLine.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartCrosshairSettings">
+            <summary>
+            To specify customization options for stockchart crosshair.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairSettings.DashArray">
+            <summary>
+            DashArray for crosshair.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairSettings.Enable">
+            <summary>
+            If set to true, crosshair line becomes visible.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartCrosshairSettings.LineType">
+            <summary>
+            Specifies the line type. Horizontal mode enables the horizontal line and Vertical mode enables the vertical line. They are,
+            None: Hides both vertical and horizontal crosshair lines.
+            Both: Shows both vertical and horizontal crosshair lines.
+            Vertical: Shows the vertical line.
+            Horizontal: Shows the horizontal line.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartCrosshairSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTooltipBorder">
+            <summary>
+            To specify customization options for stockchart tooltip border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipBorder.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTooltipBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTooltipSettings">
+            <summary>
+            To specify customization options for stockchart tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Duration">
+            <summary>
+            Duration for the ToolTip animation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Enable">
+            <summary>
+            Enables / Disables the visibility of the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.EnableAnimation">
+            <summary>
+            If set to true, ToolTip will animate while moving from one point to another.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.EnableMarker">
+            <summary>
+            Enables / Disables the visibility of the marker.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.EnableTextWrap">
+            <summary>
+            To wrap the tooltip long text based on available space.
+            This is only application for chart tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.FadeOutDuration">
+            <summary>
+            Fade Out duration for the ToolTip hide.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Fill">
+            <summary>
+            The fill color of the tooltip that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Format">
+            <summary>
+            Format the ToolTip content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Header">
+            <summary>
+            Header for tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Opacity">
+            <summary>
+            The fill color of the tooltip that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Shared">
+            <summary>
+            If set to true, a single ToolTip will be displayed for every index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipSettings.Template">
+            <summary>
+            Custom template to format the ToolTip content. Use ${x} and ${y} as the placeholder text to display the corresponding data point.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTooltipSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTooltipSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartTooltipTextStyle">
+            <summary>
+            To specify customization options for stockchart tooltip text style.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartTooltipTextStyle.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartTooltipTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartZoomSettings">
+            <summary>
+            To specify customization options for stockchart zooming.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.ChildContent">
+            <summary>
+            Gets and sets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.EnableDeferredZooming">
+            <summary>
+            If set to true, zooming will be performed on mouse up. It requires `EnableSelectionZooming` to be true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.EnableMouseWheelZooming">
+            <summary>
+            If set to true, chart can be zoomed by using mouse wheel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.EnablePan">
+            <summary>
+            Specifies whether chart needs to be panned by default.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.EnablePinchZooming">
+            <summary>
+            If to true, chart can be pinched to zoom in / zoom out.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.EnableScrollbar">
+            <summary>
+            Specifies whether axis needs to have scrollbar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.EnableSelectionZooming">
+            <summary>
+            If set to true, chart can be zoomed by a rectangular selecting region on the plot area.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.Mode">
+            <summary>
+            Specifies whether to allow zooming vertically or horizontally or in both ways. They are,
+            x,y: Chart can be zoomed both vertically and horizontally.
+            x: Chart can be zoomed horizontally.
+            y: Chart can be zoomed  vertically.
+            It requires `EnableSelectionZooming` to be true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomSettings.ToolbarItems">
+            <summary>
+            Specifies the toolkit options for the zooming as follows:
+            Zoom
+            ZoomIn
+            ZoomOut
+            Pan
+            Reset.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.StockChartZoomSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs">
+            <summary>
+            Event argument class for stockchart Range Change Event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs.Data">
+            <summary>
+            Defines the data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs.End">
+            <summary>
+            Defines the end value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs.SelectedData">
+            <summary>
+            Defines the selected data.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs.Start">
+            <summary>
+            Defines the start value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs.ZoomFactor">
+            <summary>
+            Defined the zoom factor of the stock chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartRangeChangeEventArgs.ZoomPosition">
+            <summary>
+            Defined the zoom position of the stock chart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartEventArgs">
+            <summary>
+            Event argument class for stockchart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartMouseEventArgs">
+            <summary>
+            Event argument class for stockchart Mouse Events.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMouseEventArgs.Target">
+            <summary>
+            Defines current mouse event target id.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMouseEventArgs.X">
+            <summary>
+            Defines current mouse x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartMouseEventArgs.Y">
+            <summary>
+            Defines current mouse y location.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPointEventArgs">
+            <summary>
+            Event argument class for stockchart Point Event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.PageX">
+            <summary>
+            Defines current window page x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.PageY">
+            <summary>
+            Defines current window page y location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.Point">
+            <summary>
+            Defines the current point.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.PointIndex">
+            <summary>
+            Defines the point index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.SeriesIndex">
+            <summary>
+            Defines the series index.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.X">
+            <summary>
+            Defines current mouse x location.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPointEventArgs.Y">
+            <summary>
+            Defines current mouse y location.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartZoomingEventArgs">
+            <summary>
+            Event argument class for stockchart Zooming Event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartZoomingEventArgs.AxisCollection">
+            <summary>
+            Defines the axis collection.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisData">
+            <summary>
+            Event argument class for stockchart zooming axis details.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisData.AxisName">
+            <summary>
+            Defines the axis name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisData.AxisRange">
+            <summary>
+             Defines the axis range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisData.ZoomFactor">
+            <summary>
+             Defines the axis zoom factor.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisData.ZoomPosition">
+            <summary>
+             Defines the axis zoom position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartPeriodChangedEventArgs">
+            <summary>
+            Event argument class for stockchart Period Changed Event.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartPeriodChangedEventArgs.Periods">
+            <summary>
+            Defines the periods.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.StockChartAxisLabelRenderEventArgs">
+            <summary>
+            Specifies the event arguments available for on axis label render events in the stockchart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisLabelRenderEventArgs.Axis">
+            <summary>
+            Defines the current axis.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisLabelRenderEventArgs.Text">
+            <summary>
+            Defines axis current label text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisLabelRenderEventArgs.Value">
+            <summary>
+            Defines axis current label value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.StockChartAxisLabelRenderEventArgs.LabelStyle">
+            <summary>
+            Defines axis current label font style.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.Internal.StockChartDropDown">
+            <summary>
+            Internal Customized dropdown component for stockchart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Internal.StockChartDropDown.Content">
+            <summary>
+            Specifies the content.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Internal.StockChartDropDown.Items">
+            <summary>
+            Specifies dropdowm items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Internal.StockChartDropDown.ItemSelected">
+            <summary>
+            Specifies the item selected event for drop down.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.Internal.StockChartDropDown.Theme">
+            <summary>
+            Specifies the theme for stock-chart.
+            </summary>
+        </member>
+    </members>
+</doc>

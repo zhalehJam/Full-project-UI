@@ -1,0 +1,1657 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Blazor.BulletChart</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartAnimation">
+            <summary>
+            Sets and gets the animation options of bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartAnimation.Delay">
+            <summary>
+            Sets and gets the option to delay animation of the series.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartAnimation.Duration">
+            <summary>
+            Sets and gets the duration of animation in milliseconds.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartAnimation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartBorder">
+            <summary>
+            Sets and gets the options for customizing the color and width of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartCategoryLabelStyle">
+            <summary>
+            Sets and gets the options for customizing the category label style of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartCategoryLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartCategoryLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartCommonBorder">
+            <summary>
+            Sets and gets the options for customizing the color and width of the buller chart component border.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonBorder.Color">
+            <summary>
+            Sets and gets the color of the border. This property accepts the value in hex code and rgba string as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonBorder.Width">
+            <summary>
+            Sets and gets the width of the border in the bullet chart component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartCommonFont">
+            <summary>
+            BulletChartCommonFont Class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.Color">
+            <summary>
+            Sets and gets the color of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.FontFamily">
+            <summary>
+            Sets and gets the font family of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.FontStyle">
+            <summary>
+            Sets and gets the font style of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.FontWeight">
+            <summary>
+            Sets and gets the font weight of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.MaximumTitleWidth">
+            <summary>
+            Sets and gets the maximum label width of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.Opacity">
+            <summary>
+            Sets and gets the opacity of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.Size">
+            <summary>
+            Sets and gets the font size of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.TextAlignment">
+            <summary>
+            Sets and gets the text alignment of the text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.TextOverflow">
+            <summary>
+            Sets and gets the chart text overflow option.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartCommonFont.EnableRangeColor">
+            <summary>
+            Sets and gets the range color of the text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartDataLabel">
+            <summary>
+            Sets and gets the data label of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartDataLabel.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartDataLabel.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartDataLabelStyle">
+            <summary>
+            Sets and gets the options for customizing the data label style of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartDataLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartDataLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartEvents">
+            <summary>
+            Specifies the events to be triggered in the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartEvents.OnPrintComplete">
+            <summary>
+            Triggers before the prints gets started.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartEvents.Loaded">
+            <summary>
+            Triggers after the bulletchart component is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartEvents.TooltipRender">
+            <summary>
+            Triggers before the bulletchart tooltip is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartEvents.LegendRender">
+            <summary>
+            Triggers before the bulletchart legend is rendered.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartEvents.OnLabelRender">
+            <summary>
+            Triggers before the bulletchart label render.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartEvents.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLabelStyle">
+            <summary>
+            Sets and gets the options for customizing the label style of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLabelStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLabelStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLegendBorder">
+            <summary>
+            Sets and gets the option foe customizing the legend border of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendBorder.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLegendLocation">
+            <summary>
+            Sets and gets the custom position of the legend location using x and y values for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendLocation.X">
+            <summary>
+            Sets and gets the X coordinate of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendLocation.Y">
+            <summary>
+            Sets and gets the Y coordinate of the legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendLocation.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendLocation.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLegendMargin">
+            <summary>
+            Sets and gets the options for customizing the bottom, left, right, top margin of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendMargin.Bottom">
+            <summary>
+            Sets and gets the bottom margin for the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendMargin.Left">
+            <summary>
+            Sets and gets the left margin for the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendMargin.Right">
+            <summary>
+            Sets and gets the right margin for the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendMargin.Top">
+            <summary>
+            Sets and gets the top margin for the legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendMargin.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLegendSettings">
+            <summary>
+            Sets and gets the options for customizing the legend of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Alignment">
+            <summary>
+            Sets and gets the legend in bullet chart can be aligned as follows:
+            Near: Aligns the legend to the left of the bullet chart.
+            Center: Aligns the legend to the center of the bullet chart.
+            Far: Aligns the legend to the right of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Background">
+            <summary>
+            Sets and gets the background color of the bullet chart legend that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Opacity">
+            <summary>
+            Sets and gets the opacity of the bullet chart legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Padding">
+            <summary>
+            Sets and gets option to customize the padding between legend items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Position">
+            <summary>
+            Position of the legend in the bullet chart are,
+            Auto: Places the legend based on area type.
+            Top: Displays the legend at the top of the bullet chart.
+            Left: Displays the legend at the left of the bullet chart.
+            Bottom: Displays the legend at the bottom of the bullet chart.
+            Right: Displays the legend at the right of the bullet chart.
+            Custom: Displays the legend  based on the given x and y values.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.ShapeHeight">
+            <summary>
+            Sets and gets the shape height of the bullet chart legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.ShapePadding">
+            <summary>
+            Sets and gets the padding between the bullet chart legend shape and text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.ShapeWidth">
+            <summary>
+            Sets and gets the shape width of the bullet chart legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.TabIndex">
+            <summary>
+            Sets and gets the tabIndex value for the bullet chart legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Visible">
+            <summary>
+            Sets and gets the visible of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Width">
+            <summary>
+            Sets and gets the width of the legend.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendSettings.Height">
+            <summary>
+            Sets and gets the height of the legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendSettings.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendSettings.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLegendTextStyle">
+            <summary>
+            Sets and gets the options for customizing the text style of the legend.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartLegendTextStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartMajorTickLines">
+            <summary>
+             Sets and gets the options for customizing the major tick lines of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMajorTickLines.Color">
+            <summary>
+            Sets and gets the color of the major tick line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMajorTickLines.Height">
+            <summary>
+            Sets and gets the height of the ticks in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMajorTickLines.Width">
+            <summary>
+            Sets and gets the width of the tick lines in pixels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMajorTickLines.EnableRangeColor">
+            <summary>
+            Sets and gets the range color of the text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartMajorTickLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartMajorTickLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartMargin">
+            <summary>
+            Sets and gets the options for customizing the bottom, left, right, top margin of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMargin.Bottom">
+            <summary>
+            Sets and gets the bottom margin for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMargin.Left">
+            <summary>
+            Sets and gets the left margin for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMargin.Right">
+            <summary>
+            Sets and gets the right margin for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMargin.Top">
+            <summary>
+            Sets and gets the top margin for the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartMargin.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartMargin.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartMinorTickLines">
+            <summary>
+            Sets and gets the options for customizing the minor tick lines of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMinorTickLines.Color">
+            <summary>
+            The color of the major tick line that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMinorTickLines.Height">
+            <summary>
+            Sets and gets the height of the ticks lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMinorTickLines.Width">
+            <summary>
+            Sets and gets the width of the tick lines.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartMinorTickLines.EnableRangeColor">
+            <summary>
+            Sets and gets the range color of the text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartMinorTickLines.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartMinorTickLines.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartRange">
+            <summary>
+            Sets and gets for customizing the range color properties of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartRange.Color">
+            <summary>
+            Sets and gets the color of the range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartRange.End">
+            <summary>
+            Sets and gets the end value of the range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartRange.Opacity">
+            <summary>
+            Sets and gets the opacity of the range for the color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartRange.Name">
+            <summary>
+            Sets and gets the name of the range.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartRange.Shape">
+            <summary>
+            Sets and gets the shape of the legend. Each ranges has its own legend shape. They are,
+            Circle
+            Rectangle
+            Triangle
+            Diamond
+            Cross
+            HorizontalLine
+            VerticalLine
+            Pentagon
+            InvertedTriangle.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartRange.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartRange.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartRangeCollection">
+            <summary>
+            Set and gets the color mapping range collection of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartRangeCollection.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartRangeCollection.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartSubTitleStyle">
+            <summary>
+            Sets and gets the options for customizing the subtitle style of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartSubTitleStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartSubTitleStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartTitleStyle">
+            <summary>
+            Sets and gets the options for customizing the title style of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartTitleStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartTitleStyle.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartTooltip`1">
+            <summary>
+            Sets and gets the options for customizing the tooltip of the bullet chart component.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of the bullet chart control.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltip`1.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltip`1.Enable">
+            <summary>
+            Enables / Disables the visibility of the tooltip.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltip`1.Fill">
+            <summary>
+            Sets and gets the fill color of the tooltip that accepts value in hex and rgba as a valid CSS color string.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltip`1.Template">
+            <summary>
+            Sets and gets value of the tooltip template.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartTooltip`1.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies to update the dependent class value.
+            </summary>
+            <param name="key">Represents the class name.</param>
+            <param name="keyValue">Represents the value of class.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartTooltip`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartTooltipBorder">
+            <summary>
+            Sets and gets the options for customizing the tooltip border color and width of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartTooltipBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartTooltipTextStyle">
+            <summary>
+            Sets and gets the options for customizing the text style in tooltip of the bullet chart component.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartTooltipTextStyle.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartValueBorder">
+            <summary>
+            Sets and gets the options for customizing the customizing the color and width of the value bar border.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartValueBorder.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChartValueBorder.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.IBulletChart">
+            <summary>
+            The interface specifies the properties of the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.CategoryField">
+            <summary>
+            It defines the category for the data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.EnableGroupSeparator">
+            <summary>
+            Specifies the EnableGroupSeparator for the Bullet Chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.EnableRtl">
+            <summary>
+            To enable right to left.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Height">
+            <summary>
+            Specifies the height for the Bullet Chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Interval">
+            <summary>
+            Specifies the interval for an scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.LabelFormat">
+            <summary>
+            Specifies the format of the bullet chart axis labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.LabelPosition">
+            <summary>
+            Specifies the axis label position of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Maximum">
+            <summary>
+            Specifies the maximum range of an scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Minimum">
+            <summary>
+            Specifies the manimum range of an scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.MinorTicksPerInterval">
+            <summary>
+            Specifies the interval of minor ticks.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.OpposedPosition">
+            <summary>
+            If set to true, the axis will render at the opposite side of its default position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Orientation">
+            <summary>
+            Orientation of the scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Subtitle">
+            <summary>
+            Specifies the sub title of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TabIndex">
+            <summary>
+            TabIndex value for the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TargetColor">
+            <summary>
+            Default stroke of comparative measure.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TargetField">
+            <summary>
+            The DataSource field that contains the target value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TargetWidth">
+            <summary>
+            Options for customizing comparative bar color bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Theme">
+            <summary>
+            Specifies the theme for the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TickPosition">
+            <summary>
+            Specifies the tick position of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Title">
+            <summary>
+            Specifies the title of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TitlePosition">
+            <summary>
+            Sets the title position of bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Type">
+            <summary>
+            Default type on feature measure.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ValueField">
+            <summary>
+            The DataSource field that contains the value value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ValueFill">
+            <summary>
+            Default stroke color of feature measure.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ValueHeight">
+            <summary>
+            Options for customizing feature bar height of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Width">
+            <summary>
+            Specifies the width for the Bullet Chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Format">
+            <summary>
+            Sets and gets format for the bullet chart axis and data label format.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ID">
+            <summary>
+            Set the id string for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TargetTypes">
+            <summary>
+            The DataSource field that contains the target value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Ranges">
+            <summary>
+            Specifies color mapping ranges of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.TitleStyle">
+            <summary>
+            Specifies title style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ValueBorder">
+            <summary>
+            Specifies border of the component value bar.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.SubtitleStyle">
+            <summary>
+            Specifies sub-title style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Animation">
+            <summary>
+            Specifies animation of the component value and target bar.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Border">
+            <summary>
+            Specifies border of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.CategoryLabelStyle">
+            <summary>
+            Specifies category label style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.DataLabel">
+            <summary>
+            Specifies data label style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.LabelStyle">
+            <summary>
+            Specifies label style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.LegendSettings">
+            <summary>
+            Specifies legend settings of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.MajorTickLines">
+            <summary>
+            Specifies major tick lines of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.MinorTickLines">
+            <summary>
+            Specifies minor tick lines of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Margin">
+            <summary>
+            Specifies margin of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Helper">
+            <summary>
+            Specifies helper methods of the component rendering.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Render">
+            <summary>
+            Specifies rendering of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ChartLegend">
+            <summary>
+            Specifies legend rendering of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.AvailableSize">
+            <summary>
+            Specifies size of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Style">
+            <summary>
+            Specifies style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.ScaleRender">
+            <summary>
+            Specifies scale rendering of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.IBulletChart.Events">
+            <summary>
+            Specifies events of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.IBulletChart.OnPropertyChanged(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Specifies property binding manipulations.
+            </summary>
+            <param name="propertyChanges">Represents the properties.</param>
+            <param name="parent">Represents the class belongs too.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.IBulletChart.IsRtlEnabled">
+            <summary>
+            Specifies the rendering direction of the component.
+            </summary>
+            <returns>Returns bool value.</returns>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.IBulletChartTooltip">
+            <summary>
+            The interface specifies the properties of the bullet chart tooltip.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.IBulletChartTooltip.UpdateChildProperties(System.String,System.Object)">
+            <summary>
+            Specifies to update the dependent class value.
+            </summary>
+            <param name="key">Represents the class name.</param>
+            <param name="keyValue">Represents the value of class.</param>
+            <exclude />
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.SfBulletChart`1">
+            <summary>
+            Bullet Chart control is used to display the one or more measures and compares them to a target value with built-in features like orientation, qualitative ranges, multiple measures, labels, tooltip and animation.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of the bullet chart control.</typeparam>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Helper">
+            <summary>
+            Specifies helper methods of the component rendering.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Render">
+            <summary>
+            Specifies rendering of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.AvailableSize">
+            <summary>
+            Specifies size of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Style">
+            <summary>
+            Specifies style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ScaleRender">
+            <summary>
+            Specifies scale rendering of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+            <param name="firstRender">Specifies the first render of the component.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.TriggerClick(System.String)">
+            <summary>
+            JS interopt while click the component.
+            </summary>
+            <param name="elementId">Represents the identification of the element.</param>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.TriggerMouseMove(System.String,System.Double,System.Double)">
+            <summary>
+            JS interopt while mouse move.
+            </summary>
+            <param name="elementId">Represents the identification of the element.</param>
+            <param name="mouseX">Represents the X axis of mouse.</param>
+            <param name="mouseY">Represents the Y axis of mouse.</param>
+            <exclude />
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.TriggerResize">
+            <summary>
+            JS interopt while resize the window.
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.IsRtlEnabled">
+            <summary>
+            Specifies the rendering direction of the component.
+            </summary>
+            <returns>Returns bool value.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.OnPropertyChanged(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Specifies property binding manipulations.
+            </summary>
+            <param name="propertyChanges">Represents the properties.</param>
+            <param name="parent">Represents the class belongs too.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.Export(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation})">
+            <summary>
+            The method is used to perform the export functionality for the rendered bullet chart.
+            </summary>
+            <param name="type">Specifies the export type for the rendered bullet chart.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <returns>Returns base64 string.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.ExportAsync(Syncfusion.Blazor.Charts.ExportType,System.String,System.Nullable{Syncfusion.PdfExport.PdfPageOrientation})">
+            <summary>
+            The method is used to perform the export functionality for the rendered bullet chart.
+            </summary>
+            <param name="type">Specifies the export type for the rendered bullet chart.</param>
+            <param name="fileName">Specifies the filename.</param>
+            <param name="orientation">Specifies the portrait or landscape orientation of the page.</param>
+            <returns>Returns base64 string.</returns>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.Print">
+            <summary>
+            The method is used to perform the print functionality in bullet chart.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <exclude />
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.PrintAsync(Microsoft.AspNetCore.Components.ElementReference)">
+            <summary>
+            The method is used to perform the print functionality in bullet chart.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Animation">
+            <summary>
+            Specifies animation of the component value and target bar.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Border">
+            <summary>
+            Specifies border of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Events">
+            <summary>
+            Specifies events of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ChartLegend">
+            <summary>
+            Specifies legend rendering of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.CategoryLabelStyle">
+            <summary>
+            Specifies category label style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.DataLabel">
+            <summary>
+            Specifies data label style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.LabelStyle">
+            <summary>
+            Specifies label style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.LegendSettings">
+            <summary>
+            Specifies legend settings of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.MajorTickLines">
+            <summary>
+            Specifies major tick lines of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Margin">
+            <summary>
+            Specifies margin of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.MinorTickLines">
+            <summary>
+            Specifies minor tick lines of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.SubtitleStyle">
+            <summary>
+            Specifies sub-title style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TitleStyle">
+            <summary>
+            Specifies title style of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ValueBorder">
+            <summary>
+            Specifies border of the component value bar.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Ranges">
+            <summary>
+            Specifies color mapping ranges of the component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ChartToolTip">
+            <summary>
+            Specifies the rendering information of tooltip.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Tooltip">
+            <summary>
+            Specifies the settings of tooltip.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TargetTypes">
+            <summary>
+            The DataSource field that contains the target value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Format">
+            <summary>
+            Sets and gets format for the bullet chart axis and data label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ID">
+            <summary>
+            Set the id string for the bullet chart component.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ChildContent">
+            <summary>
+            Sets and gets the content of the UI element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.CategoryField">
+            <summary>
+            It defines the category for the data source.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.DataSource">
+            <summary>
+            default value of multiple data bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.EnableGroupSeparator">
+            <summary>
+            default value for enableGroupSeparator.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.EnableRtl">
+            <summary>
+            Enable or disable rendering component in right to left direction.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Height">
+            <summary>
+            The height of the bullet chart as a string accepts input both as '100px' or '100%'.
+            If specified as '100%, bullet chart renders to the full height of its parent element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Interval">
+            <summary>
+            Specifies the interval for an scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.LabelFormat">
+            <summary>
+            Specifies the format of the bullet chart axis labels.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.LabelPosition">
+            <summary>
+            specifies the axis label position of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Maximum">
+            <summary>
+            Specifies the maximum range of an scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Minimum">
+            <summary>
+            Specifies the minimum range of an scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.MinorTicksPerInterval">
+            <summary>
+            specifies the interval of minor ticks.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.OpposedPosition">
+            <summary>
+            If set to true, the axis will render at the opposite side of its default position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Orientation">
+            <summary>
+            Orientation of the scale.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Subtitle">
+            <summary>
+            Specifies the sub title of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TabIndex">
+            <summary>
+            TabIndex value for the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TargetColor">
+            <summary>
+            Default stroke of comparative measure.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TargetField">
+            <summary>
+            The DataSource field that contains the target value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TargetWidth">
+            <summary>
+            Options for customizing comparative bar color bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Theme">
+            <summary>
+            Specifies the theme for the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TickPosition">
+            <summary>
+            specifies the tick position of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Title">
+            <summary>
+            Specifies the title of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.TitlePosition">
+            <summary>
+            Sets the title position of bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Type">
+            <summary>
+            Default type on feature measure.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ValueField">
+            <summary>
+            The DataSource field that contains the value value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ValueFill">
+            <summary>
+            Default stroke color of feature measure.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.ValueHeight">
+            <summary>
+            Options for customizing feature bar height of the bullet chart.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.SfBulletChart`1.Width">
+            <summary>
+            The width of the bullet chart as a string accepts input as both like '100px' or '100%'.
+            If specified as '100%, bullet chart renders to the full width of its parent element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.SfBulletChart`1.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in the render tree and the incoming values have been assigned to properties.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartHelper">
+            <summary>
+            Specifies helper methods of the component rendering.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartLegend">
+            <summary>
+            Specifies legend rendering of the bullet chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartLegend.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartRender">
+            <summary>
+            Specifies rendering of the bullet chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartRender.#ctor(Syncfusion.Blazor.Charts.IBulletChart,Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartRender"/> class.
+            </summary>
+            <param name="parent">Represents the <seealso cref="T:Syncfusion.Blazor.Charts.IBulletChart"/> class.</param>
+            <param name="chartHelper">Represents the <seealso cref="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartHelper"/> class.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartScaleRender">
+            <summary>
+            Specifies scale rendering of the bullet chart.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartScaleRender.#ctor(Syncfusion.Blazor.Charts.IBulletChart,Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartRender)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartScaleRender"/> class.
+            </summary>
+            <param name="chart">Represents the <seealso cref="T:Syncfusion.Blazor.Charts.IBulletChart"/> class.</param>
+            <param name="render">Represents the <seealso cref="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartRender"/> class.</param>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartTooltipRender`1">
+            <summary>
+            Specifies tooltip rendering of the bullet chart.
+            </summary>
+            <typeparam name="TValue">Represents the generic data type of the bullet chart tooltip.</typeparam>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChart.Internal.BulletChartTooltipRender`1.OnInitializedAsync">
+            <summary>
+            Method invoked when the component is ready to start.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.SizeInfo">
+            <summary>
+            Represents the height and width of the DOM element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChart.Internal.SizeInfo.Height">
+            <summary>
+            Sets or gets the height of the element.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChart.Internal.SizeInfo.Width">
+            <summary>
+            Sets or gets the width of the element.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.Rect">
+            <summary>
+            Represents the X and Y position of element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Blazor.Charts.BulletChart.Internal.Rect.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.Blazor.Charts.BulletChart.Internal.Rect"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChart.Internal.Rect.X">
+            <summary>
+            Sets or gets the X position.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChart.Internal.Rect.Y">
+            <summary>
+            Sets or gets the Y position.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChart.Internal.Style">
+            <summary>
+            Represents the style of the component.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.TargetType">
+            <summary>
+            Defines the rext anchor of bullet chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TargetType.Rect">
+            <summary>
+            Specifies target type is rect.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TargetType.Circle">
+            <summary>
+            Specifies target type is circle.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TargetType.Cross">
+            <summary>
+            Specifies target type is cross.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.LabelsPlacement">
+            <summary>
+            Defines the label placement of bullet chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.LabelsPlacement.Outside">
+            <summary>
+            Specifies the label placed outside of the chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.LabelsPlacement.Inside">
+            <summary>
+            Specifies the label placed inside the chart.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.OrientationType">
+            <summary>
+            Defines the orientation of the bullet chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.OrientationType.Horizontal">
+            <summary>
+            Specifies the render bullet chart in horizontal orientation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.OrientationType.Vertical">
+            <summary>
+             Specifies the render bullet chart in vertical orientation.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.TickPosition">
+            <summary>
+            Defines the tick placement of bullet chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TickPosition.Outside">
+            <summary>
+            outside - ticks placed outside of bullet chart
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TickPosition.Inside">
+            <summary>
+            inside - ticks placed inside the bullet chart
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.TextPosition">
+            <summary>
+            Defines the text anchor of bullet chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TextPosition.Left">
+            <summary>
+            Specifies the bullet chart title placed in left.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TextPosition.Right">
+            <summary>
+            Specifies the bullet chart title placed in right.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TextPosition.Top">
+            <summary>
+            Specifies the bullet chart title placed in top.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.TextPosition.Bottom">
+            <summary>
+            Specifies the bullet chart title placed in bottom.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.FeatureType">
+            <summary>
+            Defines the flow direction of the bullet chart.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.FeatureType.Rect">
+            <summary>
+            Specifies the rectangle feature type.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Charts.FeatureType.Dot">
+            <summary>
+            Specifies the dot feature type.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartBaseEventArgs">
+            <summary>
+            Specifies the event arguments which has common for bullet chart component.
+            </summary>
+            <exclude />
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartBaseEventArgs.Cancel">
+            <summary>
+            Specifies the cancel state for the event. The default value is false.
+            If set as true, the event progress will be stopped.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLabelRenderEventArgs">
+            <summary>
+            Defines the label render event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLabelRenderEventArgs.Text">
+            <summary>
+            Specifies the text of label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLabelRenderEventArgs.X">
+            <summary>
+            Specifies the X position of label.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLabelRenderEventArgs.Y">
+            <summary>
+            Specifies the Y position of label.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartLegendRenderEventArgs">
+            <summary>
+            Defines the legend render event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendRenderEventArgs.Fill">
+            <summary>
+            Specifies the current legend fill color.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendRenderEventArgs.Shape">
+            <summary>
+            Specifies the current legend shape.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartLegendRenderEventArgs.Text">
+            <summary>
+            Specifies the current legend text.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Blazor.Charts.BulletChartTooltipEventArgs">
+            <summary>
+            Defines the tooltip render event arguments.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltipEventArgs.Target">
+            <summary>
+            Specifies the target value of the comparative bar.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltipEventArgs.Text">
+            <summary>
+            Specifies the tooltip text.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Charts.BulletChartTooltipEventArgs.Value">
+            <summary>
+            Specifies the actual value of the feature bar.
+            </summary>
+        </member>
+    </members>
+</doc>

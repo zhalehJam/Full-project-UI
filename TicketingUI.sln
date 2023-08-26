@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Client.Contracts"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing_Client", "Ticketing_Client\Ticketing_Client.csproj", "{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0ABD933E-207C-459A-A837-AC937097BE2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C200C93-A0C3-446F-8F4B-B3A678E7A8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABD933E-207C-459A-A837-AC937097BE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABD933E-207C-459A-A837-AC937097BE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABD933E-207C-459A-A837-AC937097BE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABD933E-207C-459A-A837-AC937097BE2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
