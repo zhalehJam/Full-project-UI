@@ -369,7 +369,7 @@
 </style>
 
 
-<div class="col-lg-12 control-section content-wrapper" style="max-width: 100%">
+<div class="col-lg-12 control-section content-wrapper" style="" >
     <div class="row col-lg-12" style="direction:ltr;">
         <div class="col-lg-3 col-md-3 col-sm-3" style="display:inline-block;padding-left: 1px;padding-right: 7px; padding-bottom:3px;">
             <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ" @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
@@ -377,8 +377,10 @@
             </SfDateRangePicker>
         </div>
     </div>
+    <div class="row  col-lg-12">
     <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="true" AllowDragging="true">
-        <DashboardLayoutPanels>
+        
+        <DashboardLayoutPanels >
 
             <DashboardLayoutPanel Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
                 <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
@@ -524,6 +526,7 @@
 
         </DashboardLayoutPanels>
     </SfDashboardLayout>
+    </div>
 </div>
 
 @code {
@@ -543,6 +546,12 @@
     public MetaData metaData { get; set; } = new MetaData();
     public DateTime FromDate { get; set; } = DateTime.Now.AddMonths(-1).Date;
     public DateTime ToDate { get; set; } = DateTime.Now.Date.AddDays(1);
+
+    private async Task ChangeDiv( EventArgs args)
+    {
+        
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
