@@ -41,7 +41,7 @@ namespace Ticketing.Models.Tickets.Dto
         public string TicketTypeName { get; set; }
 
         [Required(ErrorMessage = "شرح خطا الزامی است")] 
-        public string? ErrorDescription { get; set; } = "";
+        public string? ErrorDiscription { get; set; } = "";
          
         public string? SolutionDescription { get; set; } = "";
 

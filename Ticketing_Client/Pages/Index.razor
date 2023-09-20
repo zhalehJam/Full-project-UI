@@ -17,12 +17,7 @@
 @inject ITicketRepository ticketRepository
 <style>
 
-    .e-dashboardlayout.e-control .e-panel {
-        background: #652b9d00;
-        box-shadow: 0 2px 4px rgb(58 6 71);
-        box-sizing: border-box;
-        position: absolute;
-    }
+
     .e-input-group:not(.e-success):not(.e-warning):not(.e-error), .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
         border-color: #e1e1e1;
         direction: ltr;
@@ -34,7 +29,6 @@
         border-right: 0px solid #ced4da;
         border: 1px solid #ced4da;
     }
-
 
     .e-card .e-card-header .e-card-header-image {
         background-repeat: no-repeat;
@@ -108,26 +102,34 @@
         padding: 6px 0 13px 0;
     }
 
-    .e-dashboardlayout.e-control .e-panel.e-panel-transition {
-        transition: top .5s,left .5s;
-        /*height: fit-content !important;*/
+    .e-dashboardlayout.e-control .e-panel {
+        background: #652b9d00;
+        box-shadow: 0 2px 4px rgb(58 6 71);
+        box-sizing: border-box;
         position: absolute;
     }
-    .e-dashboardlayout.e-control .e-panel .e-panel-header {
-        font-size: 15px;
-        font-weight: 500;
-        height: 60px;
-        padding: 5px;
-        vertical-align: top;
-        border-bottom: 0.5px solid #e3e3e3;
-    }
 
-    .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        line-height: 10px !important;
-        height: 40px;
-        color: #212529;
-        background:  #3f48b99e;
-    }
+        .e-dashboardlayout.e-control .e-panel.e-panel-transition {
+            transition: top .5s,left .5s;
+            /*height: fit-content !important;*/
+            position: absolute;
+        }
+
+        .e-dashboardlayout.e-control .e-panel .e-panel-header {
+            font-size: 15px;
+            font-weight: 500;
+            height: 60px;
+            padding: 5px;
+            vertical-align: top;
+            border-bottom: 0.5px solid #e3e3e3;
+        }
+
+        .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
+            line-height: 10px !important;
+            height: 40px;
+            color: #212529;
+            background: #3f48b99e;
+        }
 
 
     .row {
@@ -170,8 +172,6 @@
     .e-dashboardlayout {
         padding: 10px;
     }
-
-
 
     .fluent .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
     .fluent-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
@@ -316,10 +316,6 @@
         font-size: 13px;
     }
 
-    .mobile .e-control.e-lib.e-dashboardlayout.e-responsive {
-        z-index: 0;
-        overflow: scroll;
-    }
 
     .mobile .item-container {
         padding: 40px;
@@ -369,6 +365,8 @@
 </style>
 
 
+<div class="col-lg-12 control-section content-wrapper" style="">
+
 <div class="col-lg-12 control-section content-wrapper" style="max-width: 100%">
     <div class="row col-lg-12" style="direction:ltr;">
         <div class="col-lg-3 col-md-3 col-sm-3" style="display:inline-block;padding-left: 1px;padding-right: 7px; padding-bottom:3px;">
@@ -380,147 +378,147 @@
     <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="true" AllowDragging="true">
         <DashboardLayoutPanels>
 
-            <DashboardLayoutPanel Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
-                <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
-                <ContentTemplate>
-                    <div dir="rtl">
-                        <SfChart @ref="sfChart" Height="100%" Width="100%">
-                            <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
-                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime"
-                                               Interval="1"
-                                               IntervalType="IntervalType.Days"
-                                               EdgeLabelPlacement="EdgeLabelPlacement.Shift"
-                                               LabelRotation=-45>
-                                <ChartAxisLabelStyle>
-                                </ChartAxisLabelStyle>
-                                <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
-                                <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
-                                <ChartAxisLabelStyle TextAlignment="Alignment.Near"></ChartAxisLabelStyle>
-                                @*<ChartAxisMajorTickLines Height="0" ></ChartAxisMajorTickLines>*@
-                            </ChartPrimaryXAxis>
-                            <ChartPrimaryYAxis Title="Count" Interval="1">
-                                <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
-                                <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
-                            </ChartPrimaryYAxis>
-                            <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
-                            <ChartSeriesCollection>
+                <DashboardLayoutPanel Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
+                    <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
+                    <ContentTemplate>
+                        <div dir="rtl">
+                            <SfChart @ref="sfChart" Height="100%" Width="100%">
+                                <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+                                <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime"
+                                                   Interval="1"
+                                                   IntervalType="IntervalType.Days"
+                                                   EdgeLabelPlacement="EdgeLabelPlacement.Shift"
+                                                   LabelRotation=-45>
+                                    <ChartAxisLabelStyle>
+                                    </ChartAxisLabelStyle>
+                                    <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                                    <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
+                                    <ChartAxisLabelStyle TextAlignment="Alignment.Near"></ChartAxisLabelStyle>
+                                    @*<ChartAxisMajorTickLines Height="0" ></ChartAxisMajorTickLines>*@
+                                </ChartPrimaryXAxis>
+                                <ChartPrimaryYAxis Title="Count" Interval="1">
+                                    <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+                                    <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
+                                </ChartPrimaryYAxis>
+                                <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                                <ChartSeriesCollection>
 
-                                <ChartSeries DataSource="@finishedTickets"
-                                             Name="تیکتهای تمام شده"
-                                             XName="Item1"
-                                             Width="2"
-                                             Opacity="0.5"
-                                             YName="Item2"
-                                             Type="ChartSeriesType.StackingColumn"
-                                             ColumnWidth="0.2"
-                                             Fill="#FEC200">
-                                </ChartSeries>
-                            </ChartSeriesCollection>
-                            <ChartSeriesCollection>
-                                <ChartSeries DataSource="@ongoingTickets"
-                                             Name="تیکتهای  در حال انجام"
-                                             XName="Item1"
-                                             Width="1"
-                                             Opacity="0.5"
-                                             YName="Item2"
-                                             ColumnWidth="0.2"
-                                             Type="ChartSeriesType.StackingColumn"
-                                             Fill="#00BCD7">
-                                </ChartSeries>
+                                    <ChartSeries DataSource="@finishedTickets"
+                                                 Name="تیکتهای تمام شده"
+                                                 XName="Item1"
+                                                 Width="2"
+                                                 Opacity="0.5"
+                                                 YName="Item2"
+                                                 Type="ChartSeriesType.StackingColumn"
+                                                 ColumnWidth="0.2"
+                                                 Fill="#FEC200">
+                                    </ChartSeries>
+                                </ChartSeriesCollection>
+                                <ChartSeriesCollection>
+                                    <ChartSeries DataSource="@ongoingTickets"
+                                                 Name="تیکتهای  در حال انجام"
+                                                 XName="Item1"
+                                                 Width="1"
+                                                 Opacity="0.5"
+                                                 YName="Item2"
+                                                 ColumnWidth="0.2"
+                                                 Type="ChartSeriesType.StackingColumn"
+                                                 Fill="#00BCD7">
+                                    </ChartSeries>
 
-                            </ChartSeriesCollection>
-                        </SfChart>
-                    </div>
-                </ContentTemplate>
-            </DashboardLayoutPanel>
+                                </ChartSeriesCollection>
+                            </SfChart>
+                        </div>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
 
-            <DashboardLayoutPanel Id="4" Row="0" Column="0" SizeX="3" SizeY="3">
-                <HeaderTemplate><div class="e-header-text">آمار تیکت برنامه ها</div></HeaderTemplate>
-                <ContentTemplate>
-                    <SfAccumulationChart @ref="@sfAccumulationChart1">
-                        <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
-                        <AccumulationChartSeriesCollection>
-                            <AccumulationChartSeries DataSource="@programsTickets" XName="Item1" YName="Item2" InnerRadius="40%">
-                                <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
-                            </AccumulationChartSeries>
-                        </AccumulationChartSeriesCollection>
-                        <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
-                        <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
-                        </AccumulationChartLegendSettings>
-                    </SfAccumulationChart>
-                </ContentTemplate>
-            </DashboardLayoutPanel>
+                <DashboardLayoutPanel Id="4" Row="0" Column="0" SizeX="3" SizeY="3">
+                    <HeaderTemplate><div class="e-header-text">آمار تیکت برنامه ها</div></HeaderTemplate>
+                    <ContentTemplate>
+                        <SfAccumulationChart @ref="@sfAccumulationChart1">
+                            <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
+                            <AccumulationChartSeriesCollection>
+                                <AccumulationChartSeries DataSource="@programsTickets" XName="Item1" YName="Item2" InnerRadius="40%">
+                                    <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
+                                </AccumulationChartSeries>
+                            </AccumulationChartSeriesCollection>
+                            <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+                            <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
+                            </AccumulationChartLegendSettings>
+                        </SfAccumulationChart>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
 
-            <DashboardLayoutPanel Id="6" Row="3" Column="0" SizeX="3" SizeY="3">
-                <HeaderTemplate><div class="e-header-text">آمار تیکت دفاتر</div></HeaderTemplate>
-                <ContentTemplate>
-                    <SfAccumulationChart @ref="@sfAccumulationChart2">
+                <DashboardLayoutPanel Id="6" Row="3" Column="0" SizeX="3" SizeY="3">
+                    <HeaderTemplate><div class="e-header-text">آمار تیکت دفاتر</div></HeaderTemplate>
+                    <ContentTemplate>
+                        <SfAccumulationChart @ref="@sfAccumulationChart2">
 
-                        <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
-                        <AccumulationChartSeriesCollection>
-                            <AccumulationChartSeries DataSource="@centersTickets" XName="Item1" YName="Item2" InnerRadius="40%">
-                                <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
-                            </AccumulationChartSeries>
-                        </AccumulationChartSeriesCollection>
-                        <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
-                        <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
-                        </AccumulationChartLegendSettings>
-                    </SfAccumulationChart>
-                </ContentTemplate>
-            </DashboardLayoutPanel>
+                            <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
+                            <AccumulationChartSeriesCollection>
+                                <AccumulationChartSeries DataSource="@centersTickets" XName="Item1" YName="Item2" InnerRadius="40%">
+                                    <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
+                                </AccumulationChartSeries>
+                            </AccumulationChartSeriesCollection>
+                            <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+                            <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
+                            </AccumulationChartLegendSettings>
+                        </SfAccumulationChart>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
 
-            <DashboardLayoutPanel Id="3" Row="0" Column="3" SizeX="3" SizeY="2">
-                <HeaderTemplate>
-                    <div class="e-header-text">وضعیت تیکت ها</div>
-                </HeaderTemplate>
-                <ContentTemplate>
-                    <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
-                        <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                            <CardHeader SubTitle="@( "تیکتهای در حال انجام")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
-                        </SfCard>
+                <DashboardLayoutPanel Id="3" Row="0" Column="3" SizeX="3" SizeY="2">
+                    <HeaderTemplate>
+                        <div class="e-header-text">وضعیت تیکت ها</div>
+                    </HeaderTemplate>
+                    <ContentTemplate>
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
+                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
+                                <CardHeader SubTitle="@( "تیکتهای در حال انجام")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
+                            </SfCard>
 
-                        <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                            <CardHeader SubTitle="@( "تیکتهای پایان یافته")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.Finish).ToString())" ImageUrl="@("../images/icons/completed-icon.jpg")" />
-                        </SfCard>
+                            <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
+                                <CardHeader SubTitle="@( "تیکتهای پایان یافته")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.Finish).ToString())" ImageUrl="@("../images/icons/completed-icon.jpg")" />
+                            </SfCard>
 
-                    </div>
-                </ContentTemplate>
-            </DashboardLayoutPanel>
+                        </div>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
 
-            <DashboardLayoutPanel Id="2" Row="0" Column="6" SizeX="3" SizeY="2">
-                <HeaderTemplate>
-                    <div class="e-header-text">نوع تیکت ها</div>
-                </HeaderTemplate>
-                <ContentTemplate>
-                    <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
-                        <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                            <CardHeader SubTitle="@( "تیکتهای پشتیبانی")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Supporting).ToString())" ImageUrl="@("../images/icons/supporting-icon.png")" />
-                        </SfCard>
+                <DashboardLayoutPanel Id="2" Row="0" Column="6" SizeX="3" SizeY="2">
+                    <HeaderTemplate>
+                        <div class="e-header-text">نوع تیکت ها</div>
+                    </HeaderTemplate>
+                    <ContentTemplate>
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
+                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
+                                <CardHeader SubTitle="@( "تیکتهای پشتیبانی")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Supporting).ToString())" ImageUrl="@("../images/icons/supporting-icon.png")" />
+                            </SfCard>
 
-                        <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                            <CardHeader SubTitle="@( "تیکتهای توسعه")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Developing).ToString())" ImageUrl="@("../images/icons/developing-icon.png")" />
-                        </SfCard>
+                            <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
+                                <CardHeader SubTitle="@( "تیکتهای توسعه")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Developing).ToString())" ImageUrl="@("../images/icons/developing-icon.png")" />
+                            </SfCard>
 
-                    </div>
-                </ContentTemplate>
-            </DashboardLayoutPanel>
+                        </div>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
 
-            <DashboardLayoutPanel Id="1" Row="0" Column="9" SizeX="3" SizeY="2">
-                <HeaderTemplate>
-                    <div class="e-header-text">نوع خطاها</div>
-                </HeaderTemplate>
-                <ContentTemplate>
-                    <div class="col-lg-12 col-md-12" style="padding: 0px; ">
-                        <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                            <CardHeader SubTitle="@( "خطای کاربر")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.UserError).ToString())" ImageUrl="@("../images/icons/usererror-icon.png")" />
-                        </SfCard>
+                <DashboardLayoutPanel Id="1" Row="0" Column="9" SizeX="3" SizeY="2">
+                    <HeaderTemplate>
+                        <div class="e-header-text">نوع خطاها</div>
+                    </HeaderTemplate>
+                    <ContentTemplate>
+                        <div class="col-lg-12 col-md-12" style="padding: 0px; ">
+                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
+                                <CardHeader SubTitle="@( "خطای کاربر")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.UserError).ToString())" ImageUrl="@("../images/icons/usererror-icon.png")" />
+                            </SfCard>
 
-                        <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                            <CardHeader SubTitle="@( "خطای سیستمی")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.SystemError).ToString())" ImageUrl="@("../images/icons/systemerror-icon.png")" />
-                        </SfCard>
-                    </div>
-                </ContentTemplate>
-            </DashboardLayoutPanel>
+                            <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
+                                <CardHeader SubTitle="@( "خطای سیستمی")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.SystemError).ToString())" ImageUrl="@("../images/icons/systemerror-icon.png")" />
+                            </SfCard>
+                        </div>
+                    </ContentTemplate>
+                </DashboardLayoutPanel>
 
         </DashboardLayoutPanels>
     </SfDashboardLayout>
@@ -577,8 +575,8 @@
             centersTickets = ticketDtos.GroupBy(t => new { t.PersonCenterId, t.PersonCenterName }).Select(t => new Tuple<string, int>(t.Key.PersonCenterName.ToString(), t.Select(e => e.Id).Count())).ToList();
             sfAccumulationChart1.DataSource = programsTickets;
             sfAccumulationChart2.DataSource = centersTickets;
-            sfAccumulationChart1.Refresh();
-            sfAccumulationChart2.Refresh();
+            //sfAccumulationChart1.Refresh();
+            //sfAccumulationChart2.Refresh();
 
         }
         //await sfChart.RefreshAsync();

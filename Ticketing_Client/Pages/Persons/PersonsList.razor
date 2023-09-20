@@ -2,11 +2,7 @@
 
 @page "/PersonsList"
 @using Framework.Pagination;
-@using Microsoft.AspNetCore.Authorization;
-@using Microsoft.AspNetCore.Components.Authorization;
 @using Syncfusion.Blazor.Buttons
-@using Syncfusion.Blazor.Cards
-@using Syncfusion.Blazor.Data;
 @using Syncfusion.Blazor.DropDowns
 @using Syncfusion.Blazor.Grids;
 @using Syncfusion.Blazor.Inputs
@@ -30,105 +26,19 @@
 @inject IProgramRepository programRepository
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject IHttpClientFactory ClientFactory
-
-
 <style>
-    .e-pager.e-rtl {
-        direction: rtl;
-        position: fixed;
-        bottom: 4px !important;
-        width: 83.5% !important;
-    }
 
-    .hulu {
-        background-color: #edf8ff38;
+    .pagerFooter {
+        padding: 8px;
         border: solid 2px #e7e6e6;
         border-radius: 10px;
-        height: 130px;
+        width: 100%;
+        display: inline-block;
     }
-
-        .hulu:hover {
-            background-color: white;
-            border: solid 1px gray;
-        }
-
-    body {
-        font-family: 'Vazir FD';
-    }
-
-    .e-card .e-card-horizontal .e-card-stacked {
-        justify-content: flex-start;
-        margin: initial;
-    }
-
-    .property-panel-section .property-panel-content td {
-        padding: 0 0 15px 0;
-    }
-
-    .tile_layout.card-control-section .e-error {
-        height: 100px;
-        width: 100px;
-    }
-
-        .tile_layout.card-control-section .e-error .e-error-content {
-            color: red;
-            line-height: 100px;
-            text-align: center;
-        }
-
-    .e-float-input, .e-float-input.e-control-wrapper {
-        line-height: 1.4;
-        margin-bottom: 0;
-        margin-top: 1px;
-        padding-top: 0;
-        position: relative;
-        width: 150px;
-    }
-
-    .tile_layout.card-control-section .e-card .e-card-image {
-        height: 180px;
-        width: inherit;
-    }
-
-
-    .tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-header-title {
-        font-size: 20px;
-        font-family: Helvetica, 'Segoe UI';
-        font-weight: bold;
-    }
-
-    .tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-sub-title {
-        padding-top: 5px;
-    }
-
-    .tile_layout.card-control-section .e-card .e-card-content {
-        padding-top: 10px;
-        height: 50px;
-    }
-
-    #source_link {
-        float: right;
-    }
-
-    .e-card {
-        -webkit-tap-highlight-color: #0d6efd;
-        background-color: #edf8ff38;
-        border: 2px solid #dee2e6;
-        box-shadow: none;
-        color: #212529;
-        outline: none;
-    }
-
-    .e-ddl.e-lib.e-input-group.e-control-container.e-control-wrapper.e-rtl.e-keyboard {
-        width: 150px !important;
-    }
-
-    span.e-ddl.e-lib.e-input-group.e-control-container.e-control-wrapper.e-rtl {
-        width: 150px !important;
-    }
+ 
 </style>
 
-<div class="col-lg-12 " style="padding:8px;  border: solid 2px #e7e6e6;border-radius: 10px; width: 96%; display: inline-block; margin-right: 30px; ">
+<div dir="rtl" class="col-lg-12 " style="padding:8px;  border: solid 2px #e7e6e6;border-radius: 10px; width: 100%; display: inline-block; ">
     <div class="col-2" style="width:16%; padding:4px; height: 30px;display:inline-block">
         <label> نقش کاربر:</label>
         <div class="input-icons" style="padding-left: 14px;">
@@ -207,9 +117,9 @@
     </div>
 </div>
 
-<div class="row">
+<div dir="rtl" class="row">
     <div class="e-card-layout control-section col-lg-12 card-control-section tile_layout" style="display:inline-block!important;padding-right: 35px; ">
-        @if (this.personDtos.Count() == 0)
+        @if (!this.personDtos.Any())
         {
             <div class="e-error">
                 <div class="e-error-content">اطلاعاتی یافت نشد.</div>
@@ -220,7 +130,7 @@
             @foreach (PersonDto persondto in personDtos)
             {
                 string stl = "";
-                <div class="card_sample_3 col-lg-2 col-md-2 col-sm-5 "
+                <div class="card_sample_4 col-lg-1 col-md-2 col-sm-5 "
                      style=" padding: 4px; display:inline-block!important  ;width: 260px;height:138px;"
                      title="@persondto.PersonRole.ToString()">
                     @if (persondto.PersonRole == RoleType.Supporter)
@@ -423,7 +333,7 @@
 </div>
 
 <Syncfusion.Blazor.Navigations.SfPager @ref="Page"
-                                       CssClass="card footer"
+                                       CssClass="pagerFooter"
                                        PageSize="@metaData.PageSize"
                                        CurrentPage="@getPersonInfoByFiltersQuery.PageNumber"
                                        NumericItemsCount=4
@@ -431,16 +341,12 @@
                                        PageChanged="GetData">
 </Syncfusion.Blazor.Navigations.SfPager>
 
-
 <div class="col-lg-4 control-section">
     <SfToast @ref="ToastObj" ID="toast_type">
         <ToastPosition X="Right" Y="Bottom"></ToastPosition>
     </SfToast>
-
 </div>
 
-@if (true)
-{ }
 @code {
     private List<PersonDto> personDtos = new List<PersonDto>();
     private PersonDto personDto = new PersonDto();

@@ -11,6 +11,7 @@
 @using Syncfusion.Blazor.Notifications
 @using Syncfusion.Blazor.Grids
 @using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Navigations
 @using Action = Syncfusion.Blazor.Grids.Action
 @using Syncfusion.Blazor.Popups
 @using Ticketing.Client.Contracts.Ticket;
@@ -27,6 +28,7 @@
 @using Ticketing.Models.Tickets.Query;
 @using Ticketing.Models.Tickets.Repository
 @using Ticketing_UI.Shared.Classes;
+@using ChangeEventArgs = Microsoft.AspNetCore.Components.ChangeEventArgs
 @inject Microsoft.AspNetCore.Components.NavigationManager UriHelper
 @inject ITicketRepository ticketRepository
 @inject IPersonRepository personRepository
@@ -34,48 +36,30 @@
 @inject ICenterRepository centerRepository
 @inject AuthenticationStateProvider authenticationStateProvider
 
-<div class="col-lg-12 control-section">
-    <div class="content-wrapper">
-        <div class="e-panel-header row col-lg-12 col-md-3 col-sm-3" style="  margin-bottom:6px;align-items: baseline;">
-            <div style="display:inline-block!important ;width: auto;  font-size: 13px;">نمایش تیکتهای ثبت شده در بازه زمانی:</div>
-            <div style="display:inline-block!important;width: auto;">
-                <SfDateRangePicker TValue="DateTime" @bind-StartDate="@fromDate" @bind-EndDate="@toDate" ShowClearButton="true">
-                    <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
-                </SfDateRangePicker>
-            </div>
+<div class="col-lg-12 control-section"  >
+    <div class="e-panel-header row col-lg-12 col-md-3 col-sm-3" style="  margin-bottom:6px;align-items: baseline;">
+        <div style="display:inline-block!important ;width: auto;  font-size: 13px;">نمایش تیکتهای ثبت شده در بازه زمانی:</div>
+        <div style="display:inline-block!important;width: auto;">
+            <SfDateRangePicker TValue="DateTime" @bind-StartDate="@fromDate" @bind-EndDate="@toDate" ShowClearButton="true">
+                <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+            </SfDateRangePicker>
         </div>
+    </div>
+    <div class="content-wrapper">
         <div class="row">
             <EditForm Model="@ticketDtos">
                 <DataAnnotationsValidator />
                 <SfGrid @ref="Grid"
                         AllowGrouping="true"
                         DataSource="@ticketDtos"
-                        AllowPaging="true"
+                        
                         AllowSorting="true"
                         AllowFiltering="true"
-                        Toolbar="@(new string[]{"Add", "Edit" ,"Delete" ,"Search" })"
-                        style="width:auto;padding-right: 1px;padding-left: 1px;">
-                    <GridPageSettings PageSize="@metaData.PageSize">
-                        <Template Context="PagerTemp">
-                            <div class="PagerTemplate">
-
-                                <div class="@($"e-next e-icons e-icon-next   align-icons")"
-                                     hidden="@DisableBackIcon"
-                                     @onclick="ShowPreviousPage"
-                                     title="رفتن به صفحه قبل"></div>
-                                <div>
-                                    <div id="totalpages"
-                                         class="textbox">
-                                        صفحه @pageNo2 از @metaData.TotalPages
-                                    </div>
-                                </div>
-                                <div class="@($"e-prev e-icons e-icon-prev  align-icons")"
-                                     hidden="@DisableForwardIcon"
-                                     @onclick="ShowNextPage"
-                                     title="رفتن به صفحه بعد"></div>
-                            </div>
-                        </Template>
-                    </GridPageSettings>
+                        Toolbar="@(new string[] { "Add", "Edit", "Delete", "Search","ColumnChooser" })"
+                        ShowColumnChooser="true"
+                        style="width: auto; padding-right: 1px; padding-left: 1px;"
+                        Height="600px" Width="auto"  >
+                         
                     <GridEvents TValue="TicketDto"
                                 OnActionBegin="ActionBeginHandler"
                                 OnActionFailure="ActionFailureHandler">
@@ -108,22 +92,21 @@
                             }
 
                             <div class="row col-md-12">
-                                <div class="row col-md-5" style="display:inline-block!important;margin-right:2px">
+                                <div class="row col-md-5" style="display: inline-block !important; margin-right: 2px">
                                     <SfTextBox ID="SupporterPersonName"
-                                               @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                               @onkeypress="@((e) => Setkeyboardkeyevent(e))"
                                                @bind-Value="@(ticket.SupporterPersonName)"
                                                Enabled="false"
                                                FloatLabelType="FloatLabelType.Auto"
                                                Placeholder="نام پشتیبان"></SfTextBox>
                                 </div>
-                                <div class="row col-md-5" style="display:inline-block!important;margin-right:2px">
+                                <div class="row col-md-5" style="display: inline-block !important; margin-right: 2px">
                                     <SfDropDownList ID="ProgramName"
                                                     TItem="ProgramDto"
-                                                    @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                                    @onkeypress="@((e) => Setkeyboardkeyevent(e))"
                                                     @bind-Value="@(ticket.ProgramId)"
                                                     Enabled="@Check"
-                                                    IndexChanged="((e)=>{ ticket.ProgramName=programDtos.Single(t=>t.Id==ticket.ProgramId).ProgamName;
-                                                                          Grid.PreventRender(false);})"
+                                                    IndexChanged="((e) =>{ ticket.ProgramName = programDtos.Single(t => t.Id == ticket.ProgramId).ProgamName; Grid.PreventRender(false);})"
                                                     TValue="Guid"
                                                     DataSource="@programDtos"
                                                     FloatLabelType="FloatLabelType.Auto"
@@ -136,86 +119,40 @@
                             </div>
 
                             <hr />
-
                             <div class="col-md-12">
-                                <SfDropDownList Width="280px"
-                                                style="margin-left: 25px;"
-                                                TValue="int"
-                                                TItem="PersonDto"
-                                                Placeholder="تماس گیرنده:"
-                                                FloatLabelType="FloatLabelType.Auto"
-                                                DataSource="@AllpersonDtos"
-                                                PopupHeight="230px"
-                                                Value="@ticket.PersonID"
-                                                AllowFiltering="true"
-                                                ValueChanged="@(async (e)=>{    var personInfo =await SetPersonnfo(e);
-                                                                                ticket.PersonCenterName= personInfo.CenterName;
-                                                                                ticket.PersonPartName = personInfo.PartName;
-                                                                                ticket.PersonID= e;})">
-                                    <DropDownListFieldSettings Text="PersonName" Value="PersonID"></DropDownListFieldSettings>
-
-                                    <DropDownListTemplates TItem="PersonDto">
-                                        <HeaderTemplate>
-                                            <table><tr><th>نام-</th><th>   کدپرسنلی  </th></tr></table>
-                                        </HeaderTemplate>
-                                        <ItemTemplate Context="DropDownListContext">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>@((DropDownListContext as PersonDto).PersonName)  </td>
-                                                        <td>@((DropDownListContext as PersonDto).PersonID)  </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </ItemTemplate>
-                                    </DropDownListTemplates>
-
-                                </SfDropDownList>
-                                <div class="col-2" style="padding:4px; width:16%; display:inline-block">
-                                    <label> دفتر:</label>
-                                    <div class="input-icons">
-                                        <i class=" icon">
-
-                                        </i>
-                                        <select class="form-control" @oninput="SetCenterChange">
-                                            <option  value="@Guid.Empty">همه</option>
-                                            @foreach (var type in centerDtos)
-                                            {
-                                                <option class="option-style" value=@type.Id> @type.CenterName</option>
-                                            }
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-2" style="padding:4px; width:16%;display:inline-block">
-                                    <label> واحد:</label>
-                                    <div class="input-icons">
-                                        <i class=" icon">
-
-                                        </i>
-                                        <select class="form-control" @oninput="SetPartChange"> 
-                                            
-                                            
-                                            <option value="@Guid.Empty">همه</option>
-                                            @foreach (var type in partDtos)
-                                            {
-                                                <option class="option-style" value=@type.Id> @type.PartName</option>
-                                            }
-                                        </select>
-                                        
-                                    </div>
+                                <div class="col-md-5" style="display: inline-block !important">
+                                    <SfNumericTextBox @onkeypress="@(Setkeyboardkeyevent)"
+                                                      OnChange="@(async (e) =>{var t = await SetpersonInfo(e); ticket.PersonName = t.PersonName ?? ""; ticket.PersonCenterName = t.CenterName ?? ""; ticket.PersonPartId = t.PartId; ticket.PersonPartName = t.PartName ?? ""; })"
+                                                      @bind-Value="@ticket.PersonID"
+                                                      Placeholder="کدپرسنلی تماس گیرنده "
+                                                      Decimals="0"
+                                                      Format="#########"
+                                                      FloatLabelType="FloatLabelType.Auto"
+                                                      CssClass="e-corner"></SfNumericTextBox>
+                                    <ValidationMessage For="@(() => ticket.PersonID)" />
                                 </div>
                             </div>
 
+                            <div class="col-md-12">
+                                <div class="col-md-5" style="display: inline-block !important">
+                                    <SfTextBox ID="ticketpersonName" @onkeypress="@(Setkeyboardkeyevent)" Enabled="false" @bind-Value="@ticket.PersonName" FloatLabelType="FloatLabelType.Auto" Placeholder="نام"></SfTextBox>
+                                </div>
 
+                                <div class="col-md-2" style="display: inline-block !important">
+                                    <SfTextBox ID="PersonCenterName" @onkeypress="@(Setkeyboardkeyevent)" Enabled="false" @bind-Value="@(ticket.PersonCenterName)" FloatLabelType="FloatLabelType.Auto" Placeholder="دفتر"></SfTextBox>
+                                </div>
+                                <div class="col-md-2" style="display: inline-block !important">
+                                    <SfTextBox ID="PersonPartName" @onkeypress="@(Setkeyboardkeyevent)" Enabled="false" @bind-Value="@(ticket.PersonPartName)" FloatLabelType="FloatLabelType.Auto" Placeholder="واحد"></SfTextBox>
+                                </div>
+
+                            </div>
                             <hr />
                             <div class="col-md-12">
-                                <div class="col-md-5" style="display:inline-block!important">
+                                <div class="col-md-5" style="display: inline-block !important">
                                     <SfDropDownList ID="ErrorTypeName"
-                                                    @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                                    TItem="KeyValuePair<int,string>"
-                                                    IndexChanged="((e)=>{ ticket.ErrorTypeName=errorTypes.Single(t=>t.Key==ticket.ErrorTypeid).Value; Grid.PreventRender(false);})"
+                                                    @onkeypress="@(Setkeyboardkeyevent)"
+                                                    TItem="KeyValuePair<int, string>"
+                                                    IndexChanged="((e) =>{ ticket.ErrorTypeName = errorTypes.Single(t => t.Key == ticket.ErrorTypeid).Value; Grid.PreventRender(false);})"
                                                     @bind-Value="@(ticket.ErrorTypeid)"
                                                     TValue="int"
                                                     DataSource="@errorTypes"
@@ -229,19 +166,19 @@
                             </div>
 
                             <div class="row col-md-12">
-                                <div class="col-md-6" style="display:inline-block!important">
-                                    <SfTextBox ID="ErrorDescription"
-                                               @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                               @bind-Value="@(ticket.ErrorDescription)"
+                                <div class="col-md-6" style="display: inline-block !important">
+                                    <SfTextBox ID="ErrorDiscription"
+                                               @onkeypress="@(Setkeyboardkeyevent)"
+                                               @bind-Value="@(ticket.ErrorDiscription)"
                                                FloatLabelType="FloatLabelType.Auto"
                                                Format="0"
                                                Multiline="true"
                                                style="height: 210px;"
                                                Placeholder="شرح خطا"></SfTextBox>
                                 </div>
-                                <div class="col-md-6" style="display:inline-block!important">
+                                <div class="col-md-6" style="display: inline-block !important">
                                     <SfTextBox ID="SolutionDescription"
-                                               @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
+                                               @onkeypress="@(Setkeyboardkeyevent)"
                                                @bind-Value="@(ticket.SolutionDescription)"
                                                FloatLabelType="FloatLabelType.Auto"
                                                Multiline="true"
@@ -251,7 +188,7 @@
                             </div>
                             <hr />
 
-                            <div class="col-md-5" style="display:inline-block!important;  ">
+                            <div class="col-md-5" style="display: inline-block !important;">
                                 <SfDateTimePicker TValue="DateTime"
                                                   @bind-Value="@ticket.TicketTime"
                                                   ShowClearButton="false"
@@ -266,11 +203,11 @@
 
 
                             <div>
-                                <div class="col-md-5" style="display:inline-block!important">
+                                <div class="col-md-5" style="display: inline-block !important">
                                     <SfDropDownList ID="TicketTypeName"
-                                                    @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                                    TItem="KeyValuePair<int,string>"
-                                                    IndexChanged="((e)=>{ ticket.TicketTypeName=TicketTypes.Single(t=>t.Key==ticket.Typeid).Value; Grid.PreventRender(false);})"
+                                                    @onkeypress="@(Setkeyboardkeyevent)"
+                                                    TItem="KeyValuePair<int, string>"
+                                                    IndexChanged="((e) =>{ ticket.TicketTypeName = TicketTypes.Single(t => t.Key == ticket.Typeid).Value; Grid.PreventRender(false);})"
                                                     @bind-Value="@(ticket.Typeid)"
                                                     TValue="int"
                                                     DataSource="@TicketTypes"
@@ -283,11 +220,11 @@
 
                                 </div>
 
-                                <div class="col-md-5" style="display:inline-block!important">
+                                <div class="col-md-5" style="display: inline-block !important">
                                     <SfDropDownList ID="TicketConditionTypeName"
-                                                    @onkeypress="@((e)=>Setkeyboardkeyevent(e))"
-                                                    TItem="KeyValuePair<int,string>"
-                                                    IndexChanged="((e)=>{ ticket.TicketConditionTypeName=TicketConditions.Single(t=>t.Key==ticket.TicketConditionid).Value; Grid.PreventRender(false);})"
+                                                    @onkeypress="@(Setkeyboardkeyevent)"
+                                                    TItem="KeyValuePair<int, string>"
+                                                    IndexChanged="((e) =>{ ticket.TicketConditionTypeName = TicketConditions.Single(t => t.Key == ticket.TicketConditionid).Value; Grid.PreventRender(false);})"
                                                     @bind-Value="@(ticket.TicketConditionid)"
                                                     TValue="int"
                                                     DataSource="@TicketConditions"
@@ -303,42 +240,45 @@
 
                     </GridEditSettings>
                     <GridColumns>
-                        <GridColumn Field=@nameof(TicketDto.Id) Visible=false HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.Id) Visible=true HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.PersonID) Visible=false HeaderText="PersonID" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" Visible="@(UserIsAdmin)" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.ProgramName) HeaderText="برنامه" ValidationRules="@(new ValidationRules{ Required=true})" Width="150"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.ErrorTypeName) HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonName) Visible=true HeaderText="نام" TextAlign="TextAlign.Right" Width="140"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="110"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="110"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" Visible="@(UserIsAdmin)" ValidationRules="@(new ValidationRules { Required = true })" Width="150"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ProgramName) HeaderText="برنامه" ValidationRules="@(new ValidationRules { Required = true })" Width="150"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ErrorTypeName) Visible=true HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ErrorDiscription) HeaderText="شرح خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.TicketTypeName) HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="150"></GridColumn>
                         <GridColumn Field=@nameof(TicketDto.TicketConditionTypeName) HeaderText="وضعیت" EditType="EditType.DropDownEdit" Width="160">
                             <Template Context="another_name2">
                                 @{
-                                    var catagory = (another_name2 as TicketDto);
-                                    @if (catagory.TicketConditionTypeName == "OnGoing")
+                                    var category = (another_name2 as TicketDto);
+                                    @if (category.TicketConditionTypeName == "OnGoing")
                                     {
                                         <div class="title-temp2 inprogress">
-                                            <span class="inprogress-font">@catagory.TicketConditionTypeName</span>
+                                            <span class="inprogress-font">@category.TicketConditionTypeName</span>
                                         </div>
                                     }
-                                    @if (catagory.TicketConditionTypeName == "Finish")
+                                    @if (category.TicketConditionTypeName == "Finish")
                                     {
                                         <div class="title-temp2 completed">
-                                            <span class="completed-font">@catagory.TicketConditionTypeName</span>
+                                            <span class="completed-font">@category.TicketConditionTypeName</span>
                                         </div>
                                     }
                                 }
                             </Template>
                         </GridColumn>
-                        <GridColumn HeaderText="عملیات" Width="150">
+                        <GridColumn HeaderText="عملیات" Width="80">
                             <GridCommandColumns>
-                                <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {IconCss="e-icons e-delete", CssClass="e-flat"} )"></GridCommandColumn>
+                                <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() { IconCss = "e-icons e-delete", CssClass = "e-flat" })"></GridCommandColumn>
 
                             </GridCommandColumns>
                         </GridColumn>
                     </GridColumns>
                 </SfGrid>
-
+            <SfPager PageSize="10" NumericItemsCount=4 TotalItemsCount="@metaData.TotalCount" ItemClick="Click" CurrentPage="pageNo2">
+            </SfPager>
             </EditForm>
 
         </div>
@@ -501,6 +441,7 @@
 
 @code {
 
+
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
     private List<PersonDto> personDtos = new List<PersonDto>();
@@ -532,8 +473,8 @@
 
     private TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
     private MetaData metaData { get; set; } = new MetaData();
-    public DateTime fromDate { get; set; } = DateTime.Now.AddMonths(-1);
-    public DateTime toDate { get; set; } = DateTime.Now;
+    public DateTime fromDate { get; set; } = DateTime.Now.AddMonths(-1).AddDays(-1).Date;
+    public DateTime toDate { get; set; } = DateTime.Now.AddDays(1).Date;
     GetPersonInfoByFiltersQuery getPersonInfoByFiltersQuery = new GetPersonInfoByFiltersQuery();
 
     private List<KeyValuePair<int, string>> errorTypes { get; set; } = Enum.GetValues(typeof(ErrorType)).Cast<ErrorType>().ToList()
@@ -546,7 +487,7 @@
                                                                            .Select(s => new { Key = (int)s, Value = @EnumExtensions.GetDisplayName((TicketCondition)s) })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
 
-
+ 
     protected override async Task OnInitializedAsync()
     {
         pageNo2 = 1;
@@ -561,7 +502,7 @@
         }
         centerDtos = await centerRepository.GetAllCenters();
         await GetAllTickets();
-        await GetPersonData();
+        await GetPersonData(); 
     }
 
     private async Task SetCenterChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
@@ -584,7 +525,15 @@
         getPersonInfoByFiltersQuery.PartId = new Guid(args.Value.ToString());
         await GetPersonData();
     }
+    public async Task Click(PagerItemClickEventArgs args)
+    {
+        pageNo2 = args.CurrentPage;
+        parameters.PageSize= 10;
+        await GetAllTickets();
+        Grid.PreventRender(false);
+        await Grid.Refresh();
 
+    }
     private async Task OnFilter(KeyboardEventArgs args)
     {
         if (args.Key == "Enter")
@@ -628,13 +577,29 @@
     {
         ++pageNo2;
         await GetAllTickets();
+        Grid.PreventRender(false);
+        await Grid.Refresh();
     }
     public async Task ShowPreviousPage()
     {
         --pageNo2;
         await GetAllTickets();
+        Grid.PreventRender(false);
+        await Grid.Refresh();
+    }
+    public async Task ShowFirstPage()
+    {
+        pageNo2 = 1;
+        await GetAllTickets();
+        Grid.PreventRender(false);
+        await Grid.Refresh();
     }
 
+    public async Task ShowLastPage()
+    {
+        pageNo2 = metaData.TotalPages;
+        await GetAllTickets();
+    }
     public void ActionFailureHandler(Syncfusion.Blazor.Grids.FailureEventArgs args)
     {
         var s = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(args.Error));
@@ -681,7 +646,7 @@
                 {
                     Args.Cancel = true;
                     await this.ToastObj.ShowAsync(toastModel);
-
+                    ticketDtos=await GetAllTickets();
                     Grid.PreventRender(false);
                     await Grid.Refresh();
 
@@ -780,7 +745,7 @@
             {
                 TicketTime = ticketDto.TicketTime,
                 TicketCondition = (TicketCondition)ticketDto.TicketConditionid,
-                ErrorDiscription = ticketDto.ErrorDescription ?? "",
+                ErrorDiscription = ticketDto.ErrorDiscription ?? "",
                 ErrorType = (ErrorType)ticketDto.ErrorTypeid,
                 SolutionDiscription = ticketDto.SolutionDescription ?? "",
                 SupporterPersonID = ticketDto.SupporterPersonID,
@@ -799,7 +764,7 @@
                 Id = seletedticket.Id,
                 TicketTime = seletedticket.TicketTime,
                 TicketCondition = (TicketCondition)seletedticket.TicketConditionid,
-                ErrorDiscription = seletedticket.ErrorDescription ?? "",
+                ErrorDiscription = seletedticket.ErrorDiscription ?? "",
                 ErrorType = (ErrorType)errorTypes.Where(b => b.Value == seletedticket.ErrorTypeName).Select(t => t.Key).First(),
                 SolutionDiscription = seletedticket.SolutionDescription ?? "",
                 ProgramId = seletedticket.ProgramId,
@@ -844,4 +809,6 @@
     {
         warningMessageVisiable = false;
     }
+
+
 } 
