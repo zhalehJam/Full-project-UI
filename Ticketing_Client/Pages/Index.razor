@@ -364,10 +364,7 @@
 
 </style>
 
-
 <div class="col-lg-12 control-section content-wrapper" style="">
-
-<div class="col-lg-12 control-section content-wrapper" style="" >
     <div class="row col-lg-12" style="direction:ltr;">
         <div class="col-lg-3 col-md-3 col-sm-3" style="display:inline-block;padding-left: 1px;padding-right: 7px; padding-bottom:3px;">
             <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ" @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
@@ -376,9 +373,9 @@
         </div>
     </div>
     <div class="row  col-lg-12">
-    <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="true" AllowDragging="true">
-        
-        <DashboardLayoutPanels >
+        <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="true" AllowDragging="true">
+
+            <DashboardLayoutPanels>
 
                 <DashboardLayoutPanel Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
                     <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
@@ -522,8 +519,8 @@
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-        </DashboardLayoutPanels>
-    </SfDashboardLayout>
+            </DashboardLayoutPanels>
+        </SfDashboardLayout>
     </div>
 </div>
 
@@ -545,9 +542,9 @@
     public DateTime FromDate { get; set; } = DateTime.Now.AddMonths(-1).Date;
     public DateTime ToDate { get; set; } = DateTime.Now.Date.AddDays(1);
 
-    private async Task ChangeDiv( EventArgs args)
+    private async Task ChangeDiv(EventArgs args)
     {
-        
+
     }
 
 
