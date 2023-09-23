@@ -18,6 +18,13 @@
 <style>
 
 
+
+    .ChartPanelClass {
+        border-radius: 26px;
+        min-height: 468px !important;
+        max-height: 530px !important;
+    }
+
     .e-input-group:not(.e-success):not(.e-warning):not(.e-error), .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) {
         border-color: #e1e1e1;
         direction: ltr;
@@ -96,6 +103,10 @@
         width: 100%;
         display: block;
         direction: ltr;
+        padding: 6px;
+        background-color: #f0f4f9;
+        border-bottom-left-radius: 23px;
+        border-bottom-right-radius: 23px;
     }
 
     .e-panel .e-header-text {
@@ -129,8 +140,23 @@
             height: 40px;
             color: #212529;
             background: #3f48b99e;
+            border-radius: 26px;
         }
 
+        .e-dashboardlayout.e-control .e-panel .e-panel-container {
+            height: 100%;
+            width: 100%;
+            background-color: #f0f4f9;
+            border-radius: 26px;
+        }
+
+        .e-dashboardlayout.e-control .e-panel.e-panel-transition {
+            border-bottom-right-radius: 26px;
+            border-radius: 26px;
+            min-width: 200ox;
+            min-height: 200px;
+            max-height: 393px;
+        }
 
     .row {
         margin-left: 0px;
@@ -142,9 +168,6 @@
         font-weight: 500;
     }
 
-    .e-panel-content {
-        padding: 6px;
-    }
 
     .e-primary, .e-danger {
         width: 125px;
@@ -173,19 +196,7 @@
         padding: 10px;
     }
 
-    .fluent .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
-    .fluent-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        height: 56px;
-    }
 
-    .bootstrap5 .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
-    .bootstrap5-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
-    .tailwind .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
-    .fluent .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
-    .fluent-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header,
-    .tailwind-dark .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-        line-height: inherit;
-    }
 
     .root-container {
         height: 100%;
@@ -223,22 +234,6 @@
         font-weight: 400;
     }
 
-        .item-container.income {
-            color: #17a00e
-        }
-
-        .item-container.balance {
-            color: #008cff;
-        }
-
-        .item-container.transaction {
-            color: #f41127;
-        }
-
-        .item-container.expense {
-            color: #ca765a;
-        }
-
     .bottom-container {
         text-align: center;
         font-weight: 400;
@@ -258,22 +253,8 @@
         color: #4c5258;
     }
 
-    .amt-payment.expense-payment {
-        font-weight: bold;
-        color: #ff5e65;
-    }
-
-    .amt-payment.income-payment {
-        font-weight: bold;
-        color: #04cd93;
-    }
-
     .auto-left {
         margin-left: auto;
-    }
-
-    .e-panel-cotent {
-        padding: 1rem;
     }
 
     font-face {
@@ -283,29 +264,7 @@
         font-style: normal;
     }
 
-    .balance:after {
-        content: "\e900";
-        font-size: 24px;
-        font-family: "e-sb-icons";
-    }
 
-    .expense:after {
-        content: "\e901";
-        font-size: 24px;
-        font-family: "e-sb-icons";
-    }
-
-    .income:after {
-        content: "\e902";
-        font-size: 24px;
-        font-family: "e-sb-icons";
-    }
-
-    .transaction:after {
-        content: "\e903";
-        font-size: 24px;
-        font-family: "e-sb-icons";
-    }
 
     .e-headercelldiv span.e-headertext {
         font-size: 14px;
@@ -320,30 +279,6 @@
     .mobile .item-container {
         padding: 40px;
         font-size: 40px;
-    }
-
-    .mobile .balance:after {
-        content: "\e900";
-        font-size: 40px;
-        font-family: "e-sb-icons";
-    }
-
-    .mobile .expense:after {
-        content: "\e901";
-        font-size: 40px;
-        font-family: "e-sb-icons";
-    }
-
-    .mobile .income:after {
-        content: "\e902";
-        font-size: 40px;
-        font-family: "e-sb-icons";
-    }
-
-    .mobile .transaction:after {
-        content: "\e903";
-        font-size: 40px;
-        font-family: "e-sb-icons";
     }
 
     .e-control.e-lib.e-dashboardlayout.e-responsive {
@@ -361,7 +296,6 @@
     .e-gridheader {
         padding-right: 0px !important;
     }
-
 </style>
 
 <div class="col-lg-12 control-section content-wrapper" style="">
@@ -377,11 +311,11 @@
 
             <DashboardLayoutPanels>
 
-                <DashboardLayoutPanel Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
+                <DashboardLayoutPanel CssClass="ChartPanelClass" Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
                     <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                     <ContentTemplate>
                         <div dir="rtl">
-                            <SfChart @ref="sfChart" Height="100%" Width="100%">
+                            <SfChart @ref="sfChart" Height="100%" Width="100%" Background="transparent">
                                 <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
                                 <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime"
                                                    Interval="1"
@@ -434,8 +368,11 @@
                 <DashboardLayoutPanel Id="4" Row="0" Column="0" SizeX="3" SizeY="3">
                     <HeaderTemplate><div class="e-header-text">آمار تیکت برنامه ها</div></HeaderTemplate>
                     <ContentTemplate>
-                        <SfAccumulationChart @ref="@sfAccumulationChart1">
-                            <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
+                        <SfAccumulationChart @ref="@sfAccumulationChart1" Background="transparent">
+                            <AccumulationChartBorder Color="transparent">
+
+                            </AccumulationChartBorder>
+
                             <AccumulationChartSeriesCollection>
                                 <AccumulationChartSeries DataSource="@programsTickets" XName="Item1" YName="Item2" InnerRadius="40%">
                                     <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
@@ -451,7 +388,7 @@
                 <DashboardLayoutPanel Id="6" Row="3" Column="0" SizeX="3" SizeY="3">
                     <HeaderTemplate><div class="e-header-text">آمار تیکت دفاتر</div></HeaderTemplate>
                     <ContentTemplate>
-                        <SfAccumulationChart @ref="@sfAccumulationChart2">
+                        <SfAccumulationChart @ref="@sfAccumulationChart2" Background="transparent">
 
                             <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
                             <AccumulationChartSeriesCollection>
@@ -472,7 +409,7 @@
                     </HeaderTemplate>
                     <ContentTemplate>
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
-                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
+                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px; ">
                                 <CardHeader SubTitle="@( "تیکتهای در حال انجام")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
                             </SfCard>
 
