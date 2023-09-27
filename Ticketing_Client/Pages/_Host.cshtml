@@ -9,7 +9,7 @@
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #f5f6fa;">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,9 @@
     <link href="styles/site.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
-<body>
+<body style="
+             background-color: transparent;
+         ">
     @{
         var tokens = new InitialApplicationState
             {

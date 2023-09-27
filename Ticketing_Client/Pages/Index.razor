@@ -14,6 +14,7 @@
 @using Ticketing.Models.Tickets.Query;
 @using Ticketing.Models.Tickets.Repository;
 
+@inject AuthenticationStateProvider authenticationStateProvider
 @inject ITicketRepository ticketRepository
 <style>
 
@@ -37,33 +38,7 @@
         border: 1px solid #ced4da;
     }
 
-    .e-card .e-card-header .e-card-header-image {
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 32px;
-        width: 32px;
-    }
 
-    .e-card .e-card-header {
-        box-sizing: border-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: row;
-        flex-direction: row-reverse;
-        -ms-flex-pack: center;
-        justify-content: center;
-        line-height: normal;
-        min-height: 22.5px;
-        padding: 6px;
-        width: inherit;
-        padding-bottom: 6px;
-    }
-
-    .title {
-        font-size: 15px;
-        font-weight: bold;
-        color: #737373;
-    }
 
     .form-label {
         margin-bottom: 0;
@@ -78,11 +53,6 @@
         padding: 0;
     }
 
-    .e-panel-header {
-        padding: 5px;
-        margin-bottom: 0;
-        background-color: rgba(0, 0, 0, .03);
-    }
 
     .panel-content {
         vertical-align: middle;
@@ -98,13 +68,19 @@
         border-radius: 0px;
     }
 
+    .e-panel-header {
+        padding: 5px;
+        margin-bottom: 0;
+        background-color: rgba(0, 0, 0, .03);
+    }
+
     .e-panel-content {
-        height: calc(100% - 28px);
+        /*height: auto;*/
         width: 100%;
         display: block;
         direction: ltr;
         padding: 6px;
-        background-color: #f0f4f9;
+        background-color: #f0f4f900;
         border-bottom-left-radius: 23px;
         border-bottom-right-radius: 23px;
     }
@@ -113,50 +89,84 @@
         padding: 6px 0 13px 0;
     }
 
-    .e-dashboardlayout.e-control .e-panel {
-        background: #652b9d00;
-        box-shadow: 0 2px 4px rgb(58 6 71);
-        box-sizing: border-box;
-        position: absolute;
+
+
+
+    .e-control.e-lib.e-dashboardlayout.e-responsive {
+        z-index: 0;
     }
 
-        .e-dashboardlayout.e-control .e-panel.e-panel-transition {
-            transition: top .5s,left .5s;
-            /*height: fit-content !important;*/
+    .mobile .e-control.e-lib.e-dashboardlayout.e-responsive {
+        z-index: 0;
+        overflow: scroll;
+    }
+
+
+
+    body.tailwind-dark .e-dashboardlayout.e-control .e-panel {
+        border: transparent !important;
+    }
+
+    .e-dashboardlayout {
+        padding: 10px;
+    }
+
+        .e-dashboardlayout.e-control .e-panel {
+            background: #652b9d00;
+            box-sizing: border-box;
             position: absolute;
+            border: transparent !important;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 0%);
         }
 
-        .e-dashboardlayout.e-control .e-panel .e-panel-header {
-            font-size: 15px;
-            font-weight: 500;
-            height: 60px;
-            padding: 5px;
-            vertical-align: top;
-            border-bottom: 0.5px solid #e3e3e3;
-        }
+            .e-dashboardlayout.e-control .e-panel .e-panel-container .e-grid.sf-grid .e-gridcontent .e-content.e-yscroll {
+                overflow: auto;
+            }
 
-        .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
-            line-height: 10px !important;
-            height: 40px;
-            color: #212529;
-            background: #3f48b99e;
-            border-radius: 26px;
-        }
+            .e-dashboardlayout.e-control .e-panel.e-panel-transition {
+                transition: top .5s,left .5s;
+                /*height: fit-content !important;*/
+                position: absolute;
+            }
 
-        .e-dashboardlayout.e-control .e-panel .e-panel-container {
-            height: 100%;
-            width: 100%;
-            background-color: #f0f4f9;
-            border-radius: 26px;
-        }
+            .e-dashboardlayout.e-control .e-panel .e-panel-header {
+                font-size: 16px;
+                font-weight: 500;
+                height: 60px;
+                padding: 13px;
+                vertical-align: top;
+                border-bottom: 0.5px solid #e3e3e3;
+            }
 
-        .e-dashboardlayout.e-control .e-panel.e-panel-transition {
-            border-bottom-right-radius: 26px;
-            border-radius: 26px;
-            min-width: 200ox;
-            min-height: 200px;
-            max-height: 393px;
-        }
+            .e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
+                line-height: 10px !important;
+                height: 40px;
+                color: #212529;
+                background: transparent;
+                border-color: transparent;
+                border-radius: 12px;
+            }
+
+            .e-dashboardlayout.e-control .e-panel .e-panel-container {
+                /*height: auto !important; */
+                width: 100%;
+                background-color: #ffffff;
+                border-radius: 12px;
+                min-height: 124px;
+            }
+
+            .e-dashboardlayout.e-control .e-panel.e-panel-transition {
+                border-radius: 12px;
+                min-width: 200px;
+                min-height: 124px;
+                max-height: max-content;
+                /*height: auto !important; */
+            }
+
+            .e-dashboardlayout.e-control .e-panel:hover {
+                border: transparent !important;
+                box-shadow: transparent !important;
+            }
 
     .row {
         margin-left: 0px;
@@ -183,46 +193,22 @@
     }
 
 
-    .mobile .e-control.e-lib.e-dashboardlayout.e-responsive {
-        z-index: 0;
-        overflow: scroll;
-    }
-
-    .e-control.e-lib.e-dashboardlayout.e-responsive {
-        z-index: 0;
-    }
-
-    .e-dashboardlayout {
-        padding: 10px;
-    }
-
-
 
     .root-container {
         height: 100%;
     }
 
+
     .title {
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 15px;
+        font-weight: bold;
+        color: #737373;
     }
 
     .category-text {
         float: left;
         line-height: 30px;
     }
-
-    .category-icon {
-        float: left;
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-size: 100%;
-        height: 30px;
-        width: 30px;
-        display: inline-block;
-        margin-right: 10px;
-    }
-
 
 
     .item-container {
@@ -259,7 +245,6 @@
 
     font-face {
         font-family: 'e-sb-icons';
-        /*src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBb0AAAC8AAAAYGNtYXAXVtKKAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZpcRWXQAAAF4AAAI2GhlYWQdVVVLAAAKUAAAADZoaGVhB5gDyQAACogAAAAkaG10eBXPAQ0AAAqsAAAAIGxvY2EGegRAAAAKzAAAABJtYXhwABEA7gAACuAAAAAgbmFtZZlKCfsAAAsAAAABhnBvc3QAAwAAAAAMiAAAACAAAwOQAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6QP//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAAFAIEAVwNJAy0AKwA4AGkAeACFAAABDgEHBhY7AScuATc2Fh8BMzI2Jy4BNTQWFx4BMzI2Jy4BJy4BJy4BIyIGBzceAQcOAScuATc+ARcHDgEHDgEVFBYXMhcyFjMWMzI2Nz4BPQEjIiYnLgE1NDY3PgE7ATU0JicmJyYiBwYHBQ4BFx4BHwI1LwEiBgcXHgEHBiY1NDYzMhYXAQMQFwEBDB0qEAcFAgISEB9tSR8IBgcWFBIdMh4oAgIiFhZ+Q0NiAgIZD2wWBwoKFRMaCgoKFBvaBAkCAwIFDwIcG14+PkbAkwMDAmdEKgsZHxUNFjBPYQIDA2lq/mtrBQHqHiUEAxEQEdQCWyZABygKAQoPKhYMBA4EAtUkOAMGAgkEBwICBAcNAgUCBwEGBAgIAwIBAhAJCTYdHCk0JCIJFRgWCgkKGBgYBwycAgkEBnN4tUYGAQEBAwMCIyJCAwUMMB0RKwoQCFgwKwMDAQEBAQPIBzQcFBsMDAJRUgECAjcKGQsQEBUNFwYFAAMAGwBPA9EDLwBFAI0AtAAAEw4BBw4BHwIeARceATMyNjc+ATc+AT8BIxUUBg8CBiYnLgEnLgE1NDY3PgE3PgEXHgEXHgEdATMnLgEnLgEvAiYGBxciBhUUBgcOARceARceARUUBiMiJicuASMiBhUUFhceAR8BMzc+ATc+AScuAScuATU0NjMyFhceATMyNicuAScuATU0JicmBgUGFh8BIyIGBw4BFx4BMzIWFRQGBw4BFRQWMzI2Nz4BJy4BIyIGB4wcKg4XCAIBEwgWDSFLqY5DFB4xDgkGAgJTEBgSvl1rCRMcCQYEBAYJHBMJa1yLOA0YEVMCAgYIDSkaHc+OShLHAwMFCSEfAgM0MRwVFhgUDQUFDAwWDh8TDggBAT4BAQkSHBcCAzEuHxcYFw8MBQYNExoKCAYdEQsGBAQHJgHPDAoYG45qKAoNAgsGLGg8VRELDw0aDwwoRiIFGFEtDQoNBgMnCh4WIlPC6iIQGwkZCgMICy8eFSApPzgyKRANAgECAwYYEg9Jl5dJDxIYBgMCAQEECA8sMjg/KCISHCsNDgEBAgeZDggNCQMNMyQqLwQDDQ4PDQQJBwUIDxEoCAYJDRMUDgwKECkfKzACAg4QDw8ECQgECxUTHgYECA0KCwIDAUoQIBUZAwkLIAwHAwEBARILDxMIDhggQyEeF0skBgcAAAAIACn/zAPWA7YAIAA9AFsAdQCRALEAzgDrAAABBx8BBw4BFRQWFx4BNzY3PgE3NjU0JisBNycuASMiBgcBDgEHDgEVFBYXFhceATc2Nz4BNzYmJy4BJy4BBwUOAQcOARUUFhcWFx4BNzY3PgE3NiYnJicuAQcGBwUeARcWFxY2NzY3PgE1NCYHDgEHBiYnJgYXFwYWFx4BMzI2Nz4BPQEHDgEHBgciJicmJy4BBwUUFhcWFx4BNzY3PgE3PgEnJgYHBgcOASMmJy4BLwEVBRQWFxYXFjY3Njc+ATU0JgcOAQcGJicuATEiBhUFFBYXHgE3PgE3PgEnJgYHBgcGJicmJy4BIyIGFQK7DgMCIx4aLkgWHhEHGBgzFBQgIR0HDgkUJSIXCf37KEQODAQEDBImJl0yMSkhLQYGAgcGNyEhfSIB2SQtDAoEBAYSODeCPDwcCQYCAh40ESIhSyIjE/2bAQYKGzo6fjg4FgkFAwYZVCdElyITBwICBAMFDHdTS2YXCgQiDjMVIysqVCMjFAYKAgH4EBsWIyJPKCggJTwGBQMEAgoGFCMjUysrIxUzDiL+BQ4WIjg4dDIyFQsFAwYqTTxGXCsPGAIBAfsFCxiFS01gCAUBBAISCyIwMWgwMSILEgECAgOqC2BfAgIREgs3TRcKCgQZGDkZGAQUFb0NCQQECP7EBhYNCg8dHA8KEAsLCAIDCggWCgxGCQoYBwcFBaYIEgsJERkVFQcXDQwDCwoWCBAYKSIQBQMDAgIBBF0bEAgWCwoBDAsWChAZGQsDChMDBxESCQofewU7ChkfFxYJEBkmDQUNAwUBBwgHCwMCASMgGgsKBgcFAgEGCBwNCjsFAQIDCwcIBwEFAwwFDSWcHhsMEggIAwsMFAoPGxgLAhENAgIJDwUHEgwGGRAKFxkEBCEYDjMCAQQEDQYHAQYHDQMGFQ8ABQBIAHEDuAMHABoANQB4AJ0AwgAAAQ4BBw4BBwYUFx4BHwE3PgE3NiYnLgEnJgYHFxYXHgEHBgcGBwYmJyYnJicmNjc2Nz4BFx4BBxQGBw4BFRQWFx4BBw4BIyImJyYGBwYWFx4BFRQWMzI2NTQ2MzI2Nz4BNS4BJy4BNz4BFxY2NzYmJy4BJy4BIyIGFQUOARUUFhceAQcGFhceATMyJicuAScmNjc2FhceATM2JiMiBgcFHgEXFgYHDgEjIiYnLgEjBhYXFjY1NCYnLgE3NiYnLgEjIhYXAbQhNx8eIgoHCAwyXHJyXTIMESo3G0EeGV4YqTIeHRAPDygfJyhRJyceKQ4NGCMkNxIfHCAcUwcKDRYdGx4OCQUNDgkVBgsHAQEIEQ8JBQoLBAQFAw8HCwcBEyIcDwoFKAwJCgEBBw0NBwIBBgoJBf6JFR0JBwoEAhEYKxA4CQELCRcWAgIJBwMICgYLAQIrAgIfFAKyFxYCAQMFAwcBAQoGBwoBAScDAmcJBwoEAhEZKhA4CQELCQMFCSIfHzgnHU4eMERcc3NdRTBLjTQaJAcGAgZRGCoqYTExJx4PDwEPEB8rNDVkKikUBgQBAQdPCwkFByEOEB8NDxYPBwYEAwUFDwkHBQYHCgkFBQ0JCQoHCw8QGBkSEBcMBgIHBQgNCAcDBAgKCwYGCxcIDAIBBgMECAhBaC0SKA0JGDUkG0QLAwEFAwQDbQwHCBk1JRcjEg0UBQMDBAJqAwEmAwEGAwQICEFoLRIoDQkAAAEAAAAAAAAOGKYjXw889QALBAAAAAAA3TCIZgAAAADdMIhmAAD/zAPWA7YAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAA9YAAQAAAAAAAAAAAAAAAAAAAAgEAAAAAAAAAAAAAAACAAAAA88AgQQAABsEAAApBAAASAAAAAAACgAUAB4A4gHmA0oEbAAAAAEAAAAIAOwACAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAHAAAAAQAAAAAAAgAHAGAAAQAAAAAAAwAHADYAAQAAAAAABAAHAHUAAQAAAAAABQALABUAAQAAAAAABgAHAEsAAQAAAAAACgAaAIoAAwABBAkAAQAOAAcAAwABBAkAAgAOAGcAAwABBAkAAwAOAD0AAwABBAkABAAOAHwAAwABBAkABQAWACAAAwABBAkABgAOAFIAAwABBAkACgA0AKRpY29tb29uAGkAYwBvAG0AbwBvAG5WZXJzaW9uIDEuMABWAGUAcgBzAGkAbwBuACAAMQAuADBpY29tb29uAGkAYwBvAG0AbwBvAG5pY29tb29uAGkAYwBvAG0AbwBvAG5SZWd1bGFyAFIAZQBnAHUAbABhAHJpY29tb29uAGkAYwBvAG0AbwBvAG5Gb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format("truetype");*/
         font-weight: normal;
         font-style: normal;
     }
@@ -281,37 +266,110 @@
         font-size: 40px;
     }
 
-    .e-control.e-lib.e-dashboardlayout.e-responsive {
-        z-index: 0;
-    }
 
-    .e-dashboardlayout.e-control .e-panel .e-panel-container .e-grid.sf-grid .e-gridcontent .e-content.e-yscroll {
-        overflow: auto;
-    }
-
-    body.tailwind-dark .e-dashboardlayout.e-control .e-panel {
-        border: 1px #435266 solid;
-    }
 
     .e-gridheader {
         padding-right: 0px !important;
     }
+
+    .e-card {
+        -webkit-tap-highlight-color: #0d6efd;
+        background-color: transparent;
+        border-bottom: transparent; /*1px solid #3f65ef;*/
+        border-top: transparent;
+        border-right: transparent;
+        border-left: transparent;
+        box-shadow: none;
+        color: #212529;
+        outline: none;
+        display: inline-block;
+        /*width: auto;*/
+        margin: 4px;
+        text-align: center;
+    }
+
+
+
+        .e-card .e-card-header {
+            box-sizing: border-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            -ms-flex-pack: center;
+            justify-content: center;
+            line-height: normal;
+            min-height: 22.5px;
+            padding: 6px;
+            width: inherit;
+            padding-bottom: 6px;
+        }
+
+
+
+            .e-card .e-card-header .e-card-header-image {
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 32px;
+                width: 32px;
+                margin: 12px;
+            }
+
+            .e-card .e-card-header .e-card-header-caption {
+                -ms-flex-item-align: center;
+                align-self: center;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex: 1;
+                flex: 1;
+                -ms-flex-direction: column;
+                flex-direction: row;
+                overflow: hidden;
+                padding: 0 0 0 12px;
+                /*max-width: fit-content;*/
+            }
+
+                .e-card .e-card-header .e-card-header-caption .e-card-header-title {
+                    font-family: Helvetica-Bold;
+                    color: gray;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+
+                .e-card .e-card-header .e-card-header-caption .e-card-sub-title {
+                    padding-top: 0px;
+                    font-family: Helvetica;
+                    color: black;
+                    font-size: 16px;
+                    position: absolute;
+                    left: 0;
+                }
+
 </style>
 
-<div class="col-lg-12 control-section content-wrapper" style="">
+<div class="col-lg-12 control-section content-wrapper" style="width: 1610px;">
     <div class="row col-lg-12" style="direction:ltr;">
         <div class="col-lg-3 col-md-3 col-sm-3" style="display:inline-block;padding-left: 1px;padding-right: 7px; padding-bottom:3px;">
-            <SfDateRangePicker TValue="DateTime" Placeholder="انتخاب تاریخ" @bind-StartDate="@FromDate" @bind-EndDate="@ToDate" ShowClearButton="true">
-                <DateRangePickerEvents TValue="DateTime" ValueChange="ValueChangeHandler"></DateRangePickerEvents>
+            <SfDateRangePicker TValue="DateTime"
+                               Placeholder="انتخاب تاریخ"
+                               @bind-StartDate="@FromDate"
+                               @bind-EndDate="@ToDate"
+                               ShowClearButton="true">
+                <DateRangePickerEvents TValue="DateTime"
+                                       ValueChange="ValueChangeHandler"></DateRangePickerEvents>
             </SfDateRangePicker>
         </div>
     </div>
     <div class="row  col-lg-12">
-        <SfDashboardLayout @ref="dashboardObject" Columns="12" AllowFloating="true" AllowDragging="true">
+        <SfDashboardLayout @ref="dashboardObject"
+                           Columns="12"
+                           AllowFloating="false"
+                           AllowDragging="false"
+                           CellSpacing="@(new double[]{20 ,20 })">
 
             <DashboardLayoutPanels>
 
-                <DashboardLayoutPanel CssClass="ChartPanelClass" Id="5" Row="1" Column="3" SizeX="9" SizeY="4">
+                <DashboardLayoutPanel CssClass="ChartPanelClass" Id="AddedTickets" Row="1" Column="4" SizeX="8" SizeY="4">
                     <HeaderTemplate><div class="e-header-text">تیکت های ثبت شده</div></HeaderTemplate>
                     <ContentTemplate>
                         <div dir="rtl">
@@ -321,15 +379,13 @@
                                                    Interval="1"
                                                    IntervalType="IntervalType.Days"
                                                    EdgeLabelPlacement="EdgeLabelPlacement.Shift"
-                                                   LabelRotation=-45>
-                                    <ChartAxisLabelStyle>
-                                    </ChartAxisLabelStyle>
+                                                   LabelRotation=-45>  
                                     <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
                                     <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
                                     <ChartAxisLabelStyle TextAlignment="Alignment.Near"></ChartAxisLabelStyle>
                                     @*<ChartAxisMajorTickLines Height="0" ></ChartAxisMajorTickLines>*@
                                 </ChartPrimaryXAxis>
-                                <ChartPrimaryYAxis Title="Count" Interval="1">
+                                <ChartPrimaryYAxis Title="تعداد" Interval="5">
                                     <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
                                     <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
                                 </ChartPrimaryYAxis>
@@ -340,11 +396,11 @@
                                                  Name="تیکتهای تمام شده"
                                                  XName="Item1"
                                                  Width="2"
-                                                 Opacity="0.5"
+                                                 Opacity="1"
                                                  YName="Item2"
-                                                 Type="ChartSeriesType.StackingColumn"
+                                                 Type="ChartSeriesType.Column"
                                                  ColumnWidth="0.2"
-                                                 Fill="#FEC200">
+                                                 Fill="#3ad496">
                                     </ChartSeries>
                                 </ChartSeriesCollection>
                                 <ChartSeriesCollection>
@@ -352,11 +408,11 @@
                                                  Name="تیکتهای  در حال انجام"
                                                  XName="Item1"
                                                  Width="1"
-                                                 Opacity="0.5"
+                                                 Opacity="1"
                                                  YName="Item2"
                                                  ColumnWidth="0.2"
-                                                 Type="ChartSeriesType.StackingColumn"
-                                                 Fill="#00BCD7">
+                                                 Type="ChartSeriesType.Column"
+                                                 Fill="#3358E0">
                                     </ChartSeries>
 
                                 </ChartSeriesCollection>
@@ -365,7 +421,7 @@
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-                <DashboardLayoutPanel Id="4" Row="0" Column="0" SizeX="3" SizeY="3">
+                <DashboardLayoutPanel Id="TicketsOfPrograms" Row="0" Column="0" SizeX="4" SizeY="3">
                     <HeaderTemplate><div class="e-header-text">آمار تیکت برنامه ها</div></HeaderTemplate>
                     <ContentTemplate>
                         <SfAccumulationChart @ref="@sfAccumulationChart1" Background="transparent">
@@ -374,7 +430,7 @@
                             </AccumulationChartBorder>
 
                             <AccumulationChartSeriesCollection>
-                                <AccumulationChartSeries DataSource="@programsTickets" XName="Item1" YName="Item2" InnerRadius="40%">
+                                <AccumulationChartSeries DataSource="@programsTickets" XName="Item1" YName="Item2" InnerRadius="40%" Palettes="@palettes">
                                     <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
                                 </AccumulationChartSeries>
                             </AccumulationChartSeriesCollection>
@@ -385,77 +441,134 @@
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-                <DashboardLayoutPanel Id="6" Row="3" Column="0" SizeX="3" SizeY="3">
+                <DashboardLayoutPanel Id="TicketsOfCenters" Row="3" Column="0" SizeX="4" SizeY="3">
                     <HeaderTemplate><div class="e-header-text">آمار تیکت دفاتر</div></HeaderTemplate>
                     <ContentTemplate>
-                        <SfAccumulationChart @ref="@sfAccumulationChart2" Background="transparent">
+                        <SfChart @ref="sfChart" Height="100%" Width="100%" Background="transparent">
+                            <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"
+                                               Interval="1"
+                                               EdgeLabelPlacement="EdgeLabelPlacement.Shift"
+                                               LabelRotation=-45>
+                                <ChartAxisLabelStyle>
+                                </ChartAxisLabelStyle>
+                                <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                                <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
+                                <ChartAxisLabelStyle TextAlignment="Alignment.Near"></ChartAxisLabelStyle>
+                            </ChartPrimaryXAxis>
 
-                            <AccumulationChartBorder Color="transparent"></AccumulationChartBorder>
-                            <AccumulationChartSeriesCollection>
-                                <AccumulationChartSeries DataSource="@centersTickets" XName="Item1" YName="Item2" InnerRadius="40%">
-                                    <AccumulationChartSeriesBorder Color="white" Width="3"></AccumulationChartSeriesBorder>
-                                </AccumulationChartSeries>
-                            </AccumulationChartSeriesCollection>
-                            <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
-                            <AccumulationChartLegendSettings Alignment="Alignment.Near" Position="LegendPosition.Bottom">
-                            </AccumulationChartLegendSettings>
-                        </SfAccumulationChart>
+                            <ChartPrimaryYAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Double"
+                                               Minimum="0"
+                                               Interval="10">
+                                <ChartAxisMajorGridLines Width="1"></ChartAxisMajorGridLines>
+                                <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
+                                <ChartAxisLineStyle Width="0.5"></ChartAxisLineStyle>
+                            </ChartPrimaryYAxis>
+                            <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                            <ChartSeriesCollection>
+
+                                <ChartSeries DataSource="@centersTickets"
+                                             Name="دفاتر"
+                                             XName="Item1"
+                                             Width="2"
+                                             Opacity="1"
+                                             YName="Item2"
+                                             Type="ChartSeriesType.Column"
+                                             ColumnWidth="0.2"
+                                             Fill="#f78434">
+                                </ChartSeries>
+                            </ChartSeriesCollection>
+
+                        </SfChart>
+
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-                <DashboardLayoutPanel Id="3" Row="0" Column="3" SizeX="3" SizeY="2">
+                <DashboardLayoutPanel Id="TicketCondition" Row="0" Column="4" SizeX="2" SizeY="2">
                     <HeaderTemplate>
                         <div class="e-header-text">وضعیت تیکت ها</div>
                     </HeaderTemplate>
                     <ContentTemplate>
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
-                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px; ">
-                                <CardHeader SubTitle="@( "تیکتهای در حال انجام")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())" ImageUrl="@("../images/icons/prograss-icon.png")" />
+                            <SfCard ID="FirstCard">
+                                <CardHeader Title="@( "تیکتهای در حال انجام")"
+                                            SubTitle="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())"
+                                            ImageUrl="@("../images/icons/prograss-icon.png")" />
                             </SfCard>
 
-                            <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                                <CardHeader SubTitle="@( "تیکتهای پایان یافته")" Title="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.Finish).ToString())" ImageUrl="@("../images/icons/completed-icon.jpg")" />
+                            <SfCard ID="SecondCard">
+                                <CardHeader Title="@( "تیکتهای پایان یافته")"
+                                            SubTitle="@(ticketDtos.Count(t=>t.TicketConditionid==(int)TicketCondition.Finish).ToString())"
+                                            ImageUrl="@("../images/icons/done-icon.png")" />
                             </SfCard>
 
                         </div>
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-                <DashboardLayoutPanel Id="2" Row="0" Column="6" SizeX="3" SizeY="2">
+                <DashboardLayoutPanel Id="TicketType" Row="0" Column="6" SizeX="2" SizeY="2">
                     <HeaderTemplate>
                         <div class="e-header-text">نوع تیکت ها</div>
                     </HeaderTemplate>
                     <ContentTemplate>
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
-                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                                <CardHeader SubTitle="@( "تیکتهای پشتیبانی")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Supporting).ToString())" ImageUrl="@("../images/icons/supporting-icon.png")" />
+                            <SfCard ID="FirstCard">
+                                <CardHeader Title="@( "تیکتهای پشتیبانی")"
+                                            SubTitle="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Supporting).ToString())"
+                                            ImageUrl="@("../images/icons/supporting-icon.svg")" />
                             </SfCard>
 
-                            <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                                <CardHeader SubTitle="@( "تیکتهای توسعه")" Title="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Developing).ToString())" ImageUrl="@("../images/icons/developing-icon.png")" />
+                            <SfCard ID="SecondCard">
+                                <CardHeader Title="@( "تیکتهای توسعه")"
+                                            SubTitle="@(ticketDtos.Count(t=>t.Typeid==(int)TicketType.Developing).ToString())"
+                                            ImageUrl="@("../images/icons/developing-icon.png")" />
                             </SfCard>
 
                         </div>
                     </ContentTemplate>
                 </DashboardLayoutPanel>
 
-                <DashboardLayoutPanel Id="1" Row="0" Column="9" SizeX="3" SizeY="2">
+            <DashboardLayoutPanel Id="ErrorTypeCard" Row="0" Column="8" SizeX="2" SizeY="2">
+                <HeaderTemplate>
+                    <div class="e-header-text">نوع خطاها</div>
+                </HeaderTemplate>
+                <ContentTemplate>
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
+                        <SfCard ID="FirstCard">
+                            <CardHeader Title="@( "خطای کاربر")"
+                                        SubTitle="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.UserError).ToString())"
+                                        ImageUrl="@("../images/icons/usererror-icon.png")" />
+                        </SfCard>
+
+                        <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
+                            <CardHeader Title="@( "خطای سیستمی")"
+                                        SubTitle="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.SystemError).ToString())"
+                                        ImageUrl="@("../images/icons/systemerror-icon.png")" />
+                        </SfCard>
+                    </div>
+                </ContentTemplate>
+            </DashboardLayoutPanel>
+
+                <DashboardLayoutPanel Id="7" Row="0" Column="10" SizeX="2" SizeY="2">
                     <HeaderTemplate>
-                        <div class="e-header-text">نوع خطاها</div>
+                        <div class="e-header-text">تیکت های کاربر</div>
                     </HeaderTemplate>
                     <ContentTemplate>
-                        <div class="col-lg-12 col-md-12" style="padding: 0px; ">
-                            <SfCard ID="FirstCard" style="margin-top: 15px;   padding-bottom: 1px;">
-                                <CardHeader SubTitle="@( "خطای کاربر")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.UserError).ToString())" ImageUrl="@("../images/icons/usererror-icon.png")" />
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px; ">
+                            <SfCard ID="FirstCard">
+                                <CardHeader Title="@( "در حال انجام")"
+                                            SubTitle="@(ticketDtos.Where(t=>t.SupporterPersonID==userName).Count(t=>t.TicketConditionid==(int)TicketCondition.OnGoing).ToString())"
+                                            ImageUrl="@("../images/icons/supporter-ongoing-tickets-icon.png")" />
                             </SfCard>
 
                             <SfCard ID="SecondCard" style="margin-top: 2px;   padding-bottom: 1px;">
-                                <CardHeader SubTitle="@( "خطای سیستمی")" Title="@(ticketDtos.Count(t=>t.ErrorTypeid==(int)ErrorType.SystemError).ToString())" ImageUrl="@("../images/icons/systemerror-icon.png")" />
+                                <CardHeader Title="@( "تمام شده")"
+                                            SubTitle="@(ticketDtos.Where(t=>t.SupporterPersonID==userName).Count(t=>t.TicketConditionid==(int)TicketCondition.Finish).ToString())"
+                                            ImageUrl="@("../images/icons/supporter-finished-tickets-icon.png")" />
                             </SfCard>
                         </div>
                     </ContentTemplate>
                 </DashboardLayoutPanel>
-
             </DashboardLayoutPanels>
         </SfDashboardLayout>
     </div>
@@ -478,15 +591,21 @@
     public MetaData metaData { get; set; } = new MetaData();
     public DateTime FromDate { get; set; } = DateTime.Now.AddMonths(-1).Date;
     public DateTime ToDate { get; set; } = DateTime.Now.Date.AddDays(1);
+    private string[] palettes = new string[] { "#61EFCD", "#CDDE1F", "#FEC200", "#CA765A", "#2485FA", "#F57D7D", "#C152D2",
+                                               "#8854D9", "#3D4EB8", "#00BCD7","#4472c4", "#ed7d31", "#ffc000", "#70ad47", "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300" };
+
+    private int userName = 0;
 
     private async Task ChangeDiv(EventArgs args)
     {
 
     }
-
-
     protected override async Task OnInitializedAsync()
     {
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        userName = System.Convert.ToInt32(((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value);
+
         await GetData(FromDate, ToDate);
 
     }
@@ -497,7 +616,7 @@
 
     private async Task GetData(DateTime fromDate, DateTime toDate)
     {
-        var response = await ticketRepository.GetUserAllTickets(fromDate, toDate);
+        var response = await ticketRepository.GetAllTickets();
         allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
         finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
         ongoingTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
@@ -511,13 +630,25 @@
         {
             ticketDtos = response;
 
-            allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
-            ongoingTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
-            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish).GroupBy(t => t.TicketTime.Date).Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).ToList();
-            programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName }).Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count())).ToList();
-            centersTickets = ticketDtos.GroupBy(t => new { t.PersonCenterId, t.PersonCenterName }).Select(t => new Tuple<string, int>(t.Key.PersonCenterName.ToString(), t.Select(e => e.Id).Count())).ToList();
+            allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date)
+                                   .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
+                                   .ToList();
+            ongoingTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
+                                       .GroupBy(t => t.TicketTime.Date)
+                                       .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
+                                       .ToList();
+            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
+                                        .GroupBy(t => t.TicketTime.Date)
+                                        .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
+                                        .ToList();
+            programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName })
+                                        .Select(t => new Tuple<string, int>(t.Key.ProgramName.ToString(), t.Select(e => e.Id).Count()))
+                                        .ToList();
+            centersTickets = ticketDtos.GroupBy(t => new { t.PersonCenterId, t.PersonCenterName })
+                                       .Select(t => new Tuple<string, int>(t.Key.PersonCenterName.ToString(), t.Select(e => e.Id).Count()))
+                                       .ToList();
             sfAccumulationChart1.DataSource = programsTickets;
-            sfAccumulationChart2.DataSource = centersTickets;
+            //sfAccumulationChart2.DataSource = centersTickets;
             //sfAccumulationChart1.Refresh();
             //sfAccumulationChart2.Refresh();
 

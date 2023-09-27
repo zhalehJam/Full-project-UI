@@ -13,8 +13,9 @@ namespace Ticketing.Models.Tickets.Repository
 {
     public interface ITicketRepository
     {
+        Task<List<TicketDto>> GetAllTickets();
         Task<List<TicketDto>> GetUserAllTickets(DateTime fromDate, DateTime toDate);
-        Task<List<TicketDto>> GetAllTickets(string page, string pageSize);
+        Task<List<TicketDto>> GetAllTicketsByPage(string page, string pageSize);
         Task<TicketDto> GetTicketById(Guid TickeId);
         Task<PagingResponse<TicketDto>> GetUserTicketsByDateRage(TicketQueryParameters parameters);
         Task CreateNewTicket(CreateTicketCommand createTicketCommand);

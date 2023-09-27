@@ -129,7 +129,7 @@
         {
             @foreach (PersonDto persondto in personDtos)
             {
-                string stl = "";
+                string stl = "background-color:f0f3ec";
                 <div class="card_sample_4 col-lg-1 col-md-2 col-sm-5 "
                      style=" padding: 4px; display:inline-block!important  ;width: 260px;height:138px;"
                      title="@persondto.PersonRole.ToString()">
@@ -142,7 +142,7 @@
                         stl = "background-color:#edfffe";
 
                     }
-                    <div class="p-2 hulu" style="@stl;">
+                    <div class="p-2 cart-class" style="@stl;">
                         <div @ondblclick="(()=>EditButtonClick(persondto))">
                             @{
                                 string contentText = persondto.PartName + " " + persondto.CenterName;

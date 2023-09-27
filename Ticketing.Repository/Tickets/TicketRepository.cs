@@ -9,6 +9,7 @@ using Ticketing.Models.Tickets.Command;
 using Ticketing.Models.Tickets.Dto;
 using Ticketing.Models.Tickets.Query;
 using Ticketing.Models.Tickets.Repository;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ticketing.Repository.Tickets
 {
@@ -27,9 +28,27 @@ namespace Ticketing.Repository.Tickets
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_tokenProvider.AccessToken}");
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
+
+        public async Task<List<TicketDto>> GetAllTickets()
+        {
+            List<TicketDto> ticketList = new List<TicketDto>();
+            try
+            {
+                var token = _tokenProvider.AccessToken;
+                IDictionary<string, string> parameters = new Dictionary<string, string>();
+                var response = await _httpClient.GetAsync("Ticket/GetAllTickets");
+                var content = await response.Content.ReadAsStringAsync();
+                ticketList = GetTicketDtoFromContent(content);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ticketList;
+        }
         public async Task<List<TicketDto>> GetUserAllTickets(DateTime fromDate, DateTime toDate)
         {
-                List<TicketDto> ticketList = new List<TicketDto>();
+            List<TicketDto> ticketList = new List<TicketDto>();
             try
             {
                 var token = _tokenProvider.AccessToken;
@@ -78,7 +97,7 @@ namespace Ticketing.Repository.Tickets
             return ticketDtos;
         }
 
-        public async Task<List<TicketDto>> GetAllTickets(string page, string pageSize)
+        public async Task<List<TicketDto>> GetAllTicketsByPage(string page, string pageSize)
         {
             List<TicketDto> ticketList = new List<TicketDto>();
             IDictionary<string, string> parameters = new Dictionary<string, string>();

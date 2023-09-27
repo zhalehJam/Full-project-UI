@@ -1,4 +1,4 @@
-﻿ 
+﻿
 .pagerFooter {
     padding: 8px;
     border: solid 2px #e7e6e6;
@@ -15,14 +15,23 @@
     right: 50px;
 }
 
-.hulu {
-    background-color: #edf8ff38;
+.e-float-input, .e-float-input.e-control-wrapper {
+    line-height: 1.4;
+    margin-bottom: 0;
+    margin-top: 0px;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+}
+
+.cart-class {
+    background-color: #0182944a;
     border: solid 2px #e7e6e6;
     border-radius: 10px;
     height: 130px;
 }
 
-    .hulu:hover {
+    .cart-class:hover {
         background-color: white;
         border: solid 1px gray;
     }
@@ -31,10 +40,7 @@ body {
     font-family: 'Vazir FD';
 }
 
-.e-card .e-card-horizontal .e-card-stacked {
-    justify-content: flex-start;
-    margin: initial;
-}
+
 
 .property-panel-section .property-panel-content td {
     padding: 0 0 15px 0;
@@ -54,32 +60,13 @@ body {
 .e-float-input, .e-float-input.e-control-wrapper {
     line-height: 1.4;
     margin-bottom: 0;
-    margin-top: 1px;
+    margin-top: 0px !important;
+    
     padding-top: 0;
     position: relative;
     width: 150px;
 }
 
-.tile_layout.card-control-section .e-card .e-card-image {
-    height: 180px;
-    width: inherit;
-}
-
-
-.tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-header-title {
-    font-size: 20px;
-    font-family: Helvetica, 'Segoe UI';
-    font-weight: bold;
-}
-
-.tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-sub-title {
-    padding-top: 5px;
-}
-
-.tile_layout.card-control-section .e-card .e-card-content {
-    padding-top: 10px;
-    height: 50px;
-}
 
 #source_link {
     float: right;
@@ -94,6 +81,34 @@ body {
     outline: none;
 }
 
+    .e-card .e-card-horizontal .e-card-stacked {
+        justify-content: flex-start;
+        margin: initial;
+    }
+
+.tile_layout.card-control-section .e-card .e-card-image {
+    height: 180px;
+    width: inherit;
+}
+
+
+
+
+.tile_layout.card-control-section .e-card .e-card-content {
+    padding-top: 10px;
+    height: 50px;
+}
+
+.tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-header-title {
+    font-size: 20px;
+    font-family: Helvetica, 'Segoe UI';
+    font-weight: bold;
+}
+
+.tile_layout.card-control-section .e-card .e-card-header .e-card-header-caption .e-card-sub-title {
+    padding-top: 5px;
+}
+
 .e-ddl.e-lib.e-input-group.e-control-container.e-control-wrapper.e-rtl.e-keyboard {
     width: 150px !important;
 }
@@ -101,4 +116,3 @@ body {
 span.e-ddl.e-lib.e-input-group.e-control-container.e-control-wrapper.e-rtl {
     width: 150px !important;
 }
- 

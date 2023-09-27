@@ -9,8 +9,8 @@
 @inject TokenProvider TokenProvider
 
 <style>
-    .e-menu-wrapper, .e-menu-container {
-        background-color: #f8f9fa00;
+    .main-menu {
+        position: fixed;
     }
 
     .exit_icon_image {
@@ -22,28 +22,37 @@
         color: black;
     }
 
+
+
+
+    .e-sidebar {
+        /*background-image: linear-gradient(351deg, #4d76a8 0%, #eff4f9 70%);*/
+        background-color: #018294;
+        border-bottom-left-radius: 12px;
+        border-top-left-radius: 12px;
+    }
+
+        .e-sidebar.e-right {
+            border-left: 0 solid rgba(0,0,0,0);
+            left: auto;
+            right: 0;
+            top: 0;
+            position: fixed;
+        }
+
     .e-sidebar-context {
         overflow-x: hidden;
         position: relative;
-        height: 95vh;
+        height: inherit;
     }
 
     .e-toolbar {
-        background-image: linear-gradient(20deg, #4d76a8 0%, #eff4f9 70%);
+        background-color: transparent;
     }
 
-    .e-sidebar {  
-        background-image: linear-gradient(351deg, #4d76a8 0%, #eff4f9 70%);
-        border-bottom-left-radius: 24px;
-        border-top-left-radius: 24px;
-       
-    }
-
-
-
-    .e-toolbar .e-toolbar-items {
-        background: #f8f9fa00;
-    }
+        .e-toolbar .e-toolbar-items {
+            background: #f8f9fa00;
+        }
 
     /* Sample specific styles*/
     .container-fluid {
@@ -57,9 +66,7 @@
 
 
 
-    #wrapper .sidebar-menu {
-        z-index: 20 !important;
-    }
+
     /* Specific styles for Menu container element*/
     #wrapper .dock-menu.e-menu-container {
         border: 0px;
@@ -75,11 +82,6 @@
         font-size: 16px
     }
 
-
-    #wrapper .sidebar-menu .e-menu-container {
-        border: 0px;
-        height: 500px;
-    }
 
     #maintext .content {
         padding: 15px;
@@ -104,10 +106,6 @@
     .e-bigger #maintext .sidebar-heading {
         font-size: 18px;
     }
-    /* Specifies the styles for Menu component */
-    .sidebar-menu .e-menu-container ul .e-menu-item.e-menu-caret-icon {
-        width: 220px;
-    }
 
     .e-close .e-menu-container ul .e-menu-item {
         width: 50px;
@@ -117,24 +115,64 @@
         padding-right: 12px;
     }
 
-    .sidebar-menu.e-dock.e-close .e-menu-container ul .e-menu-item .e-caret {
-        display: none;
+    #wrapper .sidebar-menu {
+        z-index: 20 !important;
     }
 
+        #wrapper .sidebar-menu .e-menu-container {
+            border: 0px;
+            height: 500px;
+        }
 
 
-    .sidebar-menu.e-dock.e-close .e-menu-container ul.e-menu {
-        font-size: 0;
+    .e-menu-wrapper, .e-menu-container {
+        background-color: #f8f9fa00;
     }
 
-    .sidebar-menu.e-dock.e-close .e-menu-item .e-menu-icon {
-        font-size: 20px;
-        padding: 0;
-    }
+        .e-menu-wrapper .e-menu .e-menu-item.e-selected, .e-menu-container .e-menu .e-menu-item.e-selected {
+            color: #26303b;
+            outline: 0 solid #0c1116;
+            outline-offset: 0;
+            background-color: #04b1c9;
+            border-radius: 8px;
+        }
 
-    .sidebar-menu, .e-menu-wrapper, .e-menu-container ul {
-        overflow: hidden;
-    }
+        .sidebar-menu, .e-menu-wrapper, .e-menu-container ul {
+            overflow: hidden;
+        }
+
+            .e-menu-wrapper .e-menu .e-menu-item.e-focused, .e-menu-container .e-menu .e-menu-item.e-focused {
+                color: #212529;
+                outline: 0 solid #ffffff;
+                outline-offset: 0;
+                /* background-color: #dee2e6; */
+                background-image: linear-gradient(272deg, #3b4243, #018294, #3b4243);
+                border-radius: 8px;
+            }
+
+            .sidebar-menu .e-menu-container ul .e-menu-item.e-menu-caret-icon {
+                width: 220px;
+            }
+
+            .e-menu-wrapper .e-menu .e-menu-item .e-menu-url, .e-menu-container .e-menu .e-menu-item .e-menu-url {
+                background-color: #3e424a;
+                color: var(--bs-gray-300);
+            }
+
+            .sidebar-menu.e-dock.e-close .e-menu-container ul .e-menu-item .e-caret {
+                display: none;
+            }
+
+            .sidebar-menu.e-dock.e-close .e-menu-container ul.e-menu {
+                font-size: 0;
+            }
+
+            .sidebar-menu.e-dock.e-close .e-menu-item .e-menu-icon {
+                font-size: 22px;
+                padding: 0;
+            }
+
+
     /* Sample specific icon styles */
     @@font-face {
         font-family: 'fontello';
@@ -176,9 +214,6 @@
     }
 
 
-
-
-
     @@font-face {
         font-family: 'e-icons';
         src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
@@ -189,24 +224,40 @@
     .e-tbar-menu-icon:before {
         content: "\e718";
     }
+
+
+    .e-menu-wrapper ul, .e-menu-container ul {
+        font-weight: 400;
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 16px;
+        padding: 0;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+        .e-menu-wrapper ul .e-menu-item, .e-menu-container ul .e-menu-item {
+            cursor: pointer;
+            position: relative;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            height: 52px;
+            line-height: 32px; 
+            padding: 12px ;
+            vertical-align: top;
+            white-space: nowrap;
+        }
 </style>
 
 <div>
     @*Initialize the Toolbar component*@
-    <SfToolbar>
-        <ToolbarEvents Clicked="@Toggle"></ToolbarEvents>
-        <ToolbarItems>
-            <ToolbarItem PrefixIcon="e-line-normal tb-icons" TooltipText="Menu"></ToolbarItem>
 
-            <ToolbarItem Id="item2" TooltipText="MainPage">
-                <Template>
-                    <div class="e-folder">
-                        <div class="e-folder-name">مدیریت پشتیبانی</div>
-                    </div>
-                </Template>
-            </ToolbarItem>
-        </ToolbarItems>
-    </SfToolbar>
 </div>
 <div class="page">
     @*main content declaration*@
@@ -221,16 +272,30 @@
         <ChildContent>
             <div class="main-menu">
                 <div>
+                    <SfToolbar>
+                        <ToolbarEvents Clicked="@Toggle"></ToolbarEvents>
+                        <ToolbarItems>
+                            <ToolbarItem PrefixIcon="e-line-normal tb-icons" TooltipText="Menu"></ToolbarItem>
+                            <ToolbarItem Id="item2" TooltipText="MainPage">
+                                <Template>
+                                    <div class="e-folder">
+                                        <div class="e-folder-name">مدیریت پشتیبانی</div>
+                                    </div>
+                                </Template>
+                            </ToolbarItem>
+                        </ToolbarItems>
+                    </SfToolbar>
                     <SfMenu CssClass="dock-menu" Items="@MainMenuItems" Orientation="@VerOrientation">
+                        <style>
+                        </style>
                     </SfMenu>
-
                 </div>
             </div>
         </ChildContent>
     </SfSidebar>
 
     <main>
-        <div class="main-content" id="maintext" style="overflow: hidden;">
+        <div class="main-content" id="maintext" style="overflow: hidden; ">
             <article class="content px-4">
                 <p class="paragraph-content" style=" margin-bottom: 0rem;">
                     @Body
@@ -239,19 +304,17 @@
         </div>
     </main>
 
-    @*Initialize the Sidebar component*@
-
 </div>
 @code {
     public Orientation VerOrientation = Orientation.Vertical;
     public List<MenuItem> MainMenuItems = new List<MenuItem>{
         new MenuItem { Text = "پرسنل", IconCss = "e-icons e-people", Url="/PersonsList" }  ,
         new MenuItem { Text = "برنامه ها", IconCss = "e-icons e-field-settings ", Url="/ProgramsList" },
-        new MenuItem { Text = "تیکت ها", IconCss = "e-annotation-edit e-icons", Url="/TicketsList" } ,
         new MenuItem { Text = "مراکز", IconCss = "e-icons e-location", Url="/CentersList" } ,
+        new MenuItem { Text = "تیکت ها", IconCss = "e-annotation-edit e-icons", Url="/TicketsList" } ,
         new MenuItem { Text = "خروج", IconCss =  "exit_icon_image" , Url="/login"  } };
 
-    public bool SidebarToggle = false;
+    public bool SidebarToggle = true;
     public void Toggle(ClickEventArgs args)
     {
         if (args.Item.TooltipText == "Menu")

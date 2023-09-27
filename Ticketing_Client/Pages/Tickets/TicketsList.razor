@@ -36,7 +36,7 @@
 @inject ICenterRepository centerRepository
 @inject AuthenticationStateProvider authenticationStateProvider
 
-<div class="col-lg-12 control-section"  >
+<div class="col-lg-12 control-section">
     <div class="e-panel-header row col-lg-12 col-md-3 col-sm-3" style="  margin-bottom:6px;align-items: baseline;">
         <div style="display:inline-block!important ;width: auto;  font-size: 13px;">نمایش تیکتهای ثبت شده در بازه زمانی:</div>
         <div style="display:inline-block!important;width: auto;">
@@ -52,14 +52,13 @@
                 <SfGrid @ref="Grid"
                         AllowGrouping="true"
                         DataSource="@ticketDtos"
-                        
                         AllowSorting="true"
                         AllowFiltering="true"
                         Toolbar="@(new string[] { "Add", "Edit", "Delete", "Search","ColumnChooser" })"
                         ShowColumnChooser="true"
                         style="width: auto; padding-right: 1px; padding-left: 1px;"
-                        Height="600px" Width="auto"  >
-                         
+                        Height="600px" Width="auto">
+
                     <GridEvents TValue="TicketDto"
                                 OnActionBegin="ActionBeginHandler"
                                 OnActionFailure="ActionFailureHandler">
@@ -240,17 +239,17 @@
 
                     </GridEditSettings>
                     <GridColumns>
-                        <GridColumn Field=@nameof(TicketDto.Id) Visible=true HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.PersonID) Visible=false HeaderText="PersonID" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.PersonName) Visible=true HeaderText="نام" TextAlign="TextAlign.Right" Width="140"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="110"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.PersonPartName) HeaderText="واحد" TextAlign="TextAlign.Right" Width="110"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.SupporterPersonName) HeaderText="پشتیبان" Visible="@(UserIsAdmin)" ValidationRules="@(new ValidationRules { Required = true })" Width="150"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.ProgramName) HeaderText="برنامه" ValidationRules="@(new ValidationRules { Required = true })" Width="150"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.ErrorTypeName) Visible=true HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.ErrorDiscription) HeaderText="شرح خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="160"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.TicketTypeName) HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="150"></GridColumn>
-                        <GridColumn Field=@nameof(TicketDto.TicketConditionTypeName) HeaderText="وضعیت" EditType="EditType.DropDownEdit" Width="160">
+                        <GridColumn Field=@nameof(TicketDto.Id) Visible=true HeaderText="ID" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="160"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonID) Visible=false HeaderText="PersonID" TextAlign="TextAlign.Right" Width="80"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonName) Visible=true HeaderText="نام" TextAlign="TextAlign.Right" Width="100"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonCenterName) HeaderText="مرکز" TextAlign="TextAlign.Right" Width="80"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.PersonPartName) Visible=false HeaderText="واحد" TextAlign="TextAlign.Right" Width="80"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.SupporterPersonName) Visible=true HeaderText="پشتیبان" ValidationRules="@(new ValidationRules { Required = true })" Width="100"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ProgramName) Visible=true HeaderText="برنامه" ValidationRules="@(new ValidationRules { Required = true })" Width="80"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ErrorTypeName) Visible=false HeaderText="نوع خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="80"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.ErrorDiscription) Visible=true HeaderText="شرح خطا" EditType="EditType.DropDownEdit" TextAlign="TextAlign.Right" Width="210"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.TicketTypeName) Visible=true HeaderText="نوع تیکت" EditType="EditType.DropDownEdit" Width="100"></GridColumn>
+                        <GridColumn Field=@nameof(TicketDto.TicketConditionTypeName) HeaderText="وضعیت" EditType="EditType.DropDownEdit" Width="100">
                             <Template Context="another_name2">
                                 @{
                                     var category = (another_name2 as TicketDto);
@@ -277,8 +276,8 @@
                         </GridColumn>
                     </GridColumns>
                 </SfGrid>
-            <SfPager PageSize="10" NumericItemsCount=4 TotalItemsCount="@metaData.TotalCount" ItemClick="Click" CurrentPage="pageNo2">
-            </SfPager>
+                <SfPager PageSize="10" NumericItemsCount=4 TotalItemsCount="@metaData.TotalCount" ItemClick="Click" CurrentPage="pageNo2">
+                </SfPager>
             </EditForm>
 
         </div>
@@ -487,14 +486,14 @@
                                                                            .Select(s => new { Key = (int)s, Value = @EnumExtensions.GetDisplayName((TicketCondition)s) })
                                                                            .ToDictionary(d => d.Key, d => d.Value).ToList();
 
- 
+
     protected override async Task OnInitializedAsync()
     {
         pageNo2 = 1;
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
-        string r = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
-        supporterInfo = await GetPersonInfo(Convert.ToInt32(r));
+        string userName = ((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value;
+        supporterInfo = await GetPersonInfo(Convert.ToInt32(userName));
         programDtos = await programRepository.GetSupporterProgramsList(supporterInfo.PersonID);
         if (supporterInfo.PersonRole == RoleType.Admin)
         {
@@ -502,7 +501,7 @@
         }
         centerDtos = await centerRepository.GetAllCenters();
         await GetAllTickets();
-        await GetPersonData(); 
+        await GetPersonData();
     }
 
     private async Task SetCenterChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
@@ -528,7 +527,7 @@
     public async Task Click(PagerItemClickEventArgs args)
     {
         pageNo2 = args.CurrentPage;
-        parameters.PageSize= 10;
+        parameters.PageSize = 10;
         await GetAllTickets();
         Grid.PreventRender(false);
         await Grid.Refresh();
@@ -646,7 +645,7 @@
                 {
                     Args.Cancel = true;
                     await this.ToastObj.ShowAsync(toastModel);
-                    ticketDtos=await GetAllTickets();
+                    ticketDtos = await GetAllTickets();
                     Grid.PreventRender(false);
                     await Grid.Refresh();
 
