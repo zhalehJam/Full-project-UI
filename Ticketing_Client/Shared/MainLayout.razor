@@ -3,6 +3,7 @@
 @using System.IdentityModel.Tokens.Jwt;
 @using Syncfusion.Blazor.Navigations;
 @using Ticketing.Repository;
+
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager Navigation
@@ -21,8 +22,6 @@
         background-repeat: round;
         color: black;
     }
-
-
 
 
     .e-sidebar {
@@ -215,6 +214,11 @@
                 padding: 0;
             }
 
+            .e-menu-wrapper ul.e-menu, .e-menu-container ul.e-menu {
+                display: inline-block;
+                text-align-last: right;
+            }
+
 
     /* Sample specific icon styles */
     @@font-face {
@@ -261,6 +265,15 @@
             vertical-align: top;
             white-space: nowrap;
         }
+
+            .e-menu-wrapper ul .e-menu-item .e-menu-icon, .e-menu-container ul .e-menu-item .e-menu-icon {
+                font-size: 18px;
+                height: auto;
+                line-height: 32px;
+                margin-right: 4px;
+                margin-left: 8px;
+                text-align: center;
+            }
 </style>
 
 <div>
@@ -269,7 +282,7 @@
 </div>
 <div class="page">
     @*main content declaration*@
-    <SfSidebar HtmlAttributes="@HtmlAttribute"
+    <SfSidebar EnableRtl="true" HtmlAttributes="@HtmlAttribute"
                Target=".main-content"
                Width="220px"
                DockSize="50px"
@@ -278,7 +291,7 @@
                Type="@SidebarType.Auto"
                Position=SidebarPosition.Right>
         <ChildContent>
-            <div class="main-menu">
+            <div dir="rtl" class="main-menu">
                 <div>
                     <SfToolbar>
                         <ToolbarEvents Clicked="@Toggle"></ToolbarEvents>
@@ -294,8 +307,6 @@
                         </ToolbarItems>
                     </SfToolbar>
                     <SfMenu CssClass="dock-menu" Items="@MainMenuItems" Orientation="@VerOrientation">
-                        <style>
-                        </style>
                     </SfMenu>
                 </div>
             </div>
@@ -321,6 +332,7 @@
         new MenuItem { Text = "مراکز", IconCss = "e-icons e-location", Url="/CentersList" } ,
         new MenuItem { Text = "تیکت ها", IconCss = "e-annotation-edit e-icons", Url="/TicketsList" } ,
         new MenuItem { Text = "خروج", IconCss =  "exit_icon_image" , Url="/login"  } };
+
 
     public bool SidebarToggle = true;
     public void Toggle(ClickEventArgs args)

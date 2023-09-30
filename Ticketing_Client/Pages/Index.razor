@@ -2,12 +2,15 @@
 @page "/"
 @using Framework.Pagination;
 @using Microsoft.AspNetCore.Authorization;
+@using Syncfusion.Blazor;
 @using Syncfusion.Blazor.Cards;
 @using Syncfusion.Blazor.Charts;
 @using Syncfusion.Blazor.Calendars;
 @using Syncfusion.Blazor.Layouts;
 @using Syncfusion.Blazor.LinearGauge;
 @using Syncfusion.Blazor.DropDowns;
+@using Syncfusion.Blazor.Popups;
+@using Syncfusion.Blazor.Buttons;
 @using Ticketing.Client.Contracts.Ticket;
 @using Ticketing.Models.Tickets.Dto;
 @using Ticketing.Models.Tickets.Query;
@@ -18,7 +21,9 @@
 @using Position = Syncfusion.Blazor.LinearGauge.Position
 
 @inject AuthenticationStateProvider authenticationStateProvider
+@inject SyncfusionBlazorService syncfusionBlazorService
 @inject ITicketRepository ticketRepository
+
 <style>
     .ChartPanelClass {
         border-radius: 26px;
@@ -48,11 +53,14 @@
         font-weight: 500;
     }
 
+    .e-panel .e-header-text {
+        padding: 6px 0 13px 0;
+    }
+
     .bootstrap5 .e-panel .e-header-text,
     .bootstrap5-dark .e-panel .e-header-text {
         padding: 0;
     }
-
 
     .panel-content {
         vertical-align: middle;
@@ -89,9 +97,6 @@
         overflow-x: hidden;
     }
 
-    .e-panel .e-header-text {
-        padding: 6px 0 13px 0;
-    }
 
 
 
@@ -150,6 +155,7 @@
                 background: transparent;
                 border-color: transparent;
                 border-radius: 12px;
+                direction: rtl;
             }
 
             .e-dashboardlayout.e-control .e-panel .e-panel-container {
@@ -304,7 +310,7 @@
             line-height: normal;
             min-height: 22.5px;
             padding: 2px;
-            width: inherit; 
+            width: inherit;
         }
 
 
@@ -366,17 +372,43 @@
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
+        background: #f1f1f1;
     }
- 
+
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #dfdada;
     }
 
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
             background: #dfdada;
+        }
+
+    .e-btn.e-flat.e-primary, .e-css.e-btn.e-flat.e-primary {
+        background-color: rgba(0,0,0,0);
+        border-color: rgba(0,0,0,0);
+        color: #0d6efd;
+        text-align-last: right;
+    }
+
+        .e-btn.e-flat.e-primary:hover, .e-css.e-btn.e-flat.e-primary:hover {
+            background-color: #0b5ed712;
+            border-color: transparent;
+            color: #0a58ca;
+        }
+
+        .e-btn.e-flat.e-primary:hover, .e-css.e-btn.e-flat.e-primary:active {
+            background-color: #0b5ed712;
+            border-color: transparent;
+            color: #0a58ca;
+        }
+
+        .e-btn.e-flat.e-primary:focus, .e-css.e-btn.e-flat.e-primary:focus {
+            background-color: #0b5ed712;
+            border-color: transparent;
+            color: #0a58ca;
+            box-shadow: 0 0 0 4px rgb(49 132 253 / 0%);
         }
 </style>
 
@@ -386,7 +418,7 @@
                            Columns="12"
                            AllowFloating="false"
                            AllowDragging="false"
-                           CellSpacing="@(new double[]{20 ,20 })">
+                           CellSpacing="@(new double[] { 20, 20 })">
 
             <DashboardLayoutPanels>
                 <DashboardLayoutPanel CssClass="ChartPanelClass" Id="AddedTickets" Row="1" Column="4" SizeX="8" SizeY="4">
@@ -394,7 +426,7 @@
                         <div class="e-header-text">تیکت های ثبت شده</div>
                     </HeaderTemplate>
                     <ContentTemplate>
-                        <div dir="ltr" class="col-lg-2 control-section sb-property-border" style="margin-left: 48px;">
+                        <div class="col-lg-1 col-md-1 col-sm-1 control-section sb-property-border" style="margin-left: 48px;">
                             <div class="control-wrapper">
                                 <label class="example-label">بازه زمانی</label>
                                 <SfComboBox ShowClearButton="false" TValue="string" TItem="string" PopupHeight="230px" @bind-Value="@comboBoxValue" DataSource="@comboBoxDataSource">
@@ -403,7 +435,7 @@
                                 </SfComboBox>
                             </div>
                         </div>
-                        <div dir="rtl">
+                        <div>
                             <SfChart @ref="sfChart" Height="90%" Width="98%" Background="transparent">
                                 <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
                                 <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime"
@@ -422,7 +454,7 @@
                                 <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
                                 <ChartSeriesCollection>
 
-                                    <ChartSeries DataSource="@finishedTickets"
+                                    <ChartSeries DataSource="@_finishedTickets"
                                                  Name="تیکتهای تمام شده"
                                                  XName="Item1"
                                                  Width="2"
@@ -434,7 +466,7 @@
                                     </ChartSeries>
                                 </ChartSeriesCollection>
                                 <ChartSeriesCollection>
-                                    <ChartSeries DataSource="@ongoingTickets"
+                                    <ChartSeries DataSource="@_ongoingTickets"
                                                  Name="تیکتهای  در حال انجام"
                                                  XName="Item1"
                                                  Width="1"
@@ -457,7 +489,7 @@
                     </HeaderTemplate>
                     <ContentTemplate>
                         @{
-                            foreach (var programTicket in programsTickets.GroupBy(t => t.ProgramName).Select(e => new { ProgramName = e.Key, ProgramTicketsCounts = e.Sum(r => r.ProgramTicketsCount) }))
+                            foreach (var programTicket in programsTickets.GroupBy(t => t.ProgramName).Select(e => new { ProgramName = e.Key, ProgramTicketsCounts = e.Sum(r => r.ProgramTicketsCount) }).OrderByDescending(t => t.ProgramTicketsCounts))
                             {
                                 <SfLinearGauge Orientation="Orientation.Horizontal" Background="transparent" Height="60px" Width="400px">
                                     <LinearGaugeContainer Width="6" RoundedCornerRadius="4" BackgroundColor="#eff2f7" Type="ContainerType.RoundedRectangle">
@@ -471,7 +503,7 @@
                                                     <LinearGaugeAxisLabelFont Size="0"></LinearGaugeAxisLabelFont>
                                                 </LinearGaugeAxisLabelStyle>
                                                 <LinearGaugePointers>
-                                                    <LinearGaugePointer PointerValue="@(100 * programTicket.ProgramTicketsCounts/allTicketscount)" Height="6" Width="10" Type="Point.Bar" Color="#1c1b20" />
+                                                    <LinearGaugePointer PointerValue="@(100 * programTicket.ProgramTicketsCounts / allTicketscount)" Height="6" Width="10" Type="Point.Bar" Color="#1c1b20" />
                                                 </LinearGaugePointers>
                                                 <LinearGaugeAnnotations>
                                                     <LinearGaugeAnnotation AxisIndex="0" AxisValue="0" X="300" Y="-0" ZIndex="1">
@@ -526,7 +558,7 @@
                             <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
                             <ChartSeriesCollection>
 
-                                <ChartSeries DataSource="@centersTickets"
+                                <ChartSeries DataSource="@_centersTickets"
                                              Name="دفاتر"
                                              XName="Item1"
                                              Width="2"
@@ -546,24 +578,26 @@
                 @{
                     int i = 0;
                     int j = 4;
-                    foreach (var programName in programsTickets.Select(w => w.ProgramName).Distinct())
+                    foreach (var programName in programsTickets.Select(w => new { w.programId, w.ProgramName }).Distinct())
                     {
                         <DashboardLayoutPanel Row="@(i % 2)" Column="@j" SizeX="2" SizeY="1">
                             <HeaderTemplate>
-                                <div class="e-header-text"> @(programsTickets.FirstOrDefault(t => t.ProgramName == programName).ProgramName)</div>
-                            </HeaderTemplate>
-                            <ContentTemplate>
-                                <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px;">
-                                    <SfCard>
-                                        <CardContent>
-                                            <table style="line-height: 2.75em; width: 100%; text-align: start;">
-                                                <tr>
-                                                    <td>
-                                                        <div class="card-text-value"><b>تیکهای در حال اجرا</b></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="card-text-value" style="font-size: 16px; font-weight: 500; color: black;">
-                                                             @(programsTickets.Where(t => t.ProgramName == programName && t.TicketConditionTypeName == TicketCondition.OnGoing.ToString() ).FirstOrDefault().ProgramTicketsCount)
+                                <div>
+                                    <SfButton CssClass="e-flat" IsPrimary="true" @onclick="() => OnBtnClick(programName.programId)">@(programsTickets.FirstOrDefault(t => t.ProgramName == programName.ProgramName).ProgramName)</SfButton>
+                                    </div>
+                                </HeaderTemplate>
+                                <ContentTemplate>
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px;">
+                                        <SfCard EnableRtl="true">
+                                            <CardContent>
+                                                <table style="line-height: 2.75em; width: 100%; text-align: start;">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="card-text-value"><b>تیکهای در حال اجرا</b></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="card-text-value" style="font-size: 16px; font-weight: 500; color: black;">
+                                                                @(programsTickets.FirstOrDefault(t => t.ProgramName == programName.ProgramName && t.TicketConditionTypeName == TicketCondition.OnGoing.ToString()).ProgramTicketsCount)
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -572,13 +606,12 @@
                                                         <div class="card-text-value"><b>تیکت های پایان یافته</b></div>
                                                     </td>
                                                     <td>
-                                                        <div class="card-text-value" style="font-size: 16px; font-weight: 500;color: black;">
-                                                             @(programsTickets.Where(t => t.ProgramName == programName && t.TicketConditionTypeName == TicketCondition.Finish.ToString()).FirstOrDefault().ProgramTicketsCount)
+                                                        <div class="card-text-value" style="font-size: 16px; font-weight: 500; color: black;">
+                                                            @(programsTickets.FirstOrDefault(t => t.ProgramName == programName.ProgramName && t.TicketConditionTypeName == TicketCondition.Finish.ToString()).ProgramTicketsCount)
                                                         </div>
                                                     </td>
                                                 </tr>
                                             </table>
-
                                         </CardContent>
                                     </SfCard>
                                 </div>
@@ -591,27 +624,26 @@
                     }
                 }
 
-
                 <DashboardLayoutPanel Id="UserTicketsInfo" Row="0" Column="10" SizeX="2" SizeY="2">
                     <HeaderTemplate>
                         <div class="e-header-text">تیکت های کاربر</div>
                     </HeaderTemplate>
                     <ContentTemplate>
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0px;">
-                            <SfCard style="margin-top: 1px; padding-bottom: 1px;">
+                            <SfCard EnableRtl="true" style="margin-top: 1px; padding-bottom: 1px;">
                                 <CardHeader Title="@("در حال انجام")"
-                                            SubTitle="@(ticketDtos.Where(t => t.SupporterPersonID == userName).Count(t => t.TicketConditionid == (int)TicketCondition.OnGoing).ToString())"
+                                            SubTitle="@(_ticketDtos.Where(t => t.SupporterPersonID == userName).Count(t => t.TicketConditionid == (int)TicketCondition.OnGoing).ToString())"
                                             ImageUrl="@("../images/icons/supporter-ongoing-tickets-icon.png")" />
                             </SfCard>
 
-                            <SfCard style="margin-top: 1px; padding-bottom: 1px;">
+                            <SfCard EnableRtl="true" style="margin-top: 1px; padding-bottom: 1px;">
                                 <CardHeader Title="@("تمام شده")"
-                                            SubTitle="@(ticketDtos.Where(t => t.SupporterPersonID == userName).Count(t => t.TicketConditionid == (int)TicketCondition.Finish).ToString())"
+                                            SubTitle="@(_ticketDtos.Where(t => t.SupporterPersonID == userName).Count(t => t.TicketConditionid == (int)TicketCondition.Finish).ToString())"
                                             ImageUrl="@("../images/icons/supporter-finished-tickets-icon.png")" />
                             </SfCard>
-                            <SfCard style="margin-top: 1px; padding-bottom: 1px;">
+                            <SfCard EnableRtl="true" style="margin-top: 1px; padding-bottom: 1px;">
                                 <CardHeader Title="@("کل تیکت های ثبت شده")"
-                                            SubTitle="@(ticketDtos.Where(t => t.SupporterPersonID == userName).Count().ToString())"
+                                            SubTitle="@(_ticketDtos.Where(t => t.SupporterPersonID == userName).Count().ToString())"
                                             ImageUrl="@("../images/icons/supporter-finished-tickets-icon.png")" />
                             </SfCard>
                         </div>
@@ -620,32 +652,104 @@
             </DashboardLayoutPanels>
         </SfDashboardLayout>
     </div>
+
+    <SfDialog Width="60%" IsModal="true" @bind-Visible="Visibility" ShowCloseIcon="true">
+        <DialogTemplates>
+            <Header> @_selectedProgramTickets.Count() </Header>
+            <Content>
+                <SfChart @ref="sfChart" Height="100%" Width="100%" Background="transparent">
+                    <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+                    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime"
+                                       Interval="1"
+                                       IntervalType="IntervalType.Days"
+                                       EdgeLabelPlacement="EdgeLabelPlacement.Shift"
+                                       LabelRotation=-45>
+                        <ChartAxisLabelStyle>
+                        </ChartAxisLabelStyle>
+                        <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                        <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
+                        <ChartAxisLabelStyle TextAlignment="Alignment.Near"></ChartAxisLabelStyle>
+                    </ChartPrimaryXAxis>
+
+                    <ChartPrimaryYAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Double"
+                                       Minimum="0"
+                                       Interval="2">
+                        <ChartAxisMajorGridLines Width="1"></ChartAxisMajorGridLines>
+                        <ChartAxisMinorGridLines Width="0"></ChartAxisMinorGridLines>
+                        <ChartAxisLineStyle Width="0.5"></ChartAxisLineStyle>
+                    </ChartPrimaryYAxis>
+                    <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                    <ChartSeriesCollection>
+
+                        <ChartSeries DataSource="@_selectedProgramTicketsPerDay"
+                                     Name="دفاتر"
+                                     XName="Item1"
+                                     Width="2"
+                                     Opacity="1"
+                                     YName="Item2"
+                                     Type="ChartSeriesType.Column"
+                                     ColumnWidth="0.2"
+                                     Fill="#f78434">
+                        </ChartSeries>
+                    </ChartSeriesCollection>
+
+                </SfChart>
+            </Content>
+        </DialogTemplates>
+        <DialogEvents OnOpen="@DialogOpen" Closed="@DialogClose" OnOverlayModalClick="@OverlayClick"></DialogEvents>
+        <DialogAnimationSettings Effect="@DialogEffect.None"></DialogAnimationSettings>
+    </SfDialog>
+
 </div>
 
 @code {
     SfDashboardLayout dashboardObject;
     private SfChart sfChart { get; set; } = new SfChart();
 
-    List<TicketDto> ticketDtos = new List<TicketDto>();
-    List<Tuple<DateTime, int>> allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
-    List<Tuple<DateTime, int>> finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
-    List<Tuple<DateTime, int>> ongoingTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
-    List<(string ProgramName, string TicketConditionTypeName, int ProgramTicketsCount)> programsTickets = new System.Collections.Generic.List<(string ProgramName, string TicketConditionTypeName, int ProgramTicketsCount)>();
-    List<Tuple<string, int>> centersTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+    List<TicketDto> _ticketDtos = new List<TicketDto>();
+    List<TicketDto> _selectedProgramTickets = new List<TicketDto>();
+    List<Tuple<DateTime, int>> _selectedProgramTicketsPerDay = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
+    List<Tuple<DateTime, int>> _finishedTickets = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<Tuple<DateTime, int>> _ongoingTickets = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+    List<(Guid programId, string ProgramName, string TicketConditionTypeName, int ProgramTicketsCount)> programsTickets =
+        new List<(Guid programId, string ProgramName, string TicketConditionTypeName, int ProgramTicketsCount)>();
+    List<Tuple<string, int>> _centersTickets = new List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
     private string Content { get; set; } = "";
     public TicketQueryParameters parameters { get; set; } = new TicketQueryParameters();
     public MetaData metaData { get; set; } = new MetaData();
     public DateTime FromDate { get; set; } = DateTime.Now.AddMonths(-1).Date;
     public DateTime ToDate { get; set; } = DateTime.Now.Date.AddDays(1);
     private string[] palettes = new string[] { "#61EFCD", "#CDDE1F", "#FEC200", "#CA765A", "#2485FA", "#F57D7D", "#C152D2",
-                                               "#8854D9", "#3D4EB8", "#00BCD7","#4472c4", "#ed7d31", "#ffc000", "#70ad47", "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300" };
+                                               "#8854D9", "#3D4EB8", "#00BCD7", "#4472c4", "#ed7d31", "#ffc000", "#70ad47",
+                                               "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300"
+                 };
 
     int allTicketscount = 1;
     private int userName = 0;
-
-    private async Task ChangeDiv(EventArgs args)
+    private bool Visibility { get; set; } = false;
+    private void DialogOpen(Object args)
     {
+    }
+    private void DialogClose(Object args)
+    {
+    }
+    private void DlgButtonClick()
+    {
+        this.Visibility = false;
+    }
+    private void OverlayClick(OverlayModalClickEventArgs args)
+    {
+        this.Visibility = false;
+    }
 
+    private void OnBtnClick(Guid programId)
+    {
+        _selectedProgramTicketsPerDay = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
+        _selectedProgramTickets = _ticketDtos.Where(t => t.ProgramId == programId).ToList();
+        _selectedProgramTicketsPerDay = _selectedProgramTickets.GroupBy(t => t.TicketTime.Date)
+                                                .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
+                                                .ToList();
+        this.Visibility = true;
     }
 
     string comboBoxValue = "ماه";
@@ -657,28 +761,28 @@
         this.comboBoxValue = args.ItemData?.ToString();
         if (comboBoxValue == "هفته")
         {
-            ongoingTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
+            _ongoingTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
                                        .GroupBy(t => t.TicketTime.Date)
                                        .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).Where(t => t.Item1.Date >= DateTime.Now.AddDays(-7)).ToList();
-            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
+            _finishedTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
                                         .GroupBy(t => t.TicketTime.Date)
                                         .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).Where(t => t.Item1.Date >= DateTime.Now.AddDays(-7)).ToList();
         }
         else if (comboBoxValue == "ماه")
         {
-            ongoingTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
+            _ongoingTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
                                        .GroupBy(t => t.TicketTime.Date)
                                        .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).Where(t => t.Item1.Date >= DateTime.Now.AddMonths(-1)).ToList();
-            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
+            _finishedTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
                                         .GroupBy(t => t.TicketTime.Date)
                                         .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).Where(t => t.Item1.Date >= DateTime.Now.AddMonths(-1)).ToList();
         }
         else if (comboBoxValue == "سال")
         {
-            ongoingTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
+            _ongoingTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
                                        .GroupBy(t => t.TicketTime.Date)
                                        .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).Where(t => t.Item1.Date >= DateTime.Now.AddYears(-1)).ToList();
-            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
+            _finishedTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
                                         .GroupBy(t => t.TicketTime.Date)
                                         .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count())).Where(t => t.Item1.Date >= DateTime.Now.AddYears(-1)).ToList();
         }
@@ -686,6 +790,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        syncfusionBlazorService.EnableRtl(enable: false);
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         userName = System.Convert.ToInt32(((System.Security.Claims.ClaimsIdentity)user.Identity).Claims.Where(c => c.Type == "name").First().Value);
@@ -702,41 +807,37 @@
     private async Task GetData(DateTime fromDate, DateTime toDate)
     {
         var response = await ticketRepository.GetAllTickets();
-        allTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
-        finishedTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
-        ongoingTickets = new System.Collections.Generic.List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
-        programsTickets = new System.Collections.Generic.List<(string ProgramName, string TicketConditionTypeName, int ProgramTicketsCount)>();
-        centersTickets = new System.Collections.Generic.List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
+        _finishedTickets = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+        _ongoingTickets = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
+        programsTickets = new List<(Guid programId, string ProgramName, string TicketConditionTypeName, int ProgramTicketsCount)>();
+        _centersTickets = new List<Tuple<string, int>>() { new Tuple<string, int>("", 0) };
 
-        ticketDtos = new List<TicketDto>();
+        _ticketDtos = new List<TicketDto>();
 
         if (response.Count != 0)
         {
-            ticketDtos = response;
+            _ticketDtos = response;
 
-            allTickets = ticketDtos.GroupBy(t => t.TicketTime.Date)
-                                   .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
-                                   .ToList();
-            ongoingTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
+            _ongoingTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.OnGoing)
                                        .GroupBy(t => t.TicketTime.Date)
                                        .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
                                        .Where(t => t.Item1.Date >= DateTime.Now.AddMonths(-1))
                                        .ToList();
-            finishedTickets = ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
+            _finishedTickets = _ticketDtos.Where(t => t.TicketConditionid == (int)TicketCondition.Finish)
                                         .GroupBy(t => t.TicketTime.Date)
                                         .Select(t => new Tuple<DateTime, int>(t.Key.Date, t.Select(e => e.Id).Count()))
                                         .Where(t => t.Item1.Date >= DateTime.Now.AddMonths(-1))
                                         .ToList();
 
-            programsTickets = ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName, t.TicketConditionTypeName })
-                                        .Select(t => (t.Key.ProgramName, t.Key.TicketConditionTypeName, t.Count()))
+            programsTickets = _ticketDtos.GroupBy(t => new { t.ProgramId, t.ProgramName, t.TicketConditionTypeName })
+                                        .Select(t => (t.Key.ProgramId, t.Key.ProgramName, t.Key.TicketConditionTypeName, t.Count()))
                                         .OrderByDescending(t => t.Item2)
                                         .ToList();
-            centersTickets = ticketDtos.GroupBy(t => new { t.PersonCenterId, t.PersonCenterName })
+            _centersTickets = _ticketDtos.GroupBy(t => new { t.PersonCenterId, t.PersonCenterName })
                                        .Select(t => new Tuple<string, int>(t.Key.PersonCenterName, t.Count()))
                                        .ToList();
 
-            allTicketscount = ticketDtos.Count();
+            allTicketscount = _ticketDtos.Count();
         }
         //await sfChart.RefreshAsync();
 
