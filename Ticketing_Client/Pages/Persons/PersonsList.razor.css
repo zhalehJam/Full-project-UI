@@ -15,13 +15,13 @@
     right: 50px;
 }
 
+.e-numeric.e-input-group.e-control-container.e-control-wrapper.e-float-input {
+    margin-top: 0 !important;
+}
 .e-float-input, .e-float-input.e-control-wrapper {
-    line-height: 1.4;
-    margin-bottom: 0;
-    margin-top: 0px;
-    padding-top: 0;
-    position: relative;
-    width: 100%;
+    
+    margin-top: 0px !important;
+    
 }
 
 .cart-class {
@@ -57,15 +57,7 @@ body {
         text-align: center;
     }
 
-.e-float-input, .e-float-input.e-control-wrapper {
-    line-height: 1.4;
-    margin-bottom: 0;
-    margin-top: 0px !important;
-    
-    padding-top: 0;
-    position: relative;
-    width: 150px;
-}
+
 
 
 #source_link {

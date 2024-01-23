@@ -2,6 +2,8 @@
 
 @page "/programsList"
 @using Microsoft.AspNetCore.Authorization;
+@using Syncfusion.Blazor;
+
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.Cards
 @using Syncfusion.Blazor.Inputs
@@ -18,6 +20,7 @@
 @using Ticketing.Models.Programs.Dto
 @using Ticketing.Models.Programs.Repository 
 
+@inject SyncfusionBlazorService syncfusionBlazorService
 @inject IPersonRepository personRepository
 @inject IProgramRepository programRepository
 @inject IHttpClientFactory ClientFactory
@@ -253,6 +256,7 @@
 
     protected async override Task OnInitializedAsync()
     {
+        syncfusionBlazorService.EnableRtl(enable: true);
         await GetAllPrograms();
     }
 

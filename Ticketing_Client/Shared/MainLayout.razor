@@ -22,7 +22,7 @@
         background-repeat: round;
         color: black;
     }
-
+     
 
     .e-sidebar {
         /*background-image: linear-gradient(351deg, #4d76a8 0%, #eff4f9 70%);*/
@@ -274,6 +274,26 @@
                 margin-left: 8px;
                 text-align: center;
             }
+
+    .menu-arrow-btn {
+        background-image: url(@("/images/icons/arrow-down.svg")) !important;
+        height: 24px !important;
+        width: 24px !important;
+        margin-top: 16px !important;
+        margin-right: 16px !important;
+        background-repeat: no-repeat;
+        color: black;
+    }
+    .menu-rotate-arrow-btn {
+        background-image: url(@("/images/icons/arrow-down.svg")) !important;
+        height: 24px !important;
+        width: 24px !important;
+        margin-right: 16px !important;
+        margin-top: 16px !important;
+        background-repeat: no-repeat;
+        color: black;
+        transform: rotate(90deg);
+    }
 </style>
 
 <div>
@@ -296,7 +316,7 @@
                     <SfToolbar>
                         <ToolbarEvents Clicked="@Toggle"></ToolbarEvents>
                         <ToolbarItems>
-                            <ToolbarItem PrefixIcon="e-line-normal tb-icons" TooltipText="Menu"></ToolbarItem>
+                            <ToolbarItem CssClass="@arrowbtnClass" TooltipText="Menu"></ToolbarItem>
                             <ToolbarItem Id="item2" TooltipText="MainPage">
                                 <Template>
                                     <div class="e-folder">
@@ -333,19 +353,29 @@
         new MenuItem { Text = "تیکت ها", IconCss = "e-annotation-edit e-icons", Url="/TicketsList" } ,
         new MenuItem { Text = "خروج", IconCss =  "exit_icon_image" , Url="/login"  } };
 
-
+    private string arrowbtnClass = "menu-arrow-btn";
     public bool SidebarToggle = true;
     public void Toggle(ClickEventArgs args)
     {
         if (args.Item.TooltipText == "Menu")
         {
             SidebarToggle = !SidebarToggle;
+            if (SidebarToggle)
+            {
+                arrowbtnClass = "menu-arrow-btn";
+            }
+            else
+            {
+                arrowbtnClass = "menu-rotate-arrow-btn"; 
+            }
+
         }
         if (args.Item.Id == "item2")
         {
 
             Navigation.NavigateTo("/", true);
         }
+       
     }
     Dictionary<string, object> HtmlAttribute = new Dictionary<string, object>()
     {

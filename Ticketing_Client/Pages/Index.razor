@@ -297,6 +297,7 @@
         /*width: auto;*/
         margin: 4px;
         text-align: center;
+        min-width: -webkit-fill-available !important;
     }
 
         .e-card .e-card-header {
@@ -388,26 +389,27 @@
     .e-btn.e-flat.e-primary, .e-css.e-btn.e-flat.e-primary {
         background-color: rgba(0,0,0,0);
         border-color: rgba(0,0,0,0);
-        color: #0d6efd;
+        color: #00a9c1;
         text-align-last: right;
+        min-width: -webkit-fill-available !important;
     }
 
         .e-btn.e-flat.e-primary:hover, .e-css.e-btn.e-flat.e-primary:hover {
             background-color: #0b5ed712;
             border-color: transparent;
-            color: #0a58ca;
+            color: #00a9c1;
         }
 
         .e-btn.e-flat.e-primary:hover, .e-css.e-btn.e-flat.e-primary:active {
             background-color: #0b5ed712;
             border-color: transparent;
-            color: #0a58ca;
+            color: #00a9c1;
         }
 
         .e-btn.e-flat.e-primary:focus, .e-css.e-btn.e-flat.e-primary:focus {
             background-color: #0b5ed712;
             border-color: transparent;
-            color: #0a58ca;
+            color: #00a9c1;
             box-shadow: 0 0 0 4px rgb(49 132 253 / 0%);
         }
 </style>
@@ -515,7 +517,7 @@
                                                     </LinearGaugeAnnotation>
                                                     <LinearGaugeAnnotation AxisIndex="0" AxisValue="0" X="0" Y="-30" ZIndex="1">
                                                         <ContentTemplate>
-                                                            <div style="width: 14px; font-size: 12px;">
+                                                            <div style="width: 100px; font-size: 12px;">
                                                                 @programTicket.ProgramName
                                                             </div>
                                                         </ContentTemplate>
@@ -574,16 +576,16 @@
 
                     </ContentTemplate>
                 </DashboardLayoutPanel>
-
+                
                 @{
-                    int i = 0;
-                    int j = 4;
+                    int PanelNumber = 0;
+                    int CoumnNumber = 4;
                     foreach (var programName in programsTickets.Select(w => new { w.programId, w.ProgramName }).Distinct())
                     {
-                        <DashboardLayoutPanel Row="@(i % 2)" Column="@j" SizeX="2" SizeY="1">
+                        <DashboardLayoutPanel Row="@(PanelNumber % 2)" Column="@CoumnNumber" SizeX="2" SizeY="1">
                             <HeaderTemplate>
                                 <div>
-                                    <SfButton CssClass="e-flat" IsPrimary="true" @onclick="() => OnBtnClick(programName.programId)">@(programsTickets.FirstOrDefault(t => t.ProgramName == programName.ProgramName).ProgramName)</SfButton>
+                                    <SfButton CssClass="e-flat" IsPrimary="true" @onclick="() => OnBtnClick(programName.programId,programName.ProgramName)">@(programsTickets.FirstOrDefault(t => t.ProgramName == programName.ProgramName).ProgramName)</SfButton>
                                     </div>
                                 </HeaderTemplate>
                                 <ContentTemplate>
@@ -617,9 +619,9 @@
                                 </div>
                             </ContentTemplate>
                         </DashboardLayoutPanel>
-                        i++;
-                        j = 4 + 2 * (i / 2);
-                        if (i > 5)
+                        PanelNumber++;
+                        CoumnNumber = 4 + 2 * (PanelNumber / 2);
+                        if (PanelNumber > 5)
                             break;
                     }
                 }
@@ -655,7 +657,9 @@
 
     <SfDialog Width="60%" IsModal="true" @bind-Visible="Visibility" ShowCloseIcon="true">
         <DialogTemplates>
-            <Header> @_selectedProgramTickets.Count() </Header>
+            <Header>
+                @_selectedProgramName
+            </Header>
             <Content>
                 <SfChart @ref="sfChart" Height="100%" Width="100%" Background="transparent">
                     <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
@@ -682,7 +686,7 @@
                     <ChartSeriesCollection>
 
                         <ChartSeries DataSource="@_selectedProgramTicketsPerDay"
-                                     Name="دفاتر"
+                                     Name="تیکت ها"
                                      XName="Item1"
                                      Width="2"
                                      Opacity="1"
@@ -708,6 +712,7 @@
 
     List<TicketDto> _ticketDtos = new List<TicketDto>();
     List<TicketDto> _selectedProgramTickets = new List<TicketDto>();
+    string _selectedProgramName = "";
     List<Tuple<DateTime, int>> _selectedProgramTicketsPerDay = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
     List<Tuple<DateTime, int>> _finishedTickets = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
     List<Tuple<DateTime, int>> _ongoingTickets = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now, 0) };
@@ -721,8 +726,7 @@
     public DateTime ToDate { get; set; } = DateTime.Now.Date.AddDays(1);
     private string[] palettes = new string[] { "#61EFCD", "#CDDE1F", "#FEC200", "#CA765A", "#2485FA", "#F57D7D", "#C152D2",
                                                "#8854D9", "#3D4EB8", "#00BCD7", "#4472c4", "#ed7d31", "#ffc000", "#70ad47",
-                                               "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300"
-                 };
+                                               "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300" };
 
     int allTicketscount = 1;
     private int userName = 0;
@@ -742,8 +746,9 @@
         this.Visibility = false;
     }
 
-    private void OnBtnClick(Guid programId)
+    private void OnBtnClick(Guid programId, string programName)
     {
+        _selectedProgramName = programName;
         _selectedProgramTicketsPerDay = new List<Tuple<DateTime, int>>() { new Tuple<DateTime, int>(DateTime.Now.Date, 0) };
         _selectedProgramTickets = _ticketDtos.Where(t => t.ProgramId == programId).ToList();
         _selectedProgramTicketsPerDay = _selectedProgramTickets.GroupBy(t => t.TicketTime.Date)

@@ -4,6 +4,7 @@
 
 @using Microsoft.AspNetCore.Authorization;
 @using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor; 
 @using Syncfusion.Blazor.Grids;
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.Popups
@@ -15,6 +16,7 @@
 @using Ticketing.Repository.Centers 
 @inject ICenterRepository CenterRepository
 @inject IHttpClientFactory ClientFactory
+@inject SyncfusionBlazorService syncfusionBlazorService
 
 <PageTitle>Centers</PageTitle>
 <h3>لیست مراکز</h3>
@@ -186,6 +188,8 @@
 
     protected override async Task OnInitializedAsync()
     {
+        syncfusionBlazorService.EnableRtl(enable: true);
+
         await GetCenterslist();
     }
 

@@ -5,6 +5,8 @@
 @using Microsoft.AspNetCore.Authorization;
 @using Microsoft.AspNetCore.Components.Authorization;
 @using Newtonsoft.Json;
+
+@using Syncfusion.Blazor;
 @using Syncfusion.Blazor.Calendars
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.DropDowns
@@ -34,7 +36,8 @@
 @inject IPersonRepository personRepository
 @inject IProgramRepository programRepository
 @inject ICenterRepository centerRepository
-@inject AuthenticationStateProvider authenticationStateProvider
+@inject AuthenticationStateProvider authenticationStateProvider 
+@inject SyncfusionBlazorService syncfusionBlazorService
 
 <div class="col-lg-12 control-section">
     <div class="e-panel-header row col-lg-12 col-md-3 col-sm-3" style="  margin-bottom:6px;align-items: baseline;">
@@ -59,11 +62,12 @@
                         style="width: auto; padding-right: 1px; padding-left: 1px;"
                         Height="600px" Width="auto">
 
-                    <GridEvents TValue="TicketDto"
-                                OnActionBegin="ActionBeginHandler"
-                                OnActionFailure="ActionFailureHandler">
-                    </GridEvents>
-                    <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                <GridEvents TValue="TicketDto"
+                            OnActionBegin="ActionBeginHandler"
+                            OnActionFailure="ActionFailureHandler"
+                >
+                </GridEvents>
+                    <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu" ></GridFilterSettings>
                     <GridEditSettings AllowAdding="true"
                                       AllowDeleting="true"
                                       AllowEditing="true" Mode="@EditMode.Dialog"
@@ -276,7 +280,7 @@
                         </GridColumn>
                     </GridColumns>
                 </SfGrid>
-                <SfPager PageSize="10" NumericItemsCount=4 TotalItemsCount="@metaData.TotalCount" ItemClick="Click" CurrentPage="pageNo2">
+                <SfPager @ref="@pager" PageSizes="@pagesizes" PageSize="@pager.PageSize" NumericItemsCount=4 TotalItemsCount="@metaData.TotalCount" ItemClick="Click" PageSizeChanged="@ChangePageSizeEvent" CurrentPage="pageNo2">
                 </SfPager>
             </EditForm>
 
@@ -310,6 +314,10 @@
 
 </div>
 <style>
+
+    .e-toolbar .e-tbar-btn.e-btn .e-icons {
+        color: #018294 !important;
+    }
     .PagerTemplate {
         width: 1000px;
         height: 64px;
@@ -439,8 +447,8 @@
 </style>
 
 @code {
-
-
+    SfPager pager = new SfPager();
+    public List<int> pagesizes = new List<int> { 5, 10, 12, 20,50,100,150,200 };
     private List<CenterDto> centerDtos = new List<CenterDto>();
     private List<PartDto> partDtos = new List<PartDto>();
     private List<PersonDto> personDtos = new List<PersonDto>();
@@ -489,6 +497,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        syncfusionBlazorService.EnableRtl(enable: true);
         pageNo2 = 1;
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
@@ -504,6 +513,12 @@
         await GetPersonData();
     }
 
+    private async Task ChangePageSizeEvent(PageSizeChangedArgs args)
+    {
+        await GetAllTickets();
+    }
+
+   
     private async Task SetCenterChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
         getPersonInfoByFiltersQuery.CenterId = new Guid(args.Value.ToString());
@@ -527,7 +542,7 @@
     public async Task Click(PagerItemClickEventArgs args)
     {
         pageNo2 = args.CurrentPage;
-        parameters.PageSize = 10;
+        parameters.PageSize = pager.PageSize;
         await GetAllTickets();
         Grid.PreventRender(false);
         await Grid.Refresh();
@@ -550,9 +565,7 @@
     private async Task GetPersonData()
     {
         try
-        {
-            getPersonInfoByFiltersQuery.PageSize = 1000000;
-            getPersonInfoByFiltersQuery.PageNumber = 1;
+        { 
             var response = await personRepository.GetAllPersons();
             personDtos = response.OrderBy(e => e.PersonID).ToList();
             AllpersonDtos = personDtos;
@@ -692,6 +705,7 @@
         parameters.fromDate = fromDate;
         parameters.toDate = toDate;
         parameters.PageNumber = pageNo2;
+        parameters.PageSize = pager.PageSize;
         GridPage.CurrentPage = pageNo2;
         var response = await ticketRepository.GetUserTicketsByDateRage(parameters);
         ticketDtos = response.Items;

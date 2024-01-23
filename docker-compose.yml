@@ -3,9 +3,9 @@ version: '3.4'
 services:
 
   Ticketing_API:
-    image: dockerreg.shonizcloud.ir/ticketing/api:0.0.12
+    image: .../ticketing/api:0.0.12
     container_name: Ticketing_API
-    hostname: ticketingapi.shonizcloud.ir
+    hostname: ....ir
     build:
       context: ../Ticketing
       dockerfile: ../Ticketing/API/Dockerfile
@@ -32,7 +32,7 @@ services:
     container_name: Ticketing_UI
     hostname: Ticketing_UI
     restart: always
-    image: dockerreg.shonizcloud.ir/ticketing/ticketing-ui:0.0.12
+    image: .../ticketing/ticketing-ui:0.0.12
     environment:
       - ASPNETCORE_URLS=https://+:443
       - TZ=Asia/Tehran
